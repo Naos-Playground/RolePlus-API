@@ -1,153 +1,6 @@
 ### YamlMime:XRefMap
 sorted: true
 references:
-- uid: RolePlus.API.Engine.Extensions
-  name: RolePlus.API.Engine.Extensions
-  href: api/RolePlus.API.Engine.Extensions.html
-  commentId: N:RolePlus.API.Engine.Extensions
-  fullName: RolePlus.API.Engine.Extensions
-  nameWithType: RolePlus.API.Engine.Extensions
-- uid: RolePlus.API.Engine.Extensions.ComponentExtensions
-  name: ComponentExtensions
-  href: api/RolePlus.API.Engine.Extensions.ComponentExtensions.html
-  commentId: T:RolePlus.API.Engine.Extensions.ComponentExtensions
-  fullName: RolePlus.API.Engine.Extensions.ComponentExtensions
-  nameWithType: ComponentExtensions
-- uid: RolePlus.API.Engine.Extensions.ComponentExtensions.AddActorComponent*
-  name: AddActorComponent
-  href: api/RolePlus.API.Engine.Extensions.ComponentExtensions.html#RolePlus_API_Engine_Extensions_ComponentExtensions_AddActorComponent_
-  commentId: Overload:RolePlus.API.Engine.Extensions.ComponentExtensions.AddActorComponent
-  isSpec: "True"
-  fullName: RolePlus.API.Engine.Extensions.ComponentExtensions.AddActorComponent
-  nameWithType: ComponentExtensions.AddActorComponent
-- uid: RolePlus.API.Engine.Extensions.ComponentExtensions.AddActorComponent``1(GameObject,System.String)
-  name: AddActorComponent<T>(GameObject, String)
-  href: api/RolePlus.API.Engine.Extensions.ComponentExtensions.html#RolePlus_API_Engine_Extensions_ComponentExtensions_AddActorComponent__1_GameObject_System_String_
-  commentId: M:RolePlus.API.Engine.Extensions.ComponentExtensions.AddActorComponent``1(GameObject,System.String)
-  name.vb: AddActorComponent(Of T)(GameObject, String)
-  fullName: RolePlus.API.Engine.Extensions.ComponentExtensions.AddActorComponent<T>(GameObject, System.String)
-  fullName.vb: RolePlus.API.Engine.Extensions.ComponentExtensions.AddActorComponent(Of T)(GameObject, System.String)
-  nameWithType: ComponentExtensions.AddActorComponent<T>(GameObject, String)
-  nameWithType.vb: ComponentExtensions.AddActorComponent(Of T)(GameObject, String)
-- uid: RolePlus.API.Engine.Extensions.ComponentExtensions.AddActorComponent``1(Player,System.String)
-  name: AddActorComponent<T>(Player, String)
-  href: api/RolePlus.API.Engine.Extensions.ComponentExtensions.html#RolePlus_API_Engine_Extensions_ComponentExtensions_AddActorComponent__1_Player_System_String_
-  commentId: M:RolePlus.API.Engine.Extensions.ComponentExtensions.AddActorComponent``1(Player,System.String)
-  name.vb: AddActorComponent(Of T)(Player, String)
-  fullName: RolePlus.API.Engine.Extensions.ComponentExtensions.AddActorComponent<T>(Player, System.String)
-  fullName.vb: RolePlus.API.Engine.Extensions.ComponentExtensions.AddActorComponent(Of T)(Player, System.String)
-  nameWithType: ComponentExtensions.AddActorComponent<T>(Player, String)
-  nameWithType.vb: ComponentExtensions.AddActorComponent(Of T)(Player, String)
-- uid: RolePlus.API.Engine.Extensions.ComponentExtensions.AddActorComponent``1(RolePlus.ExternModule.API.Engine.Framework.AActor,System.String)
-  name: AddActorComponent<T>(AActor, String)
-  href: api/RolePlus.API.Engine.Extensions.ComponentExtensions.html#RolePlus_API_Engine_Extensions_ComponentExtensions_AddActorComponent__1_RolePlus_ExternModule_API_Engine_Framework_AActor_System_String_
-  commentId: M:RolePlus.API.Engine.Extensions.ComponentExtensions.AddActorComponent``1(RolePlus.ExternModule.API.Engine.Framework.AActor,System.String)
-  name.vb: AddActorComponent(Of T)(AActor, String)
-  fullName: RolePlus.API.Engine.Extensions.ComponentExtensions.AddActorComponent<T>(RolePlus.ExternModule.API.Engine.Framework.AActor, System.String)
-  fullName.vb: RolePlus.API.Engine.Extensions.ComponentExtensions.AddActorComponent(Of T)(RolePlus.ExternModule.API.Engine.Framework.AActor, System.String)
-  nameWithType: ComponentExtensions.AddActorComponent<T>(AActor, String)
-  nameWithType.vb: ComponentExtensions.AddActorComponent(Of T)(AActor, String)
-- uid: RolePlus.API.Engine.Extensions.ComponentExtensions.GetActiveActorComponentsAll(Player)
-  name: GetActiveActorComponentsAll(Player)
-  href: api/RolePlus.API.Engine.Extensions.ComponentExtensions.html#RolePlus_API_Engine_Extensions_ComponentExtensions_GetActiveActorComponentsAll_Player_
-  commentId: M:RolePlus.API.Engine.Extensions.ComponentExtensions.GetActiveActorComponentsAll(Player)
-  fullName: RolePlus.API.Engine.Extensions.ComponentExtensions.GetActiveActorComponentsAll(Player)
-  nameWithType: ComponentExtensions.GetActiveActorComponentsAll(Player)
-- uid: RolePlus.API.Engine.Extensions.ComponentExtensions.GetActiveActorComponentsAll*
-  name: GetActiveActorComponentsAll
-  href: api/RolePlus.API.Engine.Extensions.ComponentExtensions.html#RolePlus_API_Engine_Extensions_ComponentExtensions_GetActiveActorComponentsAll_
-  commentId: Overload:RolePlus.API.Engine.Extensions.ComponentExtensions.GetActiveActorComponentsAll
-  isSpec: "True"
-  fullName: RolePlus.API.Engine.Extensions.ComponentExtensions.GetActiveActorComponentsAll
-  nameWithType: ComponentExtensions.GetActiveActorComponentsAll
-- uid: RolePlus.API.Engine.Extensions.ComponentExtensions.GetActiveComponentsAll(GameObject)
-  name: GetActiveComponentsAll(GameObject)
-  href: api/RolePlus.API.Engine.Extensions.ComponentExtensions.html#RolePlus_API_Engine_Extensions_ComponentExtensions_GetActiveComponentsAll_GameObject_
-  commentId: M:RolePlus.API.Engine.Extensions.ComponentExtensions.GetActiveComponentsAll(GameObject)
-  fullName: RolePlus.API.Engine.Extensions.ComponentExtensions.GetActiveComponentsAll(GameObject)
-  nameWithType: ComponentExtensions.GetActiveComponentsAll(GameObject)
-- uid: RolePlus.API.Engine.Extensions.ComponentExtensions.GetActiveComponentsAll*
-  name: GetActiveComponentsAll
-  href: api/RolePlus.API.Engine.Extensions.ComponentExtensions.html#RolePlus_API_Engine_Extensions_ComponentExtensions_GetActiveComponentsAll_
-  commentId: Overload:RolePlus.API.Engine.Extensions.ComponentExtensions.GetActiveComponentsAll
-  isSpec: "True"
-  fullName: RolePlus.API.Engine.Extensions.ComponentExtensions.GetActiveComponentsAll
-  nameWithType: ComponentExtensions.GetActiveComponentsAll
-- uid: RolePlus.API.Engine.Extensions.ComponentExtensions.GetActorComponent*
-  name: GetActorComponent
-  href: api/RolePlus.API.Engine.Extensions.ComponentExtensions.html#RolePlus_API_Engine_Extensions_ComponentExtensions_GetActorComponent_
-  commentId: Overload:RolePlus.API.Engine.Extensions.ComponentExtensions.GetActorComponent
-  isSpec: "True"
-  fullName: RolePlus.API.Engine.Extensions.ComponentExtensions.GetActorComponent
-  nameWithType: ComponentExtensions.GetActorComponent
-- uid: RolePlus.API.Engine.Extensions.ComponentExtensions.GetActorComponent``1(GameObject)
-  name: GetActorComponent<T>(GameObject)
-  href: api/RolePlus.API.Engine.Extensions.ComponentExtensions.html#RolePlus_API_Engine_Extensions_ComponentExtensions_GetActorComponent__1_GameObject_
-  commentId: M:RolePlus.API.Engine.Extensions.ComponentExtensions.GetActorComponent``1(GameObject)
-  name.vb: GetActorComponent(Of T)(GameObject)
-  fullName: RolePlus.API.Engine.Extensions.ComponentExtensions.GetActorComponent<T>(GameObject)
-  fullName.vb: RolePlus.API.Engine.Extensions.ComponentExtensions.GetActorComponent(Of T)(GameObject)
-  nameWithType: ComponentExtensions.GetActorComponent<T>(GameObject)
-  nameWithType.vb: ComponentExtensions.GetActorComponent(Of T)(GameObject)
-- uid: RolePlus.API.Engine.Extensions.ComponentExtensions.GetActorComponent``1(Player)
-  name: GetActorComponent<T>(Player)
-  href: api/RolePlus.API.Engine.Extensions.ComponentExtensions.html#RolePlus_API_Engine_Extensions_ComponentExtensions_GetActorComponent__1_Player_
-  commentId: M:RolePlus.API.Engine.Extensions.ComponentExtensions.GetActorComponent``1(Player)
-  name.vb: GetActorComponent(Of T)(Player)
-  fullName: RolePlus.API.Engine.Extensions.ComponentExtensions.GetActorComponent<T>(Player)
-  fullName.vb: RolePlus.API.Engine.Extensions.ComponentExtensions.GetActorComponent(Of T)(Player)
-  nameWithType: ComponentExtensions.GetActorComponent<T>(Player)
-  nameWithType.vb: ComponentExtensions.GetActorComponent(Of T)(Player)
-- uid: RolePlus.API.Engine.Extensions.ComponentExtensions.HasActorComponent*
-  name: HasActorComponent
-  href: api/RolePlus.API.Engine.Extensions.ComponentExtensions.html#RolePlus_API_Engine_Extensions_ComponentExtensions_HasActorComponent_
-  commentId: Overload:RolePlus.API.Engine.Extensions.ComponentExtensions.HasActorComponent
-  isSpec: "True"
-  fullName: RolePlus.API.Engine.Extensions.ComponentExtensions.HasActorComponent
-  nameWithType: ComponentExtensions.HasActorComponent
-- uid: RolePlus.API.Engine.Extensions.ComponentExtensions.HasActorComponent``1(GameObject)
-  name: HasActorComponent<T>(GameObject)
-  href: api/RolePlus.API.Engine.Extensions.ComponentExtensions.html#RolePlus_API_Engine_Extensions_ComponentExtensions_HasActorComponent__1_GameObject_
-  commentId: M:RolePlus.API.Engine.Extensions.ComponentExtensions.HasActorComponent``1(GameObject)
-  name.vb: HasActorComponent(Of T)(GameObject)
-  fullName: RolePlus.API.Engine.Extensions.ComponentExtensions.HasActorComponent<T>(GameObject)
-  fullName.vb: RolePlus.API.Engine.Extensions.ComponentExtensions.HasActorComponent(Of T)(GameObject)
-  nameWithType: ComponentExtensions.HasActorComponent<T>(GameObject)
-  nameWithType.vb: ComponentExtensions.HasActorComponent(Of T)(GameObject)
-- uid: RolePlus.API.Engine.Extensions.ComponentExtensions.HasActorComponent``1(Player)
-  name: HasActorComponent<T>(Player)
-  href: api/RolePlus.API.Engine.Extensions.ComponentExtensions.html#RolePlus_API_Engine_Extensions_ComponentExtensions_HasActorComponent__1_Player_
-  commentId: M:RolePlus.API.Engine.Extensions.ComponentExtensions.HasActorComponent``1(Player)
-  name.vb: HasActorComponent(Of T)(Player)
-  fullName: RolePlus.API.Engine.Extensions.ComponentExtensions.HasActorComponent<T>(Player)
-  fullName.vb: RolePlus.API.Engine.Extensions.ComponentExtensions.HasActorComponent(Of T)(Player)
-  nameWithType: ComponentExtensions.HasActorComponent<T>(Player)
-  nameWithType.vb: ComponentExtensions.HasActorComponent(Of T)(Player)
-- uid: RolePlus.API.Engine.Extensions.ComponentExtensions.TryGetActorComponent*
-  name: TryGetActorComponent
-  href: api/RolePlus.API.Engine.Extensions.ComponentExtensions.html#RolePlus_API_Engine_Extensions_ComponentExtensions_TryGetActorComponent_
-  commentId: Overload:RolePlus.API.Engine.Extensions.ComponentExtensions.TryGetActorComponent
-  isSpec: "True"
-  fullName: RolePlus.API.Engine.Extensions.ComponentExtensions.TryGetActorComponent
-  nameWithType: ComponentExtensions.TryGetActorComponent
-- uid: RolePlus.API.Engine.Extensions.ComponentExtensions.TryGetActorComponent``1(GameObject,``0@)
-  name: TryGetActorComponent<T>(GameObject, out T)
-  href: api/RolePlus.API.Engine.Extensions.ComponentExtensions.html#RolePlus_API_Engine_Extensions_ComponentExtensions_TryGetActorComponent__1_GameObject___0__
-  commentId: M:RolePlus.API.Engine.Extensions.ComponentExtensions.TryGetActorComponent``1(GameObject,``0@)
-  name.vb: TryGetActorComponent(Of T)(GameObject, ByRef T)
-  fullName: RolePlus.API.Engine.Extensions.ComponentExtensions.TryGetActorComponent<T>(GameObject, out T)
-  fullName.vb: RolePlus.API.Engine.Extensions.ComponentExtensions.TryGetActorComponent(Of T)(GameObject, ByRef T)
-  nameWithType: ComponentExtensions.TryGetActorComponent<T>(GameObject, out T)
-  nameWithType.vb: ComponentExtensions.TryGetActorComponent(Of T)(GameObject, ByRef T)
-- uid: RolePlus.API.Engine.Extensions.ComponentExtensions.TryGetActorComponent``1(Player,``0@)
-  name: TryGetActorComponent<T>(Player, out T)
-  href: api/RolePlus.API.Engine.Extensions.ComponentExtensions.html#RolePlus_API_Engine_Extensions_ComponentExtensions_TryGetActorComponent__1_Player___0__
-  commentId: M:RolePlus.API.Engine.Extensions.ComponentExtensions.TryGetActorComponent``1(Player,``0@)
-  name.vb: TryGetActorComponent(Of T)(Player, ByRef T)
-  fullName: RolePlus.API.Engine.Extensions.ComponentExtensions.TryGetActorComponent<T>(Player, out T)
-  fullName.vb: RolePlus.API.Engine.Extensions.ComponentExtensions.TryGetActorComponent(Of T)(Player, ByRef T)
-  nameWithType: ComponentExtensions.TryGetActorComponent<T>(Player, out T)
-  nameWithType.vb: ComponentExtensions.TryGetActorComponent(Of T)(Player, ByRef T)
 - uid: RolePlus.CustomTeams
   name: RolePlus.CustomTeams
   href: api/RolePlus.CustomTeams.html
@@ -2941,6 +2794,153 @@ references:
   isSpec: "True"
   fullName: RolePlus.ExternModule.API.Engine.Core.UObject.UnregisterUObjectType
   nameWithType: UObject.UnregisterUObjectType
+- uid: RolePlus.ExternModule.API.Engine.Extensions
+  name: RolePlus.ExternModule.API.Engine.Extensions
+  href: api/RolePlus.ExternModule.API.Engine.Extensions.html
+  commentId: N:RolePlus.ExternModule.API.Engine.Extensions
+  fullName: RolePlus.ExternModule.API.Engine.Extensions
+  nameWithType: RolePlus.ExternModule.API.Engine.Extensions
+- uid: RolePlus.ExternModule.API.Engine.Extensions.ComponentExtensions
+  name: ComponentExtensions
+  href: api/RolePlus.ExternModule.API.Engine.Extensions.ComponentExtensions.html
+  commentId: T:RolePlus.ExternModule.API.Engine.Extensions.ComponentExtensions
+  fullName: RolePlus.ExternModule.API.Engine.Extensions.ComponentExtensions
+  nameWithType: ComponentExtensions
+- uid: RolePlus.ExternModule.API.Engine.Extensions.ComponentExtensions.AddActorComponent*
+  name: AddActorComponent
+  href: api/RolePlus.ExternModule.API.Engine.Extensions.ComponentExtensions.html#RolePlus_ExternModule_API_Engine_Extensions_ComponentExtensions_AddActorComponent_
+  commentId: Overload:RolePlus.ExternModule.API.Engine.Extensions.ComponentExtensions.AddActorComponent
+  isSpec: "True"
+  fullName: RolePlus.ExternModule.API.Engine.Extensions.ComponentExtensions.AddActorComponent
+  nameWithType: ComponentExtensions.AddActorComponent
+- uid: RolePlus.ExternModule.API.Engine.Extensions.ComponentExtensions.AddActorComponent``1(GameObject,System.String)
+  name: AddActorComponent<T>(GameObject, String)
+  href: api/RolePlus.ExternModule.API.Engine.Extensions.ComponentExtensions.html#RolePlus_ExternModule_API_Engine_Extensions_ComponentExtensions_AddActorComponent__1_GameObject_System_String_
+  commentId: M:RolePlus.ExternModule.API.Engine.Extensions.ComponentExtensions.AddActorComponent``1(GameObject,System.String)
+  name.vb: AddActorComponent(Of T)(GameObject, String)
+  fullName: RolePlus.ExternModule.API.Engine.Extensions.ComponentExtensions.AddActorComponent<T>(GameObject, System.String)
+  fullName.vb: RolePlus.ExternModule.API.Engine.Extensions.ComponentExtensions.AddActorComponent(Of T)(GameObject, System.String)
+  nameWithType: ComponentExtensions.AddActorComponent<T>(GameObject, String)
+  nameWithType.vb: ComponentExtensions.AddActorComponent(Of T)(GameObject, String)
+- uid: RolePlus.ExternModule.API.Engine.Extensions.ComponentExtensions.AddActorComponent``1(Player,System.String)
+  name: AddActorComponent<T>(Player, String)
+  href: api/RolePlus.ExternModule.API.Engine.Extensions.ComponentExtensions.html#RolePlus_ExternModule_API_Engine_Extensions_ComponentExtensions_AddActorComponent__1_Player_System_String_
+  commentId: M:RolePlus.ExternModule.API.Engine.Extensions.ComponentExtensions.AddActorComponent``1(Player,System.String)
+  name.vb: AddActorComponent(Of T)(Player, String)
+  fullName: RolePlus.ExternModule.API.Engine.Extensions.ComponentExtensions.AddActorComponent<T>(Player, System.String)
+  fullName.vb: RolePlus.ExternModule.API.Engine.Extensions.ComponentExtensions.AddActorComponent(Of T)(Player, System.String)
+  nameWithType: ComponentExtensions.AddActorComponent<T>(Player, String)
+  nameWithType.vb: ComponentExtensions.AddActorComponent(Of T)(Player, String)
+- uid: RolePlus.ExternModule.API.Engine.Extensions.ComponentExtensions.AddActorComponent``1(RolePlus.ExternModule.API.Engine.Framework.AActor,System.String)
+  name: AddActorComponent<T>(AActor, String)
+  href: api/RolePlus.ExternModule.API.Engine.Extensions.ComponentExtensions.html#RolePlus_ExternModule_API_Engine_Extensions_ComponentExtensions_AddActorComponent__1_RolePlus_ExternModule_API_Engine_Framework_AActor_System_String_
+  commentId: M:RolePlus.ExternModule.API.Engine.Extensions.ComponentExtensions.AddActorComponent``1(RolePlus.ExternModule.API.Engine.Framework.AActor,System.String)
+  name.vb: AddActorComponent(Of T)(AActor, String)
+  fullName: RolePlus.ExternModule.API.Engine.Extensions.ComponentExtensions.AddActorComponent<T>(RolePlus.ExternModule.API.Engine.Framework.AActor, System.String)
+  fullName.vb: RolePlus.ExternModule.API.Engine.Extensions.ComponentExtensions.AddActorComponent(Of T)(RolePlus.ExternModule.API.Engine.Framework.AActor, System.String)
+  nameWithType: ComponentExtensions.AddActorComponent<T>(AActor, String)
+  nameWithType.vb: ComponentExtensions.AddActorComponent(Of T)(AActor, String)
+- uid: RolePlus.ExternModule.API.Engine.Extensions.ComponentExtensions.GetActiveActorComponentsAll(Player)
+  name: GetActiveActorComponentsAll(Player)
+  href: api/RolePlus.ExternModule.API.Engine.Extensions.ComponentExtensions.html#RolePlus_ExternModule_API_Engine_Extensions_ComponentExtensions_GetActiveActorComponentsAll_Player_
+  commentId: M:RolePlus.ExternModule.API.Engine.Extensions.ComponentExtensions.GetActiveActorComponentsAll(Player)
+  fullName: RolePlus.ExternModule.API.Engine.Extensions.ComponentExtensions.GetActiveActorComponentsAll(Player)
+  nameWithType: ComponentExtensions.GetActiveActorComponentsAll(Player)
+- uid: RolePlus.ExternModule.API.Engine.Extensions.ComponentExtensions.GetActiveActorComponentsAll*
+  name: GetActiveActorComponentsAll
+  href: api/RolePlus.ExternModule.API.Engine.Extensions.ComponentExtensions.html#RolePlus_ExternModule_API_Engine_Extensions_ComponentExtensions_GetActiveActorComponentsAll_
+  commentId: Overload:RolePlus.ExternModule.API.Engine.Extensions.ComponentExtensions.GetActiveActorComponentsAll
+  isSpec: "True"
+  fullName: RolePlus.ExternModule.API.Engine.Extensions.ComponentExtensions.GetActiveActorComponentsAll
+  nameWithType: ComponentExtensions.GetActiveActorComponentsAll
+- uid: RolePlus.ExternModule.API.Engine.Extensions.ComponentExtensions.GetActiveComponentsAll(GameObject)
+  name: GetActiveComponentsAll(GameObject)
+  href: api/RolePlus.ExternModule.API.Engine.Extensions.ComponentExtensions.html#RolePlus_ExternModule_API_Engine_Extensions_ComponentExtensions_GetActiveComponentsAll_GameObject_
+  commentId: M:RolePlus.ExternModule.API.Engine.Extensions.ComponentExtensions.GetActiveComponentsAll(GameObject)
+  fullName: RolePlus.ExternModule.API.Engine.Extensions.ComponentExtensions.GetActiveComponentsAll(GameObject)
+  nameWithType: ComponentExtensions.GetActiveComponentsAll(GameObject)
+- uid: RolePlus.ExternModule.API.Engine.Extensions.ComponentExtensions.GetActiveComponentsAll*
+  name: GetActiveComponentsAll
+  href: api/RolePlus.ExternModule.API.Engine.Extensions.ComponentExtensions.html#RolePlus_ExternModule_API_Engine_Extensions_ComponentExtensions_GetActiveComponentsAll_
+  commentId: Overload:RolePlus.ExternModule.API.Engine.Extensions.ComponentExtensions.GetActiveComponentsAll
+  isSpec: "True"
+  fullName: RolePlus.ExternModule.API.Engine.Extensions.ComponentExtensions.GetActiveComponentsAll
+  nameWithType: ComponentExtensions.GetActiveComponentsAll
+- uid: RolePlus.ExternModule.API.Engine.Extensions.ComponentExtensions.GetActorComponent*
+  name: GetActorComponent
+  href: api/RolePlus.ExternModule.API.Engine.Extensions.ComponentExtensions.html#RolePlus_ExternModule_API_Engine_Extensions_ComponentExtensions_GetActorComponent_
+  commentId: Overload:RolePlus.ExternModule.API.Engine.Extensions.ComponentExtensions.GetActorComponent
+  isSpec: "True"
+  fullName: RolePlus.ExternModule.API.Engine.Extensions.ComponentExtensions.GetActorComponent
+  nameWithType: ComponentExtensions.GetActorComponent
+- uid: RolePlus.ExternModule.API.Engine.Extensions.ComponentExtensions.GetActorComponent``1(GameObject)
+  name: GetActorComponent<T>(GameObject)
+  href: api/RolePlus.ExternModule.API.Engine.Extensions.ComponentExtensions.html#RolePlus_ExternModule_API_Engine_Extensions_ComponentExtensions_GetActorComponent__1_GameObject_
+  commentId: M:RolePlus.ExternModule.API.Engine.Extensions.ComponentExtensions.GetActorComponent``1(GameObject)
+  name.vb: GetActorComponent(Of T)(GameObject)
+  fullName: RolePlus.ExternModule.API.Engine.Extensions.ComponentExtensions.GetActorComponent<T>(GameObject)
+  fullName.vb: RolePlus.ExternModule.API.Engine.Extensions.ComponentExtensions.GetActorComponent(Of T)(GameObject)
+  nameWithType: ComponentExtensions.GetActorComponent<T>(GameObject)
+  nameWithType.vb: ComponentExtensions.GetActorComponent(Of T)(GameObject)
+- uid: RolePlus.ExternModule.API.Engine.Extensions.ComponentExtensions.GetActorComponent``1(Player)
+  name: GetActorComponent<T>(Player)
+  href: api/RolePlus.ExternModule.API.Engine.Extensions.ComponentExtensions.html#RolePlus_ExternModule_API_Engine_Extensions_ComponentExtensions_GetActorComponent__1_Player_
+  commentId: M:RolePlus.ExternModule.API.Engine.Extensions.ComponentExtensions.GetActorComponent``1(Player)
+  name.vb: GetActorComponent(Of T)(Player)
+  fullName: RolePlus.ExternModule.API.Engine.Extensions.ComponentExtensions.GetActorComponent<T>(Player)
+  fullName.vb: RolePlus.ExternModule.API.Engine.Extensions.ComponentExtensions.GetActorComponent(Of T)(Player)
+  nameWithType: ComponentExtensions.GetActorComponent<T>(Player)
+  nameWithType.vb: ComponentExtensions.GetActorComponent(Of T)(Player)
+- uid: RolePlus.ExternModule.API.Engine.Extensions.ComponentExtensions.HasActorComponent*
+  name: HasActorComponent
+  href: api/RolePlus.ExternModule.API.Engine.Extensions.ComponentExtensions.html#RolePlus_ExternModule_API_Engine_Extensions_ComponentExtensions_HasActorComponent_
+  commentId: Overload:RolePlus.ExternModule.API.Engine.Extensions.ComponentExtensions.HasActorComponent
+  isSpec: "True"
+  fullName: RolePlus.ExternModule.API.Engine.Extensions.ComponentExtensions.HasActorComponent
+  nameWithType: ComponentExtensions.HasActorComponent
+- uid: RolePlus.ExternModule.API.Engine.Extensions.ComponentExtensions.HasActorComponent``1(GameObject)
+  name: HasActorComponent<T>(GameObject)
+  href: api/RolePlus.ExternModule.API.Engine.Extensions.ComponentExtensions.html#RolePlus_ExternModule_API_Engine_Extensions_ComponentExtensions_HasActorComponent__1_GameObject_
+  commentId: M:RolePlus.ExternModule.API.Engine.Extensions.ComponentExtensions.HasActorComponent``1(GameObject)
+  name.vb: HasActorComponent(Of T)(GameObject)
+  fullName: RolePlus.ExternModule.API.Engine.Extensions.ComponentExtensions.HasActorComponent<T>(GameObject)
+  fullName.vb: RolePlus.ExternModule.API.Engine.Extensions.ComponentExtensions.HasActorComponent(Of T)(GameObject)
+  nameWithType: ComponentExtensions.HasActorComponent<T>(GameObject)
+  nameWithType.vb: ComponentExtensions.HasActorComponent(Of T)(GameObject)
+- uid: RolePlus.ExternModule.API.Engine.Extensions.ComponentExtensions.HasActorComponent``1(Player)
+  name: HasActorComponent<T>(Player)
+  href: api/RolePlus.ExternModule.API.Engine.Extensions.ComponentExtensions.html#RolePlus_ExternModule_API_Engine_Extensions_ComponentExtensions_HasActorComponent__1_Player_
+  commentId: M:RolePlus.ExternModule.API.Engine.Extensions.ComponentExtensions.HasActorComponent``1(Player)
+  name.vb: HasActorComponent(Of T)(Player)
+  fullName: RolePlus.ExternModule.API.Engine.Extensions.ComponentExtensions.HasActorComponent<T>(Player)
+  fullName.vb: RolePlus.ExternModule.API.Engine.Extensions.ComponentExtensions.HasActorComponent(Of T)(Player)
+  nameWithType: ComponentExtensions.HasActorComponent<T>(Player)
+  nameWithType.vb: ComponentExtensions.HasActorComponent(Of T)(Player)
+- uid: RolePlus.ExternModule.API.Engine.Extensions.ComponentExtensions.TryGetActorComponent*
+  name: TryGetActorComponent
+  href: api/RolePlus.ExternModule.API.Engine.Extensions.ComponentExtensions.html#RolePlus_ExternModule_API_Engine_Extensions_ComponentExtensions_TryGetActorComponent_
+  commentId: Overload:RolePlus.ExternModule.API.Engine.Extensions.ComponentExtensions.TryGetActorComponent
+  isSpec: "True"
+  fullName: RolePlus.ExternModule.API.Engine.Extensions.ComponentExtensions.TryGetActorComponent
+  nameWithType: ComponentExtensions.TryGetActorComponent
+- uid: RolePlus.ExternModule.API.Engine.Extensions.ComponentExtensions.TryGetActorComponent``1(GameObject,``0@)
+  name: TryGetActorComponent<T>(GameObject, out T)
+  href: api/RolePlus.ExternModule.API.Engine.Extensions.ComponentExtensions.html#RolePlus_ExternModule_API_Engine_Extensions_ComponentExtensions_TryGetActorComponent__1_GameObject___0__
+  commentId: M:RolePlus.ExternModule.API.Engine.Extensions.ComponentExtensions.TryGetActorComponent``1(GameObject,``0@)
+  name.vb: TryGetActorComponent(Of T)(GameObject, ByRef T)
+  fullName: RolePlus.ExternModule.API.Engine.Extensions.ComponentExtensions.TryGetActorComponent<T>(GameObject, out T)
+  fullName.vb: RolePlus.ExternModule.API.Engine.Extensions.ComponentExtensions.TryGetActorComponent(Of T)(GameObject, ByRef T)
+  nameWithType: ComponentExtensions.TryGetActorComponent<T>(GameObject, out T)
+  nameWithType.vb: ComponentExtensions.TryGetActorComponent(Of T)(GameObject, ByRef T)
+- uid: RolePlus.ExternModule.API.Engine.Extensions.ComponentExtensions.TryGetActorComponent``1(Player,``0@)
+  name: TryGetActorComponent<T>(Player, out T)
+  href: api/RolePlus.ExternModule.API.Engine.Extensions.ComponentExtensions.html#RolePlus_ExternModule_API_Engine_Extensions_ComponentExtensions_TryGetActorComponent__1_Player___0__
+  commentId: M:RolePlus.ExternModule.API.Engine.Extensions.ComponentExtensions.TryGetActorComponent``1(Player,``0@)
+  name.vb: TryGetActorComponent(Of T)(Player, ByRef T)
+  fullName: RolePlus.ExternModule.API.Engine.Extensions.ComponentExtensions.TryGetActorComponent<T>(Player, out T)
+  fullName.vb: RolePlus.ExternModule.API.Engine.Extensions.ComponentExtensions.TryGetActorComponent(Of T)(Player, ByRef T)
+  nameWithType: ComponentExtensions.TryGetActorComponent<T>(Player, out T)
+  nameWithType.vb: ComponentExtensions.TryGetActorComponent(Of T)(Player, ByRef T)
 - uid: RolePlus.ExternModule.API.Engine.Framework
   name: RolePlus.ExternModule.API.Engine.Framework
   href: api/RolePlus.ExternModule.API.Engine.Framework.html
