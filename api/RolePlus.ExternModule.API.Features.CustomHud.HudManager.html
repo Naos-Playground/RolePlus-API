@@ -1,0 +1,372 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class HudManager
+   | RolePlus Docs </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class HudManager
+   | RolePlus Docs ">
+    <meta name="generator" content="docfx 2.59.2.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:rel" content="../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+        
+        <div id="search-results">
+          <div class="search-list">Search Results for <span></span></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination" data-first="First" data-prev="Previous" data-next="Next" data-last="Last"></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="RolePlus.ExternModule.API.Features.CustomHud.HudManager">
+  
+  
+  <h1 id="RolePlus_ExternModule_API_Features_CustomHud_HudManager" data-uid="RolePlus.ExternModule.API.Features.CustomHud.HudManager" class="text-break">Class HudManager
+  </h1>
+  <div class="markdown level0 summary"><p>Manages hints on a player&apos;s display.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><span class="xref">System.Object</span></div>
+    <div class="level1"><a class="xref" href="RolePlus.ExternModule.API.Features.Controllers.ObjectController.html">ObjectController</a></div>
+    <div class="level2"><a class="xref" href="RolePlus.ExternModule.API.Features.Controllers.PlayerScriptController.html">PlayerScriptController</a></div>
+    <div class="level3"><span class="xref">HudManager</span></div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <a class="xref" href="RolePlus.ExternModule.API.Features.Controllers.PlayerScriptController.html#RolePlus_ExternModule_API_Features_Controllers_PlayerScriptController_Start">PlayerScriptController.Start()</a>
+    </div>
+    <div>
+      <a class="xref" href="RolePlus.ExternModule.API.Features.Controllers.PlayerScriptController.html#RolePlus_ExternModule_API_Features_Controllers_PlayerScriptController_SubscribeEvents">PlayerScriptController.SubscribeEvents()</a>
+    </div>
+    <div>
+      <a class="xref" href="RolePlus.ExternModule.API.Features.Controllers.PlayerScriptController.html#RolePlus_ExternModule_API_Features_Controllers_PlayerScriptController_UnsubscribeEvents">PlayerScriptController.UnsubscribeEvents()</a>
+    </div>
+    <div>
+      <a class="xref" href="RolePlus.ExternModule.API.Features.Controllers.PlayerScriptController.html#RolePlus_ExternModule_API_Features_Controllers_PlayerScriptController_OnLeft_LeftEventArgs_">PlayerScriptController.OnLeft(LeftEventArgs)</a>
+    </div>
+    <div>
+      <a class="xref" href="RolePlus.ExternModule.API.Features.Controllers.PlayerScriptController.html#RolePlus_ExternModule_API_Features_Controllers_PlayerScriptController_Check_Player_">PlayerScriptController.Check(Player)</a>
+    </div>
+    <div>
+      <a class="xref" href="RolePlus.ExternModule.API.Features.Controllers.ObjectController.html#RolePlus_ExternModule_API_Features_Controllers_ObjectController_Destroy">ObjectController.Destroy()</a>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="RolePlus.ExternModule.API.Features.CustomHud.html">RolePlus.ExternModule.API.Features.CustomHud</a></h6>
+  <h6><strong>Assembly</strong>: RolePlus.dll</h6>
+  <h5 id="RolePlus_ExternModule_API_Features_CustomHud_HudManager_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public sealed class HudManager : PlayerScriptController</code></pre>
+  </div>
+  <h3 id="properties">Properties
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/TeslaITStudios/RolePlus/new/dev/apiSpec/new?filename=RolePlus_ExternModule_API_Features_CustomHud_HudManager_Displays.md&amp;value=---%0Auid%3A%20RolePlus.ExternModule.API.Features.CustomHud.HudManager.Displays%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/TeslaITStudios/RolePlus/blob/master/RolePlus/ExternModule/API/Features/CustomHud/HudManager.cs/#L37">View Source</a>
+  </span>
+  <a id="RolePlus_ExternModule_API_Features_CustomHud_HudManager_Displays_" data-uid="RolePlus.ExternModule.API.Features.CustomHud.HudManager.Displays*"></a>
+  <h4 id="RolePlus_ExternModule_API_Features_CustomHud_HudManager_Displays" data-uid="RolePlus.ExternModule.API.Features.CustomHud.HudManager.Displays">Displays</h4>
+  <div class="markdown level1 summary"><p>Gets all attached <a class="xref" href="RolePlus.ExternModule.API.Features.CustomHud.HudScreen.html">HudScreen</a> instances.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public SortedList&lt;ScreenLocation, HudScreen&gt; Displays { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.SortedList</span>&lt;<a class="xref" href="RolePlus.ExternModule.API.Enums.ScreenLocation.html">ScreenLocation</a>, <a class="xref" href="RolePlus.ExternModule.API.Features.CustomHud.HudScreen.html">HudScreen</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/TeslaITStudios/RolePlus/new/dev/apiSpec/new?filename=RolePlus_ExternModule_API_Features_CustomHud_HudManager_Instances.md&amp;value=---%0Auid%3A%20RolePlus.ExternModule.API.Features.CustomHud.HudManager.Instances%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/TeslaITStudios/RolePlus/blob/master/RolePlus/ExternModule/API/Features/CustomHud/HudManager.cs/#L32">View Source</a>
+  </span>
+  <a id="RolePlus_ExternModule_API_Features_CustomHud_HudManager_Instances_" data-uid="RolePlus.ExternModule.API.Features.CustomHud.HudManager.Instances*"></a>
+  <h4 id="RolePlus_ExternModule_API_Features_CustomHud_HudManager_Instances" data-uid="RolePlus.ExternModule.API.Features.CustomHud.HudManager.Instances">Instances</h4>
+  <div class="markdown level1 summary"><p>Gets all instance of the <a class="xref" href="RolePlus.ExternModule.API.Features.CustomHud.HudManager.html">HudManager</a> component.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Dictionary&lt;Exiled.API.Features.Player, HudManager&gt; Instances { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.Dictionary</span>&lt;<span class="xref">Exiled.API.Features.Player</span>, <a class="xref" href="RolePlus.ExternModule.API.Features.CustomHud.HudManager.html">HudManager</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/TeslaITStudios/RolePlus/new/dev/apiSpec/new?filename=RolePlus_ExternModule_API_Features_CustomHud_HudManager_Owner.md&amp;value=---%0Auid%3A%20RolePlus.ExternModule.API.Features.CustomHud.HudManager.Owner%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/TeslaITStudios/RolePlus/blob/master/RolePlus/ExternModule/API/Features/CustomHud/HudManager.cs/#L47">View Source</a>
+  </span>
+  <a id="RolePlus_ExternModule_API_Features_CustomHud_HudManager_Owner_" data-uid="RolePlus.ExternModule.API.Features.CustomHud.HudManager.Owner*"></a>
+  <h4 id="RolePlus_ExternModule_API_Features_CustomHud_HudManager_Owner" data-uid="RolePlus.ExternModule.API.Features.CustomHud.HudManager.Owner">Owner</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override Exiled.API.Features.Player Owner { get; protected set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Exiled.API.Features.Player</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="RolePlus.ExternModule.API.Features.Controllers.PlayerScriptController.html#RolePlus_ExternModule_API_Features_Controllers_PlayerScriptController_Owner">PlayerScriptController.Owner</a></div>
+  <h3 id="methods">Methods
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/TeslaITStudios/RolePlus/new/dev/apiSpec/new?filename=RolePlus_ExternModule_API_Features_CustomHud_HudManager_Awake.md&amp;value=---%0Auid%3A%20RolePlus.ExternModule.API.Features.CustomHud.HudManager.Awake%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/TeslaITStudios/RolePlus/blob/master/RolePlus/ExternModule/API/Features/CustomHud/HudManager.cs/#L64">View Source</a>
+  </span>
+  <a id="RolePlus_ExternModule_API_Features_CustomHud_HudManager_Awake_" data-uid="RolePlus.ExternModule.API.Features.CustomHud.HudManager.Awake*"></a>
+  <h4 id="RolePlus_ExternModule_API_Features_CustomHud_HudManager_Awake" data-uid="RolePlus.ExternModule.API.Features.CustomHud.HudManager.Awake">Awake()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override void Awake()</code></pre>
+  </div>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="RolePlus.ExternModule.API.Features.Controllers.PlayerScriptController.html#RolePlus_ExternModule_API_Features_Controllers_PlayerScriptController_Awake">PlayerScriptController.Awake()</a></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/TeslaITStudios/RolePlus/new/dev/apiSpec/new?filename=RolePlus_ExternModule_API_Features_CustomHud_HudManager_FixedUpdate.md&amp;value=---%0Auid%3A%20RolePlus.ExternModule.API.Features.CustomHud.HudManager.FixedUpdate%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/TeslaITStudios/RolePlus/blob/master/RolePlus/ExternModule/API/Features/CustomHud/HudManager.cs/#L71">View Source</a>
+  </span>
+  <a id="RolePlus_ExternModule_API_Features_CustomHud_HudManager_FixedUpdate_" data-uid="RolePlus.ExternModule.API.Features.CustomHud.HudManager.FixedUpdate*"></a>
+  <h4 id="RolePlus_ExternModule_API_Features_CustomHud_HudManager_FixedUpdate" data-uid="RolePlus.ExternModule.API.Features.CustomHud.HudManager.FixedUpdate">FixedUpdate()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override void FixedUpdate()</code></pre>
+  </div>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="RolePlus.ExternModule.API.Features.Controllers.PlayerScriptController.html#RolePlus_ExternModule_API_Features_Controllers_PlayerScriptController_FixedUpdate">PlayerScriptController.FixedUpdate()</a></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/TeslaITStudios/RolePlus/new/dev/apiSpec/new?filename=RolePlus_ExternModule_API_Features_CustomHud_HudManager_PartiallyDestroy.md&amp;value=---%0Auid%3A%20RolePlus.ExternModule.API.Features.CustomHud.HudManager.PartiallyDestroy%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/TeslaITStudios/RolePlus/blob/master/RolePlus/ExternModule/API/Features/CustomHud/HudManager.cs/#L82">View Source</a>
+  </span>
+  <a id="RolePlus_ExternModule_API_Features_CustomHud_HudManager_PartiallyDestroy_" data-uid="RolePlus.ExternModule.API.Features.CustomHud.HudManager.PartiallyDestroy*"></a>
+  <h4 id="RolePlus_ExternModule_API_Features_CustomHud_HudManager_PartiallyDestroy" data-uid="RolePlus.ExternModule.API.Features.CustomHud.HudManager.PartiallyDestroy">PartiallyDestroy()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override void PartiallyDestroy()</code></pre>
+  </div>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="RolePlus.ExternModule.API.Features.Controllers.PlayerScriptController.html#RolePlus_ExternModule_API_Features_Controllers_PlayerScriptController_PartiallyDestroy">PlayerScriptController.PartiallyDestroy()</a></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/TeslaITStudios/RolePlus/new/dev/apiSpec/new?filename=RolePlus_ExternModule_API_Features_CustomHud_HudManager_ShowHint_Exiled_API_Features_Player_System_String_System_Single_System_Boolean_RolePlus_ExternModule_API_Enums_ScreenLocation_.md&amp;value=---%0Auid%3A%20RolePlus.ExternModule.API.Features.CustomHud.HudManager.ShowHint(Exiled.API.Features.Player%2CSystem.String%2CSystem.Single%2CSystem.Boolean%2CRolePlus.ExternModule.API.Enums.ScreenLocation)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/TeslaITStudios/RolePlus/blob/master/RolePlus/ExternModule/API/Features/CustomHud/HudManager.cs/#L57">View Source</a>
+  </span>
+  <a id="RolePlus_ExternModule_API_Features_CustomHud_HudManager_ShowHint_" data-uid="RolePlus.ExternModule.API.Features.CustomHud.HudManager.ShowHint*"></a>
+  <h4 id="RolePlus_ExternModule_API_Features_CustomHud_HudManager_ShowHint_Exiled_API_Features_Player_System_String_System_Single_System_Boolean_RolePlus_ExternModule_API_Enums_ScreenLocation_" data-uid="RolePlus.ExternModule.API.Features.CustomHud.HudManager.ShowHint(Exiled.API.Features.Player,System.String,System.Single,System.Boolean,RolePlus.ExternModule.API.Enums.ScreenLocation)">ShowHint(Exiled.API.Features.Player, String, Single, Boolean, ScreenLocation)</h4>
+  <div class="markdown level1 summary"><p>Displays a hint to a player.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void ShowHint(Exiled.API.Features.Player player, string message, float duration = 3F, bool overrideCurrent = true, ScreenLocation displayLocation = ScreenLocation.MiddleBottom)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Exiled.API.Features.Player</span></td>
+        <td><span class="parametername">player</span></td>
+        <td><p>The player to show the hint to.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">message</span></td>
+        <td><p>The message to display.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td><span class="parametername">duration</span></td>
+        <td><p>The duration of the hint.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">overrideCurrent</span></td>
+        <td><p>Overrides the active hint.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="RolePlus.ExternModule.API.Enums.ScreenLocation.html">ScreenLocation</a></td>
+        <td><span class="parametername">displayLocation</span></td>
+        <td><p>The location to display the hint.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/TeslaITStudios/RolePlus/new/dev/apiSpec/new?filename=RolePlus_ExternModule_API_Features_CustomHud_HudManager.md&amp;value=---%0Auid%3A%20RolePlus.ExternModule.API.Features.CustomHud.HudManager%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/TeslaITStudios/RolePlus/blob/master/RolePlus/ExternModule/API/Features/CustomHud/HudManager.cs/#L21" class="contribution-link">View Source</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

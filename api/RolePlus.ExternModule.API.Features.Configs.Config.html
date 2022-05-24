@@ -1,0 +1,955 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class Config
+   | RolePlus Docs </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class Config
+   | RolePlus Docs ">
+    <meta name="generator" content="docfx 2.59.2.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:rel" content="../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+        
+        <div id="search-results">
+          <div class="search-list">Search Results for <span></span></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination" data-first="First" data-prev="Previous" data-next="Next" data-last="Last"></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="RolePlus.ExternModule.API.Features.Configs.Config">
+  
+  
+  <h1 id="RolePlus_ExternModule_API_Features_Configs_Config" data-uid="RolePlus.ExternModule.API.Features.Configs.Config" class="text-break">Class Config
+  </h1>
+  <div class="markdown level0 summary"><p>The base class that handles the config system.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><span class="xref">System.Object</span></div>
+    <div class="level1"><a class="xref" href="RolePlus.ExternModule.API.Engine.Core.TypeCastObject-1.html">TypeCastObject</a>&lt;<a class="xref" href="RolePlus.ExternModule.API.Features.Configs.Config.html">Config</a>&gt;</div>
+    <div class="level2"><span class="xref">Config</span></div>
+  </div>
+  <div classs="implements">
+    <h5>Implements</h5>
+    <div><a class="xref" href="RolePlus.ExternModule.API.Features.Configs.IConfig.html">IConfig</a></div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <a class="xref" href="RolePlus.ExternModule.API.Engine.Core.TypeCastObject-1.html#RolePlus_ExternModule_API_Engine_Core_TypeCastObject_1_Cast__1">TypeCastObject&lt;Config&gt;.Cast&lt;T&gt;()</a>
+    </div>
+    <div>
+      <a class="xref" href="RolePlus.ExternModule.API.Engine.Core.TypeCastObject-1.html#RolePlus_ExternModule_API_Engine_Core_TypeCastObject_1_Cast__1___0__">TypeCastObject&lt;Config&gt;.Cast&lt;T&gt;(T)</a>
+    </div>
+    <div>
+      <span class="xref">System.Object.ToString()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ReferenceEquals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetHashCode()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetType()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.MemberwiseClone()</span>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="RolePlus.ExternModule.API.Features.Configs.html">RolePlus.ExternModule.API.Features.Configs</a></h6>
+  <h6><strong>Assembly</strong>: RolePlus.dll</h6>
+  <h5 id="RolePlus_ExternModule_API_Features_Configs_Config_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public abstract class Config : TypeCastObject&lt;Config&gt;, IConfig</code></pre>
+  </div>
+  <h3 id="properties">Properties
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/TeslaITStudios/RolePlus/new/dev/apiSpec/new?filename=RolePlus_ExternModule_API_Features_Configs_Config_Base.md&amp;value=---%0Auid%3A%20RolePlus.ExternModule.API.Features.Configs.Config.Base%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/TeslaITStudios/RolePlus/blob/master/RolePlus/ExternModule/API/Features/Configs/Config.cs/#L42">View Source</a>
+  </span>
+  <a id="RolePlus_ExternModule_API_Features_Configs_Config_Base_" data-uid="RolePlus.ExternModule.API.Features.Configs.Config.Base*"></a>
+  <h4 id="RolePlus_ExternModule_API_Features_Configs_Config_Base" data-uid="RolePlus.ExternModule.API.Features.Configs.Config.Base">Base</h4>
+  <div class="markdown level1 summary"><p>Gets or sets the base <a class="xref" href="RolePlus.ExternModule.API.Features.Configs.Config.html">Config</a> instance.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Config Base { get; protected set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="RolePlus.ExternModule.API.Features.Configs.Config.html">Config</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/TeslaITStudios/RolePlus/new/dev/apiSpec/new?filename=RolePlus_ExternModule_API_Features_Configs_Config_Data.md&amp;value=---%0Auid%3A%20RolePlus.ExternModule.API.Features.Configs.Config.Data%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/TeslaITStudios/RolePlus/blob/master/RolePlus/ExternModule/API/Features/Configs/Config.cs/#L37">View Source</a>
+  </span>
+  <a id="RolePlus_ExternModule_API_Features_Configs_Config_Data_" data-uid="RolePlus.ExternModule.API.Features.Configs.Config.Data*"></a>
+  <h4 id="RolePlus_ExternModule_API_Features_Configs_Config_Data" data-uid="RolePlus.ExternModule.API.Features.Configs.Config.Data">Data</h4>
+  <div class="markdown level1 summary"><p>Gets a <span class="xref">System.Collections.Generic.IReadOnlyCollection&lt;T&gt;</span> containing all the <a class="xref" href="RolePlus.ExternModule.API.Features.Configs.IConfig.html">IConfig</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IReadOnlyCollection&lt;IConfig&gt; Data { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.IReadOnlyCollection</span>&lt;<a class="xref" href="RolePlus.ExternModule.API.Features.Configs.IConfig.html">IConfig</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/TeslaITStudios/RolePlus/new/dev/apiSpec/new?filename=RolePlus_ExternModule_API_Features_Configs_Config_Folder.md&amp;value=---%0Auid%3A%20RolePlus.ExternModule.API.Features.Configs.Config.Folder%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/TeslaITStudios/RolePlus/blob/master/RolePlus/ExternModule/API/Features/Configs/Config.cs/#L53">View Source</a>
+  </span>
+  <a id="RolePlus_ExternModule_API_Features_Configs_Config_Folder_" data-uid="RolePlus.ExternModule.API.Features.Configs.Config.Folder*"></a>
+  <h4 id="RolePlus_ExternModule_API_Features_Configs_Config_Folder" data-uid="RolePlus.ExternModule.API.Features.Configs.Config.Folder">Folder</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual string Folder { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/TeslaITStudios/RolePlus/new/dev/apiSpec/new?filename=RolePlus_ExternModule_API_Features_Configs_Config_IsEnabled.md&amp;value=---%0Auid%3A%20RolePlus.ExternModule.API.Features.Configs.Config.IsEnabled%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/TeslaITStudios/RolePlus/blob/master/RolePlus/ExternModule/API/Features/Configs/Config.cs/#L50">View Source</a>
+  </span>
+  <a id="RolePlus_ExternModule_API_Features_Configs_Config_IsEnabled_" data-uid="RolePlus.ExternModule.API.Features.Configs.Config.IsEnabled*"></a>
+  <h4 id="RolePlus_ExternModule_API_Features_Configs_Config_IsEnabled" data-uid="RolePlus.ExternModule.API.Features.Configs.Config.IsEnabled">IsEnabled</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual bool IsEnabled { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/TeslaITStudios/RolePlus/new/dev/apiSpec/new?filename=RolePlus_ExternModule_API_Features_Configs_Config_List.md&amp;value=---%0Auid%3A%20RolePlus.ExternModule.API.Features.Configs.Config.List%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/TeslaITStudios/RolePlus/blob/master/RolePlus/ExternModule/API/Features/Configs/Config.cs/#L32">View Source</a>
+  </span>
+  <a id="RolePlus_ExternModule_API_Features_Configs_Config_List_" data-uid="RolePlus.ExternModule.API.Features.Configs.Config.List*"></a>
+  <h4 id="RolePlus_ExternModule_API_Features_Configs_Config_List" data-uid="RolePlus.ExternModule.API.Features.Configs.Config.List">List</h4>
+  <div class="markdown level1 summary"><p>Gets a <span class="xref">System.Collections.Generic.IReadOnlyCollection&lt;T&gt;</span> containing all the <a class="xref" href="RolePlus.ExternModule.API.Features.Configs.Config.html">Config</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static IReadOnlyCollection&lt;Config&gt; List { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.IReadOnlyCollection</span>&lt;<a class="xref" href="RolePlus.ExternModule.API.Features.Configs.Config.html">Config</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/TeslaITStudios/RolePlus/new/dev/apiSpec/new?filename=RolePlus_ExternModule_API_Features_Configs_Config_Name.md&amp;value=---%0Auid%3A%20RolePlus.ExternModule.API.Features.Configs.Config.Name%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/TeslaITStudios/RolePlus/blob/master/RolePlus/ExternModule/API/Features/Configs/Config.cs/#L56">View Source</a>
+  </span>
+  <a id="RolePlus_ExternModule_API_Features_Configs_Config_Name_" data-uid="RolePlus.ExternModule.API.Features.Configs.Config.Name*"></a>
+  <h4 id="RolePlus_ExternModule_API_Features_Configs_Config_Name" data-uid="RolePlus.ExternModule.API.Features.Configs.Config.Name">Name</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual string Name { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/TeslaITStudios/RolePlus/new/dev/apiSpec/new?filename=RolePlus_ExternModule_API_Features_Configs_Config_Path.md&amp;value=---%0Auid%3A%20RolePlus.ExternModule.API.Features.Configs.Config.Path%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/TeslaITStudios/RolePlus/blob/master/RolePlus/ExternModule/API/Features/Configs/Config.cs/#L47">View Source</a>
+  </span>
+  <a id="RolePlus_ExternModule_API_Features_Configs_Config_Path_" data-uid="RolePlus.ExternModule.API.Features.Configs.Config.Path*"></a>
+  <h4 id="RolePlus_ExternModule_API_Features_Configs_Config_Path" data-uid="RolePlus.ExternModule.API.Features.Configs.Config.Path">Path</h4>
+  <div class="markdown level1 summary"><p>Gets the configs&apos; path.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string Path { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/TeslaITStudios/RolePlus/new/dev/apiSpec/new?filename=RolePlus_ExternModule_API_Features_Configs_Config_ShowDebugMessages.md&amp;value=---%0Auid%3A%20RolePlus.ExternModule.API.Features.Configs.Config.ShowDebugMessages%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/TeslaITStudios/RolePlus/blob/master/RolePlus/ExternModule/API/Features/Configs/Config.cs/#L59">View Source</a>
+  </span>
+  <a id="RolePlus_ExternModule_API_Features_Configs_Config_ShowDebugMessages_" data-uid="RolePlus.ExternModule.API.Features.Configs.Config.ShowDebugMessages*"></a>
+  <h4 id="RolePlus_ExternModule_API_Features_Configs_Config_ShowDebugMessages" data-uid="RolePlus.ExternModule.API.Features.Configs.Config.ShowDebugMessages">ShowDebugMessages</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual bool ShowDebugMessages { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/TeslaITStudios/RolePlus/new/dev/apiSpec/new?filename=RolePlus_ExternModule_API_Features_Configs_Config_GenerateNew__1.md&amp;value=---%0Auid%3A%20RolePlus.ExternModule.API.Features.Configs.Config.GenerateNew%60%601%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/TeslaITStudios/RolePlus/blob/master/RolePlus/ExternModule/API/Features/Configs/Config.cs/#L102">View Source</a>
+  </span>
+  <a id="RolePlus_ExternModule_API_Features_Configs_Config_GenerateNew_" data-uid="RolePlus.ExternModule.API.Features.Configs.Config.GenerateNew*"></a>
+  <h4 id="RolePlus_ExternModule_API_Features_Configs_Config_GenerateNew__1" data-uid="RolePlus.ExternModule.API.Features.Configs.Config.GenerateNew``1">GenerateNew&lt;T&gt;()</h4>
+  <div class="markdown level1 summary"><p>Generates a new config of type <code data-dev-comment-type="typeparamref" class="typeparamref">T</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static T GenerateNew&lt;T&gt;()
+
+    where T : Config</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">T</span></td>
+        <td><p>The generated config.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">T</span></td>
+        <td><p>The type of the config.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/TeslaITStudios/RolePlus/new/dev/apiSpec/new?filename=RolePlus_ExternModule_API_Features_Configs_Config_Get_System_String_.md&amp;value=---%0Auid%3A%20RolePlus.ExternModule.API.Features.Configs.Config.Get(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/TeslaITStudios/RolePlus/blob/master/RolePlus/ExternModule/API/Features/Configs/Config.cs/#L73">View Source</a>
+  </span>
+  <a id="RolePlus_ExternModule_API_Features_Configs_Config_Get_" data-uid="RolePlus.ExternModule.API.Features.Configs.Config.Get*"></a>
+  <h4 id="RolePlus_ExternModule_API_Features_Configs_Config_Get_System_String_" data-uid="RolePlus.ExternModule.API.Features.Configs.Config.Get(System.String)">Get(String)</h4>
+  <div class="markdown level1 summary"><p>Gets a <a class="xref" href="RolePlus.ExternModule.API.Features.Configs.Config.html">Config</a> instance given its folder name.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Config Get(string folder)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">folder</span></td>
+        <td><p>The folder of the config to look for.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="RolePlus.ExternModule.API.Features.Configs.Config.html">Config</a></td>
+        <td><p>The corresponding <a class="xref" href="RolePlus.ExternModule.API.Features.Configs.Config.html">Config</a> instance or <span class="xref">null</span> if not found.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/TeslaITStudios/RolePlus/new/dev/apiSpec/new?filename=RolePlus_ExternModule_API_Features_Configs_Config_Get__1.md&amp;value=---%0Auid%3A%20RolePlus.ExternModule.API.Features.Configs.Config.Get%60%601%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/TeslaITStudios/RolePlus/blob/master/RolePlus/ExternModule/API/Features/Configs/Config.cs/#L66">View Source</a>
+  </span>
+  <a id="RolePlus_ExternModule_API_Features_Configs_Config_Get_" data-uid="RolePlus.ExternModule.API.Features.Configs.Config.Get*"></a>
+  <h4 id="RolePlus_ExternModule_API_Features_Configs_Config_Get__1" data-uid="RolePlus.ExternModule.API.Features.Configs.Config.Get``1">Get&lt;T&gt;()</h4>
+  <div class="markdown level1 summary"><p>Gets a <a class="xref" href="RolePlus.ExternModule.API.Features.Configs.Config.html">Config</a> instance given the specified type <code data-dev-comment-type="typeparamref" class="typeparamref">T</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Config Get&lt;T&gt;()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="RolePlus.ExternModule.API.Features.Configs.Config.html">Config</a></td>
+        <td><p>The corresponding <a class="xref" href="RolePlus.ExternModule.API.Features.Configs.Config.html">Config</a> instance or <span class="xref">null</span> if not found.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">T</span></td>
+        <td><p>The type of the config to look for.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/TeslaITStudios/RolePlus/new/dev/apiSpec/new?filename=RolePlus_ExternModule_API_Features_Configs_Config_GetOrCreate_System_String_.md&amp;value=---%0Auid%3A%20RolePlus.ExternModule.API.Features.Configs.Config.GetOrCreate(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/TeslaITStudios/RolePlus/blob/master/RolePlus/ExternModule/API/Features/Configs/Config.cs/#L80">View Source</a>
+  </span>
+  <a id="RolePlus_ExternModule_API_Features_Configs_Config_GetOrCreate_" data-uid="RolePlus.ExternModule.API.Features.Configs.Config.GetOrCreate*"></a>
+  <h4 id="RolePlus_ExternModule_API_Features_Configs_Config_GetOrCreate_System_String_" data-uid="RolePlus.ExternModule.API.Features.Configs.Config.GetOrCreate(System.String)">GetOrCreate(String)</h4>
+  <div class="markdown level1 summary"><p>Gets or creates a <a class="xref" href="RolePlus.ExternModule.API.Features.Configs.Config.html">Config</a> instance given the specified folder name.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Config GetOrCreate(string folder)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">folder</span></td>
+        <td><p>The folder of the config to look for or create.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="RolePlus.ExternModule.API.Features.Configs.Config.html">Config</a></td>
+        <td><p>The corresponding <a class="xref" href="RolePlus.ExternModule.API.Features.Configs.Config.html">Config</a> instance or <span class="xref">null</span> if not found.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/TeslaITStudios/RolePlus/new/dev/apiSpec/new?filename=RolePlus_ExternModule_API_Features_Configs_Config_GetPath_System_String_.md&amp;value=---%0Auid%3A%20RolePlus.ExternModule.API.Features.Configs.Config.GetPath(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/TeslaITStudios/RolePlus/blob/master/RolePlus/ExternModule/API/Features/Configs/Config.cs/#L279">View Source</a>
+  </span>
+  <a id="RolePlus_ExternModule_API_Features_Configs_Config_GetPath_" data-uid="RolePlus.ExternModule.API.Features.Configs.Config.GetPath*"></a>
+  <h4 id="RolePlus_ExternModule_API_Features_Configs_Config_GetPath_System_String_" data-uid="RolePlus.ExternModule.API.Features.Configs.Config.GetPath(System.String)">GetPath(String)</h4>
+  <div class="markdown level1 summary"><p>Gets the path of the specified data given its name.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string GetPath(string name)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">name</span></td>
+        <td><p>The name of the data to be read.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><p>The corresponding data&apos;s path or <span class="xref">null</span> if not found.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/TeslaITStudios/RolePlus/new/dev/apiSpec/new?filename=RolePlus_ExternModule_API_Features_Configs_Config_GetPath__1.md&amp;value=---%0Auid%3A%20RolePlus.ExternModule.API.Features.Configs.Config.GetPath%60%601%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/TeslaITStudios/RolePlus/blob/master/RolePlus/ExternModule/API/Features/Configs/Config.cs/#L271">View Source</a>
+  </span>
+  <a id="RolePlus_ExternModule_API_Features_Configs_Config_GetPath_" data-uid="RolePlus.ExternModule.API.Features.Configs.Config.GetPath*"></a>
+  <h4 id="RolePlus_ExternModule_API_Features_Configs_Config_GetPath__1" data-uid="RolePlus.ExternModule.API.Features.Configs.Config.GetPath``1">GetPath&lt;T&gt;()</h4>
+  <div class="markdown level1 summary"><p>Gets the path of the specified data object of type <code data-dev-comment-type="typeparamref" class="typeparamref">T</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string GetPath&lt;T&gt;()
+
+    where T : class</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><p>The corresponding data&apos;s path or <span class="xref">null</span> if not found.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">T</span></td>
+        <td><p>The type of the data to be read.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/TeslaITStudios/RolePlus/new/dev/apiSpec/new?filename=RolePlus_ExternModule_API_Features_Configs_Config_Load.md&amp;value=---%0Auid%3A%20RolePlus.ExternModule.API.Features.Configs.Config.Load%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/TeslaITStudios/RolePlus/blob/master/RolePlus/ExternModule/API/Features/Configs/Config.cs/#L178">View Source</a>
+  </span>
+  <a id="RolePlus_ExternModule_API_Features_Configs_Config_Load_" data-uid="RolePlus.ExternModule.API.Features.Configs.Config.Load*"></a>
+  <h4 id="RolePlus_ExternModule_API_Features_Configs_Config_Load" data-uid="RolePlus.ExternModule.API.Features.Configs.Config.Load">Load()</h4>
+  <div class="markdown level1 summary"><p>Loads the parent config.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Config Load()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="RolePlus.ExternModule.API.Features.Configs.Config.html">Config</a></td>
+        <td><p>The loaded parent config.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/TeslaITStudios/RolePlus/new/dev/apiSpec/new?filename=RolePlus_ExternModule_API_Features_Configs_Config_Load_System_Object__RolePlus_ExternModule_API_Features_Configs_ConfigAttribute_.md&amp;value=---%0Auid%3A%20RolePlus.ExternModule.API.Features.Configs.Config.Load(System.Object%40%2CRolePlus.ExternModule.API.Features.Configs.ConfigAttribute)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/TeslaITStudios/RolePlus/blob/master/RolePlus/ExternModule/API/Features/Configs/Config.cs/#L207">View Source</a>
+  </span>
+  <a id="RolePlus_ExternModule_API_Features_Configs_Config_Load_" data-uid="RolePlus.ExternModule.API.Features.Configs.Config.Load*"></a>
+  <h4 id="RolePlus_ExternModule_API_Features_Configs_Config_Load_System_Object__RolePlus_ExternModule_API_Features_Configs_ConfigAttribute_" data-uid="RolePlus.ExternModule.API.Features.Configs.Config.Load(System.Object@,RolePlus.ExternModule.API.Features.Configs.ConfigAttribute)">Load(ref Object, ConfigAttribute)</h4>
+  <div class="markdown level1 summary"><p>Loads a child config.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ref object Load(ref object config, ConfigAttribute attribute = null)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Object</span></td>
+        <td><span class="parametername">config</span></td>
+        <td><p>The config object&apos;s reference.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="RolePlus.ExternModule.API.Features.Configs.ConfigAttribute.html">ConfigAttribute</a></td>
+        <td><span class="parametername">attribute</span></td>
+        <td><p>The <a class="xref" href="RolePlus.ExternModule.API.Features.Configs.ConfigAttribute.html">ConfigAttribute</a>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Object</span></td>
+        <td><p>The loaded child config.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/TeslaITStudios/RolePlus/new/dev/apiSpec/new?filename=RolePlus_ExternModule_API_Features_Configs_Config_LoadAll.md&amp;value=---%0Auid%3A%20RolePlus.ExternModule.API.Features.Configs.Config.LoadAll%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/TeslaITStudios/RolePlus/blob/master/RolePlus/ExternModule/API/Features/Configs/Config.cs/#L128">View Source</a>
+  </span>
+  <a id="RolePlus_ExternModule_API_Features_Configs_Config_LoadAll_" data-uid="RolePlus.ExternModule.API.Features.Configs.Config.LoadAll*"></a>
+  <h4 id="RolePlus_ExternModule_API_Features_Configs_Config_LoadAll" data-uid="RolePlus.ExternModule.API.Features.Configs.Config.LoadAll">LoadAll()</h4>
+  <div class="markdown level1 summary"><p>Loads all the configs.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static HashSet&lt;IConfig&gt; LoadAll()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.HashSet</span>&lt;<a class="xref" href="RolePlus.ExternModule.API.Features.Configs.IConfig.html">IConfig</a>&gt;</td>
+        <td><p>A <span class="xref">System.Collections.Generic.HashSet&lt;T&gt;</span> containing all the loaded configs.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/TeslaITStudios/RolePlus/new/dev/apiSpec/new?filename=RolePlus_ExternModule_API_Features_Configs_Config_Read__1.md&amp;value=---%0Auid%3A%20RolePlus.ExternModule.API.Features.Configs.Config.Read%60%601%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/TeslaITStudios/RolePlus/blob/master/RolePlus/ExternModule/API/Features/Configs/Config.cs/#L290">View Source</a>
+  </span>
+  <a id="RolePlus_ExternModule_API_Features_Configs_Config_Read_" data-uid="RolePlus.ExternModule.API.Features.Configs.Config.Read*"></a>
+  <h4 id="RolePlus_ExternModule_API_Features_Configs_Config_Read__1" data-uid="RolePlus.ExternModule.API.Features.Configs.Config.Read``1">Read&lt;T&gt;()</h4>
+  <div class="markdown level1 summary"><p>Reads a data object of type <code data-dev-comment-type="typeparamref" class="typeparamref">T</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public T Read&lt;T&gt;()
+
+    where T : class</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">T</span></td>
+        <td><p>The corresponding <code data-dev-comment-type="typeparamref" class="typeparamref">T</code> instance or <span class="xref">null</span> if not found.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">T</span></td>
+        <td><p>The type of the data to be read.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/TeslaITStudios/RolePlus/new/dev/apiSpec/new?filename=RolePlus_ExternModule_API_Features_Configs_Config_Write__1_System_String_System_Object_.md&amp;value=---%0Auid%3A%20RolePlus.ExternModule.API.Features.Configs.Config.Write%60%601(System.String%2CSystem.Object)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/TeslaITStudios/RolePlus/blob/master/RolePlus/ExternModule/API/Features/Configs/Config.cs/#L307">View Source</a>
+  </span>
+  <a id="RolePlus_ExternModule_API_Features_Configs_Config_Write_" data-uid="RolePlus.ExternModule.API.Features.Configs.Config.Write*"></a>
+  <h4 id="RolePlus_ExternModule_API_Features_Configs_Config_Write__1_System_String_System_Object_" data-uid="RolePlus.ExternModule.API.Features.Configs.Config.Write``1(System.String,System.Object)">Write&lt;T&gt;(String, Object)</h4>
+  <div class="markdown level1 summary"><p>Writes a new value contained in the specified config of type <code data-dev-comment-type="typeparamref" class="typeparamref">T</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Write&lt;T&gt;(string name, object value)
+
+    where T : class</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">name</span></td>
+        <td><p>The name of the parameter to be modified.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Object</span></td>
+        <td><span class="parametername">value</span></td>
+        <td><p>The new value to be written.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">T</span></td>
+        <td><p>The type of the data to be written.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="implements">Implements</h3>
+  <div>
+      <a class="xref" href="RolePlus.ExternModule.API.Features.Configs.IConfig.html">IConfig</a>
+  </div>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/TeslaITStudios/RolePlus/new/dev/apiSpec/new?filename=RolePlus_ExternModule_API_Features_Configs_Config.md&amp;value=---%0Auid%3A%20RolePlus.ExternModule.API.Features.Configs.Config%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/TeslaITStudios/RolePlus/blob/master/RolePlus/ExternModule/API/Features/Configs/Config.cs/#L24" class="contribution-link">View Source</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,1720 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class CustomAbility
+   | RolePlus Docs </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class CustomAbility
+   | RolePlus Docs ">
+    <meta name="generator" content="docfx 2.59.2.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:rel" content="../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+        
+        <div id="search-results">
+          <div class="search-list">Search Results for <span></span></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination" data-first="First" data-prev="Previous" data-next="Next" data-last="Last"></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="RolePlus.ExternModule.API.Features.CustomAbilities.CustomAbility">
+  
+  
+  <h1 id="RolePlus_ExternModule_API_Features_CustomAbilities_CustomAbility" data-uid="RolePlus.ExternModule.API.Features.CustomAbilities.CustomAbility" class="text-break">Class CustomAbility
+  </h1>
+  <div class="markdown level0 summary"><p>CustomAbility is the base class used to create user-defined types treated as abilities applicable to a <see cref="!:Player"></see>.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><span class="xref">System.Object</span></div>
+    <div class="level1"><a class="xref" href="RolePlus.ExternModule.API.Engine.Core.TypeCastObject-1.html">TypeCastObject</a>&lt;<a class="xref" href="RolePlus.ExternModule.API.Engine.Core.UObject.html">UObject</a>&gt;</div>
+    <div class="level2"><a class="xref" href="RolePlus.ExternModule.API.Engine.Core.UObject.html">UObject</a></div>
+    <div class="level3"><a class="xref" href="RolePlus.ExternModule.API.Engine.Framework.AActor.html">AActor</a></div>
+    <div class="level4"><span class="xref">CustomAbility</span></div>
+      <div class="level5"><a class="xref" href="RolePlus.ExternModule.API.Features.CustomAbilities.Scp079Ability.html">Scp079Ability</a></div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <a class="xref" href="RolePlus.ExternModule.API.Engine.Framework.AActor.html#RolePlus_ExternModule_API_Engine_Framework_AActor_DefaultFixedTickRate">AActor.DefaultFixedTickRate</a>
+    </div>
+    <div>
+      <a class="xref" href="RolePlus.ExternModule.API.Engine.Framework.AActor.html#RolePlus_ExternModule_API_Engine_Framework_AActor_ComponentsInParent">AActor.ComponentsInParent</a>
+    </div>
+    <div>
+      <a class="xref" href="RolePlus.ExternModule.API.Engine.Framework.AActor.html#RolePlus_ExternModule_API_Engine_Framework_AActor_ComponentsInChildren">AActor.ComponentsInChildren</a>
+    </div>
+    <div>
+      <a class="xref" href="RolePlus.ExternModule.API.Engine.Framework.AActor.html#RolePlus_ExternModule_API_Engine_Framework_AActor_Transform">AActor.Transform</a>
+    </div>
+    <div>
+      <a class="xref" href="RolePlus.ExternModule.API.Engine.Framework.AActor.html#RolePlus_ExternModule_API_Engine_Framework_AActor_Position">AActor.Position</a>
+    </div>
+    <div>
+      <a class="xref" href="RolePlus.ExternModule.API.Engine.Framework.AActor.html#RolePlus_ExternModule_API_Engine_Framework_AActor_Rotation">AActor.Rotation</a>
+    </div>
+    <div>
+      <a class="xref" href="RolePlus.ExternModule.API.Engine.Framework.AActor.html#RolePlus_ExternModule_API_Engine_Framework_AActor_Scale">AActor.Scale</a>
+    </div>
+    <div>
+      <a class="xref" href="RolePlus.ExternModule.API.Engine.Framework.AActor.html#RolePlus_ExternModule_API_Engine_Framework_AActor_CanEverTick">AActor.CanEverTick</a>
+    </div>
+    <div>
+      <a class="xref" href="RolePlus.ExternModule.API.Engine.Framework.AActor.html#RolePlus_ExternModule_API_Engine_Framework_AActor_FixedTickRate">AActor.FixedTickRate</a>
+    </div>
+    <div>
+      <a class="xref" href="RolePlus.ExternModule.API.Engine.Framework.AActor.html#RolePlus_ExternModule_API_Engine_Framework_AActor_Tick">AActor.Tick()</a>
+    </div>
+    <div>
+      <a class="xref" href="RolePlus.ExternModule.API.Engine.Framework.AActor.html#RolePlus_ExternModule_API_Engine_Framework_AActor_SubscribeEvents">AActor.SubscribeEvents()</a>
+    </div>
+    <div>
+      <a class="xref" href="RolePlus.ExternModule.API.Engine.Framework.AActor.html#RolePlus_ExternModule_API_Engine_Framework_AActor_UnsubscribeEvents">AActor.UnsubscribeEvents()</a>
+    </div>
+    <div>
+      <a class="xref" href="RolePlus.ExternModule.API.Engine.Framework.AActor.html#RolePlus_ExternModule_API_Engine_Framework_AActor_OnBeginDestroy">AActor.OnBeginDestroy()</a>
+    </div>
+    <div>
+      <a class="xref" href="RolePlus.ExternModule.API.Engine.Framework.AActor.html#RolePlus_ExternModule_API_Engine_Framework_AActor_AttachTo_RolePlus_ExternModule_API_Engine_Framework_AActor_GameObject_">AActor.AttachTo(AActor, GameObject)</a>
+    </div>
+    <div>
+      <a class="xref" href="RolePlus.ExternModule.API.Engine.Framework.AActor.html#RolePlus_ExternModule_API_Engine_Framework_AActor_AttachTo_RolePlus_ExternModule_API_Engine_Framework_AActor_RolePlus_ExternModule_API_Engine_Framework_AActor_">AActor.AttachTo(AActor, AActor)</a>
+    </div>
+    <div>
+      <a class="xref" href="RolePlus.ExternModule.API.Engine.Framework.AActor.html#RolePlus_ExternModule_API_Engine_Framework_AActor_AddComponent__1_System_String_">AActor.AddComponent&lt;T&gt;(String)</a>
+    </div>
+    <div>
+      <a class="xref" href="RolePlus.ExternModule.API.Engine.Framework.AActor.html#RolePlus_ExternModule_API_Engine_Framework_AActor_AddComponent_System_Type_System_String_">AActor.AddComponent(Type, String)</a>
+    </div>
+    <div>
+      <a class="xref" href="RolePlus.ExternModule.API.Engine.Framework.AActor.html#RolePlus_ExternModule_API_Engine_Framework_AActor_GetComponent__1">AActor.GetComponent&lt;T&gt;()</a>
+    </div>
+    <div>
+      <a class="xref" href="RolePlus.ExternModule.API.Engine.Framework.AActor.html#RolePlus_ExternModule_API_Engine_Framework_AActor_GetComponent_System_Type_">AActor.GetComponent(Type)</a>
+    </div>
+    <div>
+      <a class="xref" href="RolePlus.ExternModule.API.Engine.Framework.AActor.html#RolePlus_ExternModule_API_Engine_Framework_AActor_TryGetComponent__1___0__">AActor.TryGetComponent&lt;T&gt;(T)</a>
+    </div>
+    <div>
+      <a class="xref" href="RolePlus.ExternModule.API.Engine.Framework.AActor.html#RolePlus_ExternModule_API_Engine_Framework_AActor_TryGetComponent_System_Type_RolePlus_ExternModule_API_Engine_Framework_AActor__">AActor.TryGetComponent(Type, AActor)</a>
+    </div>
+    <div>
+      <a class="xref" href="RolePlus.ExternModule.API.Engine.Framework.AActor.html#RolePlus_ExternModule_API_Engine_Framework_AActor_HasComponent__1">AActor.HasComponent&lt;T&gt;()</a>
+    </div>
+    <div>
+      <a class="xref" href="RolePlus.ExternModule.API.Engine.Framework.AActor.html#RolePlus_ExternModule_API_Engine_Framework_AActor_HasComponent_System_Type_">AActor.HasComponent(Type)</a>
+    </div>
+    <div>
+      <a class="xref" href="RolePlus.ExternModule.API.Engine.Core.UObject.html#RolePlus_ExternModule_API_Engine_Core_UObject_RegisteredTypes">UObject.RegisteredTypes</a>
+    </div>
+    <div>
+      <a class="xref" href="RolePlus.ExternModule.API.Engine.Core.UObject.html#RolePlus_ExternModule_API_Engine_Core_UObject_Base">UObject.Base</a>
+    </div>
+    <div>
+      <a class="xref" href="RolePlus.ExternModule.API.Engine.Core.UObject.html#RolePlus_ExternModule_API_Engine_Core_UObject_Name">UObject.Name</a>
+    </div>
+    <div>
+      <a class="xref" href="RolePlus.ExternModule.API.Engine.Core.UObject.html#RolePlus_ExternModule_API_Engine_Core_UObject_Tag">UObject.Tag</a>
+    </div>
+    <div>
+      <a class="xref" href="RolePlus.ExternModule.API.Engine.Core.UObject.html#RolePlus_ExternModule_API_Engine_Core_UObject_IsEditable">UObject.IsEditable</a>
+    </div>
+    <div>
+      <a class="xref" href="RolePlus.ExternModule.API.Engine.Core.UObject.html#RolePlus_ExternModule_API_Engine_Core_UObject_GetUObjectTypeByName_System_String_">UObject.GetUObjectTypeByName(String)</a>
+    </div>
+    <div>
+      <a class="xref" href="RolePlus.ExternModule.API.Engine.Core.UObject.html#RolePlus_ExternModule_API_Engine_Core_UObject_RegisterUObjectType__1_System_String_">UObject.RegisterUObjectType&lt;T&gt;(String)</a>
+    </div>
+    <div>
+      <a class="xref" href="RolePlus.ExternModule.API.Engine.Core.UObject.html#RolePlus_ExternModule_API_Engine_Core_UObject_RegisterUObjectType_System_Type_System_String_">UObject.RegisterUObjectType(Type, String)</a>
+    </div>
+    <div>
+      <a class="xref" href="RolePlus.ExternModule.API.Engine.Core.UObject.html#RolePlus_ExternModule_API_Engine_Core_UObject_UnregisterUObjectType_System_Type_">UObject.UnregisterUObjectType(Type)</a>
+    </div>
+    <div>
+      <a class="xref" href="RolePlus.ExternModule.API.Engine.Core.UObject.html#RolePlus_ExternModule_API_Engine_Core_UObject_UnregisterUObjectType_System_String_">UObject.UnregisterUObjectType(String)</a>
+    </div>
+    <div>
+      <a class="xref" href="RolePlus.ExternModule.API.Engine.Core.UObject.html#RolePlus_ExternModule_API_Engine_Core_UObject_FindUObjectDefinedTypeByName_System_String_System_Boolean_">UObject.FindUObjectDefinedTypeByName(String, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="RolePlus.ExternModule.API.Engine.Core.UObject.html#RolePlus_ExternModule_API_Engine_Core_UObject_GetUObjectTypeFromRegisteredTypes__1">UObject.GetUObjectTypeFromRegisteredTypes&lt;T&gt;()</a>
+    </div>
+    <div>
+      <a class="xref" href="RolePlus.ExternModule.API.Engine.Core.UObject.html#RolePlus_ExternModule_API_Engine_Core_UObject_GetUObjectTypeFromRegisteredTypes__1_System_String_">UObject.GetUObjectTypeFromRegisteredTypes&lt;T&gt;(String)</a>
+    </div>
+    <div>
+      <a class="xref" href="RolePlus.ExternModule.API.Engine.Core.UObject.html#RolePlus_ExternModule_API_Engine_Core_UObject_GetUObjectTypeFromRegisteredTypes_System_Type_">UObject.GetUObjectTypeFromRegisteredTypes(Type)</a>
+    </div>
+    <div>
+      <a class="xref" href="RolePlus.ExternModule.API.Engine.Core.UObject.html#RolePlus_ExternModule_API_Engine_Core_UObject_GetUObjectTypeFromRegisteredTypes_System_Type_System_String_">UObject.GetUObjectTypeFromRegisteredTypes(Type, String)</a>
+    </div>
+    <div>
+      <a class="xref" href="RolePlus.ExternModule.API.Engine.Core.UObject.html#RolePlus_ExternModule_API_Engine_Core_UObject_GetUObjectTypeFromRegisteredTypesByName_System_String_">UObject.GetUObjectTypeFromRegisteredTypesByName(String)</a>
+    </div>
+    <div>
+      <a class="xref" href="RolePlus.ExternModule.API.Engine.Core.UObject.html#RolePlus_ExternModule_API_Engine_Core_UObject_CreateDefaultSubobject_System_Type_System_Object___">UObject.CreateDefaultSubobject(Type, Object[])</a>
+    </div>
+    <div>
+      <a class="xref" href="RolePlus.ExternModule.API.Engine.Core.UObject.html#RolePlus_ExternModule_API_Engine_Core_UObject_CreateDefaultSubobject__1_System_Type_">UObject.CreateDefaultSubobject&lt;T&gt;(Type)</a>
+    </div>
+    <div>
+      <a class="xref" href="RolePlus.ExternModule.API.Engine.Core.UObject.html#RolePlus_ExternModule_API_Engine_Core_UObject_CreateDefaultSubobject__1">UObject.CreateDefaultSubobject&lt;T&gt;()</a>
+    </div>
+    <div>
+      <a class="xref" href="RolePlus.ExternModule.API.Engine.Core.UObject.html#RolePlus_ExternModule_API_Engine_Core_UObject_CreateDefaultSubobject__1_System_Object___">UObject.CreateDefaultSubobject&lt;T&gt;(Object[])</a>
+    </div>
+    <div>
+      <a class="xref" href="RolePlus.ExternModule.API.Engine.Core.UObject.html#RolePlus_ExternModule_API_Engine_Core_UObject_CreateDefaultSubobject__1_GameObject_System_String_">UObject.CreateDefaultSubobject&lt;T&gt;(GameObject, String)</a>
+    </div>
+    <div>
+      <a class="xref" href="RolePlus.ExternModule.API.Engine.Core.UObject.html#RolePlus_ExternModule_API_Engine_Core_UObject_CreateDefaultSubobject__1_GameObject_System_String_System_Object___">UObject.CreateDefaultSubobject&lt;T&gt;(GameObject, String, Object[])</a>
+    </div>
+    <div>
+      <a class="xref" href="RolePlus.ExternModule.API.Engine.Core.UObject.html#RolePlus_ExternModule_API_Engine_Core_UObject_CreateDefaultSubobject__1_System_Type_GameObject_System_String_">UObject.CreateDefaultSubobject&lt;T&gt;(Type, GameObject, String)</a>
+    </div>
+    <div>
+      <a class="xref" href="RolePlus.ExternModule.API.Engine.Core.UObject.html#RolePlus_ExternModule_API_Engine_Core_UObject_CreateDefaultSubobject__1_System_Type_GameObject_System_String_System_Object___">UObject.CreateDefaultSubobject&lt;T&gt;(Type, GameObject, String, Object[])</a>
+    </div>
+    <div>
+      <a class="xref" href="RolePlus.ExternModule.API.Engine.Core.UObject.html#RolePlus_ExternModule_API_Engine_Core_UObject_CreateDefaultSubobject_System_Type_GameObject_System_String_">UObject.CreateDefaultSubobject(Type, GameObject, String)</a>
+    </div>
+    <div>
+      <a class="xref" href="RolePlus.ExternModule.API.Engine.Core.UObject.html#RolePlus_ExternModule_API_Engine_Core_UObject_CreateDefaultSubobject_System_Type_GameObject_System_String_System_Object___">UObject.CreateDefaultSubobject(Type, GameObject, String, Object[])</a>
+    </div>
+    <div>
+      <a class="xref" href="RolePlus.ExternModule.API.Engine.Core.UObject.html#RolePlus_ExternModule_API_Engine_Core_UObject_DestroyAllObjects">UObject.DestroyAllObjects()</a>
+    </div>
+    <div>
+      <a class="xref" href="RolePlus.ExternModule.API.Engine.Core.UObject.html#RolePlus_ExternModule_API_Engine_Core_UObject_DestroyAllObjectsOfType__1">UObject.DestroyAllObjectsOfType&lt;T&gt;()</a>
+    </div>
+    <div>
+      <a class="xref" href="RolePlus.ExternModule.API.Engine.Core.UObject.html#RolePlus_ExternModule_API_Engine_Core_UObject_FindActiveObjectOfType__1_System_Func_RolePlus_ExternModule_API_Engine_Core_UObject_System_Boolean__">UObject.FindActiveObjectOfType&lt;T&gt;(Func&lt;UObject, Boolean&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="RolePlus.ExternModule.API.Engine.Core.UObject.html#RolePlus_ExternModule_API_Engine_Core_UObject_FindActiveObjectsOfType__1_System_Func_RolePlus_ExternModule_API_Engine_Core_UObject_System_Boolean__">UObject.FindActiveObjectsOfType&lt;T&gt;(Func&lt;UObject, Boolean&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="RolePlus.ExternModule.API.Engine.Core.UObject.html#RolePlus_ExternModule_API_Engine_Core_UObject_FindActiveObjectsOfType__1">UObject.FindActiveObjectsOfType&lt;T&gt;()</a>
+    </div>
+    <div>
+      <a class="xref" href="RolePlus.ExternModule.API.Engine.Core.UObject.html#RolePlus_ExternModule_API_Engine_Core_UObject_FindActiveObjectsOfType__1_System_String_">UObject.FindActiveObjectsOfType&lt;T&gt;(String)</a>
+    </div>
+    <div>
+      <a class="xref" href="RolePlus.ExternModule.API.Engine.Core.UObject.html#RolePlus_ExternModule_API_Engine_Core_UObject_FindActiveObjectsOfType__1_System_Type_">UObject.FindActiveObjectsOfType&lt;T&gt;(Type)</a>
+    </div>
+    <div>
+      <a class="xref" href="RolePlus.ExternModule.API.Engine.Core.UObject.html#RolePlus_ExternModule_API_Engine_Core_UObject_FindActiveObjectsOfType__1_System_Type_System_Func_RolePlus_ExternModule_API_Engine_Core_UObject_System_Boolean__">UObject.FindActiveObjectsOfType&lt;T&gt;(Type, Func&lt;UObject, Boolean&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="RolePlus.ExternModule.API.Engine.Core.UObject.html#RolePlus_ExternModule_API_Engine_Core_UObject_FindActiveObjectsWithTagOfType__1_System_String_">UObject.FindActiveObjectsWithTagOfType&lt;T&gt;(String)</a>
+    </div>
+    <div>
+      <a class="xref" href="RolePlus.ExternModule.API.Engine.Core.UObject.html#RolePlus_ExternModule_API_Engine_Core_UObject_FindActiveObjectsOfType__1_System_Func_System_Object_System_Boolean__">UObject.FindActiveObjectsOfType&lt;T&gt;(Func&lt;Object, Boolean&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="RolePlus.ExternModule.API.Engine.Core.UObject.html#RolePlus_ExternModule_API_Engine_Core_UObject_FindActiveObjectsOfType__1_System_Func___0_System_Boolean__">UObject.FindActiveObjectsOfType&lt;T&gt;(Func&lt;T, Boolean&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="RolePlus.ExternModule.API.Engine.Core.UObject.html#RolePlus_ExternModule_API_Engine_Core_UObject_DestroyActiveObjectsOfType__1">UObject.DestroyActiveObjectsOfType&lt;T&gt;()</a>
+    </div>
+    <div>
+      <a class="xref" href="RolePlus.ExternModule.API.Engine.Core.UObject.html#RolePlus_ExternModule_API_Engine_Core_UObject_DestroyActiveObject__1_GameObject_">UObject.DestroyActiveObject&lt;T&gt;(GameObject)</a>
+    </div>
+    <div>
+      <a class="xref" href="RolePlus.ExternModule.API.Engine.Core.UObject.html#RolePlus_ExternModule_API_Engine_Core_UObject_DestroyActiveObject_System_Type_GameObject_">UObject.DestroyActiveObject(Type, GameObject)</a>
+    </div>
+    <div>
+      <a class="xref" href="RolePlus.ExternModule.API.Engine.Core.UObject.html#RolePlus_ExternModule_API_Engine_Core_UObject_Destroy_System_Boolean_">UObject.Destroy(Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="RolePlus.ExternModule.API.Engine.Core.UObject.html#RolePlus_ExternModule_API_Engine_Core_UObject_Destroy">UObject.Destroy()</a>
+    </div>
+    <div>
+      <a class="xref" href="RolePlus.ExternModule.API.Engine.Core.UObject.html#RolePlus_ExternModule_API_Engine_Core_UObject_OnDestroyed">UObject.OnDestroyed()</a>
+    </div>
+    <div>
+      <a class="xref" href="RolePlus.ExternModule.API.Engine.Core.TypeCastObject-1.html#RolePlus_ExternModule_API_Engine_Core_TypeCastObject_1_Cast__1">TypeCastObject&lt;UObject&gt;.Cast&lt;T&gt;()</a>
+    </div>
+    <div>
+      <a class="xref" href="RolePlus.ExternModule.API.Engine.Core.TypeCastObject-1.html#RolePlus_ExternModule_API_Engine_Core_TypeCastObject_1_Cast__1___0__">TypeCastObject&lt;UObject&gt;.Cast&lt;T&gt;(T)</a>
+    </div>
+    <div>
+      <span class="xref">System.Object.ToString()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ReferenceEquals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetHashCode()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetType()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.MemberwiseClone()</span>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="RolePlus.ExternModule.API.Features.CustomAbilities.html">RolePlus.ExternModule.API.Features.CustomAbilities</a></h6>
+  <h6><strong>Assembly</strong>: RolePlus.dll</h6>
+  <h5 id="RolePlus_ExternModule_API_Features_CustomAbilities_CustomAbility_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public abstract class CustomAbility : AActor</code></pre>
+  </div>
+  <h3 id="constructors">Constructors
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/TeslaITStudios/RolePlus/new/dev/apiSpec/new?filename=RolePlus_ExternModule_API_Features_CustomAbilities_CustomAbility__ctor_System_Single_.md&amp;value=---%0Auid%3A%20RolePlus.ExternModule.API.Features.CustomAbilities.CustomAbility.%23ctor(System.Single)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/TeslaITStudios/RolePlus/blob/master/RolePlus/ExternModule/API/Features/CustomAbilities/CustomAbility.cs/#L31">View Source</a>
+  </span>
+  <a id="RolePlus_ExternModule_API_Features_CustomAbilities_CustomAbility__ctor_" data-uid="RolePlus.ExternModule.API.Features.CustomAbilities.CustomAbility.#ctor*"></a>
+  <h4 id="RolePlus_ExternModule_API_Features_CustomAbilities_CustomAbility__ctor_System_Single_" data-uid="RolePlus.ExternModule.API.Features.CustomAbilities.CustomAbility.#ctor(System.Single)">CustomAbility(Single)</h4>
+  <div class="markdown level1 summary"><p>Initializes a new instance of the <a class="xref" href="RolePlus.ExternModule.API.Features.CustomAbilities.CustomAbility.html">CustomAbility</a> class.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected CustomAbility(float cooldown = 0F)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td><span class="parametername">cooldown</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="properties">Properties
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/TeslaITStudios/RolePlus/new/dev/apiSpec/new?filename=RolePlus_ExternModule_API_Features_CustomAbilities_CustomAbility_Cooldown.md&amp;value=---%0Auid%3A%20RolePlus.ExternModule.API.Features.CustomAbilities.CustomAbility.Cooldown%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/TeslaITStudios/RolePlus/blob/master/RolePlus/ExternModule/API/Features/CustomAbilities/CustomAbility.cs/#L72">View Source</a>
+  </span>
+  <a id="RolePlus_ExternModule_API_Features_CustomAbilities_CustomAbility_Cooldown_" data-uid="RolePlus.ExternModule.API.Features.CustomAbilities.CustomAbility.Cooldown*"></a>
+  <h4 id="RolePlus_ExternModule_API_Features_CustomAbilities_CustomAbility_Cooldown" data-uid="RolePlus.ExternModule.API.Features.CustomAbilities.CustomAbility.Cooldown">Cooldown</h4>
+  <div class="markdown level1 summary"><p>Gets the required cooldown before using the ability again.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual float Cooldown { get; protected set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/TeslaITStudios/RolePlus/new/dev/apiSpec/new?filename=RolePlus_ExternModule_API_Features_CustomAbilities_CustomAbility_IsReady.md&amp;value=---%0Auid%3A%20RolePlus.ExternModule.API.Features.CustomAbilities.CustomAbility.IsReady%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/TeslaITStudios/RolePlus/blob/master/RolePlus/ExternModule/API/Features/CustomAbilities/CustomAbility.cs/#L67">View Source</a>
+  </span>
+  <a id="RolePlus_ExternModule_API_Features_CustomAbilities_CustomAbility_IsReady_" data-uid="RolePlus.ExternModule.API.Features.CustomAbilities.CustomAbility.IsReady*"></a>
+  <h4 id="RolePlus_ExternModule_API_Features_CustomAbilities_CustomAbility_IsReady" data-uid="RolePlus.ExternModule.API.Features.CustomAbilities.CustomAbility.IsReady">IsReady</h4>
+  <div class="markdown level1 summary"><p>Gets or sets a value indicating whether the ability is ready.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsReady { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/TeslaITStudios/RolePlus/new/dev/apiSpec/new?filename=RolePlus_ExternModule_API_Features_CustomAbilities_CustomAbility_Level.md&amp;value=---%0Auid%3A%20RolePlus.ExternModule.API.Features.CustomAbilities.CustomAbility.Level%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/TeslaITStudios/RolePlus/blob/master/RolePlus/ExternModule/API/Features/CustomAbilities/CustomAbility.cs/#L92">View Source</a>
+  </span>
+  <a id="RolePlus_ExternModule_API_Features_CustomAbilities_CustomAbility_Level_" data-uid="RolePlus.ExternModule.API.Features.CustomAbilities.CustomAbility.Level*"></a>
+  <h4 id="RolePlus_ExternModule_API_Features_CustomAbilities_CustomAbility_Level" data-uid="RolePlus.ExternModule.API.Features.CustomAbilities.CustomAbility.Level">Level</h4>
+  <div class="markdown level1 summary"><p>Gets the level of the ability.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual byte Level { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Byte</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/TeslaITStudios/RolePlus/new/dev/apiSpec/new?filename=RolePlus_ExternModule_API_Features_CustomAbilities_CustomAbility_Manager.md&amp;value=---%0Auid%3A%20RolePlus.ExternModule.API.Features.CustomAbilities.CustomAbility.Manager%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/TeslaITStudios/RolePlus/blob/master/RolePlus/ExternModule/API/Features/CustomAbilities/CustomAbility.cs/#L52">View Source</a>
+  </span>
+  <a id="RolePlus_ExternModule_API_Features_CustomAbilities_CustomAbility_Manager_" data-uid="RolePlus.ExternModule.API.Features.CustomAbilities.CustomAbility.Manager*"></a>
+  <h4 id="RolePlus_ExternModule_API_Features_CustomAbilities_CustomAbility_Manager" data-uid="RolePlus.ExternModule.API.Features.CustomAbilities.CustomAbility.Manager">Manager</h4>
+  <div class="markdown level1 summary"><p>Gets the ability manager which contains all the players with a <a class="xref" href="RolePlus.ExternModule.API.Features.CustomAbilities.CustomAbility.html">CustomAbility</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static HashSet&lt;Player&gt; Manager { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.HashSet</span>&lt;<span class="xref">Player</span>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/TeslaITStudios/RolePlus/new/dev/apiSpec/new?filename=RolePlus_ExternModule_API_Features_CustomAbilities_CustomAbility_Owner.md&amp;value=---%0Auid%3A%20RolePlus.ExternModule.API.Features.CustomAbilities.CustomAbility.Owner%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/TeslaITStudios/RolePlus/blob/master/RolePlus/ExternModule/API/Features/CustomAbilities/CustomAbility.cs/#L62">View Source</a>
+  </span>
+  <a id="RolePlus_ExternModule_API_Features_CustomAbilities_CustomAbility_Owner_" data-uid="RolePlus.ExternModule.API.Features.CustomAbilities.CustomAbility.Owner*"></a>
+  <h4 id="RolePlus_ExternModule_API_Features_CustomAbilities_CustomAbility_Owner" data-uid="RolePlus.ExternModule.API.Features.CustomAbilities.CustomAbility.Owner">Owner</h4>
+  <div class="markdown level1 summary"><p>Gets the owner of the ability.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Player Owner { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Player</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/TeslaITStudios/RolePlus/new/dev/apiSpec/new?filename=RolePlus_ExternModule_API_Features_CustomAbilities_CustomAbility_PlayersValue.md&amp;value=---%0Auid%3A%20RolePlus.ExternModule.API.Features.CustomAbilities.CustomAbility.PlayersValue%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/TeslaITStudios/RolePlus/blob/master/RolePlus/ExternModule/API/Features/CustomAbilities/CustomAbility.cs/#L57">View Source</a>
+  </span>
+  <a id="RolePlus_ExternModule_API_Features_CustomAbilities_CustomAbility_PlayersValue_" data-uid="RolePlus.ExternModule.API.Features.CustomAbilities.CustomAbility.PlayersValue*"></a>
+  <h4 id="RolePlus_ExternModule_API_Features_CustomAbilities_CustomAbility_PlayersValue" data-uid="RolePlus.ExternModule.API.Features.CustomAbilities.CustomAbility.PlayersValue">PlayersValue</h4>
+  <div class="markdown level1 summary"><p>Gets the players and their respective <a class="xref" href="RolePlus.ExternModule.API.Features.CustomAbilities.CustomAbility.html">CustomAbility</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static IReadOnlyDictionary&lt;Player, CustomAbility&gt; PlayersValue { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.IReadOnlyDictionary</span>&lt;<span class="xref">Player</span>, <a class="xref" href="RolePlus.ExternModule.API.Features.CustomAbilities.CustomAbility.html">CustomAbility</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/TeslaITStudios/RolePlus/new/dev/apiSpec/new?filename=RolePlus_ExternModule_API_Features_CustomAbilities_CustomAbility_Registered.md&amp;value=---%0Auid%3A%20RolePlus.ExternModule.API.Features.CustomAbilities.CustomAbility.Registered%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/TeslaITStudios/RolePlus/blob/master/RolePlus/ExternModule/API/Features/CustomAbilities/CustomAbility.cs/#L37">View Source</a>
+  </span>
+  <a id="RolePlus_ExternModule_API_Features_CustomAbilities_CustomAbility_Registered_" data-uid="RolePlus.ExternModule.API.Features.CustomAbilities.CustomAbility.Registered*"></a>
+  <h4 id="RolePlus_ExternModule_API_Features_CustomAbilities_CustomAbility_Registered" data-uid="RolePlus.ExternModule.API.Features.CustomAbilities.CustomAbility.Registered">Registered</h4>
+  <div class="markdown level1 summary"><p>Gets a <span class="xref">System.Collections.Generic.IReadOnlyList&lt;T&gt;</span> of <a class="xref" href="RolePlus.ExternModule.API.Features.CustomAbilities.CustomAbility.html">CustomAbility</a> containing all the registered custom abilites.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static IReadOnlyList&lt;CustomAbility&gt; Registered { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.IReadOnlyList</span>&lt;<a class="xref" href="RolePlus.ExternModule.API.Features.CustomAbilities.CustomAbility.html">CustomAbility</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/TeslaITStudios/RolePlus/new/dev/apiSpec/new?filename=RolePlus_ExternModule_API_Features_CustomAbilities_CustomAbility_Type.md&amp;value=---%0Auid%3A%20RolePlus.ExternModule.API.Features.CustomAbilities.CustomAbility.Type%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/TeslaITStudios/RolePlus/blob/master/RolePlus/ExternModule/API/Features/CustomAbilities/CustomAbility.cs/#L101">View Source</a>
+  </span>
+  <a id="RolePlus_ExternModule_API_Features_CustomAbilities_CustomAbility_Type_" data-uid="RolePlus.ExternModule.API.Features.CustomAbilities.CustomAbility.Type*"></a>
+  <h4 id="RolePlus_ExternModule_API_Features_CustomAbilities_CustomAbility_Type" data-uid="RolePlus.ExternModule.API.Features.CustomAbilities.CustomAbility.Type">Type</h4>
+  <div class="markdown level1 summary"><p>Gets the ability type name.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual string Type { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/TeslaITStudios/RolePlus/new/dev/apiSpec/new?filename=RolePlus_ExternModule_API_Features_CustomAbilities_CustomAbility_UnlockedMessage.md&amp;value=---%0Auid%3A%20RolePlus.ExternModule.API.Features.CustomAbilities.CustomAbility.UnlockedMessage%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/TeslaITStudios/RolePlus/blob/master/RolePlus/ExternModule/API/Features/CustomAbilities/CustomAbility.cs/#L82">View Source</a>
+  </span>
+  <a id="RolePlus_ExternModule_API_Features_CustomAbilities_CustomAbility_UnlockedMessage_" data-uid="RolePlus.ExternModule.API.Features.CustomAbilities.CustomAbility.UnlockedMessage*"></a>
+  <h4 id="RolePlus_ExternModule_API_Features_CustomAbilities_CustomAbility_UnlockedMessage" data-uid="RolePlus.ExternModule.API.Features.CustomAbilities.CustomAbility.UnlockedMessage">UnlockedMessage</h4>
+  <div class="markdown level1 summary"><p>Gets the message to display when the ability is unlocked.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual string UnlockedMessage { get; protected set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/TeslaITStudios/RolePlus/new/dev/apiSpec/new?filename=RolePlus_ExternModule_API_Features_CustomAbilities_CustomAbility_UsedMessage.md&amp;value=---%0Auid%3A%20RolePlus.ExternModule.API.Features.CustomAbilities.CustomAbility.UsedMessage%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/TeslaITStudios/RolePlus/blob/master/RolePlus/ExternModule/API/Features/CustomAbilities/CustomAbility.cs/#L77">View Source</a>
+  </span>
+  <a id="RolePlus_ExternModule_API_Features_CustomAbilities_CustomAbility_UsedMessage_" data-uid="RolePlus.ExternModule.API.Features.CustomAbilities.CustomAbility.UsedMessage*"></a>
+  <h4 id="RolePlus_ExternModule_API_Features_CustomAbilities_CustomAbility_UsedMessage" data-uid="RolePlus.ExternModule.API.Features.CustomAbilities.CustomAbility.UsedMessage">UsedMessage</h4>
+  <div class="markdown level1 summary"><p>Gets the message to display when the ability is used.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual string UsedMessage { get; protected set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/TeslaITStudios/RolePlus/new/dev/apiSpec/new?filename=RolePlus_ExternModule_API_Features_CustomAbilities_CustomAbility_WindupTime.md&amp;value=---%0Auid%3A%20RolePlus.ExternModule.API.Features.CustomAbilities.CustomAbility.WindupTime%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/TeslaITStudios/RolePlus/blob/master/RolePlus/ExternModule/API/Features/CustomAbilities/CustomAbility.cs/#L87">View Source</a>
+  </span>
+  <a id="RolePlus_ExternModule_API_Features_CustomAbilities_CustomAbility_WindupTime_" data-uid="RolePlus.ExternModule.API.Features.CustomAbilities.CustomAbility.WindupTime*"></a>
+  <h4 id="RolePlus_ExternModule_API_Features_CustomAbilities_CustomAbility_WindupTime" data-uid="RolePlus.ExternModule.API.Features.CustomAbilities.CustomAbility.WindupTime">WindupTime</h4>
+  <div class="markdown level1 summary"><p>Gets the time to wait before the ability is activated.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual float WindupTime { get; protected set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/TeslaITStudios/RolePlus/new/dev/apiSpec/new?filename=RolePlus_ExternModule_API_Features_CustomAbilities_CustomAbility_AddAbilities_Player_System_Collections_Generic_IEnumerable_System_String__.md&amp;value=---%0Auid%3A%20RolePlus.ExternModule.API.Features.CustomAbilities.CustomAbility.AddAbilities(Player%2CSystem.Collections.Generic.IEnumerable%7BSystem.String%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/TeslaITStudios/RolePlus/blob/master/RolePlus/ExternModule/API/Features/CustomAbilities/CustomAbility.cs/#L206">View Source</a>
+  </span>
+  <a id="RolePlus_ExternModule_API_Features_CustomAbilities_CustomAbility_AddAbilities_" data-uid="RolePlus.ExternModule.API.Features.CustomAbilities.CustomAbility.AddAbilities*"></a>
+  <h4 id="RolePlus_ExternModule_API_Features_CustomAbilities_CustomAbility_AddAbilities_Player_System_Collections_Generic_IEnumerable_System_String__" data-uid="RolePlus.ExternModule.API.Features.CustomAbilities.CustomAbility.AddAbilities(Player,System.Collections.Generic.IEnumerable{System.String})">AddAbilities(Player, IEnumerable&lt;String&gt;)</h4>
+  <div class="markdown level1 summary"><p>Adds a <span class="xref">System.Collections.Generic.IEnumerable&lt;T&gt;</span> of <a class="xref" href="RolePlus.ExternModule.API.Features.CustomAbilities.CustomAbility.html">CustomAbility</a> to the specified <see cref="!:Player"></see>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void AddAbilities(Player player, IEnumerable&lt;string&gt; types)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Player</span></td>
+        <td><span class="parametername">player</span></td>
+        <td><p>The player to affect.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<span class="xref">System.String</span>&gt;</td>
+        <td><span class="parametername">types</span></td>
+        <td><p>The custom abilities.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/TeslaITStudios/RolePlus/new/dev/apiSpec/new?filename=RolePlus_ExternModule_API_Features_CustomAbilities_CustomAbility_AddAbilities_Player_System_Collections_Generic_IEnumerable_System_Type__.md&amp;value=---%0Auid%3A%20RolePlus.ExternModule.API.Features.CustomAbilities.CustomAbility.AddAbilities(Player%2CSystem.Collections.Generic.IEnumerable%7BSystem.Type%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/TeslaITStudios/RolePlus/blob/master/RolePlus/ExternModule/API/Features/CustomAbilities/CustomAbility.cs/#L195">View Source</a>
+  </span>
+  <a id="RolePlus_ExternModule_API_Features_CustomAbilities_CustomAbility_AddAbilities_" data-uid="RolePlus.ExternModule.API.Features.CustomAbilities.CustomAbility.AddAbilities*"></a>
+  <h4 id="RolePlus_ExternModule_API_Features_CustomAbilities_CustomAbility_AddAbilities_Player_System_Collections_Generic_IEnumerable_System_Type__" data-uid="RolePlus.ExternModule.API.Features.CustomAbilities.CustomAbility.AddAbilities(Player,System.Collections.Generic.IEnumerable{System.Type})">AddAbilities(Player, IEnumerable&lt;Type&gt;)</h4>
+  <div class="markdown level1 summary"><p>Adds a <span class="xref">System.Collections.Generic.IEnumerable&lt;T&gt;</span> of <a class="xref" href="RolePlus.ExternModule.API.Features.CustomAbilities.CustomAbility.html">CustomAbility</a> to the specified <see cref="!:Player"></see>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void AddAbilities(Player player, IEnumerable&lt;Type&gt; types)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Player</span></td>
+        <td><span class="parametername">player</span></td>
+        <td><p>The player to affect.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<span class="xref">System.Type</span>&gt;</td>
+        <td><span class="parametername">types</span></td>
+        <td><p>The custom abilities.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/TeslaITStudios/RolePlus/new/dev/apiSpec/new?filename=RolePlus_ExternModule_API_Features_CustomAbilities_CustomAbility_AddAbility_Player_System_String_.md&amp;value=---%0Auid%3A%20RolePlus.ExternModule.API.Features.CustomAbilities.CustomAbility.AddAbility(Player%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/TeslaITStudios/RolePlus/blob/master/RolePlus/ExternModule/API/Features/CustomAbilities/CustomAbility.cs/#L175">View Source</a>
+  </span>
+  <a id="RolePlus_ExternModule_API_Features_CustomAbilities_CustomAbility_AddAbility_" data-uid="RolePlus.ExternModule.API.Features.CustomAbilities.CustomAbility.AddAbility*"></a>
+  <h4 id="RolePlus_ExternModule_API_Features_CustomAbilities_CustomAbility_AddAbility_Player_System_String_" data-uid="RolePlus.ExternModule.API.Features.CustomAbilities.CustomAbility.AddAbility(Player,System.String)">AddAbility(Player, String)</h4>
+  <div class="markdown level1 summary"><p>Adds a <a class="xref" href="RolePlus.ExternModule.API.Features.CustomAbilities.CustomAbility.html">CustomAbility</a> to the specified <see cref="!:Player"></see>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool AddAbility(Player player, string type)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Player</span></td>
+        <td><span class="parametername">player</span></td>
+        <td><p>The player to affect.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">type</span></td>
+        <td><p>The custom ability type.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><p><span class="xref">true</span> if the <a class="xref" href="RolePlus.ExternModule.API.Features.CustomAbilities.CustomAbility.html">CustomAbility</a> was given successfully; otherwise, <span class="xref">false</span>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/TeslaITStudios/RolePlus/new/dev/apiSpec/new?filename=RolePlus_ExternModule_API_Features_CustomAbilities_CustomAbility_AddAbility_Player_System_Type_.md&amp;value=---%0Auid%3A%20RolePlus.ExternModule.API.Features.CustomAbilities.CustomAbility.AddAbility(Player%2CSystem.Type)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/TeslaITStudios/RolePlus/blob/master/RolePlus/ExternModule/API/Features/CustomAbilities/CustomAbility.cs/#L154">View Source</a>
+  </span>
+  <a id="RolePlus_ExternModule_API_Features_CustomAbilities_CustomAbility_AddAbility_" data-uid="RolePlus.ExternModule.API.Features.CustomAbilities.CustomAbility.AddAbility*"></a>
+  <h4 id="RolePlus_ExternModule_API_Features_CustomAbilities_CustomAbility_AddAbility_Player_System_Type_" data-uid="RolePlus.ExternModule.API.Features.CustomAbilities.CustomAbility.AddAbility(Player,System.Type)">AddAbility(Player, Type)</h4>
+  <div class="markdown level1 summary"><p>Adds a <a class="xref" href="RolePlus.ExternModule.API.Features.CustomAbilities.CustomAbility.html">CustomAbility</a> to the specified <see cref="!:Player"></see>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool AddAbility(Player player, Type type)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Player</span></td>
+        <td><span class="parametername">player</span></td>
+        <td><p>The player to affect.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Type</span></td>
+        <td><span class="parametername">type</span></td>
+        <td><p>The custom ability type.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><p><span class="xref">true</span> if the <a class="xref" href="RolePlus.ExternModule.API.Features.CustomAbilities.CustomAbility.html">CustomAbility</a> was given successfully; otherwise, <span class="xref">false</span>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/TeslaITStudios/RolePlus/new/dev/apiSpec/new?filename=RolePlus_ExternModule_API_Features_CustomAbilities_CustomAbility_AddAbility__1_Player___0__.md&amp;value=---%0Auid%3A%20RolePlus.ExternModule.API.Features.CustomAbilities.CustomAbility.AddAbility%60%601(Player%2C%60%600%40)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/TeslaITStudios/RolePlus/blob/master/RolePlus/ExternModule/API/Features/CustomAbilities/CustomAbility.cs/#L133">View Source</a>
+  </span>
+  <a id="RolePlus_ExternModule_API_Features_CustomAbilities_CustomAbility_AddAbility_" data-uid="RolePlus.ExternModule.API.Features.CustomAbilities.CustomAbility.AddAbility*"></a>
+  <h4 id="RolePlus_ExternModule_API_Features_CustomAbilities_CustomAbility_AddAbility__1_Player___0__" data-uid="RolePlus.ExternModule.API.Features.CustomAbilities.CustomAbility.AddAbility``1(Player,``0@)">AddAbility&lt;T&gt;(Player, out T)</h4>
+  <div class="markdown level1 summary"><p>Adds a <code data-dev-comment-type="typeparamref" class="typeparamref">T</code> <a class="xref" href="RolePlus.ExternModule.API.Features.CustomAbilities.CustomAbility.html">CustomAbility</a> to the specified <see cref="!:Player"></see>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool AddAbility&lt;T&gt;(Player player, out T customAbility)
+
+    where T : CustomAbility</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Player</span></td>
+        <td><span class="parametername">player</span></td>
+        <td><p>The player to affect.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">T</span></td>
+        <td><span class="parametername">customAbility</span></td>
+        <td><p>The given ability.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><p><span class="xref">true</span> if the <a class="xref" href="RolePlus.ExternModule.API.Features.CustomAbilities.CustomAbility.html">CustomAbility</a> was given successfully; otherwise, <span class="xref">false</span>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">T</span></td>
+        <td><p>The custom ability type.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/TeslaITStudios/RolePlus/new/dev/apiSpec/new?filename=RolePlus_ExternModule_API_Features_CustomAbilities_CustomAbility_Check_Player_.md&amp;value=---%0Auid%3A%20RolePlus.ExternModule.API.Features.CustomAbilities.CustomAbility.Check(Player)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/TeslaITStudios/RolePlus/blob/master/RolePlus/ExternModule/API/Features/CustomAbilities/CustomAbility.cs/#L397">View Source</a>
+  </span>
+  <a id="RolePlus_ExternModule_API_Features_CustomAbilities_CustomAbility_Check_" data-uid="RolePlus.ExternModule.API.Features.CustomAbilities.CustomAbility.Check*"></a>
+  <h4 id="RolePlus_ExternModule_API_Features_CustomAbilities_CustomAbility_Check_Player_" data-uid="RolePlus.ExternModule.API.Features.CustomAbilities.CustomAbility.Check(Player)">Check(Player)</h4>
+  <div class="markdown level1 summary"><p>Gets a value indicating whether the specified <see cref="!:Player"></see> is the owner of this <a class="xref" href="RolePlus.ExternModule.API.Features.CustomAbilities.CustomAbility.html">CustomAbility</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool Check(Player player)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Player</span></td>
+        <td><span class="parametername">player</span></td>
+        <td><p>The <see cref="!:Player"></see> to check.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><p><span class="xref">true</span> if the specified <see cref="!:Player"></see> is the owner of this <a class="xref" href="RolePlus.ExternModule.API.Features.CustomAbilities.CustomAbility.html">CustomAbility</a>; otherwise, <span class="xref">false</span>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/TeslaITStudios/RolePlus/new/dev/apiSpec/new?filename=RolePlus_ExternModule_API_Features_CustomAbilities_CustomAbility_CooldownConditions.md&amp;value=---%0Auid%3A%20RolePlus.ExternModule.API.Features.CustomAbilities.CustomAbility.CooldownConditions%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/TeslaITStudios/RolePlus/blob/master/RolePlus/ExternModule/API/Features/CustomAbilities/CustomAbility.cs/#L430">View Source</a>
+  </span>
+  <a id="RolePlus_ExternModule_API_Features_CustomAbilities_CustomAbility_CooldownConditions_" data-uid="RolePlus.ExternModule.API.Features.CustomAbilities.CustomAbility.CooldownConditions*"></a>
+  <h4 id="RolePlus_ExternModule_API_Features_CustomAbilities_CustomAbility_CooldownConditions" data-uid="RolePlus.ExternModule.API.Features.CustomAbilities.CustomAbility.CooldownConditions">CooldownConditions()</h4>
+  <div class="markdown level1 summary"><p>The cooldown conditions.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual bool CooldownConditions()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/TeslaITStudios/RolePlus/new/dev/apiSpec/new?filename=RolePlus_ExternModule_API_Features_CustomAbilities_CustomAbility_Get_Player_System_String_.md&amp;value=---%0Auid%3A%20RolePlus.ExternModule.API.Features.CustomAbilities.CustomAbility.Get(Player%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/TeslaITStudios/RolePlus/blob/master/RolePlus/ExternModule/API/Features/CustomAbilities/CustomAbility.cs/#L116">View Source</a>
+  </span>
+  <a id="RolePlus_ExternModule_API_Features_CustomAbilities_CustomAbility_Get_" data-uid="RolePlus.ExternModule.API.Features.CustomAbilities.CustomAbility.Get*"></a>
+  <h4 id="RolePlus_ExternModule_API_Features_CustomAbilities_CustomAbility_Get_Player_System_String_" data-uid="RolePlus.ExternModule.API.Features.CustomAbilities.CustomAbility.Get(Player,System.String)">Get(Player, String)</h4>
+  <div class="markdown level1 summary"><p>Gets a <a class="xref" href="RolePlus.ExternModule.API.Features.CustomAbilities.CustomAbility.html">CustomAbility</a> from a <see cref="!:Player"></see> given the specified type name.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static CustomAbility Get(Player player, string type)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Player</span></td>
+        <td><span class="parametername">player</span></td>
+        <td><p>The player to check.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">type</span></td>
+        <td><p>The ability type name.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="RolePlus.ExternModule.API.Features.CustomAbilities.CustomAbility.html">CustomAbility</a></td>
+        <td><p>The corresponding <a class="xref" href="RolePlus.ExternModule.API.Features.CustomAbilities.CustomAbility.html">CustomAbility</a>, or <span class="xref">null</span> if not found.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/TeslaITStudios/RolePlus/new/dev/apiSpec/new?filename=RolePlus_ExternModule_API_Features_CustomAbilities_CustomAbility_Get_System_String_.md&amp;value=---%0Auid%3A%20RolePlus.ExternModule.API.Features.CustomAbilities.CustomAbility.Get(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/TeslaITStudios/RolePlus/blob/master/RolePlus/ExternModule/API/Features/CustomAbilities/CustomAbility.cs/#L108">View Source</a>
+  </span>
+  <a id="RolePlus_ExternModule_API_Features_CustomAbilities_CustomAbility_Get_" data-uid="RolePlus.ExternModule.API.Features.CustomAbilities.CustomAbility.Get*"></a>
+  <h4 id="RolePlus_ExternModule_API_Features_CustomAbilities_CustomAbility_Get_System_String_" data-uid="RolePlus.ExternModule.API.Features.CustomAbilities.CustomAbility.Get(System.String)">Get(String)</h4>
+  <div class="markdown level1 summary"><p>Gets a <a class="xref" href="RolePlus.ExternModule.API.Features.CustomAbilities.CustomAbility.html">CustomAbility</a> given the specified type name.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static CustomAbility Get(string type)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">type</span></td>
+        <td><p>The ability type name.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="RolePlus.ExternModule.API.Features.CustomAbilities.CustomAbility.html">CustomAbility</a></td>
+        <td><p>The corresponding <a class="xref" href="RolePlus.ExternModule.API.Features.CustomAbilities.CustomAbility.html">CustomAbility</a>, or <span class="xref">null</span> if not found.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/TeslaITStudios/RolePlus/new/dev/apiSpec/new?filename=RolePlus_ExternModule_API_Features_CustomAbilities_CustomAbility_Get__1_Player_.md&amp;value=---%0Auid%3A%20RolePlus.ExternModule.API.Features.CustomAbilities.CustomAbility.Get%60%601(Player)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/TeslaITStudios/RolePlus/blob/master/RolePlus/ExternModule/API/Features/CustomAbilities/CustomAbility.cs/#L123">View Source</a>
+  </span>
+  <a id="RolePlus_ExternModule_API_Features_CustomAbilities_CustomAbility_Get_" data-uid="RolePlus.ExternModule.API.Features.CustomAbilities.CustomAbility.Get*"></a>
+  <h4 id="RolePlus_ExternModule_API_Features_CustomAbilities_CustomAbility_Get__1_Player_" data-uid="RolePlus.ExternModule.API.Features.CustomAbilities.CustomAbility.Get``1(Player)">Get&lt;T&gt;(Player)</h4>
+  <div class="markdown level1 summary"><p>Gets a <a class="xref" href="RolePlus.ExternModule.API.Features.CustomAbilities.CustomAbility.html">CustomAbility</a> from a <see cref="!:Player"></see> given the specified type name.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static T Get&lt;T&gt;(Player player)
+
+    where T : CustomAbility</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Player</span></td>
+        <td><span class="parametername">player</span></td>
+        <td><p>The player to check.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">T</span></td>
+        <td><p>The corresponding <a class="xref" href="RolePlus.ExternModule.API.Features.CustomAbilities.CustomAbility.html">CustomAbility</a>, or <span class="xref">null</span> if not found.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">T</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/TeslaITStudios/RolePlus/new/dev/apiSpec/new?filename=RolePlus_ExternModule_API_Features_CustomAbilities_CustomAbility_OnAbilityUsed.md&amp;value=---%0Auid%3A%20RolePlus.ExternModule.API.Features.CustomAbilities.CustomAbility.OnAbilityUsed%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/TeslaITStudios/RolePlus/blob/master/RolePlus/ExternModule/API/Features/CustomAbilities/CustomAbility.cs/#L419">View Source</a>
+  </span>
+  <a id="RolePlus_ExternModule_API_Features_CustomAbilities_CustomAbility_OnAbilityUsed_" data-uid="RolePlus.ExternModule.API.Features.CustomAbilities.CustomAbility.OnAbilityUsed*"></a>
+  <h4 id="RolePlus_ExternModule_API_Features_CustomAbilities_CustomAbility_OnAbilityUsed" data-uid="RolePlus.ExternModule.API.Features.CustomAbilities.CustomAbility.OnAbilityUsed">OnAbilityUsed()</h4>
+  <div class="markdown level1 summary"><p>Fired when the ability is used.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual void OnAbilityUsed()</code></pre>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/TeslaITStudios/RolePlus/new/dev/apiSpec/new?filename=RolePlus_ExternModule_API_Features_CustomAbilities_CustomAbility_OnBeginPlay.md&amp;value=---%0Auid%3A%20RolePlus.ExternModule.API.Features.CustomAbilities.CustomAbility.OnBeginPlay%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/TeslaITStudios/RolePlus/blob/master/RolePlus/ExternModule/API/Features/CustomAbilities/CustomAbility.cs/#L400">View Source</a>
+  </span>
+  <a id="RolePlus_ExternModule_API_Features_CustomAbilities_CustomAbility_OnBeginPlay_" data-uid="RolePlus.ExternModule.API.Features.CustomAbilities.CustomAbility.OnBeginPlay*"></a>
+  <h4 id="RolePlus_ExternModule_API_Features_CustomAbilities_CustomAbility_OnBeginPlay" data-uid="RolePlus.ExternModule.API.Features.CustomAbilities.CustomAbility.OnBeginPlay">OnBeginPlay()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override void OnBeginPlay()</code></pre>
+  </div>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="RolePlus.ExternModule.API.Engine.Framework.AActor.html#RolePlus_ExternModule_API_Engine_Framework_AActor_OnBeginPlay">AActor.OnBeginPlay()</a></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/TeslaITStudios/RolePlus/new/dev/apiSpec/new?filename=RolePlus_ExternModule_API_Features_CustomAbilities_CustomAbility_OnChangingLevel_System_Byte_.md&amp;value=---%0Auid%3A%20RolePlus.ExternModule.API.Features.CustomAbilities.CustomAbility.OnChangingLevel(System.Byte)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/TeslaITStudios/RolePlus/blob/master/RolePlus/ExternModule/API/Features/CustomAbilities/CustomAbility.cs/#L425">View Source</a>
+  </span>
+  <a id="RolePlus_ExternModule_API_Features_CustomAbilities_CustomAbility_OnChangingLevel_" data-uid="RolePlus.ExternModule.API.Features.CustomAbilities.CustomAbility.OnChangingLevel*"></a>
+  <h4 id="RolePlus_ExternModule_API_Features_CustomAbilities_CustomAbility_OnChangingLevel_System_Byte_" data-uid="RolePlus.ExternModule.API.Features.CustomAbilities.CustomAbility.OnChangingLevel(System.Byte)">OnChangingLevel(Byte)</h4>
+  <div class="markdown level1 summary"><p>Fired when the level is changed.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual void OnChangingLevel(byte level)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Byte</span></td>
+        <td><span class="parametername">level</span></td>
+        <td><p>The new level.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/TeslaITStudios/RolePlus/new/dev/apiSpec/new?filename=RolePlus_ExternModule_API_Features_CustomAbilities_CustomAbility_OnEndPlay.md&amp;value=---%0Auid%3A%20RolePlus.ExternModule.API.Features.CustomAbilities.CustomAbility.OnEndPlay%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/TeslaITStudios/RolePlus/blob/master/RolePlus/ExternModule/API/Features/CustomAbilities/CustomAbility.cs/#L409">View Source</a>
+  </span>
+  <a id="RolePlus_ExternModule_API_Features_CustomAbilities_CustomAbility_OnEndPlay_" data-uid="RolePlus.ExternModule.API.Features.CustomAbilities.CustomAbility.OnEndPlay*"></a>
+  <h4 id="RolePlus_ExternModule_API_Features_CustomAbilities_CustomAbility_OnEndPlay" data-uid="RolePlus.ExternModule.API.Features.CustomAbilities.CustomAbility.OnEndPlay">OnEndPlay()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override void OnEndPlay()</code></pre>
+  </div>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="RolePlus.ExternModule.API.Engine.Framework.AActor.html#RolePlus_ExternModule_API_Engine_Framework_AActor_OnEndPlay">AActor.OnEndPlay()</a></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/TeslaITStudios/RolePlus/new/dev/apiSpec/new?filename=RolePlus_ExternModule_API_Features_CustomAbilities_CustomAbility_RegisterAbilities.md&amp;value=---%0Auid%3A%20RolePlus.ExternModule.API.Features.CustomAbilities.CustomAbility.RegisterAbilities%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/TeslaITStudios/RolePlus/blob/master/RolePlus/ExternModule/API/Features/CustomAbilities/CustomAbility.cs/#L304">View Source</a>
+  </span>
+  <a id="RolePlus_ExternModule_API_Features_CustomAbilities_CustomAbility_RegisterAbilities_" data-uid="RolePlus.ExternModule.API.Features.CustomAbilities.CustomAbility.RegisterAbilities*"></a>
+  <h4 id="RolePlus_ExternModule_API_Features_CustomAbilities_CustomAbility_RegisterAbilities" data-uid="RolePlus.ExternModule.API.Features.CustomAbilities.CustomAbility.RegisterAbilities">RegisterAbilities()</h4>
+  <div class="markdown level1 summary"><p>Enables all the custom abilities present in the assembly.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static IEnumerable&lt;CustomAbility&gt; RegisterAbilities()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<a class="xref" href="RolePlus.ExternModule.API.Features.CustomAbilities.CustomAbility.html">CustomAbility</a>&gt;</td>
+        <td><p>A <span class="xref">System.Collections.Generic.IEnumerable&lt;T&gt;</span> of <a class="xref" href="RolePlus.ExternModule.API.Features.CustomAbilities.CustomAbility.html">CustomAbility</a> which contains all the enabled custom abilities.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/TeslaITStudios/RolePlus/new/dev/apiSpec/new?filename=RolePlus_ExternModule_API_Features_CustomAbilities_CustomAbility_RemoveAbilities_Player_.md&amp;value=---%0Auid%3A%20RolePlus.ExternModule.API.Features.CustomAbilities.CustomAbility.RemoveAbilities(Player)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/TeslaITStudios/RolePlus/blob/master/RolePlus/ExternModule/API/Features/CustomAbilities/CustomAbility.cs/#L257">View Source</a>
+  </span>
+  <a id="RolePlus_ExternModule_API_Features_CustomAbilities_CustomAbility_RemoveAbilities_" data-uid="RolePlus.ExternModule.API.Features.CustomAbilities.CustomAbility.RemoveAbilities*"></a>
+  <h4 id="RolePlus_ExternModule_API_Features_CustomAbilities_CustomAbility_RemoveAbilities_Player_" data-uid="RolePlus.ExternModule.API.Features.CustomAbilities.CustomAbility.RemoveAbilities(Player)">RemoveAbilities(Player)</h4>
+  <div class="markdown level1 summary"><p>Removes all the custom abilities from the specified <see cref="!:Player"></see>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void RemoveAbilities(Player player)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Player</span></td>
+        <td><span class="parametername">player</span></td>
+        <td><p>The player to affect.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/TeslaITStudios/RolePlus/new/dev/apiSpec/new?filename=RolePlus_ExternModule_API_Features_CustomAbilities_CustomAbility_RemoveAbilities_Player_System_Collections_Generic_IEnumerable_System_String__.md&amp;value=---%0Auid%3A%20RolePlus.ExternModule.API.Features.CustomAbilities.CustomAbility.RemoveAbilities(Player%2CSystem.Collections.Generic.IEnumerable%7BSystem.String%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/TeslaITStudios/RolePlus/blob/master/RolePlus/ExternModule/API/Features/CustomAbilities/CustomAbility.cs/#L289">View Source</a>
+  </span>
+  <a id="RolePlus_ExternModule_API_Features_CustomAbilities_CustomAbility_RemoveAbilities_" data-uid="RolePlus.ExternModule.API.Features.CustomAbilities.CustomAbility.RemoveAbilities*"></a>
+  <h4 id="RolePlus_ExternModule_API_Features_CustomAbilities_CustomAbility_RemoveAbilities_Player_System_Collections_Generic_IEnumerable_System_String__" data-uid="RolePlus.ExternModule.API.Features.CustomAbilities.CustomAbility.RemoveAbilities(Player,System.Collections.Generic.IEnumerable{System.String})">RemoveAbilities(Player, IEnumerable&lt;String&gt;)</h4>
+  <div class="markdown level1 summary"><p>Removes a <span class="xref">System.Collections.Generic.IEnumerable&lt;T&gt;</span> of <a class="xref" href="RolePlus.ExternModule.API.Features.CustomAbilities.CustomAbility.html">CustomAbility</a> from the specified <see cref="!:Player"></see>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void RemoveAbilities(Player player, IEnumerable&lt;string&gt; types)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Player</span></td>
+        <td><span class="parametername">player</span></td>
+        <td><p>The player to affect.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<span class="xref">System.String</span>&gt;</td>
+        <td><span class="parametername">types</span></td>
+        <td><p>The custom abilities.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/TeslaITStudios/RolePlus/new/dev/apiSpec/new?filename=RolePlus_ExternModule_API_Features_CustomAbilities_CustomAbility_RemoveAbilities_Player_System_Collections_Generic_IEnumerable_System_Type__.md&amp;value=---%0Auid%3A%20RolePlus.ExternModule.API.Features.CustomAbilities.CustomAbility.RemoveAbilities(Player%2CSystem.Collections.Generic.IEnumerable%7BSystem.Type%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/TeslaITStudios/RolePlus/blob/master/RolePlus/ExternModule/API/Features/CustomAbilities/CustomAbility.cs/#L273">View Source</a>
+  </span>
+  <a id="RolePlus_ExternModule_API_Features_CustomAbilities_CustomAbility_RemoveAbilities_" data-uid="RolePlus.ExternModule.API.Features.CustomAbilities.CustomAbility.RemoveAbilities*"></a>
+  <h4 id="RolePlus_ExternModule_API_Features_CustomAbilities_CustomAbility_RemoveAbilities_Player_System_Collections_Generic_IEnumerable_System_Type__" data-uid="RolePlus.ExternModule.API.Features.CustomAbilities.CustomAbility.RemoveAbilities(Player,System.Collections.Generic.IEnumerable{System.Type})">RemoveAbilities(Player, IEnumerable&lt;Type&gt;)</h4>
+  <div class="markdown level1 summary"><p>Removes a <span class="xref">System.Collections.Generic.IEnumerable&lt;T&gt;</span> of <a class="xref" href="RolePlus.ExternModule.API.Features.CustomAbilities.CustomAbility.html">CustomAbility</a> from the specified <see cref="!:Player"></see>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void RemoveAbilities(Player player, IEnumerable&lt;Type&gt; types)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Player</span></td>
+        <td><span class="parametername">player</span></td>
+        <td><p>The player to affect.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<span class="xref">System.Type</span>&gt;</td>
+        <td><span class="parametername">types</span></td>
+        <td><p>The custom abilities.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/TeslaITStudios/RolePlus/new/dev/apiSpec/new?filename=RolePlus_ExternModule_API_Features_CustomAbilities_CustomAbility_RemoveAbility_Player_System_String_.md&amp;value=---%0Auid%3A%20RolePlus.ExternModule.API.Features.CustomAbilities.CustomAbility.RemoveAbility(Player%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/TeslaITStudios/RolePlus/blob/master/RolePlus/ExternModule/API/Features/CustomAbilities/CustomAbility.cs/#L243">View Source</a>
+  </span>
+  <a id="RolePlus_ExternModule_API_Features_CustomAbilities_CustomAbility_RemoveAbility_" data-uid="RolePlus.ExternModule.API.Features.CustomAbilities.CustomAbility.RemoveAbility*"></a>
+  <h4 id="RolePlus_ExternModule_API_Features_CustomAbilities_CustomAbility_RemoveAbility_Player_System_String_" data-uid="RolePlus.ExternModule.API.Features.CustomAbilities.CustomAbility.RemoveAbility(Player,System.String)">RemoveAbility(Player, String)</h4>
+  <div class="markdown level1 summary"><p>Removes a <a class="xref" href="RolePlus.ExternModule.API.Features.CustomAbilities.CustomAbility.html">CustomAbility</a> from the specified <see cref="!:Player"></see>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool RemoveAbility(Player player, string type)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Player</span></td>
+        <td><span class="parametername">player</span></td>
+        <td><p>The player to affect.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">type</span></td>
+        <td><p>The custom ability type.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><p><span class="xref">true</span> if the <a class="xref" href="RolePlus.ExternModule.API.Features.CustomAbilities.CustomAbility.html">CustomAbility</a> was removed successfully; otherwise, <span class="xref">false</span>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/TeslaITStudios/RolePlus/new/dev/apiSpec/new?filename=RolePlus_ExternModule_API_Features_CustomAbilities_CustomAbility_RemoveAbility_Player_System_Type_.md&amp;value=---%0Auid%3A%20RolePlus.ExternModule.API.Features.CustomAbilities.CustomAbility.RemoveAbility(Player%2CSystem.Type)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/TeslaITStudios/RolePlus/blob/master/RolePlus/ExternModule/API/Features/CustomAbilities/CustomAbility.cs/#L231">View Source</a>
+  </span>
+  <a id="RolePlus_ExternModule_API_Features_CustomAbilities_CustomAbility_RemoveAbility_" data-uid="RolePlus.ExternModule.API.Features.CustomAbilities.CustomAbility.RemoveAbility*"></a>
+  <h4 id="RolePlus_ExternModule_API_Features_CustomAbilities_CustomAbility_RemoveAbility_Player_System_Type_" data-uid="RolePlus.ExternModule.API.Features.CustomAbilities.CustomAbility.RemoveAbility(Player,System.Type)">RemoveAbility(Player, Type)</h4>
+  <div class="markdown level1 summary"><p>Removes a <a class="xref" href="RolePlus.ExternModule.API.Features.CustomAbilities.CustomAbility.html">CustomAbility</a> from the specified <see cref="!:Player"></see>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool RemoveAbility(Player player, Type type)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Player</span></td>
+        <td><span class="parametername">player</span></td>
+        <td><p>The player to affect.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Type</span></td>
+        <td><span class="parametername">type</span></td>
+        <td><p>The custom ability type.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><p><span class="xref">true</span> if the <a class="xref" href="RolePlus.ExternModule.API.Features.CustomAbilities.CustomAbility.html">CustomAbility</a> was removed successfully; otherwise, <span class="xref">false</span>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/TeslaITStudios/RolePlus/new/dev/apiSpec/new?filename=RolePlus_ExternModule_API_Features_CustomAbilities_CustomAbility_RemoveAbility__1_Player_.md&amp;value=---%0Auid%3A%20RolePlus.ExternModule.API.Features.CustomAbilities.CustomAbility.RemoveAbility%60%601(Player)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/TeslaITStudios/RolePlus/blob/master/RolePlus/ExternModule/API/Features/CustomAbilities/CustomAbility.cs/#L218">View Source</a>
+  </span>
+  <a id="RolePlus_ExternModule_API_Features_CustomAbilities_CustomAbility_RemoveAbility_" data-uid="RolePlus.ExternModule.API.Features.CustomAbilities.CustomAbility.RemoveAbility*"></a>
+  <h4 id="RolePlus_ExternModule_API_Features_CustomAbilities_CustomAbility_RemoveAbility__1_Player_" data-uid="RolePlus.ExternModule.API.Features.CustomAbilities.CustomAbility.RemoveAbility``1(Player)">RemoveAbility&lt;T&gt;(Player)</h4>
+  <div class="markdown level1 summary"><p>Removes a <code data-dev-comment-type="typeparamref" class="typeparamref">T</code> <a class="xref" href="RolePlus.ExternModule.API.Features.CustomAbilities.CustomAbility.html">CustomAbility</a> from the specified <see cref="!:Player"></see>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool RemoveAbility&lt;T&gt;(Player player)
+
+    where T : CustomAbility</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Player</span></td>
+        <td><span class="parametername">player</span></td>
+        <td><p>The player to affect.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><p><span class="xref">true</span> if the <a class="xref" href="RolePlus.ExternModule.API.Features.CustomAbilities.CustomAbility.html">CustomAbility</a> was removed successfully; otherwise, <span class="xref">false</span>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">T</span></td>
+        <td><p>The custom ability type.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/TeslaITStudios/RolePlus/new/dev/apiSpec/new?filename=RolePlus_ExternModule_API_Features_CustomAbilities_CustomAbility_UnregisterAbilities.md&amp;value=---%0Auid%3A%20RolePlus.ExternModule.API.Features.CustomAbilities.CustomAbility.UnregisterAbilities%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/TeslaITStudios/RolePlus/blob/master/RolePlus/ExternModule/API/Features/CustomAbilities/CustomAbility.cs/#L326">View Source</a>
+  </span>
+  <a id="RolePlus_ExternModule_API_Features_CustomAbilities_CustomAbility_UnregisterAbilities_" data-uid="RolePlus.ExternModule.API.Features.CustomAbilities.CustomAbility.UnregisterAbilities*"></a>
+  <h4 id="RolePlus_ExternModule_API_Features_CustomAbilities_CustomAbility_UnregisterAbilities" data-uid="RolePlus.ExternModule.API.Features.CustomAbilities.CustomAbility.UnregisterAbilities">UnregisterAbilities()</h4>
+  <div class="markdown level1 summary"><p>Disables all the custom abilities present in the assembly.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static IEnumerable&lt;CustomAbility&gt; UnregisterAbilities()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<a class="xref" href="RolePlus.ExternModule.API.Features.CustomAbilities.CustomAbility.html">CustomAbility</a>&gt;</td>
+        <td><p>A <span class="xref">System.Collections.Generic.IEnumerable&lt;T&gt;</span> of <a class="xref" href="RolePlus.ExternModule.API.Features.CustomAbilities.CustomAbility.html">CustomAbility</a> which contains all the disabled custom abilities.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="extensionmethods">Extension Methods</h3>
+  <div>
+      <a class="xref" href="RolePlus.API.Engine.Extensions.ComponentExtensions.html#RolePlus_API_Engine_Extensions_ComponentExtensions_AddActorComponent__1_RolePlus_ExternModule_API_Engine_Framework_AActor_System_String_">ComponentExtensions.AddActorComponent&lt;T&gt;(AActor, String)</a>
+  </div>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/TeslaITStudios/RolePlus/new/dev/apiSpec/new?filename=RolePlus_ExternModule_API_Features_CustomAbilities_CustomAbility.md&amp;value=---%0Auid%3A%20RolePlus.ExternModule.API.Features.CustomAbilities.CustomAbility%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/TeslaITStudios/RolePlus/blob/master/RolePlus/ExternModule/API/Features/CustomAbilities/CustomAbility.cs/#L21" class="contribution-link">View Source</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,4345 @@
+{
+  "homepages": [],
+  "source_base_path": "D:/a/RolePlus/RolePlus",
+  "xrefmap": "xrefmap.yml",
+  "files": [
+    {
+      "type": "Resource",
+      "output": {
+        "resource": {
+          "relative_path": "index.json"
+        }
+      },
+      "is_incremental": false
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Assets/Door/door.prefab",
+      "output": {
+        "resource": {
+          "relative_path": "Assets/Door/door.prefab"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Assets/Door/doorblue.prefab",
+      "output": {
+        "resource": {
+          "relative_path": "Assets/Door/doorblue.prefab"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Assets/Door/doorez.prefab",
+      "output": {
+        "resource": {
+          "relative_path": "Assets/Door/doorez.prefab"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Assets/Door/doorhcz.prefab",
+      "output": {
+        "resource": {
+          "relative_path": "Assets/Door/doorhcz.prefab"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Assets/Door/doorlczgreen.prefab",
+      "output": {
+        "resource": {
+          "relative_path": "Assets/Door/doorlczgreen.prefab"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Assets/Door/dooroz.prefab",
+      "output": {
+        "resource": {
+          "relative_path": "Assets/Door/dooroz.prefab"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Assets/Examples/Amogus.prefab",
+      "output": {
+        "resource": {
+          "relative_path": "Assets/Examples/Amogus.prefab"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Assets/Examples/Barchair.prefab",
+      "output": {
+        "resource": {
+          "relative_path": "Assets/Examples/Barchair.prefab"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Assets/Examples/Bartable.prefab",
+      "output": {
+        "resource": {
+          "relative_path": "Assets/Examples/Bartable.prefab"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Assets/Examples/BridgeConnector.prefab",
+      "output": {
+        "resource": {
+          "relative_path": "Assets/Examples/BridgeConnector.prefab"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Assets/Examples/Buildwall.prefab",
+      "output": {
+        "resource": {
+          "relative_path": "Assets/Examples/Buildwall.prefab"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Assets/Examples/BunkerLight.prefab",
+      "output": {
+        "resource": {
+          "relative_path": "Assets/Examples/BunkerLight.prefab"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Assets/Examples/Cage.prefab",
+      "output": {
+        "resource": {
+          "relative_path": "Assets/Examples/Cage.prefab"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Assets/Examples/Chair.prefab",
+      "output": {
+        "resource": {
+          "relative_path": "Assets/Examples/Chair.prefab"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Assets/Examples/Chest.prefab",
+      "output": {
+        "resource": {
+          "relative_path": "Assets/Examples/Chest.prefab"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Assets/Examples/Circle.prefab",
+      "output": {
+        "resource": {
+          "relative_path": "Assets/Examples/Circle.prefab"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Assets/Examples/Concretebarrier.prefab",
+      "output": {
+        "resource": {
+          "relative_path": "Assets/Examples/Concretebarrier.prefab"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Assets/Examples/Core.prefab",
+      "output": {
+        "resource": {
+          "relative_path": "Assets/Examples/Core.prefab"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Assets/Examples/Crate1.prefab",
+      "output": {
+        "resource": {
+          "relative_path": "Assets/Examples/Crate1.prefab"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Assets/Examples/Crate2.prefab",
+      "output": {
+        "resource": {
+          "relative_path": "Assets/Examples/Crate2.prefab"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Assets/Examples/Crate2withlogo.prefab",
+      "output": {
+        "resource": {
+          "relative_path": "Assets/Examples/Crate2withlogo.prefab"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Assets/Examples/Desk.prefab",
+      "output": {
+        "resource": {
+          "relative_path": "Assets/Examples/Desk.prefab"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Assets/Examples/Elevator.prefab",
+      "output": {
+        "resource": {
+          "relative_path": "Assets/Examples/Elevator.prefab"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Assets/Examples/Entrydeks.prefab",
+      "output": {
+        "resource": {
+          "relative_path": "Assets/Examples/Entrydeks.prefab"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Assets/Examples/Examples.zip",
+      "output": {
+        "resource": {
+          "relative_path": "Assets/Examples/Examples.zip"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Assets/Examples/Gas.prefab",
+      "output": {
+        "resource": {
+          "relative_path": "Assets/Examples/Gas.prefab"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Assets/Examples/Gate.prefab",
+      "output": {
+        "resource": {
+          "relative_path": "Assets/Examples/Gate.prefab"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Assets/Examples/Gatedoors.prefab",
+      "output": {
+        "resource": {
+          "relative_path": "Assets/Examples/Gatedoors.prefab"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Assets/Examples/Generator.prefab",
+      "output": {
+        "resource": {
+          "relative_path": "Assets/Examples/Generator.prefab"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Assets/Examples/Hangar.prefab",
+      "output": {
+        "resource": {
+          "relative_path": "Assets/Examples/Hangar.prefab"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Assets/Examples/Helicopter.prefab",
+      "output": {
+        "resource": {
+          "relative_path": "Assets/Examples/Helicopter.prefab"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Assets/Examples/Lampione.prefab",
+      "output": {
+        "resource": {
+          "relative_path": "Assets/Examples/Lampione.prefab"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Assets/Examples/Light2.prefab",
+      "output": {
+        "resource": {
+          "relative_path": "Assets/Examples/Light2.prefab"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Assets/Examples/Locker.prefab",
+      "output": {
+        "resource": {
+          "relative_path": "Assets/Examples/Locker.prefab"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Assets/Examples/MedTable.prefab",
+      "output": {
+        "resource": {
+          "relative_path": "Assets/Examples/MedTable.prefab"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Assets/Examples/Medbed.prefab",
+      "output": {
+        "resource": {
+          "relative_path": "Assets/Examples/Medbed.prefab"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Assets/Examples/NO-ANIM-Radar.prefab",
+      "output": {
+        "resource": {
+          "relative_path": "Assets/Examples/NO-ANIM-Radar.prefab"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Assets/Examples/Neon.prefab",
+      "output": {
+        "resource": {
+          "relative_path": "Assets/Examples/Neon.prefab"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Assets/Examples/NeonSoffitto.prefab",
+      "output": {
+        "resource": {
+          "relative_path": "Assets/Examples/NeonSoffitto.prefab"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Assets/Examples/Neonformagazine.prefab",
+      "output": {
+        "resource": {
+          "relative_path": "Assets/Examples/Neonformagazine.prefab"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Assets/Examples/Newradar.prefab",
+      "output": {
+        "resource": {
+          "relative_path": "Assets/Examples/Newradar.prefab"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Assets/Examples/Newwall.prefab",
+      "output": {
+        "resource": {
+          "relative_path": "Assets/Examples/Newwall.prefab"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Assets/Examples/Nuclearwaste.prefab",
+      "output": {
+        "resource": {
+          "relative_path": "Assets/Examples/Nuclearwaste.prefab"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Assets/Examples/Nuclearwastewothoutlogo.prefab",
+      "output": {
+        "resource": {
+          "relative_path": "Assets/Examples/Nuclearwastewothoutlogo.prefab"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Assets/Examples/Omegawarhead.prefab",
+      "output": {
+        "resource": {
+          "relative_path": "Assets/Examples/Omegawarhead.prefab"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Assets/Examples/Opencage.prefab",
+      "output": {
+        "resource": {
+          "relative_path": "Assets/Examples/Opencage.prefab"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Assets/Examples/Opencontainer.prefab",
+      "output": {
+        "resource": {
+          "relative_path": "Assets/Examples/Opencontainer.prefab"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Assets/Examples/Pank.prefab",
+      "output": {
+        "resource": {
+          "relative_path": "Assets/Examples/Pank.prefab"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Assets/Examples/Radar.prefab",
+      "output": {
+        "resource": {
+          "relative_path": "Assets/Examples/Radar.prefab"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Assets/Examples/Radlogo.prefab",
+      "output": {
+        "resource": {
+          "relative_path": "Assets/Examples/Radlogo.prefab"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Assets/Examples/Recinzione.prefab",
+      "output": {
+        "resource": {
+          "relative_path": "Assets/Examples/Recinzione.prefab"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Assets/Examples/Riflettore.prefab",
+      "output": {
+        "resource": {
+          "relative_path": "Assets/Examples/Riflettore.prefab"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Assets/Examples/Scaffale.prefab",
+      "output": {
+        "resource": {
+          "relative_path": "Assets/Examples/Scaffale.prefab"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Assets/Examples/Scaffalecrate.prefab",
+      "output": {
+        "resource": {
+          "relative_path": "Assets/Examples/Scaffalecrate.prefab"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Assets/Examples/Scp230Containment.prefab",
+      "output": {
+        "resource": {
+          "relative_path": "Assets/Examples/Scp230Containment.prefab"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Assets/Examples/Scp457Containment.prefab",
+      "output": {
+        "resource": {
+          "relative_path": "Assets/Examples/Scp457Containment.prefab"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Assets/Examples/Scp550Containment.prefab",
+      "output": {
+        "resource": {
+          "relative_path": "Assets/Examples/Scp550Containment.prefab"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Assets/Examples/Scp610Containment.prefab",
+      "output": {
+        "resource": {
+          "relative_path": "Assets/Examples/Scp610Containment.prefab"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Assets/Examples/Scp650Containment.prefab",
+      "output": {
+        "resource": {
+          "relative_path": "Assets/Examples/Scp650Containment.prefab"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Assets/Examples/Scp966Containment.prefab",
+      "output": {
+        "resource": {
+          "relative_path": "Assets/Examples/Scp966Containment.prefab"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Assets/Examples/Server.prefab",
+      "output": {
+        "resource": {
+          "relative_path": "Assets/Examples/Server.prefab"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Assets/Examples/ServerRack.prefab",
+      "output": {
+        "resource": {
+          "relative_path": "Assets/Examples/ServerRack.prefab"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Assets/Examples/ServerRack1.prefab",
+      "output": {
+        "resource": {
+          "relative_path": "Assets/Examples/ServerRack1.prefab"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Assets/Examples/Silo.prefab",
+      "output": {
+        "resource": {
+          "relative_path": "Assets/Examples/Silo.prefab"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Assets/Examples/Simplecontainer.prefab",
+      "output": {
+        "resource": {
+          "relative_path": "Assets/Examples/Simplecontainer.prefab"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Assets/Examples/Simplecontainerblue.prefab",
+      "output": {
+        "resource": {
+          "relative_path": "Assets/Examples/Simplecontainerblue.prefab"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Assets/Examples/Simplecontainergrey.prefab",
+      "output": {
+        "resource": {
+          "relative_path": "Assets/Examples/Simplecontainergrey.prefab"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Assets/Examples/Simplecontainerorange.prefab",
+      "output": {
+        "resource": {
+          "relative_path": "Assets/Examples/Simplecontainerorange.prefab"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Assets/Examples/Streetlight.prefab",
+      "output": {
+        "resource": {
+          "relative_path": "Assets/Examples/Streetlight.prefab"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Assets/Examples/Table.prefab",
+      "output": {
+        "resource": {
+          "relative_path": "Assets/Examples/Table.prefab"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Assets/Examples/Text.prefab",
+      "output": {
+        "resource": {
+          "relative_path": "Assets/Examples/Text.prefab"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Assets/Examples/Uraniumtube.prefab",
+      "output": {
+        "resource": {
+          "relative_path": "Assets/Examples/Uraniumtube.prefab"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Assets/Examples/Waitchair.prefab",
+      "output": {
+        "resource": {
+          "relative_path": "Assets/Examples/Waitchair.prefab"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Assets/Examples/Wall.prefab",
+      "output": {
+        "resource": {
+          "relative_path": "Assets/Examples/Wall.prefab"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Assets/Examples/WallConnector.prefab",
+      "output": {
+        "resource": {
+          "relative_path": "Assets/Examples/WallConnector.prefab"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Assets/Examples/Wastescaffale.prefab",
+      "output": {
+        "resource": {
+          "relative_path": "Assets/Examples/Wastescaffale.prefab"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Assets/Examples/barrelorange.prefab",
+      "output": {
+        "resource": {
+          "relative_path": "Assets/Examples/barrelorange.prefab"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Assets/Examples/door.prefab",
+      "output": {
+        "resource": {
+          "relative_path": "Assets/Examples/door.prefab"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Assets/Examples/doorblue.prefab",
+      "output": {
+        "resource": {
+          "relative_path": "Assets/Examples/doorblue.prefab"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Assets/Examples/doorez.prefab",
+      "output": {
+        "resource": {
+          "relative_path": "Assets/Examples/doorez.prefab"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Assets/Examples/doorhcz.prefab",
+      "output": {
+        "resource": {
+          "relative_path": "Assets/Examples/doorhcz.prefab"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Assets/Examples/doorlczgreen.prefab",
+      "output": {
+        "resource": {
+          "relative_path": "Assets/Examples/doorlczgreen.prefab"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Assets/Examples/dooroz.prefab",
+      "output": {
+        "resource": {
+          "relative_path": "Assets/Examples/dooroz.prefab"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Assets/Examples/rbmk1000.prefab",
+      "output": {
+        "resource": {
+          "relative_path": "Assets/Examples/rbmk1000.prefab"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Assets/Facility Map/CustomMap.prefab",
+      "output": {
+        "resource": {
+          "relative_path": "Assets/Facility Map/CustomMap.prefab"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Assets/Facility Map/EZMap/EZCaffetteria.prefab",
+      "output": {
+        "resource": {
+          "relative_path": "Assets/Facility Map/EZMap/EZCaffetteria.prefab"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Assets/Facility Map/EZMap/EZConnector.prefab",
+      "output": {
+        "resource": {
+          "relative_path": "Assets/Facility Map/EZMap/EZConnector.prefab"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Assets/Facility Map/EZMap/EZCross.prefab",
+      "output": {
+        "resource": {
+          "relative_path": "Assets/Facility Map/EZMap/EZCross.prefab"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Assets/Facility Map/EZMap/EZLCross.prefab",
+      "output": {
+        "resource": {
+          "relative_path": "Assets/Facility Map/EZMap/EZLCross.prefab"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Assets/Facility Map/EZMap/EZMap1.prefab",
+      "output": {
+        "resource": {
+          "relative_path": "Assets/Facility Map/EZMap/EZMap1.prefab"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Assets/Facility Map/EZMap/EZMedBay.prefab",
+      "output": {
+        "resource": {
+          "relative_path": "Assets/Facility Map/EZMap/EZMedBay.prefab"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Assets/Facility Map/EZMap/EZOffice.prefab",
+      "output": {
+        "resource": {
+          "relative_path": "Assets/Facility Map/EZMap/EZOffice.prefab"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Assets/Facility Map/EZMap/EZServer.prefab",
+      "output": {
+        "resource": {
+          "relative_path": "Assets/Facility Map/EZMap/EZServer.prefab"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Assets/Facility Map/EZMap/EZStraight.prefab",
+      "output": {
+        "resource": {
+          "relative_path": "Assets/Facility Map/EZMap/EZStraight.prefab"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Assets/Facility Map/EZMap/EZTCross.prefab",
+      "output": {
+        "resource": {
+          "relative_path": "Assets/Facility Map/EZMap/EZTCross.prefab"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Assets/Facility Map/EZMap/OZTCross.prefab",
+      "output": {
+        "resource": {
+          "relative_path": "Assets/Facility Map/EZMap/OZTCross.prefab"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Assets/Facility Map/HCZMap/HCZAmmo.prefab",
+      "output": {
+        "resource": {
+          "relative_path": "Assets/Facility Map/HCZMap/HCZAmmo.prefab"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Assets/Facility Map/HCZMap/HCZConnector.prefab",
+      "output": {
+        "resource": {
+          "relative_path": "Assets/Facility Map/HCZMap/HCZConnector.prefab"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Assets/Facility Map/HCZMap/HCZCross.prefab",
+      "output": {
+        "resource": {
+          "relative_path": "Assets/Facility Map/HCZMap/HCZCross.prefab"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Assets/Facility Map/HCZMap/HCZLCross.prefab",
+      "output": {
+        "resource": {
+          "relative_path": "Assets/Facility Map/HCZMap/HCZLCross.prefab"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Assets/Facility Map/HCZMap/HCZMap.prefab",
+      "output": {
+        "resource": {
+          "relative_path": "Assets/Facility Map/HCZMap/HCZMap.prefab"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Assets/Facility Map/HCZMap/HCZStraight.prefab",
+      "output": {
+        "resource": {
+          "relative_path": "Assets/Facility Map/HCZMap/HCZStraight.prefab"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Assets/Facility Map/HCZMap/HCZStraightWithoutLight.prefab",
+      "output": {
+        "resource": {
+          "relative_path": "Assets/Facility Map/HCZMap/HCZStraightWithoutLight.prefab"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Assets/Facility Map/HCZMap/HCZTCross.prefab",
+      "output": {
+        "resource": {
+          "relative_path": "Assets/Facility Map/HCZMap/HCZTCross.prefab"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Assets/Facility Map/LCZMap/LCZAmmo.prefab",
+      "output": {
+        "resource": {
+          "relative_path": "Assets/Facility Map/LCZMap/LCZAmmo.prefab"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Assets/Facility Map/LCZMap/LCZConnector.prefab",
+      "output": {
+        "resource": {
+          "relative_path": "Assets/Facility Map/LCZMap/LCZConnector.prefab"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Assets/Facility Map/LCZMap/LCZCross.prefab",
+      "output": {
+        "resource": {
+          "relative_path": "Assets/Facility Map/LCZMap/LCZCross.prefab"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Assets/Facility Map/LCZMap/LCZLCross.prefab",
+      "output": {
+        "resource": {
+          "relative_path": "Assets/Facility Map/LCZMap/LCZLCross.prefab"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Assets/Facility Map/LCZMap/LCZMap.prefab",
+      "output": {
+        "resource": {
+          "relative_path": "Assets/Facility Map/LCZMap/LCZMap.prefab"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Assets/Facility Map/LCZMap/LCZStorage.prefab",
+      "output": {
+        "resource": {
+          "relative_path": "Assets/Facility Map/LCZMap/LCZStorage.prefab"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Assets/Facility Map/LCZMap/LCZStraight.prefab",
+      "output": {
+        "resource": {
+          "relative_path": "Assets/Facility Map/LCZMap/LCZStraight.prefab"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Assets/Facility Map/LCZMap/LCZStraightWihoutLight.prefab",
+      "output": {
+        "resource": {
+          "relative_path": "Assets/Facility Map/LCZMap/LCZStraightWihoutLight.prefab"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Assets/Facility Map/LCZMap/LCZStraightWihoutLightAndPavimento.prefab",
+      "output": {
+        "resource": {
+          "relative_path": "Assets/Facility Map/LCZMap/LCZStraightWihoutLightAndPavimento.prefab"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Assets/Facility Map/LCZMap/LCZTCross.prefab",
+      "output": {
+        "resource": {
+          "relative_path": "Assets/Facility Map/LCZMap/LCZTCross.prefab"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Assets/Facility Map/OZMap/OZConnector.prefab",
+      "output": {
+        "resource": {
+          "relative_path": "Assets/Facility Map/OZMap/OZConnector.prefab"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Assets/Facility Map/OZMap/OZCross.prefab",
+      "output": {
+        "resource": {
+          "relative_path": "Assets/Facility Map/OZMap/OZCross.prefab"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Assets/Facility Map/OZMap/OZGateC.prefab",
+      "output": {
+        "resource": {
+          "relative_path": "Assets/Facility Map/OZMap/OZGateC.prefab"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Assets/Facility Map/OZMap/OZLCross.prefab",
+      "output": {
+        "resource": {
+          "relative_path": "Assets/Facility Map/OZMap/OZLCross.prefab"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Assets/Facility Map/OZMap/OZLCrossV2.prefab",
+      "output": {
+        "resource": {
+          "relative_path": "Assets/Facility Map/OZMap/OZLCrossV2.prefab"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Assets/Facility Map/OZMap/OZLCrossV3.prefab",
+      "output": {
+        "resource": {
+          "relative_path": "Assets/Facility Map/OZMap/OZLCrossV3.prefab"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Assets/Facility Map/OZMap/OZMap.prefab",
+      "output": {
+        "resource": {
+          "relative_path": "Assets/Facility Map/OZMap/OZMap.prefab"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Assets/Facility Map/OZMap/OZPlaza.prefab",
+      "output": {
+        "resource": {
+          "relative_path": "Assets/Facility Map/OZMap/OZPlaza.prefab"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Assets/Facility Map/OZMap/OZStorage.prefab",
+      "output": {
+        "resource": {
+          "relative_path": "Assets/Facility Map/OZMap/OZStorage.prefab"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Assets/Facility Map/OZMap/OZStraight.prefab",
+      "output": {
+        "resource": {
+          "relative_path": "Assets/Facility Map/OZMap/OZStraight.prefab"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Assets/Facility Map/OZMap/OZStraightWithoutLight.prefab",
+      "output": {
+        "resource": {
+          "relative_path": "Assets/Facility Map/OZMap/OZStraightWithoutLight.prefab"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Assets/Facility Map/OZMap/OZTCross.prefab",
+      "output": {
+        "resource": {
+          "relative_path": "Assets/Facility Map/OZMap/OZTCross.prefab"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Assets/Facility Map/OZMap/OZTeslaGate.prefab",
+      "output": {
+        "resource": {
+          "relative_path": "Assets/Facility Map/OZMap/OZTeslaGate.prefab"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Assets/Light/GameObject.prefab",
+      "output": {
+        "resource": {
+          "relative_path": "Assets/Light/GameObject.prefab"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Assets/Light/LightContaimentLight.prefab",
+      "output": {
+        "resource": {
+          "relative_path": "Assets/Light/LightContaimentLight.prefab"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Assets/Light/OZLight.prefab",
+      "output": {
+        "resource": {
+          "relative_path": "Assets/Light/OZLight.prefab"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Assets/Models/NO-ANIM-Radar.json",
+      "output": {
+        "resource": {
+          "relative_path": "Assets/Models/NO-ANIM-Radar.json"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Assets/Models/Radar.json",
+      "output": {
+        "resource": {
+          "relative_path": "Assets/Models/Radar.json"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Assets/Models/scp060.json",
+      "output": {
+        "resource": {
+          "relative_path": "Assets/Models/scp060.json"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Assets/Models/scp230.json",
+      "output": {
+        "resource": {
+          "relative_path": "Assets/Models/scp230.json"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Assets/Models/scp2521.json",
+      "output": {
+        "resource": {
+          "relative_path": "Assets/Models/scp2521.json"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Assets/Models/scp294.json",
+      "output": {
+        "resource": {
+          "relative_path": "Assets/Models/scp294.json"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Assets/Models/scp475.json",
+      "output": {
+        "resource": {
+          "relative_path": "Assets/Models/scp475.json"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Assets/Models/scp550.json",
+      "output": {
+        "resource": {
+          "relative_path": "Assets/Models/scp550.json"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Assets/Models/scp610.json",
+      "output": {
+        "resource": {
+          "relative_path": "Assets/Models/scp610.json"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Assets/Models/scp650.json",
+      "output": {
+        "resource": {
+          "relative_path": "Assets/Models/scp650.json"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Assets/Models/scp966.json",
+      "output": {
+        "resource": {
+          "relative_path": "Assets/Models/scp966.json"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Assets/Models/scp999.json",
+      "output": {
+        "resource": {
+          "relative_path": "Assets/Models/scp999.json"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Assets/old/Amogus.prefab",
+      "output": {
+        "resource": {
+          "relative_path": "Assets/old/Amogus.prefab"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Assets/old/Barchair.prefab",
+      "output": {
+        "resource": {
+          "relative_path": "Assets/old/Barchair.prefab"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Assets/old/Bartable.prefab",
+      "output": {
+        "resource": {
+          "relative_path": "Assets/old/Bartable.prefab"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Assets/old/BridgeConnector.prefab",
+      "output": {
+        "resource": {
+          "relative_path": "Assets/old/BridgeConnector.prefab"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Assets/old/Buildwall.prefab",
+      "output": {
+        "resource": {
+          "relative_path": "Assets/old/Buildwall.prefab"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Assets/old/Cage.prefab",
+      "output": {
+        "resource": {
+          "relative_path": "Assets/old/Cage.prefab"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Assets/old/Chair.prefab",
+      "output": {
+        "resource": {
+          "relative_path": "Assets/old/Chair.prefab"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Assets/old/Chest.prefab",
+      "output": {
+        "resource": {
+          "relative_path": "Assets/old/Chest.prefab"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Assets/old/Circle.prefab",
+      "output": {
+        "resource": {
+          "relative_path": "Assets/old/Circle.prefab"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Assets/old/Core.prefab",
+      "output": {
+        "resource": {
+          "relative_path": "Assets/old/Core.prefab"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Assets/old/Crate1.prefab",
+      "output": {
+        "resource": {
+          "relative_path": "Assets/old/Crate1.prefab"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Assets/old/Crate2.prefab",
+      "output": {
+        "resource": {
+          "relative_path": "Assets/old/Crate2.prefab"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Assets/old/Crate2withlogo.prefab",
+      "output": {
+        "resource": {
+          "relative_path": "Assets/old/Crate2withlogo.prefab"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Assets/old/CustomMapCopia.prefab.bak",
+      "output": {
+        "resource": {
+          "relative_path": "Assets/old/CustomMapCopia.prefab.bak"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Assets/old/Desk.prefab",
+      "output": {
+        "resource": {
+          "relative_path": "Assets/old/Desk.prefab"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Assets/old/EZMap1.prefab",
+      "output": {
+        "resource": {
+          "relative_path": "Assets/old/EZMap1.prefab"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Assets/old/Elevator.prefab",
+      "output": {
+        "resource": {
+          "relative_path": "Assets/old/Elevator.prefab"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Assets/old/Entrydeks.prefab",
+      "output": {
+        "resource": {
+          "relative_path": "Assets/old/Entrydeks.prefab"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Assets/old/Examples.zip",
+      "output": {
+        "resource": {
+          "relative_path": "Assets/old/Examples.zip"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Assets/old/Gas.prefab",
+      "output": {
+        "resource": {
+          "relative_path": "Assets/old/Gas.prefab"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Assets/old/Gate.prefab",
+      "output": {
+        "resource": {
+          "relative_path": "Assets/old/Gate.prefab"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Assets/old/Gatedoors.prefab",
+      "output": {
+        "resource": {
+          "relative_path": "Assets/old/Gatedoors.prefab"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Assets/old/Generator.prefab",
+      "output": {
+        "resource": {
+          "relative_path": "Assets/old/Generator.prefab"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Assets/old/HCZMap.prefab",
+      "output": {
+        "resource": {
+          "relative_path": "Assets/old/HCZMap.prefab"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Assets/old/Hangar.prefab",
+      "output": {
+        "resource": {
+          "relative_path": "Assets/old/Hangar.prefab"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Assets/old/Helicopter.prefab",
+      "output": {
+        "resource": {
+          "relative_path": "Assets/old/Helicopter.prefab"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Assets/old/LCZMap.prefab",
+      "output": {
+        "resource": {
+          "relative_path": "Assets/old/LCZMap.prefab"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Assets/old/Lampione.prefab",
+      "output": {
+        "resource": {
+          "relative_path": "Assets/old/Lampione.prefab"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Assets/old/Light2.prefab",
+      "output": {
+        "resource": {
+          "relative_path": "Assets/old/Light2.prefab"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Assets/old/Locker.prefab",
+      "output": {
+        "resource": {
+          "relative_path": "Assets/old/Locker.prefab"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Assets/old/MedTable.prefab",
+      "output": {
+        "resource": {
+          "relative_path": "Assets/old/MedTable.prefab"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Assets/old/Medbed.prefab",
+      "output": {
+        "resource": {
+          "relative_path": "Assets/old/Medbed.prefab"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Assets/old/NO-ANIM-Radar.prefab",
+      "output": {
+        "resource": {
+          "relative_path": "Assets/old/NO-ANIM-Radar.prefab"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Assets/old/Neon.prefab",
+      "output": {
+        "resource": {
+          "relative_path": "Assets/old/Neon.prefab"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Assets/old/NeonSoffitto.prefab",
+      "output": {
+        "resource": {
+          "relative_path": "Assets/old/NeonSoffitto.prefab"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Assets/old/Neonformagazine.prefab",
+      "output": {
+        "resource": {
+          "relative_path": "Assets/old/Neonformagazine.prefab"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Assets/old/Newradar.prefab",
+      "output": {
+        "resource": {
+          "relative_path": "Assets/old/Newradar.prefab"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Assets/old/Newwall.prefab",
+      "output": {
+        "resource": {
+          "relative_path": "Assets/old/Newwall.prefab"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Assets/old/Nuclearwaste.prefab",
+      "output": {
+        "resource": {
+          "relative_path": "Assets/old/Nuclearwaste.prefab"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Assets/old/Nuclearwastewothoutlogo.prefab",
+      "output": {
+        "resource": {
+          "relative_path": "Assets/old/Nuclearwastewothoutlogo.prefab"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Assets/old/OZConnector.prefab",
+      "output": {
+        "resource": {
+          "relative_path": "Assets/old/OZConnector.prefab"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Assets/old/OZCross.prefab",
+      "output": {
+        "resource": {
+          "relative_path": "Assets/old/OZCross.prefab"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Assets/old/OZGateC.prefab",
+      "output": {
+        "resource": {
+          "relative_path": "Assets/old/OZGateC.prefab"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Assets/old/OZLCross.prefab",
+      "output": {
+        "resource": {
+          "relative_path": "Assets/old/OZLCross.prefab"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Assets/old/OZLCrossV2.prefab",
+      "output": {
+        "resource": {
+          "relative_path": "Assets/old/OZLCrossV2.prefab"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Assets/old/OZLCrossV3.prefab",
+      "output": {
+        "resource": {
+          "relative_path": "Assets/old/OZLCrossV3.prefab"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Assets/old/OZMap.prefab",
+      "output": {
+        "resource": {
+          "relative_path": "Assets/old/OZMap.prefab"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Assets/old/OZStorage.prefab",
+      "output": {
+        "resource": {
+          "relative_path": "Assets/old/OZStorage.prefab"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Assets/old/OZStraight.prefab",
+      "output": {
+        "resource": {
+          "relative_path": "Assets/old/OZStraight.prefab"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Assets/old/OZTeslaGate.prefab",
+      "output": {
+        "resource": {
+          "relative_path": "Assets/old/OZTeslaGate.prefab"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Assets/old/Omegawarhead.prefab",
+      "output": {
+        "resource": {
+          "relative_path": "Assets/old/Omegawarhead.prefab"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Assets/old/Opencage.prefab",
+      "output": {
+        "resource": {
+          "relative_path": "Assets/old/Opencage.prefab"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Assets/old/Opencontainer.prefab",
+      "output": {
+        "resource": {
+          "relative_path": "Assets/old/Opencontainer.prefab"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Assets/old/Pank.prefab",
+      "output": {
+        "resource": {
+          "relative_path": "Assets/old/Pank.prefab"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Assets/old/Radar.prefab",
+      "output": {
+        "resource": {
+          "relative_path": "Assets/old/Radar.prefab"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Assets/old/Radlogo.prefab",
+      "output": {
+        "resource": {
+          "relative_path": "Assets/old/Radlogo.prefab"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Assets/old/Recinzione.prefab",
+      "output": {
+        "resource": {
+          "relative_path": "Assets/old/Recinzione.prefab"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Assets/old/Riflettore.prefab",
+      "output": {
+        "resource": {
+          "relative_path": "Assets/old/Riflettore.prefab"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Assets/old/Scaffale.prefab",
+      "output": {
+        "resource": {
+          "relative_path": "Assets/old/Scaffale.prefab"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Assets/old/Scp230Containment.prefab",
+      "output": {
+        "resource": {
+          "relative_path": "Assets/old/Scp230Containment.prefab"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Assets/old/Scp457Containment.prefab",
+      "output": {
+        "resource": {
+          "relative_path": "Assets/old/Scp457Containment.prefab"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Assets/old/Scp550Containment.prefab",
+      "output": {
+        "resource": {
+          "relative_path": "Assets/old/Scp550Containment.prefab"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Assets/old/Scp610Containment.prefab",
+      "output": {
+        "resource": {
+          "relative_path": "Assets/old/Scp610Containment.prefab"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Assets/old/Scp650Containment.prefab",
+      "output": {
+        "resource": {
+          "relative_path": "Assets/old/Scp650Containment.prefab"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Assets/old/Scp966Containment.prefab",
+      "output": {
+        "resource": {
+          "relative_path": "Assets/old/Scp966Containment.prefab"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Assets/old/Server.prefab",
+      "output": {
+        "resource": {
+          "relative_path": "Assets/old/Server.prefab"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Assets/old/ServerRack.prefab",
+      "output": {
+        "resource": {
+          "relative_path": "Assets/old/ServerRack.prefab"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Assets/old/ServerRack1.prefab",
+      "output": {
+        "resource": {
+          "relative_path": "Assets/old/ServerRack1.prefab"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Assets/old/Silo.prefab",
+      "output": {
+        "resource": {
+          "relative_path": "Assets/old/Silo.prefab"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Assets/old/Simplecontainer.prefab",
+      "output": {
+        "resource": {
+          "relative_path": "Assets/old/Simplecontainer.prefab"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Assets/old/Simplecontainerblue.prefab",
+      "output": {
+        "resource": {
+          "relative_path": "Assets/old/Simplecontainerblue.prefab"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Assets/old/Simplecontainergreen.prefab",
+      "output": {
+        "resource": {
+          "relative_path": "Assets/old/Simplecontainergreen.prefab"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Assets/old/Simplecontainergrey.prefab",
+      "output": {
+        "resource": {
+          "relative_path": "Assets/old/Simplecontainergrey.prefab"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Assets/old/Simplecontainerorange.prefab",
+      "output": {
+        "resource": {
+          "relative_path": "Assets/old/Simplecontainerorange.prefab"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Assets/old/Streetlight.prefab",
+      "output": {
+        "resource": {
+          "relative_path": "Assets/old/Streetlight.prefab"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Assets/old/Table.prefab",
+      "output": {
+        "resource": {
+          "relative_path": "Assets/old/Table.prefab"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Assets/old/Text.prefab",
+      "output": {
+        "resource": {
+          "relative_path": "Assets/old/Text.prefab"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Assets/old/Uraniumtube.prefab",
+      "output": {
+        "resource": {
+          "relative_path": "Assets/old/Uraniumtube.prefab"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Assets/old/Waitchair.prefab",
+      "output": {
+        "resource": {
+          "relative_path": "Assets/old/Waitchair.prefab"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Assets/old/Wall.prefab",
+      "output": {
+        "resource": {
+          "relative_path": "Assets/old/Wall.prefab"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Assets/old/WallConnector.prefab",
+      "output": {
+        "resource": {
+          "relative_path": "Assets/old/WallConnector.prefab"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Assets/old/Wastescaffale.prefab",
+      "output": {
+        "resource": {
+          "relative_path": "Assets/old/Wastescaffale.prefab"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Assets/old/barrelorange.prefab",
+      "output": {
+        "resource": {
+          "relative_path": "Assets/old/barrelorange.prefab"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Assets/old/rbmk1000.prefab",
+      "output": {
+        "resource": {
+          "relative_path": "Assets/old/rbmk1000.prefab"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Assets/old/senzamappa.prefab",
+      "output": {
+        "resource": {
+          "relative_path": "Assets/old/senzamappa.prefab"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/api/index.md",
+      "output": {
+        ".html": {
+          "relative_path": "api/index.html",
+          "hash": "GmqY5xAdxUSzP8i+O0CRww+TdpUvnr0Sbp3FwtNZhGA="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/articles/intro.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/intro.html",
+          "hash": "vxfsP8uHhxoXRd6QqoVICio8wumlDci67lHK/C93SjU="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "docs/articles/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "docs/articles/toc.html",
+          "hash": "k6MJKvmuF8+4denU8T7psJ8AkcZUkoIiB/CNphu0T/c="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/index.md",
+      "output": {
+        ".html": {
+          "relative_path": "index.html",
+          "hash": "w5jBobF5gGUj1t22qPRj58GZDzcfeka2cKq5Ic2F3WY="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/docs/api/RolePlus.API.Engine.Extensions.ComponentExtensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RolePlus.API.Engine.Extensions.ComponentExtensions.html",
+          "hash": "UU0dtdJdbb4vKzZnyIPuhWoyxu87AfxfXaM4gg0y7+c="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/docs/api/RolePlus.API.Engine.Extensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RolePlus.API.Engine.Extensions.html",
+          "hash": "6Hqyl2cL5J1L89DQNo3/ydql96qeLDnC7Ho7oo41Vcw="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/docs/api/RolePlus.CustomTeams.RespawnManager.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RolePlus.CustomTeams.RespawnManager.html",
+          "hash": "VGd8e7IkXAN7yFcp496ohcGji9T0X9KLHkHPwVin9aA="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/docs/api/RolePlus.CustomTeams.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RolePlus.CustomTeams.html",
+          "hash": "XzOYnv8TSRfgbpydyV6YxM2dhvjLumS2WOp+PWEkT6w="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/docs/api/RolePlus.ExternModule.API.Engine.Components.AActorComponent.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RolePlus.ExternModule.API.Engine.Components.AActorComponent.html",
+          "hash": "/dJychMB4C1Rs8nI+HgrvkHAW6ty2jX/oYVqDqIUVxA="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/docs/api/RolePlus.ExternModule.API.Engine.Components.AActorFrameComponent.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RolePlus.ExternModule.API.Engine.Components.AActorFrameComponent.html",
+          "hash": "A5jCchZ40/35mFbZeDl2GqjuQZRKa7Nt5dab+VJkEh8="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/docs/api/RolePlus.ExternModule.API.Engine.Components.AActorHealthComponent.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RolePlus.ExternModule.API.Engine.Components.AActorHealthComponent.html",
+          "hash": "D2XMpV3i95G8B6sOFFJl1r3EKBpNB4sX3wJZ2tx6IEM="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/docs/api/RolePlus.ExternModule.API.Engine.Components.AEnvironmentActorHealthComponent.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RolePlus.ExternModule.API.Engine.Components.AEnvironmentActorHealthComponent.html",
+          "hash": "rbuMMEp/+ZGPLbUC9ZOnNYGsh8u1k5o3dSCEl1x7rV8="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/docs/api/RolePlus.ExternModule.API.Engine.Components.AEnvironmentMeshComponent.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RolePlus.ExternModule.API.Engine.Components.AEnvironmentMeshComponent.html",
+          "hash": "cs/WVSYCj1oIJ5J+riQl+aLCYk8g8U5LL4WeqZNsgZI="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/docs/api/RolePlus.ExternModule.API.Engine.Components.AInteractableFrameComponent.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RolePlus.ExternModule.API.Engine.Components.AInteractableFrameComponent.html",
+          "hash": "Day43VsAEKmugroP6rGjRtOF/Nvs4reusbke4zfREAU="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/docs/api/RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.html",
+          "hash": "qOzDYyl2wdZooEsvGDAglyFE+WNQH+Fpwcr0zzK4rYA="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/docs/api/RolePlus.ExternModule.API.Engine.Components.ASkeletalMeshComponent.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RolePlus.ExternModule.API.Engine.Components.ASkeletalMeshComponent.html",
+          "hash": "zM6/1AvFswPAXMfYRXDQpPwavKO3mlUq2oxM6caDsHY="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/docs/api/RolePlus.ExternModule.API.Engine.Components.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RolePlus.ExternModule.API.Engine.Components.html",
+          "hash": "R++s6bOZkiRavdYthXpm+BUKI0oEpmT9oixXjuDBNyo="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/docs/api/RolePlus.ExternModule.API.Engine.Core.Generic.Collections.TMultiDirectionalCollection-3.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RolePlus.ExternModule.API.Engine.Core.Generic.Collections.TMultiDirectionalCollection-3.html",
+          "hash": "grragMkAmp/+zVuwEDhd+Kh+H/tyr+SEshXukG9Bh0Y="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/docs/api/RolePlus.ExternModule.API.Engine.Core.Generic.Collections.TMultiPlexCollection-4.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RolePlus.ExternModule.API.Engine.Core.Generic.Collections.TMultiPlexCollection-4.html",
+          "hash": "9SXnj7dDpFppk0Ta3FA+gnae03aMxgllRAp9+vktIbI="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/docs/api/RolePlus.ExternModule.API.Engine.Core.Generic.Collections.TPlainCollection-3.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RolePlus.ExternModule.API.Engine.Core.Generic.Collections.TPlainCollection-3.html",
+          "hash": "qudmMItKlLCwznlck2O90OcvWZyCHKPIbigAkXNY/f4="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/docs/api/RolePlus.ExternModule.API.Engine.Core.Generic.Collections.TPlexCollection-3.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RolePlus.ExternModule.API.Engine.Core.Generic.Collections.TPlexCollection-3.html",
+          "hash": "0HEs5jCrnN3FVdOBwc3rLWx7b1UYu9vYRmLIjaEylgw="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/docs/api/RolePlus.ExternModule.API.Engine.Core.Generic.Collections.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RolePlus.ExternModule.API.Engine.Core.Generic.Collections.html",
+          "hash": "wU2X4TGOyk0m0wqTie1naXQN3gGZQcKbssYttHO3CMk="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/docs/api/RolePlus.ExternModule.API.Engine.Core.Generic.TSourceObject-2.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RolePlus.ExternModule.API.Engine.Core.Generic.TSourceObject-2.html",
+          "hash": "3cZ8gQAo/rebQeQ5oTYKmDu7HUYpOV3Wp1cFeKYxW14="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/docs/api/RolePlus.ExternModule.API.Engine.Core.Generic.TValueObject-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RolePlus.ExternModule.API.Engine.Core.Generic.TValueObject-1.html",
+          "hash": "s6kMQmpbfwY9hiEVNgg5hjVjUdyE2oky8Gdw3W5Sql4="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/docs/api/RolePlus.ExternModule.API.Engine.Core.Generic.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RolePlus.ExternModule.API.Engine.Core.Generic.html",
+          "hash": "dLRq5w+8Mjr+Q4tYswXIuN9D+0A7QJ9CMoqW28wOPzU="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/docs/api/RolePlus.ExternModule.API.Engine.Core.TypeCastObject-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RolePlus.ExternModule.API.Engine.Core.TypeCastObject-1.html",
+          "hash": "C1Cay4wrj/q2tXXLb936h6fZdQji9OYI5/MHjgfEWSw="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/docs/api/RolePlus.ExternModule.API.Engine.Core.UObject.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RolePlus.ExternModule.API.Engine.Core.UObject.html",
+          "hash": "vJEMdLURhVBuDryuF5ZKI4aO3321byT6N8PGAIyQHUo="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/docs/api/RolePlus.ExternModule.API.Engine.Core.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RolePlus.ExternModule.API.Engine.Core.html",
+          "hash": "glSuzQHAEJsxafyMNCabPa934P2feIdMwimzBIovM+4="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/docs/api/RolePlus.ExternModule.API.Engine.Framework.AActor.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RolePlus.ExternModule.API.Engine.Framework.AActor.html",
+          "hash": "F0PMHBmyRhg4hnnM9O/xmld9ISgvWl7THrV/m5m1jqQ="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/docs/api/RolePlus.ExternModule.API.Engine.Framework.AnimatorParameter.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RolePlus.ExternModule.API.Engine.Framework.AnimatorParameter.html",
+          "hash": "uL9iHdQQrAXBOtG3jZWBTvsOgZPCSe51f/yhMK07cx8="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/docs/api/RolePlus.ExternModule.API.Engine.Framework.Bootstrap.GlobalPatchProcessor.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RolePlus.ExternModule.API.Engine.Framework.Bootstrap.GlobalPatchProcessor.html",
+          "hash": "3n9y/Uc14FoBVlW+qPLZ7lDlfKWc/MLdzUcDm1IyZaE="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/docs/api/RolePlus.ExternModule.API.Engine.Framework.Bootstrap.PatchGroupAttribute.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RolePlus.ExternModule.API.Engine.Framework.Bootstrap.PatchGroupAttribute.html",
+          "hash": "GT+Synmq0Dzgb0xqyVSwaWxg9ZFVNi9KDpHvvU+gaj8="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/docs/api/RolePlus.ExternModule.API.Engine.Framework.Bootstrap.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RolePlus.ExternModule.API.Engine.Framework.Bootstrap.html",
+          "hash": "iUmPPOk9VxwPbtEhAD1+jM9PfYra7g9e4/69i9mYpmk="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/docs/api/RolePlus.ExternModule.API.Engine.Framework.Events.Delegates.TEventHandler-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RolePlus.ExternModule.API.Engine.Framework.Events.Delegates.TEventHandler-1.html",
+          "hash": "l6ppjnaVQAfzc2cXMno+N9ybu4Dk0A7Qz3QvP7aCqhM="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/docs/api/RolePlus.ExternModule.API.Engine.Framework.Events.Delegates.TEventHandler-2.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RolePlus.ExternModule.API.Engine.Framework.Events.Delegates.TEventHandler-2.html",
+          "hash": "/9iSn5oXHlfwcmf+jrssw1Um3bcVfTq10Gx2dR916WA="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/docs/api/RolePlus.ExternModule.API.Engine.Framework.Events.Delegates.TEventHandler-3.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RolePlus.ExternModule.API.Engine.Framework.Events.Delegates.TEventHandler-3.html",
+          "hash": "x7TXhuOXoON+RIu/8N0t+yOPlChihXVxjilx/pp/0Mg="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/docs/api/RolePlus.ExternModule.API.Engine.Framework.Events.Delegates.TEventHandler.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RolePlus.ExternModule.API.Engine.Framework.Events.Delegates.TEventHandler.html",
+          "hash": "Nv07zBFxW9zPl1/RtaWkblWa5lUmEIJlPWcT0vqUMfI="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/docs/api/RolePlus.ExternModule.API.Engine.Framework.Events.Delegates.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RolePlus.ExternModule.API.Engine.Framework.Events.Delegates.html",
+          "hash": "oimqIThfXbCa6SHSHGZ8T65qiTLsuj1RBkH5pfddqqA="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/docs/api/RolePlus.ExternModule.API.Engine.Framework.Events.EventArgs.ChangingAnimationStateEventArgs.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RolePlus.ExternModule.API.Engine.Framework.Events.EventArgs.ChangingAnimationStateEventArgs.html",
+          "hash": "kwDugtPmkrPlAHsKXS8dSsE4DFhYRsBmmgwzRg4dVn8="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/docs/api/RolePlus.ExternModule.API.Engine.Framework.Events.EventArgs.CompletedAnimationStateEventArgs.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RolePlus.ExternModule.API.Engine.Framework.Events.EventArgs.CompletedAnimationStateEventArgs.html",
+          "hash": "z10Yo1wTdxYXRCsl34Fi+0VUDpFWE86LAMOiV8NNZgw="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/docs/api/RolePlus.ExternModule.API.Engine.Framework.Events.EventArgs.InteractingObjectEventArgs.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RolePlus.ExternModule.API.Engine.Framework.Events.EventArgs.InteractingObjectEventArgs.html",
+          "hash": "7cPVSr106Fa0LHKpW9atshS3CgjeZFfS9zZuBPAfTr4="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/docs/api/RolePlus.ExternModule.API.Engine.Framework.Events.EventArgs.ReceivingNetworkMessageEventArgs-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RolePlus.ExternModule.API.Engine.Framework.Events.EventArgs.ReceivingNetworkMessageEventArgs-1.html",
+          "hash": "Zb6CMaQ81cInflOP/eaAlfXT7LlI/OwjwuyfdAkNgUI="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/docs/api/RolePlus.ExternModule.API.Engine.Framework.Events.EventArgs.ReceivingNetworkMessageEventArgs-2.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RolePlus.ExternModule.API.Engine.Framework.Events.EventArgs.ReceivingNetworkMessageEventArgs-2.html",
+          "hash": "rFYVBrRBWqnCNQ6yEJK6FJapXbQK198V4MxtP+waVDY="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/docs/api/RolePlus.ExternModule.API.Engine.Framework.Events.EventArgs.ReceivingPipelineMessageEventArgs-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RolePlus.ExternModule.API.Engine.Framework.Events.EventArgs.ReceivingPipelineMessageEventArgs-1.html",
+          "hash": "uZhv4rWdYQ5iITpLkWlx7BM6wlOf76vD9qGN2k48PkE="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/docs/api/RolePlus.ExternModule.API.Engine.Framework.Events.EventArgs.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RolePlus.ExternModule.API.Engine.Framework.Events.EventArgs.html",
+          "hash": "+8v4HQt9f2xOuSRXTmkWh/VAaWtmM8hoQ9d/ZD7+aO4="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/docs/api/RolePlus.ExternModule.API.Engine.Framework.Events.Handlers.Network.MultiPlex-2.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RolePlus.ExternModule.API.Engine.Framework.Events.Handlers.Network.MultiPlex-2.html",
+          "hash": "nhhnxXvBuyt4Vy+GGVl4bzMGyFH0AbTRZ19hM0beMBU="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/docs/api/RolePlus.ExternModule.API.Engine.Framework.Events.Handlers.Network.Plex-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RolePlus.ExternModule.API.Engine.Framework.Events.Handlers.Network.Plex-1.html",
+          "hash": "Gx5r5D97q70G3yPYRLmR67fTGX5doCVzDWeeP+ChdJI="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/docs/api/RolePlus.ExternModule.API.Engine.Framework.Events.Handlers.Network.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RolePlus.ExternModule.API.Engine.Framework.Events.Handlers.Network.html",
+          "hash": "U5g2cnX4HnJpGFPYUM4CrhZX9wTMiLTb9CizsjBGCAQ="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/docs/api/RolePlus.ExternModule.API.Engine.Framework.Events.Handlers.Player.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RolePlus.ExternModule.API.Engine.Framework.Events.Handlers.Player.html",
+          "hash": "kQndqI2xA9qxT2ldKV8Vg/Vn0y69GckKta6WAilnK/w="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/docs/api/RolePlus.ExternModule.API.Engine.Framework.Events.Handlers.UObject.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RolePlus.ExternModule.API.Engine.Framework.Events.Handlers.UObject.html",
+          "hash": "gVMcrxayAtTib1KGNj63WOaJXwC1Pfcnsd1OY+gvuGM="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/docs/api/RolePlus.ExternModule.API.Engine.Framework.Events.Handlers.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RolePlus.ExternModule.API.Engine.Framework.Events.Handlers.html",
+          "hash": "gfb1v42iRB55rq4aG5cJ2cN5nXwlXC+G0wULvIICxYM="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/docs/api/RolePlus.ExternModule.API.Engine.Framework.Events.MultiPlexEventArgs-2.TEventHandler-3.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RolePlus.ExternModule.API.Engine.Framework.Events.MultiPlexEventArgs-2.TEventHandler-3.html",
+          "hash": "IUXv8LI5EHuXxO5uJU2civJ3VLrG0AK+dizp+lNdScs="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/docs/api/RolePlus.ExternModule.API.Engine.Framework.Events.MultiPlexEventArgs-2.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RolePlus.ExternModule.API.Engine.Framework.Events.MultiPlexEventArgs-2.html",
+          "hash": "c87lG9h6wnK8I+GX9Opb+9/3xStbBmvN67tSSBvws7Q="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/docs/api/RolePlus.ExternModule.API.Engine.Framework.Events.PlexEventArgs-1.TEventHandler-2.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RolePlus.ExternModule.API.Engine.Framework.Events.PlexEventArgs-1.TEventHandler-2.html",
+          "hash": "fjt97EXVJ0KYyL1vRYGwyh3/BgGXApL+XQjeXmZAB5o="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/docs/api/RolePlus.ExternModule.API.Engine.Framework.Events.PlexEventArgs-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RolePlus.ExternModule.API.Engine.Framework.Events.PlexEventArgs-1.html",
+          "hash": "v9081dz8VQmWx/49RT7fqVos4uW+dsC9ASokQWf5Jkw="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/docs/api/RolePlus.ExternModule.API.Engine.Framework.Events.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RolePlus.ExternModule.API.Engine.Framework.Events.html",
+          "hash": "02y4ZCj/TDO/uu220tX+n7QRCn+DzwHEMZLVbclRlGM="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/docs/api/RolePlus.ExternModule.API.Engine.Framework.INetworkMessage-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RolePlus.ExternModule.API.Engine.Framework.INetworkMessage-1.html",
+          "hash": "gO0/2sgflN687T7Yb2TNZ3P0K1Ut4FUMC2xc0SR118M="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/docs/api/RolePlus.ExternModule.API.Engine.Framework.INetworkMessage-2.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RolePlus.ExternModule.API.Engine.Framework.INetworkMessage-2.html",
+          "hash": "hqMkMMTo8srXI+POGIea+kV6uKiS2MBS3PHdbge1ynA="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/docs/api/RolePlus.ExternModule.API.Engine.Framework.Interfaces.IAnimatorNative.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RolePlus.ExternModule.API.Engine.Framework.Interfaces.IAnimatorNative.html",
+          "hash": "NR/uJsBj7Va+nAizjB9pcpe65V48UW9hbK2zIiCRReA="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/docs/api/RolePlus.ExternModule.API.Engine.Framework.Interfaces.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RolePlus.ExternModule.API.Engine.Framework.Interfaces.html",
+          "hash": "tZhcjuCpm9cBpn05AKvDL0Xl/Ay52O72rVyobPdWtek="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/docs/api/RolePlus.ExternModule.API.Engine.Framework.Network.ENetworkAuthority.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RolePlus.ExternModule.API.Engine.Framework.Network.ENetworkAuthority.html",
+          "hash": "Kb0o83C1GBlbf/1mS1cunOp6Jc3CKEcSpG8/S0N3laM="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/docs/api/RolePlus.ExternModule.API.Engine.Framework.Network.Models.UNetEntity.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RolePlus.ExternModule.API.Engine.Framework.Network.Models.UNetEntity.html",
+          "hash": "7DGQwQgv8eavllGVTzxCsPxuVW2i7miHXixSYi70V3c="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/docs/api/RolePlus.ExternModule.API.Engine.Framework.Network.Models.UNetManager.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RolePlus.ExternModule.API.Engine.Framework.Network.Models.UNetManager.html",
+          "hash": "+qAQzMW0pMz1FkXTj/llG10i0FVSYKotjQKl1rvq3qs="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/docs/api/RolePlus.ExternModule.API.Engine.Framework.Network.Models.UNetServer.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RolePlus.ExternModule.API.Engine.Framework.Network.Models.UNetServer.html",
+          "hash": "NIw9tU/7NuLdVW4u+D/lQ9jOy7hhvBivVQafOBFrQIY="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/docs/api/RolePlus.ExternModule.API.Engine.Framework.Network.Models.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RolePlus.ExternModule.API.Engine.Framework.Network.Models.html",
+          "hash": "qtHxpXnQm/VTXHRCMeTdkKHpKRZHAQbzDS0ZOpRphzQ="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/docs/api/RolePlus.ExternModule.API.Engine.Framework.Network.RuleAttribute.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RolePlus.ExternModule.API.Engine.Framework.Network.RuleAttribute.html",
+          "hash": "E9RXqWtxy/hlLgNeGV/2E0DCjObquuvJFA8ynQG4D/U="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/docs/api/RolePlus.ExternModule.API.Engine.Framework.Network.TFirewall-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RolePlus.ExternModule.API.Engine.Framework.Network.TFirewall-1.html",
+          "hash": "LQFQ3K67qar1k2CJv5L/4oVBzANHPMhIOI24Tb/J7dU="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/docs/api/RolePlus.ExternModule.API.Engine.Framework.Network.TNetworkMessage-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RolePlus.ExternModule.API.Engine.Framework.Network.TNetworkMessage-1.html",
+          "hash": "Urw6hwnvBtRRLc8pz6Tt9+BzSJNrlnXWSHInaf51vPw="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/docs/api/RolePlus.ExternModule.API.Engine.Framework.Network.TNetworkMessage-2.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RolePlus.ExternModule.API.Engine.Framework.Network.TNetworkMessage-2.html",
+          "hash": "Qt0oSAI6+Oz+Yv2g/ZyXLmeVFieErA8HWRYzAhGTMJM="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/docs/api/RolePlus.ExternModule.API.Engine.Framework.Network.TRule-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RolePlus.ExternModule.API.Engine.Framework.Network.TRule-1.html",
+          "hash": "Bl/DR1M6XjYUhve71ZqivVuMch8H9zdhiXS8UxuryCQ="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/docs/api/RolePlus.ExternModule.API.Engine.Framework.Network.UNetObject.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RolePlus.ExternModule.API.Engine.Framework.Network.UNetObject.html",
+          "hash": "XWiO7FRfamUftB0vyJMV71qRpdX+3o9ET4dWnfq/wvQ="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/docs/api/RolePlus.ExternModule.API.Engine.Framework.Network.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RolePlus.ExternModule.API.Engine.Framework.Network.html",
+          "hash": "KQOD+Eq24tzFHfToxJHbkRmGBlutbCj9bgZ5vC0Ay6I="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/docs/api/RolePlus.ExternModule.API.Engine.Framework.Structs.FTransform.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RolePlus.ExternModule.API.Engine.Framework.Structs.FTransform.html",
+          "hash": "zeCwUf8Fz2Y3UlvHu9s9CoM7P1UTts6m0MDwkA69W3s="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/docs/api/RolePlus.ExternModule.API.Engine.Framework.Structs.FVirtualPrivateNetwork.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RolePlus.ExternModule.API.Engine.Framework.Structs.FVirtualPrivateNetwork.html",
+          "hash": "Ku4e6xjv8Tze8Z2P6u4GvHpF/sWbqFIcCMkF6zhi7m8="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/docs/api/RolePlus.ExternModule.API.Engine.Framework.Structs.TNetworkPipelineMessage-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RolePlus.ExternModule.API.Engine.Framework.Structs.TNetworkPipelineMessage-1.html",
+          "hash": "t0izJFl3NXYgycrHUraKu2tXzwMdrBZAJXv2pJXyka0="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/docs/api/RolePlus.ExternModule.API.Engine.Framework.Structs.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RolePlus.ExternModule.API.Engine.Framework.Structs.html",
+          "hash": "Jn5rN65Lw9GgpscUSBOLLApFF5ysS8T0feRk6dmqxIQ="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/docs/api/RolePlus.ExternModule.API.Engine.Framework.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RolePlus.ExternModule.API.Engine.Framework.html",
+          "hash": "c5mCe6JXUAS6hzfGyBFgFHh9PwyJcsKrDEQPyXGrzdw="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/docs/api/RolePlus.ExternModule.API.Enums.BranchType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RolePlus.ExternModule.API.Enums.BranchType.html",
+          "hash": "xGnopeybldgRqFFDXVSkFfzmbjcMyyhLMf8Y7C6kN/M="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/docs/api/RolePlus.ExternModule.API.Enums.CustomItemType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RolePlus.ExternModule.API.Enums.CustomItemType.html",
+          "hash": "PKTOPrKMVSmexODbqcBJwy0t9ROuX3aLcCO4ELdYlNE="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/docs/api/RolePlus.ExternModule.API.Enums.CustomRoleType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RolePlus.ExternModule.API.Enums.CustomRoleType.html",
+          "hash": "de8s/zJEfVOahfi7gXxEsqMVqXtLHGgISQv1qFMjywI="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/docs/api/RolePlus.ExternModule.API.Enums.CustomTeamType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RolePlus.ExternModule.API.Enums.CustomTeamType.html",
+          "hash": "7LXvcwmDkj30IayLxlREMTZpaHx+ABxTcLrZOniMKFs="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/docs/api/RolePlus.ExternModule.API.Enums.GamemodeType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RolePlus.ExternModule.API.Enums.GamemodeType.html",
+          "hash": "EiMiHw76fBBfzoG90eqrI5ZnKbx0NCa07d4GL3y1IJI="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/docs/api/RolePlus.ExternModule.API.Enums.MultiPlayerGamemodeType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RolePlus.ExternModule.API.Enums.MultiPlayerGamemodeType.html",
+          "hash": "OmjKd9XyUpGxv4ApA1Wa0b9s8/tEGVPn/MB2Cm7ETQY="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/docs/api/RolePlus.ExternModule.API.Enums.MultiPlayerTeamType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RolePlus.ExternModule.API.Enums.MultiPlayerTeamType.html",
+          "hash": "/a9clEErpA1PV/U2Vf7C+UHuryxSC6fjHmu1Xj9Tepc="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/docs/api/RolePlus.ExternModule.API.Enums.RespawnSystem.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RolePlus.ExternModule.API.Enums.RespawnSystem.html",
+          "hash": "xHEG+cWFux6IZFggg/uhvgKK86pOemy34ervSp00vZY="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/docs/api/RolePlus.ExternModule.API.Enums.ScreenLocation.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RolePlus.ExternModule.API.Enums.ScreenLocation.html",
+          "hash": "V1/4HVbd//YHxXMcvghe/a5tGuJn/DZEJhdscgPf0OU="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/docs/api/RolePlus.ExternModule.API.Enums.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RolePlus.ExternModule.API.Enums.html",
+          "hash": "YGn8vI8SaP45eGWk3b8B6r4ldaO+dqODQ+H8pwpeH8A="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/docs/api/RolePlus.ExternModule.API.Features.AdvancedGameplay.MultiPlayerGamemode.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RolePlus.ExternModule.API.Features.AdvancedGameplay.MultiPlayerGamemode.html",
+          "hash": "fAVdM3Cf5dv+1S8NKSYVZ75mtn69omxtFsj7jTQDB6g="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/docs/api/RolePlus.ExternModule.API.Features.AdvancedGameplay.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RolePlus.ExternModule.API.Features.AdvancedGameplay.html",
+          "hash": "kYVPBRxKO1+WhJrnjdxM8/8qPeeRW2Vo8XDOwq6R9Zo="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/docs/api/RolePlus.ExternModule.API.Features.Badge.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RolePlus.ExternModule.API.Features.Badge.html",
+          "hash": "3SjfE+TxAy8IYXJAKleN4MxI5lo8RFc9pJsanuV0sfo="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/docs/api/RolePlus.ExternModule.API.Features.Configs.Config.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RolePlus.ExternModule.API.Features.Configs.Config.html",
+          "hash": "rgHfPF7dJXpzO7koWAvSLwiUNADhtfFBa2HHID9+DPk="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/docs/api/RolePlus.ExternModule.API.Features.Configs.ConfigAttribute.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RolePlus.ExternModule.API.Features.Configs.ConfigAttribute.html",
+          "hash": "qU43v4eqwRCP5hSwoYLFl56x2q/3aZNjvRrcRKHtP+8="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/docs/api/RolePlus.ExternModule.API.Features.Configs.IConfig.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RolePlus.ExternModule.API.Features.Configs.IConfig.html",
+          "hash": "R0svTZD0AvQucaAW+cgGBya/jGHuHjt+1L24xAEp8Ok="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/docs/api/RolePlus.ExternModule.API.Features.Configs.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RolePlus.ExternModule.API.Features.Configs.html",
+          "hash": "w0Sa8VFA4aCvuowVF/R7iLnyFt4owVfqRByth2ITIK0="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/docs/api/RolePlus.ExternModule.API.Features.Controllers.ObjectController.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RolePlus.ExternModule.API.Features.Controllers.ObjectController.html",
+          "hash": "nJDswE9pkwXH3BJ2zbxVpT6oM5smPvkpABG/WsahzS4="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/docs/api/RolePlus.ExternModule.API.Features.Controllers.PlayerScriptController.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RolePlus.ExternModule.API.Features.Controllers.PlayerScriptController.html",
+          "hash": "vAxz7cfaBAF8nNIHs0pOfDAsX5uEFP1BRMzRRSYb1K8="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/docs/api/RolePlus.ExternModule.API.Features.Controllers.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RolePlus.ExternModule.API.Features.Controllers.html",
+          "hash": "HjtdT6J6NmOQTFut3p+82kFqhRr/r8Z0KBgqkrVwsik="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/docs/api/RolePlus.ExternModule.API.Features.CustomAbilities.CustomAbility.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RolePlus.ExternModule.API.Features.CustomAbilities.CustomAbility.html",
+          "hash": "duk1xLwZ4gZbwwa2UB6P8uvm6I8xSo8ZZf16+WlxmWc="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/docs/api/RolePlus.ExternModule.API.Features.CustomAbilities.CustomAbilityAttribute.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RolePlus.ExternModule.API.Features.CustomAbilities.CustomAbilityAttribute.html",
+          "hash": "u4lLLvfhA9B28r4eCElRH8oNqNou9xfH/Oa06LcZoUY="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/docs/api/RolePlus.ExternModule.API.Features.CustomAbilities.Scp079Ability.InvokeResponse.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RolePlus.ExternModule.API.Features.CustomAbilities.Scp079Ability.InvokeResponse.html",
+          "hash": "ds1CUA6bBObH52iRPxZl70S0Vgg7/XF/gD7KvFiaxvI="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/docs/api/RolePlus.ExternModule.API.Features.CustomAbilities.Scp079Ability.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RolePlus.ExternModule.API.Features.CustomAbilities.Scp079Ability.html",
+          "hash": "Y7Vn46WxzZrFwlt1oVceiKcId2AzYWEn3yPDZL64+VY="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/docs/api/RolePlus.ExternModule.API.Features.CustomAbilities.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RolePlus.ExternModule.API.Features.CustomAbilities.html",
+          "hash": "UoW0pt7akgq2XLQhF5Pp6MmCPhepxc8+Hi/CEGz6Ud0="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/docs/api/RolePlus.ExternModule.API.Features.CustomGamemode.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RolePlus.ExternModule.API.Features.CustomGamemode.html",
+          "hash": "7nopw5ET8qNg6m5CnEBuSWUW9MEn63xXEpiY6bDCAlw="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/docs/api/RolePlus.ExternModule.API.Features.CustomGamemodeAttribute.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RolePlus.ExternModule.API.Features.CustomGamemodeAttribute.html",
+          "hash": "G6YCBbQ2A1MEKWBk1lHLXutbsqHJ+vg8F2cKXwzc7kg="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/docs/api/RolePlus.ExternModule.API.Features.CustomHud.Hint.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RolePlus.ExternModule.API.Features.CustomHud.Hint.html",
+          "hash": "lgWrsTsgEbWJTl+fz8j3xtyuBWsyzZPglQPJIzka5pw="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/docs/api/RolePlus.ExternModule.API.Features.CustomHud.HudManager.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RolePlus.ExternModule.API.Features.CustomHud.HudManager.html",
+          "hash": "pqAwuCVJGV/PUnvWW1tc3pPGw7z71Belev3au3j6yNM="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/docs/api/RolePlus.ExternModule.API.Features.CustomHud.HudScreen.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RolePlus.ExternModule.API.Features.CustomHud.HudScreen.html",
+          "hash": "UpGW7XuBsfjOuN7N2tRNPlbIFR/TaUafe2/fyNWpB68="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/docs/api/RolePlus.ExternModule.API.Features.CustomHud.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RolePlus.ExternModule.API.Features.CustomHud.html",
+          "hash": "ksxSQ5durfmALLT4Y9JK+nHJEMrCs3yAGbQrpTyZlxA="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/docs/api/RolePlus.ExternModule.API.Features.CustomPlayerStats.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RolePlus.ExternModule.API.Features.CustomPlayerStats.html",
+          "hash": "O+1OH45GgOXXuumoNSRw4V3zC7oj2863lafK31AWx08="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/docs/api/RolePlus.ExternModule.API.Features.CustomRoles.CustomRole-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RolePlus.ExternModule.API.Features.CustomRoles.CustomRole-1.html",
+          "hash": "C5pWMEIp1x9booyKy+lwqo3uYZ0ApxdQU0sCFuMEyAE="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/docs/api/RolePlus.ExternModule.API.Features.CustomRoles.CustomRole.ICustomRoleConfig.ICustomInventory.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RolePlus.ExternModule.API.Features.CustomRoles.CustomRole.ICustomRoleConfig.ICustomInventory.html",
+          "hash": "Zc/YjMOzyA29y71rvN8BKCqFn0UEfvin067c/5QHJlA="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/docs/api/RolePlus.ExternModule.API.Features.CustomRoles.CustomRole.ICustomRoleConfig.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RolePlus.ExternModule.API.Features.CustomRoles.CustomRole.ICustomRoleConfig.html",
+          "hash": "TKffXGjC4YQBqz/DNi//LR/CHxiZu7evU+oWP9EC0m0="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/docs/api/RolePlus.ExternModule.API.Features.CustomRoles.CustomRole.Info.InventoryManager.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RolePlus.ExternModule.API.Features.CustomRoles.CustomRole.Info.InventoryManager.html",
+          "hash": "B/kN/NOZsSOi6IM0KenUXb8Z23055welz25SQCVm5gg="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/docs/api/RolePlus.ExternModule.API.Features.CustomRoles.CustomRole.Info.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RolePlus.ExternModule.API.Features.CustomRoles.CustomRole.Info.html",
+          "hash": "TEhb+KgC++QcRGG7/KqKKwHobAkNk+/DpvdWJCYAeck="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/docs/api/RolePlus.ExternModule.API.Features.CustomRoles.CustomRole.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RolePlus.ExternModule.API.Features.CustomRoles.CustomRole.html",
+          "hash": "Q4LNHxsoS+oWs9ZgMbsloO0G7B4WTwlATcGyRJgPC4I="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/docs/api/RolePlus.ExternModule.API.Features.CustomRoles.CustomRoleAttribute.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RolePlus.ExternModule.API.Features.CustomRoles.CustomRoleAttribute.html",
+          "hash": "Pu0FlNceeCwhy5Yu/LqSopUo1gQBUS/8VV10fuvQ3kk="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/docs/api/RolePlus.ExternModule.API.Features.CustomRoles.RoleBuilder.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RolePlus.ExternModule.API.Features.CustomRoles.RoleBuilder.html",
+          "hash": "os8RS4I1Pz6jRXlDym1/mMEuh3Npi7KYyKizmqZCvcE="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/docs/api/RolePlus.ExternModule.API.Features.CustomRoles.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RolePlus.ExternModule.API.Features.CustomRoles.html",
+          "hash": "mWmUCsNdo+Pko5Gb81Q+OK1ZfIwAdJLjT2Fcsv1wWJ0="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/docs/api/RolePlus.ExternModule.API.Features.CustomSkins.CharacterMeshComponent.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RolePlus.ExternModule.API.Features.CustomSkins.CharacterMeshComponent.html",
+          "hash": "r6c73l6a7M0TT9n/N1qG5mPsGUelAlJRZg2SGHLvk/4="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/docs/api/RolePlus.ExternModule.API.Features.CustomSkins.ItemMeshComponent.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RolePlus.ExternModule.API.Features.CustomSkins.ItemMeshComponent.html",
+          "hash": "yFCZKFnJ1shy6GfDTi/cnqgt4/432NOm/typOznZN2c="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/docs/api/RolePlus.ExternModule.API.Features.CustomSkins.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RolePlus.ExternModule.API.Features.CustomSkins.html",
+          "hash": "4ZuY7rXgK1agKtdBzW0SQm/vkU1vIQpNh20Svj0g+60="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/docs/api/RolePlus.ExternModule.API.Features.CustomTeams.CustomTeam.RespawnInfo.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RolePlus.ExternModule.API.Features.CustomTeams.CustomTeam.RespawnInfo.html",
+          "hash": "BGe0Flobgjm+yNJhplEoteMN2K1X2gzIJoTf1Tlt5Xs="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/docs/api/RolePlus.ExternModule.API.Features.CustomTeams.CustomTeam.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RolePlus.ExternModule.API.Features.CustomTeams.CustomTeam.html",
+          "hash": "BjOYO44SalvsAGbqYDhtnEomZUIw5fzUEIH/Q8j2Nlg="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/docs/api/RolePlus.ExternModule.API.Features.CustomTeams.CustomTeamAttribute.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RolePlus.ExternModule.API.Features.CustomTeams.CustomTeamAttribute.html",
+          "hash": "GQfxNr1JvbPPIel6yHMu2fhkiRS/e7mKbYskn51ySE8="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/docs/api/RolePlus.ExternModule.API.Features.CustomTeams.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RolePlus.ExternModule.API.Features.CustomTeams.html",
+          "hash": "QoQ4Pqu8l1qqqOD5ntg77XGlvXnVm8vUKqiJ7NTackM="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/docs/api/RolePlus.ExternModule.API.Features.GamemodeBuilder.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RolePlus.ExternModule.API.Features.GamemodeBuilder.html",
+          "hash": "87UeQnPP5W6fEvktGhi7WmsNiDjafuzFAtLTgmcBFb8="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/docs/api/RolePlus.ExternModule.API.Features.InventorySlot.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RolePlus.ExternModule.API.Features.InventorySlot.html",
+          "hash": "ljXe+vWcPswrz3hAPeGnzC9IcTAMUxHLVfUPTkrw2kY="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/docs/api/RolePlus.ExternModule.API.Features.VirtualAssemblies.Branch.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RolePlus.ExternModule.API.Features.VirtualAssemblies.Branch.html",
+          "hash": "NMWhnjLQC/+s3EQ0sRESYKlCQs4v9KCAHankM/03a3k="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/docs/api/RolePlus.ExternModule.API.Features.VirtualAssemblies.BranchAttribute.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RolePlus.ExternModule.API.Features.VirtualAssemblies.BranchAttribute.html",
+          "hash": "w6bDLR6uFXPEhj/8dBWhQnX+n7pckuvRZFb3wfGE5Y4="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/docs/api/RolePlus.ExternModule.API.Features.VirtualAssemblies.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RolePlus.ExternModule.API.Features.VirtualAssemblies.html",
+          "hash": "jAMz913xxAGGs44Br3qNuQH1iARGJYLPx/nkCj/6Puc="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/docs/api/RolePlus.ExternModule.API.Features.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RolePlus.ExternModule.API.Features.html",
+          "hash": "MmYJiDutBj1Db1f6TMUIDe2y0i8vOWasWLfQ0Fc6cs4="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/docs/api/RolePlus.ExternModule.Events.EventArgs.InvokingHandlerEventArgs.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RolePlus.ExternModule.Events.EventArgs.InvokingHandlerEventArgs.html",
+          "hash": "EW3vVXmPzBjpipPK4ctDpAUSC6wn6wFavuaFjUrgoGU="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/docs/api/RolePlus.ExternModule.Events.EventArgs.SendingConsoleCommandEventArgs.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RolePlus.ExternModule.Events.EventArgs.SendingConsoleCommandEventArgs.html",
+          "hash": "Kwz8UgY1HtT8atiW7SRPhIpdzrEVAA9jzKKNurnWu84="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/docs/api/RolePlus.ExternModule.Events.EventArgs.SendingRemoteAdminCommandEventArgs.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RolePlus.ExternModule.Events.EventArgs.SendingRemoteAdminCommandEventArgs.html",
+          "hash": "xvU033QZuIRycV3QQpkM+QxlvMijqhPFoqNjfUkz2u4="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/docs/api/RolePlus.ExternModule.Events.EventArgs.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RolePlus.ExternModule.Events.EventArgs.html",
+          "hash": "pAkLN7oOOyXDFJWRyxuo0GJ1hYoKluU+I/EFlH/PjWA="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/docs/api/RolePlus.ExternModule.Events.Handlers.Server.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RolePlus.ExternModule.Events.Handlers.Server.html",
+          "hash": "+AcMOxGQ3cDXdGEaSYWz3bcdzMPl+vpJ3sMwW0RLqto="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/docs/api/RolePlus.ExternModule.Events.Handlers.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RolePlus.ExternModule.Events.Handlers.html",
+          "hash": "9k5M7UBMUz0E/FOJ0vYXqQCGG8ww5KAnhF/ISFKDsSM="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/docs/api/RolePlus.ExternModule.HLAPI.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RolePlus.ExternModule.HLAPI.html",
+          "hash": "VYVVbZDBIKEVwo6GT4bW6T/bkepGvkPzOhoBBphjbLc="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/docs/api/RolePlus.ExternModule.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RolePlus.ExternModule.html",
+          "hash": "XauAMIcSbb47OAbo/k5ksJf+0Uc8mgbZRTlTEXg7QUY="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/docs/api/RolePlus.Firewalls.Rules.AntiDDoS.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RolePlus.Firewalls.Rules.AntiDDoS.html",
+          "hash": "gMoXKrniQyTKMgJASxcMzLi1Tx30oN8zxHuggU7iMzk="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/docs/api/RolePlus.Firewalls.Rules.AntiPreAuth.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RolePlus.Firewalls.Rules.AntiPreAuth.html",
+          "hash": "chFES+C36Or+EjhkiNB6RB8Uybp4LjzKymyvWoLf0Z8="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/docs/api/RolePlus.Firewalls.Rules.AntiRaid.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RolePlus.Firewalls.Rules.AntiRaid.html",
+          "hash": "+PQQOzB3LFUnssD0xeDKHvPzEzLd2Z99gCRCrmb3PE4="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/docs/api/RolePlus.Firewalls.Rules.ProxyRedirect.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RolePlus.Firewalls.Rules.ProxyRedirect.html",
+          "hash": "9ZMyg+hzqnmwCjcyzsDeQr8QSA41w4oAcCRtPQLcA2w="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/docs/api/RolePlus.Firewalls.Rules.SteamSanitizer.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RolePlus.Firewalls.Rules.SteamSanitizer.html",
+          "hash": "j8OeyKOh5rhroLwiNLCQTRaOXlBrgFrvtkVz8hNdf+0="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/docs/api/RolePlus.Firewalls.Rules.VPNShield.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RolePlus.Firewalls.Rules.VPNShield.html",
+          "hash": "y52n2ObLOwEqdaiVuE/wK7+jevdBlaoZJzfFP01JOlU="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/docs/api/RolePlus.Firewalls.Rules.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RolePlus.Firewalls.Rules.html",
+          "hash": "TyOkvRzIqxdVs+VQfo751uPsgW7HrBBvNQcmwozi0Lo="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "obj/docs/api/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/toc.html",
+          "hash": "x5NPvGGFhQpoYrWniktwSOUOCIFoVqqBHMRt2JOlBgk="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "toc.html",
+          "hash": "A8ve6wuSTlokoZAJbQE0tYjUs9Ddxyni4Rwjk5VBHrA="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    }
+  ],
+  "incremental_info": [
+    {
+      "status": {
+        "can_incremental": false,
+        "details": "Cannot build incrementally because last build info is missing.",
+        "incrementalPhase": "build",
+        "total_file_count": 0,
+        "skipped_file_count": 0,
+        "full_build_reason_code": "NoAvailableBuildCache"
+      },
+      "processors": {
+        "ConceptualDocumentProcessor": {
+          "can_incremental": false,
+          "incrementalPhase": "build",
+          "total_file_count": 3,
+          "skipped_file_count": 0
+        },
+        "ManagedReferenceDocumentProcessor": {
+          "can_incremental": false,
+          "incrementalPhase": "build",
+          "total_file_count": 142,
+          "skipped_file_count": 0
+        },
+        "ResourceDocumentProcessor": {
+          "can_incremental": false,
+          "details": "Processor ResourceDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
+          "incrementalPhase": "build",
+          "total_file_count": 0,
+          "skipped_file_count": 0
+        },
+        "TocDocumentProcessor": {
+          "can_incremental": false,
+          "details": "Processor TocDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
+          "incrementalPhase": "build",
+          "total_file_count": 0,
+          "skipped_file_count": 0
+        }
+      }
+    },
+    {
+      "status": {
+        "can_incremental": false,
+        "details": "Cannot support incremental post processing, the reason is: should not trace intermediate info.",
+        "incrementalPhase": "postProcessing",
+        "total_file_count": 0,
+        "skipped_file_count": 0
+      },
+      "processors": {}
+    }
+  ],
+  "version_info": {},
+  "groups": [
+    {
+      "xrefmap": "xrefmap.yml"
+    }
+  ]
+}
