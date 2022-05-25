@@ -2559,30 +2559,6 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "obj/docs/api/RolePlus.CustomTeams.RespawnManager.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/RolePlus.CustomTeams.RespawnManager.html",
-          "hash": "ithhqm32nv7nKUVj4EOWTjCv0GPYwoLGAiBnssfZ08A="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "obj/docs/api/RolePlus.CustomTeams.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/RolePlus.CustomTeams.html",
-          "hash": "XzOYnv8TSRfgbpydyV6YxM2dhvjLumS2WOp+PWEkT6w="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
       "source_relative_path": "obj/docs/api/RolePlus.ExternModule.API.Engine.Components.AActorComponent.yml",
       "output": {
         ".html": {
@@ -4159,7 +4135,7 @@
       "output": {
         ".html": {
           "relative_path": "api/RolePlus.ExternModule.HLAPI.html",
-          "hash": "sHg7yboNkN5aoXr4R0vMtc2WU0cFiHc4+7DkTX8Ok34="
+          "hash": "D/mKp0XtFygHbQhraYby/g3KVkT6rJ4nOWyXsLksyGM="
         }
       },
       "is_incremental": false,
@@ -4267,7 +4243,7 @@
       "output": {
         ".html": {
           "relative_path": "api/toc.html",
-          "hash": "QxNB+tX3MCzUp2BDK6hVcF0awVzc4M3Bv2AYX0egPbs="
+          "hash": "ODnMz6QK3/iSIMz4givgHfleD3laI8oml9CBALkE61E="
         }
       },
       "is_incremental": false,
@@ -4279,7 +4255,7 @@
       "output": {
         ".html": {
           "relative_path": "toc.html",
-          "hash": "TBLa6yNcSNTD0bCH5P5DP2aMJG0GBuf8u/lNTVr8F4U="
+          "hash": "I8bOuiUQjnfRkmirjh30ggK1swcKrZZ7DwmaS/X9mFU="
         }
       },
       "is_incremental": false,
@@ -4306,7 +4282,7 @@
         "ManagedReferenceDocumentProcessor": {
           "can_incremental": false,
           "incrementalPhase": "build",
-          "total_file_count": 142,
+          "total_file_count": 140,
           "skipped_file_count": 0
         },
         "ResourceDocumentProcessor": {
