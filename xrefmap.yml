@@ -6816,6 +6816,32 @@ references:
   commentId: T:RolePlus.ExternModule.API.Features.Configs.Config
   fullName: RolePlus.ExternModule.API.Features.Configs.Config
   nameWithType: Config
+- uid: RolePlus.ExternModule.API.Features.Configs.Config.#ctor(System.Object)
+  name: Config(Object)
+  href: api/RolePlus.ExternModule.API.Features.Configs.Config.html#RolePlus_ExternModule_API_Features_Configs_Config__ctor_System_Object_
+  commentId: M:RolePlus.ExternModule.API.Features.Configs.Config.#ctor(System.Object)
+  fullName: RolePlus.ExternModule.API.Features.Configs.Config.Config(System.Object)
+  nameWithType: Config.Config(Object)
+- uid: RolePlus.ExternModule.API.Features.Configs.Config.#ctor*
+  name: Config
+  href: api/RolePlus.ExternModule.API.Features.Configs.Config.html#RolePlus_ExternModule_API_Features_Configs_Config__ctor_
+  commentId: Overload:RolePlus.ExternModule.API.Features.Configs.Config.#ctor
+  isSpec: "True"
+  fullName: RolePlus.ExternModule.API.Features.Configs.Config.Config
+  nameWithType: Config.Config
+- uid: RolePlus.ExternModule.API.Features.Configs.Config.AbsolutePath
+  name: AbsolutePath
+  href: api/RolePlus.ExternModule.API.Features.Configs.Config.html#RolePlus_ExternModule_API_Features_Configs_Config_AbsolutePath
+  commentId: P:RolePlus.ExternModule.API.Features.Configs.Config.AbsolutePath
+  fullName: RolePlus.ExternModule.API.Features.Configs.Config.AbsolutePath
+  nameWithType: Config.AbsolutePath
+- uid: RolePlus.ExternModule.API.Features.Configs.Config.AbsolutePath*
+  name: AbsolutePath
+  href: api/RolePlus.ExternModule.API.Features.Configs.Config.html#RolePlus_ExternModule_API_Features_Configs_Config_AbsolutePath_
+  commentId: Overload:RolePlus.ExternModule.API.Features.Configs.Config.AbsolutePath
+  isSpec: "True"
+  fullName: RolePlus.ExternModule.API.Features.Configs.Config.AbsolutePath
+  nameWithType: Config.AbsolutePath
 - uid: RolePlus.ExternModule.API.Features.Configs.Config.Base
   name: Base
   href: api/RolePlus.ExternModule.API.Features.Configs.Config.html#RolePlus_ExternModule_API_Features_Configs_Config_Base
@@ -6829,19 +6855,31 @@ references:
   isSpec: "True"
   fullName: RolePlus.ExternModule.API.Features.Configs.Config.Base
   nameWithType: Config.Base
-- uid: RolePlus.ExternModule.API.Features.Configs.Config.Data
-  name: Data
-  href: api/RolePlus.ExternModule.API.Features.Configs.Config.html#RolePlus_ExternModule_API_Features_Configs_Config_Data
-  commentId: P:RolePlus.ExternModule.API.Features.Configs.Config.Data
-  fullName: RolePlus.ExternModule.API.Features.Configs.Config.Data
-  nameWithType: Config.Data
-- uid: RolePlus.ExternModule.API.Features.Configs.Config.Data*
-  name: Data
-  href: api/RolePlus.ExternModule.API.Features.Configs.Config.html#RolePlus_ExternModule_API_Features_Configs_Config_Data_
-  commentId: Overload:RolePlus.ExternModule.API.Features.Configs.Config.Data
+- uid: RolePlus.ExternModule.API.Features.Configs.Config.Cast*
+  name: Cast
+  href: api/RolePlus.ExternModule.API.Features.Configs.Config.html#RolePlus_ExternModule_API_Features_Configs_Config_Cast_
+  commentId: Overload:RolePlus.ExternModule.API.Features.Configs.Config.Cast
   isSpec: "True"
-  fullName: RolePlus.ExternModule.API.Features.Configs.Config.Data
-  nameWithType: Config.Data
+  fullName: RolePlus.ExternModule.API.Features.Configs.Config.Cast
+  nameWithType: Config.Cast
+- uid: RolePlus.ExternModule.API.Features.Configs.Config.Cast``1
+  name: Cast<T>()
+  href: api/RolePlus.ExternModule.API.Features.Configs.Config.html#RolePlus_ExternModule_API_Features_Configs_Config_Cast__1
+  commentId: M:RolePlus.ExternModule.API.Features.Configs.Config.Cast``1
+  name.vb: Cast(Of T)()
+  fullName: RolePlus.ExternModule.API.Features.Configs.Config.Cast<T>()
+  fullName.vb: RolePlus.ExternModule.API.Features.Configs.Config.Cast(Of T)()
+  nameWithType: Config.Cast<T>()
+  nameWithType.vb: Config.Cast(Of T)()
+- uid: RolePlus.ExternModule.API.Features.Configs.Config.Cast``1(``0@)
+  name: Cast<T>(out T)
+  href: api/RolePlus.ExternModule.API.Features.Configs.Config.html#RolePlus_ExternModule_API_Features_Configs_Config_Cast__1___0__
+  commentId: M:RolePlus.ExternModule.API.Features.Configs.Config.Cast``1(``0@)
+  name.vb: Cast(Of T)(ByRef T)
+  fullName: RolePlus.ExternModule.API.Features.Configs.Config.Cast<T>(out T)
+  fullName.vb: RolePlus.ExternModule.API.Features.Configs.Config.Cast(Of T)(ByRef T)
+  nameWithType: Config.Cast<T>(out T)
+  nameWithType.vb: Config.Cast(Of T)(ByRef T)
 - uid: RolePlus.ExternModule.API.Features.Configs.Config.Folder
   name: Folder
   href: api/RolePlus.ExternModule.API.Features.Configs.Config.html#RolePlus_ExternModule_API_Features_Configs_Config_Folder
@@ -6871,12 +6909,6 @@ references:
   fullName.vb: RolePlus.ExternModule.API.Features.Configs.Config.GenerateNew(Of T)()
   nameWithType: Config.GenerateNew<T>()
   nameWithType.vb: Config.GenerateNew(Of T)()
-- uid: RolePlus.ExternModule.API.Features.Configs.Config.Get(System.String)
-  name: Get(String)
-  href: api/RolePlus.ExternModule.API.Features.Configs.Config.html#RolePlus_ExternModule_API_Features_Configs_Config_Get_System_String_
-  commentId: M:RolePlus.ExternModule.API.Features.Configs.Config.Get(System.String)
-  fullName: RolePlus.ExternModule.API.Features.Configs.Config.Get(System.String)
-  nameWithType: Config.Get(String)
 - uid: RolePlus.ExternModule.API.Features.Configs.Config.Get*
   name: Get
   href: api/RolePlus.ExternModule.API.Features.Configs.Config.html#RolePlus_ExternModule_API_Features_Configs_Config_Get_
@@ -6893,25 +6925,6 @@ references:
   fullName.vb: RolePlus.ExternModule.API.Features.Configs.Config.Get(Of T)()
   nameWithType: Config.Get<T>()
   nameWithType.vb: Config.Get(Of T)()
-- uid: RolePlus.ExternModule.API.Features.Configs.Config.GetOrCreate(System.String)
-  name: GetOrCreate(String)
-  href: api/RolePlus.ExternModule.API.Features.Configs.Config.html#RolePlus_ExternModule_API_Features_Configs_Config_GetOrCreate_System_String_
-  commentId: M:RolePlus.ExternModule.API.Features.Configs.Config.GetOrCreate(System.String)
-  fullName: RolePlus.ExternModule.API.Features.Configs.Config.GetOrCreate(System.String)
-  nameWithType: Config.GetOrCreate(String)
-- uid: RolePlus.ExternModule.API.Features.Configs.Config.GetOrCreate*
-  name: GetOrCreate
-  href: api/RolePlus.ExternModule.API.Features.Configs.Config.html#RolePlus_ExternModule_API_Features_Configs_Config_GetOrCreate_
-  commentId: Overload:RolePlus.ExternModule.API.Features.Configs.Config.GetOrCreate
-  isSpec: "True"
-  fullName: RolePlus.ExternModule.API.Features.Configs.Config.GetOrCreate
-  nameWithType: Config.GetOrCreate
-- uid: RolePlus.ExternModule.API.Features.Configs.Config.GetPath(System.String)
-  name: GetPath(String)
-  href: api/RolePlus.ExternModule.API.Features.Configs.Config.html#RolePlus_ExternModule_API_Features_Configs_Config_GetPath_System_String_
-  commentId: M:RolePlus.ExternModule.API.Features.Configs.Config.GetPath(System.String)
-  fullName: RolePlus.ExternModule.API.Features.Configs.Config.GetPath(System.String)
-  nameWithType: Config.GetPath(String)
 - uid: RolePlus.ExternModule.API.Features.Configs.Config.GetPath*
   name: GetPath
   href: api/RolePlus.ExternModule.API.Features.Configs.Config.html#RolePlus_ExternModule_API_Features_Configs_Config_GetPath_
@@ -6928,19 +6941,6 @@ references:
   fullName.vb: RolePlus.ExternModule.API.Features.Configs.Config.GetPath(Of T)()
   nameWithType: Config.GetPath<T>()
   nameWithType.vb: Config.GetPath(Of T)()
-- uid: RolePlus.ExternModule.API.Features.Configs.Config.IsEnabled
-  name: IsEnabled
-  href: api/RolePlus.ExternModule.API.Features.Configs.Config.html#RolePlus_ExternModule_API_Features_Configs_Config_IsEnabled
-  commentId: P:RolePlus.ExternModule.API.Features.Configs.Config.IsEnabled
-  fullName: RolePlus.ExternModule.API.Features.Configs.Config.IsEnabled
-  nameWithType: Config.IsEnabled
-- uid: RolePlus.ExternModule.API.Features.Configs.Config.IsEnabled*
-  name: IsEnabled
-  href: api/RolePlus.ExternModule.API.Features.Configs.Config.html#RolePlus_ExternModule_API_Features_Configs_Config_IsEnabled_
-  commentId: Overload:RolePlus.ExternModule.API.Features.Configs.Config.IsEnabled
-  isSpec: "True"
-  fullName: RolePlus.ExternModule.API.Features.Configs.Config.IsEnabled
-  nameWithType: Config.IsEnabled
 - uid: RolePlus.ExternModule.API.Features.Configs.Config.List
   name: List
   href: api/RolePlus.ExternModule.API.Features.Configs.Config.html#RolePlus_ExternModule_API_Features_Configs_Config_List
@@ -6954,21 +6954,18 @@ references:
   isSpec: "True"
   fullName: RolePlus.ExternModule.API.Features.Configs.Config.List
   nameWithType: Config.List
-- uid: RolePlus.ExternModule.API.Features.Configs.Config.Load
-  name: Load()
-  href: api/RolePlus.ExternModule.API.Features.Configs.Config.html#RolePlus_ExternModule_API_Features_Configs_Config_Load
-  commentId: M:RolePlus.ExternModule.API.Features.Configs.Config.Load
-  fullName: RolePlus.ExternModule.API.Features.Configs.Config.Load()
-  nameWithType: Config.Load()
-- uid: RolePlus.ExternModule.API.Features.Configs.Config.Load(System.Object@,RolePlus.ExternModule.API.Features.Configs.ConfigAttribute)
-  name: Load(ref Object, ConfigAttribute)
-  href: api/RolePlus.ExternModule.API.Features.Configs.Config.html#RolePlus_ExternModule_API_Features_Configs_Config_Load_System_Object__RolePlus_ExternModule_API_Features_Configs_ConfigAttribute_
-  commentId: M:RolePlus.ExternModule.API.Features.Configs.Config.Load(System.Object@,RolePlus.ExternModule.API.Features.Configs.ConfigAttribute)
-  name.vb: Load(ByRef Object, ConfigAttribute)
-  fullName: RolePlus.ExternModule.API.Features.Configs.Config.Load(ref System.Object, RolePlus.ExternModule.API.Features.Configs.ConfigAttribute)
-  fullName.vb: RolePlus.ExternModule.API.Features.Configs.Config.Load(ByRef System.Object, RolePlus.ExternModule.API.Features.Configs.ConfigAttribute)
-  nameWithType: Config.Load(ref Object, ConfigAttribute)
-  nameWithType.vb: Config.Load(ByRef Object, ConfigAttribute)
+- uid: RolePlus.ExternModule.API.Features.Configs.Config.Load(RolePlus.ExternModule.API.Features.Configs.Config,System.String)
+  name: Load(Config, String)
+  href: api/RolePlus.ExternModule.API.Features.Configs.Config.html#RolePlus_ExternModule_API_Features_Configs_Config_Load_RolePlus_ExternModule_API_Features_Configs_Config_System_String_
+  commentId: M:RolePlus.ExternModule.API.Features.Configs.Config.Load(RolePlus.ExternModule.API.Features.Configs.Config,System.String)
+  fullName: RolePlus.ExternModule.API.Features.Configs.Config.Load(RolePlus.ExternModule.API.Features.Configs.Config, System.String)
+  nameWithType: Config.Load(Config, String)
+- uid: RolePlus.ExternModule.API.Features.Configs.Config.Load(System.Type,RolePlus.ExternModule.API.Features.Configs.ConfigAttribute)
+  name: Load(Type, ConfigAttribute)
+  href: api/RolePlus.ExternModule.API.Features.Configs.Config.html#RolePlus_ExternModule_API_Features_Configs_Config_Load_System_Type_RolePlus_ExternModule_API_Features_Configs_ConfigAttribute_
+  commentId: M:RolePlus.ExternModule.API.Features.Configs.Config.Load(System.Type,RolePlus.ExternModule.API.Features.Configs.ConfigAttribute)
+  fullName: RolePlus.ExternModule.API.Features.Configs.Config.Load(System.Type, RolePlus.ExternModule.API.Features.Configs.ConfigAttribute)
+  nameWithType: Config.Load(Type, ConfigAttribute)
 - uid: RolePlus.ExternModule.API.Features.Configs.Config.Load*
   name: Load
   href: api/RolePlus.ExternModule.API.Features.Configs.Config.html#RolePlus_ExternModule_API_Features_Configs_Config_Load_
@@ -6989,6 +6986,19 @@ references:
   isSpec: "True"
   fullName: RolePlus.ExternModule.API.Features.Configs.Config.LoadAll
   nameWithType: Config.LoadAll
+- uid: RolePlus.ExternModule.API.Features.Configs.Config.LoadFromCache(RolePlus.ExternModule.API.Features.Configs.Config)
+  name: LoadFromCache(Config)
+  href: api/RolePlus.ExternModule.API.Features.Configs.Config.html#RolePlus_ExternModule_API_Features_Configs_Config_LoadFromCache_RolePlus_ExternModule_API_Features_Configs_Config_
+  commentId: M:RolePlus.ExternModule.API.Features.Configs.Config.LoadFromCache(RolePlus.ExternModule.API.Features.Configs.Config)
+  fullName: RolePlus.ExternModule.API.Features.Configs.Config.LoadFromCache(RolePlus.ExternModule.API.Features.Configs.Config)
+  nameWithType: Config.LoadFromCache(Config)
+- uid: RolePlus.ExternModule.API.Features.Configs.Config.LoadFromCache*
+  name: LoadFromCache
+  href: api/RolePlus.ExternModule.API.Features.Configs.Config.html#RolePlus_ExternModule_API_Features_Configs_Config_LoadFromCache_
+  commentId: Overload:RolePlus.ExternModule.API.Features.Configs.Config.LoadFromCache
+  isSpec: "True"
+  fullName: RolePlus.ExternModule.API.Features.Configs.Config.LoadFromCache
+  nameWithType: Config.LoadFromCache
 - uid: RolePlus.ExternModule.API.Features.Configs.Config.Name
   name: Name
   href: api/RolePlus.ExternModule.API.Features.Configs.Config.html#RolePlus_ExternModule_API_Features_Configs_Config_Name
@@ -7002,19 +7012,6 @@ references:
   isSpec: "True"
   fullName: RolePlus.ExternModule.API.Features.Configs.Config.Name
   nameWithType: Config.Name
-- uid: RolePlus.ExternModule.API.Features.Configs.Config.Path
-  name: Path
-  href: api/RolePlus.ExternModule.API.Features.Configs.Config.html#RolePlus_ExternModule_API_Features_Configs_Config_Path
-  commentId: P:RolePlus.ExternModule.API.Features.Configs.Config.Path
-  fullName: RolePlus.ExternModule.API.Features.Configs.Config.Path
-  nameWithType: Config.Path
-- uid: RolePlus.ExternModule.API.Features.Configs.Config.Path*
-  name: Path
-  href: api/RolePlus.ExternModule.API.Features.Configs.Config.html#RolePlus_ExternModule_API_Features_Configs_Config_Path_
-  commentId: Overload:RolePlus.ExternModule.API.Features.Configs.Config.Path
-  isSpec: "True"
-  fullName: RolePlus.ExternModule.API.Features.Configs.Config.Path
-  nameWithType: Config.Path
 - uid: RolePlus.ExternModule.API.Features.Configs.Config.Read*
   name: Read
   href: api/RolePlus.ExternModule.API.Features.Configs.Config.html#RolePlus_ExternModule_API_Features_Configs_Config_Read_
@@ -7031,19 +7028,6 @@ references:
   fullName.vb: RolePlus.ExternModule.API.Features.Configs.Config.Read(Of T)()
   nameWithType: Config.Read<T>()
   nameWithType.vb: Config.Read(Of T)()
-- uid: RolePlus.ExternModule.API.Features.Configs.Config.ShowDebugMessages
-  name: ShowDebugMessages
-  href: api/RolePlus.ExternModule.API.Features.Configs.Config.html#RolePlus_ExternModule_API_Features_Configs_Config_ShowDebugMessages
-  commentId: P:RolePlus.ExternModule.API.Features.Configs.Config.ShowDebugMessages
-  fullName: RolePlus.ExternModule.API.Features.Configs.Config.ShowDebugMessages
-  nameWithType: Config.ShowDebugMessages
-- uid: RolePlus.ExternModule.API.Features.Configs.Config.ShowDebugMessages*
-  name: ShowDebugMessages
-  href: api/RolePlus.ExternModule.API.Features.Configs.Config.html#RolePlus_ExternModule_API_Features_Configs_Config_ShowDebugMessages_
-  commentId: Overload:RolePlus.ExternModule.API.Features.Configs.Config.ShowDebugMessages
-  isSpec: "True"
-  fullName: RolePlus.ExternModule.API.Features.Configs.Config.ShowDebugMessages
-  nameWithType: Config.ShowDebugMessages
 - uid: RolePlus.ExternModule.API.Features.Configs.Config.Write*
   name: Write
   href: api/RolePlus.ExternModule.API.Features.Configs.Config.html#RolePlus_ExternModule_API_Features_Configs_Config_Write_
@@ -7066,12 +7050,12 @@ references:
   commentId: T:RolePlus.ExternModule.API.Features.Configs.ConfigAttribute
   fullName: RolePlus.ExternModule.API.Features.Configs.ConfigAttribute
   nameWithType: ConfigAttribute
-- uid: RolePlus.ExternModule.API.Features.Configs.ConfigAttribute.#ctor(System.String)
-  name: ConfigAttribute(String)
-  href: api/RolePlus.ExternModule.API.Features.Configs.ConfigAttribute.html#RolePlus_ExternModule_API_Features_Configs_ConfigAttribute__ctor_System_String_
-  commentId: M:RolePlus.ExternModule.API.Features.Configs.ConfigAttribute.#ctor(System.String)
-  fullName: RolePlus.ExternModule.API.Features.Configs.ConfigAttribute.ConfigAttribute(System.String)
-  nameWithType: ConfigAttribute.ConfigAttribute(String)
+- uid: RolePlus.ExternModule.API.Features.Configs.ConfigAttribute.#ctor
+  name: ConfigAttribute()
+  href: api/RolePlus.ExternModule.API.Features.Configs.ConfigAttribute.html#RolePlus_ExternModule_API_Features_Configs_ConfigAttribute__ctor
+  commentId: M:RolePlus.ExternModule.API.Features.Configs.ConfigAttribute.#ctor
+  fullName: RolePlus.ExternModule.API.Features.Configs.ConfigAttribute.ConfigAttribute()
+  nameWithType: ConfigAttribute.ConfigAttribute()
 - uid: RolePlus.ExternModule.API.Features.Configs.ConfigAttribute.#ctor(System.String,System.String,System.Boolean)
   name: ConfigAttribute(String, String, Boolean)
   href: api/RolePlus.ExternModule.API.Features.Configs.ConfigAttribute.html#RolePlus_ExternModule_API_Features_Configs_ConfigAttribute__ctor_System_String_System_String_System_Boolean_
@@ -7130,19 +7114,6 @@ references:
   commentId: T:RolePlus.ExternModule.API.Features.Configs.IConfig
   fullName: RolePlus.ExternModule.API.Features.Configs.IConfig
   nameWithType: IConfig
-- uid: RolePlus.ExternModule.API.Features.Configs.IConfig.Folder
-  name: Folder
-  href: api/RolePlus.ExternModule.API.Features.Configs.IConfig.html#RolePlus_ExternModule_API_Features_Configs_IConfig_Folder
-  commentId: P:RolePlus.ExternModule.API.Features.Configs.IConfig.Folder
-  fullName: RolePlus.ExternModule.API.Features.Configs.IConfig.Folder
-  nameWithType: IConfig.Folder
-- uid: RolePlus.ExternModule.API.Features.Configs.IConfig.Folder*
-  name: Folder
-  href: api/RolePlus.ExternModule.API.Features.Configs.IConfig.html#RolePlus_ExternModule_API_Features_Configs_IConfig_Folder_
-  commentId: Overload:RolePlus.ExternModule.API.Features.Configs.IConfig.Folder
-  isSpec: "True"
-  fullName: RolePlus.ExternModule.API.Features.Configs.IConfig.Folder
-  nameWithType: IConfig.Folder
 - uid: RolePlus.ExternModule.API.Features.Configs.IConfig.IsEnabled
   name: IsEnabled
   href: api/RolePlus.ExternModule.API.Features.Configs.IConfig.html#RolePlus_ExternModule_API_Features_Configs_IConfig_IsEnabled
@@ -7156,19 +7127,6 @@ references:
   isSpec: "True"
   fullName: RolePlus.ExternModule.API.Features.Configs.IConfig.IsEnabled
   nameWithType: IConfig.IsEnabled
-- uid: RolePlus.ExternModule.API.Features.Configs.IConfig.Name
-  name: Name
-  href: api/RolePlus.ExternModule.API.Features.Configs.IConfig.html#RolePlus_ExternModule_API_Features_Configs_IConfig_Name
-  commentId: P:RolePlus.ExternModule.API.Features.Configs.IConfig.Name
-  fullName: RolePlus.ExternModule.API.Features.Configs.IConfig.Name
-  nameWithType: IConfig.Name
-- uid: RolePlus.ExternModule.API.Features.Configs.IConfig.Name*
-  name: Name
-  href: api/RolePlus.ExternModule.API.Features.Configs.IConfig.html#RolePlus_ExternModule_API_Features_Configs_IConfig_Name_
-  commentId: Overload:RolePlus.ExternModule.API.Features.Configs.IConfig.Name
-  isSpec: "True"
-  fullName: RolePlus.ExternModule.API.Features.Configs.IConfig.Name
-  nameWithType: IConfig.Name
 - uid: RolePlus.ExternModule.API.Features.Configs.IConfig.ShowDebugMessages
   name: ShowDebugMessages
   href: api/RolePlus.ExternModule.API.Features.Configs.IConfig.html#RolePlus_ExternModule_API_Features_Configs_IConfig_ShowDebugMessages
@@ -13175,119 +13133,6 @@ references:
   commentId: N:RolePlus.Firewalls.Rules
   fullName: RolePlus.Firewalls.Rules
   nameWithType: RolePlus.Firewalls.Rules
-- uid: RolePlus.Firewalls.Rules.AntiDDoS
-  name: AntiDDoS
-  href: api/RolePlus.Firewalls.Rules.AntiDDoS.html
-  commentId: T:RolePlus.Firewalls.Rules.AntiDDoS
-  fullName: RolePlus.Firewalls.Rules.AntiDDoS
-  nameWithType: AntiDDoS
-- uid: RolePlus.Firewalls.Rules.AntiDDoS.FailoverPort
-  name: FailoverPort
-  href: api/RolePlus.Firewalls.Rules.AntiDDoS.html#RolePlus_Firewalls_Rules_AntiDDoS_FailoverPort
-  commentId: P:RolePlus.Firewalls.Rules.AntiDDoS.FailoverPort
-  fullName: RolePlus.Firewalls.Rules.AntiDDoS.FailoverPort
-  nameWithType: AntiDDoS.FailoverPort
-- uid: RolePlus.Firewalls.Rules.AntiDDoS.FailoverPort*
-  name: FailoverPort
-  href: api/RolePlus.Firewalls.Rules.AntiDDoS.html#RolePlus_Firewalls_Rules_AntiDDoS_FailoverPort_
-  commentId: Overload:RolePlus.Firewalls.Rules.AntiDDoS.FailoverPort
-  isSpec: "True"
-  fullName: RolePlus.Firewalls.Rules.AntiDDoS.FailoverPort
-  nameWithType: AntiDDoS.FailoverPort
-- uid: RolePlus.Firewalls.Rules.AntiDDoS.IsServerUnderAttack
-  name: IsServerUnderAttack
-  href: api/RolePlus.Firewalls.Rules.AntiDDoS.html#RolePlus_Firewalls_Rules_AntiDDoS_IsServerUnderAttack
-  commentId: P:RolePlus.Firewalls.Rules.AntiDDoS.IsServerUnderAttack
-  fullName: RolePlus.Firewalls.Rules.AntiDDoS.IsServerUnderAttack
-  nameWithType: AntiDDoS.IsServerUnderAttack
-- uid: RolePlus.Firewalls.Rules.AntiDDoS.IsServerUnderAttack*
-  name: IsServerUnderAttack
-  href: api/RolePlus.Firewalls.Rules.AntiDDoS.html#RolePlus_Firewalls_Rules_AntiDDoS_IsServerUnderAttack_
-  commentId: Overload:RolePlus.Firewalls.Rules.AntiDDoS.IsServerUnderAttack
-  isSpec: "True"
-  fullName: RolePlus.Firewalls.Rules.AntiDDoS.IsServerUnderAttack
-  nameWithType: AntiDDoS.IsServerUnderAttack
-- uid: RolePlus.Firewalls.Rules.AntiDDoS.Load
-  name: Load()
-  href: api/RolePlus.Firewalls.Rules.AntiDDoS.html#RolePlus_Firewalls_Rules_AntiDDoS_Load
-  commentId: M:RolePlus.Firewalls.Rules.AntiDDoS.Load
-  fullName: RolePlus.Firewalls.Rules.AntiDDoS.Load()
-  nameWithType: AntiDDoS.Load()
-- uid: RolePlus.Firewalls.Rules.AntiDDoS.Load*
-  name: Load
-  href: api/RolePlus.Firewalls.Rules.AntiDDoS.html#RolePlus_Firewalls_Rules_AntiDDoS_Load_
-  commentId: Overload:RolePlus.Firewalls.Rules.AntiDDoS.Load
-  isSpec: "True"
-  fullName: RolePlus.Firewalls.Rules.AntiDDoS.Load
-  nameWithType: AntiDDoS.Load
-- uid: RolePlus.Firewalls.Rules.AntiDDoS.MaxLatency
-  name: MaxLatency
-  href: api/RolePlus.Firewalls.Rules.AntiDDoS.html#RolePlus_Firewalls_Rules_AntiDDoS_MaxLatency
-  commentId: P:RolePlus.Firewalls.Rules.AntiDDoS.MaxLatency
-  fullName: RolePlus.Firewalls.Rules.AntiDDoS.MaxLatency
-  nameWithType: AntiDDoS.MaxLatency
-- uid: RolePlus.Firewalls.Rules.AntiDDoS.MaxLatency*
-  name: MaxLatency
-  href: api/RolePlus.Firewalls.Rules.AntiDDoS.html#RolePlus_Firewalls_Rules_AntiDDoS_MaxLatency_
-  commentId: Overload:RolePlus.Firewalls.Rules.AntiDDoS.MaxLatency
-  isSpec: "True"
-  fullName: RolePlus.Firewalls.Rules.AntiDDoS.MaxLatency
-  nameWithType: AntiDDoS.MaxLatency
-- uid: RolePlus.Firewalls.Rules.AntiDDoS.Name
-  name: Name
-  href: api/RolePlus.Firewalls.Rules.AntiDDoS.html#RolePlus_Firewalls_Rules_AntiDDoS_Name
-  commentId: P:RolePlus.Firewalls.Rules.AntiDDoS.Name
-  fullName: RolePlus.Firewalls.Rules.AntiDDoS.Name
-  nameWithType: AntiDDoS.Name
-- uid: RolePlus.Firewalls.Rules.AntiDDoS.Name*
-  name: Name
-  href: api/RolePlus.Firewalls.Rules.AntiDDoS.html#RolePlus_Firewalls_Rules_AntiDDoS_Name_
-  commentId: Overload:RolePlus.Firewalls.Rules.AntiDDoS.Name
-  isSpec: "True"
-  fullName: RolePlus.Firewalls.Rules.AntiDDoS.Name
-  nameWithType: AntiDDoS.Name
-- uid: RolePlus.Firewalls.Rules.AntiDDoS.NetworkSync
-  name: NetworkSync()
-  href: api/RolePlus.Firewalls.Rules.AntiDDoS.html#RolePlus_Firewalls_Rules_AntiDDoS_NetworkSync
-  commentId: M:RolePlus.Firewalls.Rules.AntiDDoS.NetworkSync
-  fullName: RolePlus.Firewalls.Rules.AntiDDoS.NetworkSync()
-  nameWithType: AntiDDoS.NetworkSync()
-- uid: RolePlus.Firewalls.Rules.AntiDDoS.NetworkSync*
-  name: NetworkSync
-  href: api/RolePlus.Firewalls.Rules.AntiDDoS.html#RolePlus_Firewalls_Rules_AntiDDoS_NetworkSync_
-  commentId: Overload:RolePlus.Firewalls.Rules.AntiDDoS.NetworkSync
-  isSpec: "True"
-  fullName: RolePlus.Firewalls.Rules.AntiDDoS.NetworkSync
-  nameWithType: AntiDDoS.NetworkSync
-- uid: RolePlus.Firewalls.Rules.AntiDDoS.TryParse(System.String,System.Net.IPAddress@)
-  name: TryParse(String, out IPAddress)
-  href: api/RolePlus.Firewalls.Rules.AntiDDoS.html#RolePlus_Firewalls_Rules_AntiDDoS_TryParse_System_String_System_Net_IPAddress__
-  commentId: M:RolePlus.Firewalls.Rules.AntiDDoS.TryParse(System.String,System.Net.IPAddress@)
-  name.vb: TryParse(String, ByRef IPAddress)
-  fullName: RolePlus.Firewalls.Rules.AntiDDoS.TryParse(System.String, out System.Net.IPAddress)
-  fullName.vb: RolePlus.Firewalls.Rules.AntiDDoS.TryParse(System.String, ByRef System.Net.IPAddress)
-  nameWithType: AntiDDoS.TryParse(String, out IPAddress)
-  nameWithType.vb: AntiDDoS.TryParse(String, ByRef IPAddress)
-- uid: RolePlus.Firewalls.Rules.AntiDDoS.TryParse*
-  name: TryParse
-  href: api/RolePlus.Firewalls.Rules.AntiDDoS.html#RolePlus_Firewalls_Rules_AntiDDoS_TryParse_
-  commentId: Overload:RolePlus.Firewalls.Rules.AntiDDoS.TryParse
-  isSpec: "True"
-  fullName: RolePlus.Firewalls.Rules.AntiDDoS.TryParse
-  nameWithType: AntiDDoS.TryParse
-- uid: RolePlus.Firewalls.Rules.AntiDDoS.Unload
-  name: Unload()
-  href: api/RolePlus.Firewalls.Rules.AntiDDoS.html#RolePlus_Firewalls_Rules_AntiDDoS_Unload
-  commentId: M:RolePlus.Firewalls.Rules.AntiDDoS.Unload
-  fullName: RolePlus.Firewalls.Rules.AntiDDoS.Unload()
-  nameWithType: AntiDDoS.Unload()
-- uid: RolePlus.Firewalls.Rules.AntiDDoS.Unload*
-  name: Unload
-  href: api/RolePlus.Firewalls.Rules.AntiDDoS.html#RolePlus_Firewalls_Rules_AntiDDoS_Unload_
-  commentId: Overload:RolePlus.Firewalls.Rules.AntiDDoS.Unload
-  isSpec: "True"
-  fullName: RolePlus.Firewalls.Rules.AntiDDoS.Unload
-  nameWithType: AntiDDoS.Unload
 - uid: RolePlus.Firewalls.Rules.AntiPreAuth
   name: AntiPreAuth
   href: api/RolePlus.Firewalls.Rules.AntiPreAuth.html
@@ -13481,6 +13326,119 @@ references:
   isSpec: "True"
   fullName: RolePlus.Firewalls.Rules.AntiRaid.Unload
   nameWithType: AntiRaid.Unload
+- uid: RolePlus.Firewalls.Rules.FailoverNetwork
+  name: FailoverNetwork
+  href: api/RolePlus.Firewalls.Rules.FailoverNetwork.html
+  commentId: T:RolePlus.Firewalls.Rules.FailoverNetwork
+  fullName: RolePlus.Firewalls.Rules.FailoverNetwork
+  nameWithType: FailoverNetwork
+- uid: RolePlus.Firewalls.Rules.FailoverNetwork.FailoverPort
+  name: FailoverPort
+  href: api/RolePlus.Firewalls.Rules.FailoverNetwork.html#RolePlus_Firewalls_Rules_FailoverNetwork_FailoverPort
+  commentId: P:RolePlus.Firewalls.Rules.FailoverNetwork.FailoverPort
+  fullName: RolePlus.Firewalls.Rules.FailoverNetwork.FailoverPort
+  nameWithType: FailoverNetwork.FailoverPort
+- uid: RolePlus.Firewalls.Rules.FailoverNetwork.FailoverPort*
+  name: FailoverPort
+  href: api/RolePlus.Firewalls.Rules.FailoverNetwork.html#RolePlus_Firewalls_Rules_FailoverNetwork_FailoverPort_
+  commentId: Overload:RolePlus.Firewalls.Rules.FailoverNetwork.FailoverPort
+  isSpec: "True"
+  fullName: RolePlus.Firewalls.Rules.FailoverNetwork.FailoverPort
+  nameWithType: FailoverNetwork.FailoverPort
+- uid: RolePlus.Firewalls.Rules.FailoverNetwork.IsServerUnderAttack
+  name: IsServerUnderAttack
+  href: api/RolePlus.Firewalls.Rules.FailoverNetwork.html#RolePlus_Firewalls_Rules_FailoverNetwork_IsServerUnderAttack
+  commentId: P:RolePlus.Firewalls.Rules.FailoverNetwork.IsServerUnderAttack
+  fullName: RolePlus.Firewalls.Rules.FailoverNetwork.IsServerUnderAttack
+  nameWithType: FailoverNetwork.IsServerUnderAttack
+- uid: RolePlus.Firewalls.Rules.FailoverNetwork.IsServerUnderAttack*
+  name: IsServerUnderAttack
+  href: api/RolePlus.Firewalls.Rules.FailoverNetwork.html#RolePlus_Firewalls_Rules_FailoverNetwork_IsServerUnderAttack_
+  commentId: Overload:RolePlus.Firewalls.Rules.FailoverNetwork.IsServerUnderAttack
+  isSpec: "True"
+  fullName: RolePlus.Firewalls.Rules.FailoverNetwork.IsServerUnderAttack
+  nameWithType: FailoverNetwork.IsServerUnderAttack
+- uid: RolePlus.Firewalls.Rules.FailoverNetwork.Load
+  name: Load()
+  href: api/RolePlus.Firewalls.Rules.FailoverNetwork.html#RolePlus_Firewalls_Rules_FailoverNetwork_Load
+  commentId: M:RolePlus.Firewalls.Rules.FailoverNetwork.Load
+  fullName: RolePlus.Firewalls.Rules.FailoverNetwork.Load()
+  nameWithType: FailoverNetwork.Load()
+- uid: RolePlus.Firewalls.Rules.FailoverNetwork.Load*
+  name: Load
+  href: api/RolePlus.Firewalls.Rules.FailoverNetwork.html#RolePlus_Firewalls_Rules_FailoverNetwork_Load_
+  commentId: Overload:RolePlus.Firewalls.Rules.FailoverNetwork.Load
+  isSpec: "True"
+  fullName: RolePlus.Firewalls.Rules.FailoverNetwork.Load
+  nameWithType: FailoverNetwork.Load
+- uid: RolePlus.Firewalls.Rules.FailoverNetwork.MaxLatency
+  name: MaxLatency
+  href: api/RolePlus.Firewalls.Rules.FailoverNetwork.html#RolePlus_Firewalls_Rules_FailoverNetwork_MaxLatency
+  commentId: P:RolePlus.Firewalls.Rules.FailoverNetwork.MaxLatency
+  fullName: RolePlus.Firewalls.Rules.FailoverNetwork.MaxLatency
+  nameWithType: FailoverNetwork.MaxLatency
+- uid: RolePlus.Firewalls.Rules.FailoverNetwork.MaxLatency*
+  name: MaxLatency
+  href: api/RolePlus.Firewalls.Rules.FailoverNetwork.html#RolePlus_Firewalls_Rules_FailoverNetwork_MaxLatency_
+  commentId: Overload:RolePlus.Firewalls.Rules.FailoverNetwork.MaxLatency
+  isSpec: "True"
+  fullName: RolePlus.Firewalls.Rules.FailoverNetwork.MaxLatency
+  nameWithType: FailoverNetwork.MaxLatency
+- uid: RolePlus.Firewalls.Rules.FailoverNetwork.Name
+  name: Name
+  href: api/RolePlus.Firewalls.Rules.FailoverNetwork.html#RolePlus_Firewalls_Rules_FailoverNetwork_Name
+  commentId: P:RolePlus.Firewalls.Rules.FailoverNetwork.Name
+  fullName: RolePlus.Firewalls.Rules.FailoverNetwork.Name
+  nameWithType: FailoverNetwork.Name
+- uid: RolePlus.Firewalls.Rules.FailoverNetwork.Name*
+  name: Name
+  href: api/RolePlus.Firewalls.Rules.FailoverNetwork.html#RolePlus_Firewalls_Rules_FailoverNetwork_Name_
+  commentId: Overload:RolePlus.Firewalls.Rules.FailoverNetwork.Name
+  isSpec: "True"
+  fullName: RolePlus.Firewalls.Rules.FailoverNetwork.Name
+  nameWithType: FailoverNetwork.Name
+- uid: RolePlus.Firewalls.Rules.FailoverNetwork.NetworkSync
+  name: NetworkSync()
+  href: api/RolePlus.Firewalls.Rules.FailoverNetwork.html#RolePlus_Firewalls_Rules_FailoverNetwork_NetworkSync
+  commentId: M:RolePlus.Firewalls.Rules.FailoverNetwork.NetworkSync
+  fullName: RolePlus.Firewalls.Rules.FailoverNetwork.NetworkSync()
+  nameWithType: FailoverNetwork.NetworkSync()
+- uid: RolePlus.Firewalls.Rules.FailoverNetwork.NetworkSync*
+  name: NetworkSync
+  href: api/RolePlus.Firewalls.Rules.FailoverNetwork.html#RolePlus_Firewalls_Rules_FailoverNetwork_NetworkSync_
+  commentId: Overload:RolePlus.Firewalls.Rules.FailoverNetwork.NetworkSync
+  isSpec: "True"
+  fullName: RolePlus.Firewalls.Rules.FailoverNetwork.NetworkSync
+  nameWithType: FailoverNetwork.NetworkSync
+- uid: RolePlus.Firewalls.Rules.FailoverNetwork.TryParse(System.String,System.Net.IPAddress@)
+  name: TryParse(String, out IPAddress)
+  href: api/RolePlus.Firewalls.Rules.FailoverNetwork.html#RolePlus_Firewalls_Rules_FailoverNetwork_TryParse_System_String_System_Net_IPAddress__
+  commentId: M:RolePlus.Firewalls.Rules.FailoverNetwork.TryParse(System.String,System.Net.IPAddress@)
+  name.vb: TryParse(String, ByRef IPAddress)
+  fullName: RolePlus.Firewalls.Rules.FailoverNetwork.TryParse(System.String, out System.Net.IPAddress)
+  fullName.vb: RolePlus.Firewalls.Rules.FailoverNetwork.TryParse(System.String, ByRef System.Net.IPAddress)
+  nameWithType: FailoverNetwork.TryParse(String, out IPAddress)
+  nameWithType.vb: FailoverNetwork.TryParse(String, ByRef IPAddress)
+- uid: RolePlus.Firewalls.Rules.FailoverNetwork.TryParse*
+  name: TryParse
+  href: api/RolePlus.Firewalls.Rules.FailoverNetwork.html#RolePlus_Firewalls_Rules_FailoverNetwork_TryParse_
+  commentId: Overload:RolePlus.Firewalls.Rules.FailoverNetwork.TryParse
+  isSpec: "True"
+  fullName: RolePlus.Firewalls.Rules.FailoverNetwork.TryParse
+  nameWithType: FailoverNetwork.TryParse
+- uid: RolePlus.Firewalls.Rules.FailoverNetwork.Unload
+  name: Unload()
+  href: api/RolePlus.Firewalls.Rules.FailoverNetwork.html#RolePlus_Firewalls_Rules_FailoverNetwork_Unload
+  commentId: M:RolePlus.Firewalls.Rules.FailoverNetwork.Unload
+  fullName: RolePlus.Firewalls.Rules.FailoverNetwork.Unload()
+  nameWithType: FailoverNetwork.Unload()
+- uid: RolePlus.Firewalls.Rules.FailoverNetwork.Unload*
+  name: Unload
+  href: api/RolePlus.Firewalls.Rules.FailoverNetwork.html#RolePlus_Firewalls_Rules_FailoverNetwork_Unload_
+  commentId: Overload:RolePlus.Firewalls.Rules.FailoverNetwork.Unload
+  isSpec: "True"
+  fullName: RolePlus.Firewalls.Rules.FailoverNetwork.Unload
+  nameWithType: FailoverNetwork.Unload
 - uid: RolePlus.Firewalls.Rules.ProxyRedirect
   name: ProxyRedirect
   href: api/RolePlus.Firewalls.Rules.ProxyRedirect.html

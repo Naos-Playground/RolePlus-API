@@ -1,0 +1,1202 @@
+{
+  "Primitives": [
+    {
+      "PrimitiveType": 2,
+      "Color": "C8BABAFF",
+      "Position": {
+        "x": -0.189418316,
+        "y": 4.1422,
+        "z": -9.216143
+      },
+      "Rotation": {
+        "x": 0.0,
+        "y": 270.137848,
+        "z": 0.0
+      },
+      "Scale": {
+        "x": 0.14155443,
+        "y": 0.919464648,
+        "z": 0.132770881
+      },
+      "AnimationEndAction": 0
+    },
+    {
+      "PrimitiveType": 1,
+      "Color": "C8BABAFF",
+      "Position": {
+        "x": -0.193420142,
+        "y": 5.307,
+        "z": -9.217133
+      },
+      "Rotation": {
+        "x": 0.0,
+        "y": 270.137848,
+        "z": 0.0
+      },
+      "Scale": {
+        "x": -0.639868557,
+        "y": -0.2968876,
+        "z": -0.462250918
+      },
+      "AnimationEndAction": 0
+    },
+    {
+      "PrimitiveType": 1,
+      "Color": "C8BABAFF",
+      "Position": {
+        "x": 1.3646,
+        "y": 4.7414,
+        "z": -9.2218
+      },
+      "Rotation": {
+        "x": 90.0,
+        "y": 270.1378,
+        "z": 0.0
+      },
+      "Scale": {
+        "x": -0.125611842,
+        "y": -0.5494959,
+        "z": -0.08289471
+      },
+      "AnimationEndAction": 0
+    },
+    {
+      "PrimitiveType": 1,
+      "Color": "C8BABAFF",
+      "Position": {
+        "x": -1.6894,
+        "y": 4.7352,
+        "z": -9.2144
+      },
+      "Rotation": {
+        "x": 90.0,
+        "y": 270.1378,
+        "z": 0.0
+      },
+      "Scale": {
+        "x": -0.120587371,
+        "y": -0.527105033,
+        "z": -0.06444711
+      },
+      "AnimationEndAction": 0
+    },
+    {
+      "PrimitiveType": 0,
+      "Color": "C8BABAFF",
+      "Position": {
+        "x": -1.23189878,
+        "y": 4.775,
+        "z": -9.21653652
+      },
+      "Rotation": {
+        "x": 0.0,
+        "y": 270.137848,
+        "z": 0.0
+      },
+      "Scale": {
+        "x": 0.163172424,
+        "y": 0.175218776,
+        "z": 0.198727116
+      },
+      "AnimationEndAction": 0
+    },
+    {
+      "PrimitiveType": 0,
+      "Color": "C8BABAFF",
+      "Position": {
+        "x": 0.899775,
+        "y": 4.775,
+        "z": -9.220764
+      },
+      "Rotation": {
+        "x": 0.0,
+        "y": 270.137848,
+        "z": 0.0
+      },
+      "Scale": {
+        "x": 0.169971272,
+        "y": 0.18251957,
+        "z": 0.207168847
+      },
+      "AnimationEndAction": 0
+    },
+    {
+      "PrimitiveType": 1,
+      "Color": "C8BABAFF",
+      "Position": {
+        "x": -0.193378717,
+        "y": 3.253,
+        "z": -9.200135
+      },
+      "Rotation": {
+        "x": 0.0,
+        "y": 270.137848,
+        "z": 0.0
+      },
+      "Scale": {
+        "x": -0.519650042,
+        "y": -0.186630085,
+        "z": -0.656754732
+      },
+      "AnimationEndAction": 0
+    },
+    {
+      "PrimitiveType": 1,
+      "Color": "C8BABAFF",
+      "Position": {
+        "x": -0.4271,
+        "y": 2.4393,
+        "z": -9.2169
+      },
+      "Rotation": {
+        "x": 0.0,
+        "y": 270.137848,
+        "z": 0.0
+      },
+      "Scale": {
+        "x": -0.216113836,
+        "y": -0.7771626,
+        "z": -0.102735616
+      },
+      "AnimationEndAction": 0
+    },
+    {
+      "PrimitiveType": 1,
+      "Color": "C8BABAFF",
+      "Position": {
+        "x": -0.19338,
+        "y": 3.0954,
+        "z": -9.200135
+      },
+      "Rotation": {
+        "x": 90.0,
+        "y": 270.1378,
+        "z": 0.0
+      },
+      "Scale": {
+        "x": -0.222914279,
+        "y": -0.139058143,
+        "z": -0.251956522
+      },
+      "AnimationEndAction": 0
+    },
+    {
+      "PrimitiveType": 0,
+      "Color": "C8BABAFF",
+      "Position": {
+        "x": -0.383,
+        "y": 1.745,
+        "z": -9.216
+      },
+      "Rotation": {
+        "x": 0.0,
+        "y": 270.137848,
+        "z": 0.0
+      },
+      "Scale": {
+        "x": 0.166317612,
+        "y": 0.214035019,
+        "z": 0.204838142
+      },
+      "AnimationEndAction": 0
+    },
+    {
+      "PrimitiveType": 1,
+      "Color": "C8BABAFF",
+      "Position": {
+        "x": -0.4264,
+        "y": 1.164,
+        "z": -9.2169
+      },
+      "Rotation": {
+        "x": 0.0,
+        "y": 270.137848,
+        "z": 0.0
+      },
+      "Scale": {
+        "x": -0.216113836,
+        "y": -0.658256769,
+        "z": -0.1040815
+      },
+      "AnimationEndAction": 0
+    },
+    {
+      "PrimitiveType": 0,
+      "Color": "C8BABAFF",
+      "Position": {
+        "x": -0.3932,
+        "y": 0.481999874,
+        "z": -9.2007
+      },
+      "Rotation": {
+        "x": 0.0,
+        "y": 270.137848,
+        "z": 0.0
+      },
+      "Scale": {
+        "x": 0.117465913,
+        "y": 0.1861864,
+        "z": 0.158505037
+      },
+      "AnimationEndAction": 0
+    },
+    {
+      "PrimitiveType": 0,
+      "Color": "C8BABAFF",
+      "Position": {
+        "x": -0.0014400119,
+        "y": 1.745,
+        "z": -9.217
+      },
+      "Rotation": {
+        "x": 0.0,
+        "y": 270.137848,
+        "z": 0.0
+      },
+      "Scale": {
+        "x": 0.166317612,
+        "y": 0.214035019,
+        "z": 0.204838142
+      },
+      "AnimationEndAction": 0
+    },
+    {
+      "PrimitiveType": 0,
+      "Color": "C8BABAFF",
+      "Position": {
+        "x": 0.001,
+        "y": 0.481999874,
+        "z": -9.217
+      },
+      "Rotation": {
+        "x": 0.0,
+        "y": 270.137848,
+        "z": 0.0
+      },
+      "Scale": {
+        "x": 0.147960588,
+        "y": 0.1861864,
+        "z": 0.171042442
+      },
+      "AnimationEndAction": 0
+    },
+    {
+      "PrimitiveType": 0,
+      "Color": "C8BABAFF",
+      "Position": {
+        "x": -0.286,
+        "y": 4.775,
+        "z": -9.219
+      },
+      "Rotation": {
+        "x": 0.0,
+        "y": 270.137848,
+        "z": 0.0
+      },
+      "Scale": {
+        "x": 0.193653032,
+        "y": 0.207949638,
+        "z": 0.235849336
+      },
+      "AnimationEndAction": 0
+    },
+    {
+      "PrimitiveType": 0,
+      "Color": "C8BABAFF",
+      "Position": {
+        "x": -0.087,
+        "y": 4.775,
+        "z": -9.219
+      },
+      "Rotation": {
+        "x": 0.0,
+        "y": 270.137848,
+        "z": 0.0
+      },
+      "Scale": {
+        "x": 0.193653032,
+        "y": 0.207949638,
+        "z": 0.235849336
+      },
+      "AnimationEndAction": 0
+    },
+    {
+      "PrimitiveType": 2,
+      "Color": "C8BABAFF",
+      "Position": {
+        "x": 0.022,
+        "y": 4.408,
+        "z": -9.2084
+      },
+      "Rotation": {
+        "x": -2.13443423E-06,
+        "y": 12.7538328,
+        "z": 90.0
+      },
+      "Scale": {
+        "x": 0.14155443,
+        "y": 0.200511679,
+        "z": 0.132770881
+      },
+      "AnimationEndAction": 0
+    },
+    {
+      "PrimitiveType": 2,
+      "Color": "C8BABAFF",
+      "Position": {
+        "x": -0.3927,
+        "y": 4.408,
+        "z": -9.2026
+      },
+      "Rotation": {
+        "x": 0.0,
+        "y": 347.246,
+        "z": 90.0
+      },
+      "Scale": {
+        "x": 0.14155443,
+        "y": 0.18793948,
+        "z": 0.132770881
+      },
+      "AnimationEndAction": 0
+    },
+    {
+      "PrimitiveType": 2,
+      "Color": "C8BABAFF",
+      "Position": {
+        "x": 0.022,
+        "y": 4.144,
+        "z": -9.2084
+      },
+      "Rotation": {
+        "x": -2.13443423E-06,
+        "y": 12.7538328,
+        "z": 90.0
+      },
+      "Scale": {
+        "x": 0.14155443,
+        "y": 0.200511679,
+        "z": 0.132770881
+      },
+      "AnimationEndAction": 0
+    },
+    {
+      "PrimitiveType": 2,
+      "Color": "C8BABAFF",
+      "Position": {
+        "x": -0.3927,
+        "y": 4.144,
+        "z": -9.2026
+      },
+      "Rotation": {
+        "x": 0.0,
+        "y": 347.246,
+        "z": 90.0
+      },
+      "Scale": {
+        "x": 0.14155443,
+        "y": 0.18793948,
+        "z": 0.132770881
+      },
+      "AnimationEndAction": 0
+    },
+    {
+      "PrimitiveType": 2,
+      "Color": "C8BABAFF",
+      "Position": {
+        "x": 0.022,
+        "y": 3.906,
+        "z": -9.2084
+      },
+      "Rotation": {
+        "x": -2.13443423E-06,
+        "y": 12.7538328,
+        "z": 90.0
+      },
+      "Scale": {
+        "x": 0.14155443,
+        "y": 0.200511679,
+        "z": 0.132770881
+      },
+      "AnimationEndAction": 0
+    },
+    {
+      "PrimitiveType": 2,
+      "Color": "C8BABAFF",
+      "Position": {
+        "x": -0.3927,
+        "y": 3.906,
+        "z": -9.2026
+      },
+      "Rotation": {
+        "x": 0.0,
+        "y": 347.246,
+        "z": 90.0
+      },
+      "Scale": {
+        "x": 0.14155443,
+        "y": 0.18793948,
+        "z": 0.132770881
+      },
+      "AnimationEndAction": 0
+    },
+    {
+      "PrimitiveType": 2,
+      "Color": "C8BABAFF",
+      "Position": {
+        "x": 0.104,
+        "y": 4.408,
+        "z": -9.338
+      },
+      "Rotation": {
+        "x": -1.70754731E-06,
+        "y": 130.614288,
+        "z": 89.99999
+      },
+      "Scale": {
+        "x": 0.14155443,
+        "y": 0.197923437,
+        "z": 0.132770881
+      },
+      "AnimationEndAction": 0
+    },
+    {
+      "PrimitiveType": 2,
+      "Color": "C8BABAFF",
+      "Position": {
+        "x": -0.482,
+        "y": 4.41899967,
+        "z": -9.368
+      },
+      "Rotation": {
+        "x": 0.0,
+        "y": 229.386,
+        "z": 90.0
+      },
+      "Scale": {
+        "x": 0.14155443,
+        "y": 0.197923437,
+        "z": 0.132770881
+      },
+      "AnimationEndAction": 0
+    },
+    {
+      "PrimitiveType": 2,
+      "Color": "C8BABAFF",
+      "Position": {
+        "x": 0.104,
+        "y": 4.137,
+        "z": -9.338
+      },
+      "Rotation": {
+        "x": -1.70754731E-06,
+        "y": 130.614288,
+        "z": 89.99999
+      },
+      "Scale": {
+        "x": 0.14155443,
+        "y": 0.197923437,
+        "z": 0.132770881
+      },
+      "AnimationEndAction": 0
+    },
+    {
+      "PrimitiveType": 2,
+      "Color": "C8BABAFF",
+      "Position": {
+        "x": -0.482,
+        "y": 4.148,
+        "z": -9.368
+      },
+      "Rotation": {
+        "x": 0.0,
+        "y": 229.386,
+        "z": 90.0
+      },
+      "Scale": {
+        "x": 0.14155443,
+        "y": 0.197923437,
+        "z": 0.132770881
+      },
+      "AnimationEndAction": 0
+    },
+    {
+      "PrimitiveType": 2,
+      "Color": "C8BABAFF",
+      "Position": {
+        "x": 0.104,
+        "y": 3.897,
+        "z": -9.338
+      },
+      "Rotation": {
+        "x": -1.70754731E-06,
+        "y": 130.614288,
+        "z": 89.99999
+      },
+      "Scale": {
+        "x": 0.14155443,
+        "y": 0.197923437,
+        "z": 0.132770881
+      },
+      "AnimationEndAction": 0
+    },
+    {
+      "PrimitiveType": 2,
+      "Color": "C8BABAFF",
+      "Position": {
+        "x": -0.482,
+        "y": 3.908,
+        "z": -9.368
+      },
+      "Rotation": {
+        "x": 0.0,
+        "y": 229.386,
+        "z": 90.0
+      },
+      "Scale": {
+        "x": 0.14155443,
+        "y": 0.197923437,
+        "z": 0.132770881
+      },
+      "AnimationEndAction": 0
+    },
+    {
+      "PrimitiveType": 2,
+      "Color": "C8BABAFF",
+      "Position": {
+        "x": -0.189418316,
+        "y": 4.797,
+        "z": -9.3592
+      },
+      "Rotation": {
+        "x": 90.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "Scale": {
+        "x": 0.14155443,
+        "y": 0.201233968,
+        "z": 0.132770881
+      },
+      "AnimationEndAction": 0
+    },
+    {
+      "PrimitiveType": 2,
+      "Color": "C8BABAFF",
+      "Position": {
+        "x": -0.19,
+        "y": 4.3217,
+        "z": -9.509
+      },
+      "Rotation": {
+        "x": 0.0,
+        "y": 270.137848,
+        "z": 0.0
+      },
+      "Scale": {
+        "x": 0.104993753,
+        "y": 0.412220269,
+        "z": 0.0984788239
+      },
+      "AnimationEndAction": 0
+    },
+    {
+      "PrimitiveType": 2,
+      "Color": "C8BABAFF",
+      "Position": {
+        "x": 0.011,
+        "y": 4.791,
+        "z": -9.408
+      },
+      "Rotation": {
+        "x": -1.70754731E-06,
+        "y": 130.614288,
+        "z": 89.99999
+      },
+      "Scale": {
+        "x": 0.14155443,
+        "y": 0.197923437,
+        "z": 0.132770881
+      },
+      "AnimationEndAction": 0
+    },
+    {
+      "PrimitiveType": 2,
+      "Color": "C8BABAFF",
+      "Position": {
+        "x": -0.407,
+        "y": 4.791,
+        "z": -9.403
+      },
+      "Rotation": {
+        "x": 90.0,
+        "y": 130.614,
+        "z": 0.0
+      },
+      "Scale": {
+        "x": 0.14155443,
+        "y": 0.197923437,
+        "z": 0.132770881
+      },
+      "AnimationEndAction": 0
+    },
+    {
+      "PrimitiveType": 0,
+      "Color": "C8BABAFF",
+      "Position": {
+        "x": -0.194,
+        "y": 3.862,
+        "z": -9.462
+      },
+      "Rotation": {
+        "x": 0.0,
+        "y": 270.137848,
+        "z": 0.0
+      },
+      "Scale": {
+        "x": 0.163172424,
+        "y": 0.103450917,
+        "z": 0.302244067
+      },
+      "AnimationEndAction": 0
+    },
+    {
+      "PrimitiveType": 0,
+      "Color": "C8BABAFF",
+      "Position": {
+        "x": -0.194,
+        "y": 4.1,
+        "z": -9.462
+      },
+      "Rotation": {
+        "x": 0.0,
+        "y": 270.137848,
+        "z": 0.0
+      },
+      "Scale": {
+        "x": 0.163172424,
+        "y": 0.0802554563,
+        "z": 0.302244067
+      },
+      "AnimationEndAction": 0
+    },
+    {
+      "PrimitiveType": 0,
+      "Color": "C8BABAFF",
+      "Position": {
+        "x": -0.194,
+        "y": 4.382,
+        "z": -9.462
+      },
+      "Rotation": {
+        "x": 0.0,
+        "y": 270.137848,
+        "z": 0.0
+      },
+      "Scale": {
+        "x": 0.163172424,
+        "y": 0.0709601,
+        "z": 0.302244067
+      },
+      "AnimationEndAction": 0
+    },
+    {
+      "PrimitiveType": 2,
+      "Color": "FFFFFFFF",
+      "Position": {
+        "x": -0.456,
+        "y": 0.44,
+        "z": -9.3414
+      },
+      "Rotation": {
+        "x": 90.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "Scale": {
+        "x": 0.03188568,
+        "y": 0.138683811,
+        "z": 0.007259177
+      },
+      "AnimationEndAction": 0
+    },
+    {
+      "PrimitiveType": 2,
+      "Color": "FFFFFFFF",
+      "Position": {
+        "x": -0.413,
+        "y": 0.44,
+        "z": -9.3671
+      },
+      "Rotation": {
+        "x": 90.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "Scale": {
+        "x": 0.03188568,
+        "y": 0.16439116,
+        "z": 0.007259177
+      },
+      "AnimationEndAction": 0
+    },
+    {
+      "PrimitiveType": 2,
+      "Color": "FFFFFFFF",
+      "Position": {
+        "x": -0.372,
+        "y": 0.44,
+        "z": -9.3953
+      },
+      "Rotation": {
+        "x": 90.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "Scale": {
+        "x": 0.03188568,
+        "y": 0.192564026,
+        "z": 0.007259177
+      },
+      "AnimationEndAction": 0
+    },
+    {
+      "PrimitiveType": 2,
+      "Color": "FFFFFFFF",
+      "Position": {
+        "x": -0.335,
+        "y": 0.44,
+        "z": -9.4184
+      },
+      "Rotation": {
+        "x": 90.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "Scale": {
+        "x": 0.03188568,
+        "y": 0.215667024,
+        "z": 0.007259177
+      },
+      "AnimationEndAction": 0
+    },
+    {
+      "PrimitiveType": 2,
+      "Color": "FFFFFFFF",
+      "Position": {
+        "x": -0.05400002,
+        "y": 0.44,
+        "z": -9.4222
+      },
+      "Rotation": {
+        "x": 90.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "Scale": {
+        "x": 0.03188568,
+        "y": 0.219409913,
+        "z": 0.007259177
+      },
+      "AnimationEndAction": 0
+    },
+    {
+      "PrimitiveType": 2,
+      "Color": "FFFFFFFF",
+      "Position": {
+        "x": -0.011,
+        "y": 0.44,
+        "z": -9.3915
+      },
+      "Rotation": {
+        "x": 90.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "Scale": {
+        "x": 0.03188568,
+        "y": 0.188783124,
+        "z": 0.007259177
+      },
+      "AnimationEndAction": 0
+    },
+    {
+      "PrimitiveType": 2,
+      "Color": "FFFFFFFF",
+      "Position": {
+        "x": 0.0299999714,
+        "y": 0.44,
+        "z": -9.3608
+      },
+      "Rotation": {
+        "x": 90.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "Scale": {
+        "x": 0.03188568,
+        "y": 0.157978356,
+        "z": 0.007259177
+      },
+      "AnimationEndAction": 0
+    },
+    {
+      "PrimitiveType": 2,
+      "Color": "FFFFFFFF",
+      "Position": {
+        "x": 0.06699997,
+        "y": 0.44,
+        "z": -9.333
+      },
+      "Rotation": {
+        "x": 90.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "Scale": {
+        "x": 0.03188568,
+        "y": 0.130243346,
+        "z": 0.007259177
+      },
+      "AnimationEndAction": 0
+    },
+    {
+      "PrimitiveType": 1,
+      "Color": "C8BABAFF",
+      "Position": {
+        "x": -1.686,
+        "y": 4.819,
+        "z": -9.214
+      },
+      "Rotation": {
+        "x": 90.0,
+        "y": 90.0,
+        "z": 0.0
+      },
+      "Scale": {
+        "x": -0.120587371,
+        "y": -0.527105033,
+        "z": -0.06444711
+      },
+      "AnimationEndAction": 0
+    },
+    {
+      "PrimitiveType": 1,
+      "Color": "C8BABAFF",
+      "Position": {
+        "x": 1.3646,
+        "y": 4.818,
+        "z": -9.2218
+      },
+      "Rotation": {
+        "x": 90.0,
+        "y": 270.1378,
+        "z": 0.0
+      },
+      "Scale": {
+        "x": -0.125611842,
+        "y": -0.5494959,
+        "z": -0.08289471
+      },
+      "AnimationEndAction": 0
+    },
+    {
+      "PrimitiveType": 0,
+      "Color": "C8BABAFF",
+      "Position": {
+        "x": 1.866,
+        "y": 4.775,
+        "z": -9.223
+      },
+      "Rotation": {
+        "x": 0.0,
+        "y": 270.137848,
+        "z": 0.0
+      },
+      "Scale": {
+        "x": 0.136973053,
+        "y": 0.14708522,
+        "z": 0.166949078
+      },
+      "AnimationEndAction": 0
+    },
+    {
+      "PrimitiveType": 0,
+      "Color": "C8BABAFF",
+      "Position": {
+        "x": -2.148,
+        "y": 4.775,
+        "z": -9.214
+      },
+      "Rotation": {
+        "x": 0.0,
+        "y": 270.137848,
+        "z": 0.0
+      },
+      "Scale": {
+        "x": 0.135433108,
+        "y": 0.145431578,
+        "z": 0.1649435
+      },
+      "AnimationEndAction": 0
+    },
+    {
+      "PrimitiveType": 1,
+      "Color": "C8BABAFF",
+      "Position": {
+        "x": 0.39,
+        "y": 4.7414,
+        "z": -9.219
+      },
+      "Rotation": {
+        "x": 90.0,
+        "y": 270.1378,
+        "z": 0.0
+      },
+      "Scale": {
+        "x": -0.125611842,
+        "y": -0.5494959,
+        "z": -0.08289471
+      },
+      "AnimationEndAction": 0
+    },
+    {
+      "PrimitiveType": 1,
+      "Color": "C8BABAFF",
+      "Position": {
+        "x": 0.39,
+        "y": 4.818,
+        "z": -9.219
+      },
+      "Rotation": {
+        "x": 90.0,
+        "y": 270.1378,
+        "z": 0.0
+      },
+      "Scale": {
+        "x": -0.125611842,
+        "y": -0.5494959,
+        "z": -0.08289471
+      },
+      "AnimationEndAction": 0
+    },
+    {
+      "PrimitiveType": 1,
+      "Color": "C8BABAFF",
+      "Position": {
+        "x": -0.7514,
+        "y": 4.7352,
+        "z": -9.2164
+      },
+      "Rotation": {
+        "x": 90.0,
+        "y": 270.1378,
+        "z": 0.0
+      },
+      "Scale": {
+        "x": -0.120587371,
+        "y": -0.527105033,
+        "z": -0.06444711
+      },
+      "AnimationEndAction": 0
+    },
+    {
+      "PrimitiveType": 1,
+      "Color": "C8BABAFF",
+      "Position": {
+        "x": -0.748,
+        "y": 4.819,
+        "z": -9.216
+      },
+      "Rotation": {
+        "x": 90.0,
+        "y": 90.0,
+        "z": 0.0
+      },
+      "Scale": {
+        "x": -0.120587371,
+        "y": -0.527105033,
+        "z": -0.06444711
+      },
+      "AnimationEndAction": 0
+    },
+    {
+      "PrimitiveType": 1,
+      "Color": "C8BABAFF",
+      "Position": {
+        "x": -0.344,
+        "y": 2.4393,
+        "z": -9.217
+      },
+      "Rotation": {
+        "x": 0.0,
+        "y": 270.137848,
+        "z": 0.0
+      },
+      "Scale": {
+        "x": -0.216113836,
+        "y": -0.7771626,
+        "z": -0.102735616
+      },
+      "AnimationEndAction": 0
+    },
+    {
+      "PrimitiveType": 1,
+      "Color": "C8BABAFF",
+      "Position": {
+        "x": -0.344,
+        "y": 2.4393,
+        "z": -9.217
+      },
+      "Rotation": {
+        "x": 0.0,
+        "y": 270.137848,
+        "z": 0.0
+      },
+      "Scale": {
+        "x": -0.216113836,
+        "y": -0.7771626,
+        "z": -0.102735616
+      },
+      "AnimationEndAction": 0
+    },
+    {
+      "PrimitiveType": 1,
+      "Color": "C8BABAFF",
+      "Position": {
+        "x": -0.041,
+        "y": 2.4393,
+        "z": -9.218
+      },
+      "Rotation": {
+        "x": 0.0,
+        "y": 270.137848,
+        "z": 0.0
+      },
+      "Scale": {
+        "x": -0.216113836,
+        "y": -0.7771626,
+        "z": -0.102735616
+      },
+      "AnimationEndAction": 0
+    },
+    {
+      "PrimitiveType": 1,
+      "Color": "C8BABAFF",
+      "Position": {
+        "x": 0.0420999825,
+        "y": 2.4393,
+        "z": -9.218101
+      },
+      "Rotation": {
+        "x": 0.0,
+        "y": 270.137848,
+        "z": 0.0
+      },
+      "Scale": {
+        "x": -0.216113836,
+        "y": -0.7771626,
+        "z": -0.102735616
+      },
+      "AnimationEndAction": 0
+    },
+    {
+      "PrimitiveType": 1,
+      "Color": "C8BABAFF",
+      "Position": {
+        "x": -0.355,
+        "y": 1.164,
+        "z": -9.217
+      },
+      "Rotation": {
+        "x": 0.0,
+        "y": 270.137848,
+        "z": 0.0
+      },
+      "Scale": {
+        "x": -0.216113836,
+        "y": -0.658256769,
+        "z": -0.1040815
+      },
+      "AnimationEndAction": 0
+    },
+    {
+      "PrimitiveType": 1,
+      "Color": "C8BABAFF",
+      "Position": {
+        "x": -0.034,
+        "y": 1.138,
+        "z": -9.218
+      },
+      "Rotation": {
+        "x": 0.0,
+        "y": 270.137848,
+        "z": 0.0
+      },
+      "Scale": {
+        "x": -0.216113836,
+        "y": -0.658256769,
+        "z": -0.1040815
+      },
+      "AnimationEndAction": 0
+    },
+    {
+      "PrimitiveType": 1,
+      "Color": "C8BABAFF",
+      "Position": {
+        "x": 0.0374000072,
+        "y": 1.138,
+        "z": -9.218101
+      },
+      "Rotation": {
+        "x": 0.0,
+        "y": 270.137848,
+        "z": 0.0
+      },
+      "Scale": {
+        "x": -0.216113836,
+        "y": -0.658256769,
+        "z": -0.1040815
+      },
+      "AnimationEndAction": 0
+    }
+  ],
+  "LightSources": [
+    {
+      "Color": "FF0E02FF",
+      "Intensity": 5.0,
+      "Range": 4.0,
+      "Shadows": true,
+      "Position": {
+        "x": -0.23,
+        "y": 3.975,
+        "z": -9.419
+      }
+    },
+    {
+      "Color": "FF0E02D5",
+      "Intensity": 3.0,
+      "Range": 2.0,
+      "Shadows": true,
+      "Position": {
+        "x": -0.218,
+        "y": 3.975,
+        "z": -9.424
+      }
+    },
+    {
+      "Color": "FF0E0299",
+      "Intensity": 1.0,
+      "Range": 1.0,
+      "Shadows": true,
+      "Position": {
+        "x": -0.216,
+        "y": 3.975,
+        "z": -9.457
+      }
+    }
+  ],
+  "Items": [],
+  "WorkStations": [],
+  "AnimationEndAction": 0
+}
