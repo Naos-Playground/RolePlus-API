@@ -3531,6 +3531,42 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "obj/docs/api/RolePlus.ExternModule.API.Features.Audio.AudioController.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RolePlus.ExternModule.API.Features.Audio.AudioController.html",
+          "hash": "8VsiRrCSsGz0dtnd+D7HADbnIgNrXW9T3zvDlpIx8Sc="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/docs/api/RolePlus.ExternModule.API.Features.Audio.CustomMicrophone.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RolePlus.ExternModule.API.Features.Audio.CustomMicrophone.html",
+          "hash": "SgwygEyiHqNMKU63M29E3imt/vXt4mmC6eX/WrxxWFc="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/docs/api/RolePlus.ExternModule.API.Features.Audio.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RolePlus.ExternModule.API.Features.Audio.html",
+          "hash": "x0/BH7ssjd667GHr74yc4XHMIoN+qGUsJlyUjd4ESns="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "obj/docs/api/RolePlus.ExternModule.API.Features.Badge.yml",
       "output": {
         ".html": {
@@ -4123,7 +4159,7 @@
       "output": {
         ".html": {
           "relative_path": "api/RolePlus.ExternModule.HLAPI.html",
-          "hash": "PJg1eI6mZiBeYoIB7mvHBuJXi99hZ7nkq9H5C9YK5fk="
+          "hash": "mZXJURFzbqsK562a5XotGh3XzWPS8r5UFFYcVL0dfZc="
         }
       },
       "is_incremental": false,
@@ -4231,7 +4267,7 @@
       "output": {
         ".html": {
           "relative_path": "api/toc.html",
-          "hash": "woKqGyIX+ui+vFm5WbPoCz5g21IXel6Q+Eu9wy7o2UU="
+          "hash": "jQ0Gxz+DYMxfVkW5ftinYdf/L2xF2G9GqHzblk4pW8g="
         }
       },
       "is_incremental": false,
@@ -4270,7 +4306,7 @@
         "ManagedReferenceDocumentProcessor": {
           "can_incremental": false,
           "incrementalPhase": "build",
-          "total_file_count": 139,
+          "total_file_count": 142,
           "skipped_file_count": 0
         },
         "ResourceDocumentProcessor": {

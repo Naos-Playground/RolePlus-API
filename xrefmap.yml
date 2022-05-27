@@ -6328,6 +6328,193 @@ references:
   commentId: T:RolePlus.ExternModule.API.Features.AdvancedGameplay.MultiPlayerGamemode
   fullName: RolePlus.ExternModule.API.Features.AdvancedGameplay.MultiPlayerGamemode
   nameWithType: MultiPlayerGamemode
+- uid: RolePlus.ExternModule.API.Features.Audio
+  name: RolePlus.ExternModule.API.Features.Audio
+  href: api/RolePlus.ExternModule.API.Features.Audio.html
+  commentId: N:RolePlus.ExternModule.API.Features.Audio
+  fullName: RolePlus.ExternModule.API.Features.Audio
+  nameWithType: RolePlus.ExternModule.API.Features.Audio
+- uid: RolePlus.ExternModule.API.Features.Audio.AudioController
+  name: AudioController
+  href: api/RolePlus.ExternModule.API.Features.Audio.AudioController.html
+  commentId: T:RolePlus.ExternModule.API.Features.Audio.AudioController
+  fullName: RolePlus.ExternModule.API.Features.Audio.AudioController
+  nameWithType: AudioController
+- uid: RolePlus.ExternModule.API.Features.Audio.AudioController.Comms
+  name: Comms
+  href: api/RolePlus.ExternModule.API.Features.Audio.AudioController.html#RolePlus_ExternModule_API_Features_Audio_AudioController_Comms
+  commentId: P:RolePlus.ExternModule.API.Features.Audio.AudioController.Comms
+  fullName: RolePlus.ExternModule.API.Features.Audio.AudioController.Comms
+  nameWithType: AudioController.Comms
+- uid: RolePlus.ExternModule.API.Features.Audio.AudioController.Comms*
+  name: Comms
+  href: api/RolePlus.ExternModule.API.Features.Audio.AudioController.html#RolePlus_ExternModule_API_Features_Audio_AudioController_Comms_
+  commentId: Overload:RolePlus.ExternModule.API.Features.Audio.AudioController.Comms
+  isSpec: "True"
+  fullName: RolePlus.ExternModule.API.Features.Audio.AudioController.Comms
+  nameWithType: AudioController.Comms
+- uid: RolePlus.ExternModule.API.Features.Audio.AudioController.LoopMusic
+  name: LoopMusic
+  href: api/RolePlus.ExternModule.API.Features.Audio.AudioController.html#RolePlus_ExternModule_API_Features_Audio_AudioController_LoopMusic
+  commentId: P:RolePlus.ExternModule.API.Features.Audio.AudioController.LoopMusic
+  fullName: RolePlus.ExternModule.API.Features.Audio.AudioController.LoopMusic
+  nameWithType: AudioController.LoopMusic
+- uid: RolePlus.ExternModule.API.Features.Audio.AudioController.LoopMusic*
+  name: LoopMusic
+  href: api/RolePlus.ExternModule.API.Features.Audio.AudioController.html#RolePlus_ExternModule_API_Features_Audio_AudioController_LoopMusic_
+  commentId: Overload:RolePlus.ExternModule.API.Features.Audio.AudioController.LoopMusic
+  isSpec: "True"
+  fullName: RolePlus.ExternModule.API.Features.Audio.AudioController.LoopMusic
+  nameWithType: AudioController.LoopMusic
+- uid: RolePlus.ExternModule.API.Features.Audio.AudioController.OnPlayerJoinedSession(VoicePlayerState)
+  name: OnPlayerJoinedSession(VoicePlayerState)
+  href: api/RolePlus.ExternModule.API.Features.Audio.AudioController.html#RolePlus_ExternModule_API_Features_Audio_AudioController_OnPlayerJoinedSession_VoicePlayerState_
+  commentId: M:RolePlus.ExternModule.API.Features.Audio.AudioController.OnPlayerJoinedSession(VoicePlayerState)
+  fullName: RolePlus.ExternModule.API.Features.Audio.AudioController.OnPlayerJoinedSession(VoicePlayerState)
+  nameWithType: AudioController.OnPlayerJoinedSession(VoicePlayerState)
+- uid: RolePlus.ExternModule.API.Features.Audio.AudioController.OnPlayerJoinedSession*
+  name: OnPlayerJoinedSession
+  href: api/RolePlus.ExternModule.API.Features.Audio.AudioController.html#RolePlus_ExternModule_API_Features_Audio_AudioController_OnPlayerJoinedSession_
+  commentId: Overload:RolePlus.ExternModule.API.Features.Audio.AudioController.OnPlayerJoinedSession
+  isSpec: "True"
+  fullName: RolePlus.ExternModule.API.Features.Audio.AudioController.OnPlayerJoinedSession
+  nameWithType: AudioController.OnPlayerJoinedSession
+- uid: RolePlus.ExternModule.API.Features.Audio.AudioController.PlayFromFile(System.String,System.Boolean,System.Boolean)
+  name: PlayFromFile(String, Boolean, Boolean)
+  href: api/RolePlus.ExternModule.API.Features.Audio.AudioController.html#RolePlus_ExternModule_API_Features_Audio_AudioController_PlayFromFile_System_String_System_Boolean_System_Boolean_
+  commentId: M:RolePlus.ExternModule.API.Features.Audio.AudioController.PlayFromFile(System.String,System.Boolean,System.Boolean)
+  fullName: RolePlus.ExternModule.API.Features.Audio.AudioController.PlayFromFile(System.String, System.Boolean, System.Boolean)
+  nameWithType: AudioController.PlayFromFile(String, Boolean, Boolean)
+- uid: RolePlus.ExternModule.API.Features.Audio.AudioController.PlayFromFile*
+  name: PlayFromFile
+  href: api/RolePlus.ExternModule.API.Features.Audio.AudioController.html#RolePlus_ExternModule_API_Features_Audio_AudioController_PlayFromFile_
+  commentId: Overload:RolePlus.ExternModule.API.Features.Audio.AudioController.PlayFromFile
+  isSpec: "True"
+  fullName: RolePlus.ExternModule.API.Features.Audio.AudioController.PlayFromFile
+  nameWithType: AudioController.PlayFromFile
+- uid: RolePlus.ExternModule.API.Features.Audio.AudioController.Stop
+  name: Stop()
+  href: api/RolePlus.ExternModule.API.Features.Audio.AudioController.html#RolePlus_ExternModule_API_Features_Audio_AudioController_Stop
+  commentId: M:RolePlus.ExternModule.API.Features.Audio.AudioController.Stop
+  fullName: RolePlus.ExternModule.API.Features.Audio.AudioController.Stop()
+  nameWithType: AudioController.Stop()
+- uid: RolePlus.ExternModule.API.Features.Audio.AudioController.Stop*
+  name: Stop
+  href: api/RolePlus.ExternModule.API.Features.Audio.AudioController.html#RolePlus_ExternModule_API_Features_Audio_AudioController_Stop_
+  commentId: Overload:RolePlus.ExternModule.API.Features.Audio.AudioController.Stop
+  isSpec: "True"
+  fullName: RolePlus.ExternModule.API.Features.Audio.AudioController.Stop
+  nameWithType: AudioController.Stop
+- uid: RolePlus.ExternModule.API.Features.Audio.CustomMicrophone
+  name: CustomMicrophone
+  href: api/RolePlus.ExternModule.API.Features.Audio.CustomMicrophone.html
+  commentId: T:RolePlus.ExternModule.API.Features.Audio.CustomMicrophone
+  fullName: RolePlus.ExternModule.API.Features.Audio.CustomMicrophone
+  nameWithType: CustomMicrophone
+- uid: RolePlus.ExternModule.API.Features.Audio.CustomMicrophone.File
+  name: File
+  href: api/RolePlus.ExternModule.API.Features.Audio.CustomMicrophone.html#RolePlus_ExternModule_API_Features_Audio_CustomMicrophone_File
+  commentId: P:RolePlus.ExternModule.API.Features.Audio.CustomMicrophone.File
+  fullName: RolePlus.ExternModule.API.Features.Audio.CustomMicrophone.File
+  nameWithType: CustomMicrophone.File
+- uid: RolePlus.ExternModule.API.Features.Audio.CustomMicrophone.File*
+  name: File
+  href: api/RolePlus.ExternModule.API.Features.Audio.CustomMicrophone.html#RolePlus_ExternModule_API_Features_Audio_CustomMicrophone_File_
+  commentId: Overload:RolePlus.ExternModule.API.Features.Audio.CustomMicrophone.File
+  isSpec: "True"
+  fullName: RolePlus.ExternModule.API.Features.Audio.CustomMicrophone.File
+  nameWithType: CustomMicrophone.File
+- uid: RolePlus.ExternModule.API.Features.Audio.CustomMicrophone.IsRecording
+  name: IsRecording
+  href: api/RolePlus.ExternModule.API.Features.Audio.CustomMicrophone.html#RolePlus_ExternModule_API_Features_Audio_CustomMicrophone_IsRecording
+  commentId: P:RolePlus.ExternModule.API.Features.Audio.CustomMicrophone.IsRecording
+  fullName: RolePlus.ExternModule.API.Features.Audio.CustomMicrophone.IsRecording
+  nameWithType: CustomMicrophone.IsRecording
+- uid: RolePlus.ExternModule.API.Features.Audio.CustomMicrophone.IsRecording*
+  name: IsRecording
+  href: api/RolePlus.ExternModule.API.Features.Audio.CustomMicrophone.html#RolePlus_ExternModule_API_Features_Audio_CustomMicrophone_IsRecording_
+  commentId: Overload:RolePlus.ExternModule.API.Features.Audio.CustomMicrophone.IsRecording
+  isSpec: "True"
+  fullName: RolePlus.ExternModule.API.Features.Audio.CustomMicrophone.IsRecording
+  nameWithType: CustomMicrophone.IsRecording
+- uid: RolePlus.ExternModule.API.Features.Audio.CustomMicrophone.Latency
+  name: Latency
+  href: api/RolePlus.ExternModule.API.Features.Audio.CustomMicrophone.html#RolePlus_ExternModule_API_Features_Audio_CustomMicrophone_Latency
+  commentId: P:RolePlus.ExternModule.API.Features.Audio.CustomMicrophone.Latency
+  fullName: RolePlus.ExternModule.API.Features.Audio.CustomMicrophone.Latency
+  nameWithType: CustomMicrophone.Latency
+- uid: RolePlus.ExternModule.API.Features.Audio.CustomMicrophone.Latency*
+  name: Latency
+  href: api/RolePlus.ExternModule.API.Features.Audio.CustomMicrophone.html#RolePlus_ExternModule_API_Features_Audio_CustomMicrophone_Latency_
+  commentId: Overload:RolePlus.ExternModule.API.Features.Audio.CustomMicrophone.Latency
+  isSpec: "True"
+  fullName: RolePlus.ExternModule.API.Features.Audio.CustomMicrophone.Latency
+  nameWithType: CustomMicrophone.Latency
+- uid: RolePlus.ExternModule.API.Features.Audio.CustomMicrophone.StartCapture(System.String)
+  name: StartCapture(String)
+  href: api/RolePlus.ExternModule.API.Features.Audio.CustomMicrophone.html#RolePlus_ExternModule_API_Features_Audio_CustomMicrophone_StartCapture_System_String_
+  commentId: M:RolePlus.ExternModule.API.Features.Audio.CustomMicrophone.StartCapture(System.String)
+  fullName: RolePlus.ExternModule.API.Features.Audio.CustomMicrophone.StartCapture(System.String)
+  nameWithType: CustomMicrophone.StartCapture(String)
+- uid: RolePlus.ExternModule.API.Features.Audio.CustomMicrophone.StartCapture*
+  name: StartCapture
+  href: api/RolePlus.ExternModule.API.Features.Audio.CustomMicrophone.html#RolePlus_ExternModule_API_Features_Audio_CustomMicrophone_StartCapture_
+  commentId: Overload:RolePlus.ExternModule.API.Features.Audio.CustomMicrophone.StartCapture
+  isSpec: "True"
+  fullName: RolePlus.ExternModule.API.Features.Audio.CustomMicrophone.StartCapture
+  nameWithType: CustomMicrophone.StartCapture
+- uid: RolePlus.ExternModule.API.Features.Audio.CustomMicrophone.StopCapture
+  name: StopCapture()
+  href: api/RolePlus.ExternModule.API.Features.Audio.CustomMicrophone.html#RolePlus_ExternModule_API_Features_Audio_CustomMicrophone_StopCapture
+  commentId: M:RolePlus.ExternModule.API.Features.Audio.CustomMicrophone.StopCapture
+  fullName: RolePlus.ExternModule.API.Features.Audio.CustomMicrophone.StopCapture()
+  nameWithType: CustomMicrophone.StopCapture()
+- uid: RolePlus.ExternModule.API.Features.Audio.CustomMicrophone.StopCapture*
+  name: StopCapture
+  href: api/RolePlus.ExternModule.API.Features.Audio.CustomMicrophone.html#RolePlus_ExternModule_API_Features_Audio_CustomMicrophone_StopCapture_
+  commentId: Overload:RolePlus.ExternModule.API.Features.Audio.CustomMicrophone.StopCapture
+  isSpec: "True"
+  fullName: RolePlus.ExternModule.API.Features.Audio.CustomMicrophone.StopCapture
+  nameWithType: CustomMicrophone.StopCapture
+- uid: RolePlus.ExternModule.API.Features.Audio.CustomMicrophone.Subscribe(IMicrophoneSubscriber)
+  name: Subscribe(IMicrophoneSubscriber)
+  href: api/RolePlus.ExternModule.API.Features.Audio.CustomMicrophone.html#RolePlus_ExternModule_API_Features_Audio_CustomMicrophone_Subscribe_IMicrophoneSubscriber_
+  commentId: M:RolePlus.ExternModule.API.Features.Audio.CustomMicrophone.Subscribe(IMicrophoneSubscriber)
+  fullName: RolePlus.ExternModule.API.Features.Audio.CustomMicrophone.Subscribe(IMicrophoneSubscriber)
+  nameWithType: CustomMicrophone.Subscribe(IMicrophoneSubscriber)
+- uid: RolePlus.ExternModule.API.Features.Audio.CustomMicrophone.Subscribe*
+  name: Subscribe
+  href: api/RolePlus.ExternModule.API.Features.Audio.CustomMicrophone.html#RolePlus_ExternModule_API_Features_Audio_CustomMicrophone_Subscribe_
+  commentId: Overload:RolePlus.ExternModule.API.Features.Audio.CustomMicrophone.Subscribe
+  isSpec: "True"
+  fullName: RolePlus.ExternModule.API.Features.Audio.CustomMicrophone.Subscribe
+  nameWithType: CustomMicrophone.Subscribe
+- uid: RolePlus.ExternModule.API.Features.Audio.CustomMicrophone.Unsubscribe(IMicrophoneSubscriber)
+  name: Unsubscribe(IMicrophoneSubscriber)
+  href: api/RolePlus.ExternModule.API.Features.Audio.CustomMicrophone.html#RolePlus_ExternModule_API_Features_Audio_CustomMicrophone_Unsubscribe_IMicrophoneSubscriber_
+  commentId: M:RolePlus.ExternModule.API.Features.Audio.CustomMicrophone.Unsubscribe(IMicrophoneSubscriber)
+  fullName: RolePlus.ExternModule.API.Features.Audio.CustomMicrophone.Unsubscribe(IMicrophoneSubscriber)
+  nameWithType: CustomMicrophone.Unsubscribe(IMicrophoneSubscriber)
+- uid: RolePlus.ExternModule.API.Features.Audio.CustomMicrophone.Unsubscribe*
+  name: Unsubscribe
+  href: api/RolePlus.ExternModule.API.Features.Audio.CustomMicrophone.html#RolePlus_ExternModule_API_Features_Audio_CustomMicrophone_Unsubscribe_
+  commentId: Overload:RolePlus.ExternModule.API.Features.Audio.CustomMicrophone.Unsubscribe
+  isSpec: "True"
+  fullName: RolePlus.ExternModule.API.Features.Audio.CustomMicrophone.Unsubscribe
+  nameWithType: CustomMicrophone.Unsubscribe
+- uid: RolePlus.ExternModule.API.Features.Audio.CustomMicrophone.UpdateSubscribers
+  name: UpdateSubscribers()
+  href: api/RolePlus.ExternModule.API.Features.Audio.CustomMicrophone.html#RolePlus_ExternModule_API_Features_Audio_CustomMicrophone_UpdateSubscribers
+  commentId: M:RolePlus.ExternModule.API.Features.Audio.CustomMicrophone.UpdateSubscribers
+  fullName: RolePlus.ExternModule.API.Features.Audio.CustomMicrophone.UpdateSubscribers()
+  nameWithType: CustomMicrophone.UpdateSubscribers()
+- uid: RolePlus.ExternModule.API.Features.Audio.CustomMicrophone.UpdateSubscribers*
+  name: UpdateSubscribers
+  href: api/RolePlus.ExternModule.API.Features.Audio.CustomMicrophone.html#RolePlus_ExternModule_API_Features_Audio_CustomMicrophone_UpdateSubscribers_
+  commentId: Overload:RolePlus.ExternModule.API.Features.Audio.CustomMicrophone.UpdateSubscribers
+  isSpec: "True"
+  fullName: RolePlus.ExternModule.API.Features.Audio.CustomMicrophone.UpdateSubscribers
+  nameWithType: CustomMicrophone.UpdateSubscribers
 - uid: RolePlus.ExternModule.API.Features.Badge
   name: Badge
   href: api/RolePlus.ExternModule.API.Features.Badge.html
@@ -12694,6 +12881,19 @@ references:
   isSpec: "True"
   fullName: RolePlus.ExternModule.HLAPI.NextKnownTeam
   nameWithType: HLAPI.NextKnownTeam
+- uid: RolePlus.ExternModule.HLAPI.PlayAudio(System.String,System.Boolean,System.Boolean)
+  name: PlayAudio(String, Boolean, Boolean)
+  href: api/RolePlus.ExternModule.HLAPI.html#RolePlus_ExternModule_HLAPI_PlayAudio_System_String_System_Boolean_System_Boolean_
+  commentId: M:RolePlus.ExternModule.HLAPI.PlayAudio(System.String,System.Boolean,System.Boolean)
+  fullName: RolePlus.ExternModule.HLAPI.PlayAudio(System.String, System.Boolean, System.Boolean)
+  nameWithType: HLAPI.PlayAudio(String, Boolean, Boolean)
+- uid: RolePlus.ExternModule.HLAPI.PlayAudio*
+  name: PlayAudio
+  href: api/RolePlus.ExternModule.HLAPI.html#RolePlus_ExternModule_HLAPI_PlayAudio_
+  commentId: Overload:RolePlus.ExternModule.HLAPI.PlayAudio
+  isSpec: "True"
+  fullName: RolePlus.ExternModule.HLAPI.PlayAudio
+  nameWithType: HLAPI.PlayAudio
 - uid: RolePlus.ExternModule.HLAPI.PocketDimensionTeleport(Player,Vector3)
   name: PocketDimensionTeleport(Player, Vector3)
   href: api/RolePlus.ExternModule.HLAPI.html#RolePlus_ExternModule_HLAPI_PocketDimensionTeleport_Player_Vector3_
@@ -12868,6 +13068,19 @@ references:
   isSpec: "True"
   fullName: RolePlus.ExternModule.HLAPI.SpawnTeam
   nameWithType: HLAPI.SpawnTeam
+- uid: RolePlus.ExternModule.HLAPI.StopAudio
+  name: StopAudio()
+  href: api/RolePlus.ExternModule.HLAPI.html#RolePlus_ExternModule_HLAPI_StopAudio
+  commentId: M:RolePlus.ExternModule.HLAPI.StopAudio
+  fullName: RolePlus.ExternModule.HLAPI.StopAudio()
+  nameWithType: HLAPI.StopAudio()
+- uid: RolePlus.ExternModule.HLAPI.StopAudio*
+  name: StopAudio
+  href: api/RolePlus.ExternModule.HLAPI.html#RolePlus_ExternModule_HLAPI_StopAudio_
+  commentId: Overload:RolePlus.ExternModule.HLAPI.StopAudio
+  isSpec: "True"
+  fullName: RolePlus.ExternModule.HLAPI.StopAudio
+  nameWithType: HLAPI.StopAudio
 - uid: RolePlus.ExternModule.HLAPI.TeamManager
   name: TeamManager
   href: api/RolePlus.ExternModule.HLAPI.html#RolePlus_ExternModule_HLAPI_TeamManager
