@@ -2559,11 +2559,59 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "obj/docs/api/RolePlus.CustomItems.CustomItemType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RolePlus.CustomItems.CustomItemType.html",
+          "hash": "ZEMwslGqDVNLM+/uWahTS14G8HVJnTfMCrG5xpyh2zo="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/docs/api/RolePlus.CustomItems.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RolePlus.CustomItems.html",
+          "hash": "PWPy2CLgGyd/XH7T7SVQ/ie+jRyVrKA667PfuQDy1cg="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/docs/api/RolePlus.CustomRoles.CustomRoleType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RolePlus.CustomRoles.CustomRoleType.html",
+          "hash": "XBOa13Obl3NMznXnqMiYw9yfemSf+3fp133L5xqO1Pk="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/docs/api/RolePlus.CustomRoles.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RolePlus.CustomRoles.html",
+          "hash": "eXFoScr8RsIxLD5nDH+xarSR7Q3gFG5t7epqDTgLD4A="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "obj/docs/api/RolePlus.ExternModule.API.Engine.Components.AActorComponent.yml",
       "output": {
         ".html": {
           "relative_path": "api/RolePlus.ExternModule.API.Engine.Components.AActorComponent.html",
-          "hash": "AAiZxqNMUPXV35vBm/vwRhsscNubV5Y/xAJFhy+fGo0="
+          "hash": "MKEOLNKTF9Y/uAfw838WJmFe5pg9rsWss7ViD/1vB5Q="
         }
       },
       "is_incremental": false,
@@ -2599,7 +2647,7 @@
       "output": {
         ".html": {
           "relative_path": "api/RolePlus.ExternModule.API.Engine.Components.AEnvironmentActorHealthComponent.html",
-          "hash": "207c+pQ/KQL4XVuCsZmcuGgkaIIxRERrZs2A6rJbhjQ="
+          "hash": "gtnSpnXrvUMyRLL+N1iEY1OXfAIlkG9empV4UDP0blk="
         }
       },
       "is_incremental": false,
@@ -2611,7 +2659,7 @@
       "output": {
         ".html": {
           "relative_path": "api/RolePlus.ExternModule.API.Engine.Components.AEnvironmentMeshComponent.html",
-          "hash": "QKN1uBtMoBRD1keE4J7R0O9J4+HvmocnaEAG+c0JsS4="
+          "hash": "FUWt6176ILnmXwwPY+JaP5/dtxDAulSoBQrXg3sBCUE="
         }
       },
       "is_incremental": false,
@@ -2623,7 +2671,7 @@
       "output": {
         ".html": {
           "relative_path": "api/RolePlus.ExternModule.API.Engine.Components.AInteractableFrameComponent.html",
-          "hash": "kCkbauvJqNNiP/H3fUf4b1m6Dlc811wFQ5WbnQdQ2tA="
+          "hash": "O9Qda3OoN/RH9qwt9Aobnf9eAByiMRaA3gfX0DwpRRc="
         }
       },
       "is_incremental": false,
@@ -2635,7 +2683,7 @@
       "output": {
         ".html": {
           "relative_path": "api/RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.html",
-          "hash": "NWRNpJUe+oib6yt2MBGRCcdILBJflOvOjlGyPBgt3Bo="
+          "hash": "RcVm3gOkC1GsJOYBtYbPH9qqs86op2+hrYGNTlC0PDg="
         }
       },
       "is_incremental": false,
@@ -2647,7 +2695,7 @@
       "output": {
         ".html": {
           "relative_path": "api/RolePlus.ExternModule.API.Engine.Components.ASkeletalMeshComponent.html",
-          "hash": "CFdAp/mu97ve3WuvxEytvZ7gOhwOJpaaYnAdMd/WYYs="
+          "hash": "cRytOPCpaCPAS3by7wVMQrmAruTY/rSw+H6jwMCA4nA="
         }
       },
       "is_incremental": false,
@@ -2779,7 +2827,7 @@
       "output": {
         ".html": {
           "relative_path": "api/RolePlus.ExternModule.API.Engine.Core.UObject.html",
-          "hash": "vJEMdLURhVBuDryuF5ZKI4aO3321byT6N8PGAIyQHUo="
+          "hash": "ZpsUa3FiRveHFqY9eczlWwLUHdQ8o8UNVLbk015Okrs="
         }
       },
       "is_incremental": false,
@@ -2803,7 +2851,7 @@
       "output": {
         ".html": {
           "relative_path": "api/RolePlus.ExternModule.API.Engine.Extensions.ComponentExtensions.html",
-          "hash": "kk7+f3Vfo8/RHH3NlkFk3CUDyc7lmv+8c/wF+eynT5Q="
+          "hash": "pI/zJjQIxyNpbq3MGgMiYTPFGfFg0n+SRE++UFM9Qf4="
         }
       },
       "is_incremental": false,
@@ -2827,7 +2875,7 @@
       "output": {
         ".html": {
           "relative_path": "api/RolePlus.ExternModule.API.Engine.Framework.AActor.html",
-          "hash": "cWal9F+TN/m4b9OoV3dgX89i/U6Ez/mVt/S1uDeEV3E="
+          "hash": "V2b8znnWzBLDDuEaBRSk350lycmaqgmT/L3ymUT2kjM="
         }
       },
       "is_incremental": false,
@@ -2851,7 +2899,7 @@
       "output": {
         ".html": {
           "relative_path": "api/RolePlus.ExternModule.API.Engine.Framework.Bootstrap.GlobalPatchProcessor.html",
-          "hash": "jqt/cgq0YhMeGCcAqP5A4yUaXRSMmRSO6rnoedf1loM="
+          "hash": "pK/ZBacEbv4IpmMVeDJhdcF3Yub0/ZIMka/ae/BM8UM="
         }
       },
       "is_incremental": false,
@@ -2947,7 +2995,7 @@
       "output": {
         ".html": {
           "relative_path": "api/RolePlus.ExternModule.API.Engine.Framework.Events.EventArgs.ChangingAnimationStateEventArgs.html",
-          "hash": "kwDugtPmkrPlAHsKXS8dSsE4DFhYRsBmmgwzRg4dVn8="
+          "hash": "HPo45+KENX8hnb3Kl86J/9BX6Eivh6AG/kGjXhylxo8="
         }
       },
       "is_incremental": false,
@@ -2959,7 +3007,7 @@
       "output": {
         ".html": {
           "relative_path": "api/RolePlus.ExternModule.API.Engine.Framework.Events.EventArgs.CompletedAnimationStateEventArgs.html",
-          "hash": "z10Yo1wTdxYXRCsl34Fi+0VUDpFWE86LAMOiV8NNZgw="
+          "hash": "9Sd5tlD1eN5MZmRO5eivxgnOuJvuAgSOp9R7BQm6adk="
         }
       },
       "is_incremental": false,
@@ -2971,7 +3019,7 @@
       "output": {
         ".html": {
           "relative_path": "api/RolePlus.ExternModule.API.Engine.Framework.Events.EventArgs.InteractingObjectEventArgs.html",
-          "hash": "7cPVSr106Fa0LHKpW9atshS3CgjeZFfS9zZuBPAfTr4="
+          "hash": "c8TKvmT5gnctcJXCiIoRHj3y366yC3asznJz0E+n8Lo="
         }
       },
       "is_incremental": false,
@@ -3031,7 +3079,7 @@
       "output": {
         ".html": {
           "relative_path": "api/RolePlus.ExternModule.API.Engine.Framework.Events.Handlers.Network.MultiPlex-2.html",
-          "hash": "nhhnxXvBuyt4Vy+GGVl4bzMGyFH0AbTRZ19hM0beMBU="
+          "hash": "VILLKxb+QPtrmeoLlOZk7apVY3YTZuehdES4Dv6nPjM="
         }
       },
       "is_incremental": false,
@@ -3043,7 +3091,7 @@
       "output": {
         ".html": {
           "relative_path": "api/RolePlus.ExternModule.API.Engine.Framework.Events.Handlers.Network.Plex-1.html",
-          "hash": "Gx5r5D97q70G3yPYRLmR67fTGX5doCVzDWeeP+ChdJI="
+          "hash": "t3i7sNRwxGz49edk/C2ul4FFF3M6gMrGGEz8EE2Q3p8="
         }
       },
       "is_incremental": false,
@@ -3055,7 +3103,7 @@
       "output": {
         ".html": {
           "relative_path": "api/RolePlus.ExternModule.API.Engine.Framework.Events.Handlers.Network.html",
-          "hash": "U5g2cnX4HnJpGFPYUM4CrhZX9wTMiLTb9CizsjBGCAQ="
+          "hash": "bWTCeczOsHGEM4J6O+ndfmgH32bg/w2Isurwhcdm9oI="
         }
       },
       "is_incremental": false,
@@ -3067,7 +3115,7 @@
       "output": {
         ".html": {
           "relative_path": "api/RolePlus.ExternModule.API.Engine.Framework.Events.Handlers.Player.html",
-          "hash": "kQndqI2xA9qxT2ldKV8Vg/Vn0y69GckKta6WAilnK/w="
+          "hash": "DLl9xOIOesCcTGEZyjJ4zZ/D5q9AvI4sIVeEHWt/ido="
         }
       },
       "is_incremental": false,
@@ -3079,7 +3127,7 @@
       "output": {
         ".html": {
           "relative_path": "api/RolePlus.ExternModule.API.Engine.Framework.Events.Handlers.UObject.html",
-          "hash": "gVMcrxayAtTib1KGNj63WOaJXwC1Pfcnsd1OY+gvuGM="
+          "hash": "UA8E1MLdP5IS64HoOWuXmwedLVvWF2iFjVud+qLtlFg="
         }
       },
       "is_incremental": false,
@@ -3187,7 +3235,7 @@
       "output": {
         ".html": {
           "relative_path": "api/RolePlus.ExternModule.API.Engine.Framework.Interfaces.IAnimatorNative.html",
-          "hash": "NR/uJsBj7Va+nAizjB9pcpe65V48UW9hbK2zIiCRReA="
+          "hash": "gXKVlF87BKkeifUMb5aUCa+KdLidc1PU/aRzGdtp5uE="
         }
       },
       "is_incremental": false,
@@ -3223,7 +3271,7 @@
       "output": {
         ".html": {
           "relative_path": "api/RolePlus.ExternModule.API.Engine.Framework.Network.Models.UNetEntity.html",
-          "hash": "7DGQwQgv8eavllGVTzxCsPxuVW2i7miHXixSYi70V3c="
+          "hash": "ef5dJqxVjDSHJzbuRzrJYClV9DtKVnEAhD//BAicuRY="
         }
       },
       "is_incremental": false,
@@ -3283,7 +3331,7 @@
       "output": {
         ".html": {
           "relative_path": "api/RolePlus.ExternModule.API.Engine.Framework.Network.TFirewall-1.html",
-          "hash": "LQFQ3K67qar1k2CJv5L/4oVBzANHPMhIOI24Tb/J7dU="
+          "hash": "mB8Yvo1RFHxCzfIAXYky6RXP5ouRxbRTk8BpfBRlTZU="
         }
       },
       "is_incremental": false,
@@ -3295,7 +3343,7 @@
       "output": {
         ".html": {
           "relative_path": "api/RolePlus.ExternModule.API.Engine.Framework.Network.TNetworkMessage-1.html",
-          "hash": "Urw6hwnvBtRRLc8pz6Tt9+BzSJNrlnXWSHInaf51vPw="
+          "hash": "zb5z1tWfCcOhBUDB9ng6gMHzgoDUWFreDI4yRsN2scw="
         }
       },
       "is_incremental": false,
@@ -3307,7 +3355,7 @@
       "output": {
         ".html": {
           "relative_path": "api/RolePlus.ExternModule.API.Engine.Framework.Network.TNetworkMessage-2.html",
-          "hash": "Qt0oSAI6+Oz+Yv2g/ZyXLmeVFieErA8HWRYzAhGTMJM="
+          "hash": "wHaAwo0CzOB1ZJ3md+ICsDac6bv+EL902Ur0PFKf7q4="
         }
       },
       "is_incremental": false,
@@ -3319,7 +3367,7 @@
       "output": {
         ".html": {
           "relative_path": "api/RolePlus.ExternModule.API.Engine.Framework.Network.TRule-1.html",
-          "hash": "JQnZ278Qncen3i4fa8QftB2UHQzW7ssGUhR55Ct0dNc="
+          "hash": "Q88AVwftdDPqrvXqob1P2yCUpM3+8MP3Mqjpkw4gCKg="
         }
       },
       "is_incremental": false,
@@ -3331,7 +3379,7 @@
       "output": {
         ".html": {
           "relative_path": "api/RolePlus.ExternModule.API.Engine.Framework.Network.UNetObject.html",
-          "hash": "XWiO7FRfamUftB0vyJMV71qRpdX+3o9ET4dWnfq/wvQ="
+          "hash": "VhdO8IPuRhM3i7PIe8GQepk0MN+wwb81ev+W0T7+kAs="
         }
       },
       "is_incremental": false,
@@ -3423,78 +3471,6 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "obj/docs/api/RolePlus.ExternModule.API.Enums.CustomItemType.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/RolePlus.ExternModule.API.Enums.CustomItemType.html",
-          "hash": "PKTOPrKMVSmexODbqcBJwy0t9ROuX3aLcCO4ELdYlNE="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "obj/docs/api/RolePlus.ExternModule.API.Enums.CustomRoleType.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/RolePlus.ExternModule.API.Enums.CustomRoleType.html",
-          "hash": "de8s/zJEfVOahfi7gXxEsqMVqXtLHGgISQv1qFMjywI="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "obj/docs/api/RolePlus.ExternModule.API.Enums.CustomTeamType.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/RolePlus.ExternModule.API.Enums.CustomTeamType.html",
-          "hash": "7LXvcwmDkj30IayLxlREMTZpaHx+ABxTcLrZOniMKFs="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "obj/docs/api/RolePlus.ExternModule.API.Enums.GamemodeType.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/RolePlus.ExternModule.API.Enums.GamemodeType.html",
-          "hash": "EiMiHw76fBBfzoG90eqrI5ZnKbx0NCa07d4GL3y1IJI="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "obj/docs/api/RolePlus.ExternModule.API.Enums.MultiPlayerGamemodeType.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/RolePlus.ExternModule.API.Enums.MultiPlayerGamemodeType.html",
-          "hash": "OmjKd9XyUpGxv4ApA1Wa0b9s8/tEGVPn/MB2Cm7ETQY="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "obj/docs/api/RolePlus.ExternModule.API.Enums.MultiPlayerTeamType.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/RolePlus.ExternModule.API.Enums.MultiPlayerTeamType.html",
-          "hash": "/a9clEErpA1PV/U2Vf7C+UHuryxSC6fjHmu1Xj9Tepc="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
       "source_relative_path": "obj/docs/api/RolePlus.ExternModule.API.Enums.RespawnSystem.yml",
       "output": {
         ".html": {
@@ -3523,7 +3499,7 @@
       "output": {
         ".html": {
           "relative_path": "api/RolePlus.ExternModule.API.Enums.html",
-          "hash": "YGn8vI8SaP45eGWk3b8B6r4ldaO+dqODQ+H8pwpeH8A="
+          "hash": "Pqd14pf1Og6g2vdganSPWFywpq6C9nKhvIqSVcFvUIE="
         }
       },
       "is_incremental": false,
@@ -3535,7 +3511,7 @@
       "output": {
         ".html": {
           "relative_path": "api/RolePlus.ExternModule.API.Features.AdvancedGameplay.MultiPlayerGamemode.html",
-          "hash": "fAVdM3Cf5dv+1S8NKSYVZ75mtn69omxtFsj7jTQDB6g="
+          "hash": "u+TdIHDkRcfjF7tD6ZeGO/dNMAnHoPyuF5ShXtH0wWQ="
         }
       },
       "is_incremental": false,
@@ -3559,7 +3535,7 @@
       "output": {
         ".html": {
           "relative_path": "api/RolePlus.ExternModule.API.Features.Badge.html",
-          "hash": "3SjfE+TxAy8IYXJAKleN4MxI5lo8RFc9pJsanuV0sfo="
+          "hash": "zfbJxTmqGaTKqvzoebg2VyXAeDlu2oT9t5LA02OGYA0="
         }
       },
       "is_incremental": false,
@@ -3571,7 +3547,7 @@
       "output": {
         ".html": {
           "relative_path": "api/RolePlus.ExternModule.API.Features.Configs.Config.html",
-          "hash": "8R1W3xp8Lh6PDhpMZUHwJgnFsxTIrdEKJqIm++8UpcQ="
+          "hash": "eAbWGzUVDNLfEbho6gcVznNTYDclX0po2lEPxU7n3Ds="
         }
       },
       "is_incremental": false,
@@ -3619,7 +3595,7 @@
       "output": {
         ".html": {
           "relative_path": "api/RolePlus.ExternModule.API.Features.Controllers.ObjectController.html",
-          "hash": "nJDswE9pkwXH3BJ2zbxVpT6oM5smPvkpABG/WsahzS4="
+          "hash": "6PmNAIQxlcojHc/yUbUgWMJyY+6SZ2zLwGeRGnyw7lc="
         }
       },
       "is_incremental": false,
@@ -3655,7 +3631,7 @@
       "output": {
         ".html": {
           "relative_path": "api/RolePlus.ExternModule.API.Features.CustomAbilities.CustomAbility.html",
-          "hash": "+hJuvkpId0TWXsVOu5+K6j1Wy3nzghbwovPI6lHR4Eo="
+          "hash": "HsTze7qxhuthzcHL9mWoxbQ3AxsbCl/urhNq7Xp3PeY="
         }
       },
       "is_incremental": false,
@@ -3679,7 +3655,7 @@
       "output": {
         ".html": {
           "relative_path": "api/RolePlus.ExternModule.API.Features.CustomAbilities.Scp079Ability.InvokeResponse.html",
-          "hash": "ds1CUA6bBObH52iRPxZl70S0Vgg7/XF/gD7KvFiaxvI="
+          "hash": "Q4L4xIfupxZbVQHSjmXzZRQmluZ127BXoEBI1RbszrU="
         }
       },
       "is_incremental": false,
@@ -3691,7 +3667,7 @@
       "output": {
         ".html": {
           "relative_path": "api/RolePlus.ExternModule.API.Features.CustomAbilities.Scp079Ability.html",
-          "hash": "qW4dU9anyob+gAD3Gto4L45+ZeyOLIayz73LsodTRCs="
+          "hash": "oMX+R1jlk0nvEHLsAxunA5P4+mR5qO4a3UL+Kb0q2aY="
         }
       },
       "is_incremental": false,
@@ -3711,11 +3687,23 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "obj/docs/api/RolePlus.ExternModule.API.Features.CustomGamemode-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RolePlus.ExternModule.API.Features.CustomGamemode-1.html",
+          "hash": "1n7RclTW11uI3F12D3tZAltrAT3h6Uu8dOaJ66CpTlg="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "obj/docs/api/RolePlus.ExternModule.API.Features.CustomGamemode.yml",
       "output": {
         ".html": {
           "relative_path": "api/RolePlus.ExternModule.API.Features.CustomGamemode.html",
-          "hash": "aYLD5sECgxWUDWHat0Y6cwWKz+swFu5+xdJU3RXWxpk="
+          "hash": "4NWQu7keNKCKzGvH/O0CzpfEsYt27BVvkfE18sVP7rE="
         }
       },
       "is_incremental": false,
@@ -3751,7 +3739,7 @@
       "output": {
         ".html": {
           "relative_path": "api/RolePlus.ExternModule.API.Features.CustomHud.HudManager.html",
-          "hash": "pqAwuCVJGV/PUnvWW1tc3pPGw7z71Belev3au3j6yNM="
+          "hash": "HrOAOQGEq2baxwbHNQcMRD+2r/8dU+cIjGVS1ng9ydo="
         }
       },
       "is_incremental": false,
@@ -3763,7 +3751,7 @@
       "output": {
         ".html": {
           "relative_path": "api/RolePlus.ExternModule.API.Features.CustomHud.HudScreen.html",
-          "hash": "UpGW7XuBsfjOuN7N2tRNPlbIFR/TaUafe2/fyNWpB68="
+          "hash": "L/wEZs+NUpO4mtz5Zu8YeYJCjhOB/3OSM8ttO8KFbNY="
         }
       },
       "is_incremental": false,
@@ -3783,23 +3771,11 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "obj/docs/api/RolePlus.ExternModule.API.Features.CustomPlayerStats.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/RolePlus.ExternModule.API.Features.CustomPlayerStats.html",
-          "hash": "O+1OH45GgOXXuumoNSRw4V3zC7oj2863lafK31AWx08="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
       "source_relative_path": "obj/docs/api/RolePlus.ExternModule.API.Features.CustomRoles.CustomRole-1.yml",
       "output": {
         ".html": {
           "relative_path": "api/RolePlus.ExternModule.API.Features.CustomRoles.CustomRole-1.html",
-          "hash": "C5pWMEIp1x9booyKy+lwqo3uYZ0ApxdQU0sCFuMEyAE="
+          "hash": "jmETNwep2STRHwisTjrZTB/dBl59SnjM5VGR+PYePNA="
         }
       },
       "is_incremental": false,
@@ -3811,7 +3787,7 @@
       "output": {
         ".html": {
           "relative_path": "api/RolePlus.ExternModule.API.Features.CustomRoles.CustomRole.ICustomRoleConfig.ICustomInventory.html",
-          "hash": "1aIGWu7N2D4D3sgLSouAAP7e8bplveN7Xq2Bgl+sb1w="
+          "hash": "8KrCy22j1DvZbb4ewbaSM+qmrNuPuEQjFbyiq0coenk="
         }
       },
       "is_incremental": false,
@@ -3823,7 +3799,7 @@
       "output": {
         ".html": {
           "relative_path": "api/RolePlus.ExternModule.API.Features.CustomRoles.CustomRole.ICustomRoleConfig.html",
-          "hash": "We6EdmTipe0GWfcIYVRJbZQYL1sGUdK9cvDWaMR5CNE="
+          "hash": "B8uxu0P8CRCPPrU6zrN4+/wT856sOe6xo4Qy+X2rZfM="
         }
       },
       "is_incremental": false,
@@ -3835,7 +3811,7 @@
       "output": {
         ".html": {
           "relative_path": "api/RolePlus.ExternModule.API.Features.CustomRoles.CustomRole.Info.InventoryManager.html",
-          "hash": "IN30f+F/K+itm31/h954HgIUs7zGd5n4Nawi5YXdRCg="
+          "hash": "3r/VaJSzxYP+DaqeL8GFz+AEXV8HdTZXpl8CRsrRxpU="
         }
       },
       "is_incremental": false,
@@ -3847,7 +3823,7 @@
       "output": {
         ".html": {
           "relative_path": "api/RolePlus.ExternModule.API.Features.CustomRoles.CustomRole.Info.html",
-          "hash": "vt4j89WuNK7PVUmF65IYBVPgdgfDdPx7Ko6paT8Jf3w="
+          "hash": "hEbJtRaoE60gb3SCN0lhdFdX4WiRLDGqzy1I2c0aUUk="
         }
       },
       "is_incremental": false,
@@ -3859,7 +3835,7 @@
       "output": {
         ".html": {
           "relative_path": "api/RolePlus.ExternModule.API.Features.CustomRoles.CustomRole.html",
-          "hash": "MvnZmpaJekqVjhrwnwfLplgULSLzepgPV59T2gzmngo="
+          "hash": "zJgrUPzKKx5okHmpgE5EvhOtdDvIhBPEwTWowmHRHV8="
         }
       },
       "is_incremental": false,
@@ -3883,7 +3859,7 @@
       "output": {
         ".html": {
           "relative_path": "api/RolePlus.ExternModule.API.Features.CustomRoles.RoleBuilder.html",
-          "hash": "os8RS4I1Pz6jRXlDym1/mMEuh3Npi7KYyKizmqZCvcE="
+          "hash": "E3dnF7TwtXFDJrbHmIIwefRl4+sJjejTEwTaPta/+hs="
         }
       },
       "is_incremental": false,
@@ -3907,7 +3883,7 @@
       "output": {
         ".html": {
           "relative_path": "api/RolePlus.ExternModule.API.Features.CustomSkins.CharacterMeshComponent.html",
-          "hash": "kjo9WCgKD7KbG4zQOSEtoNZXHu0qJGtnqzyxQ7vTVEI="
+          "hash": "KYJBTYWWUU3X0EwBBmRpBhLasIu1/o77JFdNO6tYesQ="
         }
       },
       "is_incremental": false,
@@ -3919,7 +3895,7 @@
       "output": {
         ".html": {
           "relative_path": "api/RolePlus.ExternModule.API.Features.CustomSkins.ItemMeshComponent.html",
-          "hash": "6tSlhASrVnmtlgMczH1UpWwxT/h9BTc01+hI7vLTkJw="
+          "hash": "2BiJZpD9D4+l1+Ud8suZlY+6GYNgrIAu2q6/n1Y52aw="
         }
       },
       "is_incremental": false,
@@ -3943,7 +3919,7 @@
       "output": {
         ".html": {
           "relative_path": "api/RolePlus.ExternModule.API.Features.CustomTeams.CustomTeam.RespawnInfo.html",
-          "hash": "RF1tfWOBDTpu8qG/lcEZACI2jrryJ2nu5PfL1sDZQDw="
+          "hash": "pF8FBIHIPKxMZzTweBsQ7rDlOQ2TvigLeRgtYgolE2c="
         }
       },
       "is_incremental": false,
@@ -3955,7 +3931,7 @@
       "output": {
         ".html": {
           "relative_path": "api/RolePlus.ExternModule.API.Features.CustomTeams.CustomTeam.html",
-          "hash": "W1djLMbLRlUI8zBGPzsEe1MKqdpW8lARiNCSvy9qJYs="
+          "hash": "zMcPWXzaEaLteuhRYSkSXAPJPbGn4mGKoFnmBk0uFZ8="
         }
       },
       "is_incremental": false,
@@ -3987,11 +3963,11 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "obj/docs/api/RolePlus.ExternModule.API.Features.GamemodeBuilder.yml",
+      "source_relative_path": "obj/docs/api/RolePlus.ExternModule.API.Features.InventorySlot.yml",
       "output": {
         ".html": {
-          "relative_path": "api/RolePlus.ExternModule.API.Features.GamemodeBuilder.html",
-          "hash": "87UeQnPP5W6fEvktGhi7WmsNiDjafuzFAtLTgmcBFb8="
+          "relative_path": "api/RolePlus.ExternModule.API.Features.InventorySlot.html",
+          "hash": "x+lQFXi1EC14RPrS+bbAnLvcOeCxPJliC7aopHf2lzo="
         }
       },
       "is_incremental": false,
@@ -3999,11 +3975,11 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "obj/docs/api/RolePlus.ExternModule.API.Features.InventorySlot.yml",
+      "source_relative_path": "obj/docs/api/RolePlus.ExternModule.API.Features.TemporaryStats.yml",
       "output": {
         ".html": {
-          "relative_path": "api/RolePlus.ExternModule.API.Features.InventorySlot.html",
-          "hash": "ljXe+vWcPswrz3hAPeGnzC9IcTAMUxHLVfUPTkrw2kY="
+          "relative_path": "api/RolePlus.ExternModule.API.Features.TemporaryStats.html",
+          "hash": "HzflgWsRWjDSUEe9oqGJSyU/wBGd9Wqpcsvj8PPzKyU="
         }
       },
       "is_incremental": false,
@@ -4015,7 +3991,7 @@
       "output": {
         ".html": {
           "relative_path": "api/RolePlus.ExternModule.API.Features.VirtualAssemblies.Branch.html",
-          "hash": "nlQe7l2wa5YPzsxingTK9Gq79uEv7atuzTq2DGkhTWc="
+          "hash": "y5V777K0gf9OuSNJmmX/LKxG+p46ogW40qHgWc9ANdQ="
         }
       },
       "is_incremental": false,
@@ -4051,7 +4027,7 @@
       "output": {
         ".html": {
           "relative_path": "api/RolePlus.ExternModule.API.Features.html",
-          "hash": "MmYJiDutBj1Db1f6TMUIDe2y0i8vOWasWLfQ0Fc6cs4="
+          "hash": "BWBhx+FKfJnjy8ASZSKMrd0BqG8nQHDCsGc/k/7LqS8="
         }
       },
       "is_incremental": false,
@@ -4063,7 +4039,7 @@
       "output": {
         ".html": {
           "relative_path": "api/RolePlus.ExternModule.Events.EventArgs.InvokingHandlerEventArgs.html",
-          "hash": "EW3vVXmPzBjpipPK4ctDpAUSC6wn6wFavuaFjUrgoGU="
+          "hash": "lDh2d7OjQ7DgvWtvPi0e7tUTbWxt8mo1fm9wDLE9+AA="
         }
       },
       "is_incremental": false,
@@ -4075,7 +4051,7 @@
       "output": {
         ".html": {
           "relative_path": "api/RolePlus.ExternModule.Events.EventArgs.SendingConsoleCommandEventArgs.html",
-          "hash": "Kwz8UgY1HtT8atiW7SRPhIpdzrEVAA9jzKKNurnWu84="
+          "hash": "rQKR+B3ojxvqmWj9MT2CNa3a2+yGaSDg9a7zePvC9C4="
         }
       },
       "is_incremental": false,
@@ -4087,7 +4063,7 @@
       "output": {
         ".html": {
           "relative_path": "api/RolePlus.ExternModule.Events.EventArgs.SendingRemoteAdminCommandEventArgs.html",
-          "hash": "xvU033QZuIRycV3QQpkM+QxlvMijqhPFoqNjfUkz2u4="
+          "hash": "MogkusJ5iV+Bg4NO6enItZ1kAud6cDQimc7beyDgxvs="
         }
       },
       "is_incremental": false,
@@ -4111,7 +4087,7 @@
       "output": {
         ".html": {
           "relative_path": "api/RolePlus.ExternModule.Events.Handlers.Server.html",
-          "hash": "+AcMOxGQ3cDXdGEaSYWz3bcdzMPl+vpJ3sMwW0RLqto="
+          "hash": "WRBHtQeEjriaG/uoVutlP0wGKTGhYb9eZBaTM6/NHYI="
         }
       },
       "is_incremental": false,
@@ -4135,7 +4111,7 @@
       "output": {
         ".html": {
           "relative_path": "api/RolePlus.ExternModule.HLAPI.html",
-          "hash": "D/mKp0XtFygHbQhraYby/g3KVkT6rJ4nOWyXsLksyGM="
+          "hash": "hvAjv8dNfnjlkznRmF2Qv1vM54PNhBVF7jltKYmI26w="
         }
       },
       "is_incremental": false,
@@ -4159,7 +4135,7 @@
       "output": {
         ".html": {
           "relative_path": "api/RolePlus.Firewalls.Rules.AntiPreAuth.html",
-          "hash": "chFES+C36Or+EjhkiNB6RB8Uybp4LjzKymyvWoLf0Z8="
+          "hash": "hnt6mgUCNTJJvZwAJyBMWxs7jDHptrugCF+j8CdwQBI="
         }
       },
       "is_incremental": false,
@@ -4171,7 +4147,7 @@
       "output": {
         ".html": {
           "relative_path": "api/RolePlus.Firewalls.Rules.AntiRaid.html",
-          "hash": "+PQQOzB3LFUnssD0xeDKHvPzEzLd2Z99gCRCrmb3PE4="
+          "hash": "Mwa6MUpUg4fd8F6aRBbWkbs1AP+MEMC1WlGdHOfF5n8="
         }
       },
       "is_incremental": false,
@@ -4183,7 +4159,7 @@
       "output": {
         ".html": {
           "relative_path": "api/RolePlus.Firewalls.Rules.FailoverNetwork.html",
-          "hash": "7ZzRkj1yERxXBD+m1mKxzQY30fDq7jnGyIcTXD/DSc8="
+          "hash": "HAtscZoVXW7XHnzp0g4UhQVbrh1TR9frweI0n0GM3YU="
         }
       },
       "is_incremental": false,
@@ -4195,7 +4171,7 @@
       "output": {
         ".html": {
           "relative_path": "api/RolePlus.Firewalls.Rules.ProxyRedirect.html",
-          "hash": "9ZMyg+hzqnmwCjcyzsDeQr8QSA41w4oAcCRtPQLcA2w="
+          "hash": "1OmJU5Vtpr8jVfX5SHqmlRdeUQH8IPREjQSoEu5kSoY="
         }
       },
       "is_incremental": false,
@@ -4207,7 +4183,7 @@
       "output": {
         ".html": {
           "relative_path": "api/RolePlus.Firewalls.Rules.SteamSanitizer.html",
-          "hash": "j8OeyKOh5rhroLwiNLCQTRaOXlBrgFrvtkVz8hNdf+0="
+          "hash": "6UKeYK6Y6ijnaa6/ak98F+PGk0PX2y1vcHn9pPEoCys="
         }
       },
       "is_incremental": false,
@@ -4219,7 +4195,7 @@
       "output": {
         ".html": {
           "relative_path": "api/RolePlus.Firewalls.Rules.VPNShield.html",
-          "hash": "y52n2ObLOwEqdaiVuE/wK7+jevdBlaoZJzfFP01JOlU="
+          "hash": "DalMvhp1lEMBAhXLuw3FYpx38gNffMyrNo8EfAS9W/Y="
         }
       },
       "is_incremental": false,
@@ -4243,7 +4219,7 @@
       "output": {
         ".html": {
           "relative_path": "api/toc.html",
-          "hash": "ODnMz6QK3/iSIMz4givgHfleD3laI8oml9CBALkE61E="
+          "hash": "LIe5d0rlOWkYmlUkTJovtPJlfY3gVTMTFbXdF5/d64M="
         }
       },
       "is_incremental": false,
@@ -4255,7 +4231,7 @@
       "output": {
         ".html": {
           "relative_path": "toc.html",
-          "hash": "I8bOuiUQjnfRkmirjh30ggK1swcKrZZ7DwmaS/X9mFU="
+          "hash": "chF/11UWSW4iNkzzMjyVjcZeA22qN10+pw0bbLLO/es="
         }
       },
       "is_incremental": false,
@@ -4282,7 +4258,7 @@
         "ManagedReferenceDocumentProcessor": {
           "can_incremental": false,
           "incrementalPhase": "build",
-          "total_file_count": 140,
+          "total_file_count": 138,
           "skipped_file_count": 0
         },
         "ResourceDocumentProcessor": {
