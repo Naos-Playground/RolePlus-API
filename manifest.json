@@ -2683,7 +2683,7 @@
       "output": {
         ".html": {
           "relative_path": "api/RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.html",
-          "hash": "RcVm3gOkC1GsJOYBtYbPH9qqs86op2+hrYGNTlC0PDg="
+          "hash": "nHBQz8WzENeyAk9OSNqiWZZrgQzILyvxQD9FZCQFiwA="
         }
       },
       "is_incremental": false,
@@ -3471,11 +3471,11 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "obj/docs/api/RolePlus.ExternModule.API.Enums.RespawnSystem.yml",
+      "source_relative_path": "obj/docs/api/RolePlus.ExternModule.API.Enums.RespawnState.yml",
       "output": {
         ".html": {
-          "relative_path": "api/RolePlus.ExternModule.API.Enums.RespawnSystem.html",
-          "hash": "xHEG+cWFux6IZFggg/uhvgKK86pOemy34ervSp00vZY="
+          "relative_path": "api/RolePlus.ExternModule.API.Enums.RespawnState.html",
+          "hash": "p+SaOwhopQ6yXoMP0K4g+wsJW5V0Q+4yaJy6BGjoEE8="
         }
       },
       "is_incremental": false,
@@ -3499,7 +3499,7 @@
       "output": {
         ".html": {
           "relative_path": "api/RolePlus.ExternModule.API.Enums.html",
-          "hash": "Pqd14pf1Og6g2vdganSPWFywpq6C9nKhvIqSVcFvUIE="
+          "hash": "j5i7DthwWB7KzCJ+INYqMQkFNqVI6zrd7Fvn6Mt6TcE="
         }
       },
       "is_incremental": false,
@@ -3931,7 +3931,7 @@
       "output": {
         ".html": {
           "relative_path": "api/RolePlus.ExternModule.API.Features.CustomTeams.CustomTeam.html",
-          "hash": "zMcPWXzaEaLteuhRYSkSXAPJPbGn4mGKoFnmBk0uFZ8="
+          "hash": "MgaxQFhhmm0S9Bvtwum5JEKjb6OYL2Gf0FNq0i8tE1U="
         }
       },
       "is_incremental": false,
@@ -3968,6 +3968,18 @@
         ".html": {
           "relative_path": "api/RolePlus.ExternModule.API.Features.InventorySlot.html",
           "hash": "x+lQFXi1EC14RPrS+bbAnLvcOeCxPJliC7aopHf2lzo="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/docs/api/RolePlus.ExternModule.API.Features.RespawnManager.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RolePlus.ExternModule.API.Features.RespawnManager.html",
+          "hash": "T8dBIy0q2qEbhofOJp4zoxPmwhJEN7snC42pQ4sacI0="
         }
       },
       "is_incremental": false,
@@ -4027,7 +4039,7 @@
       "output": {
         ".html": {
           "relative_path": "api/RolePlus.ExternModule.API.Features.html",
-          "hash": "BWBhx+FKfJnjy8ASZSKMrd0BqG8nQHDCsGc/k/7LqS8="
+          "hash": "dxyjyl+Ny1jJiZgE6wCauNK9re8Lx8ArlGpA8VLRZRw="
         }
       },
       "is_incremental": false,
@@ -4111,7 +4123,7 @@
       "output": {
         ".html": {
           "relative_path": "api/RolePlus.ExternModule.HLAPI.html",
-          "hash": "hvAjv8dNfnjlkznRmF2Qv1vM54PNhBVF7jltKYmI26w="
+          "hash": "PJg1eI6mZiBeYoIB7mvHBuJXi99hZ7nkq9H5C9YK5fk="
         }
       },
       "is_incremental": false,
@@ -4219,7 +4231,7 @@
       "output": {
         ".html": {
           "relative_path": "api/toc.html",
-          "hash": "LIe5d0rlOWkYmlUkTJovtPJlfY3gVTMTFbXdF5/d64M="
+          "hash": "woKqGyIX+ui+vFm5WbPoCz5g21IXel6Q+Eu9wy7o2UU="
         }
       },
       "is_incremental": false,
@@ -4258,7 +4270,7 @@
         "ManagedReferenceDocumentProcessor": {
           "can_incremental": false,
           "incrementalPhase": "build",
-          "total_file_count": 138,
+          "total_file_count": 139,
           "skipped_file_count": 0
         },
         "ResourceDocumentProcessor": {
