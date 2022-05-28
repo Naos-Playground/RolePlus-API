@@ -3531,11 +3531,11 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "obj/docs/api/RolePlus.ExternModule.API.Features.Audio.AudioController.yml",
+      "source_relative_path": "obj/docs/api/RolePlus.ExternModule.API.Features.Audio.API.AudioController.yml",
       "output": {
         ".html": {
-          "relative_path": "api/RolePlus.ExternModule.API.Features.Audio.AudioController.html",
-          "hash": "8VsiRrCSsGz0dtnd+D7HADbnIgNrXW9T3zvDlpIx8Sc="
+          "relative_path": "api/RolePlus.ExternModule.API.Features.Audio.API.AudioController.html",
+          "hash": "LW+XbowUAcq+u0BFWKAVKDsU+qTYbAhkvhq5V1QMPBQ="
         }
       },
       "is_incremental": false,
@@ -3543,11 +3543,131 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "obj/docs/api/RolePlus.ExternModule.API.Features.Audio.CustomMicrophone.yml",
+      "source_relative_path": "obj/docs/api/RolePlus.ExternModule.API.Features.Audio.API.yml",
       "output": {
         ".html": {
-          "relative_path": "api/RolePlus.ExternModule.API.Features.Audio.CustomMicrophone.html",
-          "hash": "SgwygEyiHqNMKU63M29E3imt/vXt4mmC6eX/WrxxWFc="
+          "relative_path": "api/RolePlus.ExternModule.API.Features.Audio.API.html",
+          "hash": "1QuNKS/Q9v5F4bKUaZcvlreCOJQ8IOobbQL8YIi9t9Y="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/docs/api/RolePlus.ExternModule.API.Features.Audio.AudioFile.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RolePlus.ExternModule.API.Features.Audio.AudioFile.html",
+          "hash": "V6up/sLg3a3P9L+kdprwmkoJCLkDosg3GOep3Hl68TY="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/docs/api/RolePlus.ExternModule.API.Features.Audio.CustomMpegMicrophone.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RolePlus.ExternModule.API.Features.Audio.CustomMpegMicrophone.html",
+          "hash": "SvC+QtbRYMcjbPPxjbPK48f16H6HcFq/hGOxQHDmyUQ="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/docs/api/RolePlus.ExternModule.API.Features.Audio.NLayer.IMpegFrame.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RolePlus.ExternModule.API.Features.Audio.NLayer.IMpegFrame.html",
+          "hash": "IjfvfsH+BeFbiFRul/w09Ef2Uza262k1NmxbhqRZmhI="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/docs/api/RolePlus.ExternModule.API.Features.Audio.NLayer.MpegChannelMode.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RolePlus.ExternModule.API.Features.Audio.NLayer.MpegChannelMode.html",
+          "hash": "I7n+k5cWALagr190qTgc7S1k5ekl/mtdGduztCumeNw="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/docs/api/RolePlus.ExternModule.API.Features.Audio.NLayer.MpegFile.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RolePlus.ExternModule.API.Features.Audio.NLayer.MpegFile.html",
+          "hash": "kAGMBVGIskQzwDp+jCiSnuAUVrRenGmy/eaunLSrgx4="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/docs/api/RolePlus.ExternModule.API.Features.Audio.NLayer.MpegFrameDecoder.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RolePlus.ExternModule.API.Features.Audio.NLayer.MpegFrameDecoder.html",
+          "hash": "vXEM91tAEC3zJZHmpylu+O4umXYerMri3tVMjqGd8XI="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/docs/api/RolePlus.ExternModule.API.Features.Audio.NLayer.MpegLayer.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RolePlus.ExternModule.API.Features.Audio.NLayer.MpegLayer.html",
+          "hash": "Tf2VU/j8lY0Nbea2fs85KomsfgsFpM5HvSMaVs3lFf8="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/docs/api/RolePlus.ExternModule.API.Features.Audio.NLayer.MpegVersion.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RolePlus.ExternModule.API.Features.Audio.NLayer.MpegVersion.html",
+          "hash": "ExU9nDJ6zoCaD2Ft/Vluq09qLlRHwdlV6SI2mq3GjWs="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/docs/api/RolePlus.ExternModule.API.Features.Audio.NLayer.StereoMode.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RolePlus.ExternModule.API.Features.Audio.NLayer.StereoMode.html",
+          "hash": "TNvC9zendrzS3Rmjdfpbv4KTKg4pnsIvH4aS+pk+5cw="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/docs/api/RolePlus.ExternModule.API.Features.Audio.NLayer.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RolePlus.ExternModule.API.Features.Audio.NLayer.html",
+          "hash": "UQy7E/4ZWUIuccX9avZbg3+XFTfTqhDG77WevWYydeg="
         }
       },
       "is_incremental": false,
@@ -3559,7 +3679,7 @@
       "output": {
         ".html": {
           "relative_path": "api/RolePlus.ExternModule.API.Features.Audio.html",
-          "hash": "x0/BH7ssjd667GHr74yc4XHMIoN+qGUsJlyUjd4ESns="
+          "hash": "LeCDuJBfuE4j8M/yPvf22CGzCC4449j0db80rtAygfM="
         }
       },
       "is_incremental": false,
@@ -3811,7 +3931,7 @@
       "output": {
         ".html": {
           "relative_path": "api/RolePlus.ExternModule.API.Features.CustomRoles.CustomRole-1.html",
-          "hash": "jmETNwep2STRHwisTjrZTB/dBl59SnjM5VGR+PYePNA="
+          "hash": "P8DHtH7TXb7NBedmvwbAOZyb6nTlkWf6EP0aks1c3LE="
         }
       },
       "is_incremental": false,
@@ -3823,7 +3943,7 @@
       "output": {
         ".html": {
           "relative_path": "api/RolePlus.ExternModule.API.Features.CustomRoles.CustomRole.ICustomRoleConfig.ICustomInventory.html",
-          "hash": "8KrCy22j1DvZbb4ewbaSM+qmrNuPuEQjFbyiq0coenk="
+          "hash": "3KYAyDHrPSaIrm5+ugD1uchWZzyIEJN40S8Pojw8YN0="
         }
       },
       "is_incremental": false,
@@ -3835,7 +3955,7 @@
       "output": {
         ".html": {
           "relative_path": "api/RolePlus.ExternModule.API.Features.CustomRoles.CustomRole.ICustomRoleConfig.html",
-          "hash": "B8uxu0P8CRCPPrU6zrN4+/wT856sOe6xo4Qy+X2rZfM="
+          "hash": "bzlm3xZPVVdLBA5SP+kXxK2yBO3f4l9vIsgu6612Y6c="
         }
       },
       "is_incremental": false,
@@ -3847,7 +3967,7 @@
       "output": {
         ".html": {
           "relative_path": "api/RolePlus.ExternModule.API.Features.CustomRoles.CustomRole.Info.InventoryManager.html",
-          "hash": "3r/VaJSzxYP+DaqeL8GFz+AEXV8HdTZXpl8CRsrRxpU="
+          "hash": "xVc97eX+WWPDXV31e3B1E+ez+P49RFIuPXK0Ns/GrR0="
         }
       },
       "is_incremental": false,
@@ -3859,7 +3979,7 @@
       "output": {
         ".html": {
           "relative_path": "api/RolePlus.ExternModule.API.Features.CustomRoles.CustomRole.Info.html",
-          "hash": "hEbJtRaoE60gb3SCN0lhdFdX4WiRLDGqzy1I2c0aUUk="
+          "hash": "MjgkIPIoXrlOjKMpp4it41k0/g5xArWVVCBf0G0gT50="
         }
       },
       "is_incremental": false,
@@ -3871,7 +3991,7 @@
       "output": {
         ".html": {
           "relative_path": "api/RolePlus.ExternModule.API.Features.CustomRoles.CustomRole.html",
-          "hash": "zJgrUPzKKx5okHmpgE5EvhOtdDvIhBPEwTWowmHRHV8="
+          "hash": "hfzBuJBpRjcxSaee6199fxtrfrj2nT+pr3JKVoLZT1A="
         }
       },
       "is_incremental": false,
@@ -4015,7 +4135,7 @@
       "output": {
         ".html": {
           "relative_path": "api/RolePlus.ExternModule.API.Features.RespawnManager.html",
-          "hash": "Yih4JuRiV6PYQ97ma49xHmxBoF+8aKmeStYKJUgRRuU="
+          "hash": "EVoK9Zdcq6uz0PIJpnAFIStg5Pu7Cmz+5qTdkYmKMPs="
         }
       },
       "is_incremental": false,
@@ -4159,7 +4279,7 @@
       "output": {
         ".html": {
           "relative_path": "api/RolePlus.ExternModule.HLAPI.html",
-          "hash": "mZXJURFzbqsK562a5XotGh3XzWPS8r5UFFYcVL0dfZc="
+          "hash": "bCw4Fua3sSNmUIP4fdSb82t8D4iU2RP6d3jQUb/Li+U="
         }
       },
       "is_incremental": false,
@@ -4262,12 +4382,36 @@
       "version": ""
     },
     {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/docs/api/RolePlus.WaitAndChill.Arena.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RolePlus.WaitAndChill.Arena.html",
+          "hash": "ylvK0DdyDFCEHIZJ9PEWYLsxbN64Y2YmEYwRcXD/eTo="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/docs/api/RolePlus.WaitAndChill.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RolePlus.WaitAndChill.html",
+          "hash": "wKKzwVuT5CG3lHYwKPDIt5uEX8cAR1o6hIguFffLQRg="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
       "type": "Toc",
       "source_relative_path": "obj/docs/api/toc.yml",
       "output": {
         ".html": {
           "relative_path": "api/toc.html",
-          "hash": "jQ0Gxz+DYMxfVkW5ftinYdf/L2xF2G9GqHzblk4pW8g="
+          "hash": "smW/xDA7y6qA+hWB+q73e4gBoj3+MKb/3pf810QE7Cc="
         }
       },
       "is_incremental": false,
@@ -4306,7 +4450,7 @@
         "ManagedReferenceDocumentProcessor": {
           "can_incremental": false,
           "incrementalPhase": "build",
-          "total_file_count": 142,
+          "total_file_count": 154,
           "skipped_file_count": 0
         },
         "ResourceDocumentProcessor": {
