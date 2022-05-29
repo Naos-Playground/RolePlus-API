@@ -241,6 +241,18 @@ references:
   commentId: F:RolePlus.CustomItems.CustomItemType.ZeusCannon
   fullName: RolePlus.CustomItems.CustomItemType.ZeusCannon
   nameWithType: CustomItemType.ZeusCannon
+- uid: RolePlus.CustomMap.Events
+  name: RolePlus.CustomMap.Events
+  href: api/RolePlus.CustomMap.Events.html
+  commentId: N:RolePlus.CustomMap.Events
+  fullName: RolePlus.CustomMap.Events
+  nameWithType: RolePlus.CustomMap.Events
+- uid: RolePlus.CustomMap.Events.Player
+  name: Player
+  href: api/RolePlus.CustomMap.Events.Player.html
+  commentId: T:RolePlus.CustomMap.Events.Player
+  fullName: RolePlus.CustomMap.Events.Player
+  nameWithType: Player
 - uid: RolePlus.CustomRoles
   name: RolePlus.CustomRoles
   href: api/RolePlus.CustomRoles.html
@@ -6316,18 +6328,6 @@ references:
   commentId: N:RolePlus.ExternModule.API.Features
   fullName: RolePlus.ExternModule.API.Features
   nameWithType: RolePlus.ExternModule.API.Features
-- uid: RolePlus.ExternModule.API.Features.AdvancedGameplay
-  name: RolePlus.ExternModule.API.Features.AdvancedGameplay
-  href: api/RolePlus.ExternModule.API.Features.AdvancedGameplay.html
-  commentId: N:RolePlus.ExternModule.API.Features.AdvancedGameplay
-  fullName: RolePlus.ExternModule.API.Features.AdvancedGameplay
-  nameWithType: RolePlus.ExternModule.API.Features.AdvancedGameplay
-- uid: RolePlus.ExternModule.API.Features.AdvancedGameplay.MultiPlayerGamemode
-  name: MultiPlayerGamemode
-  href: api/RolePlus.ExternModule.API.Features.AdvancedGameplay.MultiPlayerGamemode.html
-  commentId: T:RolePlus.ExternModule.API.Features.AdvancedGameplay.MultiPlayerGamemode
-  fullName: RolePlus.ExternModule.API.Features.AdvancedGameplay.MultiPlayerGamemode
-  nameWithType: MultiPlayerGamemode
 - uid: RolePlus.ExternModule.API.Features.Audio
   name: RolePlus.ExternModule.API.Features.Audio
   href: api/RolePlus.ExternModule.API.Features.Audio.html
@@ -6424,51 +6424,6 @@ references:
   isSpec: "True"
   fullName: RolePlus.ExternModule.API.Features.Audio.API.AudioController.Volume
   nameWithType: AudioController.Volume
-- uid: RolePlus.ExternModule.API.Features.Audio.AudioFile
-  name: AudioFile
-  href: api/RolePlus.ExternModule.API.Features.Audio.AudioFile.html
-  commentId: T:RolePlus.ExternModule.API.Features.Audio.AudioFile
-  fullName: RolePlus.ExternModule.API.Features.Audio.AudioFile
-  nameWithType: AudioFile
-- uid: RolePlus.ExternModule.API.Features.Audio.AudioFile.Path
-  name: Path
-  href: api/RolePlus.ExternModule.API.Features.Audio.AudioFile.html#RolePlus_ExternModule_API_Features_Audio_AudioFile_Path
-  commentId: P:RolePlus.ExternModule.API.Features.Audio.AudioFile.Path
-  fullName: RolePlus.ExternModule.API.Features.Audio.AudioFile.Path
-  nameWithType: AudioFile.Path
-- uid: RolePlus.ExternModule.API.Features.Audio.AudioFile.Path*
-  name: Path
-  href: api/RolePlus.ExternModule.API.Features.Audio.AudioFile.html#RolePlus_ExternModule_API_Features_Audio_AudioFile_Path_
-  commentId: Overload:RolePlus.ExternModule.API.Features.Audio.AudioFile.Path
-  isSpec: "True"
-  fullName: RolePlus.ExternModule.API.Features.Audio.AudioFile.Path
-  nameWithType: AudioFile.Path
-- uid: RolePlus.ExternModule.API.Features.Audio.AudioFile.Play(System.Boolean,System.Boolean)
-  name: Play(Boolean, Boolean)
-  href: api/RolePlus.ExternModule.API.Features.Audio.AudioFile.html#RolePlus_ExternModule_API_Features_Audio_AudioFile_Play_System_Boolean_System_Boolean_
-  commentId: M:RolePlus.ExternModule.API.Features.Audio.AudioFile.Play(System.Boolean,System.Boolean)
-  fullName: RolePlus.ExternModule.API.Features.Audio.AudioFile.Play(System.Boolean, System.Boolean)
-  nameWithType: AudioFile.Play(Boolean, Boolean)
-- uid: RolePlus.ExternModule.API.Features.Audio.AudioFile.Play*
-  name: Play
-  href: api/RolePlus.ExternModule.API.Features.Audio.AudioFile.html#RolePlus_ExternModule_API_Features_Audio_AudioFile_Play_
-  commentId: Overload:RolePlus.ExternModule.API.Features.Audio.AudioFile.Play
-  isSpec: "True"
-  fullName: RolePlus.ExternModule.API.Features.Audio.AudioFile.Play
-  nameWithType: AudioFile.Play
-- uid: RolePlus.ExternModule.API.Features.Audio.AudioFile.Volume
-  name: Volume
-  href: api/RolePlus.ExternModule.API.Features.Audio.AudioFile.html#RolePlus_ExternModule_API_Features_Audio_AudioFile_Volume
-  commentId: P:RolePlus.ExternModule.API.Features.Audio.AudioFile.Volume
-  fullName: RolePlus.ExternModule.API.Features.Audio.AudioFile.Volume
-  nameWithType: AudioFile.Volume
-- uid: RolePlus.ExternModule.API.Features.Audio.AudioFile.Volume*
-  name: Volume
-  href: api/RolePlus.ExternModule.API.Features.Audio.AudioFile.html#RolePlus_ExternModule_API_Features_Audio_AudioFile_Volume_
-  commentId: Overload:RolePlus.ExternModule.API.Features.Audio.AudioFile.Volume
-  isSpec: "True"
-  fullName: RolePlus.ExternModule.API.Features.Audio.AudioFile.Volume
-  nameWithType: AudioFile.Volume
 - uid: RolePlus.ExternModule.API.Features.Audio.CustomMpegMicrophone
   name: CustomMpegMicrophone
   href: api/RolePlus.ExternModule.API.Features.Audio.CustomMpegMicrophone.html
@@ -7877,19 +7832,19 @@ references:
   isSpec: "True"
   fullName: RolePlus.ExternModule.API.Features.Controllers.PlayerScriptController.FixedUpdate
   nameWithType: PlayerScriptController.FixedUpdate
-- uid: RolePlus.ExternModule.API.Features.Controllers.PlayerScriptController.OnLeft(LeftEventArgs)
-  name: OnLeft(LeftEventArgs)
-  href: api/RolePlus.ExternModule.API.Features.Controllers.PlayerScriptController.html#RolePlus_ExternModule_API_Features_Controllers_PlayerScriptController_OnLeft_LeftEventArgs_
-  commentId: M:RolePlus.ExternModule.API.Features.Controllers.PlayerScriptController.OnLeft(LeftEventArgs)
-  fullName: RolePlus.ExternModule.API.Features.Controllers.PlayerScriptController.OnLeft(LeftEventArgs)
-  nameWithType: PlayerScriptController.OnLeft(LeftEventArgs)
-- uid: RolePlus.ExternModule.API.Features.Controllers.PlayerScriptController.OnLeft*
-  name: OnLeft
-  href: api/RolePlus.ExternModule.API.Features.Controllers.PlayerScriptController.html#RolePlus_ExternModule_API_Features_Controllers_PlayerScriptController_OnLeft_
-  commentId: Overload:RolePlus.ExternModule.API.Features.Controllers.PlayerScriptController.OnLeft
+- uid: RolePlus.ExternModule.API.Features.Controllers.PlayerScriptController.OnDestroying(DestroyingEventArgs)
+  name: OnDestroying(DestroyingEventArgs)
+  href: api/RolePlus.ExternModule.API.Features.Controllers.PlayerScriptController.html#RolePlus_ExternModule_API_Features_Controllers_PlayerScriptController_OnDestroying_DestroyingEventArgs_
+  commentId: M:RolePlus.ExternModule.API.Features.Controllers.PlayerScriptController.OnDestroying(DestroyingEventArgs)
+  fullName: RolePlus.ExternModule.API.Features.Controllers.PlayerScriptController.OnDestroying(DestroyingEventArgs)
+  nameWithType: PlayerScriptController.OnDestroying(DestroyingEventArgs)
+- uid: RolePlus.ExternModule.API.Features.Controllers.PlayerScriptController.OnDestroying*
+  name: OnDestroying
+  href: api/RolePlus.ExternModule.API.Features.Controllers.PlayerScriptController.html#RolePlus_ExternModule_API_Features_Controllers_PlayerScriptController_OnDestroying_
+  commentId: Overload:RolePlus.ExternModule.API.Features.Controllers.PlayerScriptController.OnDestroying
   isSpec: "True"
-  fullName: RolePlus.ExternModule.API.Features.Controllers.PlayerScriptController.OnLeft
-  nameWithType: PlayerScriptController.OnLeft
+  fullName: RolePlus.ExternModule.API.Features.Controllers.PlayerScriptController.OnDestroying
+  nameWithType: PlayerScriptController.OnDestroying
 - uid: RolePlus.ExternModule.API.Features.Controllers.PlayerScriptController.Owner
   name: Owner
   href: api/RolePlus.ExternModule.API.Features.Controllers.PlayerScriptController.html#RolePlus_ExternModule_API_Features_Controllers_PlayerScriptController_Owner
@@ -13754,18 +13709,18 @@ references:
   isSpec: "True"
   fullName: RolePlus.ExternModule.HLAPI.SpawnActiveGrenade
   nameWithType: HLAPI.SpawnActiveGrenade
-- uid: RolePlus.ExternModule.HLAPI.SpawnTeam(RolePlus.CustomTeams.CustomTeamType)
-  name: SpawnTeam(CustomTeamType)
-  href: api/RolePlus.ExternModule.HLAPI.html#RolePlus_ExternModule_HLAPI_SpawnTeam_RolePlus_CustomTeams_CustomTeamType_
-  commentId: M:RolePlus.ExternModule.HLAPI.SpawnTeam(RolePlus.CustomTeams.CustomTeamType)
-  fullName: RolePlus.ExternModule.HLAPI.SpawnTeam(RolePlus.CustomTeams.CustomTeamType)
-  nameWithType: HLAPI.SpawnTeam(CustomTeamType)
 - uid: RolePlus.ExternModule.HLAPI.SpawnTeam(RolePlus.ExternModule.API.Features.CustomTeams.CustomTeam)
   name: SpawnTeam(CustomTeam)
   href: api/RolePlus.ExternModule.HLAPI.html#RolePlus_ExternModule_HLAPI_SpawnTeam_RolePlus_ExternModule_API_Features_CustomTeams_CustomTeam_
   commentId: M:RolePlus.ExternModule.HLAPI.SpawnTeam(RolePlus.ExternModule.API.Features.CustomTeams.CustomTeam)
   fullName: RolePlus.ExternModule.HLAPI.SpawnTeam(RolePlus.ExternModule.API.Features.CustomTeams.CustomTeam)
   nameWithType: HLAPI.SpawnTeam(CustomTeam)
+- uid: RolePlus.ExternModule.HLAPI.SpawnTeam(System.Object)
+  name: SpawnTeam(Object)
+  href: api/RolePlus.ExternModule.HLAPI.html#RolePlus_ExternModule_HLAPI_SpawnTeam_System_Object_
+  commentId: M:RolePlus.ExternModule.HLAPI.SpawnTeam(System.Object)
+  fullName: RolePlus.ExternModule.HLAPI.SpawnTeam(System.Object)
+  nameWithType: HLAPI.SpawnTeam(Object)
 - uid: RolePlus.ExternModule.HLAPI.SpawnTeam*
   name: SpawnTeam
   href: api/RolePlus.ExternModule.HLAPI.html#RolePlus_ExternModule_HLAPI_SpawnTeam_

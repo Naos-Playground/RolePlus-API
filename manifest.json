@@ -2583,6 +2583,30 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "obj/docs/api/RolePlus.CustomMap.Events.Player.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RolePlus.CustomMap.Events.Player.html",
+          "hash": "OIU3i+P7sb7I4K9091/qj1JA8vkNXR23tEGRODveSv4="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/docs/api/RolePlus.CustomMap.Events.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RolePlus.CustomMap.Events.html",
+          "hash": "aPj0Jd9ur4KfDuNGnTopk4JcyScRAu7JG5Uh78BUHW0="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "obj/docs/api/RolePlus.CustomRoles.CustomRoleType.yml",
       "output": {
         ".html": {
@@ -3507,30 +3531,6 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "obj/docs/api/RolePlus.ExternModule.API.Features.AdvancedGameplay.MultiPlayerGamemode.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/RolePlus.ExternModule.API.Features.AdvancedGameplay.MultiPlayerGamemode.html",
-          "hash": "u+TdIHDkRcfjF7tD6ZeGO/dNMAnHoPyuF5ShXtH0wWQ="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "obj/docs/api/RolePlus.ExternModule.API.Features.AdvancedGameplay.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/RolePlus.ExternModule.API.Features.AdvancedGameplay.html",
-          "hash": "kYVPBRxKO1+WhJrnjdxM8/8qPeeRW2Vo8XDOwq6R9Zo="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
       "source_relative_path": "obj/docs/api/RolePlus.ExternModule.API.Features.Audio.API.AudioController.yml",
       "output": {
         ".html": {
@@ -3548,18 +3548,6 @@
         ".html": {
           "relative_path": "api/RolePlus.ExternModule.API.Features.Audio.API.html",
           "hash": "1QuNKS/Q9v5F4bKUaZcvlreCOJQ8IOobbQL8YIi9t9Y="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "obj/docs/api/RolePlus.ExternModule.API.Features.Audio.AudioFile.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/RolePlus.ExternModule.API.Features.Audio.AudioFile.html",
-          "hash": "V6up/sLg3a3P9L+kdprwmkoJCLkDosg3GOep3Hl68TY="
         }
       },
       "is_incremental": false,
@@ -3679,7 +3667,7 @@
       "output": {
         ".html": {
           "relative_path": "api/RolePlus.ExternModule.API.Features.Audio.html",
-          "hash": "LeCDuJBfuE4j8M/yPvf22CGzCC4449j0db80rtAygfM="
+          "hash": "aDrEsOZRoBOVHzuHzL5HW7Y433o3PlMF1AMMs6GOsY4="
         }
       },
       "is_incremental": false,
@@ -3763,7 +3751,7 @@
       "output": {
         ".html": {
           "relative_path": "api/RolePlus.ExternModule.API.Features.Controllers.PlayerScriptController.html",
-          "hash": "vAxz7cfaBAF8nNIHs0pOfDAsX5uEFP1BRMzRRSYb1K8="
+          "hash": "/fMnDNp0NUb1GQu2BR1Y0t6MMwJudhAFcLrO40CYg70="
         }
       },
       "is_incremental": false,
@@ -3859,7 +3847,7 @@
       "output": {
         ".html": {
           "relative_path": "api/RolePlus.ExternModule.API.Features.CustomGamemode.html",
-          "hash": "4NWQu7keNKCKzGvH/O0CzpfEsYt27BVvkfE18sVP7rE="
+          "hash": "f7aUVd8iNBBEstO/O6A10gu+mJKV6FE0/fxLWxcknHw="
         }
       },
       "is_incremental": false,
@@ -3895,7 +3883,7 @@
       "output": {
         ".html": {
           "relative_path": "api/RolePlus.ExternModule.API.Features.CustomHud.HudManager.html",
-          "hash": "HrOAOQGEq2baxwbHNQcMRD+2r/8dU+cIjGVS1ng9ydo="
+          "hash": "i8aqAlsIeQWGl/53s//OBCgbDfWlaPvqtqA0ZWTYE8k="
         }
       },
       "is_incremental": false,
@@ -4279,7 +4267,7 @@
       "output": {
         ".html": {
           "relative_path": "api/RolePlus.ExternModule.HLAPI.html",
-          "hash": "bCw4Fua3sSNmUIP4fdSb82t8D4iU2RP6d3jQUb/Li+U="
+          "hash": "o5E7XitZk3sMMszqv34UTvu6fwfeON3EBBEcKGN877Y="
         }
       },
       "is_incremental": false,
@@ -4387,7 +4375,7 @@
       "output": {
         ".html": {
           "relative_path": "api/RolePlus.WaitAndChill.Arena.html",
-          "hash": "ylvK0DdyDFCEHIZJ9PEWYLsxbN64Y2YmEYwRcXD/eTo="
+          "hash": "vtyG4fmvJwQGveq+lbPD2E3tSCGhRxVFGeHVdtLoqPI="
         }
       },
       "is_incremental": false,
@@ -4411,7 +4399,7 @@
       "output": {
         ".html": {
           "relative_path": "api/toc.html",
-          "hash": "smW/xDA7y6qA+hWB+q73e4gBoj3+MKb/3pf810QE7Cc="
+          "hash": "w498gQ9fy5Ia5VHsNPQf5LfURPYI1YhIeiLNoHxvVSg="
         }
       },
       "is_incremental": false,
@@ -4450,7 +4438,7 @@
         "ManagedReferenceDocumentProcessor": {
           "can_incremental": false,
           "incrementalPhase": "build",
-          "total_file_count": 154,
+          "total_file_count": 153,
           "skipped_file_count": 0
         },
         "ResourceDocumentProcessor": {
