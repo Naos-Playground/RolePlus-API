@@ -565,76 +565,6 @@ references:
   commentId: N:RolePlus.ExternModule.API.Engine.Components
   fullName: RolePlus.ExternModule.API.Engine.Components
   nameWithType: RolePlus.ExternModule.API.Engine.Components
-- uid: RolePlus.ExternModule.API.Engine.Components.AActorComponent
-  name: AActorComponent
-  href: api/RolePlus.ExternModule.API.Engine.Components.AActorComponent.html
-  commentId: T:RolePlus.ExternModule.API.Engine.Components.AActorComponent
-  fullName: RolePlus.ExternModule.API.Engine.Components.AActorComponent
-  nameWithType: AActorComponent
-- uid: RolePlus.ExternModule.API.Engine.Components.AActorComponent.#ctor
-  name: AActorComponent()
-  href: api/RolePlus.ExternModule.API.Engine.Components.AActorComponent.html#RolePlus_ExternModule_API_Engine_Components_AActorComponent__ctor
-  commentId: M:RolePlus.ExternModule.API.Engine.Components.AActorComponent.#ctor
-  fullName: RolePlus.ExternModule.API.Engine.Components.AActorComponent.AActorComponent()
-  nameWithType: AActorComponent.AActorComponent()
-- uid: RolePlus.ExternModule.API.Engine.Components.AActorComponent.#ctor(GameObject)
-  name: AActorComponent(GameObject)
-  href: api/RolePlus.ExternModule.API.Engine.Components.AActorComponent.html#RolePlus_ExternModule_API_Engine_Components_AActorComponent__ctor_GameObject_
-  commentId: M:RolePlus.ExternModule.API.Engine.Components.AActorComponent.#ctor(GameObject)
-  fullName: RolePlus.ExternModule.API.Engine.Components.AActorComponent.AActorComponent(GameObject)
-  nameWithType: AActorComponent.AActorComponent(GameObject)
-- uid: RolePlus.ExternModule.API.Engine.Components.AActorComponent.#ctor(GameObject,Vector3,Vector3,Quaternion)
-  name: AActorComponent(GameObject, Vector3, Vector3, Quaternion)
-  href: api/RolePlus.ExternModule.API.Engine.Components.AActorComponent.html#RolePlus_ExternModule_API_Engine_Components_AActorComponent__ctor_GameObject_Vector3_Vector3_Quaternion_
-  commentId: M:RolePlus.ExternModule.API.Engine.Components.AActorComponent.#ctor(GameObject,Vector3,Vector3,Quaternion)
-  fullName: RolePlus.ExternModule.API.Engine.Components.AActorComponent.AActorComponent(GameObject, Vector3, Vector3, Quaternion)
-  nameWithType: AActorComponent.AActorComponent(GameObject, Vector3, Vector3, Quaternion)
-- uid: RolePlus.ExternModule.API.Engine.Components.AActorComponent.#ctor*
-  name: AActorComponent
-  href: api/RolePlus.ExternModule.API.Engine.Components.AActorComponent.html#RolePlus_ExternModule_API_Engine_Components_AActorComponent__ctor_
-  commentId: Overload:RolePlus.ExternModule.API.Engine.Components.AActorComponent.#ctor
-  isSpec: "True"
-  fullName: RolePlus.ExternModule.API.Engine.Components.AActorComponent.AActorComponent
-  nameWithType: AActorComponent.AActorComponent
-- uid: RolePlus.ExternModule.API.Engine.Components.AActorComponent.Controllers
-  name: Controllers
-  href: api/RolePlus.ExternModule.API.Engine.Components.AActorComponent.html#RolePlus_ExternModule_API_Engine_Components_AActorComponent_Controllers
-  commentId: P:RolePlus.ExternModule.API.Engine.Components.AActorComponent.Controllers
-  fullName: RolePlus.ExternModule.API.Engine.Components.AActorComponent.Controllers
-  nameWithType: AActorComponent.Controllers
-- uid: RolePlus.ExternModule.API.Engine.Components.AActorComponent.Controllers*
-  name: Controllers
-  href: api/RolePlus.ExternModule.API.Engine.Components.AActorComponent.html#RolePlus_ExternModule_API_Engine_Components_AActorComponent_Controllers_
-  commentId: Overload:RolePlus.ExternModule.API.Engine.Components.AActorComponent.Controllers
-  isSpec: "True"
-  fullName: RolePlus.ExternModule.API.Engine.Components.AActorComponent.Controllers
-  nameWithType: AActorComponent.Controllers
-- uid: RolePlus.ExternModule.API.Engine.Components.AActorComponent.op_Equality(RolePlus.ExternModule.API.Engine.Components.AActorComponent,RolePlus.ExternModule.API.Engine.Components.AActorComponent)
-  name: Equality(AActorComponent, AActorComponent)
-  href: api/RolePlus.ExternModule.API.Engine.Components.AActorComponent.html#RolePlus_ExternModule_API_Engine_Components_AActorComponent_op_Equality_RolePlus_ExternModule_API_Engine_Components_AActorComponent_RolePlus_ExternModule_API_Engine_Components_AActorComponent_
-  commentId: M:RolePlus.ExternModule.API.Engine.Components.AActorComponent.op_Equality(RolePlus.ExternModule.API.Engine.Components.AActorComponent,RolePlus.ExternModule.API.Engine.Components.AActorComponent)
-  fullName: RolePlus.ExternModule.API.Engine.Components.AActorComponent.Equality(RolePlus.ExternModule.API.Engine.Components.AActorComponent, RolePlus.ExternModule.API.Engine.Components.AActorComponent)
-  nameWithType: AActorComponent.Equality(AActorComponent, AActorComponent)
-- uid: RolePlus.ExternModule.API.Engine.Components.AActorComponent.op_Equality*
-  name: Equality
-  href: api/RolePlus.ExternModule.API.Engine.Components.AActorComponent.html#RolePlus_ExternModule_API_Engine_Components_AActorComponent_op_Equality_
-  commentId: Overload:RolePlus.ExternModule.API.Engine.Components.AActorComponent.op_Equality
-  isSpec: "True"
-  fullName: RolePlus.ExternModule.API.Engine.Components.AActorComponent.Equality
-  nameWithType: AActorComponent.Equality
-- uid: RolePlus.ExternModule.API.Engine.Components.AActorComponent.op_Inequality(RolePlus.ExternModule.API.Engine.Components.AActorComponent,RolePlus.ExternModule.API.Engine.Components.AActorComponent)
-  name: Inequality(AActorComponent, AActorComponent)
-  href: api/RolePlus.ExternModule.API.Engine.Components.AActorComponent.html#RolePlus_ExternModule_API_Engine_Components_AActorComponent_op_Inequality_RolePlus_ExternModule_API_Engine_Components_AActorComponent_RolePlus_ExternModule_API_Engine_Components_AActorComponent_
-  commentId: M:RolePlus.ExternModule.API.Engine.Components.AActorComponent.op_Inequality(RolePlus.ExternModule.API.Engine.Components.AActorComponent,RolePlus.ExternModule.API.Engine.Components.AActorComponent)
-  fullName: RolePlus.ExternModule.API.Engine.Components.AActorComponent.Inequality(RolePlus.ExternModule.API.Engine.Components.AActorComponent, RolePlus.ExternModule.API.Engine.Components.AActorComponent)
-  nameWithType: AActorComponent.Inequality(AActorComponent, AActorComponent)
-- uid: RolePlus.ExternModule.API.Engine.Components.AActorComponent.op_Inequality*
-  name: Inequality
-  href: api/RolePlus.ExternModule.API.Engine.Components.AActorComponent.html#RolePlus_ExternModule_API_Engine_Components_AActorComponent_op_Inequality_
-  commentId: Overload:RolePlus.ExternModule.API.Engine.Components.AActorComponent.op_Inequality
-  isSpec: "True"
-  fullName: RolePlus.ExternModule.API.Engine.Components.AActorComponent.Inequality
-  nameWithType: AActorComponent.Inequality
 - uid: RolePlus.ExternModule.API.Engine.Components.AActorFrameComponent
   name: AActorFrameComponent
   href: api/RolePlus.ExternModule.API.Engine.Components.AActorFrameComponent.html
@@ -647,12 +577,12 @@ references:
   commentId: M:RolePlus.ExternModule.API.Engine.Components.AActorFrameComponent.#ctor
   fullName: RolePlus.ExternModule.API.Engine.Components.AActorFrameComponent.AActorFrameComponent()
   nameWithType: AActorFrameComponent.AActorFrameComponent()
-- uid: RolePlus.ExternModule.API.Engine.Components.AActorFrameComponent.#ctor(RolePlus.ExternModule.API.Engine.Components.AActorComponent)
-  name: AActorFrameComponent(AActorComponent)
-  href: api/RolePlus.ExternModule.API.Engine.Components.AActorFrameComponent.html#RolePlus_ExternModule_API_Engine_Components_AActorFrameComponent__ctor_RolePlus_ExternModule_API_Engine_Components_AActorComponent_
-  commentId: M:RolePlus.ExternModule.API.Engine.Components.AActorFrameComponent.#ctor(RolePlus.ExternModule.API.Engine.Components.AActorComponent)
-  fullName: RolePlus.ExternModule.API.Engine.Components.AActorFrameComponent.AActorFrameComponent(RolePlus.ExternModule.API.Engine.Components.AActorComponent)
-  nameWithType: AActorFrameComponent.AActorFrameComponent(AActorComponent)
+- uid: RolePlus.ExternModule.API.Engine.Components.AActorFrameComponent.#ctor(RolePlus.ExternModule.API.Engine.Framework.AActor)
+  name: AActorFrameComponent(AActor)
+  href: api/RolePlus.ExternModule.API.Engine.Components.AActorFrameComponent.html#RolePlus_ExternModule_API_Engine_Components_AActorFrameComponent__ctor_RolePlus_ExternModule_API_Engine_Framework_AActor_
+  commentId: M:RolePlus.ExternModule.API.Engine.Components.AActorFrameComponent.#ctor(RolePlus.ExternModule.API.Engine.Framework.AActor)
+  fullName: RolePlus.ExternModule.API.Engine.Components.AActorFrameComponent.AActorFrameComponent(RolePlus.ExternModule.API.Engine.Framework.AActor)
+  nameWithType: AActorFrameComponent.AActorFrameComponent(AActor)
 - uid: RolePlus.ExternModule.API.Engine.Components.AActorFrameComponent.#ctor*
   name: AActorFrameComponent
   href: api/RolePlus.ExternModule.API.Engine.Components.AActorFrameComponent.html#RolePlus_ExternModule_API_Engine_Components_AActorFrameComponent__ctor_
@@ -685,12 +615,12 @@ references:
   commentId: M:RolePlus.ExternModule.API.Engine.Components.AActorHealthComponent.#ctor
   fullName: RolePlus.ExternModule.API.Engine.Components.AActorHealthComponent.AActorHealthComponent()
   nameWithType: AActorHealthComponent.AActorHealthComponent()
-- uid: RolePlus.ExternModule.API.Engine.Components.AActorHealthComponent.#ctor(RolePlus.ExternModule.API.Engine.Components.AActorComponent,System.Single,System.Single)
-  name: AActorHealthComponent(AActorComponent, Single, Single)
-  href: api/RolePlus.ExternModule.API.Engine.Components.AActorHealthComponent.html#RolePlus_ExternModule_API_Engine_Components_AActorHealthComponent__ctor_RolePlus_ExternModule_API_Engine_Components_AActorComponent_System_Single_System_Single_
-  commentId: M:RolePlus.ExternModule.API.Engine.Components.AActorHealthComponent.#ctor(RolePlus.ExternModule.API.Engine.Components.AActorComponent,System.Single,System.Single)
-  fullName: RolePlus.ExternModule.API.Engine.Components.AActorHealthComponent.AActorHealthComponent(RolePlus.ExternModule.API.Engine.Components.AActorComponent, System.Single, System.Single)
-  nameWithType: AActorHealthComponent.AActorHealthComponent(AActorComponent, Single, Single)
+- uid: RolePlus.ExternModule.API.Engine.Components.AActorHealthComponent.#ctor(RolePlus.ExternModule.API.Engine.Framework.AActor,System.Single,System.Single)
+  name: AActorHealthComponent(AActor, Single, Single)
+  href: api/RolePlus.ExternModule.API.Engine.Components.AActorHealthComponent.html#RolePlus_ExternModule_API_Engine_Components_AActorHealthComponent__ctor_RolePlus_ExternModule_API_Engine_Framework_AActor_System_Single_System_Single_
+  commentId: M:RolePlus.ExternModule.API.Engine.Components.AActorHealthComponent.#ctor(RolePlus.ExternModule.API.Engine.Framework.AActor,System.Single,System.Single)
+  fullName: RolePlus.ExternModule.API.Engine.Components.AActorHealthComponent.AActorHealthComponent(RolePlus.ExternModule.API.Engine.Framework.AActor, System.Single, System.Single)
+  nameWithType: AActorHealthComponent.AActorHealthComponent(AActor, Single, Single)
 - uid: RolePlus.ExternModule.API.Engine.Components.AActorHealthComponent.#ctor*
   name: AActorHealthComponent
   href: api/RolePlus.ExternModule.API.Engine.Components.AActorHealthComponent.html#RolePlus_ExternModule_API_Engine_Components_AActorHealthComponent__ctor_
@@ -788,12 +718,12 @@ references:
   commentId: M:RolePlus.ExternModule.API.Engine.Components.AEnvironmentActorHealthComponent.#ctor
   fullName: RolePlus.ExternModule.API.Engine.Components.AEnvironmentActorHealthComponent.AEnvironmentActorHealthComponent()
   nameWithType: AEnvironmentActorHealthComponent.AEnvironmentActorHealthComponent()
-- uid: RolePlus.ExternModule.API.Engine.Components.AEnvironmentActorHealthComponent.#ctor(RolePlus.ExternModule.API.Engine.Components.AActorComponent,System.Single,System.Single)
-  name: AEnvironmentActorHealthComponent(AActorComponent, Single, Single)
-  href: api/RolePlus.ExternModule.API.Engine.Components.AEnvironmentActorHealthComponent.html#RolePlus_ExternModule_API_Engine_Components_AEnvironmentActorHealthComponent__ctor_RolePlus_ExternModule_API_Engine_Components_AActorComponent_System_Single_System_Single_
-  commentId: M:RolePlus.ExternModule.API.Engine.Components.AEnvironmentActorHealthComponent.#ctor(RolePlus.ExternModule.API.Engine.Components.AActorComponent,System.Single,System.Single)
-  fullName: RolePlus.ExternModule.API.Engine.Components.AEnvironmentActorHealthComponent.AEnvironmentActorHealthComponent(RolePlus.ExternModule.API.Engine.Components.AActorComponent, System.Single, System.Single)
-  nameWithType: AEnvironmentActorHealthComponent.AEnvironmentActorHealthComponent(AActorComponent, Single, Single)
+- uid: RolePlus.ExternModule.API.Engine.Components.AEnvironmentActorHealthComponent.#ctor(RolePlus.ExternModule.API.Engine.Framework.AActor,System.Single,System.Single)
+  name: AEnvironmentActorHealthComponent(AActor, Single, Single)
+  href: api/RolePlus.ExternModule.API.Engine.Components.AEnvironmentActorHealthComponent.html#RolePlus_ExternModule_API_Engine_Components_AEnvironmentActorHealthComponent__ctor_RolePlus_ExternModule_API_Engine_Framework_AActor_System_Single_System_Single_
+  commentId: M:RolePlus.ExternModule.API.Engine.Components.AEnvironmentActorHealthComponent.#ctor(RolePlus.ExternModule.API.Engine.Framework.AActor,System.Single,System.Single)
+  fullName: RolePlus.ExternModule.API.Engine.Components.AEnvironmentActorHealthComponent.AEnvironmentActorHealthComponent(RolePlus.ExternModule.API.Engine.Framework.AActor, System.Single, System.Single)
+  nameWithType: AEnvironmentActorHealthComponent.AEnvironmentActorHealthComponent(AActor, Single, Single)
 - uid: RolePlus.ExternModule.API.Engine.Components.AEnvironmentActorHealthComponent.#ctor*
   name: AEnvironmentActorHealthComponent
   href: api/RolePlus.ExternModule.API.Engine.Components.AEnvironmentActorHealthComponent.html#RolePlus_ExternModule_API_Engine_Components_AEnvironmentActorHealthComponent__ctor_
@@ -1240,15 +1170,15 @@ references:
   commentId: M:RolePlus.ExternModule.API.Engine.Components.AInteractableFrameComponent.#ctor
   fullName: RolePlus.ExternModule.API.Engine.Components.AInteractableFrameComponent.AInteractableFrameComponent()
   nameWithType: AInteractableFrameComponent.AInteractableFrameComponent()
-- uid: RolePlus.ExternModule.API.Engine.Components.AInteractableFrameComponent.#ctor(System.Collections.Generic.IEnumerable{Pickup},RolePlus.ExternModule.API.Engine.Components.AActorComponent)
-  name: AInteractableFrameComponent(IEnumerable<Pickup>, AActorComponent)
-  href: api/RolePlus.ExternModule.API.Engine.Components.AInteractableFrameComponent.html#RolePlus_ExternModule_API_Engine_Components_AInteractableFrameComponent__ctor_System_Collections_Generic_IEnumerable_Pickup__RolePlus_ExternModule_API_Engine_Components_AActorComponent_
-  commentId: M:RolePlus.ExternModule.API.Engine.Components.AInteractableFrameComponent.#ctor(System.Collections.Generic.IEnumerable{Pickup},RolePlus.ExternModule.API.Engine.Components.AActorComponent)
-  name.vb: AInteractableFrameComponent(IEnumerable(Of Pickup), AActorComponent)
-  fullName: RolePlus.ExternModule.API.Engine.Components.AInteractableFrameComponent.AInteractableFrameComponent(System.Collections.Generic.IEnumerable<Pickup>, RolePlus.ExternModule.API.Engine.Components.AActorComponent)
-  fullName.vb: RolePlus.ExternModule.API.Engine.Components.AInteractableFrameComponent.AInteractableFrameComponent(System.Collections.Generic.IEnumerable(Of Pickup), RolePlus.ExternModule.API.Engine.Components.AActorComponent)
-  nameWithType: AInteractableFrameComponent.AInteractableFrameComponent(IEnumerable<Pickup>, AActorComponent)
-  nameWithType.vb: AInteractableFrameComponent.AInteractableFrameComponent(IEnumerable(Of Pickup), AActorComponent)
+- uid: RolePlus.ExternModule.API.Engine.Components.AInteractableFrameComponent.#ctor(System.Collections.Generic.IEnumerable{Pickup},RolePlus.ExternModule.API.Engine.Framework.AActor)
+  name: AInteractableFrameComponent(IEnumerable<Pickup>, AActor)
+  href: api/RolePlus.ExternModule.API.Engine.Components.AInteractableFrameComponent.html#RolePlus_ExternModule_API_Engine_Components_AInteractableFrameComponent__ctor_System_Collections_Generic_IEnumerable_Pickup__RolePlus_ExternModule_API_Engine_Framework_AActor_
+  commentId: M:RolePlus.ExternModule.API.Engine.Components.AInteractableFrameComponent.#ctor(System.Collections.Generic.IEnumerable{Pickup},RolePlus.ExternModule.API.Engine.Framework.AActor)
+  name.vb: AInteractableFrameComponent(IEnumerable(Of Pickup), AActor)
+  fullName: RolePlus.ExternModule.API.Engine.Components.AInteractableFrameComponent.AInteractableFrameComponent(System.Collections.Generic.IEnumerable<Pickup>, RolePlus.ExternModule.API.Engine.Framework.AActor)
+  fullName.vb: RolePlus.ExternModule.API.Engine.Components.AInteractableFrameComponent.AInteractableFrameComponent(System.Collections.Generic.IEnumerable(Of Pickup), RolePlus.ExternModule.API.Engine.Framework.AActor)
+  nameWithType: AInteractableFrameComponent.AInteractableFrameComponent(IEnumerable<Pickup>, AActor)
+  nameWithType.vb: AInteractableFrameComponent.AInteractableFrameComponent(IEnumerable(Of Pickup), AActor)
 - uid: RolePlus.ExternModule.API.Engine.Components.AInteractableFrameComponent.#ctor*
   name: AInteractableFrameComponent
   href: api/RolePlus.ExternModule.API.Engine.Components.AInteractableFrameComponent.html#RolePlus_ExternModule_API_Engine_Components_AInteractableFrameComponent__ctor_
@@ -3022,6 +2952,22 @@ references:
   fullName.vb: RolePlus.ExternModule.API.Engine.Core.UObject.FindActiveObjectsWithTagOfType(Of T)(System.String)
   nameWithType: UObject.FindActiveObjectsWithTagOfType<T>(String)
   nameWithType.vb: UObject.FindActiveObjectsWithTagOfType(Of T)(String)
+- uid: RolePlus.ExternModule.API.Engine.Core.UObject.FindMostAppropriateEntry*
+  name: FindMostAppropriateEntry
+  href: api/RolePlus.ExternModule.API.Engine.Core.UObject.html#RolePlus_ExternModule_API_Engine_Core_UObject_FindMostAppropriateEntry_
+  commentId: Overload:RolePlus.ExternModule.API.Engine.Core.UObject.FindMostAppropriateEntry
+  isSpec: "True"
+  fullName: RolePlus.ExternModule.API.Engine.Core.UObject.FindMostAppropriateEntry
+  nameWithType: UObject.FindMostAppropriateEntry
+- uid: RolePlus.ExternModule.API.Engine.Core.UObject.FindMostAppropriateEntry``1(System.String,System.Collections.Generic.IEnumerable{``0})
+  name: FindMostAppropriateEntry<T>(String, IEnumerable<T>)
+  href: api/RolePlus.ExternModule.API.Engine.Core.UObject.html#RolePlus_ExternModule_API_Engine_Core_UObject_FindMostAppropriateEntry__1_System_String_System_Collections_Generic_IEnumerable___0__
+  commentId: M:RolePlus.ExternModule.API.Engine.Core.UObject.FindMostAppropriateEntry``1(System.String,System.Collections.Generic.IEnumerable{``0})
+  name.vb: FindMostAppropriateEntry(Of T)(String, IEnumerable(Of T))
+  fullName: RolePlus.ExternModule.API.Engine.Core.UObject.FindMostAppropriateEntry<T>(System.String, System.Collections.Generic.IEnumerable<T>)
+  fullName.vb: RolePlus.ExternModule.API.Engine.Core.UObject.FindMostAppropriateEntry(Of T)(System.String, System.Collections.Generic.IEnumerable(Of T))
+  nameWithType: UObject.FindMostAppropriateEntry<T>(String, IEnumerable<T>)
+  nameWithType.vb: UObject.FindMostAppropriateEntry(Of T)(String, IEnumerable(Of T))
 - uid: RolePlus.ExternModule.API.Engine.Core.UObject.FindUObjectDefinedTypeByName(System.String,System.Boolean)
   name: FindUObjectDefinedTypeByName(String, Boolean)
   href: api/RolePlus.ExternModule.API.Engine.Core.UObject.html#RolePlus_ExternModule_API_Engine_Core_UObject_FindUObjectDefinedTypeByName_System_String_System_Boolean_
@@ -7453,6 +7399,12 @@ references:
   fullName.vb: RolePlus.ExternModule.API.Features.Configs.Config.GenerateNew(Of T)()
   nameWithType: Config.GenerateNew<T>()
   nameWithType.vb: Config.GenerateNew(Of T)()
+- uid: RolePlus.ExternModule.API.Features.Configs.Config.Get(System.String)
+  name: Get(String)
+  href: api/RolePlus.ExternModule.API.Features.Configs.Config.html#RolePlus_ExternModule_API_Features_Configs_Config_Get_System_String_
+  commentId: M:RolePlus.ExternModule.API.Features.Configs.Config.Get(System.String)
+  fullName: RolePlus.ExternModule.API.Features.Configs.Config.Get(System.String)
+  nameWithType: Config.Get(String)
 - uid: RolePlus.ExternModule.API.Features.Configs.Config.Get*
   name: Get
   href: api/RolePlus.ExternModule.API.Features.Configs.Config.html#RolePlus_ExternModule_API_Features_Configs_Config_Get_

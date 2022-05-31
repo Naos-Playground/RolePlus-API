@@ -83,7 +83,7 @@
   
   <h1 id="RolePlus_ExternModule_API_Engine_Components_AActorFrameComponent" data-uid="RolePlus.ExternModule.API.Engine.Components.AActorFrameComponent" class="text-break">Class AActorFrameComponent
   </h1>
-  <div class="markdown level0 summary"><p><a class="xref" href="RolePlus.ExternModule.API.Engine.Components.AActorFrameComponent.html">AActorFrameComponent</a> is the base class for <a class="xref" href="RolePlus.ExternModule.API.Engine.Components.AActorComponent.html">AActorComponent</a> instances which need to be managed internally.</p>
+  <div class="markdown level0 summary"><p><a class="xref" href="RolePlus.ExternModule.API.Engine.Components.AActorFrameComponent.html">AActorFrameComponent</a> is the base class for <a class="xref" href="RolePlus.ExternModule.API.Engine.Framework.AActor.html">AActor</a> instances which need to be managed internally.</p>
 </div>
   <div class="markdown level0 conceptual"></div>
   <div class="inheritance">
@@ -294,10 +294,13 @@
       <a class="xref" href="RolePlus.ExternModule.API.Engine.Core.UObject.html#RolePlus_ExternModule_API_Engine_Core_UObject_DestroyActiveObject_System_Type_GameObject_">UObject.DestroyActiveObject(Type, GameObject)</a>
     </div>
     <div>
-      <a class="xref" href="RolePlus.ExternModule.API.Engine.Core.UObject.html#RolePlus_ExternModule_API_Engine_Core_UObject_Destroy_System_Boolean_">UObject.Destroy(Boolean)</a>
+      <a class="xref" href="RolePlus.ExternModule.API.Engine.Core.UObject.html#RolePlus_ExternModule_API_Engine_Core_UObject_FindMostAppropriateEntry__1_System_String_System_Collections_Generic_IEnumerable___0__">UObject.FindMostAppropriateEntry&lt;T&gt;(String, IEnumerable&lt;T&gt;)</a>
     </div>
     <div>
       <a class="xref" href="RolePlus.ExternModule.API.Engine.Core.UObject.html#RolePlus_ExternModule_API_Engine_Core_UObject_Destroy">UObject.Destroy()</a>
+    </div>
+    <div>
+      <a class="xref" href="RolePlus.ExternModule.API.Engine.Core.UObject.html#RolePlus_ExternModule_API_Engine_Core_UObject_Destroy_System_Boolean_">UObject.Destroy(Boolean)</a>
     </div>
     <div>
       <a class="xref" href="RolePlus.ExternModule.API.Engine.Core.UObject.html#RolePlus_ExternModule_API_Engine_Core_UObject_OnDestroyed">UObject.OnDestroyed()</a>
@@ -356,19 +359,19 @@
   </div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/TeslaITStudios/RolePlus/new/dev/apiSpec/new?filename=RolePlus_ExternModule_API_Engine_Components_AActorFrameComponent__ctor_RolePlus_ExternModule_API_Engine_Components_AActorComponent_.md&amp;value=---%0Auid%3A%20RolePlus.ExternModule.API.Engine.Components.AActorFrameComponent.%23ctor(RolePlus.ExternModule.API.Engine.Components.AActorComponent)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/TeslaITStudios/RolePlus/new/dev/apiSpec/new?filename=RolePlus_ExternModule_API_Engine_Components_AActorFrameComponent__ctor_RolePlus_ExternModule_API_Engine_Framework_AActor_.md&amp;value=---%0Auid%3A%20RolePlus.ExternModule.API.Engine.Components.AActorFrameComponent.%23ctor(RolePlus.ExternModule.API.Engine.Framework.AActor)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/TeslaITStudios/RolePlus/blob/master/RolePlus/ExternModule/API/Engine/Components/AActorFrameComponent.cs/#L29">View Source</a>
   </span>
   <a id="RolePlus_ExternModule_API_Engine_Components_AActorFrameComponent__ctor_" data-uid="RolePlus.ExternModule.API.Engine.Components.AActorFrameComponent.#ctor*"></a>
-  <h4 id="RolePlus_ExternModule_API_Engine_Components_AActorFrameComponent__ctor_RolePlus_ExternModule_API_Engine_Components_AActorComponent_" data-uid="RolePlus.ExternModule.API.Engine.Components.AActorFrameComponent.#ctor(RolePlus.ExternModule.API.Engine.Components.AActorComponent)">AActorFrameComponent(AActorComponent)</h4>
+  <h4 id="RolePlus_ExternModule_API_Engine_Components_AActorFrameComponent__ctor_RolePlus_ExternModule_API_Engine_Framework_AActor_" data-uid="RolePlus.ExternModule.API.Engine.Components.AActorFrameComponent.#ctor(RolePlus.ExternModule.API.Engine.Framework.AActor)">AActorFrameComponent(AActor)</h4>
   <div class="markdown level1 summary"><p>Initializes a new instance of the <a class="xref" href="RolePlus.ExternModule.API.Engine.Components.AActorFrameComponent.html">AActorFrameComponent</a> class.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">protected AActorFrameComponent(AActorComponent root)</code></pre>
+    <pre><code class="lang-csharp hljs">protected AActorFrameComponent(AActor root)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -381,7 +384,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="RolePlus.ExternModule.API.Engine.Components.AActorComponent.html">AActorComponent</a></td>
+        <td><a class="xref" href="RolePlus.ExternModule.API.Engine.Framework.AActor.html">AActor</a></td>
         <td><span class="parametername">root</span></td>
         <td><inheritdoc cref="P:RolePlus.ExternModule.API.Engine.Components.AActorFrameComponent.RootComponent"></inheritdoc></td>
       </tr>
@@ -398,12 +401,12 @@
   </span>
   <a id="RolePlus_ExternModule_API_Engine_Components_AActorFrameComponent_RootComponent_" data-uid="RolePlus.ExternModule.API.Engine.Components.AActorFrameComponent.RootComponent*"></a>
   <h4 id="RolePlus_ExternModule_API_Engine_Components_AActorFrameComponent_RootComponent" data-uid="RolePlus.ExternModule.API.Engine.Components.AActorFrameComponent.RootComponent">RootComponent</h4>
-  <div class="markdown level1 summary"><p>Gets the root <a class="xref" href="RolePlus.ExternModule.API.Engine.Components.AActorComponent.html">AActorComponent</a>.</p>
+  <div class="markdown level1 summary"><p>Gets the root <a class="xref" href="RolePlus.ExternModule.API.Engine.Framework.AActor.html">AActor</a>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public abstract AActorComponent RootComponent { get; protected set; }</code></pre>
+    <pre><code class="lang-csharp hljs">public abstract AActor RootComponent { get; protected set; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -415,7 +418,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="RolePlus.ExternModule.API.Engine.Components.AActorComponent.html">AActorComponent</a></td>
+        <td><a class="xref" href="RolePlus.ExternModule.API.Engine.Framework.AActor.html">AActor</a></td>
         <td></td>
       </tr>
     </tbody>
