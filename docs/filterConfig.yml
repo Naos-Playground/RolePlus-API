@@ -1,0 +1,10 @@
+apiRules:
+  - exclude:
+      uidRegex: RolePlus.Patches
+      type: Namespace
+  - exclude:
+      uidRegex: RolePlus.Internal
+      type: Namespace
+  - exclude:
+      uidRegex: RolePlus.CustomTeams
+      type: Namespace

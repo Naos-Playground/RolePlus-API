@@ -1,0 +1,12 @@
+###############
+#    folder   #
+###############
+/**/DROP/
+/**/TEMP/
+/**/packages/
+/**/bin/
+/**/obj/
+/**/VirtualAssemblies/
+/**/Assets/
+/**/Animations/
+_site

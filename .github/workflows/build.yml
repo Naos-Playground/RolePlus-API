@@ -1,0 +1,45 @@
+name: RolePlus Build
+on:
+  push:
+    branches: 
+    - dev
+    - master
+  pull_request:
+    branches:
+    - dev
+    - master
+  workflow_dispatch:
+env:
+  REFERENCES_URL: https://cdn.discordapp.com/attachments/649703262592696331/1049900819878793277/References.zip
+  REFERENCES_PATH: ${{ github.workspace }}/References
+jobs:
+  build:
+    runs-on: windows-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      
+      - name: Setup MSBuild.exe
+        uses: warrenbuckley/Setup-MSBuild@v1
+        env:
+          ACTIONS_ALLOW_UNSECURE_COMMANDS: 'true'
+
+
+      - name: Setup NuGet.exe for use with actions
+        uses: NuGet/setup-nuget@v1.0.6
+        env:
+          ACTIONS_ALLOW_UNSECURE_COMMANDS: 'true'
+
+
+      - name: Restore NuGet
+        run: nuget restore RolePlus.sln
+
+      - name: Get Build References
+        shell: pwsh
+        run: |
+          Invoke-WebRequest -Uri ${{ env.REFERENCES_URL }} -OutFile ${{ github.workspace }}/References.zip
+          Expand-Archive -Path References.zip -DestinationPath ${{ env.REFERENCES_PATH }}
+
+      - name: Build
+        run: | 
+          msbuild RolePlus.sln /t:restore /p:ReferencePath="${{ env.REFERENCES_PATH }}" 

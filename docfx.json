@@ -1,0 +1,42 @@
+{
+  "metadata": [
+    {
+      "src": [
+        {
+          "files": [ "RolePlus.sln" ]
+        }
+      ],
+      "dest": "obj/docs/api",
+      "filter": "docs/filterConfig.yml"
+    }
+  ],
+  "build": {
+    "content": [
+      {
+        "src": "obj/docs/",
+        "files": ["**/*.yml"]
+      },
+      {
+        "src": "docs",
+        "files": ["**/*.md"]
+      },
+      {
+        "files": ["toc.yml", "docs/articles/toc.yml"]
+      }
+    ],
+    "resource": [
+      {
+        "files": ["assets/**"]
+      }
+    ],
+    "dest": "_site",
+    "globalMetadata": {
+      "_appTitle": "RolePlus Docs",
+      "_enableSearch": true,
+      "_gitContribute": {
+        "repo": "https://github.com/TeslaITStudios/RolePlus",
+        "branch": "dev"
+      }
+    }
+  }
+}

@@ -1,0 +1,336 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{F968BDD8-1852-434D-BF67-7F8C73125D3E}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>RolePlus</RootNamespace>
+    <AssemblyName>RolePlus</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <LangVersion>9</LangVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <PlatformTarget>x64</PlatformTarget>
+    <DocumentationFile>bin\Debug\RolePlus.xml</DocumentationFile>
+    <NoWarn>SA0001, MSB3277, MSB3073</NoWarn>
+    <CodeAnalysisRuleSet>RolePlus.ruleset</CodeAnalysisRuleSet>
+    <RunCodeAnalysis>false</RunCodeAnalysis>
+    <CodeAnalysisIgnoreGeneratedCode>true</CodeAnalysisIgnoreGeneratedCode>
+  </PropertyGroup>
+  <PropertyGroup>
+    <MSBuildWarningsAsMessages>
+    $(MSBuildWarningsAsMessages);MSB3274;MSB3275;MSB3268
+  </MSBuildWarningsAsMessages>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <PlatformTarget>x64</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <LangVersion>9</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <LangVersion>9</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>false</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <DelaySign>false</DelaySign>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG</DefineConstants>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <DocumentationFile>bin\Debug\RolePlus.xml</DocumentationFile>
+    <Optimize>true</Optimize>
+    <NoWarn>SA0001, MSB3277, MSB3073</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <LangVersion>9</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>RolePlus.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <LangVersion>9</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="ExternModule\API\Engine\Core\Singleton.cs" />
+    <Compile Include="GlobalSuppressions.cs" />
+    <Compile Include="Internal\Commands\MainCommand.cs" />
+    <Compile Include="Internal\Commands\Round\ForceEndCommand.cs" />
+    <Compile Include="Internal\Commands\Round\RoundCommand.cs" />
+    <Compile Include="Internal\Commands\Round\ChangeLockCommand.cs" />
+    <Compile Include="Internal\Commands\Test\ShowTpsCommand.cs" />
+    <Compile Include="Internal\Commands\Test\BypassNoclip.cs" />
+    <Compile Include="ExternModule\API\Engine\Core\Framework\Network\RuleAttribute.cs" />
+    <Compile Include="ExternModule\API\Features\Audio\AudioController.cs" />
+    <Compile Include="ExternModule\API\Features\Audio\CustomMpegMicrophone.cs" />
+    <Compile Include="ExternModule\API\Features\Audio\NLayer\Decoder\BitReservoir.cs" />
+    <Compile Include="ExternModule\API\Features\Audio\NLayer\Decoder\FrameBase.cs" />
+    <Compile Include="ExternModule\API\Features\Audio\NLayer\Decoder\Huffman.cs" />
+    <Compile Include="ExternModule\API\Features\Audio\NLayer\Decoder\ID3Frame.cs" />
+    <Compile Include="ExternModule\API\Features\Audio\NLayer\Decoder\LayerDecoderBase.cs" />
+    <Compile Include="ExternModule\API\Features\Audio\NLayer\Decoder\LayerIDecoder.cs" />
+    <Compile Include="ExternModule\API\Features\Audio\NLayer\Decoder\LayerIIDecoder.cs" />
+    <Compile Include="ExternModule\API\Features\Audio\NLayer\Decoder\LayerIIDecoderBase.cs" />
+    <Compile Include="ExternModule\API\Features\Audio\NLayer\Decoder\LayerIIIDecoder.cs" />
+    <Compile Include="ExternModule\API\Features\Audio\NLayer\Decoder\MpegFrame.cs" />
+    <Compile Include="ExternModule\API\Features\Audio\NLayer\Decoder\MpegStreamReader.cs" />
+    <Compile Include="ExternModule\API\Features\Audio\NLayer\Decoder\RiffHeaderFrame.cs" />
+    <Compile Include="ExternModule\API\Features\Audio\NLayer\Decoder\VBRInfo.cs" />
+    <Compile Include="ExternModule\API\Features\Audio\NLayer\Enums.cs" />
+    <Compile Include="ExternModule\API\Features\Audio\NLayer\IMpegFrame.cs" />
+    <Compile Include="ExternModule\API\Features\Audio\NLayer\MpegFile.cs" />
+    <Compile Include="ExternModule\API\Features\Audio\NLayer\MpegFrameDecoder.cs" />
+    <Compile Include="ExternModule\API\Features\TemporaryStats.cs" />
+    <Compile Include="ExternModule\Events\EventArgs\InvokingHandlerEventArgs.cs" />
+    <Compile Include="Internal\Configs\RootConfig.cs" />
+    <Compile Include="Internal\Configs\RespawningRules.cs" />
+    <Compile Include="ExternModule\API\Features\Gamemodes\CustomGamemodeAttribute.cs" />
+    <Compile Include="Internal\ServerHandler.cs" />
+    <Compile Include="Internal\Commands\Test\TeleportCommand.cs" />
+    <Compile Include="ExternModule\API\Engine\Components\AActorFrameComponent.cs" />
+    <Compile Include="ExternModule\API\Engine\Components\AActorHealthComponent.cs" />
+    <Compile Include="ExternModule\API\Engine\Components\AEnvironmentActorHealthComponent.cs" />
+    <Compile Include="ExternModule\API\Engine\Components\AEnvironmentMeshComponent.cs" />
+    <Compile Include="ExternModule\API\Engine\Components\AInteractableFrameComponent.cs" />
+    <Compile Include="ExternModule\API\Engine\Components\ASchematicMeshComponent.cs" />
+    <Compile Include="ExternModule\API\Engine\Components\ASkeletalMeshComponent.cs" />
+    <Compile Include="ExternModule\API\Engine\Core\Framework\AActor.cs" />
+    <Compile Include="ExternModule\API\Engine\Core\Framework\AnimatorParameter.cs" />
+    <Compile Include="ExternModule\API\Engine\Core\Framework\Bootstrap\GlobalPatchProcessor.cs" />
+    <Compile Include="ExternModule\API\Engine\Core\Framework\Bootstrap\PatchGroupAttribute.cs" />
+    <Compile Include="ExternModule\API\Engine\Core\Framework\Enums\NetworkAuthority.cs" />
+    <Compile Include="ExternModule\API\Engine\Core\Framework\Events\Delegates.cs" />
+    <Compile Include="ExternModule\API\Engine\Core\Framework\Events\EventArgs\ChangingAnimationStateEventArgs.cs" />
+    <Compile Include="ExternModule\API\Engine\Core\Framework\Events\EventArgs\CompletedAnimationStateEventArgs.cs" />
+    <Compile Include="ExternModule\API\Engine\Core\Framework\Events\EventArgs\InteractingObjectEventArgs.cs" />
+    <Compile Include="ExternModule\API\Engine\Core\Framework\Events\EventArgs\ReceivingNetworkMessageEventArgs.cs" />
+    <Compile Include="ExternModule\API\Engine\Core\Framework\Events\EventArgs\ReceivingPipelineMessageEventArgs.cs" />
+    <Compile Include="ExternModule\API\Engine\Core\Framework\Events\Extensions.cs" />
+    <Compile Include="ExternModule\API\Engine\Core\Framework\Events\Handlers\Network.cs" />
+    <Compile Include="ExternModule\API\Engine\Core\Framework\Events\Handlers\Player.cs" />
+    <Compile Include="ExternModule\API\Engine\Core\Framework\Events\Handlers\UObject.cs" />
+    <Compile Include="ExternModule\API\Engine\Core\Framework\Events\MultiPlexEventArgs.cs" />
+    <Compile Include="ExternModule\API\Engine\Core\Framework\Events\PlexEventArgs.cs" />
+    <Compile Include="ExternModule\API\Engine\Core\Framework\Interfaces\IAnimatorNative.cs" />
+    <Compile Include="ExternModule\API\Engine\Core\Framework\Interfaces\INetworkMessage.cs" />
+    <Compile Include="ExternModule\API\Engine\Core\Framework\Network\Models\UNetEntity.cs" />
+    <Compile Include="ExternModule\API\Engine\Core\Framework\Network\Models\UNetManager.cs" />
+    <Compile Include="ExternModule\API\Engine\Core\Framework\Network\Models\UNetServer.cs" />
+    <Compile Include="ExternModule\API\Engine\Core\Framework\Network\TFirewall.cs" />
+    <Compile Include="ExternModule\API\Engine\Core\Framework\Network\TNetworkMessage.cs" />
+    <Compile Include="ExternModule\API\Engine\Core\Framework\Network\TRule.cs" />
+    <Compile Include="ExternModule\API\Engine\Core\Framework\Network\UNetObject.cs" />
+    <Compile Include="ExternModule\API\Engine\Core\Framework\Patches\ServerPerformShotPatch.cs" />
+    <Compile Include="ExternModule\API\Engine\Core\Framework\Patches\ShotPelletPatch.cs" />
+    <Compile Include="ExternModule\API\Engine\Core\Framework\Structs\FTransform.cs" />
+    <Compile Include="ExternModule\API\Engine\Core\Framework\Structs\FVirtualPrivateNetwork.cs" />
+    <Compile Include="ExternModule\API\Engine\Core\Framework\Structs\TNetworkPipelineMessage.cs" />
+    <Compile Include="ExternModule\API\Engine\Core\Generic\Collections\TMultiDirectionalCollection.cs" />
+    <Compile Include="ExternModule\API\Engine\Core\Generic\Collections\TMultiPlexCollection.cs" />
+    <Compile Include="ExternModule\API\Engine\Core\Generic\Collections\TPlainCollection.cs" />
+    <Compile Include="ExternModule\API\Engine\Core\Generic\Collections\TPlexCollection.cs" />
+    <Compile Include="ExternModule\API\Engine\Core\Generic\TSourceObject.cs" />
+    <Compile Include="ExternModule\API\Engine\Core\Generic\TValueObject.cs" />
+    <Compile Include="ExternModule\API\Engine\Core\TypeCastObject.cs" />
+    <Compile Include="ExternModule\API\Engine\Core\UObject.cs" />
+    <Compile Include="ExternModule\API\Engine\Extensions\ComponentExtensions.cs" />
+    <Compile Include="ExternModule\API\Enums\BanDuration.cs" />
+    <Compile Include="ExternModule\API\Enums\BranchType.cs" />
+    <Compile Include="ExternModule\API\Enums\RespawnState.cs" />
+    <Compile Include="ExternModule\API\Enums\ScreenLocation.cs" />
+    <Compile Include="ExternModule\API\Features\Badge.cs" />
+    <Compile Include="ExternModule\API\Features\Configs\Config.cs" />
+    <Compile Include="ExternModule\API\Features\Configs\ConfigAttribute.cs" />
+    <Compile Include="ExternModule\API\Features\Configs\IConfig.cs" />
+    <Compile Include="ExternModule\API\Features\Controllers\ObjectController.cs" />
+    <Compile Include="ExternModule\API\Features\Controllers\PlayerScriptController.cs" />
+    <Compile Include="ExternModule\API\Features\CustomAbilities\CustomAbility.cs" />
+    <Compile Include="ExternModule\API\Features\CustomAbilities\CustomAbilityAttribute.cs" />
+    <Compile Include="ExternModule\API\Features\CustomAbilities\Scp079Ability.cs" />
+    <Compile Include="ExternModule\API\Features\CustomHud\Hint.cs" />
+    <Compile Include="ExternModule\API\Features\CustomHud\HudManager.cs" />
+    <Compile Include="ExternModule\API\Features\CustomHud\HudScreen.cs" />
+    <Compile Include="ExternModule\API\Features\CustomRoles\CustomRole.cs" />
+    <Compile Include="ExternModule\API\Features\CustomRoles\CustomRoleAttribute.cs" />
+    <Compile Include="ExternModule\API\Features\CustomRoles\RoleBuilder.cs" />
+    <Compile Include="ExternModule\API\Features\CustomSkins\CharacterMeshComponent.cs" />
+    <Compile Include="ExternModule\API\Features\CustomSkins\ItemMeshComponent.cs" />
+    <Compile Include="ExternModule\API\Features\CustomTeams\CustomTeam.cs" />
+    <Compile Include="ExternModule\API\Features\CustomTeams\CustomTeamAttribute.cs" />
+    <Compile Include="ExternModule\API\Features\Gamemodes\CustomGamemode.cs" />
+    <Compile Include="ExternModule\API\Features\InventorySlot.cs" />
+    <Compile Include="ExternModule\API\Features\VirtualAssemblies\Branch.cs" />
+    <Compile Include="ExternModule\API\Features\VirtualAssemblies\BranchAttribute.cs" />
+    <Compile Include="ExternModule\API\Features\RespawnManager.cs" />
+    <Compile Include="ExternModule\Events\EventArgs\SendingConsoleCommandEventArgs.cs" />
+    <Compile Include="ExternModule\Events\EventArgs\SendingRemoteAdminCommandEventArgs.cs" />
+    <Compile Include="ExternModule\Events\Handlers.cs" />
+    <Compile Include="Internal\Config.cs" />
+    <Compile Include="ExternModule\HLAPI.cs" />
+    <Compile Include="Internal\Extensions.cs" />
+    <Compile Include="ExternModule\Events\Patches\Generic\CustomHudPatches.cs" />
+    <Compile Include="ExternModule\Events\Patches\Generic\FixDefaultSegmentPatch.cs" />
+    <Compile Include="ExternModule\Events\Patches\Generic\OverrideSegmentPatch.cs" />
+    <Compile Include="ExternModule\Events\Patches\Generic\PreventAmbientSoundPatch.cs" />
+    <Compile Include="ExternModule\Events\Patches\Events\ServerSendingConsoleCommand.cs" />
+    <Compile Include="ExternModule\Events\Patches\Events\SendingRemoteAdminCommand.cs" />
+    <Compile Include="ExternModule\Events\Patches\Generic\AmmoExceedingLimitsPatch.cs" />
+    <Compile Include="ExternModule\Events\Patches\Events\SendingConsoleCommand.cs" />
+    <Compile Include="Internal\Managers\RoundManager.cs" />
+    <Compile Include="Internal\RolePlus.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Internal\Managers\SpawnManager.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\.editorconfig">
+      <Link>.editorconfig</Link>
+    </None>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+    <AdditionalFiles Include="stylecop.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="0Harmony, Version=2.2.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Lib.Harmony.2.2.1\lib\net472\0Harmony.dll</HintPath>
+    </Reference>
+    <Reference Include="Assembly-CSharp-Publicized, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\EXILED.5.2.2\lib\net472\Assembly-CSharp-Publicized.dll</HintPath>
+      <SpecificVersion>False</SpecificVersion>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="CommandSystem.Core, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\EXILED.5.2.2\lib\net472\CommandSystem.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Exiled.API, Version=5.2.2.0, Culture=neutral, processorArchitecture=AMD64">
+      <HintPath>..\packages\EXILED.5.2.2\lib\net472\Exiled.API.dll</HintPath>
+    </Reference>
+    <Reference Include="Exiled.Bootstrap, Version=5.2.2.0, Culture=neutral, processorArchitecture=AMD64">
+      <HintPath>..\packages\EXILED.5.2.2\lib\net472\Exiled.Bootstrap.dll</HintPath>
+    </Reference>
+    <Reference Include="Exiled.CreditTags, Version=5.2.2.0, Culture=neutral, processorArchitecture=AMD64">
+      <HintPath>..\packages\EXILED.5.2.2\lib\net472\Exiled.CreditTags.dll</HintPath>
+    </Reference>
+    <Reference Include="Exiled.CustomItems, Version=5.2.2.0, Culture=neutral, processorArchitecture=AMD64">
+      <HintPath>..\packages\EXILED.5.2.2\lib\net472\Exiled.CustomItems.dll</HintPath>
+    </Reference>
+    <Reference Include="Exiled.CustomRoles, Version=5.2.2.0, Culture=neutral, processorArchitecture=AMD64">
+      <HintPath>..\packages\EXILED.5.2.2\lib\net472\Exiled.CustomRoles.dll</HintPath>
+    </Reference>
+    <Reference Include="Exiled.Events, Version=5.2.2.0, Culture=neutral, processorArchitecture=AMD64">
+      <HintPath>..\packages\EXILED.5.2.2\lib\net472\Exiled.Events.dll</HintPath>
+    </Reference>
+    <Reference Include="Exiled.Loader, Version=5.2.2.0, Culture=neutral, processorArchitecture=AMD64">
+      <HintPath>..\packages\EXILED.5.2.2\lib\net472\Exiled.Loader.dll</HintPath>
+    </Reference>
+    <Reference Include="Exiled.Permissions, Version=5.2.2.0, Culture=neutral, processorArchitecture=AMD64">
+      <HintPath>..\packages\EXILED.5.2.2\lib\net472\Exiled.Permissions.dll</HintPath>
+    </Reference>
+    <Reference Include="Exiled.Updater, Version=3.1.1.0, Culture=neutral, processorArchitecture=AMD64">
+      <HintPath>..\packages\EXILED.5.2.2\lib\net472\Exiled.Updater.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="NorthwoodLib, Version=1.2.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\EXILED.5.2.2\lib\net472\NorthwoodLib.dll</HintPath>
+    </Reference>
+    <Reference Include="Semver, Version=2.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Semver.2.1.0\lib\net452\Semver.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Annotations, Version=4.2.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ComponentModel.Annotations.5.0.0\lib\net461\System.ComponentModel.Annotations.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+    <Reference Include="UnityEngine.AnimationModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Defiant_Zombie.KSP.Skeleton.UnityEngine.AnimationModule.1.11.2\lib\UnityEngine.AnimationModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Defiant_Zombie.KSP.Skeleton.UnityEngine.CoreModule.1.11.2\lib\UnityEngine.CoreModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.PhysicsModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Defiant_Zombie.KSP.Skeleton.UnityEngine.PhysicsModule.1.11.2\lib\UnityEngine.PhysicsModule.dll</HintPath>
+    </Reference>
+    <Reference Include="MapEditorReborn" HintPath="$(ROLEPLUS_INTERNAL)\MapEditorReborn.dll" Private="false" />
+    <Reference Include="AmplifyBloom" HintPath="$(ROLEPLUS_INTERNAL)\AmplifyBloom.dll" Private="false" />
+    <Reference Include="Assembly-CSharp-firstpass" HintPath="$(ROLEPLUS_INTERNAL)\Assembly-CSharp-firstpass.dll" Private="false" />
+    <Reference Include="BouncyCastle.Crypto" HintPath="$(ROLEPLUS_INTERNAL)\BouncyCastle.Crypto.dll" Private="false" />
+    <Reference Include="Mirror-Publicized" HintPath="$(ROLEPLUS_INTERNAL)\Mirror-Publicized.dll" Private="false" />
+    <Reference Include="Mono.Posix" HintPath="$(ROLEPLUS_INTERNAL)\Mono.Posix.dll" Private="false" />
+    <Reference Include="UnityEngine.AudioModule" HintPath="$(ROLEPLUS_INTERNAL)\UnityEngine.AudioModule.dll" Private="false" />
+    <Reference Include="UnityEngine" HintPath="$(ROLEPLUS_INTERNAL)\UnityEngine.dll" Private="false" />
+    <Reference Include="UnityEngine" HintPath="$(ROLEPLUS_INTERNAL)\UnityEngine.dll" Private="false" />
+    <Reference Include="UnityEngine.UnityWebRequestModule" HintPath="$(ROLEPLUS_INTERNAL)\UnityEngine.UnityWebRequestModule.dll" Private="false" />
+    <Reference Include="DissonanceVoip-Publicized" HintPath="$(ROLEPLUS_INTERNAL)\DissonanceVoip-Publicized.dll" Private="false" />
+    <Reference Include="YamlDotNet, Version=9.0.0.0, Culture=neutral, PublicKeyToken=ec19458f3c15af5e, processorArchitecture=MSIL">
+      <HintPath>..\packages\YamlDotNet.9.1.4\lib\net45\YamlDotNet.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Analyzer Include="..\packages\StyleCop.Analyzers.1.1.118\analyzers\dotnet\cs\StyleCop.Analyzers.CodeFixes.dll" />
+    <Analyzer Include="..\packages\StyleCop.Analyzers.1.1.118\analyzers\dotnet\cs\StyleCop.Analyzers.dll" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
