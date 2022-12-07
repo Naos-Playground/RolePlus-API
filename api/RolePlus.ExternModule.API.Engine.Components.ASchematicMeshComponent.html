@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Class ASchematicMeshComponent
    | RolePlus Docs ">
-    <meta name="generator" content="docfx 2.59.2.0">
+    <meta name="generator" content="docfx 2.59.4.0">
     
     <link rel="shortcut icon" href="../favicon.ico">
     <link rel="stylesheet" href="../styles/docfx.vendor.css">
@@ -98,7 +98,7 @@
       <div class="level6"><a class="xref" href="RolePlus.ExternModule.API.Features.CustomSkins.CharacterMeshComponent.html">CharacterMeshComponent</a></div>
       <div class="level6"><a class="xref" href="RolePlus.ExternModule.API.Features.CustomSkins.ItemMeshComponent.html">ItemMeshComponent</a></div>
   </div>
-  <div classs="implements">
+  <div class="implements">
     <h5>Implements</h5>
     <div><a class="xref" href="RolePlus.ExternModule.API.Engine.Framework.Interfaces.IAnimatorNative.html">IAnimatorNative</a></div>
   </div>
@@ -288,6 +288,9 @@
       <a class="xref" href="RolePlus.ExternModule.API.Engine.Core.UObject.html#RolePlus_ExternModule_API_Engine_Core_UObject_FindMostAppropriateEntry__1_System_String_System_Collections_Generic_IEnumerable___0__">UObject.FindMostAppropriateEntry&lt;T&gt;(String, IEnumerable&lt;T&gt;)</a>
     </div>
     <div>
+      <a class="xref" href="RolePlus.ExternModule.API.Engine.Core.UObject.html#RolePlus_ExternModule_API_Engine_Core_UObject_FindMostAppropriateEntry__1_System_String_System_Collections_Generic_IEnumerable_System_String__">UObject.FindMostAppropriateEntry&lt;T&gt;(String, IEnumerable&lt;String&gt;)</a>
+    </div>
+    <div>
       <a class="xref" href="RolePlus.ExternModule.API.Engine.Core.UObject.html#RolePlus_ExternModule_API_Engine_Core_UObject_Destroy">UObject.Destroy()</a>
     </div>
     <div>
@@ -419,13 +422,61 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/TeslaITStudios/RolePlus/new/dev/apiSpec/new?filename=RolePlus_ExternModule_API_Engine_Components_ASchematicMeshComponent__ctor_RolePlus_ExternModule_API_Engine_Framework_Structs_FTransform_SchematicObject_Vector3_Vector3_Quaternion_.md&amp;value=---%0Auid%3A%20RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.%23ctor(RolePlus.ExternModule.API.Engine.Framework.Structs.FTransform%2CSchematicObject%2CVector3%2CVector3%2CQuaternion)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/TeslaITStudios/RolePlus/new/dev/apiSpec/new?filename=RolePlus_ExternModule_API_Engine_Components_ASchematicMeshComponent__ctor_MapEditorReborn_API_Features_Objects_SchematicObject_Vector3_Vector3_Quaternion_.md&amp;value=---%0Auid%3A%20RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.%23ctor(MapEditorReborn.API.Features.Objects.SchematicObject%2CVector3%2CVector3%2CQuaternion)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/TeslaITStudios/RolePlus/blob/master/RolePlus/ExternModule/API/Engine/Components/ASchematicMeshComponent.cs/#L68">View Source</a>
+  </span>
+  <a id="RolePlus_ExternModule_API_Engine_Components_ASchematicMeshComponent__ctor_" data-uid="RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.#ctor*"></a>
+  <h4 id="RolePlus_ExternModule_API_Engine_Components_ASchematicMeshComponent__ctor_MapEditorReborn_API_Features_Objects_SchematicObject_Vector3_Vector3_Quaternion_" data-uid="RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.#ctor(MapEditorReborn.API.Features.Objects.SchematicObject,Vector3,Vector3,Quaternion)">ASchematicMeshComponent(SchematicObject, Vector3, Vector3, Quaternion)</h4>
+  <div class="markdown level1 summary"><p>Initializes a new instance of the <a class="xref" href="RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.html">ASchematicMeshComponent</a> class.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected ASchematicMeshComponent(SchematicObject mesh, Vector3 scale, Vector3 position, Quaternion rotation)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">MapEditorReborn.API.Features.Objects.SchematicObject</span></td>
+        <td><span class="parametername">mesh</span></td>
+        <td><inheritdoc cref="P:RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.RootSchematic"></inheritdoc></td>
+      </tr>
+      <tr>
+        <td><span class="xref">Vector3</span></td>
+        <td><span class="parametername">scale</span></td>
+        <td><inheritdoc cref="P:RolePlus.ExternModule.API.Engine.Framework.AActor.Scale"></inheritdoc></td>
+      </tr>
+      <tr>
+        <td><span class="xref">Vector3</span></td>
+        <td><span class="parametername">position</span></td>
+        <td><inheritdoc cref="P:RolePlus.ExternModule.API.Engine.Framework.AActor.Position"></inheritdoc></td>
+      </tr>
+      <tr>
+        <td><span class="xref">Quaternion</span></td>
+        <td><span class="parametername">rotation</span></td>
+        <td><inheritdoc cref="P:RolePlus.ExternModule.API.Engine.Framework.AActor.Rotation"></inheritdoc></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/TeslaITStudios/RolePlus/new/dev/apiSpec/new?filename=RolePlus_ExternModule_API_Engine_Components_ASchematicMeshComponent__ctor_RolePlus_ExternModule_API_Engine_Framework_Structs_FTransform_MapEditorReborn_API_Features_Objects_SchematicObject_Vector3_Vector3_Quaternion_.md&amp;value=---%0Auid%3A%20RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.%23ctor(RolePlus.ExternModule.API.Engine.Framework.Structs.FTransform%2CMapEditorReborn.API.Features.Objects.SchematicObject%2CVector3%2CVector3%2CQuaternion)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/TeslaITStudios/RolePlus/blob/master/RolePlus/ExternModule/API/Engine/Components/ASchematicMeshComponent.cs/#L102">View Source</a>
   </span>
   <a id="RolePlus_ExternModule_API_Engine_Components_ASchematicMeshComponent__ctor_" data-uid="RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.#ctor*"></a>
-  <h4 id="RolePlus_ExternModule_API_Engine_Components_ASchematicMeshComponent__ctor_RolePlus_ExternModule_API_Engine_Framework_Structs_FTransform_SchematicObject_Vector3_Vector3_Quaternion_" data-uid="RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.#ctor(RolePlus.ExternModule.API.Engine.Framework.Structs.FTransform,SchematicObject,Vector3,Vector3,Quaternion)">ASchematicMeshComponent(FTransform, SchematicObject, Vector3, Vector3, Quaternion)</h4>
+  <h4 id="RolePlus_ExternModule_API_Engine_Components_ASchematicMeshComponent__ctor_RolePlus_ExternModule_API_Engine_Framework_Structs_FTransform_MapEditorReborn_API_Features_Objects_SchematicObject_Vector3_Vector3_Quaternion_" data-uid="RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.#ctor(RolePlus.ExternModule.API.Engine.Framework.Structs.FTransform,MapEditorReborn.API.Features.Objects.SchematicObject,Vector3,Vector3,Quaternion)">ASchematicMeshComponent(FTransform, SchematicObject, Vector3, Vector3, Quaternion)</h4>
   <div class="markdown level1 summary"><p>Initializes a new instance of the <a class="xref" href="RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.html">ASchematicMeshComponent</a> class.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
@@ -449,55 +500,7 @@
         <td><inheritdoc cref="P:RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.Socket"></inheritdoc></td>
       </tr>
       <tr>
-        <td><span class="xref">SchematicObject</span></td>
-        <td><span class="parametername">mesh</span></td>
-        <td><inheritdoc cref="P:RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.RootSchematic"></inheritdoc></td>
-      </tr>
-      <tr>
-        <td><span class="xref">Vector3</span></td>
-        <td><span class="parametername">scale</span></td>
-        <td><inheritdoc cref="P:RolePlus.ExternModule.API.Engine.Framework.AActor.Scale"></inheritdoc></td>
-      </tr>
-      <tr>
-        <td><span class="xref">Vector3</span></td>
-        <td><span class="parametername">position</span></td>
-        <td><inheritdoc cref="P:RolePlus.ExternModule.API.Engine.Framework.AActor.Position"></inheritdoc></td>
-      </tr>
-      <tr>
-        <td><span class="xref">Quaternion</span></td>
-        <td><span class="parametername">rotation</span></td>
-        <td><inheritdoc cref="P:RolePlus.ExternModule.API.Engine.Framework.AActor.Rotation"></inheritdoc></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/TeslaITStudios/RolePlus/new/dev/apiSpec/new?filename=RolePlus_ExternModule_API_Engine_Components_ASchematicMeshComponent__ctor_SchematicObject_Vector3_Vector3_Quaternion_.md&amp;value=---%0Auid%3A%20RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.%23ctor(SchematicObject%2CVector3%2CVector3%2CQuaternion)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/TeslaITStudios/RolePlus/blob/master/RolePlus/ExternModule/API/Engine/Components/ASchematicMeshComponent.cs/#L68">View Source</a>
-  </span>
-  <a id="RolePlus_ExternModule_API_Engine_Components_ASchematicMeshComponent__ctor_" data-uid="RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.#ctor*"></a>
-  <h4 id="RolePlus_ExternModule_API_Engine_Components_ASchematicMeshComponent__ctor_SchematicObject_Vector3_Vector3_Quaternion_" data-uid="RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.#ctor(SchematicObject,Vector3,Vector3,Quaternion)">ASchematicMeshComponent(SchematicObject, Vector3, Vector3, Quaternion)</h4>
-  <div class="markdown level1 summary"><p>Initializes a new instance of the <a class="xref" href="RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.html">ASchematicMeshComponent</a> class.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">protected ASchematicMeshComponent(SchematicObject mesh, Vector3 scale, Vector3 position, Quaternion rotation)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">SchematicObject</span></td>
+        <td><span class="xref">MapEditorReborn.API.Features.Objects.SchematicObject</span></td>
         <td><span class="parametername">mesh</span></td>
         <td><inheritdoc cref="P:RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.RootSchematic"></inheritdoc></td>
       </tr>
@@ -568,13 +571,66 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/TeslaITStudios/RolePlus/new/dev/apiSpec/new?filename=RolePlus_ExternModule_API_Engine_Components_ASchematicMeshComponent__ctor_Vector3_Quaternion_SchematicObject_Vector3_Vector3_Quaternion_.md&amp;value=---%0Auid%3A%20RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.%23ctor(Vector3%2CQuaternion%2CSchematicObject%2CVector3%2CVector3%2CQuaternion)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/TeslaITStudios/RolePlus/new/dev/apiSpec/new?filename=RolePlus_ExternModule_API_Engine_Components_ASchematicMeshComponent__ctor_Vector3_MapEditorReborn_API_Features_Objects_SchematicObject_Vector3_Vector3_Quaternion_.md&amp;value=---%0Auid%3A%20RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.%23ctor(Vector3%2CMapEditorReborn.API.Features.Objects.SchematicObject%2CVector3%2CVector3%2CQuaternion)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/TeslaITStudios/RolePlus/blob/master/RolePlus/ExternModule/API/Engine/Components/ASchematicMeshComponent.cs/#L119">View Source</a>
+  </span>
+  <a id="RolePlus_ExternModule_API_Engine_Components_ASchematicMeshComponent__ctor_" data-uid="RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.#ctor*"></a>
+  <h4 id="RolePlus_ExternModule_API_Engine_Components_ASchematicMeshComponent__ctor_Vector3_MapEditorReborn_API_Features_Objects_SchematicObject_Vector3_Vector3_Quaternion_" data-uid="RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.#ctor(Vector3,MapEditorReborn.API.Features.Objects.SchematicObject,Vector3,Vector3,Quaternion)">ASchematicMeshComponent(Vector3, SchematicObject, Vector3, Vector3, Quaternion)</h4>
+  <div class="markdown level1 summary"><p>Initializes a new instance of the <a class="xref" href="RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.html">ASchematicMeshComponent</a> class.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected ASchematicMeshComponent(Vector3 localPosition, SchematicObject mesh, Vector3 scale, Vector3 position, Quaternion rotation)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Vector3</span></td>
+        <td><span class="parametername">localPosition</span></td>
+        <td><inheritdoc cref="P:RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.Socket"></inheritdoc></td>
+      </tr>
+      <tr>
+        <td><span class="xref">MapEditorReborn.API.Features.Objects.SchematicObject</span></td>
+        <td><span class="parametername">mesh</span></td>
+        <td><inheritdoc cref="P:RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.RootSchematic"></inheritdoc></td>
+      </tr>
+      <tr>
+        <td><span class="xref">Vector3</span></td>
+        <td><span class="parametername">scale</span></td>
+        <td><inheritdoc cref="P:RolePlus.ExternModule.API.Engine.Framework.AActor.Scale"></inheritdoc></td>
+      </tr>
+      <tr>
+        <td><span class="xref">Vector3</span></td>
+        <td><span class="parametername">position</span></td>
+        <td><inheritdoc cref="P:RolePlus.ExternModule.API.Engine.Framework.AActor.Position"></inheritdoc></td>
+      </tr>
+      <tr>
+        <td><span class="xref">Quaternion</span></td>
+        <td><span class="parametername">rotation</span></td>
+        <td><inheritdoc cref="P:RolePlus.ExternModule.API.Engine.Framework.AActor.Rotation"></inheritdoc></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/TeslaITStudios/RolePlus/new/dev/apiSpec/new?filename=RolePlus_ExternModule_API_Engine_Components_ASchematicMeshComponent__ctor_Vector3_Quaternion_MapEditorReborn_API_Features_Objects_SchematicObject_Vector3_Vector3_Quaternion_.md&amp;value=---%0Auid%3A%20RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.%23ctor(Vector3%2CQuaternion%2CMapEditorReborn.API.Features.Objects.SchematicObject%2CVector3%2CVector3%2CQuaternion)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/TeslaITStudios/RolePlus/blob/master/RolePlus/ExternModule/API/Engine/Components/ASchematicMeshComponent.cs/#L137">View Source</a>
   </span>
   <a id="RolePlus_ExternModule_API_Engine_Components_ASchematicMeshComponent__ctor_" data-uid="RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.#ctor*"></a>
-  <h4 id="RolePlus_ExternModule_API_Engine_Components_ASchematicMeshComponent__ctor_Vector3_Quaternion_SchematicObject_Vector3_Vector3_Quaternion_" data-uid="RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.#ctor(Vector3,Quaternion,SchematicObject,Vector3,Vector3,Quaternion)">ASchematicMeshComponent(Vector3, Quaternion, SchematicObject, Vector3, Vector3, Quaternion)</h4>
+  <h4 id="RolePlus_ExternModule_API_Engine_Components_ASchematicMeshComponent__ctor_Vector3_Quaternion_MapEditorReborn_API_Features_Objects_SchematicObject_Vector3_Vector3_Quaternion_" data-uid="RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.#ctor(Vector3,Quaternion,MapEditorReborn.API.Features.Objects.SchematicObject,Vector3,Vector3,Quaternion)">ASchematicMeshComponent(Vector3, Quaternion, SchematicObject, Vector3, Vector3, Quaternion)</h4>
   <div class="markdown level1 summary"><p>Initializes a new instance of the <a class="xref" href="RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.html">ASchematicMeshComponent</a> class.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
@@ -603,7 +659,7 @@
         <td><inheritdoc cref="P:RolePlus.ExternModule.API.Engine.Framework.Structs.FTransform.Rotation"></inheritdoc></td>
       </tr>
       <tr>
-        <td><span class="xref">SchematicObject</span></td>
+        <td><span class="xref">MapEditorReborn.API.Features.Objects.SchematicObject</span></td>
         <td><span class="parametername">mesh</span></td>
         <td><inheritdoc cref="P:RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.RootSchematic"></inheritdoc></td>
       </tr>
@@ -626,13 +682,13 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/TeslaITStudios/RolePlus/new/dev/apiSpec/new?filename=RolePlus_ExternModule_API_Engine_Components_ASchematicMeshComponent__ctor_Vector3_Quaternion_Vector3_SchematicObject_Vector3_Vector3_Quaternion_.md&amp;value=---%0Auid%3A%20RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.%23ctor(Vector3%2CQuaternion%2CVector3%2CSchematicObject%2CVector3%2CVector3%2CQuaternion)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/TeslaITStudios/RolePlus/new/dev/apiSpec/new?filename=RolePlus_ExternModule_API_Engine_Components_ASchematicMeshComponent__ctor_Vector3_Quaternion_Vector3_MapEditorReborn_API_Features_Objects_SchematicObject_Vector3_Vector3_Quaternion_.md&amp;value=---%0Auid%3A%20RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.%23ctor(Vector3%2CQuaternion%2CVector3%2CMapEditorReborn.API.Features.Objects.SchematicObject%2CVector3%2CVector3%2CQuaternion)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/TeslaITStudios/RolePlus/blob/master/RolePlus/ExternModule/API/Engine/Components/ASchematicMeshComponent.cs/#L157">View Source</a>
   </span>
   <a id="RolePlus_ExternModule_API_Engine_Components_ASchematicMeshComponent__ctor_" data-uid="RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.#ctor*"></a>
-  <h4 id="RolePlus_ExternModule_API_Engine_Components_ASchematicMeshComponent__ctor_Vector3_Quaternion_Vector3_SchematicObject_Vector3_Vector3_Quaternion_" data-uid="RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.#ctor(Vector3,Quaternion,Vector3,SchematicObject,Vector3,Vector3,Quaternion)">ASchematicMeshComponent(Vector3, Quaternion, Vector3, SchematicObject, Vector3, Vector3, Quaternion)</h4>
+  <h4 id="RolePlus_ExternModule_API_Engine_Components_ASchematicMeshComponent__ctor_Vector3_Quaternion_Vector3_MapEditorReborn_API_Features_Objects_SchematicObject_Vector3_Vector3_Quaternion_" data-uid="RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.#ctor(Vector3,Quaternion,Vector3,MapEditorReborn.API.Features.Objects.SchematicObject,Vector3,Vector3,Quaternion)">ASchematicMeshComponent(Vector3, Quaternion, Vector3, SchematicObject, Vector3, Vector3, Quaternion)</h4>
   <div class="markdown level1 summary"><p>Initializes a new instance of the <a class="xref" href="RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.html">ASchematicMeshComponent</a> class.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
@@ -666,60 +722,7 @@
         <td><inheritdoc cref="P:RolePlus.ExternModule.API.Engine.Framework.Structs.FTransform.Scale"></inheritdoc></td>
       </tr>
       <tr>
-        <td><span class="xref">SchematicObject</span></td>
-        <td><span class="parametername">mesh</span></td>
-        <td><inheritdoc cref="P:RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.RootSchematic"></inheritdoc></td>
-      </tr>
-      <tr>
-        <td><span class="xref">Vector3</span></td>
-        <td><span class="parametername">scale</span></td>
-        <td><inheritdoc cref="P:RolePlus.ExternModule.API.Engine.Framework.AActor.Scale"></inheritdoc></td>
-      </tr>
-      <tr>
-        <td><span class="xref">Vector3</span></td>
-        <td><span class="parametername">position</span></td>
-        <td><inheritdoc cref="P:RolePlus.ExternModule.API.Engine.Framework.AActor.Position"></inheritdoc></td>
-      </tr>
-      <tr>
-        <td><span class="xref">Quaternion</span></td>
-        <td><span class="parametername">rotation</span></td>
-        <td><inheritdoc cref="P:RolePlus.ExternModule.API.Engine.Framework.AActor.Rotation"></inheritdoc></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/TeslaITStudios/RolePlus/new/dev/apiSpec/new?filename=RolePlus_ExternModule_API_Engine_Components_ASchematicMeshComponent__ctor_Vector3_SchematicObject_Vector3_Vector3_Quaternion_.md&amp;value=---%0Auid%3A%20RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.%23ctor(Vector3%2CSchematicObject%2CVector3%2CVector3%2CQuaternion)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/TeslaITStudios/RolePlus/blob/master/RolePlus/ExternModule/API/Engine/Components/ASchematicMeshComponent.cs/#L119">View Source</a>
-  </span>
-  <a id="RolePlus_ExternModule_API_Engine_Components_ASchematicMeshComponent__ctor_" data-uid="RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.#ctor*"></a>
-  <h4 id="RolePlus_ExternModule_API_Engine_Components_ASchematicMeshComponent__ctor_Vector3_SchematicObject_Vector3_Vector3_Quaternion_" data-uid="RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.#ctor(Vector3,SchematicObject,Vector3,Vector3,Quaternion)">ASchematicMeshComponent(Vector3, SchematicObject, Vector3, Vector3, Quaternion)</h4>
-  <div class="markdown level1 summary"><p>Initializes a new instance of the <a class="xref" href="RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.html">ASchematicMeshComponent</a> class.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">protected ASchematicMeshComponent(Vector3 localPosition, SchematicObject mesh, Vector3 scale, Vector3 position, Quaternion rotation)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">Vector3</span></td>
-        <td><span class="parametername">localPosition</span></td>
-        <td><inheritdoc cref="P:RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.Socket"></inheritdoc></td>
-      </tr>
-      <tr>
-        <td><span class="xref">SchematicObject</span></td>
+        <td><span class="xref">MapEditorReborn.API.Features.Objects.SchematicObject</span></td>
         <td><span class="parametername">mesh</span></td>
         <td><inheritdoc cref="P:RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.RootSchematic"></inheritdoc></td>
       </tr>
@@ -925,7 +928,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">SchematicObject</span></td>
+        <td><span class="xref">MapEditorReborn.API.Features.Objects.SchematicObject</span></td>
         <td></td>
       </tr>
     </tbody>
@@ -1029,13 +1032,13 @@
   </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/TeslaITStudios/RolePlus/new/dev/apiSpec/new?filename=RolePlus_ExternModule_API_Engine_Components_ASchematicMeshComponent_Create_SchematicObject_Vector3_Vector3_Quaternion_.md&amp;value=---%0Auid%3A%20RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.Create(SchematicObject%2CVector3%2CVector3%2CQuaternion)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/TeslaITStudios/RolePlus/new/dev/apiSpec/new?filename=RolePlus_ExternModule_API_Engine_Components_ASchematicMeshComponent_Create_MapEditorReborn_API_Features_Objects_SchematicObject_Vector3_Vector3_Quaternion_.md&amp;value=---%0Auid%3A%20RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.Create(MapEditorReborn.API.Features.Objects.SchematicObject%2CVector3%2CVector3%2CQuaternion)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/TeslaITStudios/RolePlus/blob/master/RolePlus/ExternModule/API/Engine/Components/ASchematicMeshComponent.cs/#L623">View Source</a>
+    <a href="https://github.com/TeslaITStudios/RolePlus/blob/master/RolePlus/ExternModule/API/Engine/Components/ASchematicMeshComponent.cs/#L643">View Source</a>
   </span>
   <a id="RolePlus_ExternModule_API_Engine_Components_ASchematicMeshComponent_Create_" data-uid="RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.Create*"></a>
-  <h4 id="RolePlus_ExternModule_API_Engine_Components_ASchematicMeshComponent_Create_SchematicObject_Vector3_Vector3_Quaternion_" data-uid="RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.Create(SchematicObject,Vector3,Vector3,Quaternion)">Create(SchematicObject, Vector3, Vector3, Quaternion)</h4>
+  <h4 id="RolePlus_ExternModule_API_Engine_Components_ASchematicMeshComponent_Create_MapEditorReborn_API_Features_Objects_SchematicObject_Vector3_Vector3_Quaternion_" data-uid="RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.Create(MapEditorReborn.API.Features.Objects.SchematicObject,Vector3,Vector3,Quaternion)">Create(SchematicObject, Vector3, Vector3, Quaternion)</h4>
   <div class="markdown level1 summary"><p>Creates a new instance of the <a class="xref" href="RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.html">ASchematicMeshComponent</a> class.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
@@ -1054,7 +1057,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">SchematicObject</span></td>
+        <td><span class="xref">MapEditorReborn.API.Features.Objects.SchematicObject</span></td>
         <td><span class="parametername">mesh</span></td>
         <td><inheritdoc cref="P:RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.RootSchematic"></inheritdoc></td>
       </tr>
@@ -1192,7 +1195,7 @@
     <a href="https://github.com/TeslaITStudios/RolePlus/new/dev/apiSpec/new?filename=RolePlus_ExternModule_API_Engine_Components_ASchematicMeshComponent_FindClosestFrameOfType__1.md&amp;value=---%0Auid%3A%20RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.FindClosestFrameOfType%60%601%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/TeslaITStudios/RolePlus/blob/master/RolePlus/ExternModule/API/Engine/Components/ASchematicMeshComponent.cs/#L734">View Source</a>
+    <a href="https://github.com/TeslaITStudios/RolePlus/blob/master/RolePlus/ExternModule/API/Engine/Components/ASchematicMeshComponent.cs/#L754">View Source</a>
   </span>
   <a id="RolePlus_ExternModule_API_Engine_Components_ASchematicMeshComponent_FindClosestFrameOfType_" data-uid="RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.FindClosestFrameOfType*"></a>
   <h4 id="RolePlus_ExternModule_API_Engine_Components_ASchematicMeshComponent_FindClosestFrameOfType__1" data-uid="RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.FindClosestFrameOfType``1">FindClosestFrameOfType&lt;T&gt;()</h4>
@@ -1384,7 +1387,7 @@
     <a href="https://github.com/TeslaITStudios/RolePlus/new/dev/apiSpec/new?filename=RolePlus_ExternModule_API_Engine_Components_ASchematicMeshComponent_FindClosestFramesOfType__1___0_System_UInt32_.md&amp;value=---%0Auid%3A%20RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.FindClosestFramesOfType%60%601(%60%600%2CSystem.UInt32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/TeslaITStudios/RolePlus/blob/master/RolePlus/ExternModule/API/Engine/Components/ASchematicMeshComponent.cs/#L536">View Source</a>
+    <a href="https://github.com/TeslaITStudios/RolePlus/blob/master/RolePlus/ExternModule/API/Engine/Components/ASchematicMeshComponent.cs/#L556">View Source</a>
   </span>
   <a id="RolePlus_ExternModule_API_Engine_Components_ASchematicMeshComponent_FindClosestFramesOfType_" data-uid="RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.FindClosestFramesOfType*"></a>
   <h4 id="RolePlus_ExternModule_API_Engine_Components_ASchematicMeshComponent_FindClosestFramesOfType__1___0_System_UInt32_" data-uid="RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.FindClosestFramesOfType``1(``0,System.UInt32)">FindClosestFramesOfType&lt;T&gt;(T, UInt32)</h4>
@@ -1458,7 +1461,7 @@
     <a href="https://github.com/TeslaITStudios/RolePlus/new/dev/apiSpec/new?filename=RolePlus_ExternModule_API_Engine_Components_ASchematicMeshComponent_FindClosestFramesOfType__1_System_UInt32_.md&amp;value=---%0Auid%3A%20RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.FindClosestFramesOfType%60%601(System.UInt32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/TeslaITStudios/RolePlus/blob/master/RolePlus/ExternModule/API/Engine/Components/ASchematicMeshComponent.cs/#L709">View Source</a>
+    <a href="https://github.com/TeslaITStudios/RolePlus/blob/master/RolePlus/ExternModule/API/Engine/Components/ASchematicMeshComponent.cs/#L729">View Source</a>
   </span>
   <a id="RolePlus_ExternModule_API_Engine_Components_ASchematicMeshComponent_FindClosestFramesOfType_" data-uid="RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.FindClosestFramesOfType*"></a>
   <h4 id="RolePlus_ExternModule_API_Engine_Components_ASchematicMeshComponent_FindClosestFramesOfType__1_System_UInt32_" data-uid="RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.FindClosestFramesOfType``1(System.UInt32)">FindClosestFramesOfType&lt;T&gt;(UInt32)</h4>
@@ -1526,7 +1529,7 @@
     <a href="https://github.com/TeslaITStudios/RolePlus/new/dev/apiSpec/new?filename=RolePlus_ExternModule_API_Engine_Components_ASchematicMeshComponent_FindClosestFramesOfType__1_Vector3_System_Collections_Generic_IEnumerable_Pickup__System_UInt32_.md&amp;value=---%0Auid%3A%20RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.FindClosestFramesOfType%60%601(Vector3%2CSystem.Collections.Generic.IEnumerable%7BPickup%7D%2CSystem.UInt32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/TeslaITStudios/RolePlus/blob/master/RolePlus/ExternModule/API/Engine/Components/ASchematicMeshComponent.cs/#L481">View Source</a>
+    <a href="https://github.com/TeslaITStudios/RolePlus/blob/master/RolePlus/ExternModule/API/Engine/Components/ASchematicMeshComponent.cs/#L501">View Source</a>
   </span>
   <a id="RolePlus_ExternModule_API_Engine_Components_ASchematicMeshComponent_FindClosestFramesOfType_" data-uid="RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.FindClosestFramesOfType*"></a>
   <h4 id="RolePlus_ExternModule_API_Engine_Components_ASchematicMeshComponent_FindClosestFramesOfType__1_Vector3_System_Collections_Generic_IEnumerable_Pickup__System_UInt32_" data-uid="RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.FindClosestFramesOfType``1(Vector3,System.Collections.Generic.IEnumerable{Pickup},System.UInt32)">FindClosestFramesOfType&lt;T&gt;(Vector3, IEnumerable&lt;Pickup&gt;, UInt32)</h4>
@@ -1606,7 +1609,7 @@
     <a href="https://github.com/TeslaITStudios/RolePlus/new/dev/apiSpec/new?filename=RolePlus_ExternModule_API_Engine_Components_ASchematicMeshComponent_FindClosestFramesWithTagOfType__1_Vector3_System_String_System_Collections_Generic_IEnumerable_Pickup__System_UInt32_.md&amp;value=---%0Auid%3A%20RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.FindClosestFramesWithTagOfType%60%601(Vector3%2CSystem.String%2CSystem.Collections.Generic.IEnumerable%7BPickup%7D%2CSystem.UInt32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/TeslaITStudios/RolePlus/blob/master/RolePlus/ExternModule/API/Engine/Components/ASchematicMeshComponent.cs/#L586">View Source</a>
+    <a href="https://github.com/TeslaITStudios/RolePlus/blob/master/RolePlus/ExternModule/API/Engine/Components/ASchematicMeshComponent.cs/#L606">View Source</a>
   </span>
   <a id="RolePlus_ExternModule_API_Engine_Components_ASchematicMeshComponent_FindClosestFramesWithTagOfType_" data-uid="RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.FindClosestFramesWithTagOfType*"></a>
   <h4 id="RolePlus_ExternModule_API_Engine_Components_ASchematicMeshComponent_FindClosestFramesWithTagOfType__1_Vector3_System_String_System_Collections_Generic_IEnumerable_Pickup__System_UInt32_" data-uid="RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.FindClosestFramesWithTagOfType``1(Vector3,System.String,System.Collections.Generic.IEnumerable{Pickup},System.UInt32)">FindClosestFramesWithTagOfType&lt;T&gt;(Vector3, String, IEnumerable&lt;Pickup&gt;, UInt32)</h4>
@@ -1692,7 +1695,7 @@
     <a href="https://github.com/TeslaITStudios/RolePlus/new/dev/apiSpec/new?filename=RolePlus_ExternModule_API_Engine_Components_ASchematicMeshComponent_FindClosestFramesWithTagOfType__1_Vector3_System_String_System_UInt32_.md&amp;value=---%0Auid%3A%20RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.FindClosestFramesWithTagOfType%60%601(Vector3%2CSystem.String%2CSystem.UInt32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/TeslaITStudios/RolePlus/blob/master/RolePlus/ExternModule/API/Engine/Components/ASchematicMeshComponent.cs/#L558">View Source</a>
+    <a href="https://github.com/TeslaITStudios/RolePlus/blob/master/RolePlus/ExternModule/API/Engine/Components/ASchematicMeshComponent.cs/#L578">View Source</a>
   </span>
   <a id="RolePlus_ExternModule_API_Engine_Components_ASchematicMeshComponent_FindClosestFramesWithTagOfType_" data-uid="RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.FindClosestFramesWithTagOfType*"></a>
   <h4 id="RolePlus_ExternModule_API_Engine_Components_ASchematicMeshComponent_FindClosestFramesWithTagOfType__1_Vector3_System_String_System_UInt32_" data-uid="RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.FindClosestFramesWithTagOfType``1(Vector3,System.String,System.UInt32)">FindClosestFramesWithTagOfType&lt;T&gt;(Vector3, String, UInt32)</h4>
@@ -1772,7 +1775,7 @@
     <a href="https://github.com/TeslaITStudios/RolePlus/new/dev/apiSpec/new?filename=RolePlus_ExternModule_API_Engine_Components_ASchematicMeshComponent_FindClosestFrameWithTagOfType__1___0_System_String_.md&amp;value=---%0Auid%3A%20RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.FindClosestFrameWithTagOfType%60%601(%60%600%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/TeslaITStudios/RolePlus/blob/master/RolePlus/ExternModule/API/Engine/Components/ASchematicMeshComponent.cs/#L444">View Source</a>
+    <a href="https://github.com/TeslaITStudios/RolePlus/blob/master/RolePlus/ExternModule/API/Engine/Components/ASchematicMeshComponent.cs/#L464">View Source</a>
   </span>
   <a id="RolePlus_ExternModule_API_Engine_Components_ASchematicMeshComponent_FindClosestFrameWithTagOfType_" data-uid="RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.FindClosestFrameWithTagOfType*"></a>
   <h4 id="RolePlus_ExternModule_API_Engine_Components_ASchematicMeshComponent_FindClosestFrameWithTagOfType__1___0_System_String_" data-uid="RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.FindClosestFrameWithTagOfType``1(``0,System.String)">FindClosestFrameWithTagOfType&lt;T&gt;(T, String)</h4>
@@ -1846,7 +1849,7 @@
     <a href="https://github.com/TeslaITStudios/RolePlus/new/dev/apiSpec/new?filename=RolePlus_ExternModule_API_Engine_Components_ASchematicMeshComponent_FindClosestFrameWithTagOfType__1_System_String_.md&amp;value=---%0Auid%3A%20RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.FindClosestFrameWithTagOfType%60%601(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/TeslaITStudios/RolePlus/blob/master/RolePlus/ExternModule/API/Engine/Components/ASchematicMeshComponent.cs/#L681">View Source</a>
+    <a href="https://github.com/TeslaITStudios/RolePlus/blob/master/RolePlus/ExternModule/API/Engine/Components/ASchematicMeshComponent.cs/#L701">View Source</a>
   </span>
   <a id="RolePlus_ExternModule_API_Engine_Components_ASchematicMeshComponent_FindClosestFrameWithTagOfType_" data-uid="RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.FindClosestFrameWithTagOfType*"></a>
   <h4 id="RolePlus_ExternModule_API_Engine_Components_ASchematicMeshComponent_FindClosestFrameWithTagOfType__1_System_String_" data-uid="RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.FindClosestFrameWithTagOfType``1(System.String)">FindClosestFrameWithTagOfType&lt;T&gt;(String)</h4>
@@ -1914,7 +1917,7 @@
     <a href="https://github.com/TeslaITStudios/RolePlus/new/dev/apiSpec/new?filename=RolePlus_ExternModule_API_Engine_Components_ASchematicMeshComponent_FindClosestFrameWithTagOfType__1_Vector3_System_String_System_Collections_Generic_IEnumerable_Pickup__.md&amp;value=---%0Auid%3A%20RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.FindClosestFrameWithTagOfType%60%601(Vector3%2CSystem.String%2CSystem.Collections.Generic.IEnumerable%7BPickup%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/TeslaITStudios/RolePlus/blob/master/RolePlus/ExternModule/API/Engine/Components/ASchematicMeshComponent.cs/#L395">View Source</a>
+    <a href="https://github.com/TeslaITStudios/RolePlus/blob/master/RolePlus/ExternModule/API/Engine/Components/ASchematicMeshComponent.cs/#L415">View Source</a>
   </span>
   <a id="RolePlus_ExternModule_API_Engine_Components_ASchematicMeshComponent_FindClosestFrameWithTagOfType_" data-uid="RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.FindClosestFrameWithTagOfType*"></a>
   <h4 id="RolePlus_ExternModule_API_Engine_Components_ASchematicMeshComponent_FindClosestFrameWithTagOfType__1_Vector3_System_String_System_Collections_Generic_IEnumerable_Pickup__" data-uid="RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.FindClosestFrameWithTagOfType``1(Vector3,System.String,System.Collections.Generic.IEnumerable{Pickup})">FindClosestFrameWithTagOfType&lt;T&gt;(Vector3, String, IEnumerable&lt;Pickup&gt;)</h4>
@@ -1994,7 +1997,7 @@
     <a href="https://github.com/TeslaITStudios/RolePlus/new/dev/apiSpec/new?filename=RolePlus_ExternModule_API_Engine_Components_ASchematicMeshComponent_FindClosestObjectOfType__1.md&amp;value=---%0Auid%3A%20RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.FindClosestObjectOfType%60%601%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/TeslaITStudios/RolePlus/blob/master/RolePlus/ExternModule/API/Engine/Components/ASchematicMeshComponent.cs/#L726">View Source</a>
+    <a href="https://github.com/TeslaITStudios/RolePlus/blob/master/RolePlus/ExternModule/API/Engine/Components/ASchematicMeshComponent.cs/#L746">View Source</a>
   </span>
   <a id="RolePlus_ExternModule_API_Engine_Components_ASchematicMeshComponent_FindClosestObjectOfType_" data-uid="RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.FindClosestObjectOfType*"></a>
   <h4 id="RolePlus_ExternModule_API_Engine_Components_ASchematicMeshComponent_FindClosestObjectOfType__1" data-uid="RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.FindClosestObjectOfType``1">FindClosestObjectOfType&lt;T&gt;()</h4>
@@ -2109,13 +2112,13 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/TeslaITStudios/RolePlus/new/dev/apiSpec/new?filename=RolePlus_ExternModule_API_Engine_Components_ASchematicMeshComponent_FindClosestObjectOfType__1_SchematicObject_.md&amp;value=---%0Auid%3A%20RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.FindClosestObjectOfType%60%601(SchematicObject)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/TeslaITStudios/RolePlus/new/dev/apiSpec/new?filename=RolePlus_ExternModule_API_Engine_Components_ASchematicMeshComponent_FindClosestObjectOfType__1_MapEditorReborn_API_Features_Objects_SchematicObject_.md&amp;value=---%0Auid%3A%20RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.FindClosestObjectOfType%60%601(MapEditorReborn.API.Features.Objects.SchematicObject)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/TeslaITStudios/RolePlus/blob/master/RolePlus/ExternModule/API/Engine/Components/ASchematicMeshComponent.cs/#L346">View Source</a>
   </span>
   <a id="RolePlus_ExternModule_API_Engine_Components_ASchematicMeshComponent_FindClosestObjectOfType_" data-uid="RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.FindClosestObjectOfType*"></a>
-  <h4 id="RolePlus_ExternModule_API_Engine_Components_ASchematicMeshComponent_FindClosestObjectOfType__1_SchematicObject_" data-uid="RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.FindClosestObjectOfType``1(SchematicObject)">FindClosestObjectOfType&lt;T&gt;(SchematicObject)</h4>
+  <h4 id="RolePlus_ExternModule_API_Engine_Components_ASchematicMeshComponent_FindClosestObjectOfType__1_MapEditorReborn_API_Features_Objects_SchematicObject_" data-uid="RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.FindClosestObjectOfType``1(MapEditorReborn.API.Features.Objects.SchematicObject)">FindClosestObjectOfType&lt;T&gt;(SchematicObject)</h4>
   <div class="markdown level1 summary"><p>Finds the <a class="xref" href="RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.html">ASchematicMeshComponent</a> instance of type <code data-dev-comment-type="typeparamref" class="typeparamref">T</code> closest to <code data-dev-comment-type="paramref" class="paramref">schematicObject</code>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
@@ -2136,9 +2139,9 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">SchematicObject</span></td>
+        <td><span class="xref">MapEditorReborn.API.Features.Objects.SchematicObject</span></td>
         <td><span class="parametername">schematicObject</span></td>
-        <td><p>The <see cref="!:SchematicObject"></see> from which looking for.</p>
+        <td><p>The <span class="xref">MapEditorReborn.API.Features.Objects.SchematicObject</span> from which looking for.</p>
 </td>
       </tr>
     </tbody>
@@ -2177,13 +2180,13 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/TeslaITStudios/RolePlus/new/dev/apiSpec/new?filename=RolePlus_ExternModule_API_Engine_Components_ASchematicMeshComponent_FindClosestObjectOfType__1_System_Collections_Generic_IEnumerable_SchematicObject__.md&amp;value=---%0Auid%3A%20RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.FindClosestObjectOfType%60%601(System.Collections.Generic.IEnumerable%7BSchematicObject%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/TeslaITStudios/RolePlus/new/dev/apiSpec/new?filename=RolePlus_ExternModule_API_Engine_Components_ASchematicMeshComponent_FindClosestObjectOfType__1_System_Collections_Generic_IEnumerable_MapEditorReborn_API_Features_Objects_SchematicObject__.md&amp;value=---%0Auid%3A%20RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.FindClosestObjectOfType%60%601(System.Collections.Generic.IEnumerable%7BMapEditorReborn.API.Features.Objects.SchematicObject%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/TeslaITStudios/RolePlus/blob/master/RolePlus/ExternModule/API/Engine/Components/ASchematicMeshComponent.cs/#L718">View Source</a>
+    <a href="https://github.com/TeslaITStudios/RolePlus/blob/master/RolePlus/ExternModule/API/Engine/Components/ASchematicMeshComponent.cs/#L738">View Source</a>
   </span>
   <a id="RolePlus_ExternModule_API_Engine_Components_ASchematicMeshComponent_FindClosestObjectOfType_" data-uid="RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.FindClosestObjectOfType*"></a>
-  <h4 id="RolePlus_ExternModule_API_Engine_Components_ASchematicMeshComponent_FindClosestObjectOfType__1_System_Collections_Generic_IEnumerable_SchematicObject__" data-uid="RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.FindClosestObjectOfType``1(System.Collections.Generic.IEnumerable{SchematicObject})">FindClosestObjectOfType&lt;T&gt;(IEnumerable&lt;SchematicObject&gt;)</h4>
+  <h4 id="RolePlus_ExternModule_API_Engine_Components_ASchematicMeshComponent_FindClosestObjectOfType__1_System_Collections_Generic_IEnumerable_MapEditorReborn_API_Features_Objects_SchematicObject__" data-uid="RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.FindClosestObjectOfType``1(System.Collections.Generic.IEnumerable{MapEditorReborn.API.Features.Objects.SchematicObject})">FindClosestObjectOfType&lt;T&gt;(IEnumerable&lt;SchematicObject&gt;)</h4>
   <div class="markdown level1 summary"><p>Finds the <a class="xref" href="RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.html">ASchematicMeshComponent</a> instance of type <code data-dev-comment-type="typeparamref" class="typeparamref">T</code> closest to this <a class="xref" href="RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.html">ASchematicMeshComponent</a> instance.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
@@ -2204,9 +2207,9 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<span class="xref">SchematicObject</span>&gt;</td>
+        <td><span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<span class="xref">MapEditorReborn.API.Features.Objects.SchematicObject</span>&gt;</td>
         <td><span class="parametername">source</span></td>
-        <td><p>The <span class="xref">System.Collections.Generic.IEnumerable&lt;T&gt;</span> of <see cref="!:SchematicObject"></see> to iterate over.</p>
+        <td><p>The <span class="xref">System.Collections.Generic.IEnumerable&lt;T&gt;</span> of <span class="xref">MapEditorReborn.API.Features.Objects.SchematicObject</span> to iterate over.</p>
 </td>
       </tr>
     </tbody>
@@ -2313,13 +2316,13 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/TeslaITStudios/RolePlus/new/dev/apiSpec/new?filename=RolePlus_ExternModule_API_Engine_Components_ASchematicMeshComponent_FindClosestObjectOfType__1_Vector3_System_Collections_Generic_IEnumerable_SchematicObject__.md&amp;value=---%0Auid%3A%20RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.FindClosestObjectOfType%60%601(Vector3%2CSystem.Collections.Generic.IEnumerable%7BSchematicObject%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/TeslaITStudios/RolePlus/new/dev/apiSpec/new?filename=RolePlus_ExternModule_API_Engine_Components_ASchematicMeshComponent_FindClosestObjectOfType__1_Vector3_System_Collections_Generic_IEnumerable_MapEditorReborn_API_Features_Objects_SchematicObject__.md&amp;value=---%0Auid%3A%20RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.FindClosestObjectOfType%60%601(Vector3%2CSystem.Collections.Generic.IEnumerable%7BMapEditorReborn.API.Features.Objects.SchematicObject%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/TeslaITStudios/RolePlus/blob/master/RolePlus/ExternModule/API/Engine/Components/ASchematicMeshComponent.cs/#L304">View Source</a>
   </span>
   <a id="RolePlus_ExternModule_API_Engine_Components_ASchematicMeshComponent_FindClosestObjectOfType_" data-uid="RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.FindClosestObjectOfType*"></a>
-  <h4 id="RolePlus_ExternModule_API_Engine_Components_ASchematicMeshComponent_FindClosestObjectOfType__1_Vector3_System_Collections_Generic_IEnumerable_SchematicObject__" data-uid="RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.FindClosestObjectOfType``1(Vector3,System.Collections.Generic.IEnumerable{SchematicObject})">FindClosestObjectOfType&lt;T&gt;(Vector3, IEnumerable&lt;SchematicObject&gt;)</h4>
+  <h4 id="RolePlus_ExternModule_API_Engine_Components_ASchematicMeshComponent_FindClosestObjectOfType__1_Vector3_System_Collections_Generic_IEnumerable_MapEditorReborn_API_Features_Objects_SchematicObject__" data-uid="RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.FindClosestObjectOfType``1(Vector3,System.Collections.Generic.IEnumerable{MapEditorReborn.API.Features.Objects.SchematicObject})">FindClosestObjectOfType&lt;T&gt;(Vector3, IEnumerable&lt;SchematicObject&gt;)</h4>
   <div class="markdown level1 summary"><p>Finds the <a class="xref" href="RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.html">ASchematicMeshComponent</a> instance of type <code data-dev-comment-type="typeparamref" class="typeparamref">T</code> closest to <code data-dev-comment-type="paramref" class="paramref">position</code>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
@@ -2346,9 +2349,9 @@
 </td>
       </tr>
       <tr>
-        <td><span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<span class="xref">SchematicObject</span>&gt;</td>
+        <td><span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<span class="xref">MapEditorReborn.API.Features.Objects.SchematicObject</span>&gt;</td>
         <td><span class="parametername">source</span></td>
-        <td><p>The <span class="xref">System.Collections.Generic.IEnumerable&lt;T&gt;</span> of <see cref="!:SchematicObject"></see> to iterate over.</p>
+        <td><p>The <span class="xref">System.Collections.Generic.IEnumerable&lt;T&gt;</span> of <span class="xref">MapEditorReborn.API.Features.Objects.SchematicObject</span> to iterate over.</p>
 </td>
       </tr>
     </tbody>
@@ -2390,7 +2393,7 @@
     <a href="https://github.com/TeslaITStudios/RolePlus/new/dev/apiSpec/new?filename=RolePlus_ExternModule_API_Engine_Components_ASchematicMeshComponent_FindClosestObjectsOfType__1___0_System_UInt32_.md&amp;value=---%0Auid%3A%20RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.FindClosestObjectsOfType%60%601(%60%600%2CSystem.UInt32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/TeslaITStudios/RolePlus/blob/master/RolePlus/ExternModule/API/Engine/Components/ASchematicMeshComponent.cs/#L526">View Source</a>
+    <a href="https://github.com/TeslaITStudios/RolePlus/blob/master/RolePlus/ExternModule/API/Engine/Components/ASchematicMeshComponent.cs/#L546">View Source</a>
   </span>
   <a id="RolePlus_ExternModule_API_Engine_Components_ASchematicMeshComponent_FindClosestObjectsOfType_" data-uid="RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.FindClosestObjectsOfType*"></a>
   <h4 id="RolePlus_ExternModule_API_Engine_Components_ASchematicMeshComponent_FindClosestObjectsOfType__1___0_System_UInt32_" data-uid="RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.FindClosestObjectsOfType``1(``0,System.UInt32)">FindClosestObjectsOfType&lt;T&gt;(T, UInt32)</h4>
@@ -2461,13 +2464,13 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/TeslaITStudios/RolePlus/new/dev/apiSpec/new?filename=RolePlus_ExternModule_API_Engine_Components_ASchematicMeshComponent_FindClosestObjectsOfType__1_SchematicObject_System_UInt32_.md&amp;value=---%0Auid%3A%20RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.FindClosestObjectsOfType%60%601(SchematicObject%2CSystem.UInt32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/TeslaITStudios/RolePlus/new/dev/apiSpec/new?filename=RolePlus_ExternModule_API_Engine_Components_ASchematicMeshComponent_FindClosestObjectsOfType__1_MapEditorReborn_API_Features_Objects_SchematicObject_System_UInt32_.md&amp;value=---%0Auid%3A%20RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.FindClosestObjectsOfType%60%601(MapEditorReborn.API.Features.Objects.SchematicObject%2CSystem.UInt32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/TeslaITStudios/RolePlus/blob/master/RolePlus/ExternModule/API/Engine/Components/ASchematicMeshComponent.cs/#L516">View Source</a>
+    <a href="https://github.com/TeslaITStudios/RolePlus/blob/master/RolePlus/ExternModule/API/Engine/Components/ASchematicMeshComponent.cs/#L536">View Source</a>
   </span>
   <a id="RolePlus_ExternModule_API_Engine_Components_ASchematicMeshComponent_FindClosestObjectsOfType_" data-uid="RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.FindClosestObjectsOfType*"></a>
-  <h4 id="RolePlus_ExternModule_API_Engine_Components_ASchematicMeshComponent_FindClosestObjectsOfType__1_SchematicObject_System_UInt32_" data-uid="RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.FindClosestObjectsOfType``1(SchematicObject,System.UInt32)">FindClosestObjectsOfType&lt;T&gt;(SchematicObject, UInt32)</h4>
+  <h4 id="RolePlus_ExternModule_API_Engine_Components_ASchematicMeshComponent_FindClosestObjectsOfType__1_MapEditorReborn_API_Features_Objects_SchematicObject_System_UInt32_" data-uid="RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.FindClosestObjectsOfType``1(MapEditorReborn.API.Features.Objects.SchematicObject,System.UInt32)">FindClosestObjectsOfType&lt;T&gt;(SchematicObject, UInt32)</h4>
   <div class="markdown level1 summary"><p>Finds a fixed amount of all the <a class="xref" href="RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.html">ASchematicMeshComponent</a> instances of type <code data-dev-comment-type="typeparamref" class="typeparamref">T</code> closest to <code data-dev-comment-type="paramref" class="paramref">schematicObject</code>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
@@ -2488,9 +2491,9 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">SchematicObject</span></td>
+        <td><span class="xref">MapEditorReborn.API.Features.Objects.SchematicObject</span></td>
         <td><span class="parametername">schematicObject</span></td>
-        <td><p>The <see cref="!:SchematicObject"></see> from which looking for.</p>
+        <td><p>The <span class="xref">MapEditorReborn.API.Features.Objects.SchematicObject</span> from which looking for.</p>
 </td>
       </tr>
       <tr>
@@ -2535,13 +2538,13 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/TeslaITStudios/RolePlus/new/dev/apiSpec/new?filename=RolePlus_ExternModule_API_Engine_Components_ASchematicMeshComponent_FindClosestObjectsOfType__1_System_Collections_Generic_IEnumerable_SchematicObject__System_UInt32_.md&amp;value=---%0Auid%3A%20RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.FindClosestObjectsOfType%60%601(System.Collections.Generic.IEnumerable%7BSchematicObject%7D%2CSystem.UInt32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/TeslaITStudios/RolePlus/new/dev/apiSpec/new?filename=RolePlus_ExternModule_API_Engine_Components_ASchematicMeshComponent_FindClosestObjectsOfType__1_System_Collections_Generic_IEnumerable_MapEditorReborn_API_Features_Objects_SchematicObject__System_UInt32_.md&amp;value=---%0Auid%3A%20RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.FindClosestObjectsOfType%60%601(System.Collections.Generic.IEnumerable%7BMapEditorReborn.API.Features.Objects.SchematicObject%7D%2CSystem.UInt32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/TeslaITStudios/RolePlus/blob/master/RolePlus/ExternModule/API/Engine/Components/ASchematicMeshComponent.cs/#L691">View Source</a>
+    <a href="https://github.com/TeslaITStudios/RolePlus/blob/master/RolePlus/ExternModule/API/Engine/Components/ASchematicMeshComponent.cs/#L711">View Source</a>
   </span>
   <a id="RolePlus_ExternModule_API_Engine_Components_ASchematicMeshComponent_FindClosestObjectsOfType_" data-uid="RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.FindClosestObjectsOfType*"></a>
-  <h4 id="RolePlus_ExternModule_API_Engine_Components_ASchematicMeshComponent_FindClosestObjectsOfType__1_System_Collections_Generic_IEnumerable_SchematicObject__System_UInt32_" data-uid="RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.FindClosestObjectsOfType``1(System.Collections.Generic.IEnumerable{SchematicObject},System.UInt32)">FindClosestObjectsOfType&lt;T&gt;(IEnumerable&lt;SchematicObject&gt;, UInt32)</h4>
+  <h4 id="RolePlus_ExternModule_API_Engine_Components_ASchematicMeshComponent_FindClosestObjectsOfType__1_System_Collections_Generic_IEnumerable_MapEditorReborn_API_Features_Objects_SchematicObject__System_UInt32_" data-uid="RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.FindClosestObjectsOfType``1(System.Collections.Generic.IEnumerable{MapEditorReborn.API.Features.Objects.SchematicObject},System.UInt32)">FindClosestObjectsOfType&lt;T&gt;(IEnumerable&lt;SchematicObject&gt;, UInt32)</h4>
   <div class="markdown level1 summary"><p>Finds a fixed amount of all the <a class="xref" href="RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.html">ASchematicMeshComponent</a> instances of type <code data-dev-comment-type="typeparamref" class="typeparamref">T</code> closest to this <a class="xref" href="RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.html">ASchematicMeshComponent</a> instance.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
@@ -2562,9 +2565,9 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<span class="xref">SchematicObject</span>&gt;</td>
+        <td><span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<span class="xref">MapEditorReborn.API.Features.Objects.SchematicObject</span>&gt;</td>
         <td><span class="parametername">source</span></td>
-        <td><p>The <span class="xref">System.Collections.Generic.IEnumerable&lt;T&gt;</span> of <see cref="!:SchematicObject"></see> to iterate over.</p>
+        <td><p>The <span class="xref">System.Collections.Generic.IEnumerable&lt;T&gt;</span> of <span class="xref">MapEditorReborn.API.Features.Objects.SchematicObject</span> to iterate over.</p>
 </td>
       </tr>
       <tr>
@@ -2612,7 +2615,7 @@
     <a href="https://github.com/TeslaITStudios/RolePlus/new/dev/apiSpec/new?filename=RolePlus_ExternModule_API_Engine_Components_ASchematicMeshComponent_FindClosestObjectsOfType__1_System_UInt32_.md&amp;value=---%0Auid%3A%20RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.FindClosestObjectsOfType%60%601(System.UInt32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/TeslaITStudios/RolePlus/blob/master/RolePlus/ExternModule/API/Engine/Components/ASchematicMeshComponent.cs/#L700">View Source</a>
+    <a href="https://github.com/TeslaITStudios/RolePlus/blob/master/RolePlus/ExternModule/API/Engine/Components/ASchematicMeshComponent.cs/#L720">View Source</a>
   </span>
   <a id="RolePlus_ExternModule_API_Engine_Components_ASchematicMeshComponent_FindClosestObjectsOfType_" data-uid="RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.FindClosestObjectsOfType*"></a>
   <h4 id="RolePlus_ExternModule_API_Engine_Components_ASchematicMeshComponent_FindClosestObjectsOfType__1_System_UInt32_" data-uid="RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.FindClosestObjectsOfType``1(System.UInt32)">FindClosestObjectsOfType&lt;T&gt;(UInt32)</h4>
@@ -2677,13 +2680,13 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/TeslaITStudios/RolePlus/new/dev/apiSpec/new?filename=RolePlus_ExternModule_API_Engine_Components_ASchematicMeshComponent_FindClosestObjectsOfType__1_Vector3_System_Collections_Generic_IEnumerable_SchematicObject__System_UInt32_.md&amp;value=---%0Auid%3A%20RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.FindClosestObjectsOfType%60%601(Vector3%2CSystem.Collections.Generic.IEnumerable%7BSchematicObject%7D%2CSystem.UInt32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/TeslaITStudios/RolePlus/new/dev/apiSpec/new?filename=RolePlus_ExternModule_API_Engine_Components_ASchematicMeshComponent_FindClosestObjectsOfType__1_Vector3_System_Collections_Generic_IEnumerable_MapEditorReborn_API_Features_Objects_SchematicObject__System_UInt32_.md&amp;value=---%0Auid%3A%20RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.FindClosestObjectsOfType%60%601(Vector3%2CSystem.Collections.Generic.IEnumerable%7BMapEditorReborn.API.Features.Objects.SchematicObject%7D%2CSystem.UInt32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/TeslaITStudios/RolePlus/blob/master/RolePlus/ExternModule/API/Engine/Components/ASchematicMeshComponent.cs/#L455">View Source</a>
+    <a href="https://github.com/TeslaITStudios/RolePlus/blob/master/RolePlus/ExternModule/API/Engine/Components/ASchematicMeshComponent.cs/#L475">View Source</a>
   </span>
   <a id="RolePlus_ExternModule_API_Engine_Components_ASchematicMeshComponent_FindClosestObjectsOfType_" data-uid="RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.FindClosestObjectsOfType*"></a>
-  <h4 id="RolePlus_ExternModule_API_Engine_Components_ASchematicMeshComponent_FindClosestObjectsOfType__1_Vector3_System_Collections_Generic_IEnumerable_SchematicObject__System_UInt32_" data-uid="RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.FindClosestObjectsOfType``1(Vector3,System.Collections.Generic.IEnumerable{SchematicObject},System.UInt32)">FindClosestObjectsOfType&lt;T&gt;(Vector3, IEnumerable&lt;SchematicObject&gt;, UInt32)</h4>
+  <h4 id="RolePlus_ExternModule_API_Engine_Components_ASchematicMeshComponent_FindClosestObjectsOfType__1_Vector3_System_Collections_Generic_IEnumerable_MapEditorReborn_API_Features_Objects_SchematicObject__System_UInt32_" data-uid="RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.FindClosestObjectsOfType``1(Vector3,System.Collections.Generic.IEnumerable{MapEditorReborn.API.Features.Objects.SchematicObject},System.UInt32)">FindClosestObjectsOfType&lt;T&gt;(Vector3, IEnumerable&lt;SchematicObject&gt;, UInt32)</h4>
   <div class="markdown level1 summary"><p>Finds a fixed amount of all the <a class="xref" href="RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.html">ASchematicMeshComponent</a> instances of type <code data-dev-comment-type="typeparamref" class="typeparamref">T</code> closest to <code data-dev-comment-type="paramref" class="paramref">position</code>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
@@ -2710,9 +2713,9 @@
 </td>
       </tr>
       <tr>
-        <td><span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<span class="xref">SchematicObject</span>&gt;</td>
+        <td><span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<span class="xref">MapEditorReborn.API.Features.Objects.SchematicObject</span>&gt;</td>
         <td><span class="parametername">source</span></td>
-        <td><p>The <span class="xref">System.Collections.Generic.IEnumerable&lt;T&gt;</span> of <see cref="!:SchematicObject"></see> to iterate over.</p>
+        <td><p>The <span class="xref">System.Collections.Generic.IEnumerable&lt;T&gt;</span> of <span class="xref">MapEditorReborn.API.Features.Objects.SchematicObject</span> to iterate over.</p>
 </td>
       </tr>
       <tr>
@@ -2760,7 +2763,7 @@
     <a href="https://github.com/TeslaITStudios/RolePlus/new/dev/apiSpec/new?filename=RolePlus_ExternModule_API_Engine_Components_ASchematicMeshComponent_FindClosestObjectsOfType__1_Vector3_System_UInt32_.md&amp;value=---%0Auid%3A%20RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.FindClosestObjectsOfType%60%601(Vector3%2CSystem.UInt32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/TeslaITStudios/RolePlus/blob/master/RolePlus/ExternModule/API/Engine/Components/ASchematicMeshComponent.cs/#L506">View Source</a>
+    <a href="https://github.com/TeslaITStudios/RolePlus/blob/master/RolePlus/ExternModule/API/Engine/Components/ASchematicMeshComponent.cs/#L526">View Source</a>
   </span>
   <a id="RolePlus_ExternModule_API_Engine_Components_ASchematicMeshComponent_FindClosestObjectsOfType_" data-uid="RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.FindClosestObjectsOfType*"></a>
   <h4 id="RolePlus_ExternModule_API_Engine_Components_ASchematicMeshComponent_FindClosestObjectsOfType__1_Vector3_System_UInt32_" data-uid="RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.FindClosestObjectsOfType``1(Vector3,System.UInt32)">FindClosestObjectsOfType&lt;T&gt;(Vector3, UInt32)</h4>
@@ -2834,7 +2837,7 @@
     <a href="https://github.com/TeslaITStudios/RolePlus/new/dev/apiSpec/new?filename=RolePlus_ExternModule_API_Engine_Components_ASchematicMeshComponent_FindClosestObjectsWithTagOfType__1___0_System_String_System_UInt32_.md&amp;value=---%0Auid%3A%20RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.FindClosestObjectsWithTagOfType%60%601(%60%600%2CSystem.String%2CSystem.UInt32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/TeslaITStudios/RolePlus/blob/master/RolePlus/ExternModule/API/Engine/Components/ASchematicMeshComponent.cs/#L601">View Source</a>
+    <a href="https://github.com/TeslaITStudios/RolePlus/blob/master/RolePlus/ExternModule/API/Engine/Components/ASchematicMeshComponent.cs/#L621">View Source</a>
   </span>
   <a id="RolePlus_ExternModule_API_Engine_Components_ASchematicMeshComponent_FindClosestObjectsWithTagOfType_" data-uid="RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.FindClosestObjectsWithTagOfType*"></a>
   <h4 id="RolePlus_ExternModule_API_Engine_Components_ASchematicMeshComponent_FindClosestObjectsWithTagOfType__1___0_System_String_System_UInt32_" data-uid="RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.FindClosestObjectsWithTagOfType``1(``0,System.String,System.UInt32)">FindClosestObjectsWithTagOfType&lt;T&gt;(T, String, UInt32)</h4>
@@ -2911,13 +2914,13 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/TeslaITStudios/RolePlus/new/dev/apiSpec/new?filename=RolePlus_ExternModule_API_Engine_Components_ASchematicMeshComponent_FindClosestObjectsWithTagOfType__1_SchematicObject_System_String_System_UInt32_.md&amp;value=---%0Auid%3A%20RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.FindClosestObjectsWithTagOfType%60%601(SchematicObject%2CSystem.String%2CSystem.UInt32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/TeslaITStudios/RolePlus/new/dev/apiSpec/new?filename=RolePlus_ExternModule_API_Engine_Components_ASchematicMeshComponent_FindClosestObjectsWithTagOfType__1_MapEditorReborn_API_Features_Objects_SchematicObject_System_String_System_UInt32_.md&amp;value=---%0Auid%3A%20RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.FindClosestObjectsWithTagOfType%60%601(MapEditorReborn.API.Features.Objects.SchematicObject%2CSystem.String%2CSystem.UInt32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/TeslaITStudios/RolePlus/blob/master/RolePlus/ExternModule/API/Engine/Components/ASchematicMeshComponent.cs/#L612">View Source</a>
+    <a href="https://github.com/TeslaITStudios/RolePlus/blob/master/RolePlus/ExternModule/API/Engine/Components/ASchematicMeshComponent.cs/#L632">View Source</a>
   </span>
   <a id="RolePlus_ExternModule_API_Engine_Components_ASchematicMeshComponent_FindClosestObjectsWithTagOfType_" data-uid="RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.FindClosestObjectsWithTagOfType*"></a>
-  <h4 id="RolePlus_ExternModule_API_Engine_Components_ASchematicMeshComponent_FindClosestObjectsWithTagOfType__1_SchematicObject_System_String_System_UInt32_" data-uid="RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.FindClosestObjectsWithTagOfType``1(SchematicObject,System.String,System.UInt32)">FindClosestObjectsWithTagOfType&lt;T&gt;(SchematicObject, String, UInt32)</h4>
+  <h4 id="RolePlus_ExternModule_API_Engine_Components_ASchematicMeshComponent_FindClosestObjectsWithTagOfType__1_MapEditorReborn_API_Features_Objects_SchematicObject_System_String_System_UInt32_" data-uid="RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.FindClosestObjectsWithTagOfType``1(MapEditorReborn.API.Features.Objects.SchematicObject,System.String,System.UInt32)">FindClosestObjectsWithTagOfType&lt;T&gt;(SchematicObject, String, UInt32)</h4>
   <div class="markdown level1 summary"><p>Finds a fixed amount of all the <a class="xref" href="RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.html">ASchematicMeshComponent</a> instances of type <code data-dev-comment-type="typeparamref" class="typeparamref">T</code> closest to <code data-dev-comment-type="paramref" class="paramref">schematicObject</code>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
@@ -2938,9 +2941,9 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">SchematicObject</span></td>
+        <td><span class="xref">MapEditorReborn.API.Features.Objects.SchematicObject</span></td>
         <td><span class="parametername">schematicObject</span></td>
-        <td><p>The <see cref="!:SchematicObject"></see> from which looking for.</p>
+        <td><p>The <span class="xref">MapEditorReborn.API.Features.Objects.SchematicObject</span> from which looking for.</p>
 </td>
       </tr>
       <tr>
@@ -2991,13 +2994,13 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/TeslaITStudios/RolePlus/new/dev/apiSpec/new?filename=RolePlus_ExternModule_API_Engine_Components_ASchematicMeshComponent_FindClosestObjectsWithTagOfType__1_System_Collections_Generic_IEnumerable_SchematicObject__System_String_System_UInt32_.md&amp;value=---%0Auid%3A%20RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.FindClosestObjectsWithTagOfType%60%601(System.Collections.Generic.IEnumerable%7BSchematicObject%7D%2CSystem.String%2CSystem.UInt32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/TeslaITStudios/RolePlus/new/dev/apiSpec/new?filename=RolePlus_ExternModule_API_Engine_Components_ASchematicMeshComponent_FindClosestObjectsWithTagOfType__1_System_Collections_Generic_IEnumerable_MapEditorReborn_API_Features_Objects_SchematicObject__System_String_System_UInt32_.md&amp;value=---%0Auid%3A%20RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.FindClosestObjectsWithTagOfType%60%601(System.Collections.Generic.IEnumerable%7BMapEditorReborn.API.Features.Objects.SchematicObject%7D%2CSystem.String%2CSystem.UInt32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/TeslaITStudios/RolePlus/blob/master/RolePlus/ExternModule/API/Engine/Components/ASchematicMeshComponent.cs/#L643">View Source</a>
+    <a href="https://github.com/TeslaITStudios/RolePlus/blob/master/RolePlus/ExternModule/API/Engine/Components/ASchematicMeshComponent.cs/#L663">View Source</a>
   </span>
   <a id="RolePlus_ExternModule_API_Engine_Components_ASchematicMeshComponent_FindClosestObjectsWithTagOfType_" data-uid="RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.FindClosestObjectsWithTagOfType*"></a>
-  <h4 id="RolePlus_ExternModule_API_Engine_Components_ASchematicMeshComponent_FindClosestObjectsWithTagOfType__1_System_Collections_Generic_IEnumerable_SchematicObject__System_String_System_UInt32_" data-uid="RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.FindClosestObjectsWithTagOfType``1(System.Collections.Generic.IEnumerable{SchematicObject},System.String,System.UInt32)">FindClosestObjectsWithTagOfType&lt;T&gt;(IEnumerable&lt;SchematicObject&gt;, String, UInt32)</h4>
+  <h4 id="RolePlus_ExternModule_API_Engine_Components_ASchematicMeshComponent_FindClosestObjectsWithTagOfType__1_System_Collections_Generic_IEnumerable_MapEditorReborn_API_Features_Objects_SchematicObject__System_String_System_UInt32_" data-uid="RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.FindClosestObjectsWithTagOfType``1(System.Collections.Generic.IEnumerable{MapEditorReborn.API.Features.Objects.SchematicObject},System.String,System.UInt32)">FindClosestObjectsWithTagOfType&lt;T&gt;(IEnumerable&lt;SchematicObject&gt;, String, UInt32)</h4>
   <div class="markdown level1 summary"><p>Finds a fixed amount of all the <a class="xref" href="RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.html">ASchematicMeshComponent</a> instances of type <code data-dev-comment-type="typeparamref" class="typeparamref">T</code> closest to this <a class="xref" href="RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.html">ASchematicMeshComponent</a> instance.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
@@ -3018,9 +3021,9 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<span class="xref">SchematicObject</span>&gt;</td>
+        <td><span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<span class="xref">MapEditorReborn.API.Features.Objects.SchematicObject</span>&gt;</td>
         <td><span class="parametername">source</span></td>
-        <td><p>The <span class="xref">System.Collections.Generic.IEnumerable&lt;T&gt;</span> of <see cref="!:SchematicObject"></see> to iterate over.</p>
+        <td><p>The <span class="xref">System.Collections.Generic.IEnumerable&lt;T&gt;</span> of <span class="xref">MapEditorReborn.API.Features.Objects.SchematicObject</span> to iterate over.</p>
 </td>
       </tr>
       <tr>
@@ -3074,7 +3077,7 @@
     <a href="https://github.com/TeslaITStudios/RolePlus/new/dev/apiSpec/new?filename=RolePlus_ExternModule_API_Engine_Components_ASchematicMeshComponent_FindClosestObjectsWithTagOfType__1_System_String_System_UInt32_.md&amp;value=---%0Auid%3A%20RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.FindClosestObjectsWithTagOfType%60%601(System.String%2CSystem.UInt32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/TeslaITStudios/RolePlus/blob/master/RolePlus/ExternModule/API/Engine/Components/ASchematicMeshComponent.cs/#L653">View Source</a>
+    <a href="https://github.com/TeslaITStudios/RolePlus/blob/master/RolePlus/ExternModule/API/Engine/Components/ASchematicMeshComponent.cs/#L673">View Source</a>
   </span>
   <a id="RolePlus_ExternModule_API_Engine_Components_ASchematicMeshComponent_FindClosestObjectsWithTagOfType_" data-uid="RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.FindClosestObjectsWithTagOfType*"></a>
   <h4 id="RolePlus_ExternModule_API_Engine_Components_ASchematicMeshComponent_FindClosestObjectsWithTagOfType__1_System_String_System_UInt32_" data-uid="RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.FindClosestObjectsWithTagOfType``1(System.String,System.UInt32)">FindClosestObjectsWithTagOfType&lt;T&gt;(String, UInt32)</h4>
@@ -3145,13 +3148,13 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/TeslaITStudios/RolePlus/new/dev/apiSpec/new?filename=RolePlus_ExternModule_API_Engine_Components_ASchematicMeshComponent_FindClosestObjectsWithTagOfType__1_Vector3_System_String_System_Collections_Generic_IEnumerable_SchematicObject__System_UInt32_.md&amp;value=---%0Auid%3A%20RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.FindClosestObjectsWithTagOfType%60%601(Vector3%2CSystem.String%2CSystem.Collections.Generic.IEnumerable%7BSchematicObject%7D%2CSystem.UInt32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/TeslaITStudios/RolePlus/new/dev/apiSpec/new?filename=RolePlus_ExternModule_API_Engine_Components_ASchematicMeshComponent_FindClosestObjectsWithTagOfType__1_Vector3_System_String_System_Collections_Generic_IEnumerable_MapEditorReborn_API_Features_Objects_SchematicObject__System_UInt32_.md&amp;value=---%0Auid%3A%20RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.FindClosestObjectsWithTagOfType%60%601(Vector3%2CSystem.String%2CSystem.Collections.Generic.IEnumerable%7BMapEditorReborn.API.Features.Objects.SchematicObject%7D%2CSystem.UInt32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/TeslaITStudios/RolePlus/blob/master/RolePlus/ExternModule/API/Engine/Components/ASchematicMeshComponent.cs/#L570">View Source</a>
+    <a href="https://github.com/TeslaITStudios/RolePlus/blob/master/RolePlus/ExternModule/API/Engine/Components/ASchematicMeshComponent.cs/#L590">View Source</a>
   </span>
   <a id="RolePlus_ExternModule_API_Engine_Components_ASchematicMeshComponent_FindClosestObjectsWithTagOfType_" data-uid="RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.FindClosestObjectsWithTagOfType*"></a>
-  <h4 id="RolePlus_ExternModule_API_Engine_Components_ASchematicMeshComponent_FindClosestObjectsWithTagOfType__1_Vector3_System_String_System_Collections_Generic_IEnumerable_SchematicObject__System_UInt32_" data-uid="RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.FindClosestObjectsWithTagOfType``1(Vector3,System.String,System.Collections.Generic.IEnumerable{SchematicObject},System.UInt32)">FindClosestObjectsWithTagOfType&lt;T&gt;(Vector3, String, IEnumerable&lt;SchematicObject&gt;, UInt32)</h4>
+  <h4 id="RolePlus_ExternModule_API_Engine_Components_ASchematicMeshComponent_FindClosestObjectsWithTagOfType__1_Vector3_System_String_System_Collections_Generic_IEnumerable_MapEditorReborn_API_Features_Objects_SchematicObject__System_UInt32_" data-uid="RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.FindClosestObjectsWithTagOfType``1(Vector3,System.String,System.Collections.Generic.IEnumerable{MapEditorReborn.API.Features.Objects.SchematicObject},System.UInt32)">FindClosestObjectsWithTagOfType&lt;T&gt;(Vector3, String, IEnumerable&lt;SchematicObject&gt;, UInt32)</h4>
   <div class="markdown level1 summary"><p>Finds a fixed amount of all the <a class="xref" href="RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.html">ASchematicMeshComponent</a> instances of type <code data-dev-comment-type="typeparamref" class="typeparamref">T</code> closest to <code data-dev-comment-type="paramref" class="paramref">position</code>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
@@ -3184,9 +3187,9 @@
 </td>
       </tr>
       <tr>
-        <td><span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<span class="xref">SchematicObject</span>&gt;</td>
+        <td><span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<span class="xref">MapEditorReborn.API.Features.Objects.SchematicObject</span>&gt;</td>
         <td><span class="parametername">source</span></td>
-        <td><p>The <span class="xref">System.Collections.Generic.IEnumerable&lt;T&gt;</span> of <see cref="!:SchematicObject"></see> to iterate over.</p>
+        <td><p>The <span class="xref">System.Collections.Generic.IEnumerable&lt;T&gt;</span> of <span class="xref">MapEditorReborn.API.Features.Objects.SchematicObject</span> to iterate over.</p>
 </td>
       </tr>
       <tr>
@@ -3234,7 +3237,7 @@
     <a href="https://github.com/TeslaITStudios/RolePlus/new/dev/apiSpec/new?filename=RolePlus_ExternModule_API_Engine_Components_ASchematicMeshComponent_FindClosestObjectsWithTagOfType__1_Vector3_System_String_System_UInt32_.md&amp;value=---%0Auid%3A%20RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.FindClosestObjectsWithTagOfType%60%601(Vector3%2CSystem.String%2CSystem.UInt32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/TeslaITStudios/RolePlus/blob/master/RolePlus/ExternModule/API/Engine/Components/ASchematicMeshComponent.cs/#L547">View Source</a>
+    <a href="https://github.com/TeslaITStudios/RolePlus/blob/master/RolePlus/ExternModule/API/Engine/Components/ASchematicMeshComponent.cs/#L567">View Source</a>
   </span>
   <a id="RolePlus_ExternModule_API_Engine_Components_ASchematicMeshComponent_FindClosestObjectsWithTagOfType_" data-uid="RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.FindClosestObjectsWithTagOfType*"></a>
   <h4 id="RolePlus_ExternModule_API_Engine_Components_ASchematicMeshComponent_FindClosestObjectsWithTagOfType__1_Vector3_System_String_System_UInt32_" data-uid="RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.FindClosestObjectsWithTagOfType``1(Vector3,System.String,System.UInt32)">FindClosestObjectsWithTagOfType&lt;T&gt;(Vector3, String, UInt32)</h4>
@@ -3311,10 +3314,90 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
+    <a href="https://github.com/TeslaITStudios/RolePlus/new/dev/apiSpec/new?filename=RolePlus_ExternModule_API_Engine_Components_ASchematicMeshComponent_FindClosestObjectWithNameOfType__1_Vector3_System_String_System_Collections_Generic_IEnumerable_MapEditorReborn_API_Features_Objects_SchematicObject__.md&amp;value=---%0Auid%3A%20RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.FindClosestObjectWithNameOfType%60%601(Vector3%2CSystem.String%2CSystem.Collections.Generic.IEnumerable%7BMapEditorReborn.API.Features.Objects.SchematicObject%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/TeslaITStudios/RolePlus/blob/master/RolePlus/ExternModule/API/Engine/Components/ASchematicMeshComponent.cs/#L395">View Source</a>
+  </span>
+  <a id="RolePlus_ExternModule_API_Engine_Components_ASchematicMeshComponent_FindClosestObjectWithNameOfType_" data-uid="RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.FindClosestObjectWithNameOfType*"></a>
+  <h4 id="RolePlus_ExternModule_API_Engine_Components_ASchematicMeshComponent_FindClosestObjectWithNameOfType__1_Vector3_System_String_System_Collections_Generic_IEnumerable_MapEditorReborn_API_Features_Objects_SchematicObject__" data-uid="RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.FindClosestObjectWithNameOfType``1(Vector3,System.String,System.Collections.Generic.IEnumerable{MapEditorReborn.API.Features.Objects.SchematicObject})">FindClosestObjectWithNameOfType&lt;T&gt;(Vector3, String, IEnumerable&lt;SchematicObject&gt;)</h4>
+  <div class="markdown level1 summary"><p>Finds the <a class="xref" href="RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.html">ASchematicMeshComponent</a> of type <code data-dev-comment-type="typeparamref" class="typeparamref">T</code> closest to <code data-dev-comment-type="paramref" class="paramref">position</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static T FindClosestObjectWithNameOfType&lt;T&gt;(Vector3 position, string name, IEnumerable&lt;SchematicObject&gt; source)
+
+    where T : ASchematicMeshComponent</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Vector3</span></td>
+        <td><span class="parametername">position</span></td>
+        <td><p>The <see cref="!:Vector3">position</see> from which looking for.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">name</span></td>
+        <td><p>The name look for.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<span class="xref">MapEditorReborn.API.Features.Objects.SchematicObject</span>&gt;</td>
+        <td><span class="parametername">source</span></td>
+        <td><p>The <span class="xref">System.Collections.Generic.IEnumerable&lt;T&gt;</span> of <span class="xref">MapEditorReborn.API.Features.Objects.SchematicObject</span> to iterate over.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">T</span></td>
+        <td><p>The <a class="xref" href="RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.html">ASchematicMeshComponent</a> of type <code data-dev-comment-type="typeparamref" class="typeparamref">T</code>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">T</span></td>
+        <td><p>The <a class="xref" href="RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.html">ASchematicMeshComponent</a> of type <code data-dev-comment-type="typeparamref" class="typeparamref">T</code> to look for.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
     <a href="https://github.com/TeslaITStudios/RolePlus/new/dev/apiSpec/new?filename=RolePlus_ExternModule_API_Engine_Components_ASchematicMeshComponent_FindClosestObjectWithTagOfType__1___0_System_String_.md&amp;value=---%0Auid%3A%20RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.FindClosestObjectWithTagOfType%60%601(%60%600%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/TeslaITStudios/RolePlus/blob/master/RolePlus/ExternModule/API/Engine/Components/ASchematicMeshComponent.cs/#L434">View Source</a>
+    <a href="https://github.com/TeslaITStudios/RolePlus/blob/master/RolePlus/ExternModule/API/Engine/Components/ASchematicMeshComponent.cs/#L454">View Source</a>
   </span>
   <a id="RolePlus_ExternModule_API_Engine_Components_ASchematicMeshComponent_FindClosestObjectWithTagOfType_" data-uid="RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.FindClosestObjectWithTagOfType*"></a>
   <h4 id="RolePlus_ExternModule_API_Engine_Components_ASchematicMeshComponent_FindClosestObjectWithTagOfType__1___0_System_String_" data-uid="RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.FindClosestObjectWithTagOfType``1(``0,System.String)">FindClosestObjectWithTagOfType&lt;T&gt;(T, String)</h4>
@@ -3385,13 +3468,13 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/TeslaITStudios/RolePlus/new/dev/apiSpec/new?filename=RolePlus_ExternModule_API_Engine_Components_ASchematicMeshComponent_FindClosestObjectWithTagOfType__1_SchematicObject_System_String_.md&amp;value=---%0Auid%3A%20RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.FindClosestObjectWithTagOfType%60%601(SchematicObject%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/TeslaITStudios/RolePlus/new/dev/apiSpec/new?filename=RolePlus_ExternModule_API_Engine_Components_ASchematicMeshComponent_FindClosestObjectWithTagOfType__1_MapEditorReborn_API_Features_Objects_SchematicObject_System_String_.md&amp;value=---%0Auid%3A%20RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.FindClosestObjectWithTagOfType%60%601(MapEditorReborn.API.Features.Objects.SchematicObject%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/TeslaITStudios/RolePlus/blob/master/RolePlus/ExternModule/API/Engine/Components/ASchematicMeshComponent.cs/#L424">View Source</a>
+    <a href="https://github.com/TeslaITStudios/RolePlus/blob/master/RolePlus/ExternModule/API/Engine/Components/ASchematicMeshComponent.cs/#L444">View Source</a>
   </span>
   <a id="RolePlus_ExternModule_API_Engine_Components_ASchematicMeshComponent_FindClosestObjectWithTagOfType_" data-uid="RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.FindClosestObjectWithTagOfType*"></a>
-  <h4 id="RolePlus_ExternModule_API_Engine_Components_ASchematicMeshComponent_FindClosestObjectWithTagOfType__1_SchematicObject_System_String_" data-uid="RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.FindClosestObjectWithTagOfType``1(SchematicObject,System.String)">FindClosestObjectWithTagOfType&lt;T&gt;(SchematicObject, String)</h4>
+  <h4 id="RolePlus_ExternModule_API_Engine_Components_ASchematicMeshComponent_FindClosestObjectWithTagOfType__1_MapEditorReborn_API_Features_Objects_SchematicObject_System_String_" data-uid="RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.FindClosestObjectWithTagOfType``1(MapEditorReborn.API.Features.Objects.SchematicObject,System.String)">FindClosestObjectWithTagOfType&lt;T&gt;(SchematicObject, String)</h4>
   <div class="markdown level1 summary"><p>Finds the <a class="xref" href="RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.html">ASchematicMeshComponent</a> instance of type <code data-dev-comment-type="typeparamref" class="typeparamref">T</code> closest to <code data-dev-comment-type="paramref" class="paramref">schematicObject</code>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
@@ -3412,9 +3495,9 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">SchematicObject</span></td>
+        <td><span class="xref">MapEditorReborn.API.Features.Objects.SchematicObject</span></td>
         <td><span class="parametername">schematicObject</span></td>
-        <td><p>The <see cref="!:SchematicObject"></see> from which looking for.</p>
+        <td><p>The <span class="xref">MapEditorReborn.API.Features.Objects.SchematicObject</span> from which looking for.</p>
 </td>
       </tr>
       <tr>
@@ -3459,13 +3542,13 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/TeslaITStudios/RolePlus/new/dev/apiSpec/new?filename=RolePlus_ExternModule_API_Engine_Components_ASchematicMeshComponent_FindClosestObjectWithTagOfType__1_System_Collections_Generic_IEnumerable_SchematicObject__System_String_.md&amp;value=---%0Auid%3A%20RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.FindClosestObjectWithTagOfType%60%601(System.Collections.Generic.IEnumerable%7BSchematicObject%7D%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/TeslaITStudios/RolePlus/new/dev/apiSpec/new?filename=RolePlus_ExternModule_API_Engine_Components_ASchematicMeshComponent_FindClosestObjectWithTagOfType__1_System_Collections_Generic_IEnumerable_MapEditorReborn_API_Features_Objects_SchematicObject__System_String_.md&amp;value=---%0Auid%3A%20RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.FindClosestObjectWithTagOfType%60%601(System.Collections.Generic.IEnumerable%7BMapEditorReborn.API.Features.Objects.SchematicObject%7D%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/TeslaITStudios/RolePlus/blob/master/RolePlus/ExternModule/API/Engine/Components/ASchematicMeshComponent.cs/#L663">View Source</a>
+    <a href="https://github.com/TeslaITStudios/RolePlus/blob/master/RolePlus/ExternModule/API/Engine/Components/ASchematicMeshComponent.cs/#L683">View Source</a>
   </span>
   <a id="RolePlus_ExternModule_API_Engine_Components_ASchematicMeshComponent_FindClosestObjectWithTagOfType_" data-uid="RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.FindClosestObjectWithTagOfType*"></a>
-  <h4 id="RolePlus_ExternModule_API_Engine_Components_ASchematicMeshComponent_FindClosestObjectWithTagOfType__1_System_Collections_Generic_IEnumerable_SchematicObject__System_String_" data-uid="RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.FindClosestObjectWithTagOfType``1(System.Collections.Generic.IEnumerable{SchematicObject},System.String)">FindClosestObjectWithTagOfType&lt;T&gt;(IEnumerable&lt;SchematicObject&gt;, String)</h4>
+  <h4 id="RolePlus_ExternModule_API_Engine_Components_ASchematicMeshComponent_FindClosestObjectWithTagOfType__1_System_Collections_Generic_IEnumerable_MapEditorReborn_API_Features_Objects_SchematicObject__System_String_" data-uid="RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.FindClosestObjectWithTagOfType``1(System.Collections.Generic.IEnumerable{MapEditorReborn.API.Features.Objects.SchematicObject},System.String)">FindClosestObjectWithTagOfType&lt;T&gt;(IEnumerable&lt;SchematicObject&gt;, String)</h4>
   <div class="markdown level1 summary"><p>Finds the <a class="xref" href="RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.html">ASchematicMeshComponent</a> instance of type <code data-dev-comment-type="typeparamref" class="typeparamref">T</code> closest to this <a class="xref" href="RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.html">ASchematicMeshComponent</a> instance.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
@@ -3486,9 +3569,9 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<span class="xref">SchematicObject</span>&gt;</td>
+        <td><span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<span class="xref">MapEditorReborn.API.Features.Objects.SchematicObject</span>&gt;</td>
         <td><span class="parametername">source</span></td>
-        <td><p>The <span class="xref">System.Collections.Generic.IEnumerable&lt;T&gt;</span> of <see cref="!:SchematicObject"></see> to iterate over.</p>
+        <td><p>The <span class="xref">System.Collections.Generic.IEnumerable&lt;T&gt;</span> of <span class="xref">MapEditorReborn.API.Features.Objects.SchematicObject</span> to iterate over.</p>
 </td>
       </tr>
       <tr>
@@ -3536,7 +3619,7 @@
     <a href="https://github.com/TeslaITStudios/RolePlus/new/dev/apiSpec/new?filename=RolePlus_ExternModule_API_Engine_Components_ASchematicMeshComponent_FindClosestObjectWithTagOfType__1_System_String_.md&amp;value=---%0Auid%3A%20RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.FindClosestObjectWithTagOfType%60%601(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/TeslaITStudios/RolePlus/blob/master/RolePlus/ExternModule/API/Engine/Components/ASchematicMeshComponent.cs/#L672">View Source</a>
+    <a href="https://github.com/TeslaITStudios/RolePlus/blob/master/RolePlus/ExternModule/API/Engine/Components/ASchematicMeshComponent.cs/#L692">View Source</a>
   </span>
   <a id="RolePlus_ExternModule_API_Engine_Components_ASchematicMeshComponent_FindClosestObjectWithTagOfType_" data-uid="RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.FindClosestObjectWithTagOfType*"></a>
   <h4 id="RolePlus_ExternModule_API_Engine_Components_ASchematicMeshComponent_FindClosestObjectWithTagOfType__1_System_String_" data-uid="RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.FindClosestObjectWithTagOfType``1(System.String)">FindClosestObjectWithTagOfType&lt;T&gt;(String)</h4>
@@ -3604,7 +3687,7 @@
     <a href="https://github.com/TeslaITStudios/RolePlus/new/dev/apiSpec/new?filename=RolePlus_ExternModule_API_Engine_Components_ASchematicMeshComponent_FindClosestObjectWithTagOfType__1_Vector3_System_String_.md&amp;value=---%0Auid%3A%20RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.FindClosestObjectWithTagOfType%60%601(Vector3%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/TeslaITStudios/RolePlus/blob/master/RolePlus/ExternModule/API/Engine/Components/ASchematicMeshComponent.cs/#L414">View Source</a>
+    <a href="https://github.com/TeslaITStudios/RolePlus/blob/master/RolePlus/ExternModule/API/Engine/Components/ASchematicMeshComponent.cs/#L434">View Source</a>
   </span>
   <a id="RolePlus_ExternModule_API_Engine_Components_ASchematicMeshComponent_FindClosestObjectWithTagOfType_" data-uid="RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.FindClosestObjectWithTagOfType*"></a>
   <h4 id="RolePlus_ExternModule_API_Engine_Components_ASchematicMeshComponent_FindClosestObjectWithTagOfType__1_Vector3_System_String_" data-uid="RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.FindClosestObjectWithTagOfType``1(Vector3,System.String)">FindClosestObjectWithTagOfType&lt;T&gt;(Vector3, String)</h4>
@@ -3675,13 +3758,13 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/TeslaITStudios/RolePlus/new/dev/apiSpec/new?filename=RolePlus_ExternModule_API_Engine_Components_ASchematicMeshComponent_FindClosestObjectWithTagOfType__1_Vector3_System_String_System_Collections_Generic_IEnumerable_SchematicObject__.md&amp;value=---%0Auid%3A%20RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.FindClosestObjectWithTagOfType%60%601(Vector3%2CSystem.String%2CSystem.Collections.Generic.IEnumerable%7BSchematicObject%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/TeslaITStudios/RolePlus/new/dev/apiSpec/new?filename=RolePlus_ExternModule_API_Engine_Components_ASchematicMeshComponent_FindClosestObjectWithTagOfType__1_Vector3_System_String_System_Collections_Generic_IEnumerable_MapEditorReborn_API_Features_Objects_SchematicObject__.md&amp;value=---%0Auid%3A%20RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.FindClosestObjectWithTagOfType%60%601(Vector3%2CSystem.String%2CSystem.Collections.Generic.IEnumerable%7BMapEditorReborn.API.Features.Objects.SchematicObject%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/TeslaITStudios/RolePlus/blob/master/RolePlus/ExternModule/API/Engine/Components/ASchematicMeshComponent.cs/#L375">View Source</a>
   </span>
   <a id="RolePlus_ExternModule_API_Engine_Components_ASchematicMeshComponent_FindClosestObjectWithTagOfType_" data-uid="RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.FindClosestObjectWithTagOfType*"></a>
-  <h4 id="RolePlus_ExternModule_API_Engine_Components_ASchematicMeshComponent_FindClosestObjectWithTagOfType__1_Vector3_System_String_System_Collections_Generic_IEnumerable_SchematicObject__" data-uid="RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.FindClosestObjectWithTagOfType``1(Vector3,System.String,System.Collections.Generic.IEnumerable{SchematicObject})">FindClosestObjectWithTagOfType&lt;T&gt;(Vector3, String, IEnumerable&lt;SchematicObject&gt;)</h4>
+  <h4 id="RolePlus_ExternModule_API_Engine_Components_ASchematicMeshComponent_FindClosestObjectWithTagOfType__1_Vector3_System_String_System_Collections_Generic_IEnumerable_MapEditorReborn_API_Features_Objects_SchematicObject__" data-uid="RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.FindClosestObjectWithTagOfType``1(Vector3,System.String,System.Collections.Generic.IEnumerable{MapEditorReborn.API.Features.Objects.SchematicObject})">FindClosestObjectWithTagOfType&lt;T&gt;(Vector3, String, IEnumerable&lt;SchematicObject&gt;)</h4>
   <div class="markdown level1 summary"><p>Finds the <a class="xref" href="RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.html">ASchematicMeshComponent</a> of type <code data-dev-comment-type="typeparamref" class="typeparamref">T</code> closest to <code data-dev-comment-type="paramref" class="paramref">position</code>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
@@ -3714,9 +3797,9 @@
 </td>
       </tr>
       <tr>
-        <td><span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<span class="xref">SchematicObject</span>&gt;</td>
+        <td><span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<span class="xref">MapEditorReborn.API.Features.Objects.SchematicObject</span>&gt;</td>
         <td><span class="parametername">source</span></td>
-        <td><p>The <span class="xref">System.Collections.Generic.IEnumerable&lt;T&gt;</span> of <see cref="!:SchematicObject"></see> to iterate over.</p>
+        <td><p>The <span class="xref">System.Collections.Generic.IEnumerable&lt;T&gt;</span> of <span class="xref">MapEditorReborn.API.Features.Objects.SchematicObject</span> to iterate over.</p>
 </td>
       </tr>
     </tbody>
@@ -3758,7 +3841,7 @@
     <a href="https://github.com/TeslaITStudios/RolePlus/new/dev/apiSpec/new?filename=RolePlus_ExternModule_API_Engine_Components_ASchematicMeshComponent_GetAnimations_Animator_.md&amp;value=---%0Auid%3A%20RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.GetAnimations(Animator)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/TeslaITStudios/RolePlus/blob/master/RolePlus/ExternModule/API/Engine/Components/ASchematicMeshComponent.cs/#L863">View Source</a>
+    <a href="https://github.com/TeslaITStudios/RolePlus/blob/master/RolePlus/ExternModule/API/Engine/Components/ASchematicMeshComponent.cs/#L883">View Source</a>
   </span>
   <a id="RolePlus_ExternModule_API_Engine_Components_ASchematicMeshComponent_GetAnimations_" data-uid="RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.GetAnimations*"></a>
   <h4 id="RolePlus_ExternModule_API_Engine_Components_ASchematicMeshComponent_GetAnimations_Animator_" data-uid="RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.GetAnimations(Animator)">GetAnimations(Animator)</h4>
@@ -3805,7 +3888,7 @@
     <a href="https://github.com/TeslaITStudios/RolePlus/new/dev/apiSpec/new?filename=RolePlus_ExternModule_API_Engine_Components_ASchematicMeshComponent_GetCurrentAnimation_Animator_.md&amp;value=---%0Auid%3A%20RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.GetCurrentAnimation(Animator)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/TeslaITStudios/RolePlus/blob/master/RolePlus/ExternModule/API/Engine/Components/ASchematicMeshComponent.cs/#L866">View Source</a>
+    <a href="https://github.com/TeslaITStudios/RolePlus/blob/master/RolePlus/ExternModule/API/Engine/Components/ASchematicMeshComponent.cs/#L886">View Source</a>
   </span>
   <a id="RolePlus_ExternModule_API_Engine_Components_ASchematicMeshComponent_GetCurrentAnimation_" data-uid="RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.GetCurrentAnimation*"></a>
   <h4 id="RolePlus_ExternModule_API_Engine_Components_ASchematicMeshComponent_GetCurrentAnimation_Animator_" data-uid="RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.GetCurrentAnimation(Animator)">GetCurrentAnimation(Animator)</h4>
@@ -3852,7 +3935,7 @@
     <a href="https://github.com/TeslaITStudios/RolePlus/new/dev/apiSpec/new?filename=RolePlus_ExternModule_API_Engine_Components_ASchematicMeshComponent_GetCurrentAnimation_Animator_RolePlus_ExternModule_API_Engine_Framework_AnimatorParameter_.md&amp;value=---%0Auid%3A%20RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.GetCurrentAnimation(Animator%2CRolePlus.ExternModule.API.Engine.Framework.AnimatorParameter)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/TeslaITStudios/RolePlus/blob/master/RolePlus/ExternModule/API/Engine/Components/ASchematicMeshComponent.cs/#L872">View Source</a>
+    <a href="https://github.com/TeslaITStudios/RolePlus/blob/master/RolePlus/ExternModule/API/Engine/Components/ASchematicMeshComponent.cs/#L892">View Source</a>
   </span>
   <a id="RolePlus_ExternModule_API_Engine_Components_ASchematicMeshComponent_GetCurrentAnimation_" data-uid="RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.GetCurrentAnimation*"></a>
   <h4 id="RolePlus_ExternModule_API_Engine_Components_ASchematicMeshComponent_GetCurrentAnimation_Animator_RolePlus_ExternModule_API_Engine_Framework_AnimatorParameter_" data-uid="RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.GetCurrentAnimation(Animator,RolePlus.ExternModule.API.Engine.Framework.AnimatorParameter)">GetCurrentAnimation(Animator, AnimatorParameter)</h4>
@@ -3904,7 +3987,7 @@
     <a href="https://github.com/TeslaITStudios/RolePlus/new/dev/apiSpec/new?filename=RolePlus_ExternModule_API_Engine_Components_ASchematicMeshComponent_GetCurrentAnimation_Animator_System_String_.md&amp;value=---%0Auid%3A%20RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.GetCurrentAnimation(Animator%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/TeslaITStudios/RolePlus/blob/master/RolePlus/ExternModule/API/Engine/Components/ASchematicMeshComponent.cs/#L893">View Source</a>
+    <a href="https://github.com/TeslaITStudios/RolePlus/blob/master/RolePlus/ExternModule/API/Engine/Components/ASchematicMeshComponent.cs/#L913">View Source</a>
   </span>
   <a id="RolePlus_ExternModule_API_Engine_Components_ASchematicMeshComponent_GetCurrentAnimation_" data-uid="RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.GetCurrentAnimation*"></a>
   <h4 id="RolePlus_ExternModule_API_Engine_Components_ASchematicMeshComponent_GetCurrentAnimation_Animator_System_String_" data-uid="RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.GetCurrentAnimation(Animator,System.String)">GetCurrentAnimation(Animator, String)</h4>
@@ -3956,7 +4039,7 @@
     <a href="https://github.com/TeslaITStudios/RolePlus/new/dev/apiSpec/new?filename=RolePlus_ExternModule_API_Engine_Components_ASchematicMeshComponent_OnBeginPlay.md&amp;value=---%0Auid%3A%20RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.OnBeginPlay%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/TeslaITStudios/RolePlus/blob/master/RolePlus/ExternModule/API/Engine/Components/ASchematicMeshComponent.cs/#L738">View Source</a>
+    <a href="https://github.com/TeslaITStudios/RolePlus/blob/master/RolePlus/ExternModule/API/Engine/Components/ASchematicMeshComponent.cs/#L758">View Source</a>
   </span>
   <a id="RolePlus_ExternModule_API_Engine_Components_ASchematicMeshComponent_OnBeginPlay_" data-uid="RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.OnBeginPlay*"></a>
   <h4 id="RolePlus_ExternModule_API_Engine_Components_ASchematicMeshComponent_OnBeginPlay" data-uid="RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.OnBeginPlay">OnBeginPlay()</h4>
@@ -3973,7 +4056,7 @@
     <a href="https://github.com/TeslaITStudios/RolePlus/new/dev/apiSpec/new?filename=RolePlus_ExternModule_API_Engine_Components_ASchematicMeshComponent_OnChangingAnimationState_RolePlus_ExternModule_API_Engine_Framework_Events_EventArgs_ChangingAnimationStateEventArgs_.md&amp;value=---%0Auid%3A%20RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.OnChangingAnimationState(RolePlus.ExternModule.API.Engine.Framework.Events.EventArgs.ChangingAnimationStateEventArgs)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/TeslaITStudios/RolePlus/blob/master/RolePlus/ExternModule/API/Engine/Components/ASchematicMeshComponent.cs/#L940">View Source</a>
+    <a href="https://github.com/TeslaITStudios/RolePlus/blob/master/RolePlus/ExternModule/API/Engine/Components/ASchematicMeshComponent.cs/#L960">View Source</a>
   </span>
   <a id="RolePlus_ExternModule_API_Engine_Components_ASchematicMeshComponent_OnChangingAnimationState_" data-uid="RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.OnChangingAnimationState*"></a>
   <h4 id="RolePlus_ExternModule_API_Engine_Components_ASchematicMeshComponent_OnChangingAnimationState_RolePlus_ExternModule_API_Engine_Framework_Events_EventArgs_ChangingAnimationStateEventArgs_" data-uid="RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.OnChangingAnimationState(RolePlus.ExternModule.API.Engine.Framework.Events.EventArgs.ChangingAnimationStateEventArgs)">OnChangingAnimationState(ChangingAnimationStateEventArgs)</h4>
@@ -4005,7 +4088,7 @@
     <a href="https://github.com/TeslaITStudios/RolePlus/new/dev/apiSpec/new?filename=RolePlus_ExternModule_API_Engine_Components_ASchematicMeshComponent_OnEndPlay.md&amp;value=---%0Auid%3A%20RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.OnEndPlay%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/TeslaITStudios/RolePlus/blob/master/RolePlus/ExternModule/API/Engine/Components/ASchematicMeshComponent.cs/#L761">View Source</a>
+    <a href="https://github.com/TeslaITStudios/RolePlus/blob/master/RolePlus/ExternModule/API/Engine/Components/ASchematicMeshComponent.cs/#L781">View Source</a>
   </span>
   <a id="RolePlus_ExternModule_API_Engine_Components_ASchematicMeshComponent_OnEndPlay_" data-uid="RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.OnEndPlay*"></a>
   <h4 id="RolePlus_ExternModule_API_Engine_Components_ASchematicMeshComponent_OnEndPlay" data-uid="RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.OnEndPlay">OnEndPlay()</h4>
@@ -4022,7 +4105,7 @@
     <a href="https://github.com/TeslaITStudios/RolePlus/new/dev/apiSpec/new?filename=RolePlus_ExternModule_API_Engine_Components_ASchematicMeshComponent_PlayAnimation_RolePlus_ExternModule_API_Engine_Framework_AnimatorParameter_System_Int32_.md&amp;value=---%0Auid%3A%20RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.PlayAnimation(RolePlus.ExternModule.API.Engine.Framework.AnimatorParameter%2CSystem.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/TeslaITStudios/RolePlus/blob/master/RolePlus/ExternModule/API/Engine/Components/ASchematicMeshComponent.cs/#L842">View Source</a>
+    <a href="https://github.com/TeslaITStudios/RolePlus/blob/master/RolePlus/ExternModule/API/Engine/Components/ASchematicMeshComponent.cs/#L862">View Source</a>
   </span>
   <a id="RolePlus_ExternModule_API_Engine_Components_ASchematicMeshComponent_PlayAnimation_" data-uid="RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.PlayAnimation*"></a>
   <h4 id="RolePlus_ExternModule_API_Engine_Components_ASchematicMeshComponent_PlayAnimation_RolePlus_ExternModule_API_Engine_Framework_AnimatorParameter_System_Int32_" data-uid="RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.PlayAnimation(RolePlus.ExternModule.API.Engine.Framework.AnimatorParameter,System.Int32)">PlayAnimation(AnimatorParameter, Int32)</h4>
@@ -4074,7 +4157,7 @@
     <a href="https://github.com/TeslaITStudios/RolePlus/new/dev/apiSpec/new?filename=RolePlus_ExternModule_API_Engine_Components_ASchematicMeshComponent_PlayAnimation_System_String_System_Boolean_.md&amp;value=---%0Auid%3A%20RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.PlayAnimation(System.String%2CSystem.Boolean)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/TeslaITStudios/RolePlus/blob/master/RolePlus/ExternModule/API/Engine/Components/ASchematicMeshComponent.cs/#L792">View Source</a>
+    <a href="https://github.com/TeslaITStudios/RolePlus/blob/master/RolePlus/ExternModule/API/Engine/Components/ASchematicMeshComponent.cs/#L812">View Source</a>
   </span>
   <a id="RolePlus_ExternModule_API_Engine_Components_ASchematicMeshComponent_PlayAnimation_" data-uid="RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.PlayAnimation*"></a>
   <h4 id="RolePlus_ExternModule_API_Engine_Components_ASchematicMeshComponent_PlayAnimation_System_String_System_Boolean_" data-uid="RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.PlayAnimation(System.String,System.Boolean)">PlayAnimation(String, Boolean)</h4>
@@ -4126,7 +4209,7 @@
     <a href="https://github.com/TeslaITStudios/RolePlus/new/dev/apiSpec/new?filename=RolePlus_ExternModule_API_Engine_Components_ASchematicMeshComponent_PlayAnimation_System_String_System_Boolean_System_Int32_.md&amp;value=---%0Auid%3A%20RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.PlayAnimation(System.String%2CSystem.Boolean%2CSystem.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/TeslaITStudios/RolePlus/blob/master/RolePlus/ExternModule/API/Engine/Components/ASchematicMeshComponent.cs/#L824">View Source</a>
+    <a href="https://github.com/TeslaITStudios/RolePlus/blob/master/RolePlus/ExternModule/API/Engine/Components/ASchematicMeshComponent.cs/#L844">View Source</a>
   </span>
   <a id="RolePlus_ExternModule_API_Engine_Components_ASchematicMeshComponent_PlayAnimation_" data-uid="RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.PlayAnimation*"></a>
   <h4 id="RolePlus_ExternModule_API_Engine_Components_ASchematicMeshComponent_PlayAnimation_System_String_System_Boolean_System_Int32_" data-uid="RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.PlayAnimation(System.String,System.Boolean,System.Int32)">PlayAnimation(String, Boolean, Int32)</h4>
@@ -4183,7 +4266,7 @@
     <a href="https://github.com/TeslaITStudios/RolePlus/new/dev/apiSpec/new?filename=RolePlus_ExternModule_API_Engine_Components_ASchematicMeshComponent_SetCurrentAnimation_Animator_RolePlus_ExternModule_API_Engine_Framework_AnimatorParameter_.md&amp;value=---%0Auid%3A%20RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.SetCurrentAnimation(Animator%2CRolePlus.ExternModule.API.Engine.Framework.AnimatorParameter)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/TeslaITStudios/RolePlus/blob/master/RolePlus/ExternModule/API/Engine/Components/ASchematicMeshComponent.cs/#L914">View Source</a>
+    <a href="https://github.com/TeslaITStudios/RolePlus/blob/master/RolePlus/ExternModule/API/Engine/Components/ASchematicMeshComponent.cs/#L934">View Source</a>
   </span>
   <a id="RolePlus_ExternModule_API_Engine_Components_ASchematicMeshComponent_SetCurrentAnimation_" data-uid="RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.SetCurrentAnimation*"></a>
   <h4 id="RolePlus_ExternModule_API_Engine_Components_ASchematicMeshComponent_SetCurrentAnimation_Animator_RolePlus_ExternModule_API_Engine_Framework_AnimatorParameter_" data-uid="RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.SetCurrentAnimation(Animator,RolePlus.ExternModule.API.Engine.Framework.AnimatorParameter)">SetCurrentAnimation(Animator, AnimatorParameter)</h4>
@@ -4220,7 +4303,7 @@
     <a href="https://github.com/TeslaITStudios/RolePlus/new/dev/apiSpec/new?filename=RolePlus_ExternModule_API_Engine_Components_ASchematicMeshComponent_SetCurrentAnimation_Animator_System_String_System_Boolean_.md&amp;value=---%0Auid%3A%20RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.SetCurrentAnimation(Animator%2CSystem.String%2CSystem.Boolean)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/TeslaITStudios/RolePlus/blob/master/RolePlus/ExternModule/API/Engine/Components/ASchematicMeshComponent.cs/#L917">View Source</a>
+    <a href="https://github.com/TeslaITStudios/RolePlus/blob/master/RolePlus/ExternModule/API/Engine/Components/ASchematicMeshComponent.cs/#L937">View Source</a>
   </span>
   <a id="RolePlus_ExternModule_API_Engine_Components_ASchematicMeshComponent_SetCurrentAnimation_" data-uid="RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.SetCurrentAnimation*"></a>
   <h4 id="RolePlus_ExternModule_API_Engine_Components_ASchematicMeshComponent_SetCurrentAnimation_Animator_System_String_System_Boolean_" data-uid="RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.SetCurrentAnimation(Animator,System.String,System.Boolean)">SetCurrentAnimation(Animator, String, Boolean)</h4>
@@ -4262,7 +4345,7 @@
     <a href="https://github.com/TeslaITStudios/RolePlus/new/dev/apiSpec/new?filename=RolePlus_ExternModule_API_Engine_Components_ASchematicMeshComponent_ShowBones.md&amp;value=---%0Auid%3A%20RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.ShowBones%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/TeslaITStudios/RolePlus/blob/master/RolePlus/ExternModule/API/Engine/Components/ASchematicMeshComponent.cs/#L633">View Source</a>
+    <a href="https://github.com/TeslaITStudios/RolePlus/blob/master/RolePlus/ExternModule/API/Engine/Components/ASchematicMeshComponent.cs/#L653">View Source</a>
   </span>
   <a id="RolePlus_ExternModule_API_Engine_Components_ASchematicMeshComponent_ShowBones_" data-uid="RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.ShowBones*"></a>
   <h4 id="RolePlus_ExternModule_API_Engine_Components_ASchematicMeshComponent_ShowBones" data-uid="RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.ShowBones">ShowBones()</h4>
@@ -4278,7 +4361,7 @@
     <a href="https://github.com/TeslaITStudios/RolePlus/new/dev/apiSpec/new?filename=RolePlus_ExternModule_API_Engine_Components_ASchematicMeshComponent_StopAnimation_System_Int32_.md&amp;value=---%0Auid%3A%20RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.StopAnimation(System.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/TeslaITStudios/RolePlus/blob/master/RolePlus/ExternModule/API/Engine/Components/ASchematicMeshComponent.cs/#L860">View Source</a>
+    <a href="https://github.com/TeslaITStudios/RolePlus/blob/master/RolePlus/ExternModule/API/Engine/Components/ASchematicMeshComponent.cs/#L880">View Source</a>
   </span>
   <a id="RolePlus_ExternModule_API_Engine_Components_ASchematicMeshComponent_StopAnimation_" data-uid="RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.StopAnimation*"></a>
   <h4 id="RolePlus_ExternModule_API_Engine_Components_ASchematicMeshComponent_StopAnimation_System_Int32_" data-uid="RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.StopAnimation(System.Int32)">StopAnimation(Int32)</h4>
@@ -4310,7 +4393,7 @@
     <a href="https://github.com/TeslaITStudios/RolePlus/new/dev/apiSpec/new?filename=RolePlus_ExternModule_API_Engine_Components_ASchematicMeshComponent_Tick.md&amp;value=---%0Auid%3A%20RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.Tick%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/TeslaITStudios/RolePlus/blob/master/RolePlus/ExternModule/API/Engine/Components/ASchematicMeshComponent.cs/#L771">View Source</a>
+    <a href="https://github.com/TeslaITStudios/RolePlus/blob/master/RolePlus/ExternModule/API/Engine/Components/ASchematicMeshComponent.cs/#L791">View Source</a>
   </span>
   <a id="RolePlus_ExternModule_API_Engine_Components_ASchematicMeshComponent_Tick_" data-uid="RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.Tick*"></a>
   <h4 id="RolePlus_ExternModule_API_Engine_Components_ASchematicMeshComponent_Tick" data-uid="RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.Tick">Tick()</h4>
@@ -4327,7 +4410,7 @@
     <a href="https://github.com/TeslaITStudios/RolePlus/new/dev/apiSpec/new?filename=RolePlus_ExternModule_API_Engine_Components_ASchematicMeshComponent_TryGetAnimations_Animator_RolePlus_ExternModule_API_Engine_Framework_AnimatorParameter____.md&amp;value=---%0Auid%3A%20RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.TryGetAnimations(Animator%2CRolePlus.ExternModule.API.Engine.Framework.AnimatorParameter%5B%5D%40)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/TeslaITStudios/RolePlus/blob/master/RolePlus/ExternModule/API/Engine/Components/ASchematicMeshComponent.cs/#L925">View Source</a>
+    <a href="https://github.com/TeslaITStudios/RolePlus/blob/master/RolePlus/ExternModule/API/Engine/Components/ASchematicMeshComponent.cs/#L945">View Source</a>
   </span>
   <a id="RolePlus_ExternModule_API_Engine_Components_ASchematicMeshComponent_TryGetAnimations_" data-uid="RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.TryGetAnimations*"></a>
   <h4 id="RolePlus_ExternModule_API_Engine_Components_ASchematicMeshComponent_TryGetAnimations_Animator_RolePlus_ExternModule_API_Engine_Framework_AnimatorParameter____" data-uid="RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.TryGetAnimations(Animator,RolePlus.ExternModule.API.Engine.Framework.AnimatorParameter[]@)">TryGetAnimations(Animator, out AnimatorParameter[])</h4>

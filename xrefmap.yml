@@ -139,18 +139,12 @@ references:
   commentId: F:RolePlus.CustomItems.CustomItemType.None
   fullName: RolePlus.CustomItems.CustomItemType.None
   nameWithType: CustomItemType.None
-- uid: RolePlus.CustomItems.CustomItemType.OneHandedCannon
-  name: OneHandedCannon
-  href: api/RolePlus.CustomItems.CustomItemType.html#RolePlus_CustomItems_CustomItemType_OneHandedCannon
-  commentId: F:RolePlus.CustomItems.CustomItemType.OneHandedCannon
-  fullName: RolePlus.CustomItems.CustomItemType.OneHandedCannon
-  nameWithType: CustomItemType.OneHandedCannon
-- uid: RolePlus.CustomItems.CustomItemType.PTS06
-  name: PTS06
-  href: api/RolePlus.CustomItems.CustomItemType.html#RolePlus_CustomItems_CustomItemType_PTS06
-  commentId: F:RolePlus.CustomItems.CustomItemType.PTS06
-  fullName: RolePlus.CustomItems.CustomItemType.PTS06
-  nameWithType: CustomItemType.PTS06
+- uid: RolePlus.CustomItems.CustomItemType.Pts06
+  name: Pts06
+  href: api/RolePlus.CustomItems.CustomItemType.html#RolePlus_CustomItems_CustomItemType_Pts06
+  commentId: F:RolePlus.CustomItems.CustomItemType.Pts06
+  fullName: RolePlus.CustomItems.CustomItemType.Pts06
+  nameWithType: CustomItemType.Pts06
 - uid: RolePlus.CustomItems.CustomItemType.ReinforcedArmor
   name: ReinforcedArmor
   href: api/RolePlus.CustomItems.CustomItemType.html#RolePlus_CustomItems_CustomItemType_ReinforcedArmor
@@ -175,6 +169,12 @@ references:
   commentId: F:RolePlus.CustomItems.CustomItemType.Scp2818
   fullName: RolePlus.CustomItems.CustomItemType.Scp2818
   nameWithType: CustomItemType.Scp2818
+- uid: RolePlus.CustomItems.CustomItemType.Scp294Drink
+  name: Scp294Drink
+  href: api/RolePlus.CustomItems.CustomItemType.html#RolePlus_CustomItems_CustomItemType_Scp294Drink
+  commentId: F:RolePlus.CustomItems.CustomItemType.Scp294Drink
+  fullName: RolePlus.CustomItems.CustomItemType.Scp294Drink
+  nameWithType: CustomItemType.Scp294Drink
 - uid: RolePlus.CustomItems.CustomItemType.Scp714
   name: Scp714
   href: api/RolePlus.CustomItems.CustomItemType.html#RolePlus_CustomItems_CustomItemType_Scp714
@@ -852,42 +852,42 @@ references:
   commentId: M:RolePlus.ExternModule.API.Engine.Components.AEnvironmentMeshComponent.#ctor(GameObject)
   fullName: RolePlus.ExternModule.API.Engine.Components.AEnvironmentMeshComponent.AEnvironmentMeshComponent(GameObject)
   nameWithType: AEnvironmentMeshComponent.AEnvironmentMeshComponent(GameObject)
-- uid: RolePlus.ExternModule.API.Engine.Components.AEnvironmentMeshComponent.#ctor(RolePlus.ExternModule.API.Engine.Framework.Structs.FTransform,SchematicObject,Vector3,Vector3,Quaternion)
-  name: AEnvironmentMeshComponent(FTransform, SchematicObject, Vector3, Vector3, Quaternion)
-  href: api/RolePlus.ExternModule.API.Engine.Components.AEnvironmentMeshComponent.html#RolePlus_ExternModule_API_Engine_Components_AEnvironmentMeshComponent__ctor_RolePlus_ExternModule_API_Engine_Framework_Structs_FTransform_SchematicObject_Vector3_Vector3_Quaternion_
-  commentId: M:RolePlus.ExternModule.API.Engine.Components.AEnvironmentMeshComponent.#ctor(RolePlus.ExternModule.API.Engine.Framework.Structs.FTransform,SchematicObject,Vector3,Vector3,Quaternion)
-  fullName: RolePlus.ExternModule.API.Engine.Components.AEnvironmentMeshComponent.AEnvironmentMeshComponent(RolePlus.ExternModule.API.Engine.Framework.Structs.FTransform, SchematicObject, Vector3, Vector3, Quaternion)
-  nameWithType: AEnvironmentMeshComponent.AEnvironmentMeshComponent(FTransform, SchematicObject, Vector3, Vector3, Quaternion)
-- uid: RolePlus.ExternModule.API.Engine.Components.AEnvironmentMeshComponent.#ctor(SchematicObject)
+- uid: RolePlus.ExternModule.API.Engine.Components.AEnvironmentMeshComponent.#ctor(MapEditorReborn.API.Features.Objects.SchematicObject)
   name: AEnvironmentMeshComponent(SchematicObject)
-  href: api/RolePlus.ExternModule.API.Engine.Components.AEnvironmentMeshComponent.html#RolePlus_ExternModule_API_Engine_Components_AEnvironmentMeshComponent__ctor_SchematicObject_
-  commentId: M:RolePlus.ExternModule.API.Engine.Components.AEnvironmentMeshComponent.#ctor(SchematicObject)
-  fullName: RolePlus.ExternModule.API.Engine.Components.AEnvironmentMeshComponent.AEnvironmentMeshComponent(SchematicObject)
+  href: api/RolePlus.ExternModule.API.Engine.Components.AEnvironmentMeshComponent.html#RolePlus_ExternModule_API_Engine_Components_AEnvironmentMeshComponent__ctor_MapEditorReborn_API_Features_Objects_SchematicObject_
+  commentId: M:RolePlus.ExternModule.API.Engine.Components.AEnvironmentMeshComponent.#ctor(MapEditorReborn.API.Features.Objects.SchematicObject)
+  fullName: RolePlus.ExternModule.API.Engine.Components.AEnvironmentMeshComponent.AEnvironmentMeshComponent(MapEditorReborn.API.Features.Objects.SchematicObject)
   nameWithType: AEnvironmentMeshComponent.AEnvironmentMeshComponent(SchematicObject)
-- uid: RolePlus.ExternModule.API.Engine.Components.AEnvironmentMeshComponent.#ctor(SchematicObject,Vector3,Vector3,Quaternion)
+- uid: RolePlus.ExternModule.API.Engine.Components.AEnvironmentMeshComponent.#ctor(MapEditorReborn.API.Features.Objects.SchematicObject,Vector3,Vector3,Quaternion)
   name: AEnvironmentMeshComponent(SchematicObject, Vector3, Vector3, Quaternion)
-  href: api/RolePlus.ExternModule.API.Engine.Components.AEnvironmentMeshComponent.html#RolePlus_ExternModule_API_Engine_Components_AEnvironmentMeshComponent__ctor_SchematicObject_Vector3_Vector3_Quaternion_
-  commentId: M:RolePlus.ExternModule.API.Engine.Components.AEnvironmentMeshComponent.#ctor(SchematicObject,Vector3,Vector3,Quaternion)
-  fullName: RolePlus.ExternModule.API.Engine.Components.AEnvironmentMeshComponent.AEnvironmentMeshComponent(SchematicObject, Vector3, Vector3, Quaternion)
+  href: api/RolePlus.ExternModule.API.Engine.Components.AEnvironmentMeshComponent.html#RolePlus_ExternModule_API_Engine_Components_AEnvironmentMeshComponent__ctor_MapEditorReborn_API_Features_Objects_SchematicObject_Vector3_Vector3_Quaternion_
+  commentId: M:RolePlus.ExternModule.API.Engine.Components.AEnvironmentMeshComponent.#ctor(MapEditorReborn.API.Features.Objects.SchematicObject,Vector3,Vector3,Quaternion)
+  fullName: RolePlus.ExternModule.API.Engine.Components.AEnvironmentMeshComponent.AEnvironmentMeshComponent(MapEditorReborn.API.Features.Objects.SchematicObject, Vector3, Vector3, Quaternion)
   nameWithType: AEnvironmentMeshComponent.AEnvironmentMeshComponent(SchematicObject, Vector3, Vector3, Quaternion)
-- uid: RolePlus.ExternModule.API.Engine.Components.AEnvironmentMeshComponent.#ctor(Vector3,Quaternion,SchematicObject,Vector3,Vector3,Quaternion)
-  name: AEnvironmentMeshComponent(Vector3, Quaternion, SchematicObject, Vector3, Vector3, Quaternion)
-  href: api/RolePlus.ExternModule.API.Engine.Components.AEnvironmentMeshComponent.html#RolePlus_ExternModule_API_Engine_Components_AEnvironmentMeshComponent__ctor_Vector3_Quaternion_SchematicObject_Vector3_Vector3_Quaternion_
-  commentId: M:RolePlus.ExternModule.API.Engine.Components.AEnvironmentMeshComponent.#ctor(Vector3,Quaternion,SchematicObject,Vector3,Vector3,Quaternion)
-  fullName: RolePlus.ExternModule.API.Engine.Components.AEnvironmentMeshComponent.AEnvironmentMeshComponent(Vector3, Quaternion, SchematicObject, Vector3, Vector3, Quaternion)
-  nameWithType: AEnvironmentMeshComponent.AEnvironmentMeshComponent(Vector3, Quaternion, SchematicObject, Vector3, Vector3, Quaternion)
-- uid: RolePlus.ExternModule.API.Engine.Components.AEnvironmentMeshComponent.#ctor(Vector3,Quaternion,Vector3,SchematicObject,Vector3,Vector3,Quaternion)
-  name: AEnvironmentMeshComponent(Vector3, Quaternion, Vector3, SchematicObject, Vector3, Vector3, Quaternion)
-  href: api/RolePlus.ExternModule.API.Engine.Components.AEnvironmentMeshComponent.html#RolePlus_ExternModule_API_Engine_Components_AEnvironmentMeshComponent__ctor_Vector3_Quaternion_Vector3_SchematicObject_Vector3_Vector3_Quaternion_
-  commentId: M:RolePlus.ExternModule.API.Engine.Components.AEnvironmentMeshComponent.#ctor(Vector3,Quaternion,Vector3,SchematicObject,Vector3,Vector3,Quaternion)
-  fullName: RolePlus.ExternModule.API.Engine.Components.AEnvironmentMeshComponent.AEnvironmentMeshComponent(Vector3, Quaternion, Vector3, SchematicObject, Vector3, Vector3, Quaternion)
-  nameWithType: AEnvironmentMeshComponent.AEnvironmentMeshComponent(Vector3, Quaternion, Vector3, SchematicObject, Vector3, Vector3, Quaternion)
-- uid: RolePlus.ExternModule.API.Engine.Components.AEnvironmentMeshComponent.#ctor(Vector3,SchematicObject,Vector3,Vector3,Quaternion)
+- uid: RolePlus.ExternModule.API.Engine.Components.AEnvironmentMeshComponent.#ctor(RolePlus.ExternModule.API.Engine.Framework.Structs.FTransform,MapEditorReborn.API.Features.Objects.SchematicObject,Vector3,Vector3,Quaternion)
+  name: AEnvironmentMeshComponent(FTransform, SchematicObject, Vector3, Vector3, Quaternion)
+  href: api/RolePlus.ExternModule.API.Engine.Components.AEnvironmentMeshComponent.html#RolePlus_ExternModule_API_Engine_Components_AEnvironmentMeshComponent__ctor_RolePlus_ExternModule_API_Engine_Framework_Structs_FTransform_MapEditorReborn_API_Features_Objects_SchematicObject_Vector3_Vector3_Quaternion_
+  commentId: M:RolePlus.ExternModule.API.Engine.Components.AEnvironmentMeshComponent.#ctor(RolePlus.ExternModule.API.Engine.Framework.Structs.FTransform,MapEditorReborn.API.Features.Objects.SchematicObject,Vector3,Vector3,Quaternion)
+  fullName: RolePlus.ExternModule.API.Engine.Components.AEnvironmentMeshComponent.AEnvironmentMeshComponent(RolePlus.ExternModule.API.Engine.Framework.Structs.FTransform, MapEditorReborn.API.Features.Objects.SchematicObject, Vector3, Vector3, Quaternion)
+  nameWithType: AEnvironmentMeshComponent.AEnvironmentMeshComponent(FTransform, SchematicObject, Vector3, Vector3, Quaternion)
+- uid: RolePlus.ExternModule.API.Engine.Components.AEnvironmentMeshComponent.#ctor(Vector3,MapEditorReborn.API.Features.Objects.SchematicObject,Vector3,Vector3,Quaternion)
   name: AEnvironmentMeshComponent(Vector3, SchematicObject, Vector3, Vector3, Quaternion)
-  href: api/RolePlus.ExternModule.API.Engine.Components.AEnvironmentMeshComponent.html#RolePlus_ExternModule_API_Engine_Components_AEnvironmentMeshComponent__ctor_Vector3_SchematicObject_Vector3_Vector3_Quaternion_
-  commentId: M:RolePlus.ExternModule.API.Engine.Components.AEnvironmentMeshComponent.#ctor(Vector3,SchematicObject,Vector3,Vector3,Quaternion)
-  fullName: RolePlus.ExternModule.API.Engine.Components.AEnvironmentMeshComponent.AEnvironmentMeshComponent(Vector3, SchematicObject, Vector3, Vector3, Quaternion)
+  href: api/RolePlus.ExternModule.API.Engine.Components.AEnvironmentMeshComponent.html#RolePlus_ExternModule_API_Engine_Components_AEnvironmentMeshComponent__ctor_Vector3_MapEditorReborn_API_Features_Objects_SchematicObject_Vector3_Vector3_Quaternion_
+  commentId: M:RolePlus.ExternModule.API.Engine.Components.AEnvironmentMeshComponent.#ctor(Vector3,MapEditorReborn.API.Features.Objects.SchematicObject,Vector3,Vector3,Quaternion)
+  fullName: RolePlus.ExternModule.API.Engine.Components.AEnvironmentMeshComponent.AEnvironmentMeshComponent(Vector3, MapEditorReborn.API.Features.Objects.SchematicObject, Vector3, Vector3, Quaternion)
   nameWithType: AEnvironmentMeshComponent.AEnvironmentMeshComponent(Vector3, SchematicObject, Vector3, Vector3, Quaternion)
+- uid: RolePlus.ExternModule.API.Engine.Components.AEnvironmentMeshComponent.#ctor(Vector3,Quaternion,MapEditorReborn.API.Features.Objects.SchematicObject,Vector3,Vector3,Quaternion)
+  name: AEnvironmentMeshComponent(Vector3, Quaternion, SchematicObject, Vector3, Vector3, Quaternion)
+  href: api/RolePlus.ExternModule.API.Engine.Components.AEnvironmentMeshComponent.html#RolePlus_ExternModule_API_Engine_Components_AEnvironmentMeshComponent__ctor_Vector3_Quaternion_MapEditorReborn_API_Features_Objects_SchematicObject_Vector3_Vector3_Quaternion_
+  commentId: M:RolePlus.ExternModule.API.Engine.Components.AEnvironmentMeshComponent.#ctor(Vector3,Quaternion,MapEditorReborn.API.Features.Objects.SchematicObject,Vector3,Vector3,Quaternion)
+  fullName: RolePlus.ExternModule.API.Engine.Components.AEnvironmentMeshComponent.AEnvironmentMeshComponent(Vector3, Quaternion, MapEditorReborn.API.Features.Objects.SchematicObject, Vector3, Vector3, Quaternion)
+  nameWithType: AEnvironmentMeshComponent.AEnvironmentMeshComponent(Vector3, Quaternion, SchematicObject, Vector3, Vector3, Quaternion)
+- uid: RolePlus.ExternModule.API.Engine.Components.AEnvironmentMeshComponent.#ctor(Vector3,Quaternion,Vector3,MapEditorReborn.API.Features.Objects.SchematicObject,Vector3,Vector3,Quaternion)
+  name: AEnvironmentMeshComponent(Vector3, Quaternion, Vector3, SchematicObject, Vector3, Vector3, Quaternion)
+  href: api/RolePlus.ExternModule.API.Engine.Components.AEnvironmentMeshComponent.html#RolePlus_ExternModule_API_Engine_Components_AEnvironmentMeshComponent__ctor_Vector3_Quaternion_Vector3_MapEditorReborn_API_Features_Objects_SchematicObject_Vector3_Vector3_Quaternion_
+  commentId: M:RolePlus.ExternModule.API.Engine.Components.AEnvironmentMeshComponent.#ctor(Vector3,Quaternion,Vector3,MapEditorReborn.API.Features.Objects.SchematicObject,Vector3,Vector3,Quaternion)
+  fullName: RolePlus.ExternModule.API.Engine.Components.AEnvironmentMeshComponent.AEnvironmentMeshComponent(Vector3, Quaternion, Vector3, MapEditorReborn.API.Features.Objects.SchematicObject, Vector3, Vector3, Quaternion)
+  nameWithType: AEnvironmentMeshComponent.AEnvironmentMeshComponent(Vector3, Quaternion, Vector3, SchematicObject, Vector3, Vector3, Quaternion)
 - uid: RolePlus.ExternModule.API.Engine.Components.AEnvironmentMeshComponent.#ctor*
   name: AEnvironmentMeshComponent
   href: api/RolePlus.ExternModule.API.Engine.Components.AEnvironmentMeshComponent.html#RolePlus_ExternModule_API_Engine_Components_AEnvironmentMeshComponent__ctor_
@@ -1275,42 +1275,42 @@ references:
   commentId: M:RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.#ctor(GameObject,System.String)
   fullName: RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.ASchematicMeshComponent(GameObject, System.String)
   nameWithType: ASchematicMeshComponent.ASchematicMeshComponent(GameObject, String)
-- uid: RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.#ctor(RolePlus.ExternModule.API.Engine.Framework.Structs.FTransform,SchematicObject,Vector3,Vector3,Quaternion)
-  name: ASchematicMeshComponent(FTransform, SchematicObject, Vector3, Vector3, Quaternion)
-  href: api/RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.html#RolePlus_ExternModule_API_Engine_Components_ASchematicMeshComponent__ctor_RolePlus_ExternModule_API_Engine_Framework_Structs_FTransform_SchematicObject_Vector3_Vector3_Quaternion_
-  commentId: M:RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.#ctor(RolePlus.ExternModule.API.Engine.Framework.Structs.FTransform,SchematicObject,Vector3,Vector3,Quaternion)
-  fullName: RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.ASchematicMeshComponent(RolePlus.ExternModule.API.Engine.Framework.Structs.FTransform, SchematicObject, Vector3, Vector3, Quaternion)
-  nameWithType: ASchematicMeshComponent.ASchematicMeshComponent(FTransform, SchematicObject, Vector3, Vector3, Quaternion)
-- uid: RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.#ctor(SchematicObject,Vector3,Vector3,Quaternion)
+- uid: RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.#ctor(MapEditorReborn.API.Features.Objects.SchematicObject,Vector3,Vector3,Quaternion)
   name: ASchematicMeshComponent(SchematicObject, Vector3, Vector3, Quaternion)
-  href: api/RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.html#RolePlus_ExternModule_API_Engine_Components_ASchematicMeshComponent__ctor_SchematicObject_Vector3_Vector3_Quaternion_
-  commentId: M:RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.#ctor(SchematicObject,Vector3,Vector3,Quaternion)
-  fullName: RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.ASchematicMeshComponent(SchematicObject, Vector3, Vector3, Quaternion)
+  href: api/RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.html#RolePlus_ExternModule_API_Engine_Components_ASchematicMeshComponent__ctor_MapEditorReborn_API_Features_Objects_SchematicObject_Vector3_Vector3_Quaternion_
+  commentId: M:RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.#ctor(MapEditorReborn.API.Features.Objects.SchematicObject,Vector3,Vector3,Quaternion)
+  fullName: RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.ASchematicMeshComponent(MapEditorReborn.API.Features.Objects.SchematicObject, Vector3, Vector3, Quaternion)
   nameWithType: ASchematicMeshComponent.ASchematicMeshComponent(SchematicObject, Vector3, Vector3, Quaternion)
+- uid: RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.#ctor(RolePlus.ExternModule.API.Engine.Framework.Structs.FTransform,MapEditorReborn.API.Features.Objects.SchematicObject,Vector3,Vector3,Quaternion)
+  name: ASchematicMeshComponent(FTransform, SchematicObject, Vector3, Vector3, Quaternion)
+  href: api/RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.html#RolePlus_ExternModule_API_Engine_Components_ASchematicMeshComponent__ctor_RolePlus_ExternModule_API_Engine_Framework_Structs_FTransform_MapEditorReborn_API_Features_Objects_SchematicObject_Vector3_Vector3_Quaternion_
+  commentId: M:RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.#ctor(RolePlus.ExternModule.API.Engine.Framework.Structs.FTransform,MapEditorReborn.API.Features.Objects.SchematicObject,Vector3,Vector3,Quaternion)
+  fullName: RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.ASchematicMeshComponent(RolePlus.ExternModule.API.Engine.Framework.Structs.FTransform, MapEditorReborn.API.Features.Objects.SchematicObject, Vector3, Vector3, Quaternion)
+  nameWithType: ASchematicMeshComponent.ASchematicMeshComponent(FTransform, SchematicObject, Vector3, Vector3, Quaternion)
 - uid: RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.#ctor(System.String,Vector3,Vector3,Quaternion)
   name: ASchematicMeshComponent(String, Vector3, Vector3, Quaternion)
   href: api/RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.html#RolePlus_ExternModule_API_Engine_Components_ASchematicMeshComponent__ctor_System_String_Vector3_Vector3_Quaternion_
   commentId: M:RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.#ctor(System.String,Vector3,Vector3,Quaternion)
   fullName: RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.ASchematicMeshComponent(System.String, Vector3, Vector3, Quaternion)
   nameWithType: ASchematicMeshComponent.ASchematicMeshComponent(String, Vector3, Vector3, Quaternion)
-- uid: RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.#ctor(Vector3,Quaternion,SchematicObject,Vector3,Vector3,Quaternion)
-  name: ASchematicMeshComponent(Vector3, Quaternion, SchematicObject, Vector3, Vector3, Quaternion)
-  href: api/RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.html#RolePlus_ExternModule_API_Engine_Components_ASchematicMeshComponent__ctor_Vector3_Quaternion_SchematicObject_Vector3_Vector3_Quaternion_
-  commentId: M:RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.#ctor(Vector3,Quaternion,SchematicObject,Vector3,Vector3,Quaternion)
-  fullName: RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.ASchematicMeshComponent(Vector3, Quaternion, SchematicObject, Vector3, Vector3, Quaternion)
-  nameWithType: ASchematicMeshComponent.ASchematicMeshComponent(Vector3, Quaternion, SchematicObject, Vector3, Vector3, Quaternion)
-- uid: RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.#ctor(Vector3,Quaternion,Vector3,SchematicObject,Vector3,Vector3,Quaternion)
-  name: ASchematicMeshComponent(Vector3, Quaternion, Vector3, SchematicObject, Vector3, Vector3, Quaternion)
-  href: api/RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.html#RolePlus_ExternModule_API_Engine_Components_ASchematicMeshComponent__ctor_Vector3_Quaternion_Vector3_SchematicObject_Vector3_Vector3_Quaternion_
-  commentId: M:RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.#ctor(Vector3,Quaternion,Vector3,SchematicObject,Vector3,Vector3,Quaternion)
-  fullName: RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.ASchematicMeshComponent(Vector3, Quaternion, Vector3, SchematicObject, Vector3, Vector3, Quaternion)
-  nameWithType: ASchematicMeshComponent.ASchematicMeshComponent(Vector3, Quaternion, Vector3, SchematicObject, Vector3, Vector3, Quaternion)
-- uid: RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.#ctor(Vector3,SchematicObject,Vector3,Vector3,Quaternion)
+- uid: RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.#ctor(Vector3,MapEditorReborn.API.Features.Objects.SchematicObject,Vector3,Vector3,Quaternion)
   name: ASchematicMeshComponent(Vector3, SchematicObject, Vector3, Vector3, Quaternion)
-  href: api/RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.html#RolePlus_ExternModule_API_Engine_Components_ASchematicMeshComponent__ctor_Vector3_SchematicObject_Vector3_Vector3_Quaternion_
-  commentId: M:RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.#ctor(Vector3,SchematicObject,Vector3,Vector3,Quaternion)
-  fullName: RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.ASchematicMeshComponent(Vector3, SchematicObject, Vector3, Vector3, Quaternion)
+  href: api/RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.html#RolePlus_ExternModule_API_Engine_Components_ASchematicMeshComponent__ctor_Vector3_MapEditorReborn_API_Features_Objects_SchematicObject_Vector3_Vector3_Quaternion_
+  commentId: M:RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.#ctor(Vector3,MapEditorReborn.API.Features.Objects.SchematicObject,Vector3,Vector3,Quaternion)
+  fullName: RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.ASchematicMeshComponent(Vector3, MapEditorReborn.API.Features.Objects.SchematicObject, Vector3, Vector3, Quaternion)
   nameWithType: ASchematicMeshComponent.ASchematicMeshComponent(Vector3, SchematicObject, Vector3, Vector3, Quaternion)
+- uid: RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.#ctor(Vector3,Quaternion,MapEditorReborn.API.Features.Objects.SchematicObject,Vector3,Vector3,Quaternion)
+  name: ASchematicMeshComponent(Vector3, Quaternion, SchematicObject, Vector3, Vector3, Quaternion)
+  href: api/RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.html#RolePlus_ExternModule_API_Engine_Components_ASchematicMeshComponent__ctor_Vector3_Quaternion_MapEditorReborn_API_Features_Objects_SchematicObject_Vector3_Vector3_Quaternion_
+  commentId: M:RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.#ctor(Vector3,Quaternion,MapEditorReborn.API.Features.Objects.SchematicObject,Vector3,Vector3,Quaternion)
+  fullName: RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.ASchematicMeshComponent(Vector3, Quaternion, MapEditorReborn.API.Features.Objects.SchematicObject, Vector3, Vector3, Quaternion)
+  nameWithType: ASchematicMeshComponent.ASchematicMeshComponent(Vector3, Quaternion, SchematicObject, Vector3, Vector3, Quaternion)
+- uid: RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.#ctor(Vector3,Quaternion,Vector3,MapEditorReborn.API.Features.Objects.SchematicObject,Vector3,Vector3,Quaternion)
+  name: ASchematicMeshComponent(Vector3, Quaternion, Vector3, SchematicObject, Vector3, Vector3, Quaternion)
+  href: api/RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.html#RolePlus_ExternModule_API_Engine_Components_ASchematicMeshComponent__ctor_Vector3_Quaternion_Vector3_MapEditorReborn_API_Features_Objects_SchematicObject_Vector3_Vector3_Quaternion_
+  commentId: M:RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.#ctor(Vector3,Quaternion,Vector3,MapEditorReborn.API.Features.Objects.SchematicObject,Vector3,Vector3,Quaternion)
+  fullName: RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.ASchematicMeshComponent(Vector3, Quaternion, Vector3, MapEditorReborn.API.Features.Objects.SchematicObject, Vector3, Vector3, Quaternion)
+  nameWithType: ASchematicMeshComponent.ASchematicMeshComponent(Vector3, Quaternion, Vector3, SchematicObject, Vector3, Vector3, Quaternion)
 - uid: RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.#ctor*
   name: ASchematicMeshComponent
   href: api/RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.html#RolePlus_ExternModule_API_Engine_Components_ASchematicMeshComponent__ctor_
@@ -1331,11 +1331,11 @@ references:
   isSpec: "True"
   fullName: RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.AnimatorsTriggers
   nameWithType: ASchematicMeshComponent.AnimatorsTriggers
-- uid: RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.Create(SchematicObject,Vector3,Vector3,Quaternion)
+- uid: RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.Create(MapEditorReborn.API.Features.Objects.SchematicObject,Vector3,Vector3,Quaternion)
   name: Create(SchematicObject, Vector3, Vector3, Quaternion)
-  href: api/RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.html#RolePlus_ExternModule_API_Engine_Components_ASchematicMeshComponent_Create_SchematicObject_Vector3_Vector3_Quaternion_
-  commentId: M:RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.Create(SchematicObject,Vector3,Vector3,Quaternion)
-  fullName: RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.Create(SchematicObject, Vector3, Vector3, Quaternion)
+  href: api/RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.html#RolePlus_ExternModule_API_Engine_Components_ASchematicMeshComponent_Create_MapEditorReborn_API_Features_Objects_SchematicObject_Vector3_Vector3_Quaternion_
+  commentId: M:RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.Create(MapEditorReborn.API.Features.Objects.SchematicObject,Vector3,Vector3,Quaternion)
+  fullName: RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.Create(MapEditorReborn.API.Features.Objects.SchematicObject, Vector3, Vector3, Quaternion)
   nameWithType: ASchematicMeshComponent.Create(SchematicObject, Vector3, Vector3, Quaternion)
 - uid: RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.Create*
   name: Create
@@ -1512,22 +1512,22 @@ references:
   fullName.vb: RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.FindClosestObjectOfType(Of T)(T)
   nameWithType: ASchematicMeshComponent.FindClosestObjectOfType<T>(T)
   nameWithType.vb: ASchematicMeshComponent.FindClosestObjectOfType(Of T)(T)
-- uid: RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.FindClosestObjectOfType``1(SchematicObject)
+- uid: RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.FindClosestObjectOfType``1(MapEditorReborn.API.Features.Objects.SchematicObject)
   name: FindClosestObjectOfType<T>(SchematicObject)
-  href: api/RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.html#RolePlus_ExternModule_API_Engine_Components_ASchematicMeshComponent_FindClosestObjectOfType__1_SchematicObject_
-  commentId: M:RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.FindClosestObjectOfType``1(SchematicObject)
+  href: api/RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.html#RolePlus_ExternModule_API_Engine_Components_ASchematicMeshComponent_FindClosestObjectOfType__1_MapEditorReborn_API_Features_Objects_SchematicObject_
+  commentId: M:RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.FindClosestObjectOfType``1(MapEditorReborn.API.Features.Objects.SchematicObject)
   name.vb: FindClosestObjectOfType(Of T)(SchematicObject)
-  fullName: RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.FindClosestObjectOfType<T>(SchematicObject)
-  fullName.vb: RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.FindClosestObjectOfType(Of T)(SchematicObject)
+  fullName: RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.FindClosestObjectOfType<T>(MapEditorReborn.API.Features.Objects.SchematicObject)
+  fullName.vb: RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.FindClosestObjectOfType(Of T)(MapEditorReborn.API.Features.Objects.SchematicObject)
   nameWithType: ASchematicMeshComponent.FindClosestObjectOfType<T>(SchematicObject)
   nameWithType.vb: ASchematicMeshComponent.FindClosestObjectOfType(Of T)(SchematicObject)
-- uid: RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.FindClosestObjectOfType``1(System.Collections.Generic.IEnumerable{SchematicObject})
+- uid: RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.FindClosestObjectOfType``1(System.Collections.Generic.IEnumerable{MapEditorReborn.API.Features.Objects.SchematicObject})
   name: FindClosestObjectOfType<T>(IEnumerable<SchematicObject>)
-  href: api/RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.html#RolePlus_ExternModule_API_Engine_Components_ASchematicMeshComponent_FindClosestObjectOfType__1_System_Collections_Generic_IEnumerable_SchematicObject__
-  commentId: M:RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.FindClosestObjectOfType``1(System.Collections.Generic.IEnumerable{SchematicObject})
+  href: api/RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.html#RolePlus_ExternModule_API_Engine_Components_ASchematicMeshComponent_FindClosestObjectOfType__1_System_Collections_Generic_IEnumerable_MapEditorReborn_API_Features_Objects_SchematicObject__
+  commentId: M:RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.FindClosestObjectOfType``1(System.Collections.Generic.IEnumerable{MapEditorReborn.API.Features.Objects.SchematicObject})
   name.vb: FindClosestObjectOfType(Of T)(IEnumerable(Of SchematicObject))
-  fullName: RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.FindClosestObjectOfType<T>(System.Collections.Generic.IEnumerable<SchematicObject>)
-  fullName.vb: RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.FindClosestObjectOfType(Of T)(System.Collections.Generic.IEnumerable(Of SchematicObject))
+  fullName: RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.FindClosestObjectOfType<T>(System.Collections.Generic.IEnumerable<MapEditorReborn.API.Features.Objects.SchematicObject>)
+  fullName.vb: RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.FindClosestObjectOfType(Of T)(System.Collections.Generic.IEnumerable(Of MapEditorReborn.API.Features.Objects.SchematicObject))
   nameWithType: ASchematicMeshComponent.FindClosestObjectOfType<T>(IEnumerable<SchematicObject>)
   nameWithType.vb: ASchematicMeshComponent.FindClosestObjectOfType(Of T)(IEnumerable(Of SchematicObject))
 - uid: RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.FindClosestObjectOfType``1(Vector3)
@@ -1539,13 +1539,13 @@ references:
   fullName.vb: RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.FindClosestObjectOfType(Of T)(Vector3)
   nameWithType: ASchematicMeshComponent.FindClosestObjectOfType<T>(Vector3)
   nameWithType.vb: ASchematicMeshComponent.FindClosestObjectOfType(Of T)(Vector3)
-- uid: RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.FindClosestObjectOfType``1(Vector3,System.Collections.Generic.IEnumerable{SchematicObject})
+- uid: RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.FindClosestObjectOfType``1(Vector3,System.Collections.Generic.IEnumerable{MapEditorReborn.API.Features.Objects.SchematicObject})
   name: FindClosestObjectOfType<T>(Vector3, IEnumerable<SchematicObject>)
-  href: api/RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.html#RolePlus_ExternModule_API_Engine_Components_ASchematicMeshComponent_FindClosestObjectOfType__1_Vector3_System_Collections_Generic_IEnumerable_SchematicObject__
-  commentId: M:RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.FindClosestObjectOfType``1(Vector3,System.Collections.Generic.IEnumerable{SchematicObject})
+  href: api/RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.html#RolePlus_ExternModule_API_Engine_Components_ASchematicMeshComponent_FindClosestObjectOfType__1_Vector3_System_Collections_Generic_IEnumerable_MapEditorReborn_API_Features_Objects_SchematicObject__
+  commentId: M:RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.FindClosestObjectOfType``1(Vector3,System.Collections.Generic.IEnumerable{MapEditorReborn.API.Features.Objects.SchematicObject})
   name.vb: FindClosestObjectOfType(Of T)(Vector3, IEnumerable(Of SchematicObject))
-  fullName: RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.FindClosestObjectOfType<T>(Vector3, System.Collections.Generic.IEnumerable<SchematicObject>)
-  fullName.vb: RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.FindClosestObjectOfType(Of T)(Vector3, System.Collections.Generic.IEnumerable(Of SchematicObject))
+  fullName: RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.FindClosestObjectOfType<T>(Vector3, System.Collections.Generic.IEnumerable<MapEditorReborn.API.Features.Objects.SchematicObject>)
+  fullName.vb: RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.FindClosestObjectOfType(Of T)(Vector3, System.Collections.Generic.IEnumerable(Of MapEditorReborn.API.Features.Objects.SchematicObject))
   nameWithType: ASchematicMeshComponent.FindClosestObjectOfType<T>(Vector3, IEnumerable<SchematicObject>)
   nameWithType.vb: ASchematicMeshComponent.FindClosestObjectOfType(Of T)(Vector3, IEnumerable(Of SchematicObject))
 - uid: RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.FindClosestObjectsOfType*
@@ -1564,22 +1564,22 @@ references:
   fullName.vb: RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.FindClosestObjectsOfType(Of T)(T, System.UInt32)
   nameWithType: ASchematicMeshComponent.FindClosestObjectsOfType<T>(T, UInt32)
   nameWithType.vb: ASchematicMeshComponent.FindClosestObjectsOfType(Of T)(T, UInt32)
-- uid: RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.FindClosestObjectsOfType``1(SchematicObject,System.UInt32)
+- uid: RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.FindClosestObjectsOfType``1(MapEditorReborn.API.Features.Objects.SchematicObject,System.UInt32)
   name: FindClosestObjectsOfType<T>(SchematicObject, UInt32)
-  href: api/RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.html#RolePlus_ExternModule_API_Engine_Components_ASchematicMeshComponent_FindClosestObjectsOfType__1_SchematicObject_System_UInt32_
-  commentId: M:RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.FindClosestObjectsOfType``1(SchematicObject,System.UInt32)
+  href: api/RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.html#RolePlus_ExternModule_API_Engine_Components_ASchematicMeshComponent_FindClosestObjectsOfType__1_MapEditorReborn_API_Features_Objects_SchematicObject_System_UInt32_
+  commentId: M:RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.FindClosestObjectsOfType``1(MapEditorReborn.API.Features.Objects.SchematicObject,System.UInt32)
   name.vb: FindClosestObjectsOfType(Of T)(SchematicObject, UInt32)
-  fullName: RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.FindClosestObjectsOfType<T>(SchematicObject, System.UInt32)
-  fullName.vb: RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.FindClosestObjectsOfType(Of T)(SchematicObject, System.UInt32)
+  fullName: RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.FindClosestObjectsOfType<T>(MapEditorReborn.API.Features.Objects.SchematicObject, System.UInt32)
+  fullName.vb: RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.FindClosestObjectsOfType(Of T)(MapEditorReborn.API.Features.Objects.SchematicObject, System.UInt32)
   nameWithType: ASchematicMeshComponent.FindClosestObjectsOfType<T>(SchematicObject, UInt32)
   nameWithType.vb: ASchematicMeshComponent.FindClosestObjectsOfType(Of T)(SchematicObject, UInt32)
-- uid: RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.FindClosestObjectsOfType``1(System.Collections.Generic.IEnumerable{SchematicObject},System.UInt32)
+- uid: RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.FindClosestObjectsOfType``1(System.Collections.Generic.IEnumerable{MapEditorReborn.API.Features.Objects.SchematicObject},System.UInt32)
   name: FindClosestObjectsOfType<T>(IEnumerable<SchematicObject>, UInt32)
-  href: api/RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.html#RolePlus_ExternModule_API_Engine_Components_ASchematicMeshComponent_FindClosestObjectsOfType__1_System_Collections_Generic_IEnumerable_SchematicObject__System_UInt32_
-  commentId: M:RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.FindClosestObjectsOfType``1(System.Collections.Generic.IEnumerable{SchematicObject},System.UInt32)
+  href: api/RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.html#RolePlus_ExternModule_API_Engine_Components_ASchematicMeshComponent_FindClosestObjectsOfType__1_System_Collections_Generic_IEnumerable_MapEditorReborn_API_Features_Objects_SchematicObject__System_UInt32_
+  commentId: M:RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.FindClosestObjectsOfType``1(System.Collections.Generic.IEnumerable{MapEditorReborn.API.Features.Objects.SchematicObject},System.UInt32)
   name.vb: FindClosestObjectsOfType(Of T)(IEnumerable(Of SchematicObject), UInt32)
-  fullName: RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.FindClosestObjectsOfType<T>(System.Collections.Generic.IEnumerable<SchematicObject>, System.UInt32)
-  fullName.vb: RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.FindClosestObjectsOfType(Of T)(System.Collections.Generic.IEnumerable(Of SchematicObject), System.UInt32)
+  fullName: RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.FindClosestObjectsOfType<T>(System.Collections.Generic.IEnumerable<MapEditorReborn.API.Features.Objects.SchematicObject>, System.UInt32)
+  fullName.vb: RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.FindClosestObjectsOfType(Of T)(System.Collections.Generic.IEnumerable(Of MapEditorReborn.API.Features.Objects.SchematicObject), System.UInt32)
   nameWithType: ASchematicMeshComponent.FindClosestObjectsOfType<T>(IEnumerable<SchematicObject>, UInt32)
   nameWithType.vb: ASchematicMeshComponent.FindClosestObjectsOfType(Of T)(IEnumerable(Of SchematicObject), UInt32)
 - uid: RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.FindClosestObjectsOfType``1(System.UInt32)
@@ -1591,13 +1591,13 @@ references:
   fullName.vb: RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.FindClosestObjectsOfType(Of T)(System.UInt32)
   nameWithType: ASchematicMeshComponent.FindClosestObjectsOfType<T>(UInt32)
   nameWithType.vb: ASchematicMeshComponent.FindClosestObjectsOfType(Of T)(UInt32)
-- uid: RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.FindClosestObjectsOfType``1(Vector3,System.Collections.Generic.IEnumerable{SchematicObject},System.UInt32)
+- uid: RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.FindClosestObjectsOfType``1(Vector3,System.Collections.Generic.IEnumerable{MapEditorReborn.API.Features.Objects.SchematicObject},System.UInt32)
   name: FindClosestObjectsOfType<T>(Vector3, IEnumerable<SchematicObject>, UInt32)
-  href: api/RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.html#RolePlus_ExternModule_API_Engine_Components_ASchematicMeshComponent_FindClosestObjectsOfType__1_Vector3_System_Collections_Generic_IEnumerable_SchematicObject__System_UInt32_
-  commentId: M:RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.FindClosestObjectsOfType``1(Vector3,System.Collections.Generic.IEnumerable{SchematicObject},System.UInt32)
+  href: api/RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.html#RolePlus_ExternModule_API_Engine_Components_ASchematicMeshComponent_FindClosestObjectsOfType__1_Vector3_System_Collections_Generic_IEnumerable_MapEditorReborn_API_Features_Objects_SchematicObject__System_UInt32_
+  commentId: M:RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.FindClosestObjectsOfType``1(Vector3,System.Collections.Generic.IEnumerable{MapEditorReborn.API.Features.Objects.SchematicObject},System.UInt32)
   name.vb: FindClosestObjectsOfType(Of T)(Vector3, IEnumerable(Of SchematicObject), UInt32)
-  fullName: RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.FindClosestObjectsOfType<T>(Vector3, System.Collections.Generic.IEnumerable<SchematicObject>, System.UInt32)
-  fullName.vb: RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.FindClosestObjectsOfType(Of T)(Vector3, System.Collections.Generic.IEnumerable(Of SchematicObject), System.UInt32)
+  fullName: RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.FindClosestObjectsOfType<T>(Vector3, System.Collections.Generic.IEnumerable<MapEditorReborn.API.Features.Objects.SchematicObject>, System.UInt32)
+  fullName.vb: RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.FindClosestObjectsOfType(Of T)(Vector3, System.Collections.Generic.IEnumerable(Of MapEditorReborn.API.Features.Objects.SchematicObject), System.UInt32)
   nameWithType: ASchematicMeshComponent.FindClosestObjectsOfType<T>(Vector3, IEnumerable<SchematicObject>, UInt32)
   nameWithType.vb: ASchematicMeshComponent.FindClosestObjectsOfType(Of T)(Vector3, IEnumerable(Of SchematicObject), UInt32)
 - uid: RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.FindClosestObjectsOfType``1(Vector3,System.UInt32)
@@ -1625,22 +1625,22 @@ references:
   fullName.vb: RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.FindClosestObjectsWithTagOfType(Of T)(T, System.String, System.UInt32)
   nameWithType: ASchematicMeshComponent.FindClosestObjectsWithTagOfType<T>(T, String, UInt32)
   nameWithType.vb: ASchematicMeshComponent.FindClosestObjectsWithTagOfType(Of T)(T, String, UInt32)
-- uid: RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.FindClosestObjectsWithTagOfType``1(SchematicObject,System.String,System.UInt32)
+- uid: RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.FindClosestObjectsWithTagOfType``1(MapEditorReborn.API.Features.Objects.SchematicObject,System.String,System.UInt32)
   name: FindClosestObjectsWithTagOfType<T>(SchematicObject, String, UInt32)
-  href: api/RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.html#RolePlus_ExternModule_API_Engine_Components_ASchematicMeshComponent_FindClosestObjectsWithTagOfType__1_SchematicObject_System_String_System_UInt32_
-  commentId: M:RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.FindClosestObjectsWithTagOfType``1(SchematicObject,System.String,System.UInt32)
+  href: api/RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.html#RolePlus_ExternModule_API_Engine_Components_ASchematicMeshComponent_FindClosestObjectsWithTagOfType__1_MapEditorReborn_API_Features_Objects_SchematicObject_System_String_System_UInt32_
+  commentId: M:RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.FindClosestObjectsWithTagOfType``1(MapEditorReborn.API.Features.Objects.SchematicObject,System.String,System.UInt32)
   name.vb: FindClosestObjectsWithTagOfType(Of T)(SchematicObject, String, UInt32)
-  fullName: RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.FindClosestObjectsWithTagOfType<T>(SchematicObject, System.String, System.UInt32)
-  fullName.vb: RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.FindClosestObjectsWithTagOfType(Of T)(SchematicObject, System.String, System.UInt32)
+  fullName: RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.FindClosestObjectsWithTagOfType<T>(MapEditorReborn.API.Features.Objects.SchematicObject, System.String, System.UInt32)
+  fullName.vb: RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.FindClosestObjectsWithTagOfType(Of T)(MapEditorReborn.API.Features.Objects.SchematicObject, System.String, System.UInt32)
   nameWithType: ASchematicMeshComponent.FindClosestObjectsWithTagOfType<T>(SchematicObject, String, UInt32)
   nameWithType.vb: ASchematicMeshComponent.FindClosestObjectsWithTagOfType(Of T)(SchematicObject, String, UInt32)
-- uid: RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.FindClosestObjectsWithTagOfType``1(System.Collections.Generic.IEnumerable{SchematicObject},System.String,System.UInt32)
+- uid: RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.FindClosestObjectsWithTagOfType``1(System.Collections.Generic.IEnumerable{MapEditorReborn.API.Features.Objects.SchematicObject},System.String,System.UInt32)
   name: FindClosestObjectsWithTagOfType<T>(IEnumerable<SchematicObject>, String, UInt32)
-  href: api/RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.html#RolePlus_ExternModule_API_Engine_Components_ASchematicMeshComponent_FindClosestObjectsWithTagOfType__1_System_Collections_Generic_IEnumerable_SchematicObject__System_String_System_UInt32_
-  commentId: M:RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.FindClosestObjectsWithTagOfType``1(System.Collections.Generic.IEnumerable{SchematicObject},System.String,System.UInt32)
+  href: api/RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.html#RolePlus_ExternModule_API_Engine_Components_ASchematicMeshComponent_FindClosestObjectsWithTagOfType__1_System_Collections_Generic_IEnumerable_MapEditorReborn_API_Features_Objects_SchematicObject__System_String_System_UInt32_
+  commentId: M:RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.FindClosestObjectsWithTagOfType``1(System.Collections.Generic.IEnumerable{MapEditorReborn.API.Features.Objects.SchematicObject},System.String,System.UInt32)
   name.vb: FindClosestObjectsWithTagOfType(Of T)(IEnumerable(Of SchematicObject), String, UInt32)
-  fullName: RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.FindClosestObjectsWithTagOfType<T>(System.Collections.Generic.IEnumerable<SchematicObject>, System.String, System.UInt32)
-  fullName.vb: RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.FindClosestObjectsWithTagOfType(Of T)(System.Collections.Generic.IEnumerable(Of SchematicObject), System.String, System.UInt32)
+  fullName: RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.FindClosestObjectsWithTagOfType<T>(System.Collections.Generic.IEnumerable<MapEditorReborn.API.Features.Objects.SchematicObject>, System.String, System.UInt32)
+  fullName.vb: RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.FindClosestObjectsWithTagOfType(Of T)(System.Collections.Generic.IEnumerable(Of MapEditorReborn.API.Features.Objects.SchematicObject), System.String, System.UInt32)
   nameWithType: ASchematicMeshComponent.FindClosestObjectsWithTagOfType<T>(IEnumerable<SchematicObject>, String, UInt32)
   nameWithType.vb: ASchematicMeshComponent.FindClosestObjectsWithTagOfType(Of T)(IEnumerable(Of SchematicObject), String, UInt32)
 - uid: RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.FindClosestObjectsWithTagOfType``1(System.String,System.UInt32)
@@ -1652,13 +1652,13 @@ references:
   fullName.vb: RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.FindClosestObjectsWithTagOfType(Of T)(System.String, System.UInt32)
   nameWithType: ASchematicMeshComponent.FindClosestObjectsWithTagOfType<T>(String, UInt32)
   nameWithType.vb: ASchematicMeshComponent.FindClosestObjectsWithTagOfType(Of T)(String, UInt32)
-- uid: RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.FindClosestObjectsWithTagOfType``1(Vector3,System.String,System.Collections.Generic.IEnumerable{SchematicObject},System.UInt32)
+- uid: RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.FindClosestObjectsWithTagOfType``1(Vector3,System.String,System.Collections.Generic.IEnumerable{MapEditorReborn.API.Features.Objects.SchematicObject},System.UInt32)
   name: FindClosestObjectsWithTagOfType<T>(Vector3, String, IEnumerable<SchematicObject>, UInt32)
-  href: api/RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.html#RolePlus_ExternModule_API_Engine_Components_ASchematicMeshComponent_FindClosestObjectsWithTagOfType__1_Vector3_System_String_System_Collections_Generic_IEnumerable_SchematicObject__System_UInt32_
-  commentId: M:RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.FindClosestObjectsWithTagOfType``1(Vector3,System.String,System.Collections.Generic.IEnumerable{SchematicObject},System.UInt32)
+  href: api/RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.html#RolePlus_ExternModule_API_Engine_Components_ASchematicMeshComponent_FindClosestObjectsWithTagOfType__1_Vector3_System_String_System_Collections_Generic_IEnumerable_MapEditorReborn_API_Features_Objects_SchematicObject__System_UInt32_
+  commentId: M:RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.FindClosestObjectsWithTagOfType``1(Vector3,System.String,System.Collections.Generic.IEnumerable{MapEditorReborn.API.Features.Objects.SchematicObject},System.UInt32)
   name.vb: FindClosestObjectsWithTagOfType(Of T)(Vector3, String, IEnumerable(Of SchematicObject), UInt32)
-  fullName: RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.FindClosestObjectsWithTagOfType<T>(Vector3, System.String, System.Collections.Generic.IEnumerable<SchematicObject>, System.UInt32)
-  fullName.vb: RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.FindClosestObjectsWithTagOfType(Of T)(Vector3, System.String, System.Collections.Generic.IEnumerable(Of SchematicObject), System.UInt32)
+  fullName: RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.FindClosestObjectsWithTagOfType<T>(Vector3, System.String, System.Collections.Generic.IEnumerable<MapEditorReborn.API.Features.Objects.SchematicObject>, System.UInt32)
+  fullName.vb: RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.FindClosestObjectsWithTagOfType(Of T)(Vector3, System.String, System.Collections.Generic.IEnumerable(Of MapEditorReborn.API.Features.Objects.SchematicObject), System.UInt32)
   nameWithType: ASchematicMeshComponent.FindClosestObjectsWithTagOfType<T>(Vector3, String, IEnumerable<SchematicObject>, UInt32)
   nameWithType.vb: ASchematicMeshComponent.FindClosestObjectsWithTagOfType(Of T)(Vector3, String, IEnumerable(Of SchematicObject), UInt32)
 - uid: RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.FindClosestObjectsWithTagOfType``1(Vector3,System.String,System.UInt32)
@@ -1670,6 +1670,22 @@ references:
   fullName.vb: RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.FindClosestObjectsWithTagOfType(Of T)(Vector3, System.String, System.UInt32)
   nameWithType: ASchematicMeshComponent.FindClosestObjectsWithTagOfType<T>(Vector3, String, UInt32)
   nameWithType.vb: ASchematicMeshComponent.FindClosestObjectsWithTagOfType(Of T)(Vector3, String, UInt32)
+- uid: RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.FindClosestObjectWithNameOfType*
+  name: FindClosestObjectWithNameOfType
+  href: api/RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.html#RolePlus_ExternModule_API_Engine_Components_ASchematicMeshComponent_FindClosestObjectWithNameOfType_
+  commentId: Overload:RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.FindClosestObjectWithNameOfType
+  isSpec: "True"
+  fullName: RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.FindClosestObjectWithNameOfType
+  nameWithType: ASchematicMeshComponent.FindClosestObjectWithNameOfType
+- uid: RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.FindClosestObjectWithNameOfType``1(Vector3,System.String,System.Collections.Generic.IEnumerable{MapEditorReborn.API.Features.Objects.SchematicObject})
+  name: FindClosestObjectWithNameOfType<T>(Vector3, String, IEnumerable<SchematicObject>)
+  href: api/RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.html#RolePlus_ExternModule_API_Engine_Components_ASchematicMeshComponent_FindClosestObjectWithNameOfType__1_Vector3_System_String_System_Collections_Generic_IEnumerable_MapEditorReborn_API_Features_Objects_SchematicObject__
+  commentId: M:RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.FindClosestObjectWithNameOfType``1(Vector3,System.String,System.Collections.Generic.IEnumerable{MapEditorReborn.API.Features.Objects.SchematicObject})
+  name.vb: FindClosestObjectWithNameOfType(Of T)(Vector3, String, IEnumerable(Of SchematicObject))
+  fullName: RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.FindClosestObjectWithNameOfType<T>(Vector3, System.String, System.Collections.Generic.IEnumerable<MapEditorReborn.API.Features.Objects.SchematicObject>)
+  fullName.vb: RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.FindClosestObjectWithNameOfType(Of T)(Vector3, System.String, System.Collections.Generic.IEnumerable(Of MapEditorReborn.API.Features.Objects.SchematicObject))
+  nameWithType: ASchematicMeshComponent.FindClosestObjectWithNameOfType<T>(Vector3, String, IEnumerable<SchematicObject>)
+  nameWithType.vb: ASchematicMeshComponent.FindClosestObjectWithNameOfType(Of T)(Vector3, String, IEnumerable(Of SchematicObject))
 - uid: RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.FindClosestObjectWithTagOfType*
   name: FindClosestObjectWithTagOfType
   href: api/RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.html#RolePlus_ExternModule_API_Engine_Components_ASchematicMeshComponent_FindClosestObjectWithTagOfType_
@@ -1686,22 +1702,22 @@ references:
   fullName.vb: RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.FindClosestObjectWithTagOfType(Of T)(T, System.String)
   nameWithType: ASchematicMeshComponent.FindClosestObjectWithTagOfType<T>(T, String)
   nameWithType.vb: ASchematicMeshComponent.FindClosestObjectWithTagOfType(Of T)(T, String)
-- uid: RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.FindClosestObjectWithTagOfType``1(SchematicObject,System.String)
+- uid: RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.FindClosestObjectWithTagOfType``1(MapEditorReborn.API.Features.Objects.SchematicObject,System.String)
   name: FindClosestObjectWithTagOfType<T>(SchematicObject, String)
-  href: api/RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.html#RolePlus_ExternModule_API_Engine_Components_ASchematicMeshComponent_FindClosestObjectWithTagOfType__1_SchematicObject_System_String_
-  commentId: M:RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.FindClosestObjectWithTagOfType``1(SchematicObject,System.String)
+  href: api/RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.html#RolePlus_ExternModule_API_Engine_Components_ASchematicMeshComponent_FindClosestObjectWithTagOfType__1_MapEditorReborn_API_Features_Objects_SchematicObject_System_String_
+  commentId: M:RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.FindClosestObjectWithTagOfType``1(MapEditorReborn.API.Features.Objects.SchematicObject,System.String)
   name.vb: FindClosestObjectWithTagOfType(Of T)(SchematicObject, String)
-  fullName: RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.FindClosestObjectWithTagOfType<T>(SchematicObject, System.String)
-  fullName.vb: RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.FindClosestObjectWithTagOfType(Of T)(SchematicObject, System.String)
+  fullName: RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.FindClosestObjectWithTagOfType<T>(MapEditorReborn.API.Features.Objects.SchematicObject, System.String)
+  fullName.vb: RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.FindClosestObjectWithTagOfType(Of T)(MapEditorReborn.API.Features.Objects.SchematicObject, System.String)
   nameWithType: ASchematicMeshComponent.FindClosestObjectWithTagOfType<T>(SchematicObject, String)
   nameWithType.vb: ASchematicMeshComponent.FindClosestObjectWithTagOfType(Of T)(SchematicObject, String)
-- uid: RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.FindClosestObjectWithTagOfType``1(System.Collections.Generic.IEnumerable{SchematicObject},System.String)
+- uid: RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.FindClosestObjectWithTagOfType``1(System.Collections.Generic.IEnumerable{MapEditorReborn.API.Features.Objects.SchematicObject},System.String)
   name: FindClosestObjectWithTagOfType<T>(IEnumerable<SchematicObject>, String)
-  href: api/RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.html#RolePlus_ExternModule_API_Engine_Components_ASchematicMeshComponent_FindClosestObjectWithTagOfType__1_System_Collections_Generic_IEnumerable_SchematicObject__System_String_
-  commentId: M:RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.FindClosestObjectWithTagOfType``1(System.Collections.Generic.IEnumerable{SchematicObject},System.String)
+  href: api/RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.html#RolePlus_ExternModule_API_Engine_Components_ASchematicMeshComponent_FindClosestObjectWithTagOfType__1_System_Collections_Generic_IEnumerable_MapEditorReborn_API_Features_Objects_SchematicObject__System_String_
+  commentId: M:RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.FindClosestObjectWithTagOfType``1(System.Collections.Generic.IEnumerable{MapEditorReborn.API.Features.Objects.SchematicObject},System.String)
   name.vb: FindClosestObjectWithTagOfType(Of T)(IEnumerable(Of SchematicObject), String)
-  fullName: RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.FindClosestObjectWithTagOfType<T>(System.Collections.Generic.IEnumerable<SchematicObject>, System.String)
-  fullName.vb: RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.FindClosestObjectWithTagOfType(Of T)(System.Collections.Generic.IEnumerable(Of SchematicObject), System.String)
+  fullName: RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.FindClosestObjectWithTagOfType<T>(System.Collections.Generic.IEnumerable<MapEditorReborn.API.Features.Objects.SchematicObject>, System.String)
+  fullName.vb: RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.FindClosestObjectWithTagOfType(Of T)(System.Collections.Generic.IEnumerable(Of MapEditorReborn.API.Features.Objects.SchematicObject), System.String)
   nameWithType: ASchematicMeshComponent.FindClosestObjectWithTagOfType<T>(IEnumerable<SchematicObject>, String)
   nameWithType.vb: ASchematicMeshComponent.FindClosestObjectWithTagOfType(Of T)(IEnumerable(Of SchematicObject), String)
 - uid: RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.FindClosestObjectWithTagOfType``1(System.String)
@@ -1722,13 +1738,13 @@ references:
   fullName.vb: RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.FindClosestObjectWithTagOfType(Of T)(Vector3, System.String)
   nameWithType: ASchematicMeshComponent.FindClosestObjectWithTagOfType<T>(Vector3, String)
   nameWithType.vb: ASchematicMeshComponent.FindClosestObjectWithTagOfType(Of T)(Vector3, String)
-- uid: RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.FindClosestObjectWithTagOfType``1(Vector3,System.String,System.Collections.Generic.IEnumerable{SchematicObject})
+- uid: RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.FindClosestObjectWithTagOfType``1(Vector3,System.String,System.Collections.Generic.IEnumerable{MapEditorReborn.API.Features.Objects.SchematicObject})
   name: FindClosestObjectWithTagOfType<T>(Vector3, String, IEnumerable<SchematicObject>)
-  href: api/RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.html#RolePlus_ExternModule_API_Engine_Components_ASchematicMeshComponent_FindClosestObjectWithTagOfType__1_Vector3_System_String_System_Collections_Generic_IEnumerable_SchematicObject__
-  commentId: M:RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.FindClosestObjectWithTagOfType``1(Vector3,System.String,System.Collections.Generic.IEnumerable{SchematicObject})
+  href: api/RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.html#RolePlus_ExternModule_API_Engine_Components_ASchematicMeshComponent_FindClosestObjectWithTagOfType__1_Vector3_System_String_System_Collections_Generic_IEnumerable_MapEditorReborn_API_Features_Objects_SchematicObject__
+  commentId: M:RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.FindClosestObjectWithTagOfType``1(Vector3,System.String,System.Collections.Generic.IEnumerable{MapEditorReborn.API.Features.Objects.SchematicObject})
   name.vb: FindClosestObjectWithTagOfType(Of T)(Vector3, String, IEnumerable(Of SchematicObject))
-  fullName: RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.FindClosestObjectWithTagOfType<T>(Vector3, System.String, System.Collections.Generic.IEnumerable<SchematicObject>)
-  fullName.vb: RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.FindClosestObjectWithTagOfType(Of T)(Vector3, System.String, System.Collections.Generic.IEnumerable(Of SchematicObject))
+  fullName: RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.FindClosestObjectWithTagOfType<T>(Vector3, System.String, System.Collections.Generic.IEnumerable<MapEditorReborn.API.Features.Objects.SchematicObject>)
+  fullName.vb: RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.FindClosestObjectWithTagOfType(Of T)(Vector3, System.String, System.Collections.Generic.IEnumerable(Of MapEditorReborn.API.Features.Objects.SchematicObject))
   nameWithType: ASchematicMeshComponent.FindClosestObjectWithTagOfType<T>(Vector3, String, IEnumerable<SchematicObject>)
   nameWithType.vb: ASchematicMeshComponent.FindClosestObjectWithTagOfType(Of T)(Vector3, String, IEnumerable(Of SchematicObject))
 - uid: RolePlus.ExternModule.API.Engine.Components.ASchematicMeshComponent.GetAnimations(Animator)
@@ -2579,6 +2595,164 @@ references:
   fullName.vb: RolePlus.ExternModule.API.Engine.Core.Generic.TValueObject(Of TObject).Cast(Of T)(ByRef T)
   nameWithType: TValueObject<TObject>.Cast<T>(out T)
   nameWithType.vb: TValueObject(Of TObject).Cast(Of T)(ByRef T)
+- uid: RolePlus.ExternModule.API.Engine.Core.Singleton`1
+  name: Singleton<T>
+  href: api/RolePlus.ExternModule.API.Engine.Core.Singleton-1.html
+  commentId: T:RolePlus.ExternModule.API.Engine.Core.Singleton`1
+  name.vb: Singleton(Of T)
+  fullName: RolePlus.ExternModule.API.Engine.Core.Singleton<T>
+  fullName.vb: RolePlus.ExternModule.API.Engine.Core.Singleton(Of T)
+  nameWithType: Singleton<T>
+  nameWithType.vb: Singleton(Of T)
+- uid: RolePlus.ExternModule.API.Engine.Core.Singleton`1.#ctor(`0)
+  name: Singleton(T)
+  href: api/RolePlus.ExternModule.API.Engine.Core.Singleton-1.html#RolePlus_ExternModule_API_Engine_Core_Singleton_1__ctor__0_
+  commentId: M:RolePlus.ExternModule.API.Engine.Core.Singleton`1.#ctor(`0)
+  fullName: RolePlus.ExternModule.API.Engine.Core.Singleton<T>.Singleton(T)
+  fullName.vb: RolePlus.ExternModule.API.Engine.Core.Singleton(Of T).Singleton(T)
+  nameWithType: Singleton<T>.Singleton(T)
+  nameWithType.vb: Singleton(Of T).Singleton(T)
+- uid: RolePlus.ExternModule.API.Engine.Core.Singleton`1.#ctor*
+  name: Singleton
+  href: api/RolePlus.ExternModule.API.Engine.Core.Singleton-1.html#RolePlus_ExternModule_API_Engine_Core_Singleton_1__ctor_
+  commentId: Overload:RolePlus.ExternModule.API.Engine.Core.Singleton`1.#ctor
+  isSpec: "True"
+  fullName: RolePlus.ExternModule.API.Engine.Core.Singleton<T>.Singleton
+  fullName.vb: RolePlus.ExternModule.API.Engine.Core.Singleton(Of T).Singleton
+  nameWithType: Singleton<T>.Singleton
+  nameWithType.vb: Singleton(Of T).Singleton
+- uid: RolePlus.ExternModule.API.Engine.Core.Singleton`1.Cast*
+  name: Cast
+  href: api/RolePlus.ExternModule.API.Engine.Core.Singleton-1.html#RolePlus_ExternModule_API_Engine_Core_Singleton_1_Cast_
+  commentId: Overload:RolePlus.ExternModule.API.Engine.Core.Singleton`1.Cast
+  isSpec: "True"
+  fullName: RolePlus.ExternModule.API.Engine.Core.Singleton<T>.Cast
+  fullName.vb: RolePlus.ExternModule.API.Engine.Core.Singleton(Of T).Cast
+  nameWithType: Singleton<T>.Cast
+  nameWithType.vb: Singleton(Of T).Cast
+- uid: RolePlus.ExternModule.API.Engine.Core.Singleton`1.Cast``1
+  name: Cast<TObject>()
+  href: api/RolePlus.ExternModule.API.Engine.Core.Singleton-1.html#RolePlus_ExternModule_API_Engine_Core_Singleton_1_Cast__1
+  commentId: M:RolePlus.ExternModule.API.Engine.Core.Singleton`1.Cast``1
+  name.vb: Cast(Of TObject)()
+  fullName: RolePlus.ExternModule.API.Engine.Core.Singleton<T>.Cast<TObject>()
+  fullName.vb: RolePlus.ExternModule.API.Engine.Core.Singleton(Of T).Cast(Of TObject)()
+  nameWithType: Singleton<T>.Cast<TObject>()
+  nameWithType.vb: Singleton(Of T).Cast(Of TObject)()
+- uid: RolePlus.ExternModule.API.Engine.Core.Singleton`1.Cast``1(``0@)
+  name: Cast<TObject>(out TObject)
+  href: api/RolePlus.ExternModule.API.Engine.Core.Singleton-1.html#RolePlus_ExternModule_API_Engine_Core_Singleton_1_Cast__1___0__
+  commentId: M:RolePlus.ExternModule.API.Engine.Core.Singleton`1.Cast``1(``0@)
+  name.vb: Cast(Of TObject)(ByRef TObject)
+  fullName: RolePlus.ExternModule.API.Engine.Core.Singleton<T>.Cast<TObject>(out TObject)
+  fullName.vb: RolePlus.ExternModule.API.Engine.Core.Singleton(Of T).Cast(Of TObject)(ByRef TObject)
+  nameWithType: Singleton<T>.Cast<TObject>(out TObject)
+  nameWithType.vb: Singleton(Of T).Cast(Of TObject)(ByRef TObject)
+- uid: RolePlus.ExternModule.API.Engine.Core.Singleton`1.Create(`0)
+  name: Create(T)
+  href: api/RolePlus.ExternModule.API.Engine.Core.Singleton-1.html#RolePlus_ExternModule_API_Engine_Core_Singleton_1_Create__0_
+  commentId: M:RolePlus.ExternModule.API.Engine.Core.Singleton`1.Create(`0)
+  fullName: RolePlus.ExternModule.API.Engine.Core.Singleton<T>.Create(T)
+  fullName.vb: RolePlus.ExternModule.API.Engine.Core.Singleton(Of T).Create(T)
+  nameWithType: Singleton<T>.Create(T)
+  nameWithType.vb: Singleton(Of T).Create(T)
+- uid: RolePlus.ExternModule.API.Engine.Core.Singleton`1.Create*
+  name: Create
+  href: api/RolePlus.ExternModule.API.Engine.Core.Singleton-1.html#RolePlus_ExternModule_API_Engine_Core_Singleton_1_Create_
+  commentId: Overload:RolePlus.ExternModule.API.Engine.Core.Singleton`1.Create
+  isSpec: "True"
+  fullName: RolePlus.ExternModule.API.Engine.Core.Singleton<T>.Create
+  fullName.vb: RolePlus.ExternModule.API.Engine.Core.Singleton(Of T).Create
+  nameWithType: Singleton<T>.Create
+  nameWithType.vb: Singleton(Of T).Create
+- uid: RolePlus.ExternModule.API.Engine.Core.Singleton`1.Destroy(`0)
+  name: Destroy(T)
+  href: api/RolePlus.ExternModule.API.Engine.Core.Singleton-1.html#RolePlus_ExternModule_API_Engine_Core_Singleton_1_Destroy__0_
+  commentId: M:RolePlus.ExternModule.API.Engine.Core.Singleton`1.Destroy(`0)
+  fullName: RolePlus.ExternModule.API.Engine.Core.Singleton<T>.Destroy(T)
+  fullName.vb: RolePlus.ExternModule.API.Engine.Core.Singleton(Of T).Destroy(T)
+  nameWithType: Singleton<T>.Destroy(T)
+  nameWithType.vb: Singleton(Of T).Destroy(T)
+- uid: RolePlus.ExternModule.API.Engine.Core.Singleton`1.Destroy*
+  name: Destroy
+  href: api/RolePlus.ExternModule.API.Engine.Core.Singleton-1.html#RolePlus_ExternModule_API_Engine_Core_Singleton_1_Destroy_
+  commentId: Overload:RolePlus.ExternModule.API.Engine.Core.Singleton`1.Destroy
+  isSpec: "True"
+  fullName: RolePlus.ExternModule.API.Engine.Core.Singleton<T>.Destroy
+  fullName.vb: RolePlus.ExternModule.API.Engine.Core.Singleton(Of T).Destroy
+  nameWithType: Singleton<T>.Destroy
+  nameWithType.vb: Singleton(Of T).Destroy
+- uid: RolePlus.ExternModule.API.Engine.Core.Singleton`1.Finalize
+  name: Finalize()
+  href: api/RolePlus.ExternModule.API.Engine.Core.Singleton-1.html#RolePlus_ExternModule_API_Engine_Core_Singleton_1_Finalize
+  commentId: M:RolePlus.ExternModule.API.Engine.Core.Singleton`1.Finalize
+  fullName: RolePlus.ExternModule.API.Engine.Core.Singleton<T>.Finalize()
+  fullName.vb: RolePlus.ExternModule.API.Engine.Core.Singleton(Of T).Finalize()
+  nameWithType: Singleton<T>.Finalize()
+  nameWithType.vb: Singleton(Of T).Finalize()
+- uid: RolePlus.ExternModule.API.Engine.Core.Singleton`1.Finalize*
+  name: Finalize
+  href: api/RolePlus.ExternModule.API.Engine.Core.Singleton-1.html#RolePlus_ExternModule_API_Engine_Core_Singleton_1_Finalize_
+  commentId: Overload:RolePlus.ExternModule.API.Engine.Core.Singleton`1.Finalize
+  isSpec: "True"
+  fullName: RolePlus.ExternModule.API.Engine.Core.Singleton<T>.Finalize
+  fullName.vb: RolePlus.ExternModule.API.Engine.Core.Singleton(Of T).Finalize
+  nameWithType: Singleton<T>.Finalize
+  nameWithType.vb: Singleton(Of T).Finalize
+- uid: RolePlus.ExternModule.API.Engine.Core.Singleton`1.Instance
+  name: Instance
+  href: api/RolePlus.ExternModule.API.Engine.Core.Singleton-1.html#RolePlus_ExternModule_API_Engine_Core_Singleton_1_Instance
+  commentId: P:RolePlus.ExternModule.API.Engine.Core.Singleton`1.Instance
+  fullName: RolePlus.ExternModule.API.Engine.Core.Singleton<T>.Instance
+  fullName.vb: RolePlus.ExternModule.API.Engine.Core.Singleton(Of T).Instance
+  nameWithType: Singleton<T>.Instance
+  nameWithType.vb: Singleton(Of T).Instance
+- uid: RolePlus.ExternModule.API.Engine.Core.Singleton`1.Instance*
+  name: Instance
+  href: api/RolePlus.ExternModule.API.Engine.Core.Singleton-1.html#RolePlus_ExternModule_API_Engine_Core_Singleton_1_Instance_
+  commentId: Overload:RolePlus.ExternModule.API.Engine.Core.Singleton`1.Instance
+  isSpec: "True"
+  fullName: RolePlus.ExternModule.API.Engine.Core.Singleton<T>.Instance
+  fullName.vb: RolePlus.ExternModule.API.Engine.Core.Singleton(Of T).Instance
+  nameWithType: Singleton<T>.Instance
+  nameWithType.vb: Singleton(Of T).Instance
+- uid: RolePlus.ExternModule.API.Engine.Core.Singleton`1.op_Implicit(RolePlus.ExternModule.API.Engine.Core.Singleton{`0})~`0
+  name: Implicit(Singleton<T> to T)
+  href: api/RolePlus.ExternModule.API.Engine.Core.Singleton-1.html#RolePlus_ExternModule_API_Engine_Core_Singleton_1_op_Implicit_RolePlus_ExternModule_API_Engine_Core_Singleton__0____0
+  commentId: M:RolePlus.ExternModule.API.Engine.Core.Singleton`1.op_Implicit(RolePlus.ExternModule.API.Engine.Core.Singleton{`0})~`0
+  name.vb: Widening(Singleton(Of T) to T)
+  fullName: RolePlus.ExternModule.API.Engine.Core.Singleton<T>.Implicit(RolePlus.ExternModule.API.Engine.Core.Singleton<T> to T)
+  fullName.vb: RolePlus.ExternModule.API.Engine.Core.Singleton(Of T).Widening(RolePlus.ExternModule.API.Engine.Core.Singleton(Of T) to T)
+  nameWithType: Singleton<T>.Implicit(Singleton<T> to T)
+  nameWithType.vb: Singleton(Of T).Widening(Singleton(Of T) to T)
+- uid: RolePlus.ExternModule.API.Engine.Core.Singleton`1.op_Implicit*
+  name: Implicit
+  href: api/RolePlus.ExternModule.API.Engine.Core.Singleton-1.html#RolePlus_ExternModule_API_Engine_Core_Singleton_1_op_Implicit_
+  commentId: Overload:RolePlus.ExternModule.API.Engine.Core.Singleton`1.op_Implicit
+  isSpec: "True"
+  name.vb: Widening
+  fullName: RolePlus.ExternModule.API.Engine.Core.Singleton<T>.Implicit
+  fullName.vb: RolePlus.ExternModule.API.Engine.Core.Singleton(Of T).Widening
+  nameWithType: Singleton<T>.Implicit
+  nameWithType.vb: Singleton(Of T).Widening
+- uid: RolePlus.ExternModule.API.Engine.Core.Singleton`1.TryGet*
+  name: TryGet
+  href: api/RolePlus.ExternModule.API.Engine.Core.Singleton-1.html#RolePlus_ExternModule_API_Engine_Core_Singleton_1_TryGet_
+  commentId: Overload:RolePlus.ExternModule.API.Engine.Core.Singleton`1.TryGet
+  isSpec: "True"
+  fullName: RolePlus.ExternModule.API.Engine.Core.Singleton<T>.TryGet
+  fullName.vb: RolePlus.ExternModule.API.Engine.Core.Singleton(Of T).TryGet
+  nameWithType: Singleton<T>.TryGet
+  nameWithType.vb: Singleton(Of T).TryGet
+- uid: RolePlus.ExternModule.API.Engine.Core.Singleton`1.TryGet``1(``0@)
+  name: TryGet<TObject>(out TObject)
+  href: api/RolePlus.ExternModule.API.Engine.Core.Singleton-1.html#RolePlus_ExternModule_API_Engine_Core_Singleton_1_TryGet__1___0__
+  commentId: M:RolePlus.ExternModule.API.Engine.Core.Singleton`1.TryGet``1(``0@)
+  name.vb: TryGet(Of TObject)(ByRef TObject)
+  fullName: RolePlus.ExternModule.API.Engine.Core.Singleton<T>.TryGet<TObject>(out TObject)
+  fullName.vb: RolePlus.ExternModule.API.Engine.Core.Singleton(Of T).TryGet(Of TObject)(ByRef TObject)
+  nameWithType: Singleton<T>.TryGet<TObject>(out TObject)
+  nameWithType.vb: Singleton(Of T).TryGet(Of TObject)(ByRef TObject)
 - uid: RolePlus.ExternModule.API.Engine.Core.TypeCastObject`1
   name: TypeCastObject<T1>
   href: api/RolePlus.ExternModule.API.Engine.Core.TypeCastObject-1.html
@@ -2968,6 +3142,15 @@ references:
   fullName.vb: RolePlus.ExternModule.API.Engine.Core.UObject.FindMostAppropriateEntry(Of T)(System.String, System.Collections.Generic.IEnumerable(Of T))
   nameWithType: UObject.FindMostAppropriateEntry<T>(String, IEnumerable<T>)
   nameWithType.vb: UObject.FindMostAppropriateEntry(Of T)(String, IEnumerable(Of T))
+- uid: RolePlus.ExternModule.API.Engine.Core.UObject.FindMostAppropriateEntry``1(System.String,System.Collections.Generic.IEnumerable{System.String})
+  name: FindMostAppropriateEntry<T>(String, IEnumerable<String>)
+  href: api/RolePlus.ExternModule.API.Engine.Core.UObject.html#RolePlus_ExternModule_API_Engine_Core_UObject_FindMostAppropriateEntry__1_System_String_System_Collections_Generic_IEnumerable_System_String__
+  commentId: M:RolePlus.ExternModule.API.Engine.Core.UObject.FindMostAppropriateEntry``1(System.String,System.Collections.Generic.IEnumerable{System.String})
+  name.vb: FindMostAppropriateEntry(Of T)(String, IEnumerable(Of String))
+  fullName: RolePlus.ExternModule.API.Engine.Core.UObject.FindMostAppropriateEntry<T>(System.String, System.Collections.Generic.IEnumerable<System.String>)
+  fullName.vb: RolePlus.ExternModule.API.Engine.Core.UObject.FindMostAppropriateEntry(Of T)(System.String, System.Collections.Generic.IEnumerable(Of System.String))
+  nameWithType: UObject.FindMostAppropriateEntry<T>(String, IEnumerable<String>)
+  nameWithType.vb: UObject.FindMostAppropriateEntry(Of T)(String, IEnumerable(Of String))
 - uid: RolePlus.ExternModule.API.Engine.Core.UObject.FindUObjectDefinedTypeByName(System.String,System.Boolean)
   name: FindUObjectDefinedTypeByName(String, Boolean)
   href: api/RolePlus.ExternModule.API.Engine.Core.UObject.html#RolePlus_ExternModule_API_Engine_Core_UObject_FindUObjectDefinedTypeByName_System_String_System_Boolean_
@@ -6292,6 +6475,19 @@ references:
   commentId: T:RolePlus.ExternModule.API.Features.Audio.API.AudioController
   fullName: RolePlus.ExternModule.API.Features.Audio.API.AudioController
   nameWithType: AudioController
+- uid: RolePlus.ExternModule.API.Features.Audio.API.AudioController.AutomaticMusic
+  name: AutomaticMusic
+  href: api/RolePlus.ExternModule.API.Features.Audio.API.AudioController.html#RolePlus_ExternModule_API_Features_Audio_API_AudioController_AutomaticMusic
+  commentId: P:RolePlus.ExternModule.API.Features.Audio.API.AudioController.AutomaticMusic
+  fullName: RolePlus.ExternModule.API.Features.Audio.API.AudioController.AutomaticMusic
+  nameWithType: AudioController.AutomaticMusic
+- uid: RolePlus.ExternModule.API.Features.Audio.API.AudioController.AutomaticMusic*
+  name: AutomaticMusic
+  href: api/RolePlus.ExternModule.API.Features.Audio.API.AudioController.html#RolePlus_ExternModule_API_Features_Audio_API_AudioController_AutomaticMusic_
+  commentId: Overload:RolePlus.ExternModule.API.Features.Audio.API.AudioController.AutomaticMusic
+  isSpec: "True"
+  fullName: RolePlus.ExternModule.API.Features.Audio.API.AudioController.AutomaticMusic
+  nameWithType: AudioController.AutomaticMusic
 - uid: RolePlus.ExternModule.API.Features.Audio.API.AudioController.Comms
   name: Comms
   href: api/RolePlus.ExternModule.API.Features.Audio.API.AudioController.html#RolePlus_ExternModule_API_Features_Audio_API_AudioController_Comms
@@ -6305,6 +6501,19 @@ references:
   isSpec: "True"
   fullName: RolePlus.ExternModule.API.Features.Audio.API.AudioController.Comms
   nameWithType: AudioController.Comms
+- uid: RolePlus.ExternModule.API.Features.Audio.API.AudioController.LoopMusic
+  name: LoopMusic
+  href: api/RolePlus.ExternModule.API.Features.Audio.API.AudioController.html#RolePlus_ExternModule_API_Features_Audio_API_AudioController_LoopMusic
+  commentId: P:RolePlus.ExternModule.API.Features.Audio.API.AudioController.LoopMusic
+  fullName: RolePlus.ExternModule.API.Features.Audio.API.AudioController.LoopMusic
+  nameWithType: AudioController.LoopMusic
+- uid: RolePlus.ExternModule.API.Features.Audio.API.AudioController.LoopMusic*
+  name: LoopMusic
+  href: api/RolePlus.ExternModule.API.Features.Audio.API.AudioController.html#RolePlus_ExternModule_API_Features_Audio_API_AudioController_LoopMusic_
+  commentId: Overload:RolePlus.ExternModule.API.Features.Audio.API.AudioController.LoopMusic
+  isSpec: "True"
+  fullName: RolePlus.ExternModule.API.Features.Audio.API.AudioController.LoopMusic
+  nameWithType: AudioController.LoopMusic
 - uid: RolePlus.ExternModule.API.Features.Audio.API.AudioController.MutedPlayers
   name: MutedPlayers
   href: api/RolePlus.ExternModule.API.Features.Audio.API.AudioController.html#RolePlus_ExternModule_API_Features_Audio_API_AudioController_MutedPlayers
@@ -6318,12 +6527,12 @@ references:
   isSpec: "True"
   fullName: RolePlus.ExternModule.API.Features.Audio.API.AudioController.MutedPlayers
   nameWithType: AudioController.MutedPlayers
-- uid: RolePlus.ExternModule.API.Features.Audio.API.AudioController.PlayFromFile(System.String,System.Single)
-  name: PlayFromFile(String, Single)
-  href: api/RolePlus.ExternModule.API.Features.Audio.API.AudioController.html#RolePlus_ExternModule_API_Features_Audio_API_AudioController_PlayFromFile_System_String_System_Single_
-  commentId: M:RolePlus.ExternModule.API.Features.Audio.API.AudioController.PlayFromFile(System.String,System.Single)
-  fullName: RolePlus.ExternModule.API.Features.Audio.API.AudioController.PlayFromFile(System.String, System.Single)
-  nameWithType: AudioController.PlayFromFile(String, Single)
+- uid: RolePlus.ExternModule.API.Features.Audio.API.AudioController.PlayFromFile(System.String,System.Single,System.Boolean,System.Boolean)
+  name: PlayFromFile(String, Single, Boolean, Boolean)
+  href: api/RolePlus.ExternModule.API.Features.Audio.API.AudioController.html#RolePlus_ExternModule_API_Features_Audio_API_AudioController_PlayFromFile_System_String_System_Single_System_Boolean_System_Boolean_
+  commentId: M:RolePlus.ExternModule.API.Features.Audio.API.AudioController.PlayFromFile(System.String,System.Single,System.Boolean,System.Boolean)
+  fullName: RolePlus.ExternModule.API.Features.Audio.API.AudioController.PlayFromFile(System.String, System.Single, System.Boolean, System.Boolean)
+  nameWithType: AudioController.PlayFromFile(String, Single, Boolean, Boolean)
 - uid: RolePlus.ExternModule.API.Features.Audio.API.AudioController.PlayFromFile*
   name: PlayFromFile
   href: api/RolePlus.ExternModule.API.Features.Audio.API.AudioController.html#RolePlus_ExternModule_API_Features_Audio_API_AudioController_PlayFromFile_
@@ -6454,11 +6663,11 @@ references:
   isSpec: "True"
   fullName: RolePlus.ExternModule.API.Features.Audio.CustomMpegMicrophone.StopCapture
   nameWithType: CustomMpegMicrophone.StopCapture
-- uid: RolePlus.ExternModule.API.Features.Audio.CustomMpegMicrophone.Subscribe(IMicrophoneSubscriber)
+- uid: RolePlus.ExternModule.API.Features.Audio.CustomMpegMicrophone.Subscribe(Dissonance.Audio.Capture.IMicrophoneSubscriber)
   name: Subscribe(IMicrophoneSubscriber)
-  href: api/RolePlus.ExternModule.API.Features.Audio.CustomMpegMicrophone.html#RolePlus_ExternModule_API_Features_Audio_CustomMpegMicrophone_Subscribe_IMicrophoneSubscriber_
-  commentId: M:RolePlus.ExternModule.API.Features.Audio.CustomMpegMicrophone.Subscribe(IMicrophoneSubscriber)
-  fullName: RolePlus.ExternModule.API.Features.Audio.CustomMpegMicrophone.Subscribe(IMicrophoneSubscriber)
+  href: api/RolePlus.ExternModule.API.Features.Audio.CustomMpegMicrophone.html#RolePlus_ExternModule_API_Features_Audio_CustomMpegMicrophone_Subscribe_Dissonance_Audio_Capture_IMicrophoneSubscriber_
+  commentId: M:RolePlus.ExternModule.API.Features.Audio.CustomMpegMicrophone.Subscribe(Dissonance.Audio.Capture.IMicrophoneSubscriber)
+  fullName: RolePlus.ExternModule.API.Features.Audio.CustomMpegMicrophone.Subscribe(Dissonance.Audio.Capture.IMicrophoneSubscriber)
   nameWithType: CustomMpegMicrophone.Subscribe(IMicrophoneSubscriber)
 - uid: RolePlus.ExternModule.API.Features.Audio.CustomMpegMicrophone.Subscribe*
   name: Subscribe
@@ -6467,11 +6676,11 @@ references:
   isSpec: "True"
   fullName: RolePlus.ExternModule.API.Features.Audio.CustomMpegMicrophone.Subscribe
   nameWithType: CustomMpegMicrophone.Subscribe
-- uid: RolePlus.ExternModule.API.Features.Audio.CustomMpegMicrophone.Unsubscribe(IMicrophoneSubscriber)
+- uid: RolePlus.ExternModule.API.Features.Audio.CustomMpegMicrophone.Unsubscribe(Dissonance.Audio.Capture.IMicrophoneSubscriber)
   name: Unsubscribe(IMicrophoneSubscriber)
-  href: api/RolePlus.ExternModule.API.Features.Audio.CustomMpegMicrophone.html#RolePlus_ExternModule_API_Features_Audio_CustomMpegMicrophone_Unsubscribe_IMicrophoneSubscriber_
-  commentId: M:RolePlus.ExternModule.API.Features.Audio.CustomMpegMicrophone.Unsubscribe(IMicrophoneSubscriber)
-  fullName: RolePlus.ExternModule.API.Features.Audio.CustomMpegMicrophone.Unsubscribe(IMicrophoneSubscriber)
+  href: api/RolePlus.ExternModule.API.Features.Audio.CustomMpegMicrophone.html#RolePlus_ExternModule_API_Features_Audio_CustomMpegMicrophone_Unsubscribe_Dissonance_Audio_Capture_IMicrophoneSubscriber_
+  commentId: M:RolePlus.ExternModule.API.Features.Audio.CustomMpegMicrophone.Unsubscribe(Dissonance.Audio.Capture.IMicrophoneSubscriber)
+  fullName: RolePlus.ExternModule.API.Features.Audio.CustomMpegMicrophone.Unsubscribe(Dissonance.Audio.Capture.IMicrophoneSubscriber)
   nameWithType: CustomMpegMicrophone.Unsubscribe(IMicrophoneSubscriber)
 - uid: RolePlus.ExternModule.API.Features.Audio.CustomMpegMicrophone.Unsubscribe*
   name: Unsubscribe
@@ -7275,6 +7484,22 @@ references:
   isSpec: "True"
   fullName: RolePlus.ExternModule.API.Features.Badge.Reload
   nameWithType: Badge.Reload
+- uid: RolePlus.ExternModule.API.Features.Badge.TryGet(Player,RolePlus.ExternModule.API.Features.Badge@)
+  name: TryGet(Player, out Badge)
+  href: api/RolePlus.ExternModule.API.Features.Badge.html#RolePlus_ExternModule_API_Features_Badge_TryGet_Player_RolePlus_ExternModule_API_Features_Badge__
+  commentId: M:RolePlus.ExternModule.API.Features.Badge.TryGet(Player,RolePlus.ExternModule.API.Features.Badge@)
+  name.vb: TryGet(Player, ByRef Badge)
+  fullName: RolePlus.ExternModule.API.Features.Badge.TryGet(Player, out RolePlus.ExternModule.API.Features.Badge)
+  fullName.vb: RolePlus.ExternModule.API.Features.Badge.TryGet(Player, ByRef RolePlus.ExternModule.API.Features.Badge)
+  nameWithType: Badge.TryGet(Player, out Badge)
+  nameWithType.vb: Badge.TryGet(Player, ByRef Badge)
+- uid: RolePlus.ExternModule.API.Features.Badge.TryGet*
+  name: TryGet
+  href: api/RolePlus.ExternModule.API.Features.Badge.html#RolePlus_ExternModule_API_Features_Badge_TryGet_
+  commentId: Overload:RolePlus.ExternModule.API.Features.Badge.TryGet
+  isSpec: "True"
+  fullName: RolePlus.ExternModule.API.Features.Badge.TryGet
+  nameWithType: Badge.TryGet
 - uid: RolePlus.ExternModule.API.Features.Badge.Unload
   name: Unload()
   href: api/RolePlus.ExternModule.API.Features.Badge.html#RolePlus_ExternModule_API_Features_Badge_Unload
@@ -7524,6 +7749,19 @@ references:
   fullName.vb: RolePlus.ExternModule.API.Features.Configs.Config.Read(Of T)()
   nameWithType: Config.Read<T>()
   nameWithType.vb: Config.Read(Of T)()
+- uid: RolePlus.ExternModule.API.Features.Configs.Config.Subconfigs
+  name: Subconfigs
+  href: api/RolePlus.ExternModule.API.Features.Configs.Config.html#RolePlus_ExternModule_API_Features_Configs_Config_Subconfigs
+  commentId: P:RolePlus.ExternModule.API.Features.Configs.Config.Subconfigs
+  fullName: RolePlus.ExternModule.API.Features.Configs.Config.Subconfigs
+  nameWithType: Config.Subconfigs
+- uid: RolePlus.ExternModule.API.Features.Configs.Config.Subconfigs*
+  name: Subconfigs
+  href: api/RolePlus.ExternModule.API.Features.Configs.Config.html#RolePlus_ExternModule_API_Features_Configs_Config_Subconfigs_
+  commentId: Overload:RolePlus.ExternModule.API.Features.Configs.Config.Subconfigs
+  isSpec: "True"
+  fullName: RolePlus.ExternModule.API.Features.Configs.Config.Subconfigs
+  nameWithType: Config.Subconfigs
 - uid: RolePlus.ExternModule.API.Features.Configs.Config.Write*
   name: Write
   href: api/RolePlus.ExternModule.API.Features.Configs.Config.html#RolePlus_ExternModule_API_Features_Configs_Config_Write_
@@ -7940,6 +8178,32 @@ references:
   fullName.vb: RolePlus.ExternModule.API.Features.CustomAbilities.CustomAbility.AddAbility(Of T)(Player, ByRef T)
   nameWithType: CustomAbility.AddAbility<T>(Player, out T)
   nameWithType.vb: CustomAbility.AddAbility(Of T)(Player, ByRef T)
+- uid: RolePlus.ExternModule.API.Features.CustomAbilities.CustomAbility.CanBeUsed
+  name: CanBeUsed
+  href: api/RolePlus.ExternModule.API.Features.CustomAbilities.CustomAbility.html#RolePlus_ExternModule_API_Features_CustomAbilities_CustomAbility_CanBeUsed
+  commentId: P:RolePlus.ExternModule.API.Features.CustomAbilities.CustomAbility.CanBeUsed
+  fullName: RolePlus.ExternModule.API.Features.CustomAbilities.CustomAbility.CanBeUsed
+  nameWithType: CustomAbility.CanBeUsed
+- uid: RolePlus.ExternModule.API.Features.CustomAbilities.CustomAbility.CanBeUsed*
+  name: CanBeUsed
+  href: api/RolePlus.ExternModule.API.Features.CustomAbilities.CustomAbility.html#RolePlus_ExternModule_API_Features_CustomAbilities_CustomAbility_CanBeUsed_
+  commentId: Overload:RolePlus.ExternModule.API.Features.CustomAbilities.CustomAbility.CanBeUsed
+  isSpec: "True"
+  fullName: RolePlus.ExternModule.API.Features.CustomAbilities.CustomAbility.CanBeUsed
+  nameWithType: CustomAbility.CanBeUsed
+- uid: RolePlus.ExternModule.API.Features.CustomAbilities.CustomAbility.CanEnterCooldown
+  name: CanEnterCooldown
+  href: api/RolePlus.ExternModule.API.Features.CustomAbilities.CustomAbility.html#RolePlus_ExternModule_API_Features_CustomAbilities_CustomAbility_CanEnterCooldown
+  commentId: P:RolePlus.ExternModule.API.Features.CustomAbilities.CustomAbility.CanEnterCooldown
+  fullName: RolePlus.ExternModule.API.Features.CustomAbilities.CustomAbility.CanEnterCooldown
+  nameWithType: CustomAbility.CanEnterCooldown
+- uid: RolePlus.ExternModule.API.Features.CustomAbilities.CustomAbility.CanEnterCooldown*
+  name: CanEnterCooldown
+  href: api/RolePlus.ExternModule.API.Features.CustomAbilities.CustomAbility.html#RolePlus_ExternModule_API_Features_CustomAbilities_CustomAbility_CanEnterCooldown_
+  commentId: Overload:RolePlus.ExternModule.API.Features.CustomAbilities.CustomAbility.CanEnterCooldown
+  isSpec: "True"
+  fullName: RolePlus.ExternModule.API.Features.CustomAbilities.CustomAbility.CanEnterCooldown
+  nameWithType: CustomAbility.CanEnterCooldown
 - uid: RolePlus.ExternModule.API.Features.CustomAbilities.CustomAbility.Check(Player)
   name: Check(Player)
   href: api/RolePlus.ExternModule.API.Features.CustomAbilities.CustomAbility.html#RolePlus_ExternModule_API_Features_CustomAbilities_CustomAbility_Check_Player_
@@ -7966,19 +8230,32 @@ references:
   isSpec: "True"
   fullName: RolePlus.ExternModule.API.Features.CustomAbilities.CustomAbility.Cooldown
   nameWithType: CustomAbility.Cooldown
-- uid: RolePlus.ExternModule.API.Features.CustomAbilities.CustomAbility.CooldownConditions
-  name: CooldownConditions()
-  href: api/RolePlus.ExternModule.API.Features.CustomAbilities.CustomAbility.html#RolePlus_ExternModule_API_Features_CustomAbilities_CustomAbility_CooldownConditions
-  commentId: M:RolePlus.ExternModule.API.Features.CustomAbilities.CustomAbility.CooldownConditions
-  fullName: RolePlus.ExternModule.API.Features.CustomAbilities.CustomAbility.CooldownConditions()
-  nameWithType: CustomAbility.CooldownConditions()
-- uid: RolePlus.ExternModule.API.Features.CustomAbilities.CustomAbility.CooldownConditions*
-  name: CooldownConditions
-  href: api/RolePlus.ExternModule.API.Features.CustomAbilities.CustomAbility.html#RolePlus_ExternModule_API_Features_CustomAbilities_CustomAbility_CooldownConditions_
-  commentId: Overload:RolePlus.ExternModule.API.Features.CustomAbilities.CustomAbility.CooldownConditions
+- uid: RolePlus.ExternModule.API.Features.CustomAbilities.CustomAbility.DeniedActivationMessage
+  name: DeniedActivationMessage
+  href: api/RolePlus.ExternModule.API.Features.CustomAbilities.CustomAbility.html#RolePlus_ExternModule_API_Features_CustomAbilities_CustomAbility_DeniedActivationMessage
+  commentId: P:RolePlus.ExternModule.API.Features.CustomAbilities.CustomAbility.DeniedActivationMessage
+  fullName: RolePlus.ExternModule.API.Features.CustomAbilities.CustomAbility.DeniedActivationMessage
+  nameWithType: CustomAbility.DeniedActivationMessage
+- uid: RolePlus.ExternModule.API.Features.CustomAbilities.CustomAbility.DeniedActivationMessage*
+  name: DeniedActivationMessage
+  href: api/RolePlus.ExternModule.API.Features.CustomAbilities.CustomAbility.html#RolePlus_ExternModule_API_Features_CustomAbilities_CustomAbility_DeniedActivationMessage_
+  commentId: Overload:RolePlus.ExternModule.API.Features.CustomAbilities.CustomAbility.DeniedActivationMessage
   isSpec: "True"
-  fullName: RolePlus.ExternModule.API.Features.CustomAbilities.CustomAbility.CooldownConditions
-  nameWithType: CustomAbility.CooldownConditions
+  fullName: RolePlus.ExternModule.API.Features.CustomAbilities.CustomAbility.DeniedActivationMessage
+  nameWithType: CustomAbility.DeniedActivationMessage
+- uid: RolePlus.ExternModule.API.Features.CustomAbilities.CustomAbility.Duration
+  name: Duration
+  href: api/RolePlus.ExternModule.API.Features.CustomAbilities.CustomAbility.html#RolePlus_ExternModule_API_Features_CustomAbilities_CustomAbility_Duration
+  commentId: P:RolePlus.ExternModule.API.Features.CustomAbilities.CustomAbility.Duration
+  fullName: RolePlus.ExternModule.API.Features.CustomAbilities.CustomAbility.Duration
+  nameWithType: CustomAbility.Duration
+- uid: RolePlus.ExternModule.API.Features.CustomAbilities.CustomAbility.Duration*
+  name: Duration
+  href: api/RolePlus.ExternModule.API.Features.CustomAbilities.CustomAbility.html#RolePlus_ExternModule_API_Features_CustomAbilities_CustomAbility_Duration_
+  commentId: Overload:RolePlus.ExternModule.API.Features.CustomAbilities.CustomAbility.Duration
+  isSpec: "True"
+  fullName: RolePlus.ExternModule.API.Features.CustomAbilities.CustomAbility.Duration
+  nameWithType: CustomAbility.Duration
 - uid: RolePlus.ExternModule.API.Features.CustomAbilities.CustomAbility.Get(Player,System.String)
   name: Get(Player, String)
   href: api/RolePlus.ExternModule.API.Features.CustomAbilities.CustomAbility.html#RolePlus_ExternModule_API_Features_CustomAbilities_CustomAbility_Get_Player_System_String_
@@ -8007,6 +8284,19 @@ references:
   fullName.vb: RolePlus.ExternModule.API.Features.CustomAbilities.CustomAbility.Get(Of T)(Player)
   nameWithType: CustomAbility.Get<T>(Player)
   nameWithType.vb: CustomAbility.Get(Of T)(Player)
+- uid: RolePlus.ExternModule.API.Features.CustomAbilities.CustomAbility.IsActive
+  name: IsActive
+  href: api/RolePlus.ExternModule.API.Features.CustomAbilities.CustomAbility.html#RolePlus_ExternModule_API_Features_CustomAbilities_CustomAbility_IsActive
+  commentId: P:RolePlus.ExternModule.API.Features.CustomAbilities.CustomAbility.IsActive
+  fullName: RolePlus.ExternModule.API.Features.CustomAbilities.CustomAbility.IsActive
+  nameWithType: CustomAbility.IsActive
+- uid: RolePlus.ExternModule.API.Features.CustomAbilities.CustomAbility.IsActive*
+  name: IsActive
+  href: api/RolePlus.ExternModule.API.Features.CustomAbilities.CustomAbility.html#RolePlus_ExternModule_API_Features_CustomAbilities_CustomAbility_IsActive_
+  commentId: Overload:RolePlus.ExternModule.API.Features.CustomAbilities.CustomAbility.IsActive
+  isSpec: "True"
+  fullName: RolePlus.ExternModule.API.Features.CustomAbilities.CustomAbility.IsActive
+  nameWithType: CustomAbility.IsActive
 - uid: RolePlus.ExternModule.API.Features.CustomAbilities.CustomAbility.IsReady
   name: IsReady
   href: api/RolePlus.ExternModule.API.Features.CustomAbilities.CustomAbility.html#RolePlus_ExternModule_API_Features_CustomAbilities_CustomAbility_IsReady
@@ -8046,6 +8336,32 @@ references:
   isSpec: "True"
   fullName: RolePlus.ExternModule.API.Features.CustomAbilities.CustomAbility.Manager
   nameWithType: CustomAbility.Manager
+- uid: RolePlus.ExternModule.API.Features.CustomAbilities.CustomAbility.NewLevelReachedMessage
+  name: NewLevelReachedMessage
+  href: api/RolePlus.ExternModule.API.Features.CustomAbilities.CustomAbility.html#RolePlus_ExternModule_API_Features_CustomAbilities_CustomAbility_NewLevelReachedMessage
+  commentId: P:RolePlus.ExternModule.API.Features.CustomAbilities.CustomAbility.NewLevelReachedMessage
+  fullName: RolePlus.ExternModule.API.Features.CustomAbilities.CustomAbility.NewLevelReachedMessage
+  nameWithType: CustomAbility.NewLevelReachedMessage
+- uid: RolePlus.ExternModule.API.Features.CustomAbilities.CustomAbility.NewLevelReachedMessage*
+  name: NewLevelReachedMessage
+  href: api/RolePlus.ExternModule.API.Features.CustomAbilities.CustomAbility.html#RolePlus_ExternModule_API_Features_CustomAbilities_CustomAbility_NewLevelReachedMessage_
+  commentId: Overload:RolePlus.ExternModule.API.Features.CustomAbilities.CustomAbility.NewLevelReachedMessage
+  isSpec: "True"
+  fullName: RolePlus.ExternModule.API.Features.CustomAbilities.CustomAbility.NewLevelReachedMessage
+  nameWithType: CustomAbility.NewLevelReachedMessage
+- uid: RolePlus.ExternModule.API.Features.CustomAbilities.CustomAbility.OnAbilityExpired
+  name: OnAbilityExpired()
+  href: api/RolePlus.ExternModule.API.Features.CustomAbilities.CustomAbility.html#RolePlus_ExternModule_API_Features_CustomAbilities_CustomAbility_OnAbilityExpired
+  commentId: M:RolePlus.ExternModule.API.Features.CustomAbilities.CustomAbility.OnAbilityExpired
+  fullName: RolePlus.ExternModule.API.Features.CustomAbilities.CustomAbility.OnAbilityExpired()
+  nameWithType: CustomAbility.OnAbilityExpired()
+- uid: RolePlus.ExternModule.API.Features.CustomAbilities.CustomAbility.OnAbilityExpired*
+  name: OnAbilityExpired
+  href: api/RolePlus.ExternModule.API.Features.CustomAbilities.CustomAbility.html#RolePlus_ExternModule_API_Features_CustomAbilities_CustomAbility_OnAbilityExpired_
+  commentId: Overload:RolePlus.ExternModule.API.Features.CustomAbilities.CustomAbility.OnAbilityExpired
+  isSpec: "True"
+  fullName: RolePlus.ExternModule.API.Features.CustomAbilities.CustomAbility.OnAbilityExpired
+  nameWithType: CustomAbility.OnAbilityExpired
 - uid: RolePlus.ExternModule.API.Features.CustomAbilities.CustomAbility.OnAbilityUsed
   name: OnAbilityUsed()
   href: api/RolePlus.ExternModule.API.Features.CustomAbilities.CustomAbility.html#RolePlus_ExternModule_API_Features_CustomAbilities_CustomAbility_OnAbilityUsed
@@ -8059,6 +8375,19 @@ references:
   isSpec: "True"
   fullName: RolePlus.ExternModule.API.Features.CustomAbilities.CustomAbility.OnAbilityUsed
   nameWithType: CustomAbility.OnAbilityUsed
+- uid: RolePlus.ExternModule.API.Features.CustomAbilities.CustomAbility.OnAddingLevel(System.Byte)
+  name: OnAddingLevel(Byte)
+  href: api/RolePlus.ExternModule.API.Features.CustomAbilities.CustomAbility.html#RolePlus_ExternModule_API_Features_CustomAbilities_CustomAbility_OnAddingLevel_System_Byte_
+  commentId: M:RolePlus.ExternModule.API.Features.CustomAbilities.CustomAbility.OnAddingLevel(System.Byte)
+  fullName: RolePlus.ExternModule.API.Features.CustomAbilities.CustomAbility.OnAddingLevel(System.Byte)
+  nameWithType: CustomAbility.OnAddingLevel(Byte)
+- uid: RolePlus.ExternModule.API.Features.CustomAbilities.CustomAbility.OnAddingLevel*
+  name: OnAddingLevel
+  href: api/RolePlus.ExternModule.API.Features.CustomAbilities.CustomAbility.html#RolePlus_ExternModule_API_Features_CustomAbilities_CustomAbility_OnAddingLevel_
+  commentId: Overload:RolePlus.ExternModule.API.Features.CustomAbilities.CustomAbility.OnAddingLevel
+  isSpec: "True"
+  fullName: RolePlus.ExternModule.API.Features.CustomAbilities.CustomAbility.OnAddingLevel
+  nameWithType: CustomAbility.OnAddingLevel
 - uid: RolePlus.ExternModule.API.Features.CustomAbilities.CustomAbility.OnBeginPlay
   name: OnBeginPlay()
   href: api/RolePlus.ExternModule.API.Features.CustomAbilities.CustomAbility.html#RolePlus_ExternModule_API_Features_CustomAbilities_CustomAbility_OnBeginPlay
@@ -8072,19 +8401,6 @@ references:
   isSpec: "True"
   fullName: RolePlus.ExternModule.API.Features.CustomAbilities.CustomAbility.OnBeginPlay
   nameWithType: CustomAbility.OnBeginPlay
-- uid: RolePlus.ExternModule.API.Features.CustomAbilities.CustomAbility.OnChangingLevel(System.Byte)
-  name: OnChangingLevel(Byte)
-  href: api/RolePlus.ExternModule.API.Features.CustomAbilities.CustomAbility.html#RolePlus_ExternModule_API_Features_CustomAbilities_CustomAbility_OnChangingLevel_System_Byte_
-  commentId: M:RolePlus.ExternModule.API.Features.CustomAbilities.CustomAbility.OnChangingLevel(System.Byte)
-  fullName: RolePlus.ExternModule.API.Features.CustomAbilities.CustomAbility.OnChangingLevel(System.Byte)
-  nameWithType: CustomAbility.OnChangingLevel(Byte)
-- uid: RolePlus.ExternModule.API.Features.CustomAbilities.CustomAbility.OnChangingLevel*
-  name: OnChangingLevel
-  href: api/RolePlus.ExternModule.API.Features.CustomAbilities.CustomAbility.html#RolePlus_ExternModule_API_Features_CustomAbilities_CustomAbility_OnChangingLevel_
-  commentId: Overload:RolePlus.ExternModule.API.Features.CustomAbilities.CustomAbility.OnChangingLevel
-  isSpec: "True"
-  fullName: RolePlus.ExternModule.API.Features.CustomAbilities.CustomAbility.OnChangingLevel
-  nameWithType: CustomAbility.OnChangingLevel
 - uid: RolePlus.ExternModule.API.Features.CustomAbilities.CustomAbility.OnEndPlay
   name: OnEndPlay()
   href: api/RolePlus.ExternModule.API.Features.CustomAbilities.CustomAbility.html#RolePlus_ExternModule_API_Features_CustomAbilities_CustomAbility_OnEndPlay
@@ -8098,6 +8414,19 @@ references:
   isSpec: "True"
   fullName: RolePlus.ExternModule.API.Features.CustomAbilities.CustomAbility.OnEndPlay
   nameWithType: CustomAbility.OnEndPlay
+- uid: RolePlus.ExternModule.API.Features.CustomAbilities.CustomAbility.OnLevelAdded(System.Byte)
+  name: OnLevelAdded(Byte)
+  href: api/RolePlus.ExternModule.API.Features.CustomAbilities.CustomAbility.html#RolePlus_ExternModule_API_Features_CustomAbilities_CustomAbility_OnLevelAdded_System_Byte_
+  commentId: M:RolePlus.ExternModule.API.Features.CustomAbilities.CustomAbility.OnLevelAdded(System.Byte)
+  fullName: RolePlus.ExternModule.API.Features.CustomAbilities.CustomAbility.OnLevelAdded(System.Byte)
+  nameWithType: CustomAbility.OnLevelAdded(Byte)
+- uid: RolePlus.ExternModule.API.Features.CustomAbilities.CustomAbility.OnLevelAdded*
+  name: OnLevelAdded
+  href: api/RolePlus.ExternModule.API.Features.CustomAbilities.CustomAbility.html#RolePlus_ExternModule_API_Features_CustomAbilities_CustomAbility_OnLevelAdded_
+  commentId: Overload:RolePlus.ExternModule.API.Features.CustomAbilities.CustomAbility.OnLevelAdded
+  isSpec: "True"
+  fullName: RolePlus.ExternModule.API.Features.CustomAbilities.CustomAbility.OnLevelAdded
+  nameWithType: CustomAbility.OnLevelAdded
 - uid: RolePlus.ExternModule.API.Features.CustomAbilities.CustomAbility.Owner
   name: Owner
   href: api/RolePlus.ExternModule.API.Features.CustomAbilities.CustomAbility.html#RolePlus_ExternModule_API_Features_CustomAbilities_CustomAbility_Owner
@@ -8209,6 +8538,19 @@ references:
   fullName.vb: RolePlus.ExternModule.API.Features.CustomAbilities.CustomAbility.RemoveAbility(Of T)(Player)
   nameWithType: CustomAbility.RemoveAbility<T>(Player)
   nameWithType.vb: CustomAbility.RemoveAbility(Of T)(Player)
+- uid: RolePlus.ExternModule.API.Features.CustomAbilities.CustomAbility.Tick
+  name: Tick()
+  href: api/RolePlus.ExternModule.API.Features.CustomAbilities.CustomAbility.html#RolePlus_ExternModule_API_Features_CustomAbilities_CustomAbility_Tick
+  commentId: M:RolePlus.ExternModule.API.Features.CustomAbilities.CustomAbility.Tick
+  fullName: RolePlus.ExternModule.API.Features.CustomAbilities.CustomAbility.Tick()
+  nameWithType: CustomAbility.Tick()
+- uid: RolePlus.ExternModule.API.Features.CustomAbilities.CustomAbility.Tick*
+  name: Tick
+  href: api/RolePlus.ExternModule.API.Features.CustomAbilities.CustomAbility.html#RolePlus_ExternModule_API_Features_CustomAbilities_CustomAbility_Tick_
+  commentId: Overload:RolePlus.ExternModule.API.Features.CustomAbilities.CustomAbility.Tick
+  isSpec: "True"
+  fullName: RolePlus.ExternModule.API.Features.CustomAbilities.CustomAbility.Tick
+  nameWithType: CustomAbility.Tick
 - uid: RolePlus.ExternModule.API.Features.CustomAbilities.CustomAbility.Type
   name: Type
   href: api/RolePlus.ExternModule.API.Features.CustomAbilities.CustomAbility.html#RolePlus_ExternModule_API_Features_CustomAbilities_CustomAbility_Type
@@ -8318,32 +8660,19 @@ references:
   isSpec: "True"
   fullName: RolePlus.ExternModule.API.Features.CustomAbilities.Scp079Ability.AllowedZones
   nameWithType: Scp079Ability.AllowedZones
-- uid: RolePlus.ExternModule.API.Features.CustomAbilities.Scp079Ability.CooldownConditions
-  name: CooldownConditions()
-  href: api/RolePlus.ExternModule.API.Features.CustomAbilities.Scp079Ability.html#RolePlus_ExternModule_API_Features_CustomAbilities_Scp079Ability_CooldownConditions
-  commentId: M:RolePlus.ExternModule.API.Features.CustomAbilities.Scp079Ability.CooldownConditions
-  fullName: RolePlus.ExternModule.API.Features.CustomAbilities.Scp079Ability.CooldownConditions()
-  nameWithType: Scp079Ability.CooldownConditions()
-- uid: RolePlus.ExternModule.API.Features.CustomAbilities.Scp079Ability.CooldownConditions*
-  name: CooldownConditions
-  href: api/RolePlus.ExternModule.API.Features.CustomAbilities.Scp079Ability.html#RolePlus_ExternModule_API_Features_CustomAbilities_Scp079Ability_CooldownConditions_
-  commentId: Overload:RolePlus.ExternModule.API.Features.CustomAbilities.Scp079Ability.CooldownConditions
+- uid: RolePlus.ExternModule.API.Features.CustomAbilities.Scp079Ability.CanEnterCooldown
+  name: CanEnterCooldown
+  href: api/RolePlus.ExternModule.API.Features.CustomAbilities.Scp079Ability.html#RolePlus_ExternModule_API_Features_CustomAbilities_Scp079Ability_CanEnterCooldown
+  commentId: P:RolePlus.ExternModule.API.Features.CustomAbilities.Scp079Ability.CanEnterCooldown
+  fullName: RolePlus.ExternModule.API.Features.CustomAbilities.Scp079Ability.CanEnterCooldown
+  nameWithType: Scp079Ability.CanEnterCooldown
+- uid: RolePlus.ExternModule.API.Features.CustomAbilities.Scp079Ability.CanEnterCooldown*
+  name: CanEnterCooldown
+  href: api/RolePlus.ExternModule.API.Features.CustomAbilities.Scp079Ability.html#RolePlus_ExternModule_API_Features_CustomAbilities_Scp079Ability_CanEnterCooldown_
+  commentId: Overload:RolePlus.ExternModule.API.Features.CustomAbilities.Scp079Ability.CanEnterCooldown
   isSpec: "True"
-  fullName: RolePlus.ExternModule.API.Features.CustomAbilities.Scp079Ability.CooldownConditions
-  nameWithType: Scp079Ability.CooldownConditions
-- uid: RolePlus.ExternModule.API.Features.CustomAbilities.Scp079Ability.Duration
-  name: Duration
-  href: api/RolePlus.ExternModule.API.Features.CustomAbilities.Scp079Ability.html#RolePlus_ExternModule_API_Features_CustomAbilities_Scp079Ability_Duration
-  commentId: P:RolePlus.ExternModule.API.Features.CustomAbilities.Scp079Ability.Duration
-  fullName: RolePlus.ExternModule.API.Features.CustomAbilities.Scp079Ability.Duration
-  nameWithType: Scp079Ability.Duration
-- uid: RolePlus.ExternModule.API.Features.CustomAbilities.Scp079Ability.Duration*
-  name: Duration
-  href: api/RolePlus.ExternModule.API.Features.CustomAbilities.Scp079Ability.html#RolePlus_ExternModule_API_Features_CustomAbilities_Scp079Ability_Duration_
-  commentId: Overload:RolePlus.ExternModule.API.Features.CustomAbilities.Scp079Ability.Duration
-  isSpec: "True"
-  fullName: RolePlus.ExternModule.API.Features.CustomAbilities.Scp079Ability.Duration
-  nameWithType: Scp079Ability.Duration
+  fullName: RolePlus.ExternModule.API.Features.CustomAbilities.Scp079Ability.CanEnterCooldown
+  nameWithType: Scp079Ability.CanEnterCooldown
 - uid: RolePlus.ExternModule.API.Features.CustomAbilities.Scp079Ability.GainedExperience
   name: GainedExperience
   href: api/RolePlus.ExternModule.API.Features.CustomAbilities.Scp079Ability.html#RolePlus_ExternModule_API_Features_CustomAbilities_Scp079Ability_GainedExperience
@@ -9363,19 +9692,6 @@ references:
   isSpec: "True"
   fullName: RolePlus.ExternModule.API.Features.CustomRoles.CustomRole.ICustomRoleConfig.Scale
   nameWithType: CustomRole.ICustomRoleConfig.Scale
-- uid: RolePlus.ExternModule.API.Features.CustomRoles.CustomRole.ICustomRoleConfig.Spawnpoints
-  name: Spawnpoints
-  href: api/RolePlus.ExternModule.API.Features.CustomRoles.CustomRole.ICustomRoleConfig.html#RolePlus_ExternModule_API_Features_CustomRoles_CustomRole_ICustomRoleConfig_Spawnpoints
-  commentId: P:RolePlus.ExternModule.API.Features.CustomRoles.CustomRole.ICustomRoleConfig.Spawnpoints
-  fullName: RolePlus.ExternModule.API.Features.CustomRoles.CustomRole.ICustomRoleConfig.Spawnpoints
-  nameWithType: CustomRole.ICustomRoleConfig.Spawnpoints
-- uid: RolePlus.ExternModule.API.Features.CustomRoles.CustomRole.ICustomRoleConfig.Spawnpoints*
-  name: Spawnpoints
-  href: api/RolePlus.ExternModule.API.Features.CustomRoles.CustomRole.ICustomRoleConfig.html#RolePlus_ExternModule_API_Features_CustomRoles_CustomRole_ICustomRoleConfig_Spawnpoints_
-  commentId: Overload:RolePlus.ExternModule.API.Features.CustomRoles.CustomRole.ICustomRoleConfig.Spawnpoints
-  isSpec: "True"
-  fullName: RolePlus.ExternModule.API.Features.CustomRoles.CustomRole.ICustomRoleConfig.Spawnpoints
-  nameWithType: CustomRole.ICustomRoleConfig.Spawnpoints
 - uid: RolePlus.ExternModule.API.Features.CustomRoles.CustomRole.Id
   name: Id
   href: api/RolePlus.ExternModule.API.Features.CustomRoles.CustomRole.html#RolePlus_ExternModule_API_Features_CustomRoles_CustomRole_Id
@@ -9395,6 +9711,12 @@ references:
   commentId: T:RolePlus.ExternModule.API.Features.CustomRoles.CustomRole.Info
   fullName: RolePlus.ExternModule.API.Features.CustomRoles.CustomRole.Info
   nameWithType: CustomRole.Info
+- uid: RolePlus.ExternModule.API.Features.CustomRoles.CustomRole.Info.#ctor
+  name: Info()
+  href: api/RolePlus.ExternModule.API.Features.CustomRoles.CustomRole.Info.html#RolePlus_ExternModule_API_Features_CustomRoles_CustomRole_Info__ctor
+  commentId: M:RolePlus.ExternModule.API.Features.CustomRoles.CustomRole.Info.#ctor
+  fullName: RolePlus.ExternModule.API.Features.CustomRoles.CustomRole.Info.Info()
+  nameWithType: CustomRole.Info.Info()
 - uid: RolePlus.ExternModule.API.Features.CustomRoles.CustomRole.Info.#ctor(System.Single,System.Single,System.Int32,System.Single,System.Single,Broadcast,System.Collections.Generic.List{RoomType})
   name: Info(Single, Single, Int32, Single, Single, Broadcast, List<RoomType>)
   href: api/RolePlus.ExternModule.API.Features.CustomRoles.CustomRole.Info.html#RolePlus_ExternModule_API_Features_CustomRoles_CustomRole_Info__ctor_System_Single_System_Single_System_Int32_System_Single_System_Single_Broadcast_System_Collections_Generic_List_RoomType__
@@ -9456,6 +9778,12 @@ references:
   commentId: T:RolePlus.ExternModule.API.Features.CustomRoles.CustomRole.Info.InventoryManager
   fullName: RolePlus.ExternModule.API.Features.CustomRoles.CustomRole.Info.InventoryManager
   nameWithType: CustomRole.Info.InventoryManager
+- uid: RolePlus.ExternModule.API.Features.CustomRoles.CustomRole.Info.InventoryManager.#ctor
+  name: InventoryManager()
+  href: api/RolePlus.ExternModule.API.Features.CustomRoles.CustomRole.Info.InventoryManager.html#RolePlus_ExternModule_API_Features_CustomRoles_CustomRole_Info_InventoryManager__ctor
+  commentId: M:RolePlus.ExternModule.API.Features.CustomRoles.CustomRole.Info.InventoryManager.#ctor
+  fullName: RolePlus.ExternModule.API.Features.CustomRoles.CustomRole.Info.InventoryManager.InventoryManager()
+  nameWithType: CustomRole.Info.InventoryManager.InventoryManager()
 - uid: RolePlus.ExternModule.API.Features.CustomRoles.CustomRole.Info.InventoryManager.#ctor(System.Collections.Generic.List{ItemType},System.Collections.Generic.List{System.Object},System.Collections.Generic.Dictionary{AmmoType,System.UInt16})
   name: InventoryManager(List<ItemType>, List<Object>, Dictionary<AmmoType, UInt16>)
   href: api/RolePlus.ExternModule.API.Features.CustomRoles.CustomRole.Info.InventoryManager.html#RolePlus_ExternModule_API_Features_CustomRoles_CustomRole_Info_InventoryManager__ctor_System_Collections_Generic_List_ItemType__System_Collections_Generic_List_System_Object__System_Collections_Generic_Dictionary_AmmoType_System_UInt16__
@@ -10294,19 +10622,19 @@ references:
   isSpec: "True"
   fullName: RolePlus.ExternModule.API.Features.CustomRoles.RoleBuilder.Check
   nameWithType: RoleBuilder.Check
-- uid: RolePlus.ExternModule.API.Features.CustomRoles.RoleBuilder.Config
-  name: Config
-  href: api/RolePlus.ExternModule.API.Features.CustomRoles.RoleBuilder.html#RolePlus_ExternModule_API_Features_CustomRoles_RoleBuilder_Config
-  commentId: P:RolePlus.ExternModule.API.Features.CustomRoles.RoleBuilder.Config
-  fullName: RolePlus.ExternModule.API.Features.CustomRoles.RoleBuilder.Config
-  nameWithType: RoleBuilder.Config
-- uid: RolePlus.ExternModule.API.Features.CustomRoles.RoleBuilder.Config*
-  name: Config
-  href: api/RolePlus.ExternModule.API.Features.CustomRoles.RoleBuilder.html#RolePlus_ExternModule_API_Features_CustomRoles_RoleBuilder_Config_
-  commentId: Overload:RolePlus.ExternModule.API.Features.CustomRoles.RoleBuilder.Config
+- uid: RolePlus.ExternModule.API.Features.CustomRoles.RoleBuilder.ConfigRaw
+  name: ConfigRaw
+  href: api/RolePlus.ExternModule.API.Features.CustomRoles.RoleBuilder.html#RolePlus_ExternModule_API_Features_CustomRoles_RoleBuilder_ConfigRaw
+  commentId: P:RolePlus.ExternModule.API.Features.CustomRoles.RoleBuilder.ConfigRaw
+  fullName: RolePlus.ExternModule.API.Features.CustomRoles.RoleBuilder.ConfigRaw
+  nameWithType: RoleBuilder.ConfigRaw
+- uid: RolePlus.ExternModule.API.Features.CustomRoles.RoleBuilder.ConfigRaw*
+  name: ConfigRaw
+  href: api/RolePlus.ExternModule.API.Features.CustomRoles.RoleBuilder.html#RolePlus_ExternModule_API_Features_CustomRoles_RoleBuilder_ConfigRaw_
+  commentId: Overload:RolePlus.ExternModule.API.Features.CustomRoles.RoleBuilder.ConfigRaw
   isSpec: "True"
-  fullName: RolePlus.ExternModule.API.Features.CustomRoles.RoleBuilder.Config
-  nameWithType: RoleBuilder.Config
+  fullName: RolePlus.ExternModule.API.Features.CustomRoles.RoleBuilder.ConfigRaw
+  nameWithType: RoleBuilder.ConfigRaw
 - uid: RolePlus.ExternModule.API.Features.CustomRoles.RoleBuilder.CurrentSpeed
   name: CurrentSpeed
   href: api/RolePlus.ExternModule.API.Features.CustomRoles.RoleBuilder.html#RolePlus_ExternModule_API_Features_CustomRoles_RoleBuilder_CurrentSpeed
@@ -11036,11 +11364,11 @@ references:
   commentId: T:RolePlus.ExternModule.API.Features.CustomSkins.ItemMeshComponent
   fullName: RolePlus.ExternModule.API.Features.CustomSkins.ItemMeshComponent
   nameWithType: ItemMeshComponent
-- uid: RolePlus.ExternModule.API.Features.CustomSkins.ItemMeshComponent.#ctor(SchematicObject,Vector3,Vector3,Quaternion)
+- uid: RolePlus.ExternModule.API.Features.CustomSkins.ItemMeshComponent.#ctor(MapEditorReborn.API.Features.Objects.SchematicObject,Vector3,Vector3,Quaternion)
   name: ItemMeshComponent(SchematicObject, Vector3, Vector3, Quaternion)
-  href: api/RolePlus.ExternModule.API.Features.CustomSkins.ItemMeshComponent.html#RolePlus_ExternModule_API_Features_CustomSkins_ItemMeshComponent__ctor_SchematicObject_Vector3_Vector3_Quaternion_
-  commentId: M:RolePlus.ExternModule.API.Features.CustomSkins.ItemMeshComponent.#ctor(SchematicObject,Vector3,Vector3,Quaternion)
-  fullName: RolePlus.ExternModule.API.Features.CustomSkins.ItemMeshComponent.ItemMeshComponent(SchematicObject, Vector3, Vector3, Quaternion)
+  href: api/RolePlus.ExternModule.API.Features.CustomSkins.ItemMeshComponent.html#RolePlus_ExternModule_API_Features_CustomSkins_ItemMeshComponent__ctor_MapEditorReborn_API_Features_Objects_SchematicObject_Vector3_Vector3_Quaternion_
+  commentId: M:RolePlus.ExternModule.API.Features.CustomSkins.ItemMeshComponent.#ctor(MapEditorReborn.API.Features.Objects.SchematicObject,Vector3,Vector3,Quaternion)
+  fullName: RolePlus.ExternModule.API.Features.CustomSkins.ItemMeshComponent.ItemMeshComponent(MapEditorReborn.API.Features.Objects.SchematicObject, Vector3, Vector3, Quaternion)
   nameWithType: ItemMeshComponent.ItemMeshComponent(SchematicObject, Vector3, Vector3, Quaternion)
 - uid: RolePlus.ExternModule.API.Features.CustomSkins.ItemMeshComponent.#ctor*
   name: ItemMeshComponent
@@ -11903,19 +12231,19 @@ references:
   isSpec: "True"
   fullName: RolePlus.ExternModule.API.Features.RespawnManager.ForceRespawn
   nameWithType: RespawnManager.ForceRespawn
-- uid: RolePlus.ExternModule.API.Features.RespawnManager.IsRespawnEnabled
-  name: IsRespawnEnabled
-  href: api/RolePlus.ExternModule.API.Features.RespawnManager.html#RolePlus_ExternModule_API_Features_RespawnManager_IsRespawnEnabled
-  commentId: P:RolePlus.ExternModule.API.Features.RespawnManager.IsRespawnEnabled
-  fullName: RolePlus.ExternModule.API.Features.RespawnManager.IsRespawnEnabled
-  nameWithType: RespawnManager.IsRespawnEnabled
-- uid: RolePlus.ExternModule.API.Features.RespawnManager.IsRespawnEnabled*
-  name: IsRespawnEnabled
-  href: api/RolePlus.ExternModule.API.Features.RespawnManager.html#RolePlus_ExternModule_API_Features_RespawnManager_IsRespawnEnabled_
-  commentId: Overload:RolePlus.ExternModule.API.Features.RespawnManager.IsRespawnEnabled
+- uid: RolePlus.ExternModule.API.Features.RespawnManager.IsEnabled
+  name: IsEnabled
+  href: api/RolePlus.ExternModule.API.Features.RespawnManager.html#RolePlus_ExternModule_API_Features_RespawnManager_IsEnabled
+  commentId: P:RolePlus.ExternModule.API.Features.RespawnManager.IsEnabled
+  fullName: RolePlus.ExternModule.API.Features.RespawnManager.IsEnabled
+  nameWithType: RespawnManager.IsEnabled
+- uid: RolePlus.ExternModule.API.Features.RespawnManager.IsEnabled*
+  name: IsEnabled
+  href: api/RolePlus.ExternModule.API.Features.RespawnManager.html#RolePlus_ExternModule_API_Features_RespawnManager_IsEnabled_
+  commentId: Overload:RolePlus.ExternModule.API.Features.RespawnManager.IsEnabled
   isSpec: "True"
-  fullName: RolePlus.ExternModule.API.Features.RespawnManager.IsRespawnEnabled
-  nameWithType: RespawnManager.IsRespawnEnabled
+  fullName: RolePlus.ExternModule.API.Features.RespawnManager.IsEnabled
+  nameWithType: RespawnManager.IsEnabled
 - uid: RolePlus.ExternModule.API.Features.RespawnManager.IsWaitingForPlayers
   name: IsWaitingForPlayers
   href: api/RolePlus.ExternModule.API.Features.RespawnManager.html#RolePlus_ExternModule_API_Features_RespawnManager_IsWaitingForPlayers
@@ -14444,19 +14772,6 @@ references:
   isSpec: "True"
   fullName: RolePlus.WaitAndChill.Arena.CHISpawnPoints
   nameWithType: Arena.CHISpawnPoints
-- uid: RolePlus.WaitAndChill.Arena.Create(SchematicObject)
-  name: Create(SchematicObject)
-  href: api/RolePlus.WaitAndChill.Arena.html#RolePlus_WaitAndChill_Arena_Create_SchematicObject_
-  commentId: M:RolePlus.WaitAndChill.Arena.Create(SchematicObject)
-  fullName: RolePlus.WaitAndChill.Arena.Create(SchematicObject)
-  nameWithType: Arena.Create(SchematicObject)
-- uid: RolePlus.WaitAndChill.Arena.Create*
-  name: Create
-  href: api/RolePlus.WaitAndChill.Arena.html#RolePlus_WaitAndChill_Arena_Create_
-  commentId: Overload:RolePlus.WaitAndChill.Arena.Create
-  isSpec: "True"
-  fullName: RolePlus.WaitAndChill.Arena.Create
-  nameWithType: Arena.Create
 - uid: RolePlus.WaitAndChill.Arena.Empty
   name: Empty
   href: api/RolePlus.WaitAndChill.Arena.html#RolePlus_WaitAndChill_Arena_Empty
