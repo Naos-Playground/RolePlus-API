@@ -3918,6 +3918,35 @@ references:
   commentId: T:RolePlus.ExternModule.API.Engine.Framework.Bootstrap.GlobalPatchProcessor
   fullName: RolePlus.ExternModule.API.Engine.Framework.Bootstrap.GlobalPatchProcessor
   nameWithType: GlobalPatchProcessor
+- uid: RolePlus.ExternModule.API.Engine.Framework.Bootstrap.GlobalPatchProcessor.AddEventHandlers
+  name: AddEventHandlers()
+  href: api/RolePlus.ExternModule.API.Engine.Framework.Bootstrap.GlobalPatchProcessor.html#RolePlus_ExternModule_API_Engine_Framework_Bootstrap_GlobalPatchProcessor_AddEventHandlers
+  commentId: M:RolePlus.ExternModule.API.Engine.Framework.Bootstrap.GlobalPatchProcessor.AddEventHandlers
+  fullName: RolePlus.ExternModule.API.Engine.Framework.Bootstrap.GlobalPatchProcessor.AddEventHandlers()
+  nameWithType: GlobalPatchProcessor.AddEventHandlers()
+- uid: RolePlus.ExternModule.API.Engine.Framework.Bootstrap.GlobalPatchProcessor.AddEventHandlers*
+  name: AddEventHandlers
+  href: api/RolePlus.ExternModule.API.Engine.Framework.Bootstrap.GlobalPatchProcessor.html#RolePlus_ExternModule_API_Engine_Framework_Bootstrap_GlobalPatchProcessor_AddEventHandlers_
+  commentId: Overload:RolePlus.ExternModule.API.Engine.Framework.Bootstrap.GlobalPatchProcessor.AddEventHandlers
+  isSpec: "True"
+  fullName: RolePlus.ExternModule.API.Engine.Framework.Bootstrap.GlobalPatchProcessor.AddEventHandlers
+  nameWithType: GlobalPatchProcessor.AddEventHandlers
+- uid: RolePlus.ExternModule.API.Engine.Framework.Bootstrap.GlobalPatchProcessor.MessageHandler*
+  name: MessageHandler
+  href: api/RolePlus.ExternModule.API.Engine.Framework.Bootstrap.GlobalPatchProcessor.html#RolePlus_ExternModule_API_Engine_Framework_Bootstrap_GlobalPatchProcessor_MessageHandler_
+  commentId: Overload:RolePlus.ExternModule.API.Engine.Framework.Bootstrap.GlobalPatchProcessor.MessageHandler
+  isSpec: "True"
+  fullName: RolePlus.ExternModule.API.Engine.Framework.Bootstrap.GlobalPatchProcessor.MessageHandler
+  nameWithType: GlobalPatchProcessor.MessageHandler
+- uid: RolePlus.ExternModule.API.Engine.Framework.Bootstrap.GlobalPatchProcessor.MessageHandler``1(``0)
+  name: MessageHandler<T>(T)
+  href: api/RolePlus.ExternModule.API.Engine.Framework.Bootstrap.GlobalPatchProcessor.html#RolePlus_ExternModule_API_Engine_Framework_Bootstrap_GlobalPatchProcessor_MessageHandler__1___0_
+  commentId: M:RolePlus.ExternModule.API.Engine.Framework.Bootstrap.GlobalPatchProcessor.MessageHandler``1(``0)
+  name.vb: MessageHandler(Of T)(T)
+  fullName: RolePlus.ExternModule.API.Engine.Framework.Bootstrap.GlobalPatchProcessor.MessageHandler<T>(T)
+  fullName.vb: RolePlus.ExternModule.API.Engine.Framework.Bootstrap.GlobalPatchProcessor.MessageHandler(Of T)(T)
+  nameWithType: GlobalPatchProcessor.MessageHandler<T>(T)
+  nameWithType.vb: GlobalPatchProcessor.MessageHandler(Of T)(T)
 - uid: RolePlus.ExternModule.API.Engine.Framework.Bootstrap.GlobalPatchProcessor.PatchAll(System.String,System.String)
   name: PatchAll(String, String)
   href: api/RolePlus.ExternModule.API.Engine.Framework.Bootstrap.GlobalPatchProcessor.html#RolePlus_ExternModule_API_Engine_Framework_Bootstrap_GlobalPatchProcessor_PatchAll_System_String_System_String_
@@ -3957,6 +3986,19 @@ references:
   isSpec: "True"
   fullName: RolePlus.ExternModule.API.Engine.Framework.Bootstrap.GlobalPatchProcessor.PatchedMethods
   nameWithType: GlobalPatchProcessor.PatchedMethods
+- uid: RolePlus.ExternModule.API.Engine.Framework.Bootstrap.GlobalPatchProcessor.RemoveEventHandlers
+  name: RemoveEventHandlers()
+  href: api/RolePlus.ExternModule.API.Engine.Framework.Bootstrap.GlobalPatchProcessor.html#RolePlus_ExternModule_API_Engine_Framework_Bootstrap_GlobalPatchProcessor_RemoveEventHandlers
+  commentId: M:RolePlus.ExternModule.API.Engine.Framework.Bootstrap.GlobalPatchProcessor.RemoveEventHandlers
+  fullName: RolePlus.ExternModule.API.Engine.Framework.Bootstrap.GlobalPatchProcessor.RemoveEventHandlers()
+  nameWithType: GlobalPatchProcessor.RemoveEventHandlers()
+- uid: RolePlus.ExternModule.API.Engine.Framework.Bootstrap.GlobalPatchProcessor.RemoveEventHandlers*
+  name: RemoveEventHandlers
+  href: api/RolePlus.ExternModule.API.Engine.Framework.Bootstrap.GlobalPatchProcessor.html#RolePlus_ExternModule_API_Engine_Framework_Bootstrap_GlobalPatchProcessor_RemoveEventHandlers_
+  commentId: Overload:RolePlus.ExternModule.API.Engine.Framework.Bootstrap.GlobalPatchProcessor.RemoveEventHandlers
+  isSpec: "True"
+  fullName: RolePlus.ExternModule.API.Engine.Framework.Bootstrap.GlobalPatchProcessor.RemoveEventHandlers
+  nameWithType: GlobalPatchProcessor.RemoveEventHandlers
 - uid: RolePlus.ExternModule.API.Engine.Framework.Bootstrap.GlobalPatchProcessor.UnpatchAll(System.String,System.String)
   name: UnpatchAll(String, String)
   href: api/RolePlus.ExternModule.API.Engine.Framework.Bootstrap.GlobalPatchProcessor.html#RolePlus_ExternModule_API_Engine_Framework_Bootstrap_GlobalPatchProcessor_UnpatchAll_System_String_System_String_
@@ -13560,6 +13602,22 @@ references:
   isSpec: "True"
   fullName: RolePlus.ExternModule.HLAPI.CanLookToPlayer
   nameWithType: HLAPI.CanLookToPlayer
+- uid: RolePlus.ExternModule.HLAPI.FormatArguments(System.String[],System.Int32)
+  name: FormatArguments(String[], Int32)
+  href: api/RolePlus.ExternModule.HLAPI.html#RolePlus_ExternModule_HLAPI_FormatArguments_System_String___System_Int32_
+  commentId: M:RolePlus.ExternModule.HLAPI.FormatArguments(System.String[],System.Int32)
+  name.vb: FormatArguments(String(), Int32)
+  fullName: RolePlus.ExternModule.HLAPI.FormatArguments(System.String[], System.Int32)
+  fullName.vb: RolePlus.ExternModule.HLAPI.FormatArguments(System.String(), System.Int32)
+  nameWithType: HLAPI.FormatArguments(String[], Int32)
+  nameWithType.vb: HLAPI.FormatArguments(String(), Int32)
+- uid: RolePlus.ExternModule.HLAPI.FormatArguments*
+  name: FormatArguments
+  href: api/RolePlus.ExternModule.HLAPI.html#RolePlus_ExternModule_HLAPI_FormatArguments_
+  commentId: Overload:RolePlus.ExternModule.HLAPI.FormatArguments
+  isSpec: "True"
+  fullName: RolePlus.ExternModule.HLAPI.FormatArguments
+  nameWithType: HLAPI.FormatArguments
 - uid: RolePlus.ExternModule.HLAPI.GetCustomItem(Item)
   name: GetCustomItem(Item)
   href: api/RolePlus.ExternModule.HLAPI.html#RolePlus_ExternModule_HLAPI_GetCustomItem_Item_
@@ -13782,6 +13840,19 @@ references:
   isSpec: "True"
   fullName: RolePlus.ExternModule.HLAPI.LastSpawnedPlayers
   nameWithType: HLAPI.LastSpawnedPlayers
+- uid: RolePlus.ExternModule.HLAPI.LogCommandUsed(QueryProcessor,System.String)
+  name: LogCommandUsed(QueryProcessor, String)
+  href: api/RolePlus.ExternModule.HLAPI.html#RolePlus_ExternModule_HLAPI_LogCommandUsed_QueryProcessor_System_String_
+  commentId: M:RolePlus.ExternModule.HLAPI.LogCommandUsed(QueryProcessor,System.String)
+  fullName: RolePlus.ExternModule.HLAPI.LogCommandUsed(QueryProcessor, System.String)
+  nameWithType: HLAPI.LogCommandUsed(QueryProcessor, String)
+- uid: RolePlus.ExternModule.HLAPI.LogCommandUsed*
+  name: LogCommandUsed
+  href: api/RolePlus.ExternModule.HLAPI.html#RolePlus_ExternModule_HLAPI_LogCommandUsed_
+  commentId: Overload:RolePlus.ExternModule.HLAPI.LogCommandUsed
+  isSpec: "True"
+  fullName: RolePlus.ExternModule.HLAPI.LogCommandUsed
+  nameWithType: HLAPI.LogCommandUsed
 - uid: RolePlus.ExternModule.HLAPI.MakeFall(Player,Vector3)
   name: MakeFall(Player, Vector3)
   href: api/RolePlus.ExternModule.HLAPI.html#RolePlus_ExternModule_HLAPI_MakeFall_Player_Vector3_
@@ -13970,6 +14041,25 @@ references:
   isSpec: "True"
   fullName: RolePlus.ExternModule.HLAPI.SetRole
   nameWithType: HLAPI.SetRole
+- uid: RolePlus.ExternModule.HLAPI.SetScale(GameObject,System.Single)
+  name: SetScale(GameObject, Single)
+  href: api/RolePlus.ExternModule.HLAPI.html#RolePlus_ExternModule_HLAPI_SetScale_GameObject_System_Single_
+  commentId: M:RolePlus.ExternModule.HLAPI.SetScale(GameObject,System.Single)
+  fullName: RolePlus.ExternModule.HLAPI.SetScale(GameObject, System.Single)
+  nameWithType: HLAPI.SetScale(GameObject, Single)
+- uid: RolePlus.ExternModule.HLAPI.SetScale(GameObject,System.Single,System.Single,System.Single)
+  name: SetScale(GameObject, Single, Single, Single)
+  href: api/RolePlus.ExternModule.HLAPI.html#RolePlus_ExternModule_HLAPI_SetScale_GameObject_System_Single_System_Single_System_Single_
+  commentId: M:RolePlus.ExternModule.HLAPI.SetScale(GameObject,System.Single,System.Single,System.Single)
+  fullName: RolePlus.ExternModule.HLAPI.SetScale(GameObject, System.Single, System.Single, System.Single)
+  nameWithType: HLAPI.SetScale(GameObject, Single, Single, Single)
+- uid: RolePlus.ExternModule.HLAPI.SetScale*
+  name: SetScale
+  href: api/RolePlus.ExternModule.HLAPI.html#RolePlus_ExternModule_HLAPI_SetScale_
+  commentId: Overload:RolePlus.ExternModule.HLAPI.SetScale
+  isSpec: "True"
+  fullName: RolePlus.ExternModule.HLAPI.SetScale
+  nameWithType: HLAPI.SetScale
 - uid: RolePlus.ExternModule.HLAPI.SpawnActiveGrenade(Vector3,System.Boolean,System.Single,Player)
   name: SpawnActiveGrenade(Vector3, Boolean, Single, Player)
   href: api/RolePlus.ExternModule.HLAPI.html#RolePlus_ExternModule_HLAPI_SpawnActiveGrenade_Vector3_System_Boolean_System_Single_Player_
