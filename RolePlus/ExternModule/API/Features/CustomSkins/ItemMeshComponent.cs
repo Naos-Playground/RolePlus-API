@@ -37,9 +37,9 @@ namespace RolePlus.ExternModule.API.Features.CustomSkins
         /// Initializes a new instance of the <see cref="ItemMeshComponent"/> class.
         /// </summary>
         /// <param name="mesh"><inheritdoc cref="ASchematicMeshComponent.RootSchematic"/></param>
-        /// <param name="scale"><inheritdoc cref="AActor.Scale"/></param>
-        /// <param name="position"><inheritdoc cref="AActor.Position"/></param>
-        /// <param name="rotation"><inheritdoc cref="AActor.Rotation"/></param>
+        /// <param name="scale"><inheritdoc cref="EActor.Scale"/></param>
+        /// <param name="position"><inheritdoc cref="EActor.Position"/></param>
+        /// <param name="rotation"><inheritdoc cref="EActor.Rotation"/></param>
         protected ItemMeshComponent(
             SchematicObject mesh,
             Vector3 scale,

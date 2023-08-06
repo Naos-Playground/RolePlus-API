@@ -10,13 +10,12 @@ namespace RolePlus.Internal
     using System;
 
     using Exiled.API.Features;
-
     using global::RolePlus.ExternModule.API.Engine.Framework.Bootstrap;
     using global::RolePlus.ExternModule.API.Features;
     using global::RolePlus.ExternModule.API.Features.VirtualAssemblies;
 
     using HarmonyLib;
-
+    using RolePlus.ExternModule.API.Engine.Framework.Bootstrap;
     using ConfigAPI = ExternModule.API.Features.Configs.Config;
     using ServerEvents = Exiled.Events.Handlers.Server;
 
@@ -98,7 +97,7 @@ namespace RolePlus.Internal
 
             RespawnManager.Start();
             SpawnManager.Start();
-            GlobalPatchProcessor.AddEventHandlers();
+            CommonPatchProcessor.BeginEventHandlersDelivery();
 
             ServerEvents.ReloadedConfigs += () => ConfigAPI.LoadAll();
             ServerEvents.RoundStarted += ServerHandler.OnRoundStart;
@@ -112,7 +111,7 @@ namespace RolePlus.Internal
         {
             RespawnManager.Stop();
             SpawnManager.Stop();
-            GlobalPatchProcessor.RemoveEventHandlers();
+            CommonPatchProcessor.StopEventHandlersDelivery();
 
             ServerEvents.ReloadedConfigs -= () => ConfigAPI.LoadAll();
             ServerEvents.RoundStarted -= ServerHandler.OnRoundStart;

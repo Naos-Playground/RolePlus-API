@@ -7,6 +7,7 @@
 
 namespace RolePlus.ExternModule.API.Engine.Components
 {
+    using Exiled.API.Features.Core;
     using RolePlus.ExternModule.API.Engine.Framework;
 
     /// <summary>
@@ -32,7 +33,7 @@ namespace RolePlus.ExternModule.API.Engine.Components
         /// <param name="component"><inheritdoc cref="AActorFrameComponent.RootComponent"/></param>
         /// <param name="maxHealth"><inheritdoc cref="MaxHealth"/></param>
         /// <param name="curHealth"><inheritdoc cref="CurHealth"/></param>
-        protected AActorHealthComponent(AActor component, float maxHealth, float curHealth)
+        protected AActorHealthComponent(EActor component, float maxHealth, float curHealth)
             : base(component)
         {
             _maxHealth = maxHealth;
@@ -40,7 +41,7 @@ namespace RolePlus.ExternModule.API.Engine.Components
         }
 
         /// <inheritdoc/>
-        public override AActor RootComponent { get; protected set; }
+        public override EActor RootComponent { get; protected set; }
 
         /// <summary>
         /// Gets or sets a value indicating whether the <see cref="RootComponent"/> is damageable.

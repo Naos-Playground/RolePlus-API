@@ -7,12 +7,13 @@
 
 namespace RolePlus.ExternModule.API.Engine.Components
 {
+    using Exiled.API.Features.Core;
     using RolePlus.ExternModule.API.Engine.Framework;
 
     /// <summary>
-    /// <see cref="AActorFrameComponent"/> is the base class for <see cref="AActor"/> instances which need to be managed internally.
+    /// <see cref="AActorFrameComponent"/> is the base class for <see cref="EActor"/> instances which need to be managed internally.
     /// </summary>
-    public abstract class AActorFrameComponent : AActor
+    public abstract class AActorFrameComponent : EActor
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="AActorFrameComponent"/> class.
@@ -26,12 +27,12 @@ namespace RolePlus.ExternModule.API.Engine.Components
         /// Initializes a new instance of the <see cref="AActorFrameComponent"/> class.
         /// </summary>
         /// <param name="root"><inheritdoc cref="RootComponent"/></param>
-        protected AActorFrameComponent(AActor root)
+        protected AActorFrameComponent(EActor root)
             : this() => RootComponent = root;
 
         /// <summary>
-        /// Gets or sets the root <see cref="AActor"/>.
+        /// Gets or sets the root <see cref="EActor"/>.
         /// </summary>
-        public abstract AActor RootComponent { get; protected set; }
+        public abstract EActor RootComponent { get; protected set; }
     }
 }

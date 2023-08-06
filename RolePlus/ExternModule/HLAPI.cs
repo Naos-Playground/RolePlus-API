@@ -20,6 +20,7 @@ namespace RolePlus.ExternModule
     using Exiled.API.Extensions;
     using Exiled.API.Features;
     using Exiled.API.Features.Items;
+    using Exiled.API.Features.Pickups;
     using Exiled.CustomItems.API.Features;
     using Exiled.Permissions.Extensions;
 
@@ -29,6 +30,8 @@ namespace RolePlus.ExternModule
 
     using Mirror;
     using NorthwoodLib.Pools;
+    using PlayerRoles;
+    using PluginAPI.Roles;
     using RemoteAdmin;
     using RolePlus.ExternModule.API.Enums;
     using RolePlus.ExternModule.API.Features;
@@ -47,8 +50,6 @@ namespace RolePlus.ExternModule
     /// </summary>
     public static class HLAPI
     {
-        private static Escape _escape;
-
         /// <summary>
         /// Gets a <see cref="List{T}"/> containing all the spawned schematics.
         /// </summary>
@@ -92,17 +93,12 @@ namespace RolePlus.ExternModule
         /// <summary>
         /// Gets the world's escape position.
         /// </summary>
-        public static Vector3 WorldEscapePosition => WorldEscape.worldPosition;
+        public static Vector3 WorldEscapePosition => Escape.WorldPos;
 
         /// <summary>
         /// Gets the world's escape radius.
         /// </summary>
-        public static float WorldEscapeRadius => Escape.radius;
-
-        /// <summary>
-        /// Gets the <see cref="Escape"/> component.
-        /// </summary>
-        public static Escape WorldEscape => _escape ??= UnityEngine.Object.FindObjectOfType<Escape>();
+        public static float WorldEscapeRadius => Escape.RadiusSqr;
 
         /// <summary>
         /// Gets or sets a value indicating whether or not the round is locked.
@@ -168,13 +164,13 @@ namespace RolePlus.ExternModule
             try
             {
                 uint value = (uint)customItem;
-                CustomItem.TryGive(player, (int)value);
+                CustomItem.TryGive(player, value);
                 return true;
             }
             catch
             {
                 if (customItem is CustomItem instance)
-                    return CustomItem.TryGive(player, (int)instance.Id);
+                    return CustomItem.TryGive(player, instance.Id);
 
                 return false;
             }
@@ -249,21 +245,19 @@ namespace RolePlus.ExternModule
         /// <returns><see langword="true"/> if the given <paramref name="pickup"/> is a <see cref="CustomItem"/>; otherwise, <see langword="false"/>.</returns>
         public static bool TryGetCustomItem(this Pickup pickup, out CustomItem customItem) => CustomItem.TryGet(pickup, out customItem);
 
-#nullable enable
         /// <summary>
         /// Gets a <see cref="CustomItem"/> from the specified <see cref="Item"/> instance.
         /// </summary>
         /// <param name="item">The <see cref="Item"/> to check.</param>
         /// <returns>The corresponding <see cref="object"/>; otherwise, <see langword="null"/>.</returns>
-        public static CustomItem? GetCustomItem(this Item item) => CustomItem.TryGet(item, out CustomItem customItem) ? customItem : null;
+        public static CustomItem GetCustomItem(this Item item) => CustomItem.TryGet(item, out CustomItem customItem) ? customItem : null;
 
         /// <summary>
         /// Gets a <see cref="CustomItem"/> from the given <see cref="Pickup"/> instance.
         /// </summary>
         /// <param name="pickup">The <see cref="Pickup"/> to check.</param>
         /// <returns>The corresponding <see cref="CustomItem"/> or <see langword="null"/> if not found.</returns>
-        public static CustomItem? GetCustomItem(this Pickup pickup) => CustomItem.TryGet(pickup, out CustomItem customItem) ? customItem : null;
-#nullable disable
+        public static CustomItem GetCustomItem(this Pickup pickup) => CustomItem.TryGet(pickup, out CustomItem customItem) ? customItem : null;
 
         /// <summary>
         /// Sets the player's <see cref="CustomRole"/>.
@@ -414,7 +408,7 @@ namespace RolePlus.ExternModule
             if (player.IsDead || player.Role == RoleType.Scp079)
                 return false;
 
-            float num = Vector3.Dot(camera.Base.head.transform.forward, player.Position - camera.Position);
+            float num = Vector3.Dot(camera.Transform.forward, player.Position - camera.Position);
             return num >= 0f && num * num / (player.Position - camera.Position).sqrMagnitude > 0.4225f &&
                 Physics.Raycast(camera.Position, player.Position - camera.Position, out RaycastHit raycastHit, maxDistance, -117407543) &&
                 raycastHit.transform.name == player.GameObject.name;
@@ -475,20 +469,6 @@ namespace RolePlus.ExternModule
             grenade.MaxRadius = magnitude;
             grenade.SpawnActive(position, owner);
         }
-
-        /// <summary>
-        /// Teleports the specified <see cref="Player"/> to the given position through SCP-106 mechanics.
-        /// </summary>
-        /// <param name="player">The target to teleport.</param>
-        /// <param name="position">The position to which teleport the target.</param>
-        public static void PocketDimensionTeleport(this Player player, Vector3 position) => Timing.RunCoroutine(_PocketDimensionTeleport(player.ReferenceHub.scp106PlayerScript, position));
-
-        /// <summary>
-        /// Makes the specified <see cref="Player"/> fall to the given position.
-        /// </summary>
-        /// <param name="player">The target to make fall.</param>
-        /// <param name="position">The fall position.</param>
-        public static void MakeFall(this Player player, Vector3 position = default) => Timing.RunCoroutine(_MakeFall(player, position));
 
         /// <summary>
         /// Play and audio from a file.
@@ -609,31 +589,29 @@ namespace RolePlus.ExternModule
         }
 
         /// <summary>
-        /// Sets the scale of the specified <see cref="GameObject"/>.
+        /// Sets the scale of the specified <see cref="Player"/>.
         /// </summary>
-        /// <param name="target">The <see cref="GameObject"/> to modify.</param>
+        /// <param name="target">The <see cref="Player"/> to modify.</param>
         /// <param name="x">The x axis value.</param>
         /// <param name="y">The y axis value.</param>
         /// <param name="z">The z axis value.</param>
-        public static void SetScale(this GameObject target, float x, float y, float z)
+        public static void SetScale(this Player target, float x, float y, float z)
         {
             try
             {
-                NetworkIdentity identity = target.GetComponent<NetworkIdentity>();
-                target.transform.localScale = new(1 * x, 1 * y, 1 * z);
+                target.Transform.localScale = new(1 * x, 1 * y, 1 * z);
 
                 ObjectDestroyMessage destroyMessage = new()
                 {
-                    netId = identity.netId,
+                    netId = target.NetId,
                 };
 
-                foreach (GameObject player in PlayerManager.players)
+                foreach (Player player in Player.List)
                 {
-                    NetworkConnection playerCon = player.GetComponent<NetworkIdentity>().connectionToClient;
                     if (player != target)
-                        playerCon.Send(destroyMessage, 0);
+                        player.Connection.Send(destroyMessage, 0);
 
-                    object[] parameters = new object[] { identity, playerCon };
+                    object[] parameters = new object[] { target.NetworkIdentity, player.Connection };
                     typeof(NetworkServer).InvokeStaticMethod("SendSpawnMessage", parameters);
                 }
             }
@@ -643,65 +621,32 @@ namespace RolePlus.ExternModule
             }
         }
 
-        /// <summary>
-        /// Spawns a dummy player.
-        /// </summary>
-        /// <param name="role">The role of the dummy.</param>
-        /// <param name="position">The spawn position.</param>
-        /// <param name="rotation">The spawn rotation.</param>
-        /// <param name="nickname">The name to be given to the dummy.</param>
-        /// <returns>A <see cref="GameObject"/> which represents the spawned dummy.</returns>
-        internal static GameObject SpawnDummy(RoleType role, Vector3 position, Quaternion rotation, string nickname)
-        {
-            GameObject gameObject = UnityEngine.Object.Instantiate(NetworkManager.singleton.spawnPrefabs.FirstOrDefault(p => p.gameObject.name == "Player"));
-            if (gameObject.TryGetComponent(out CharacterClassManager ccm))
-            {
-                ccm.CurClass = role;
-                ccm.RefreshPlyModel();
-            }
-
-            if (gameObject.TryGetComponent(out NicknameSync nicknameSync))
-                nicknameSync.Network_myNickSync = nickname;
-
-            if (gameObject.TryGetComponent(out QueryProcessor queryProcessor))
-            {
-                queryProcessor.PlayerId = 9999;
-                queryProcessor.NetworkPlayerId = 9999;
-            }
-
-            gameObject.transform.position = position;
-            gameObject.transform.rotation = rotation;
-
-            NetworkServer.Spawn(gameObject);
-            return gameObject;
-        }
 
         /// <summary>
-        /// Sets the scale of the specified <see cref="GameObject"/>.
+        /// Sets the scale of the specified <see cref="Player"/>.
         /// </summary>
-        /// <param name="target">The <see cref="GameObject"/> to modify.</param>
+        /// <param name="target">The <see cref="Player"/> to modify.</param>
         /// <param name="scale">The new scale.</param>
-        public static void SetScale(this GameObject target, float scale)
+        public static void SetScale(this Player target, float scale)
         {
             try
-            {
-                NetworkIdentity identity = target.GetComponent<NetworkIdentity>();
-                target.transform.localScale = Vector3.one * scale;
+            { 
+                target.Transform.localScale = Vector3.one * scale;
+
 
                 ObjectDestroyMessage destroyMessage = new()
                 {
-                    netId = identity.netId,
+                    netId = target.NetId,
                 };
 
-                foreach (GameObject player in PlayerManager.players)
+                foreach (Player player in Player.List)
                 {
                     if (player == target)
                         continue;
 
-                    NetworkConnection playerCon = player.GetComponent<NetworkIdentity>().connectionToClient;
-                    playerCon.Send(destroyMessage, 0);
+                    player.Connection.Send(destroyMessage, 0);
 
-                    object[] parameters = new object[] { identity, playerCon };
+                    object[] parameters = new object[] { target.NetworkIdentity, player.Connection };
                     typeof(NetworkServer).InvokeStaticMethod("SendSpawnMessage", parameters);
                 }
             }
@@ -711,65 +656,29 @@ namespace RolePlus.ExternModule
             }
         }
 
-#pragma warning disable IDE1006 // Naming Styles
-#pragma warning disable SA1300
-#pragma warning disable SA1600
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
-        public static IEnumerator<float> _PocketDimensionTeleport(Scp106PlayerScript scp106PlayerScript, Vector3 position)
-        {
-            if (scp106PlayerScript.goingViaThePortal)
-                yield break;
 
-            scp106PlayerScript.RpcTeleportAnimation();
-            scp106PlayerScript.goingViaThePortal = true;
-            yield return Timing.WaitForSeconds(3.5f);
-            scp106PlayerScript._hub.playerMovementSync.OverridePosition(position);
-            yield return Timing.WaitForSeconds(7.5f);
-
-            if (AlphaWarheadController.Host.detonated && scp106PlayerScript.transform.position.y < 800f)
-                Player.Get(scp106PlayerScript._hub).Kill(DamageType.PocketDimension);
-
-            scp106PlayerScript.goingViaThePortal = false;
-        }
-
-        public static IEnumerator<float> _MakeFall(this Player player, Vector3 position = default)
-        {
-            Scp106PlayerScript scp106PlayerScript = player.ReferenceHub.scp106PlayerScript;
-            if (scp106PlayerScript.goingViaThePortal)
-                yield break;
-
-            scp106PlayerScript.goingViaThePortal = true;
-
-            player.ReferenceHub.scp106PlayerScript.GrabbedPosition = player.Position + (Vector3.up * 1.5f);
-            Vector3 startPosition = player.Position, endPosition = player.Position -= Vector3.up * 2;
-            bool inGodMode = player.IsGodModeEnabled;
-            player.IsGodModeEnabled = true;
-            player.CanSendInputs = false;
-            player.EnableEffect(EffectType.SinkHole);
-            for (int i = 0; i < 30; i++)
-            {
-                player.Position = Vector3.Lerp(startPosition, endPosition, i / 30f);
-                yield return 0.01f;
-            }
-
-            player.Position = position == default ? Vector3.down * 1997f : position;
-            player.IsGodModeEnabled = inGodMode;
-            player.CanSendInputs = true;
-            player.DisableEffect(EffectType.SinkHole);
-            scp106PlayerScript.goingViaThePortal = false;
-        }
-
+        /// <summary>
+        /// Logs a command.
+        /// </summary>
+        /// <param name="query">The <see cref="QueryProcessor"/> from which log the command.</param>
+        /// <param name="command">The used command.</param>
         public static void LogCommandUsed(QueryProcessor query, string command)
         {
-            Player sender = Player.Get(query.PlayerId);
+            Player sender = Player.Get(query._hub);
             File.AppendAllText(Paths.Log, $@"{DateTime.Now}: {sender.Nickname} ({sender.Id}) tried executed: {command} {Environment.NewLine}");
             Log.Info($"{DateTime.Now}: {sender.Nickname} ({sender.Nickname}) tried to execute: {command}");
         }
 
-        public static string FormatArguments(string[] sentence, int index)
+        /// <summary>
+        /// Formats arguments in a readable-command representation.
+        /// </summary>
+        /// <param name="args">The arguments to be formatted.</param>
+        /// <param name="index">The amount of arguments to format.</param>
+        /// <returns>The formatted arguments.</returns>
+        public static string FormatArguments(string[] args, int index)
         {
             StringBuilder sb = StringBuilderPool.Shared.Rent();
-            foreach (string word in sentence.Segment(index))
+            foreach (string word in args.Segment(index))
             {
                 sb.Append(word);
                 sb.Append(" ");
@@ -779,10 +688,5 @@ namespace RolePlus.ExternModule
             StringBuilderPool.Shared.Return(sb);
             return msg;
         }
-
-#pragma warning restore IDE1006 // Naming Styles
-#pragma warning restore CS1591 // Missing XML comment for publicly visible type or member
-#pragma warning restore SA1300
-#pragma warning restore SA1600
     }
 }

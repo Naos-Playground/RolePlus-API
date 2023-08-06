@@ -98,7 +98,13 @@
     <ErrorReport>prompt</ErrorReport>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="ExternModule\API\Engine\Core\Framework\Bootstrap\CommonPatchProcessor.cs" />
+    <Compile Include="ExternModule\API\Engine\Core\Framework\Networking\RuleAttribute.cs" />
+    <Compile Include="ExternModule\API\Engine\Core\Framework\Networking\TFirewall.cs" />
+    <Compile Include="ExternModule\API\Engine\Core\Framework\Networking\TRule.cs" />
+    <Compile Include="ExternModule\API\Engine\Core\EnumClass.cs" />
     <Compile Include="ExternModule\API\Engine\Core\Singleton.cs" />
+    <Compile Include="ExternModule\API\Enums\RoleType.cs" />
     <Compile Include="GlobalSuppressions.cs" />
     <Compile Include="Internal\Commands\MainCommand.cs" />
     <Compile Include="Internal\Commands\Round\ForceEndCommand.cs" />
@@ -106,7 +112,6 @@
     <Compile Include="Internal\Commands\Round\ChangeLockCommand.cs" />
     <Compile Include="Internal\Commands\Test\ShowTpsCommand.cs" />
     <Compile Include="Internal\Commands\Test\BypassNoclip.cs" />
-    <Compile Include="ExternModule\API\Engine\Core\Framework\Network\RuleAttribute.cs" />
     <Compile Include="ExternModule\API\Features\Audio\AudioController.cs" />
     <Compile Include="ExternModule\API\Features\Audio\CustomMpegMicrophone.cs" />
     <Compile Include="ExternModule\API\Features\Audio\NLayer\Decoder\BitReservoir.cs" />
@@ -140,45 +145,20 @@
     <Compile Include="ExternModule\API\Engine\Components\AInteractableFrameComponent.cs" />
     <Compile Include="ExternModule\API\Engine\Components\ASchematicMeshComponent.cs" />
     <Compile Include="ExternModule\API\Engine\Components\ASkeletalMeshComponent.cs" />
-    <Compile Include="ExternModule\API\Engine\Core\Framework\AActor.cs" />
     <Compile Include="ExternModule\API\Engine\Core\Framework\AnimatorParameter.cs" />
-    <Compile Include="ExternModule\API\Engine\Core\Framework\Bootstrap\GlobalPatchProcessor.cs" />
-    <Compile Include="ExternModule\API\Engine\Core\Framework\Bootstrap\PatchGroupAttribute.cs" />
-    <Compile Include="ExternModule\API\Engine\Core\Framework\Enums\NetworkAuthority.cs" />
     <Compile Include="ExternModule\API\Engine\Core\Framework\Events\Delegates.cs" />
     <Compile Include="ExternModule\API\Engine\Core\Framework\Events\EventArgs\ChangingAnimationStateEventArgs.cs" />
     <Compile Include="ExternModule\API\Engine\Core\Framework\Events\EventArgs\CompletedAnimationStateEventArgs.cs" />
     <Compile Include="ExternModule\API\Engine\Core\Framework\Events\EventArgs\InteractingObjectEventArgs.cs" />
-    <Compile Include="ExternModule\API\Engine\Core\Framework\Events\EventArgs\ReceivingNetworkMessageEventArgs.cs" />
-    <Compile Include="ExternModule\API\Engine\Core\Framework\Events\EventArgs\ReceivingPipelineMessageEventArgs.cs" />
     <Compile Include="ExternModule\API\Engine\Core\Framework\Events\Extensions.cs" />
-    <Compile Include="ExternModule\API\Engine\Core\Framework\Events\Handlers\Network.cs" />
     <Compile Include="ExternModule\API\Engine\Core\Framework\Events\Handlers\Player.cs" />
     <Compile Include="ExternModule\API\Engine\Core\Framework\Events\Handlers\UObject.cs" />
-    <Compile Include="ExternModule\API\Engine\Core\Framework\Events\MultiPlexEventArgs.cs" />
-    <Compile Include="ExternModule\API\Engine\Core\Framework\Events\PlexEventArgs.cs" />
     <Compile Include="ExternModule\API\Engine\Core\Framework\Interfaces\IAnimatorNative.cs" />
     <Compile Include="ExternModule\API\Engine\Core\Framework\Interfaces\INetworkMessage.cs" />
-    <Compile Include="ExternModule\API\Engine\Core\Framework\Network\Models\UNetEntity.cs" />
-    <Compile Include="ExternModule\API\Engine\Core\Framework\Network\Models\UNetManager.cs" />
-    <Compile Include="ExternModule\API\Engine\Core\Framework\Network\Models\UNetServer.cs" />
-    <Compile Include="ExternModule\API\Engine\Core\Framework\Network\TFirewall.cs" />
-    <Compile Include="ExternModule\API\Engine\Core\Framework\Network\TNetworkMessage.cs" />
-    <Compile Include="ExternModule\API\Engine\Core\Framework\Network\TRule.cs" />
-    <Compile Include="ExternModule\API\Engine\Core\Framework\Network\UNetObject.cs" />
-    <Compile Include="ExternModule\API\Engine\Core\Framework\Patches\ServerPerformShotPatch.cs" />
-    <Compile Include="ExternModule\API\Engine\Core\Framework\Patches\ShotPelletPatch.cs" />
     <Compile Include="ExternModule\API\Engine\Core\Framework\Structs\FTransform.cs" />
     <Compile Include="ExternModule\API\Engine\Core\Framework\Structs\FVirtualPrivateNetwork.cs" />
-    <Compile Include="ExternModule\API\Engine\Core\Framework\Structs\TNetworkPipelineMessage.cs" />
-    <Compile Include="ExternModule\API\Engine\Core\Generic\Collections\TMultiDirectionalCollection.cs" />
-    <Compile Include="ExternModule\API\Engine\Core\Generic\Collections\TMultiPlexCollection.cs" />
-    <Compile Include="ExternModule\API\Engine\Core\Generic\Collections\TPlainCollection.cs" />
-    <Compile Include="ExternModule\API\Engine\Core\Generic\Collections\TPlexCollection.cs" />
     <Compile Include="ExternModule\API\Engine\Core\Generic\TSourceObject.cs" />
     <Compile Include="ExternModule\API\Engine\Core\Generic\TValueObject.cs" />
-    <Compile Include="ExternModule\API\Engine\Core\TypeCastObject.cs" />
-    <Compile Include="ExternModule\API\Engine\Core\UObject.cs" />
     <Compile Include="ExternModule\API\Engine\Extensions\ComponentExtensions.cs" />
     <Compile Include="ExternModule\API\Enums\BanDuration.cs" />
     <Compile Include="ExternModule\API\Enums\BranchType.cs" />
