@@ -91,7 +91,7 @@ namespace RolePlus.ExternModule.API.Engine.Framework.Interfaces
         /// <param name="state">The state of the animation state to set.</param>
         public void SetCurrentAnimation(Animator animator, string name, bool state);
 
-        /// <inheritdoc cref="Events.Handlers.UObject.OnChangingAnimationState(ChangingAnimationStateEventArgs)"/>
+        /// <inheritdoc cref="Events.Handlers.EObject.OnChangingAnimationState(ChangingAnimationStateEventArgs)"/>
         public void OnChangingAnimationState(ChangingAnimationStateEventArgs ev);
     }
 }

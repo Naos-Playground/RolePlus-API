@@ -11,7 +11,7 @@ namespace RolePlus.ExternModule.Events.Patches
     using System.Reflection.Emit;
 
     using Exiled.API.Features;
-
+    using Exiled.API.Features.Attributes;
     using HarmonyLib;
 
     using NorthwoodLib.Pools;
@@ -33,7 +33,6 @@ namespace RolePlus.ExternModule.Events.Patches
             Label ret = generator.DefineLabel();
 
             newInstructions.Clear();
-#pragma warning disable SA1118 // Parameter should not span multiple lines
             newInstructions.InsertRange(0, new CodeInstruction[]
             {
                 new(OpCodes.Ldarg_0),
@@ -50,7 +49,6 @@ namespace RolePlus.ExternModule.Events.Patches
                 new(OpCodes.Call, Method(typeof(HudManager), nameof(HudManager.ShowHint))),
                 new CodeInstruction(OpCodes.Ret).WithLabels(ret),
             });
-#pragma warning restore SA1118 // Parameter should not span multiple lines
 
             for (int z = 0; z < newInstructions.Count; z++)
                 yield return newInstructions[z];

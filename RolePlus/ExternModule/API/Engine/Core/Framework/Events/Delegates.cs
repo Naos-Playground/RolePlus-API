@@ -7,11 +7,8 @@
 
 namespace RolePlus.ExternModule.API.Engine.Framework.Events
 {
-#pragma warning disable SA1618 // Generic type parameters should be documented
-#pragma warning disable SA1611 // Element parameters should be documented
-
     /// <summary>
-    /// Patch and unpatch events into the game.
+    /// A class containing all existing delegates.
     /// </summary>
     public sealed class Delegates
     {
@@ -20,18 +17,6 @@ namespace RolePlus.ExternModule.API.Engine.Framework.Events
         /// </summary>
         public delegate void TEventHandler<TEventArgs>(TEventArgs ev)
             where TEventArgs : System.EventArgs;
-
-        /// <summary>
-        /// The <see cref="System.EventHandler"/> delegate.
-        /// </summary>
-        public delegate void TEventHandler<T1, TEventArgs>(TEventArgs ev)
-            where TEventArgs : PlexEventArgs<T1>;
-
-        /// <summary>
-        /// The <see cref="System.EventHandler"/> delegate.
-        /// </summary>
-        public delegate void TEventHandler<T1, T2, TEventArgs>(TEventArgs ev)
-            where TEventArgs : MultiPlexEventArgs<T1, T2>;
 
         /// <summary>
         /// The custom <see cref="System.EventHandler"/> delegate with empty parameters.

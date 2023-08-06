@@ -12,8 +12,9 @@ namespace RolePlus.ExternModule.API.Engine.Components
     using System.Linq;
 
     using Exiled.API.Features;
+    using Exiled.API.Features.Core;
     using Exiled.API.Features.Items;
-
+    using Exiled.API.Features.Pickups;
     using InventorySystem.Items.Pickups;
 
     using MapEditorReborn.API.Features.Objects;
@@ -62,9 +63,9 @@ namespace RolePlus.ExternModule.API.Engine.Components
         /// Initializes a new instance of the <see cref="ASchematicMeshComponent"/> class.
         /// </summary>
         /// <param name="mesh"><inheritdoc cref="RootSchematic"/></param>
-        /// <param name="scale"><inheritdoc cref="AActor.Scale"/></param>
-        /// <param name="position"><inheritdoc cref="AActor.Position"/></param>
-        /// <param name="rotation"><inheritdoc cref="AActor.Rotation"/></param>
+        /// <param name="scale"><inheritdoc cref="EActor.Scale"/></param>
+        /// <param name="position"><inheritdoc cref="EActor.Position"/></param>
+        /// <param name="rotation"><inheritdoc cref="EActor.Rotation"/></param>
         protected ASchematicMeshComponent(
             SchematicObject mesh,
             Vector3 scale,
@@ -77,9 +78,9 @@ namespace RolePlus.ExternModule.API.Engine.Components
         /// Initializes a new instance of the <see cref="ASchematicMeshComponent"/> class.
         /// </summary>
         /// <param name="meshName"><inheritdoc cref="RootSchematic"/></param>
-        /// <param name="scale"><inheritdoc cref="AActor.Scale"/></param>
-        /// <param name="position"><inheritdoc cref="AActor.Position"/></param>
-        /// <param name="rotation"><inheritdoc cref="AActor.Rotation"/></param>
+        /// <param name="scale"><inheritdoc cref="EActor.Scale"/></param>
+        /// <param name="position"><inheritdoc cref="EActor.Position"/></param>
+        /// <param name="rotation"><inheritdoc cref="EActor.Rotation"/></param>
         protected ASchematicMeshComponent(
             string meshName,
             Vector3 scale,
@@ -96,9 +97,9 @@ namespace RolePlus.ExternModule.API.Engine.Components
         /// </summary>
         /// <param name="socket"><inheritdoc cref="Socket"/></param>
         /// <param name="mesh"><inheritdoc cref="RootSchematic"/></param>
-        /// <param name="scale"><inheritdoc cref="AActor.Scale"/></param>
-        /// <param name="position"><inheritdoc cref="AActor.Position"/></param>
-        /// <param name="rotation"><inheritdoc cref="AActor.Rotation"/></param>
+        /// <param name="scale"><inheritdoc cref="EActor.Scale"/></param>
+        /// <param name="position"><inheritdoc cref="EActor.Position"/></param>
+        /// <param name="rotation"><inheritdoc cref="EActor.Rotation"/></param>
         protected ASchematicMeshComponent(
             FTransform socket,
             SchematicObject mesh,
@@ -113,9 +114,9 @@ namespace RolePlus.ExternModule.API.Engine.Components
         /// </summary>
         /// <param name="localPosition"><inheritdoc cref="Socket"/></param>
         /// <param name="mesh"><inheritdoc cref="RootSchematic"/></param>
-        /// <param name="scale"><inheritdoc cref="AActor.Scale"/></param>
-        /// <param name="position"><inheritdoc cref="AActor.Position"/></param>
-        /// <param name="rotation"><inheritdoc cref="AActor.Rotation"/></param>
+        /// <param name="scale"><inheritdoc cref="EActor.Scale"/></param>
+        /// <param name="position"><inheritdoc cref="EActor.Position"/></param>
+        /// <param name="rotation"><inheritdoc cref="EActor.Rotation"/></param>
         protected ASchematicMeshComponent(
             Vector3 localPosition,
             SchematicObject mesh,
@@ -131,9 +132,9 @@ namespace RolePlus.ExternModule.API.Engine.Components
         /// <param name="localPosition"><inheritdoc cref="FTransform.Translation"/></param>
         /// <param name="localRotation"><inheritdoc cref="FTransform.Rotation"/></param>
         /// <param name="mesh"><inheritdoc cref="RootSchematic"/></param>
-        /// <param name="scale"><inheritdoc cref="AActor.Scale"/></param>
-        /// <param name="position"><inheritdoc cref="AActor.Position"/></param>
-        /// <param name="rotation"><inheritdoc cref="AActor.Rotation"/></param>
+        /// <param name="scale"><inheritdoc cref="EActor.Scale"/></param>
+        /// <param name="position"><inheritdoc cref="EActor.Position"/></param>
+        /// <param name="rotation"><inheritdoc cref="EActor.Rotation"/></param>
         protected ASchematicMeshComponent(
             Vector3 localPosition,
             Quaternion localRotation,
@@ -151,9 +152,9 @@ namespace RolePlus.ExternModule.API.Engine.Components
         /// <param name="localRotation"><inheritdoc cref="FTransform.Rotation"/></param>
         /// <param name="localScale"><inheritdoc cref="FTransform.Scale"/></param>
         /// <param name="mesh"><inheritdoc cref="RootSchematic"/></param>
-        /// <param name="scale"><inheritdoc cref="AActor.Scale"/></param>
-        /// <param name="position"><inheritdoc cref="AActor.Position"/></param>
-        /// <param name="rotation"><inheritdoc cref="AActor.Rotation"/></param>
+        /// <param name="scale"><inheritdoc cref="EActor.Scale"/></param>
+        /// <param name="position"><inheritdoc cref="EActor.Position"/></param>
+        /// <param name="rotation"><inheritdoc cref="EActor.Rotation"/></param>
         protected ASchematicMeshComponent(
             Vector3 localPosition,
             Quaternion localRotation,
@@ -272,15 +273,15 @@ namespace RolePlus.ExternModule.API.Engine.Components
         /// <summary>
         /// Creates a new instance of the <see cref="ASchematicMeshComponent"/> class.
         /// </summary>
-        /// <typeparam name="T">The <see cref="UObject"/> type.</typeparam>
-        /// <param name="gameObject"><inheritdoc cref="UObject.Base"/></param>
+        /// <typeparam name="T">The <see cref="EObject"/> type.</typeparam>
+        /// <param name="gameObject"><inheritdoc cref="EObject.Base"/></param>
         /// <param name="name">The name to be given to the new <see cref="ASchematicMeshComponent"/> instance.</param>
         /// <param name="meshName"><inheritdoc cref="RootSchematic"/></param>
-        /// <param name="scale"><inheritdoc cref="AActor.Scale"/></param>
-        /// <param name="position"><inheritdoc cref="AActor.Position"/></param>
-        /// <param name="rotation"><inheritdoc cref="AActor.Rotation"/></param>
+        /// <param name="scale"><inheritdoc cref="EActor.Scale"/></param>
+        /// <param name="position"><inheritdoc cref="EActor.Position"/></param>
+        /// <param name="rotation"><inheritdoc cref="EActor.Rotation"/></param>
         /// <param name="socket"><inheritdoc cref="Socket"/></param>
-        /// <returns>The new <see cref="UObject"/> instance.</returns>
+        /// <returns>The new <see cref="EObject"/> instance.</returns>
         public static T CreateDefaultSubobject<T>(
             GameObject gameObject,
             string name,
@@ -323,7 +324,7 @@ namespace RolePlus.ExternModule.API.Engine.Components
         /// <returns>The <see cref="Pickup"/> of type <typeparamref name="T"/>.</returns>
         public static Pickup FindClosestFrameOfType<T>(Vector3 position, IEnumerable<Pickup> source)
             where T : Pickup =>
-            Map.Pickups.FirstOrDefault(pickup =>
+            Pickup.List.FirstOrDefault(pickup =>
             pickup == source.Aggregate((curClosest, nextEntry) =>
             curClosest is null ||
             (Vector3.Distance(nextEntry.Position, position) <
@@ -365,7 +366,7 @@ namespace RolePlus.ExternModule.API.Engine.Components
         /// <param name="position">The <see cref="Vector3">position</see> from which looking for.</param>
         /// <returns>The <see cref="Pickup"/> of type <typeparamref name="T"/>.</returns>
         public static Pickup FindClosestFrameOfType<T>(Vector3 position)
-            where T : Pickup => FindClosestFrameOfType<T>(position, Map.Pickups);
+            where T : Pickup => FindClosestFrameOfType<T>(position, Pickup.List);
 
         /// <summary>
         /// Finds the <see cref="ASchematicMeshComponent"/> of type <typeparamref name="T"/> closest to <paramref name="position"/>.
@@ -465,7 +466,7 @@ namespace RolePlus.ExternModule.API.Engine.Components
         /// <param name="tag">The tag look for.</param>
         /// <returns>The <see cref="Pickup"/> of type <typeparamref name="T"/>.</returns>
         public static Pickup FindClosestFrameWithTagOfType<T>(T pickup, string tag)
-            where T : Pickup => FindClosestFrameWithTagOfType<T>(pickup.Position, tag, Map.Pickups);
+            where T : Pickup => FindClosestFrameWithTagOfType<T>(pickup.Position, tag, Pickup.List);
 
         /// <summary>
         /// Finds a fixed amount of all the <see cref="ASchematicMeshComponent"/> instances of type <typeparamref name="T"/> closest to <paramref name="position"/>.
@@ -557,7 +558,7 @@ namespace RolePlus.ExternModule.API.Engine.Components
         /// <param name="toGet">The requested amount of entries.</param>
         /// <returns>The <see cref="Pickup"/> of type <typeparamref name="T"/>.</returns>
         public static Pickup[] FindClosestFramesOfType<T>(T pickup, uint toGet = 0)
-            where T : Pickup => FindClosestFramesOfType<T>(pickup.Position, Map.Pickups, toGet).ToArray();
+            where T : Pickup => FindClosestFramesOfType<T>(pickup.Position, Pickup.List, toGet).ToArray();
 
         /// <summary>
         /// Finds a fixed amount of all the <see cref="ASchematicMeshComponent"/> instances of type <typeparamref name="T"/> closest to <paramref name="position"/>.
@@ -579,7 +580,7 @@ namespace RolePlus.ExternModule.API.Engine.Components
         /// <param name="toGet">The requested amount of entries.</param>
         /// <returns>The <see cref="ASchematicMeshComponent"/> of type <typeparamref name="T"/>.</returns>
         public static Pickup[] FindClosestFramesWithTagOfType<T>(Vector3 position, string tag, uint toGet = 0)
-            where T : Pickup => FindClosestFramesOfType<T>(position, Map.Pickups.Where(pickup => pickup.GameObject.name.ToLower().Contains(tag)), toGet).ToArray();
+            where T : Pickup => FindClosestFramesOfType<T>(position, Pickup.List.Where(pickup => pickup.GameObject.name.ToLower().Contains(tag)), toGet).ToArray();
 
         /// <summary>
         /// Finds a fixed amount of all the <see cref="ASchematicMeshComponent"/> instances of type <typeparamref name="T"/> closest to <paramref name="position"/>.
@@ -609,7 +610,7 @@ namespace RolePlus.ExternModule.API.Engine.Components
         public static Pickup[] FindClosestFramesWithTagOfType<T>(Vector3 position, string tag, IEnumerable<Pickup> source, uint toGet = 0)
             where T : Pickup => FindClosestFramesOfType<T>(
                 position,
-                Map.Pickups.Where(obj =>
+                Pickup.List.Where(obj =>
                 obj.GameObject.name.ToLower().Contains(tag) &&
                 source.Contains(obj)), toGet).ToArray();
 
@@ -639,9 +640,9 @@ namespace RolePlus.ExternModule.API.Engine.Components
         /// Creates a new instance of the <see cref="ASchematicMeshComponent"/> class.
         /// </summary>
         /// <param name="mesh"><inheritdoc cref="RootSchematic"/></param>
-        /// <param name="scale"><inheritdoc cref="AActor.Scale"/></param>
-        /// <param name="position"><inheritdoc cref="AActor.Position"/></param>
-        /// <param name="rotation"><inheritdoc cref="AActor.Rotation"/></param>
+        /// <param name="scale"><inheritdoc cref="EActor.Scale"/></param>
+        /// <param name="position"><inheritdoc cref="EActor.Position"/></param>
+        /// <param name="rotation"><inheritdoc cref="EActor.Rotation"/></param>
         /// <returns>The new instance of the <see cref="ASchematicMeshComponent"/> class.</returns>
         public static ASchematicMeshComponent Create(
             SchematicObject mesh,
@@ -702,7 +703,7 @@ namespace RolePlus.ExternModule.API.Engine.Components
         /// <param name="tag">The tag look for.</param>
         /// <returns>The <see cref="Pickup"/> of type <typeparamref name="T"/>.</returns>
         public Pickup FindClosestFrameWithTagOfType<T>(string tag)
-            where T : Pickup => FindClosestFrameWithTagOfType<T>(Position, tag, Map.Pickups);
+            where T : Pickup => FindClosestFrameWithTagOfType<T>(Position, tag, Pickup.List);
 
         /// <summary>
         /// Finds a fixed amount of all the <see cref="ASchematicMeshComponent"/> instances of type <typeparamref name="T"/> closest to this <see cref="ASchematicMeshComponent"/> instance.
@@ -730,7 +731,7 @@ namespace RolePlus.ExternModule.API.Engine.Components
         /// <param name="toGet">The requested amount of entries.</param>
         /// <returns>The <see cref="ASchematicMeshComponent"/> of type <typeparamref name="T"/>.</returns>
         public Pickup[] FindClosestFramesOfType<T>(uint toGet = 0)
-            where T : Pickup => FindClosestFramesOfType<T>(Position, Map.Pickups, toGet).ToArray();
+            where T : Pickup => FindClosestFramesOfType<T>(Position, Pickup.List, toGet).ToArray();
 
         /// <summary>
         /// Finds the <see cref="ASchematicMeshComponent"/> instance of type <typeparamref name="T"/> closest to this <see cref="ASchematicMeshComponent"/> instance.
@@ -755,7 +756,7 @@ namespace RolePlus.ExternModule.API.Engine.Components
         /// <typeparam name="T">The <see cref="Pickup"/> of type <typeparamref name="T"/> to look for.</typeparam>
         /// <returns>The <see cref="Pickup"/> of type <typeparamref name="T"/>.</returns>
         public Pickup FindClosestFrameOfType<T>()
-            where T : Pickup => FindClosestFrameOfType<T>(Position, Map.Pickups);
+            where T : Pickup => FindClosestFrameOfType<T>(Position, Pickup.List);
 
         /// <inheritdoc/>
         protected override void OnBeginPlay()
@@ -764,7 +765,7 @@ namespace RolePlus.ExternModule.API.Engine.Components
 
             Timing.CallDelayed(0.01f, () =>
             {
-                Framework.Events.Handlers.UObject.ChangingAnimationState += SyncAnimState;
+                Framework.Events.Handlers.EObject.ChangingAnimationState += SyncAnimState;
 
                 for (int i = 0; i < RootSchematic.AnimationController.Animators.Count; i++)
                 {
@@ -785,7 +786,7 @@ namespace RolePlus.ExternModule.API.Engine.Components
         {
             base.OnEndPlay();
 
-            Framework.Events.Handlers.UObject.ChangingAnimationState -= SyncAnimState;
+            Framework.Events.Handlers.EObject.ChangingAnimationState -= SyncAnimState;
 
             _animatorsParams.Clear();
         }
@@ -802,7 +803,7 @@ namespace RolePlus.ExternModule.API.Engine.Components
                     if (animator.GetCurrentAnimatorStateInfo(0).normalizedTime >= animator.GetCurrentAnimatorStateInfo(0).length)
                     {
                         CompletedAnimationStateEventArgs ev = new(this, animator, animator.GetCurrentAnimatorStateInfo(0));
-                        Framework.Events.Handlers.UObject.OnCompletedAnimationState(ev);
+                        Framework.Events.Handlers.EObject.OnCompletedAnimationState(ev);
                     }
                 }
                 catch
@@ -836,7 +837,7 @@ namespace RolePlus.ExternModule.API.Engine.Components
                 string currentAnimState = animator.GetCurrentAnimatorClipInfo(0)[0].clip.name;
                 AnimatorParameter param = new(animator, currentAnimState, true);
                 ChangingAnimationStateEventArgs ev = new(meshComponent, animator, param);
-                Framework.Events.Handlers.UObject.OnChangingAnimationState(ev);
+                Framework.Events.Handlers.EObject.OnChangingAnimationState(ev);
                 lastAnimState = currentAnimState;
             }
 
@@ -854,7 +855,7 @@ namespace RolePlus.ExternModule.API.Engine.Components
                 return false;
 
             ChangingAnimationStateEventArgs ev = new(this, pair.Key, param);
-            Framework.Events.Handlers.UObject.OnChangingAnimationState(ev);
+            Framework.Events.Handlers.EObject.OnChangingAnimationState(ev);
 
             ev.AnimationParameter.State = state;
 
@@ -872,7 +873,7 @@ namespace RolePlus.ExternModule.API.Engine.Components
                 return false;
 
             ChangingAnimationStateEventArgs ev = new(this, pair.Key, anim);
-            Framework.Events.Handlers.UObject.OnChangingAnimationState(ev);
+            Framework.Events.Handlers.EObject.OnChangingAnimationState(ev);
 
             ev.AnimationParameter.State = anim.State;
 
@@ -964,7 +965,7 @@ namespace RolePlus.ExternModule.API.Engine.Components
         {
         }
 
-        /// <inheritdoc cref="Framework.Events.Handlers.UObject.OnChangingAnimationState(ChangingAnimationStateEventArgs)"/>
+        /// <inheritdoc cref="Framework.Events.Handlers.EObject.OnChangingAnimationState(ChangingAnimationStateEventArgs)"/>
         private void SyncAnimState(ChangingAnimationStateEventArgs ev)
         {
             if (ev.MeshComponent != this)

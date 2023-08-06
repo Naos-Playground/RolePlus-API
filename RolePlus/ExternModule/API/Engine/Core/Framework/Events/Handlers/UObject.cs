@@ -1,5 +1,5 @@
 ﻿// -----------------------------------------------------------------------
-// <copyright file="UObject.cs" company="NaoUnderscore">
+// <copyright file="EObject.cs" company="NaoUnderscore">
 // Copyright (c) NaoUnderscore. All rights reserved.
 // Licensed under the CC BY-SA 3.0 license.
 // </copyright>
@@ -13,9 +13,9 @@ namespace RolePlus.ExternModule.API.Engine.Framework.Events.Handlers
     using static RolePlus.ExternModule.API.Engine.Framework.Events.Delegates;
 
     /// <summary>
-    /// Handles all the network events.
+    /// Handles all events based on  <see cref="EObject"/>.
     /// </summary>
-    public static class UObject
+    public static class EObject
     {
         /// <summary>
         /// Fired before a <see cref="ASchematicMeshComponent"/> changes animation state.

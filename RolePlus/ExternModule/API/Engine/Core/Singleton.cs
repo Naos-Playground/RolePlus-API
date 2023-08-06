@@ -7,6 +7,7 @@
 
 namespace RolePlus.ExternModule.API.Engine.Core
 {
+    using Exiled.API.Features.Core;
     using System;
     using System.Collections.Generic;
     using System.Linq;
@@ -81,23 +82,6 @@ namespace RolePlus.ExternModule.API.Engine.Core
             }
 
             return false;
-        }
-
-        /// <inheritdoc/>
-        public override TObject Cast<TObject>()
-            where TObject : class => Value as TObject;
-
-        /// <inheritdoc/>
-        public override bool Cast<TObject>(out TObject param)
-            where TObject : class
-        {
-            param = default;
-
-            if (Value is not TObject cast)
-                return false;
-
-            param = cast;
-            return true;
         }
     }
 }

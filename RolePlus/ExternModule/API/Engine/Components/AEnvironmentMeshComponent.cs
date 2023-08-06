@@ -13,7 +13,7 @@ namespace RolePlus.ExternModule.API.Engine.Components
     using Exiled.API.Enums;
     using Exiled.API.Features;
     using Exiled.API.Features.Items;
-
+    using Exiled.API.Features.Pickups;
     using InventorySystem.Items.Pickups;
 
     using MapEditorReborn.API.Features.Objects;
@@ -212,7 +212,7 @@ namespace RolePlus.ExternModule.API.Engine.Components
                     Base, $"{GetType().Name}-Frame#{InteractableFrames.Count}", pickups, this));
 
             Framework.Events.Handlers.Player.InteractingObject += CheckInteraction;
-            Framework.Events.Handlers.UObject.ChangingAnimationState += OnChangingAnimationState;
+            Framework.Events.Handlers.EObject.ChangingAnimationState += OnChangingAnimationState;
         }
 
         /// <inheritdoc/>
@@ -222,7 +222,7 @@ namespace RolePlus.ExternModule.API.Engine.Components
 
             InteractableFrames.Clear();
             Framework.Events.Handlers.Player.InteractingObject -= CheckInteraction;
-            Framework.Events.Handlers.UObject.ChangingAnimationState -= OnChangingAnimationState;
+            Framework.Events.Handlers.EObject.ChangingAnimationState -= OnChangingAnimationState;
         }
 
         /// <inheritdoc cref="Framework.Events.Handlers.Player.OnInteractingObject(InteractingObjectEventArgs)"/>

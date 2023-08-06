@@ -8,6 +8,7 @@
 namespace RolePlus.ExternModule.API.Engine.Components
 {
     using Exiled.API.Features;
+    using Exiled.API.Features.Core;
     using Exiled.API.Features.DamageHandlers;
 
     using MapEditorReborn.API.Features.Objects;
@@ -39,7 +40,7 @@ namespace RolePlus.ExternModule.API.Engine.Components
         /// <param name="component"><inheritdoc cref="AActorFrameComponent.RootComponent"/></param>
         /// <param name="maxHealth"><inheritdoc cref="AActorHealthComponent.MaxHealth"/></param>
         /// <param name="curHealth"><inheritdoc cref="AActorHealthComponent.CurHealth"/></param>
-        protected AEnvironmentActorHealthComponent(AActor component, float maxHealth, float curHealth)
+        protected AEnvironmentActorHealthComponent(EActor component, float maxHealth, float curHealth)
             : this()
         {
             if (!component.Cast(out AEnvironmentMeshComponent envComponent))

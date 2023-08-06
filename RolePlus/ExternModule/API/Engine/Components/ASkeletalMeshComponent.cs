@@ -8,7 +8,7 @@
 namespace RolePlus.ExternModule.API.Engine.Components
 {
     using System.Collections.Generic;
-
+    using Exiled.API.Features.Core;
     using RolePlus.ExternModule.API.Engine.Core;
     using RolePlus.ExternModule.API.Engine.Framework;
 
@@ -17,7 +17,7 @@ namespace RolePlus.ExternModule.API.Engine.Components
     /// <summary>
     /// The base class for custom meshes.
     /// </summary>
-    public abstract class ASkeletalMeshComponent : AActor
+    public abstract class ASkeletalMeshComponent : EActor
     {
         private static readonly HashSet<ASkeletalMeshComponent> _meshInstances = new();
 
@@ -32,7 +32,7 @@ namespace RolePlus.ExternModule.API.Engine.Components
         /// <summary>
         /// Initializes a new instance of the <see cref="ASkeletalMeshComponent"/> class.
         /// </summary>
-        /// <param name="gameObject"><inheritdoc cref="UObject.Base"/></param>
+        /// <param name="gameObject"><inheritdoc cref="EObject.Base"/></param>
         protected ASkeletalMeshComponent(GameObject gameObject = null)
             : base(gameObject)
         {
@@ -41,10 +41,10 @@ namespace RolePlus.ExternModule.API.Engine.Components
         /// <summary>
         /// Initializes a new instance of the <see cref="ASkeletalMeshComponent"/> class.
         /// </summary>
-        /// <param name="gameObject"><inheritdoc cref="UObject.Base"/></param>
-        /// <param name="scale"><inheritdoc cref="AActor.Scale"/></param>
-        /// <param name="position"><inheritdoc cref="AActor.Position"/></param>
-        /// <param name="rotation"><inheritdoc cref="AActor.Rotation"/></param>
+        /// <param name="gameObject"><inheritdoc cref="EObject.Base"/></param>
+        /// <param name="scale"><inheritdoc cref="EActor.Scale"/></param>
+        /// <param name="position"><inheritdoc cref="EActor.Position"/></param>
+        /// <param name="rotation"><inheritdoc cref="EActor.Rotation"/></param>
         protected ASkeletalMeshComponent(GameObject gameObject, Vector3 scale, Vector3 position, Quaternion rotation)
             : base(gameObject)
         {

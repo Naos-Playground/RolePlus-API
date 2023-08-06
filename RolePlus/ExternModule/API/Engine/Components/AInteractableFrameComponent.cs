@@ -9,10 +9,11 @@ namespace RolePlus.ExternModule.API.Engine.Components
 {
     using System.Collections.Generic;
     using System.Linq;
-
+    using Exiled.API.Features.Core;
     using Exiled.API.Features.Items;
+    using Exiled.API.Features.Pickups;
     using Exiled.Events.EventArgs;
-
+    using Exiled.Events.EventArgs.Player;
     using RolePlus.ExternModule.API.Engine.Framework;
     using RolePlus.ExternModule.API.Engine.Framework.Events.EventArgs;
 
@@ -34,13 +35,13 @@ namespace RolePlus.ExternModule.API.Engine.Components
         /// </summary>
         /// <param name="pickups"><inheritdoc cref="Pickups"/></param>
         /// <param name="component"><inheritdoc cref="RootComponent"/></param>
-        public AInteractableFrameComponent(IEnumerable<Pickup> pickups, AActor component)
+        public AInteractableFrameComponent(IEnumerable<Pickup> pickups, EActor component)
             : base(component) => Pickups = pickups.ToList();
 
         /// <summary>
-        /// Gets or sets the root <see cref="AActor"/>.
+        /// Gets or sets the root <see cref="EActor"/>.
         /// </summary>
-        public override AActor RootComponent { get; protected set; }
+        public override EActor RootComponent { get; protected set; }
 
         /// <summary>
         /// Gets or sets a <see cref="List{T}"/> of <see cref="Pickup"/> containing all the managed pickups.

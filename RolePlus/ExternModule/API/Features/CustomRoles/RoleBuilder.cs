@@ -375,7 +375,7 @@ namespace RolePlus.ExternModule.API.Features.CustomRoles
         /// <inheritdoc/>
         protected virtual void SetupThirdPersonCameraMesh(string meshName, string objectName, FTransform transform = default, float fixedTickRate = 0.01f)
         {
-            ThirdPersonCameraMeshComponent = UObject.CreateDefaultSubobject<CharacterMeshComponent>(gameObject, $"{name}-TPC", gameObject, meshName);
+            ThirdPersonCameraMeshComponent = EObject.CreateDefaultSubobject<CharacterMeshComponent>(gameObject, $"{name}-TPC", gameObject, meshName);
             ThirdPersonCameraMeshComponent.Socket = transform;
             ThirdPersonCameraMeshComponent.FixedTickRate = fixedTickRate;
             Owner.EnableEffect(EffectType.Invisible);

@@ -11,90 +11,90 @@ namespace RolePlus.ExternModule.API.Engine.Extensions
     using System.Linq;
 
     using Exiled.API.Features;
-
+    using Exiled.API.Features.Core;
     using RolePlus.ExternModule.API.Engine.Core;
     using RolePlus.ExternModule.API.Engine.Framework;
 
     using UnityEngine;
 
     /// <summary>
-    /// A set of useful extensions to easily interact with <see cref="AActor"/>.
+    /// A set of useful extensions to easily interact with <see cref="EActor"/>.
     /// </summary>
     public static class ComponentExtensions
     {
         /// <summary>
-        /// Adds a <typeparamref name="T"/> <see cref="AActor"/> to the given <see cref="Player"/>.
+        /// Adds a <typeparamref name="T"/> <see cref="EActor"/> to the given <see cref="Player"/>.
         /// </summary>
-        /// <typeparam name="T">The <typeparamref name="T"/> <see cref="AActor"/> to be added.</typeparam>
-        /// <param name="player">The <see cref="Player"/> who should own the <see cref="AActor"/>.</param>
-        /// <param name="name">The name of the <typeparamref name="T"/> <see cref="AActor"/>.</param>
-        /// <returns>The added <typeparamref name="T"/> <see cref="AActor"/> instance.</returns>
+        /// <typeparam name="T">The <typeparamref name="T"/> <see cref="EActor"/> to be added.</typeparam>
+        /// <param name="player">The <see cref="Player"/> who should own the <see cref="EActor"/>.</param>
+        /// <param name="name">The name of the <typeparamref name="T"/> <see cref="EActor"/>.</param>
+        /// <returns>The added <typeparamref name="T"/> <see cref="EActor"/> instance.</returns>
         public static T AddActorComponent<T>(this Player player, string name = "")
-            where T : AActor
+            where T : EActor
         {
-            T outer = UObject.CreateDefaultSubobject<T>(player.GameObject, name).Cast<AActor>().Cast<T>();
-            AActor.AttachTo(outer, player.GameObject);
+            T outer = EObject.CreateDefaultSubobject<T>(player.GameObject, name).Cast<EActor>().Cast<T>();
+            EActor.AttachTo(outer, player.GameObject);
             return outer;
         }
 
         /// <summary>
-        /// Adds a <typeparamref name="T"/> <see cref="AActor"/> to the given <see cref="GameObject"/>.
+        /// Adds a <typeparamref name="T"/> <see cref="EActor"/> to the given <see cref="GameObject"/>.
         /// </summary>
-        /// <typeparam name="T">The <typeparamref name="T"/> <see cref="AActor"/> to be added.</typeparam>
-        /// <param name="gameObject">The <see cref="GameObject"/> who should own the <see cref="AActor"/>.</param>
-        /// <param name="name">The name of the <typeparamref name="T"/> <see cref="AActor"/>.</param>
-        /// <returns>The added <typeparamref name="T"/> <see cref="AActor"/> instance.</returns>
+        /// <typeparam name="T">The <typeparamref name="T"/> <see cref="EActor"/> to be added.</typeparam>
+        /// <param name="gameObject">The <see cref="GameObject"/> who should own the <see cref="EActor"/>.</param>
+        /// <param name="name">The name of the <typeparamref name="T"/> <see cref="EActor"/>.</param>
+        /// <returns>The added <typeparamref name="T"/> <see cref="EActor"/> instance.</returns>
         public static T AddActorComponent<T>(this GameObject gameObject, string name = "")
-            where T : AActor
+            where T : EActor
         {
-            T outer = UObject.CreateDefaultSubobject<T>(gameObject, name).Cast<AActor>().Cast<T>();
-            AActor.AttachTo(outer, gameObject);
+            T outer = EObject.CreateDefaultSubobject<T>(gameObject, name).Cast<EActor>().Cast<T>();
+            EActor.AttachTo(outer, gameObject);
             return outer;
         }
 
         /// <summary>
-        /// Adds a <typeparamref name="T"/> <see cref="AActor"/> to the given <see cref="AActor"/>.
+        /// Adds a <typeparamref name="T"/> <see cref="EActor"/> to the given <see cref="EActor"/>.
         /// </summary>
-        /// <typeparam name="T">The <typeparamref name="T"/> <see cref="AActor"/> to be added.</typeparam>
-        /// <param name="actor">The <see cref="AActor"/> who should own the <see cref="AActor"/>.</param>
-        /// <param name="name">The name of the <typeparamref name="T"/> <see cref="AActor"/>.</param>
-        /// <returns>The added <typeparamref name="T"/> <see cref="AActor"/> instance.</returns>
-        public static T AddActorComponent<T>(this AActor actor, string name = "")
-            where T : AActor
+        /// <typeparam name="T">The <typeparamref name="T"/> <see cref="EActor"/> to be added.</typeparam>
+        /// <param name="actor">The <see cref="EActor"/> who should own the <see cref="EActor"/>.</param>
+        /// <param name="name">The name of the <typeparamref name="T"/> <see cref="EActor"/>.</param>
+        /// <returns>The added <typeparamref name="T"/> <see cref="EActor"/> instance.</returns>
+        public static T AddActorComponent<T>(this EActor actor, string name = "")
+            where T : EActor
         {
-            T outer = UObject.CreateDefaultSubobject<T>(actor.Base, name).Cast<AActor>().Cast<T>();
-            AActor.AttachTo(outer, actor.Base);
+            T outer = EObject.CreateDefaultSubobject<T>(actor.Base, name).Cast<EActor>().Cast<T>();
+            EActor.AttachTo(outer, actor.Base);
             return outer;
         }
 
         /// <summary>
-        /// Gets a <typeparamref name="T"/> <see cref="AActor"/> from the given <see cref="Player"/>.
+        /// Gets a <typeparamref name="T"/> <see cref="EActor"/> from the given <see cref="Player"/>.
         /// </summary>
-        /// <typeparam name="T">The <typeparamref name="T"/> <see cref="AActor"/> to be added.</typeparam>
-        /// <param name="player">The <see cref="Player"/> who owns the <see cref="AActor"/>.</param>
-        /// <returns>The <typeparamref name="T"/> <see cref="AActor"/> instance.</returns>
+        /// <typeparam name="T">The <typeparamref name="T"/> <see cref="EActor"/> to be added.</typeparam>
+        /// <param name="player">The <see cref="Player"/> who owns the <see cref="EActor"/>.</param>
+        /// <returns>The <typeparamref name="T"/> <see cref="EActor"/> instance.</returns>
         public static T GetActorComponent<T>(this Player player)
-            where T : AActor => player.GameObject.GetActorComponent<T>();
+            where T : EActor => player.GameObject.GetActorComponent<T>();
 
         /// <summary>
-        /// Gets a <typeparamref name="T"/> <see cref="AActor"/> from the given <see cref="GameObject"/>.
+        /// Gets a <typeparamref name="T"/> <see cref="EActor"/> from the given <see cref="GameObject"/>.
         /// </summary>
-        /// <typeparam name="T">The <typeparamref name="T"/> <see cref="AActor"/> to be added.</typeparam>
-        /// <param name="gameObject">The <see cref="GameObject"/> who owns the <see cref="AActor"/>.</param>
-        /// <returns>The <typeparamref name="T"/> <see cref="AActor"/> instance.</returns>
+        /// <typeparam name="T">The <typeparamref name="T"/> <see cref="EActor"/> to be added.</typeparam>
+        /// <param name="gameObject">The <see cref="GameObject"/> who owns the <see cref="EActor"/>.</param>
+        /// <returns>The <typeparamref name="T"/> <see cref="EActor"/> instance.</returns>
         public static T GetActorComponent<T>(this GameObject gameObject)
-            where T : AActor =>
-            UObject.FindActiveObjectsOfType<T>().FirstOrDefault(comp => comp.Cast(out T _) && comp.Base == gameObject);
+            where T : EActor =>
+            EObject.FindActiveObjectsOfType<T>().FirstOrDefault(comp => comp.Cast(out T _) && comp.Base == gameObject);
 
         /// <summary>
-        /// Gets a <typeparamref name="T"/> <see cref="AActor"/> from the given <see cref="Player"/>.
+        /// Gets a <typeparamref name="T"/> <see cref="EActor"/> from the given <see cref="Player"/>.
         /// </summary>
-        /// <typeparam name="T">The <typeparamref name="T"/> <see cref="AActor"/> to be added.</typeparam>
-        /// <param name="player">The <see cref="Player"/> who owns the <see cref="AActor"/>.</param>
-        /// <param name="component">The <typeparamref name="T"/> <see cref="AActor"/>.</param>
-        /// <returns><see langword="true"/> if the <typeparamref name="T"/> <see cref="AActor"/> was found; otherwise, <see langword="false"/>.</returns>
+        /// <typeparam name="T">The <typeparamref name="T"/> <see cref="EActor"/> to be added.</typeparam>
+        /// <param name="player">The <see cref="Player"/> who owns the <see cref="EActor"/>.</param>
+        /// <param name="component">The <typeparamref name="T"/> <see cref="EActor"/>.</param>
+        /// <returns><see langword="true"/> if the <typeparamref name="T"/> <see cref="EActor"/> was found; otherwise, <see langword="false"/>.</returns>
         public static bool TryGetActorComponent<T>(this Player player, out T component)
-            where T : AActor
+            where T : EActor
         {
             component = null;
 
@@ -105,18 +105,18 @@ namespace RolePlus.ExternModule.API.Engine.Extensions
         }
 
         /// <summary>
-        /// Gets a <typeparamref name="T"/> <see cref="AActor"/> from the given <see cref="GameObject"/>.
+        /// Gets a <typeparamref name="T"/> <see cref="EActor"/> from the given <see cref="GameObject"/>.
         /// </summary>
-        /// <typeparam name="T">The <typeparamref name="T"/> <see cref="AActor"/> to be added.</typeparam>
-        /// <param name="gameObject">The <see cref="GameObject"/> who owns the <see cref="AActor"/>.</param>
-        /// <param name="component">The <typeparamref name="T"/> <see cref="AActor"/>.</param>
-        /// <returns><see langword="true"/> if the <typeparamref name="T"/> <see cref="AActor"/> was found; otherwise, <see langword="false"/>.</returns>
+        /// <typeparam name="T">The <typeparamref name="T"/> <see cref="EActor"/> to be added.</typeparam>
+        /// <param name="gameObject">The <see cref="GameObject"/> who owns the <see cref="EActor"/>.</param>
+        /// <param name="component">The <typeparamref name="T"/> <see cref="EActor"/>.</param>
+        /// <returns><see langword="true"/> if the <typeparamref name="T"/> <see cref="EActor"/> was found; otherwise, <see langword="false"/>.</returns>
         public static bool TryGetActorComponent<T>(this GameObject gameObject, out T component)
-            where T : AActor
+            where T : EActor
         {
             component = null;
 
-            foreach (AActor comp in UObject.FindActiveObjectsOfType<AActor>())
+            foreach (EActor comp in EObject.FindActiveObjectsOfType<EActor>())
             {
                 if (comp.Base != gameObject || !comp.Cast(out T outer))
                     continue;
@@ -128,20 +128,20 @@ namespace RolePlus.ExternModule.API.Engine.Extensions
         }
 
         /// <summary>
-        /// Gets all active <see cref="AActor"/>s from the given <see cref="Player"/>.
+        /// Gets all active <see cref="EActor"/>s from the given <see cref="Player"/>.
         /// </summary>
-        /// <param name="player">The <see cref="Player"/> who owns the active <see cref="AActor"/>s.</param>
-        /// <returns>A <see cref="IEnumerable{T}"/> of <see cref="AActor"/> contaning all the active <see cref="AActor"/>s.</returns>
-        public static IEnumerable<AActor> GetActiveActorComponentsAll(this Player player) => player.GameObject.GetActiveComponentsAll();
+        /// <param name="player">The <see cref="Player"/> who owns the active <see cref="EActor"/>s.</param>
+        /// <returns>A <see cref="IEnumerable{T}"/> of <see cref="EActor"/> contaning all the active <see cref="EActor"/>s.</returns>
+        public static IEnumerable<EActor> GetActiveActorComponentsAll(this Player player) => player.GameObject.GetActiveComponentsAll();
 
         /// <summary>
-        /// Gets all active <see cref="AActor"/>s from the given <see cref="GameObject"/>.
+        /// Gets all active <see cref="EActor"/>s from the given <see cref="GameObject"/>.
         /// </summary>
-        /// <param name="gameObject">The <see cref="GameObject"/> who owns the active <see cref="AActor"/>s.</param>
-        /// <returns>A <see cref="IEnumerable{T}"/> of <see cref="AActor"/> contaning all the active <see cref="AActor"/>s.</returns>
-        public static IEnumerable<AActor> GetActiveComponentsAll(this GameObject gameObject)
+        /// <param name="gameObject">The <see cref="GameObject"/> who owns the active <see cref="EActor"/>s.</param>
+        /// <returns>A <see cref="IEnumerable{T}"/> of <see cref="EActor"/> contaning all the active <see cref="EActor"/>s.</returns>
+        public static IEnumerable<EActor> GetActiveComponentsAll(this GameObject gameObject)
         {
-            foreach (AActor component in UObject.FindActiveObjectsOfType<AActor>())
+            foreach (EActor component in EObject.FindActiveObjectsOfType<EActor>())
             {
                 if (component.Base != gameObject)
                     continue;
@@ -151,23 +151,23 @@ namespace RolePlus.ExternModule.API.Engine.Extensions
         }
 
         /// <summary>
-        /// Checks if the given <see cref="Player"/> has an active <typeparamref name="T"/> <see cref="AActor"/>.
+        /// Checks if the given <see cref="Player"/> has an active <typeparamref name="T"/> <see cref="EActor"/>.
         /// </summary>
-        /// <typeparam name="T">The <see cref="AActor"/> to look for.</typeparam>
+        /// <typeparam name="T">The <see cref="EActor"/> to look for.</typeparam>
         /// <param name="player">The <see cref="Player"/> to check.</param>
-        /// <returns><see langword="true"/> if the <typeparamref name="T"/> <see cref="AActor"/> was found; otherwise, <see langword="false"/>.</returns>
+        /// <returns><see langword="true"/> if the <typeparamref name="T"/> <see cref="EActor"/> was found; otherwise, <see langword="false"/>.</returns>
         public static bool HasActorComponent<T>(this Player player)
-            where T : AActor => player.GameObject.HasActorComponent<T>();
+            where T : EActor => player.GameObject.HasActorComponent<T>();
 
         /// <summary>
-        /// Checks if the given <see cref="GameObject"/> has an active <typeparamref name="T"/> <see cref="AActor"/>.
+        /// Checks if the given <see cref="GameObject"/> has an active <typeparamref name="T"/> <see cref="EActor"/>.
         /// </summary>
-        /// <typeparam name="T">The <see cref="AActor"/> to look for.</typeparam>
+        /// <typeparam name="T">The <see cref="EActor"/> to look for.</typeparam>
         /// <param name="gameObject">The <see cref="GameObject"/> to check.</param>
-        /// <returns><see langword="true"/> if the <typeparamref name="T"/> <see cref="AActor"/> was found; otherwise, <see langword="false"/>.</returns>
+        /// <returns><see langword="true"/> if the <typeparamref name="T"/> <see cref="EActor"/> was found; otherwise, <see langword="false"/>.</returns>
         public static bool HasActorComponent<T>(this GameObject gameObject)
-            where T : AActor =>
-            UObject.FindActiveObjectsOfType<T>().Any(component =>
+            where T : EActor =>
+            EObject.FindActiveObjectsOfType<T>().Any(component =>
             component.GetType() == typeof(T) && component.Base == gameObject);
     }
 }

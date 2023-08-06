@@ -22,7 +22,7 @@ namespace RolePlus.ExternModule.API.Features.CustomAbilities
     /// <summary>
     /// CustomAbility is the base class used to create user-defined types treated as abilities applicable to a <see cref="Player"/>.
     /// </summary>
-    public abstract class CustomAbility : AActor
+    public abstract class CustomAbility : EActor
     {
         private CoroutineHandle _abilityCooldownHandle;
         private byte _level;

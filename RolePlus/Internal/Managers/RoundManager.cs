@@ -120,9 +120,9 @@ namespace RolePlus.Internal
             foreach (Ragdoll ragdoll in Map.Ragdolls.Where(x => Vector3.Distance(x.Position, explosionRadius) <= 4))
                 ragdoll.Delete();
 
-            foreach (Pickup item in Map.Pickups.Where(x => Vector3.Distance(x.Position, explosionRadius) <= 4))
+            foreach (Pickup item in Pickup.List.Where(x => Vector3.Distance(x.Position, explosionRadius) <= 4))
             {
-                AInteractableFrameComponent[] frames = UObject.FindActiveObjectsOfType<AInteractableFrameComponent>();
+                AInteractableFrameComponent[] frames = EObject.FindActiveObjectsOfType<AInteractableFrameComponent>();
                 if (frames.Any(i => i.Pickups.Contains(item)))
                     continue;
 
