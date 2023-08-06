@@ -14,10 +14,13 @@ namespace RolePlus.ExternModule.API.Features
     using Exiled.API.Enums;
     using Exiled.API.Features;
     using Exiled.Events.EventArgs;
+    using Exiled.Events.EventArgs.Server;
 
     using MEC;
 
     using MonoMod.Utils;
+
+    using PlayerRoles;
 
     using Respawning;
     using Respawning.NamingRules;
@@ -44,9 +47,9 @@ namespace RolePlus.ExternModule.API.Features
         private static Dictionary<string, string> _unitNames;
         private static CoroutineHandle _respawnCoreHandle;
 
-        private static RoleType[] CHIRoles { get; } = Enum.GetValues(typeof(RoleType)).ToArray<RoleType>().Where(role => role.ToString().Contains("Chaos")).ToArray();
+        private static RoleTypeId[] CHIRoles { get; } = Enum.GetValues(typeof(RoleTypeId)).ToArray<RoleTypeId>().Where(role => role.ToString().Contains("Chaos")).ToArray();
 
-        private static RoleType[] MTFRoles { get; } = Enum.GetValues(typeof(RoleType)).ToArray<RoleType>().Where(role => role.ToString().Contains("Ntf")).ToArray();
+        private static RoleTypeId[] MTFRoles { get; } = Enum.GetValues(typeof(RoleTypeId)).ToArray<RoleTypeId>().Where(role => role.ToString().Contains("Ntf")).ToArray();
 
         /// <summary>
         /// Gets or sets the default respawn cooldown.
@@ -88,12 +91,12 @@ namespace RolePlus.ExternModule.API.Features
         /// <summary>
         /// Gets a <see cref="IEnumerable{T}"/> of <see cref="CustomRole"/> containing all the custom roles belonging to MTF team.
         /// </summary>
-        public static IEnumerable<CustomRole> MTFCustomRoles => CustomRole.Registered.Where(customRole => customRole.RespawnTeam is Team.MTF && !customRole.IsTeamComponent);
+        public static IEnumerable<CustomRole> MTFCustomRoles => CustomRole.Registered.Where(customRole => customRole.RespawnTeam is Team.FoundationForces && !customRole.IsTeamComponent);
 
         /// <summary>
         /// Gets a <see cref="IEnumerable{T}"/> of <see cref="CustomRole"/> containing all the custom roles belonging to CHI team.
         /// </summary>
-        public static IEnumerable<CustomRole> CHICustomRoles => CustomRole.Registered.Where(customRole => customRole.RespawnTeam == Team.CHI && !customRole.IsTeamComponent);
+        public static IEnumerable<CustomRole> CHICustomRoles => CustomRole.Registered.Where(customRole => customRole.RespawnTeam == Team.ChaosInsurgency && !customRole.IsTeamComponent);
 
         /// <summary>
         /// Gets or sets the current respawn state.
@@ -159,15 +162,15 @@ namespace RolePlus.ExternModule.API.Features
         /// <param name="spawnLimit">The maximum amount of units spawned at once.</param>
         public static void RespawnTeam(Team team, uint spawnLimit = 12)
         {
-            if (team is not Team.MTF && team is not Team.CHI)
+            if (team is not Team.FoundationForces && team is not Team.ChaosInsurgency)
                 return;
 
             HashSet<Player> spawnedPlayers = new();
-            List<CustomRole> customRoles = team is Team.MTF ? MTFCustomRoles.ToList() : CHICustomRoles.ToList();
+            List<CustomRole> customRoles = team is Team.FoundationForces ? MTFCustomRoles.ToList() : CHICustomRoles.ToList();
 
             int unitNumber = Random.Range(0, 20);
 
-            List<Player> toSpawn = Player.Get(p => p.Role.Team is Team.SCP && ManagedRoles.Select(role => CustomRole.Get(role).Players.Contains(p)).FirstOrDefault()).ToList();
+            List<Player> toSpawn = Player.Get(p => p.Role.Team is Team.SCPs && ManagedRoles.Select(role => CustomRole.Get(role).Players.Contains(p)).FirstOrDefault()).ToList();
             toSpawn.ShuffleList();
 
             for (int i = 0; i < spawnLimit; i++)
@@ -179,7 +182,7 @@ namespace RolePlus.ExternModule.API.Features
                 while (classIndex < customRoles.Count)
                 {
                     CustomRole customRole = customRoles[classIndex];
-                    if ((team is Team.MTF && i == 0 && customRole.Role is not RoleType.NtfCaptain) || !customRole.CanSpawnByProbability())
+                    if ((team is Team.FoundationForces && i == 0 && customRole.Role is not RoleTypeId.NtfCaptain) || !customRole.CanSpawnByProbability())
                         classIndex++;
                     else
                     {
@@ -191,18 +194,18 @@ namespace RolePlus.ExternModule.API.Features
 
                 if (!hasRole)
                 {
-                    ply.SetRole(RoleType.Spectator);
+                    ply.SetRole(RoleTypeId.Spectator);
 
-                    if (team is Team.MTF)
-                        Timing.CallDelayed(0.5f, () => ply.SetRole(i == 0 ? MTFRoles.FirstOrDefault(role => role.ToString() == RoleType.NtfCaptain.ToString()) : MTFRoles.Random(), SpawnReason.Respawn));
+                    if (team is Team.FoundationForces)
+                        Timing.CallDelayed(0.5f, () => ply.Role.Set(i == 0 ? MTFRoles.FirstOrDefault(role => role.ToString() == RoleTypeId.NtfCaptain.ToString()) : MTFRoles.Random(), SpawnReason.Respawn));
                     else
-                        Timing.CallDelayed(0.5f, () => ply.SetRole(CHIRoles.Random(), SpawnReason.Respawn));
+                        Timing.CallDelayed(0.5f, () => ply.Role.Set(CHIRoles.Random()));
                 }
 
                 spawnedPlayers.Add(ply);
             }
 
-            if (team is Team.MTF)
+            if (team is Team.FoundationForces)
             {
                 KeyValuePair<string, string> displayUnit = UnitNames.Random();
                 string cassieReadableUnit = displayUnit.Key;
@@ -228,17 +231,17 @@ namespace RolePlus.ExternModule.API.Features
         /// <param name="team">The team to be forced to respawn.</param>
         public static void ForceRespawn(Team team)
         {
-            if (team != Team.MTF && team != Team.CHI)
+            if (team != Team.FoundationForces && team != Team.ChaosInsurgency)
                 return;
 
-            IEnumerable<CustomTeam> customTeams = Registered.Where(t => t.RespawnTeam == (team is Team.MTF ? Team.MTF : Team.CHI));
+            IEnumerable<CustomTeam> customTeams = Registered.Where(t => t.RespawnTeam == (team is Team.FoundationForces ? Team.FoundationForces : Team.ChaosInsurgency));
 
             CustomTeam customTeam = null;
 
             foreach (CustomTeam toSpawn in customTeams)
             {
-                if ((!toSpawn.CanSpawnWithoutScps && !SpawnManager.IsAlive(Team.SCP)) ||
-                    (toSpawn.RequiredRoleToSpawn != RoleType.None && !Player.Get(toSpawn.RequiredRoleToSpawn).Any()) ||
+                if ((!toSpawn.CanSpawnWithoutScps && !SpawnManager.IsAlive(Team.SCPs)) ||
+                    (toSpawn.RequiredRoleToSpawn != RoleTypeId.None && !Player.Get(toSpawn.RequiredRoleToSpawn).Any()) ||
                     (toSpawn.RequiredCustomRoleToSpawn is not null && !CustomRole.TryGet(toSpawn.RequiredCustomRoleToSpawn, out CustomRole customRole) &&
                     toSpawn.AlivePlayers.Any()) || !toSpawn.Probability.EvaluateProbability() || toSpawn.Tickets <= 0)
                     continue;
@@ -249,14 +252,14 @@ namespace RolePlus.ExternModule.API.Features
 
             NextKnownTeam = new()
             {
-                Name = customTeam is null ? team is Team.MTF ? "Mobile Task Force" : "Chaos Insurgency" : customTeam.DisplayName,
-                Color = customTeam is null ? team is Team.MTF ? "#0b7ce7" : "#0be718" : customTeam.DisplayColor,
+                Name = customTeam is null ? team is Team.FoundationForces ? "Mobile Task Force" : "Chaos Insurgency" : customTeam.DisplayName,
+                Color = customTeam is null ? team is Team.FoundationForces ? "#0b7ce7" : "#0be718" : customTeam.DisplayColor,
             };
 
             if (TrySpawn(customTeam))
                 return;
 
-            RespawnTeam(team, team is Team.CHI ? CHIUnitsSpawnedAtOnce : MTFUnitsSpawnedAtOnce);
+            RespawnTeam(team, team is Team.ChaosInsurgency ? CHIUnitsSpawnedAtOnce : MTFUnitsSpawnedAtOnce);
         }
 
         private static void OnRoundStarted()
@@ -284,14 +287,14 @@ namespace RolePlus.ExternModule.API.Features
                 if (TimeUntilNextRespawn != 10)
                     continue;
 
-                while (Player.Get(p => p.Role.Team is Team.SCP && ManagedRoles.Select(role => CustomRole.Get(role).Players.Contains(p)).FirstOrDefault()).IsEmpty())
+                while (Player.Get(p => p.Role.Team is Team.SCPs && ManagedRoles.Select(role => CustomRole.Get(role).Players.Contains(p)).FirstOrDefault()).IsEmpty())
                 {
                     IsWaitingForPlayers = true;
                     yield return Timing.WaitForSeconds(2f);
                 }
 
                 IsWaitingForPlayers = false;
-                ForceRespawn(Random.Range(0, 101) <= 50 ? Team.MTF : Team.CHI);
+                ForceRespawn(Random.Range(0, 101) <= 50 ? Team.FoundationForces : Team.ChaosInsurgency);
                 TimeUntilNextRespawn = DefaultRespawnCooldown;
             }
         }

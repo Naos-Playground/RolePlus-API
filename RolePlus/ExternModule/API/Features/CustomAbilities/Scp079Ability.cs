@@ -12,6 +12,7 @@ namespace RolePlus.ExternModule.API.Features.CustomAbilities
     using Exiled.API.Enums;
     using Exiled.API.Features.Roles;
     using Exiled.Events.EventArgs;
+    using Exiled.Events.EventArgs.Scp079;
 
     /// <summary>
     /// The <see cref="Scp079Ability"/> base class.
@@ -36,7 +37,7 @@ namespace RolePlus.ExternModule.API.Features.CustomAbilities
         /// <param name="cooldown"><inheritdoc cref="CustomAbility.Cooldown"/></param>
         protected Scp079Ability(
             byte tier,
-            float gainedExp,
+            int gainedExp,
             float requiredEnergy,
             float cooldown = 0f)
             : this(cooldown)
@@ -86,7 +87,7 @@ namespace RolePlus.ExternModule.API.Features.CustomAbilities
         /// <summary>
         /// Gets or sets the gained experience after using the ability.
         /// </summary>
-        public abstract float GainedExperience { get; protected set; }
+        public abstract int GainedExperience { get; protected set; }
 
         /// <summary>
         /// Gets or sets the required energy to use the ability.

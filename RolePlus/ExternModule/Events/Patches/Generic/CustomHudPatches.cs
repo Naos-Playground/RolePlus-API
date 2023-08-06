@@ -11,12 +11,12 @@ namespace RolePlus.ExternModule.Events.Patches
     using System.Reflection.Emit;
 
     using Exiled.API.Features;
+    using Exiled.API.Features.Attributes;
 
     using HarmonyLib;
 
     using NorthwoodLib.Pools;
 
-    using RolePlus.ExternModule.API.Engine.Framework.Bootstrap;
     using RolePlus.ExternModule.API.Enums;
     using RolePlus.ExternModule.API.Features.CustomHud;
 

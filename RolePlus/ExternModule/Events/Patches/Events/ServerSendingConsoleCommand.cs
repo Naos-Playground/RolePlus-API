@@ -10,12 +10,11 @@ namespace RolePlus.ExternModule.Events.Patches
     using System.Linq;
 
     using Exiled.API.Extensions;
+    using Exiled.API.Features.Attributes;
 
     using HarmonyLib;
 
     using RemoteAdmin;
-
-    using RolePlus.ExternModule.API.Engine.Framework.Bootstrap;
 
     [HarmonyPatch(typeof(QueryProcessor), nameof(QueryProcessor.ProcessGameConsoleQuery))]
     [PatchGroup(nameof(RolePlus))]

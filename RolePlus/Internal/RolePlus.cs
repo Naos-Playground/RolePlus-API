@@ -11,7 +11,6 @@ namespace RolePlus.Internal
 
     using Exiled.API.Features;
 
-    using global::RolePlus.ExternModule.API.Engine.Framework.Bootstrap;
     using global::RolePlus.ExternModule.API.Features;
     using global::RolePlus.ExternModule.API.Features.VirtualAssemblies;
 
@@ -98,28 +97,24 @@ namespace RolePlus.Internal
 
             RespawnManager.Start();
             SpawnManager.Start();
-            GlobalPatchProcessor.AddEventHandlers();
 
             ServerEvents.ReloadedConfigs += () => ConfigAPI.LoadAll();
             ServerEvents.RoundStarted += ServerHandler.OnRoundStart;
             ServerEvents.EndingRound += ServerHandler.OnRoundEnding;
             ServerEvents.RoundEnded += ServerHandler.OnRoundEnded;
             ServerEvents.RestartingRound += ServerHandler.OnRestartingRound;
-            ServerEvents.WaitingForPlayers += ServerHandler.OnWaitingForPlayers;
         }
 
         private void UnregisterEvents()
         {
             RespawnManager.Stop();
             SpawnManager.Stop();
-            GlobalPatchProcessor.RemoveEventHandlers();
 
             ServerEvents.ReloadedConfigs -= () => ConfigAPI.LoadAll();
             ServerEvents.RoundStarted -= ServerHandler.OnRoundStart;
             ServerEvents.EndingRound -= ServerHandler.OnRoundEnding;
             ServerEvents.RoundEnded -= ServerHandler.OnRoundEnded;
             ServerEvents.RestartingRound -= ServerHandler.OnRestartingRound;
-            ServerEvents.WaitingForPlayers -= ServerHandler.OnWaitingForPlayers;
 
             ServerHandler = null;
             Singleton = null;

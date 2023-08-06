@@ -5,53 +5,34 @@
 // </copyright>
 // -----------------------------------------------------------------------
 
+
 namespace RolePlus.Internal
 {
     using System.Collections.Generic;
 
-    using Assets._Scripts.Dissonance;
-
     using Exiled.API.Enums;
     using Exiled.API.Features;
-    using Exiled.Events.EventArgs;
-
-    using ExternModule.API.Engine.Core;
-    using ExternModule.API.Features.Audio.API;
-
-    using GameCore;
-
-    using global::RolePlus.ExternModule.API.Features.VirtualAssemblies;
+    using Exiled.Events.EventArgs.Server;
 
     using MEC;
+
+    using PlayerRoles;
 
     internal class ServerHandler
     {
         private CoroutineHandle _decontaminationSurviveHandle;
-
-        internal void OnWaitingForPlayers()
-        {
-            Server.Host.Role.Type = global::RoleType.Tutorial;
-
-            AudioController.Comms.OnPlayerJoinedSession += AudioController.OnPlayerJoinedSession;
-            AudioController.Comms.OnPlayerLeftSession += AudioController.OnPlayerLeftSession;
-
-            Server.Host.ReferenceHub.nicknameSync.Network_myNickSync = "Radio";
-
-            Server.Host.Radio.Network_syncPrimaryVoicechatButton = true;
-            Server.Host.DissonanceUserSetup.NetworkspeakingFlags = SpeakingFlags.IntercomAsHuman;
-        }
 
         internal void OnRoundStart()
         {
             _decontaminationSurviveHandle = Timing.RunCoroutine(DecontaminationDamage_Fix());
         }
 
-        internal void OnRoundEnding(EndingRoundEventArgs ev) => ev.IsAllowed = !RoundManager.IsLocked;
+        internal void OnRoundEnding(EndingRoundEventArgs ev) => ev.IsRoundEnded = !RoundManager.IsLocked;
 
         internal void OnRestartingRound()
         {
             Timing.KillCoroutines(_decontaminationSurviveHandle);
-            Server.RunCommand("sr", new ConsoleCommandSender());
+            Server.RunCommand("sr", new ServerConsoleSender());
         }
 
         internal void OnRoundEnded(RoundEndedEventArgs _) => OnRestartingRound();
@@ -66,7 +47,7 @@ namespace RolePlus.Internal
                     continue;
 
                 foreach (Player pl in Player.Get(x => x.Zone == ZoneType.LightContainment))
-                    pl.Role.Type = global::RoleType.Spectator;
+                    pl.Role.Set(RoleTypeId.Spectator);
 
                 yield break;
             }

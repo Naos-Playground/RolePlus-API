@@ -242,8 +242,7 @@ namespace RolePlus.ExternModule.API.Features
                     Log.Debug(
                         $"[CustomGamemodes] Couldn't register {Name}. " +
                         $"Another CustomGamemode has been registered with the same GamemodeType:" +
-                        $" {Registered.FirstOrDefault(x => x.Type == Type)}",
-                        RolePlus.Singleton.Config.ShowDebugMessages);
+                        $" {Registered.FirstOrDefault(x => x.Type == Type)}");
 
                     return false;
                 }
@@ -254,8 +253,7 @@ namespace RolePlus.ExternModule.API.Features
             }
 
             Log.Debug(
-                $"[CustomGamemodes] Couldn't register {Name}. This custom gamemode has been already registered.",
-                RolePlus.Singleton.Config.ShowDebugMessages);
+                $"[CustomGamemodes] Couldn't register {Name}. This custom gamemode has been already registered.");
 
             return false;
         }
@@ -269,8 +267,7 @@ namespace RolePlus.ExternModule.API.Features
             if (!Registered.Contains(this))
             {
                 Log.Debug(
-                    $"[CustomGamemodes] Couldn't unregister {Name}. This custom gamemode hasn't been registered yet.",
-                    RolePlus.Singleton.Config.ShowDebugMessages);
+                    $"[CustomGamemodes] Couldn't unregister {Name}. This custom gamemode hasn't been registered yet.");
 
                 return false;
             }

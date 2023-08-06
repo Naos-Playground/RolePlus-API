@@ -17,6 +17,8 @@ namespace RolePlus.ExternModule.API.Features
 
     using MEC;
 
+    using PlayerRoles;
+
     using UnityEngine;
 
     /// <summary>
@@ -49,7 +51,6 @@ namespace RolePlus.ExternModule.API.Features
                 player.RankName,
                 player.RankColor,
                 player.BadgeHidden,
-                player.IsInvisible,
                 player.IsOverwatchEnabled,
                 player.IsBypassModeEnabled,
                 player.IsGodModeEnabled,
@@ -72,10 +73,10 @@ namespace RolePlus.ExternModule.API.Features
         /// <inheritdoc cref="TemporaryStats()"/>
         public TemporaryStats(
             float health = 0f,
-            int maxHealth = 0,
+            float maxHealth = 0,
             float artificialHealth = 0f,
             float maxArtificialHealth = 0f,
-            RoleType role = RoleType.None,
+            RoleTypeId role = RoleTypeId.None,
             object customRole = null,
             Vector3 position = default,
             Vector2 rotation = default,
@@ -85,7 +86,6 @@ namespace RolePlus.ExternModule.API.Features
             string rankName = "",
             string rankColor = "",
             bool badgeHidden = false,
-            bool isInvisible = true,
             bool isOverwatchEnabled = false,
             bool isBypassModeEnabled = false,
             bool isGodModeEnabled = false,
@@ -110,7 +110,6 @@ namespace RolePlus.ExternModule.API.Features
             RankName = rankName;
             RankColor = rankColor;
             BadgeHidden = badgeHidden;
-            IsInvisible = isInvisible;
             IsOverwatchEnabled = isOverwatchEnabled;
             IsBypassModeEnabled = isBypassModeEnabled;
             IsGodModeEnabled = isGodModeEnabled;
@@ -126,7 +125,7 @@ namespace RolePlus.ExternModule.API.Features
         public float Health { get; set; }
 
         /// <inheritdoc cref="Player.MaxHealth"/>
-        public int MaxHealth { get; set; }
+        public float MaxHealth { get; set; }
 
         /// <inheritdoc cref="Player.ArtificialHealth"/>
         public float ArtificialHealth { get; set; }
@@ -135,7 +134,7 @@ namespace RolePlus.ExternModule.API.Features
         public float MaxArtificialHealth { get; set; }
 
         /// <inheritdoc cref="Role.Type"/>
-        public RoleType Role { get; set; }
+        public RoleTypeId Role { get; set; }
 
         /// <summary>
         /// Gets or sets the player's custom role.
@@ -171,9 +170,6 @@ namespace RolePlus.ExternModule.API.Features
         /// <inheritdoc cref="Player.CustomInfo"/>
         public string CustomInfo { get; set; }
 
-        /// <inheritdoc cref="Player.IsInvisible"/>
-        public bool IsInvisible { get; set; }
-
         /// <inheritdoc cref="Player.IsOverwatchEnabled"/>
         public bool IsOverwatchEnabled { get; set; }
 
@@ -193,7 +189,7 @@ namespace RolePlus.ExternModule.API.Features
         public float Experience { get; set; }
 
         /// <inheritdoc cref="Scp079Role.Level"/>
-        public byte Level { get; set; }
+        public int Level { get; set; }
 
         /// <inheritdoc cref="Scp079Role.MaxEnergy"/>
         public float MaxEnergy { get; set; }

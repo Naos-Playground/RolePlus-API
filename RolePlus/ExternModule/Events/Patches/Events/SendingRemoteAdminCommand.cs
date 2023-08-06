@@ -11,12 +11,11 @@ namespace RolePlus.ExternModule.Events.Patches
 
     using Exiled.API.Extensions;
     using Exiled.API.Features;
+    using Exiled.API.Features.Attributes;
 
     using HarmonyLib;
 
     using RemoteAdmin;
-
-    using RolePlus.ExternModule.API.Engine.Framework.Bootstrap;
 
     [HarmonyPatch(typeof(CommandProcessor), nameof(CommandProcessor.ProcessQuery), typeof(string), typeof(CommandSender))]
     [PatchGroup(nameof(RolePlus))]
@@ -24,7 +23,7 @@ namespace RolePlus.ExternModule.Events.Patches
     {
         private static bool Prefix(ref string q, ref CommandSender sender)
         {
-            QueryProcessor queryProcessor = sender is PlayerCommandSender playerCommandSender ? playerCommandSender.Processor : null;
+            QueryProcessor queryProcessor = sender is PlayerCommandSender playerCommandSender ? playerCommandSender. : null;
             (string name, string[] arguments) = q.ExtractCommand();
             HLAPI.LogCommandUsed(queryProcessor, HLAPI.FormatArguments(arguments, 0));
 

@@ -11,15 +11,15 @@ namespace RolePlus.ExternModule.Events.Patches
     using System.Collections.Generic;
     using System.Reflection.Emit;
 
+    using Exiled.API.Features.Attributes;
+
     using HarmonyLib;
 
     using MEC;
 
     using NorthwoodLib.Pools;
 
-    using RolePlus.ExternModule.API.Engine.Framework.Bootstrap;
-
-    [HarmonyPatch(typeof(Timing), nameof(Timing.RunCoroutine), new Type[] { typeof(IEnumerator<float>) })]
+     [HarmonyPatch(typeof(Timing), nameof(Timing.RunCoroutine), new Type[] { typeof(IEnumerator<float>) })]
     [PatchGroup(nameof(RolePlus))]
     internal static class FixDefaultSegmentPatch
     {

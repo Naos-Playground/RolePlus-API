@@ -10,8 +10,8 @@ namespace RolePlus.ExternModule.API.Engine.Components
     using System.Collections.Generic;
     using System.Linq;
 
-    using Exiled.API.Features.Items;
-    using Exiled.Events.EventArgs;
+    using Exiled.API.Features.Pickups;
+    using Exiled.Events.EventArgs.Player;
 
     using RolePlus.ExternModule.API.Engine.Framework;
     using RolePlus.ExternModule.API.Engine.Framework.Events.EventArgs;

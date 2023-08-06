@@ -10,11 +10,11 @@ namespace RolePlus.ExternModule.Events.Patches
     using System.Collections.Generic;
     using System.Reflection.Emit;
 
+    using Exiled.API.Features.Attributes;
+
     using HarmonyLib;
 
     using NorthwoodLib.Pools;
-
-    using RolePlus.ExternModule.API.Engine.Framework.Bootstrap;
 
     using static HarmonyLib.AccessTools;
 

@@ -385,8 +385,7 @@ namespace RolePlus.ExternModule.API.Features.CustomAbilities
                 {
                     Log.Debug(
                         $"[CustomAbility] Couldn't register {Name}. Another CustomAbility has been registered with the same Type: " +
-                        $" {Registered.FirstOrDefault(x => x.Type == Type)}",
-                        RolePlus.Singleton.Config.ShowDebugMessages);
+                        $" {Registered.FirstOrDefault(x => x.Type == Type)}");
 
                     return false;
                 }
@@ -398,8 +397,7 @@ namespace RolePlus.ExternModule.API.Features.CustomAbilities
 
             Log.Debug(
                 $"[CustomAbility] Couldn't register {Name}." +
-                $"This CustomAbility has been already registered.",
-                RolePlus.Singleton.Config.ShowDebugMessages);
+                $"This CustomAbility has been already registered.");
 
             return false;
         }
@@ -414,8 +412,7 @@ namespace RolePlus.ExternModule.API.Features.CustomAbilities
             {
                 Log.Debug(
                     $"[CustomAbility] Couldn't unregister {Name}." +
-                    $"This CustomAbility hasn't been registered yet.",
-                    RolePlus.Singleton.Config.ShowDebugMessages);
+                    $"This CustomAbility hasn't been registered yet.");
 
                 return false;
             }

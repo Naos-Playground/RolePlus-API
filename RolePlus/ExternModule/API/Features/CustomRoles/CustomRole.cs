@@ -16,8 +16,11 @@ namespace RolePlus.ExternModule.API.Features.CustomRoles
     using Exiled.API.Extensions;
     using Exiled.API.Features;
     using Exiled.Events.EventArgs;
+    using Exiled.Events.EventArgs.Player;
 
     using MEC;
+
+    using PlayerRoles;
 
     using RolePlus.ExternModule.API.Engine.Core;
     using RolePlus.ExternModule.Events.EventArgs;
@@ -75,12 +78,12 @@ namespace RolePlus.ExternModule.API.Features.CustomRoles
         /// <summary>
         /// Gets the <see cref="CustomRole"/>'s <see cref="RoleType"/>.
         /// </summary>
-        public virtual RoleType Role { get; }
+        public virtual RoleTypeId Role { get; }
 
         /// <summary>
         /// Gets the <see cref="CustomRole"/>'s escape <see cref="RoleType"/>.
         /// </summary>
-        public virtual RoleType EscapeRole { get; }
+        public virtual RoleTypeId EscapeRole { get; }
 
         /// <summary>
         /// Gets the <see cref="CustomRole"/>'s escape <see cref="CustomRole"/>.
@@ -110,12 +113,12 @@ namespace RolePlus.ExternModule.API.Features.CustomRoles
         /// <summary>
         /// Gets the <see cref="CustomRole"/>'s respawn <see cref="Team"/> .
         /// </summary>
-        public virtual Team RespawnTeam => Team.TUT;
+        public virtual Team RespawnTeam => Team.OtherAlive;
 
         /// <summary>
         /// Gets the <see cref="CustomRole"/>'s respawn <see cref="RoleType"/> .
         /// </summary>
-        public virtual RoleType RespawnRole { get; }
+        public virtual RoleTypeId RespawnRole { get; }
 
         /// <summary>
         /// Gets a the <see cref="CustomRole"/>'s name.
@@ -469,8 +472,7 @@ namespace RolePlus.ExternModule.API.Features.CustomRoles
                     Log.Debug(
                         $"[CustomRoles] Couldn't register {Name}. " +
                         $"Another custom role has been registered with the same CustomRoleType:" +
-                        $" {Registered.FirstOrDefault(x => x.Id == Id)}",
-                        RolePlus.Singleton.Config.ShowDebugMessages);
+                        $" {Registered.FirstOrDefault(x => x.Id == Id)}");
 
                     return false;
                 }
@@ -482,8 +484,7 @@ namespace RolePlus.ExternModule.API.Features.CustomRoles
             }
 
             Log.Debug(
-                $"[CustomRoles] Couldn't register {Name}. This custom role has been already registered.",
-                RolePlus.Singleton.Config.ShowDebugMessages);
+                $"[CustomRoles] Couldn't register {Name}. This custom role has been already registered.");
 
             return false;
         }
@@ -497,8 +498,7 @@ namespace RolePlus.ExternModule.API.Features.CustomRoles
             if (!Registered.Contains(this))
             {
                 Log.Debug(
-                    $"[CustomRoles] Couldn't unregister {Name}. This custom role hasn't been registered yet.",
-                    RolePlus.Singleton.Config.ShowDebugMessages);
+                    $"[CustomRoles] Couldn't unregister {Name}. This custom role hasn't been registered yet.");
 
                 return false;
             }
@@ -516,7 +516,7 @@ namespace RolePlus.ExternModule.API.Features.CustomRoles
         /// <returns><see langword="true"/> if the player was spawned; otherwise, <see langword="false"/>.</returns>
         public bool Spawn(Player player)
         {
-            if (player.Role.Team != Team.RIP)
+            if (player.Role.Team != Team.Dead)
                 return false;
 
             RespawnManager.RespawnQueue.Add(player);
@@ -540,7 +540,7 @@ namespace RolePlus.ExternModule.API.Features.CustomRoles
 
             if (player.IsAlive)
             {
-                player.Role.Type = RoleType.Spectator;
+                player.Role.Set(RoleTypeId.Spectator);
                 Timing.CallDelayed(1.5f, () => ForceSpawn_Internal(player, shouldKeepPosition));
             }
             else
@@ -563,11 +563,11 @@ namespace RolePlus.ExternModule.API.Features.CustomRoles
                     !kvp.Value.EvaluateProbability())
                     continue;
 
-                IEnumerable<Player> players = Player.Get(Team.RIP);
+                IEnumerable<Player> players = Player.Get(Team.Dead);
                 if (players.IsEmpty())
                     return;
 
-                SafeSpawn(Player.Get(Team.RIP).Random(), this);
+                SafeSpawn(Player.Get(Team.Dead).Random(), this);
             }
         }
 
@@ -617,7 +617,6 @@ namespace RolePlus.ExternModule.API.Features.CustomRoles
                     ev.Ammo?.Add(kvp.Key.GetItemType(), kvp.Value);
             }
 
-            ev.Lite = RoleBuilder.LitePlayers.Contains(ev.Player);
             RoleBuilder.LitePlayers.Remove(ev.Player);
         }
 

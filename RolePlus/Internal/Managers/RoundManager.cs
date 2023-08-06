@@ -13,13 +13,17 @@ namespace RolePlus.Internal
     using Exiled.API.Enums;
     using Exiled.API.Features;
     using Exiled.API.Features.Items;
+    using Exiled.API.Features.Pickups;
     using Exiled.CustomItems.API.Features;
     using Exiled.Events.EventArgs;
+    using Exiled.Events.EventArgs.Map;
 
     using global::RolePlus.ExternModule.API.Engine.Components;
     using global::RolePlus.ExternModule.API.Engine.Core;
 
     using MEC;
+
+    using PlayerRoles;
 
     using UnityEngine;
 
@@ -77,13 +81,13 @@ namespace RolePlus.Internal
         {
             get
             {
-                if (SpawnManager.IsAlive(Team.MTF, Team.RSC) && !SpawnManager.IsAlive(Team.CDP, Team.CHI, Team.SCP, Team.TUT))
+                if (SpawnManager.IsAlive(Team.FoundationForces, Team.Scientists) && !SpawnManager.IsAlive(Team.ClassD, Team.ChaosInsurgency, Team.SCPs, Team.OtherAlive))
                     _leadingTeam = Side.Mtf;
-                else if (SpawnManager.IsAlive(Team.CHI, Team.CDP) && !SpawnManager.IsAlive(Team.MTF, Team.RSC, Team.SCP, Team.TUT))
+                else if (SpawnManager.IsAlive(Team.ChaosInsurgency, Team.ClassD) && !SpawnManager.IsAlive(Team.FoundationForces, Team.Scientists, Team.SCPs, Team.OtherAlive))
                     _leadingTeam = Side.ChaosInsurgency;
-                else if (SpawnManager.IsAlive(Team.SCP) && !SpawnManager.IsAlive(Team.MTF, Team.RSC, Team.CHI, Team.CDP, Team.TUT))
+                else if (SpawnManager.IsAlive(Team.SCPs) && !SpawnManager.IsAlive(Team.FoundationForces, Team.Scientists, Team.ChaosInsurgency, Team.ClassD, Team.OtherAlive))
                     _leadingTeam = Side.Scp;
-                else if (SpawnManager.IsAlive(Team.TUT) && !SpawnManager.IsAlive(Team.MTF, Team.RSC, Team.CHI, Team.CDP, Team.SCP))
+                else if (SpawnManager.IsAlive(Team.OtherAlive) && !SpawnManager.IsAlive(Team.FoundationForces, Team.Scientists, Team.ChaosInsurgency, Team.ClassD, Team.SCPs))
                     _leadingTeam = Side.Tutorial;
                 else
                     _leadingTeam = Side.None;
@@ -113,14 +117,14 @@ namespace RolePlus.Internal
 
         private static void OnExplodingGrenade(ExplodingGrenadeEventArgs ev)
         {
-            if (!CanExplosionDestroyEntities || ev.GrenadeType is not GrenadeType.FragGrenade)
+            if (!CanExplosionDestroyEntities)
                 return;
 
-            Vector3 explosionRadius = ev.Grenade.transform.position;
-            foreach (Ragdoll ragdoll in Map.Ragdolls.Where(x => Vector3.Distance(x.Position, explosionRadius) <= 4))
-                ragdoll.Delete();
+            Vector3 explosionRadius = ev.Projectile.Base.Position;
+            foreach (Ragdoll ragdoll in Ragdoll.List.Where(x => Vector3.Distance(x.Position, explosionRadius) <= 4))
+                ragdoll.Destroy();
 
-            foreach (Pickup item in Map.Pickups.Where(x => Vector3.Distance(x.Position, explosionRadius) <= 4))
+            foreach (Pickup item in Pickup.List.Where(x => Vector3.Distance(x.Position, explosionRadius) <= 4))
             {
                 AInteractableFrameComponent[] frames = UObject.FindActiveObjectsOfType<AInteractableFrameComponent>();
                 if (frames.Any(i => i.Pickups.Contains(item)))

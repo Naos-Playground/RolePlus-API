@@ -5,6 +5,8 @@
 // </copyright>
 // -----------------------------------------------------------------------
 
+using PlayerRoles;
+
 namespace RolePlus.ExternModule.API.Features.CustomTeams
 {
     using System;
@@ -119,7 +121,7 @@ namespace RolePlus.ExternModule.API.Features.CustomTeams
         /// <summary>
         /// Gets the required <see cref="RoleType"/> to allow the <see cref="CustomTeam"/> to spawn.
         /// </summary>
-        public virtual RoleType RequiredRoleToSpawn => RoleType.None;
+        public virtual RoleTypeId RequiredRoleToSpawn => RoleTypeId.None;
 
         /// <summary>
         /// Gets the required <see cref="CustomRole"/> to allow the <see cref="CustomTeam"/> to spawn.
@@ -472,8 +474,7 @@ namespace RolePlus.ExternModule.API.Features.CustomTeams
                     Log.Debug(
                         $"[CustomTeams] Couldn't register {Name}. " +
                         $"Another custom team has been registered with the same CustomTeamType:" +
-                        $" {Registered.FirstOrDefault(x => x.Id == Id)}",
-                        RolePlus.Singleton.Config.ShowDebugMessages);
+                        $" {Registered.FirstOrDefault(x => x.Id == Id)}");
 
                     return false;
                 }
@@ -484,8 +485,7 @@ namespace RolePlus.ExternModule.API.Features.CustomTeams
             }
 
             Log.Debug(
-                $"[CustomTeams] Couldn't register {Name}. This custom team has been already registered.",
-                RolePlus.Singleton.Config.ShowDebugMessages);
+                $"[CustomTeams] Couldn't register {Name}. This custom team has been already registered.");
 
             return false;
         }
@@ -499,8 +499,7 @@ namespace RolePlus.ExternModule.API.Features.CustomTeams
             if (!Registered.Contains(this))
             {
                 Log.Debug(
-                    $"[CustomTeams] Couldn't unregister {Name}. This custom team hasn't been registered yet.",
-                    RolePlus.Singleton.Config.ShowDebugMessages);
+                    $"[CustomTeams] Couldn't unregister {Name}. This custom team hasn't been registered yet.");
 
                 return false;
             }
@@ -532,14 +531,14 @@ namespace RolePlus.ExternModule.API.Features.CustomTeams
             for (int i = 0; i < amount; i++)
             {
                 Log.Debug(i);
-                Player[] players = Player.Get(Team.RIP).ToArray();
+                Player[] players = Player.Get(Team.Dead).ToArray();
                 if (players.IsEmpty())
                     return;
 
                 Spawn(players[i]);
             }
 
-            if (RespawnTeam is Team.MTF)
+            if (RespawnTeam is Team.FoundationForces)
             {
                 SyncUnit mtfUnit = new()
                 {
@@ -579,7 +578,7 @@ namespace RolePlus.ExternModule.API.Features.CustomTeams
                 count++;
             }
 
-            if (RespawnTeam is Team.MTF)
+            if (RespawnTeam is Team.FoundationForces)
             {
                 SyncUnit mtfUnit = new()
                 {
@@ -621,7 +620,7 @@ namespace RolePlus.ExternModule.API.Features.CustomTeams
                     !kvp.Value.EvaluateProbability())
                     continue;
 
-                IEnumerable<Player> players = Player.Get(Team.RIP);
+                IEnumerable<Player> players = Player.Get(Team.Dead);
                 if (players.IsEmpty())
                     return;
 

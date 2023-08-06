@@ -5,6 +5,7 @@
 // </copyright>
 // -----------------------------------------------------------------------
 
+
 namespace RolePlus.Internal
 {
     using System.Collections.Generic;
@@ -13,12 +14,15 @@ namespace RolePlus.Internal
     using Exiled.API.Extensions;
     using Exiled.API.Features;
     using Exiled.Events.EventArgs;
+    using Exiled.Events.EventArgs.Player;
 
     using global::RolePlus.ExternModule;
     using global::RolePlus.ExternModule.API.Features.CustomRoles;
     using global::RolePlus.ExternModule.API.Features.CustomTeams;
 
     using MEC;
+
+    using PlayerRoles;
 
     using UnityEngine;
 
@@ -30,12 +34,12 @@ namespace RolePlus.Internal
         /// <summary>
         /// Gets all the SCPs' death position.
         /// </summary>
-        public static Dictionary<RoleType, Vector3> ScpsDeathPositions { get; } = new();
+        public static Dictionary<RoleTypeId, Vector3> ScpsDeathPositions { get; } = new();
 
         /// <summary>
         /// Gets all the SCPs' spawn position.
         /// </summary>
-        public static Dictionary<RoleType, Vector3> ScpsSpawnPositions { get; } = new();
+        public static Dictionary<RoleTypeId, Vector3> ScpsSpawnPositions { get; } = new();
 
         /// <summary>
         /// Gets all the custom SCPs' death position.
@@ -50,7 +54,7 @@ namespace RolePlus.Internal
         /// <summary>
         /// Gets all the contained SCPs.
         /// </summary>
-        public static List<RoleType> ContainedScps { get; } = new();
+        public static List<RoleTypeId> ContainedScps { get; } = new();
 
         /// <summary>
         /// Gets all the contained custom SCPs.
@@ -60,7 +64,7 @@ namespace RolePlus.Internal
         /// <summary>
         /// Gets all the spawned SCPs.
         /// </summary>
-        public static List<RoleType> SpawnedScps { get; } = new();
+        public static List<RoleTypeId> SpawnedScps { get; } = new();
 
         /// <summary>
         /// Gets all the spawned custom SCPs.
@@ -72,7 +76,7 @@ namespace RolePlus.Internal
         /// </summary>
         /// <param name="roleType">The role to check.</param>
         /// <returns><see langword="true"/> if the role is alive; otherwise, <see langword="false"/>.</returns>
-        public static bool IsAlive(RoleType roleType) => Player.List.Any(x => !x.HasCustomRole() && x.Role.Type == roleType);
+        public static bool IsAlive(RoleTypeId roleType) => Player.List.Any(x => !x.HasCustomRole() && x.Role.Type == roleType);
 
         /// <summary>
         /// Checks whether the specified <see cref="CustomRole.Id"/> is alive.
@@ -136,30 +140,30 @@ namespace RolePlus.Internal
                     if (!CustomScpsSpawnPositions.ContainsKey(customRole.Id))
                         CustomScpsSpawnPositions.Add(customRole.Id, ev.Position);
                 }
-                else if (ev.RoleType.GetTeam() is Team.SCP)
+                else if (ev.Player.Role.Type.GetTeam() is Team.SCPs)
                 {
-                    if (!SpawnedScps.Contains(ev.RoleType))
-                        SpawnedScps.Add(ev.RoleType);
+                    if (!SpawnedScps.Contains(ev.Player.Role.Type))
+                        SpawnedScps.Add(ev.Player.Role.Type);
 
-                    if (!ScpsSpawnPositions.ContainsKey(ev.RoleType))
-                        ScpsSpawnPositions.Add(ev.RoleType, ev.Position);
+                    if (!ScpsSpawnPositions.ContainsKey(ev.Player.Role.Type))
+                        ScpsSpawnPositions.Add(ev.Player.Role.Type, ev.Position);
                 }
             });
         }
 
         private static void OnDied(DiedEventArgs ev)
         {
-            if (CustomRole.TryGet(ev.Target, out CustomRole customRole) && customRole.IsScp)
+            if (CustomRole.TryGet(ev.Player, out CustomRole customRole) && customRole.IsScp)
             {
                 ContainedCustomScps.Add(customRole.Id);
                 CustomScpsDeathPositions.Remove(customRole.Id);
-                CustomScpsDeathPositions.Add(customRole.Id, ev.Target.Position);
+                CustomScpsDeathPositions.Add(customRole.Id, ev.Player.Position);
             }
-            else if (ev.Target.Role.Team is Team.SCP)
+            else if (ev.Player.Role.Team is Team.SCPs)
             {
-                ContainedScps.Add(ev.Target.Role.Type);
-                ScpsDeathPositions.Remove(ev.Target.Role.Type);
-                ScpsDeathPositions.Add(ev.Target.Role.Type, ev.Target.Position);
+                ContainedScps.Add(ev.Player.Role.Type);
+                ScpsDeathPositions.Remove(ev.Player.Role.Type);
+                ScpsDeathPositions.Add(ev.Player.Role.Type, ev.Player.Position);
             }
         }
     }

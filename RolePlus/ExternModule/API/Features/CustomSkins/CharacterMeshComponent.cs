@@ -13,6 +13,7 @@ namespace RolePlus.ExternModule.API.Features.CustomSkins
     using Exiled.API.Enums;
     using Exiled.API.Features;
     using Exiled.Events.EventArgs;
+    using Exiled.Events.EventArgs.Player;
 
     using MapEditorReborn.API.Extensions;
     using MapEditorReborn.API.Features;

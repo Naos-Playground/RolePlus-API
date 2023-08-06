@@ -12,13 +12,13 @@ namespace RolePlus.ExternModule.Events.Patches
     using System.Reflection;
     using System.Reflection.Emit;
 
+    using Exiled.API.Features.Attributes;
+
     using HarmonyLib;
 
     using MEC;
 
     using NorthwoodLib.Pools;
-
-    using RolePlus.ExternModule.API.Engine.Framework.Bootstrap;
 
 #pragma warning disable SA1118 // Parameter should not span multiple lines
 

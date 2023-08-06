@@ -9,6 +9,7 @@ namespace RolePlus.ExternModule.API.Features.Controllers
 {
     using Exiled.API.Features;
     using Exiled.Events.EventArgs;
+    using Exiled.Events.EventArgs.Player;
 
     /// <summary>
     /// A controller to be used with any type of playable character component.

@@ -11,10 +11,9 @@ namespace RolePlus.ExternModule.Events.Patches
 
     using Exiled.API.Extensions;
     using Exiled.API.Features;
+    using Exiled.API.Features.Attributes;
 
     using HarmonyLib;
-
-    using RolePlus.ExternModule.API.Engine.Framework.Bootstrap;
 
     [HarmonyPatch(typeof(RemoteAdmin.QueryProcessor), nameof(RemoteAdmin.QueryProcessor.ProcessGameConsoleQuery))]
     [PatchGroup(nameof(RolePlus))]
@@ -24,7 +23,7 @@ namespace RolePlus.ExternModule.Events.Patches
         {
             (string name, string[] arguments) = query.ExtractCommand();
             HLAPI.LogCommandUsed(__instance, HLAPI.FormatArguments(arguments, 0));
-            EventArgs.SendingConsoleCommandEventArgs ev = new(Player.Get(__instance.gameObject), name, arguments.ToList());
+            EventArgs.SendingConsoleCommandEventArgs ev = new(Player.Get(__instance._hub), name, arguments.ToList());
             Handlers.Server.OnSendingConsoleCommand(ev);
             if (!string.IsNullOrEmpty(ev.ReturnMessage))
                 __instance.GCT.SendToClient(__instance.connectionToClient, ev.ReturnMessage, ev.Color);
