@@ -24,7 +24,7 @@ namespace RolePlus.ExternModule.API.Engine.Core
         where TObject : EnumClass<TSource, TObject>
     {
         private static SortedList<TSource, TObject> _values;
-        private static bool _isInitialized;
+        private static bool _isDefined;
 
         private string _name;
 
@@ -57,7 +57,7 @@ namespace RolePlus.ExternModule.API.Engine.Core
         {
             get
             {
-                if (_isInitialized)
+                if (_isDefined)
                     return _name;
 
                 IEnumerable<FieldInfo> fields = typeof(TObject)
@@ -70,7 +70,7 @@ namespace RolePlus.ExternModule.API.Engine.Core
                     instance._name = field.Name;
                 }
 
-                _isInitialized = true;
+                _isDefined = true;
                 return _name;
             }
         }
