@@ -18,8 +18,8 @@ namespace RolePlus.ExternModule.API.Engine.Core
     /// </summary>
     /// <typeparam name="TSource">The type of the source object to handle the instance of.</typeparam>
     /// <typeparam name="TObject">The type of the child object to handle the instance of.</typeparam>
-    public abstract class EnumClass<TSource, TObject> : IEquatable<TObject>,
-        IComparable<TObject>, IComparable, IComparer<TObject>
+    public abstract class EnumClass<TSource, TObject> : IComparable,
+        IEquatable<TObject>, IComparable<TObject>, IComparer<TObject>
         where TSource : Enum
         where TObject : EnumClass<TSource, TObject>
     {
