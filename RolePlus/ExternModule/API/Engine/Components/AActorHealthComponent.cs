@@ -8,6 +8,7 @@
 namespace RolePlus.ExternModule.API.Engine.Components
 {
     using Exiled.API.Features.Core;
+
     using RolePlus.ExternModule.API.Engine.Framework;
 
     /// <summary>

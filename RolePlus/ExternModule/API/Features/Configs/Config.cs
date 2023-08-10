@@ -19,8 +19,6 @@ namespace RolePlus.ExternModule.API.Features.Configs
     using Exiled.API.Features;
     using Exiled.Loader;
 
-    using RolePlus.ExternModule.API.Engine.Core;
-
     /// <summary>
     /// The base class that handles the config system.
     /// </summary>

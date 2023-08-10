@@ -12,12 +12,9 @@ namespace RolePlus.Internal
 
     using Exiled.API.Enums;
     using Exiled.API.Features;
-    using Exiled.API.Features.Items;
     using Exiled.CustomItems.API.Features;
-    using Exiled.Events.EventArgs;
 
     using global::RolePlus.ExternModule.API.Engine.Components;
-    using global::RolePlus.ExternModule.API.Engine.Core;
 
     using MEC;
 

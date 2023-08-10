@@ -14,6 +14,7 @@ namespace RolePlus.ExternModule.API.Engine.Components
     using Exiled.API.Features;
     using Exiled.API.Features.Core;
     using Exiled.API.Features.Items;
+
     using Exiled.API.Features.Pickups;
     using InventorySystem.Items.Pickups;
 
@@ -22,8 +23,6 @@ namespace RolePlus.ExternModule.API.Engine.Components
     using MEC;
 
     using Mirror;
-
-    using RolePlus.ExternModule.API.Engine.Core;
     using RolePlus.ExternModule.API.Engine.Framework;
     using RolePlus.ExternModule.API.Engine.Framework.Events.EventArgs;
     using RolePlus.ExternModule.API.Engine.Framework.Interfaces;

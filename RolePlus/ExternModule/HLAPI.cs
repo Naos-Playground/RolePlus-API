@@ -26,8 +26,6 @@ namespace RolePlus.ExternModule
 
     using MapEditorReborn.API.Features.Objects;
 
-    using MEC;
-
     using Mirror;
     using NorthwoodLib.Pools;
     using PlayerRoles;
@@ -35,7 +33,6 @@ namespace RolePlus.ExternModule
     using RemoteAdmin;
     using RolePlus.ExternModule.API.Enums;
     using RolePlus.ExternModule.API.Features;
-    using RolePlus.ExternModule.API.Features.Audio.API;
     using RolePlus.ExternModule.API.Features.CustomRoles;
     using RolePlus.ExternModule.API.Features.CustomTeams;
     using RolePlus.ExternModule.API.Features.VirtualAssemblies;
@@ -267,12 +264,21 @@ namespace RolePlus.ExternModule
         public static void SetRole(this Player player, CustomRole customRole) => CustomRole.UnsafeSpawn(player, customRole);
 
         /// <summary>
-        /// Sets the player's <see cref="CustomRole"/>.
+        /// Sets the player's role or <see cref="CustomRole"/>.
         /// </summary>
         /// <param name="player">The specified <see cref="Player"/>.</param>
-        /// <param name="customRole">The role to be set.</param>
+        /// <param name="role">The role to be set.</param>
         /// <param name="shouldKeepPosition"><inheritdoc cref="CustomRole.ShouldKeepPosition"/></param>
-        public static void SetRole(this Player player, object customRole, bool shouldKeepPosition = false) => CustomRole.UnsafeSpawn(player, customRole, shouldKeepPosition);
+        public static void SetRole(this Player player, object role, bool shouldKeepPosition = false)
+        {
+            if (role is RoleType id)
+            {
+                player.Role.Set(id);
+                return;
+            }
+
+            CustomRole.UnsafeSpawn(player, role, shouldKeepPosition);
+        }
 
         /// <summary>
         /// Gets the player's <see cref="CustomRole"/>.
@@ -470,19 +476,6 @@ namespace RolePlus.ExternModule
             grenade.SpawnActive(position, owner);
         }
 
-        /// <summary>
-        /// Play and audio from a file.
-        /// </summary>
-        /// <param name="path">File path.</param>
-        /// <param name="volume">file volume.</param>
-        public static void PlayAudio(string path, float volume) => Timing.RunCoroutine(AudioController.PlayFromFile(path, volume));
-
-        /// <summary>
-        /// Stops an audio from playing.
-        /// </summary>
-        public static void StopAudio() => AudioController.Stop();
-
-        /// <summary>
         /// Validates the usage of a <see cref="ParentCommand"/> returning all the available commands if the check fails.
         /// </summary>
         /// <param name="parentCommand">The command to check.</param>

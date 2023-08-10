@@ -1,5 +1,5 @@
-// -----------------------------------------------------------------------
-// <copyright file="EnumClass.cs" company="NaoUnderscore">
+﻿// -----------------------------------------------------------------------
+// <copyright file="UnmanagedEnumClass.cs" company="NaoUnderscore">
 // Copyright (c) NaoUnderscore. All rights reserved.
 // Licensed under the CC BY-SA 3.0 license.
 // </copyright>
@@ -13,14 +13,14 @@ namespace RolePlus.ExternModule.API.Engine.Core
     using System.Reflection;
 
     /// <summary>
-    /// A class which allows <see cref="Enum"/> implicit conversions.
-    /// <para>Can be used along with <see cref="Enum"/>, means it doesn't require another <see cref="EnumClass{TSource, TObject}"/> instance to be comparable or usable.</para>
+    /// A class which allows <see langword="unmanaged"/> data implicit conversions.
+    /// <para>Can be used along with <see langword="unmanaged"/>, means it doesn't require another <see cref="UnmanagedEnumClass{TSource, TObject}"/> instance to be comparable or usable.</para>
     /// </summary>
-    /// <typeparam name="TSource">The type of the source object to handle the instance of.</typeparam>
+    /// <typeparam name="TSource">The type of the <see langword="unmanaged"/> source object to handle the instance of.</typeparam>
     /// <typeparam name="TObject">The type of the child object to handle the instance of.</typeparam>
-    public abstract class EnumClass<TSource, TObject> : IComparable, IEquatable<TObject>, IComparable<TObject>, IComparer<TObject>
-        where TSource : Enum
-        where TObject : EnumClass<TSource, TObject>
+    public abstract class UnmanagedEnumClass<TSource, TObject> : IComparable, IEquatable<TObject>, IComparable<TObject>, IComparer<TObject>
+        where TSource : unmanaged, IComparable, IFormattable, IConvertible, IComparable<TSource>, IEquatable<TSource>
+        where TObject : UnmanagedEnumClass<TSource, TObject>
     {
         private static SortedList<TSource, TObject> _values;
         private static bool _isDefined;
@@ -30,8 +30,8 @@ namespace RolePlus.ExternModule.API.Engine.Core
         /// <summary>
         /// Initializes a new instance of the <see cref="EnumClass{TSource, TObject}"/> class.
         /// </summary>
-        /// <param name="value">The value of the enum item.</param>
-        protected EnumClass(TSource value)
+        /// <param name="value">The value of the unmanaged item.</param>
+        protected UnmanagedEnumClass(TSource value)
         {
             _values ??= new();
 
@@ -82,6 +82,15 @@ namespace RolePlus.ExternModule.API.Engine.Core
         public static TObject Cast(TSource value) => _values[value];
 
         /// <summary>
+        /// Casts the specified <paramref name="value"/> to the corresponding type.
+        /// </summary>
+        /// <typeparam name="T">The type to cast the enum to.</typeparam>
+        /// <param name="value">The enum value to be cast.</param>
+        /// <returns>The cast <typeparamref name="T"/> object.</returns>
+        public static T Cast<T>(TSource value)
+            where T : TObject => (T)_values[value];
+
+        /// <summary>
         /// Safely casts the specified <paramref name="value"/> to the corresponding type.
         /// </summary>
         /// <param name="value">The enum value to be cast.</param>
@@ -102,23 +111,25 @@ namespace RolePlus.ExternModule.API.Engine.Core
             return null;
         }
 
+        //public static implicit operator UnmanagedEnumClass<TSource, TObject>(TSource value) => (TObject)Activator.CreateInstance(typeof(TObject), value);
+
         /// <summary>
-        /// Implicitly converts the <see cref="EnumClass{TSource, TObject}"/> to <typeparamref name="TSource"/>
+        /// Implicitly converts the <see cref="UnmanagedEnumClass{TSource, TObject}"/> to <typeparamref name="TSource"/>
         /// </summary>
         /// <param name="value">The value to convert.</param>
-        public static implicit operator TSource(EnumClass<TSource, TObject> value) => value.Value;
+        public static implicit operator TSource(UnmanagedEnumClass<TSource, TObject> value) => value.Value;
 
         /// <summary>
         /// Implicitly converts the <typeparamref name="TSource"/> to <see cref="EnumClass{TSource, TObject}"/>. 
         /// </summary>
         /// <param name="value">The value to convert.</param>
-        public static implicit operator EnumClass<TSource, TObject>(TSource value) => _values[value];
+        public static implicit operator UnmanagedEnumClass<TSource, TObject>(TSource value) => _values[value];
 
         /// <summary>
         /// Implicitly converts the <see cref="EnumClass{TSource, TObject}"/> to <typeparamref name="TObject"/>. 
         /// </summary>
         /// <param name="value">The value to convert.</param>
-        public static implicit operator TObject(EnumClass<TSource, TObject> value) => value;
+        public static implicit operator TObject(UnmanagedEnumClass<TSource, TObject> value) => value;
 
         /// <summary>
         /// Converts the <see cref="EnumClass{TSource, TObject}"/> instance to a human-readable <see cref="string"/> representation.

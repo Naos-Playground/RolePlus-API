@@ -5,9 +5,11 @@
 // </copyright>
 // -----------------------------------------------------------------------
 
-namespace RolePlus.ExternModule.API.Features.CustomTeams
+namespace RolePlus.ExternModule.API.Features.Attributes
 {
     using System;
+
+    using RolePlus.ExternModule.API.Features.CustomTeams;
 
     /// <summary>
     /// This attribute determines whether the class which is being applied to should be treated as <see cref="CustomTeam"/>.

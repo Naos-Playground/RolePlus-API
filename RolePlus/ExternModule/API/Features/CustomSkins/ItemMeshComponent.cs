@@ -12,7 +12,6 @@ namespace RolePlus.ExternModule.API.Features.CustomSkins
     using Exiled.API.Features;
     using Exiled.API.Features.Items;
     using Exiled.CustomItems.API.Features;
-    using Exiled.Events.EventArgs;
 
     using InventorySystem.Items;
     using InventorySystem.Items.Pickups;
@@ -22,7 +21,6 @@ namespace RolePlus.ExternModule.API.Features.CustomSkins
     using MEC;
 
     using RolePlus.ExternModule.API.Engine.Components;
-    using RolePlus.ExternModule.API.Engine.Framework;
 
     using UnityEngine;
 

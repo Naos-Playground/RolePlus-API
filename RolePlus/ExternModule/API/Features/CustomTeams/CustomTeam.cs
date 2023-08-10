@@ -14,23 +14,26 @@ namespace RolePlus.ExternModule.API.Features.CustomTeams
 
     using Exiled.API.Extensions;
     using Exiled.API.Features;
+    using Exiled.API.Features.Core;
+
+    using PlayerRoles;
 
     using Respawning;
     using Respawning.NamingRules;
 
+    using RolePlus.ExternModule.API.Enums;
+    using RolePlus.ExternModule.API.Features.Attributes;
     using RolePlus.ExternModule.API.Features.CustomRoles;
     using RolePlus.ExternModule.Events.EventArgs;
     using RolePlus.Internal;
 
-#pragma warning disable CS0660 // Type defines operator == or operator != but does not override Object.Equals(object o)
-#pragma warning disable CS0661 // Type defines operator == or operator != but does not override Object.GetHashCode()
-
     /// <summary>
     /// A tool to easily manage custom teams.
     /// </summary>
-    public class CustomTeam
+    public class CustomTeam : TypeCastObject<CustomTeam>
     {
         private static readonly Dictionary<Player, CustomTeam> _playerValues = new();
+        private static readonly List<CustomTeam> _registered = new();
         private uint _tickets;
 
         /// <summary>
@@ -52,19 +55,19 @@ namespace RolePlus.ExternModule.API.Features.CustomTeams
         }
 
         /// <summary>
-        /// Gets a <see cref="List{T}"/> which contains all registered <see cref="CustomTeam"/>'s.
+        /// Gets a <see cref="IEnumerable{T}"/> which contains all registered <see cref="CustomTeam"/>'s.
         /// </summary>
-        public static List<CustomTeam> Registered { get; private set; } = new();
+        public static IEnumerable<CustomTeam> Registered => _registered;
 
         /// <summary>
-        /// Gets a <see cref="IReadOnlyDictionary{TKey, TValue}"/> which contains all <see cref="Player"/> instances beloging to all <see cref="CustomTeam"/> instances.
+        /// Gets all players and their respective <see cref="CustomTeam"/>.
         /// </summary>
-        public static IReadOnlyDictionary<Player, CustomTeam> Players => _playerValues;
+        public static IReadOnlyDictionary<Player, CustomTeam> Manager => _playerValues;
 
         /// <summary>
-        /// Gets the team manager which contains all the players belonging to a <see cref="CustomTeam"/>.
+        /// Gets all players belonging to a <see cref="CustomTeam"/>.
         /// </summary>
-        public static HashSet<Player> Manager { get; internal set; } = new();
+        public static IEnumerable<Player> Players => Manager.Keys.ToHashSet();
 
         /// <summary>
         /// Gets the <see cref="IEnumerable{T}"/> of <see cref="Type"/> which contains all types to be used as unit.
@@ -82,9 +85,9 @@ namespace RolePlus.ExternModule.API.Features.CustomTeams
         public virtual int Probability { get; }
 
         /// <summary>
-        /// Gets the <see cref="Team"/> which is being spawned from.
+        /// Gets the <see cref="SpawnableTeamType"/> which is being spawned from.
         /// </summary>
-        public virtual Team RespawnTeam { get; }
+        public virtual SpawnableTeamType RespawnTeam { get; }
 
         /// <summary>
         /// Gets the name of the <see cref="CustomTeam"/>.
@@ -105,6 +108,11 @@ namespace RolePlus.ExternModule.API.Features.CustomTeams
         /// Gets the size of the <see cref="CustomTeam"/>.
         /// </summary>
         public virtual uint Size { get; }
+
+        /// <summary>
+        /// Gets a value indicating whether the <see cref="CustomTeam"/> is using tickets.
+        /// </summary>
+        public virtual bool UseTickets { get; }
 
         /// <summary>
         /// Gets the tickets of the <see cref="CustomTeam"/>.
@@ -134,7 +142,7 @@ namespace RolePlus.ExternModule.API.Features.CustomTeams
         /// <summary>
         /// Gets the required leading teams to win.
         /// </summary>
-        public virtual Team[] LeadingTeam => new Team[] { };
+        public virtual Team[] LeadingTeams => new Team[] { };
 
         /// <summary>
         /// Gets the path of the custom audio file played after the <see cref="CustomTeam"/> is spawned.
@@ -154,7 +162,7 @@ namespace RolePlus.ExternModule.API.Features.CustomTeams
         /// <summary>
         /// Gets a <see cref="IEnumerable{T}"/> of <see cref="Player"/> which contains all players belonging to this <see cref="CustomTeam"/>.
         /// </summary>
-        public IEnumerable<Player> AlivePlayers => Players.Where(x => x.Value == this).Select(j => j.Key);
+        public IEnumerable<Player> Owners => Manager.Where(x => x.Value == this).Select(j => j.Key);
 
         /// <summary>
         /// Gets a random <see cref="CustomRole"/>.
@@ -264,7 +272,7 @@ namespace RolePlus.ExternModule.API.Features.CustomTeams
             if (!Player.Get(p => p.IsDead).Any() || customTeam is null)
                 return false;
 
-            customTeam.Spawn();
+            customTeam.Respawn();
 
             return true;
         }
@@ -279,7 +287,7 @@ namespace RolePlus.ExternModule.API.Features.CustomTeams
             if (!Player.Get(p => p.IsDead).Any() || TryGet<CustomTeam>(customTeamType, out CustomTeam customTeam))
                 return false;
 
-            customTeam.Spawn();
+            customTeam.Respawn();
 
             return true;
         }
@@ -327,7 +335,7 @@ namespace RolePlus.ExternModule.API.Features.CustomTeams
             if (customTeam is null)
                 return false;
 
-            customTeam.Spawn(players);
+            customTeam.Respawn(players);
 
             return true;
         }
@@ -343,7 +351,7 @@ namespace RolePlus.ExternModule.API.Features.CustomTeams
             if (!TryGet<CustomTeam>(customTeamType, out CustomTeam customTeam))
                 return false;
 
-            customTeam.Spawn(players);
+            customTeam.Respawn(players);
 
             return true;
         }
@@ -359,7 +367,7 @@ namespace RolePlus.ExternModule.API.Features.CustomTeams
             if (customTeam is null)
                 return false;
 
-            customTeam.Spawn(amount);
+            customTeam.Respawn(amount);
 
             return true;
         }
@@ -375,7 +383,7 @@ namespace RolePlus.ExternModule.API.Features.CustomTeams
             if (TryGet<CustomTeam>(customTeamType, out CustomTeam customTeam))
                 return false;
 
-            customTeam.Spawn(amount);
+            customTeam.Respawn(amount);
 
             return true;
         }
@@ -448,7 +456,7 @@ namespace RolePlus.ExternModule.API.Features.CustomTeams
         {
             CustomTeam customTeam = default;
 
-            foreach (KeyValuePair<Player, CustomTeam> kvp in Players)
+            foreach (KeyValuePair<Player, CustomTeam> kvp in Manager)
             {
                 if (kvp.Key != player)
                     continue;
@@ -463,7 +471,7 @@ namespace RolePlus.ExternModule.API.Features.CustomTeams
         /// Tries to register a <see cref="CustomTeam"/>.
         /// </summary>
         /// <returns><see langword="true"/> if the <see cref="CustomTeam"/> was registered; otherwise, <see langword="false"/>.</returns>
-        public bool TryRegister()
+        internal bool TryRegister()
         {
             if (!Registered.Contains(this))
             {
@@ -472,20 +480,17 @@ namespace RolePlus.ExternModule.API.Features.CustomTeams
                     Log.Debug(
                         $"[CustomTeams] Couldn't register {Name}. " +
                         $"Another custom team has been registered with the same CustomTeamType:" +
-                        $" {Registered.FirstOrDefault(x => x.Id == Id)}",
-                        RolePlus.Singleton.Config.ShowDebugMessages);
+                        $" {Registered.FirstOrDefault(x => x.Id == Id)}");
 
                     return false;
                 }
 
-                Registered.Add(this);
+                _registered.Add(this);
 
                 return true;
             }
 
-            Log.Debug(
-                $"[CustomTeams] Couldn't register {Name}. This custom team has been already registered.",
-                RolePlus.Singleton.Config.ShowDebugMessages);
+            Log.Debug($"[CustomTeams] Couldn't register {Name}. This custom team has been already registered.");
 
             return false;
         }
@@ -494,76 +499,77 @@ namespace RolePlus.ExternModule.API.Features.CustomTeams
         /// Tries to register a <see cref="CustomTeam"/>.
         /// </summary>
         /// <returns><see langword="true"/> if the <see cref="CustomTeam"/> was unregistered; otherwise, <see langword="false"/>.</returns>
-        public bool TryUnregister()
+        internal bool TryUnregister()
         {
             if (!Registered.Contains(this))
             {
-                Log.Debug(
-                    $"[CustomTeams] Couldn't unregister {Name}. This custom team hasn't been registered yet.",
-                    RolePlus.Singleton.Config.ShowDebugMessages);
+                Log.Debug($"[CustomTeams] Couldn't unregister {Name}. This custom team hasn't been registered yet.");
 
                 return false;
             }
 
-            Registered.Remove(this);
+            _registered.Remove(this);
 
             return true;
         }
 
         /// <summary>
-        /// Spawns a <see cref="Player"/> as <see cref="CustomTeam"/> unit.
+        /// Determines whether the specified object is equal to the current object.
+        /// </summary>
+        /// <param name="obj">The object to compare.</param>
+        /// <returns><see langword="true"/> if the object was equal; otherwise, <see langword="false"/>.</returns>
+        public override bool Equals(object obj) => obj is CustomTeam customTeam && customTeam == this;
+
+        /// <summary>
+        /// Returns a the 32-bit signed hash code of the current object instance.
+        /// </summary>
+        /// <returns>The 32-bit signed hash code of the current object instance</returns>
+        public override int GetHashCode() => base.GetHashCode();
+
+        /// <summary>
+        /// Spawns a <see cref="Player"/> as a <see cref="CustomTeam"/> unit.
         /// </summary>
         /// <param name="player">The <see cref="Player"/> to be spawned.</param>
         public void Spawn(Player player)
         {
+            if (player is null)
+                return;
+
             CustomRole.UnsafeSpawn(player, RandomUnit);
             _playerValues.Add(player, this);
         }
 
         /// <summary>
-        /// Spawns the <see cref="CustomTeam"/> given the specified amount of units.
+        /// Forces a respawn wave given the specified amount of units.
         /// </summary>
         /// <param name="amount">The amount of units to be spawned.</param>
-        public void Spawn(uint amount)
+        public void Respawn(uint amount)
         {
-            if (_tickets > 0)
-                _tickets--;
+            if (amount <= 0)
+                return;
+
+            Player[] players = Player.Get(Team.Dead).ToArray();
+            if (players.IsEmpty())
+                return;
 
             for (int i = 0; i < amount; i++)
-            {
-                Log.Debug(i);
-                Player[] players = Player.Get(Team.RIP).ToArray();
-                if (players.IsEmpty())
-                    return;
-
                 Spawn(players[i]);
-            }
 
-            if (RespawnTeam is Team.MTF)
-            {
-                SyncUnit mtfUnit = new()
-                {
-                    SpawnableTeam = (byte)SpawnableTeamType.NineTailedFox,
-                    UnitName = UnitName,
-                };
-
-                RespawnManager.Singleton.NamingManager.AllUnitNames.Add(mtfUnit);
-            }
+            if (RespawnTeam is SpawnableTeamType.NineTailedFox && UnitNamingRule.TryGetNamingRule(SpawnableTeamType.NineTailedFox, out UnitNamingRule rule))
+                UnitNameMessageHandler.SendNew(SpawnableTeamType.NineTailedFox, rule);
         }
 
         /// <summary>
-        /// Spawns the <see cref="CustomTeam"/>.
-        /// </summary>
-        public void Spawn() => Spawn(Size);
-
-        /// <summary>
-        /// Spawns a <see cref="IEnumerable{T}"/> of <see cref="Player"/> as this <see cref="CustomTeam"/> unit.
+        /// Forces a respawn wave given a <see cref="IEnumerable{T}"/> of <see cref="Player"/>.
         /// </summary>
         /// <param name="players">The players to be spawned.</param>
         /// <param name="keepSize">A value indicating whether the team size should be the same as the specified one.</param>
-        public void Spawn(IEnumerable<Player> players, bool keepSize = true)
+        public void Respawn(IEnumerable<Player> players, bool keepSize = true)
         {
-            if (_tickets > 0)
+            if (players is null || players.IsEmpty())
+                return;
+
+            if (UseTickets && _tickets > 0)
                 _tickets--;
 
             int count = 0;
@@ -579,22 +585,19 @@ namespace RolePlus.ExternModule.API.Features.CustomTeams
                 count++;
             }
 
-            if (RespawnTeam is Team.MTF)
-            {
-                SyncUnit mtfUnit = new()
-                {
-                    SpawnableTeam = (byte)SpawnableTeamType.NineTailedFox,
-                    UnitName = UnitName,
-                };
-
-                RespawnManager.Singleton.NamingManager.AllUnitNames.Add(mtfUnit);
-            }
+            if (RespawnTeam is SpawnableTeamType.NineTailedFox && UnitNamingRule.TryGetNamingRule(SpawnableTeamType.NineTailedFox, out UnitNamingRule rule))
+                UnitNameMessageHandler.SendNew(SpawnableTeamType.NineTailedFox, rule);
         }
+
+        /// <summary>
+        /// Forces a respawn wave.
+        /// </summary>
+        public void Respawn() => Respawn(Size);
 
         /// <summary>
         /// Adds respawn tickets to the current <see cref="CustomTeam"/> instance given a specified amount.
         /// </summary>
-        /// <param name="amount">The amount of tickets to add.</param>
+        /// <param name="amount">The amount of tickets to be added to.</param>
         public void AddTickets(uint amount) => _tickets += amount;
 
         /// <summary>
@@ -621,28 +624,12 @@ namespace RolePlus.ExternModule.API.Features.CustomTeams
                     !kvp.Value.EvaluateProbability())
                     continue;
 
-                IEnumerable<Player> players = Player.Get(Team.RIP);
+                IEnumerable<Player> players = Player.Get(Team.Dead);
                 if (players.IsEmpty())
                     return;
 
-                Spawn(players);
+                Respawn(players);
             }
-        }
-
-        /// <summary>
-        /// A tool to easily handle respawn settings.
-        /// </summary>
-        public struct RespawnInfo
-        {
-            /// <summary>
-            /// Gets or sets the respawn unit name.
-            /// </summary>
-            public string Name { get; set; }
-
-            /// <summary>
-            /// Gets or sets the respawn unit color.
-            /// </summary>
-            public string Color { get; set; }
         }
     }
 }

@@ -14,8 +14,6 @@ namespace RolePlus.ExternModule.Events.Patches
 
     using HarmonyLib;
 
-    using RolePlus.ExternModule.API.Engine.Framework.Bootstrap;
-
     [HarmonyPatch(typeof(RemoteAdmin.QueryProcessor), nameof(RemoteAdmin.QueryProcessor.ProcessGameConsoleQuery))]
     [PatchGroup(nameof(RolePlus))]
     internal static class SendingConsoleCommand

@@ -15,46 +15,35 @@ namespace RolePlus.ExternModule.API.Features.CustomRoles
     using Exiled.API.Enums;
     using Exiled.API.Extensions;
     using Exiled.API.Features;
-    using Exiled.Events.EventArgs;
+    using Exiled.API.Features.Core;
+    using Exiled.API.Features.Roles;
+    using Exiled.Events.EventArgs.Map;
+    using Exiled.Events.EventArgs.Player;
 
     using MEC;
 
-    using RolePlus.ExternModule.API.Engine.Core;
     using RolePlus.ExternModule.API.Engine.Framework.Structs;
+    using RolePlus.ExternModule.API.Enums;
+    using RolePlus.ExternModule.API.Features.Controllers;
+    using RolePlus.ExternModule.API.Features.CustomEscapes;
     using RolePlus.ExternModule.API.Features.CustomSkins;
     using RolePlus.ExternModule.API.Features.CustomTeams;
-
+    using RolePlus.ExternModule.Events.EventArgs;
     using UnityEngine;
-
-    using static RolePlus.ExternModule.API.Features.CustomRoles.CustomRole.Info;
 
     /// <summary>
     /// A tool to easily handle the custom role's logic.
     /// </summary>
-    public abstract class RoleBuilder : MonoBehaviour
+    public abstract class RoleBuilder : PlayerBehaviour
     {
+        private Vector3 _lastPosition;
         private RoleType _fakeAppearance;
-        private bool _canEscape;
-        private bool _useEscapeRole;
-        private bool _useEscapeCustomRole;
-        private bool _isHuman;
-        private RoleType _escapeRole;
-        private uint _escapeCustomRole;
-        private CoroutineHandle _escapeHandle;
-        private CoroutineHandle _nightVisionHandle;
-        private Vector3 _lastPosition = Vector3.zero;
-        private bool _noClipEnabled;
-        private bool _nightVisionEnabled;
+        private bool _isHuman, _wasNoClipPermitted, _nightVisionEnabled, _useCustomEscape, _wasEscaped;
 
         /// <summary>
-        /// Gets a <see cref="HashSet{T}"/> of <see cref="Player"/> containing all the players to be spawned keeping the same position.
+        /// Gets a <see cref="HashSet{T}"/> of <see cref="Player"/> containing all players to be spawned without affecting their current position (static).
         /// </summary>
-        public static List<Player> LitePlayers { get; } = new();
-
-        /// <summary>
-        /// Gets or sets <see cref="Player"/> who owns this <see cref="RoleBuilder"/> component.
-        /// </summary>
-        public abstract Player Owner { get; protected set; }
+        public static List<Player> StaticPlayers { get; } = new();
 
         /// <summary>
         /// Gets or sets the <see cref="RoleType"/> of the fake appearance applied by this <see cref="RoleBuilder"/> component.
@@ -65,187 +54,47 @@ namespace RolePlus.ExternModule.API.Features.CustomRoles
             set
             {
                 _fakeAppearance = value;
-                Owner.ChangeAppearance(value);
+                Owner.ChangeAppearance(value, false, 0);
             }
         }
 
         /// <summary>
-        /// Gets a value indicating whether <see cref="FakeAppearance"/> should be used.
+        /// Gets or sets the the escape settings.
         /// </summary>
-        protected virtual bool UseFakeAppearance { get; }
+        protected virtual List<EscapeSettings> EscapeSettings { get; set; } = new();
 
         /// <summary>
-        /// Gets a value indicating whether the spawn broadcast should be shown.
+        /// Gets or sets the <see cref="RoleSettings"/>.
         /// </summary>
-        protected virtual bool ShowBroadcast => true;
+        protected virtual RoleSettings Settings { get; set; }
 
         /// <summary>
-        /// Gets a value indicating whether the player can look at Scp173.
+        /// Gets the <see cref="InventoryManager"/>.
         /// </summary>
-        protected virtual bool IgnoreScp173 { get; }
-
-        /// <summary>
-        /// Gets a value indicating whether the player can trigger Scp096.
-        /// </summary>
-        protected virtual bool IgnoreScp096 { get; }
-
-        /// <summary>
-        /// Gets the player's rank name.
-        /// </summary>
-        protected virtual string RankName { get; }
-
-        /// <summary>
-        /// Gets the player's rank color.
-        /// </summary>
-        protected virtual string RankColor { get; }
-
-        /// <summary>
-        /// Gets the player's custom info.
-        /// </summary>
-        protected virtual string CustomInfo => string.Empty;
-
-        /// <summary>
-        /// Gets a value indicating whether the player's <see cref="PlayerInfoArea"/> should be hidden.
-        /// </summary>
-        protected virtual bool HideInfoArea { get; }
-
-        /// <summary>
-        /// Gets a value indicating whether the existing spawnpoint should be used.
-        /// </summary>
-        protected virtual bool UseCustomSpawnpoint => true;
+        protected virtual InventoryManager Inventory { get; }
 
         /// <summary>
         /// Gets a <see cref="IEnumerable{T}"/> of <see cref="EffectType"/> which should be given to the player.
         /// </summary>
-        protected virtual IEnumerable<EffectType> GivenEffects { get; }
+        protected virtual IEnumerable<EffectType> GivenEffects { get; set; }
 
         /// <summary>
-        /// Gets a value indicating whether the player's role should use the specified <see cref="Role"/> only.
+        /// Gets a value indicating whether <see cref="FakeAppearance"/> should be used.
         /// </summary>
-        protected virtual bool UseDefaultRoleOnly => true;
+        protected virtual bool UseFakeAppearance => false;
 
         /// <summary>
-        /// Gets a value indicating whether the effects should be kept active.
+        /// Gets a value indicating whether an existing spawnpoint should be used.
         /// </summary>
-        protected virtual bool KeepEffectsActive { get; }
+        protected virtual bool UseCustomSpawnpoint => true;
 
         /// <summary>
-        /// Gets the <see cref="CustomRole.Info.InventoryManager"/>.
+        /// Gets or sets a value indicating whether the effects should always be active.
         /// </summary>
-        protected virtual CustomRole.Info.InventoryManager InventoryInfo { get; } = new();
+        protected virtual bool KeepEffectsAlive { get; set; }
 
         /// <summary>
-        /// Gets the <see cref="CustomRole"/>.<see cref="CustomRole.Info"/>.
-        /// </summary>
-        protected virtual CustomRole.Info Info { get; } = new();
-
-        /// <summary>
-        /// Gets a <see cref="RoleType"/>[] containing all the allowed roles.
-        /// </summary>
-        protected virtual RoleType[] AllowedRoles { get; } = new RoleType[] { };
-
-        /// <summary>
-        /// Gets a <see cref="DamageType"/>[] containing all the ignored damage types.
-        /// </summary>
-        protected virtual DamageType[] IgnoredDamageTypes { get; } = new DamageType[] { };
-
-        /// <summary>
-        /// Gets a <see cref="DamageType"/>[] containing all the allowed damage types.
-        /// </summary>
-        protected virtual DamageType[] AllowedDamageTypes { get; } = new DamageType[] { };
-
-        /// <summary>
-        /// Gets or sets a value indicating whether the player can pickup items.
-        /// </summary>
-        protected virtual bool CanPickupItems { get; set; } = true;
-
-        /// <summary>
-        /// Gets or sets a value indicating whether the player's role is dynamic.
-        /// </summary>
-        protected virtual bool IsRoleDynamic { get; set; }
-
-        /// <summary>
-        /// Gets or sets a value indicating whether the <see cref="Owner"/> can hurt SCPs.
-        /// </summary>
-        protected virtual bool CanHurtScps { get; set; } = true;
-
-        /// <summary>
-        /// Gets or sets a value indicating whether the <see cref="Owner"/> can be hurted by SCPs.
-        /// </summary>
-        protected virtual bool CanBeHurtedByScps { get; set; } = true;
-
-        /// <summary>
-        /// Gets or sets a value indicating whether the <see cref="Owner"/> can enter pocket dimension.
-        /// </summary>
-        protected virtual bool CanEnterPocketDimension { get; set; } = true;
-
-        /// <summary>
-        /// Gets or sets a value indicating whether the <see cref="Owner"/> can use intercom.
-        /// </summary>
-        protected virtual bool CanUseIntercom { get; set; } = true;
-
-        /// <summary>
-        /// Gets or sets a value indicating whether the <see cref="Owner"/> can voicechat.
-        /// </summary>
-        protected virtual bool CanUseVoiceChat { get; set; } = true;
-
-        /// <summary>
-        /// Gets or sets a value indicating whether the <see cref="Owner"/> can place blood.
-        /// </summary>
-        protected virtual bool CanPlaceBlood { get; set; } = true;
-
-        /// <summary>
-        /// Gets or sets a value indicating whether the <see cref="Owner"/> can activate warhead.
-        /// </summary>
-        protected virtual bool CanActivateWarhead { get; set; } = true;
-
-        /// <summary>
-        /// Gets or sets a value indicating whether the <see cref="Owner"/> can drop items.
-        /// </summary>
-        protected virtual bool CanDropItems { get; set; } = true;
-
-        /// <summary>
-        /// Gets or sets a value indicating whether the <see cref="Owner"/> can be handcuffed.
-        /// </summary>
-        protected virtual bool CanBeHandcuffed { get; set; } = true;
-
-        /// <summary>
-        /// Gets or sets a value indicating whether the <see cref="Owner"/> can use elevators.
-        /// </summary>
-        protected virtual bool CanUseElevators { get; set; } = true;
-
-        /// <summary>
-        /// Gets or sets a value indicating whether the <see cref="Owner"/> can bypass checkpoints.
-        /// </summary>
-        protected virtual bool CanBypassCheckpoints { get; set; } = false;
-
-        /// <summary>
-        /// Gets or sets a value indicating whether the <see cref="Owner"/> can activate workstations.
-        /// </summary>
-        protected virtual bool CanActivateWorkstations { get; set; } = true;
-
-        /// <summary>
-        /// Gets or sets a value indicating whether the <see cref="Owner"/> can contain SCP-106.
-        /// </summary>
-        protected virtual bool CanContainScp106 { get; set; } = true;
-
-        /// <summary>
-        /// Gets or sets a value indicating whether the <see cref="Owner"/> can activate generators.
-        /// </summary>
-        protected virtual bool CanActivateGenerators { get; set; } = true;
-
-        /// <summary>
-        /// Gets or sets a value indicating whether the <see cref="Owner"/> can enter femur breaker.
-        /// </summary>
-        protected virtual bool CanEnterFemurBreaker { get; set; } = true;
-
-        /// <summary>
-        /// Gets or sets a value indicating whether the <see cref="Owner"/> can change items from its inventory.
-        /// </summary>
-        protected virtual bool CanChangeItems { get; set; } = true;
-
-        /// <summary>
-        /// Gets or sets a value indicating whether the <see cref="Owner"/> has the night vision enabled.
+        /// Gets or sets a value indicating whether the <see cref="PlayerBehaviour.Owner"/> has the night vision enabled.
         /// </summary>
         protected virtual bool IsNightVisionEnabled
         {
@@ -254,51 +103,25 @@ namespace RolePlus.ExternModule.API.Features.CustomRoles
             {
                 _nightVisionEnabled = value;
 
+                // Requires testing
                 if (_nightVisionEnabled)
-                    _nightVisionHandle = Timing.RunCoroutine(NightVision());
-                else
-                    Timing.KillCoroutines(_nightVisionHandle);
+                {
+                    foreach (Room room in Room.List)
+                    {
+                        Owner.SendFakeSyncVar(
+                            room.RoomLightControllerNetIdentity,
+                            typeof(RoomLightController),
+                            nameof(RoomLightController.NetworkLightsEnabled),
+                            true);
+                    }
+
+                    return;
+                }
+
+                foreach (Room _ in Room.List)
+                    MirrorExtensions.ResyncSyncVar(Owner.NetworkIdentity, typeof(RoomLightController), nameof(RoomLightController.NetworkLightsEnabled));
             }
         }
-
-        /// <summary>
-        /// Gets or sets a <see cref="DoorType"/>[] containing all the bypassable doors.
-        /// </summary>
-        protected virtual DoorType[] BypassableDoors { get; set; } = new DoorType[] { };
-
-        /// <summary>
-        /// Gets a value indicating whether the C.A.S.S.I.E death announcement can be played when the <see cref="Owner"/> dies.
-        /// </summary>
-        protected virtual bool IsDeathAnnouncementEnabled => false;
-
-        /// <summary>
-        /// Gets the C.A.S.S.I.E announcement to be played when the <see cref="Owner"/> dies from an unhandled or unknown termination cause.
-        /// </summary>
-        protected virtual string UnknownTerminationCauseAnnouncement => string.Empty;
-
-        /// <summary>
-        /// Gets or sets a <see cref="Dictionary{TKey, TValue}"/> containing all the C.A.S.S.I.E announcements
-        /// to be played when the <see cref="Owner"/> is killed by a player with the corresponding <see cref="RoleType"/>.
-        /// </summary>
-        protected virtual Dictionary<RoleType, string> KilledByRoleAnnouncements { get; set; } = new();
-
-        /// <summary>
-        /// Gets or sets a <see cref="Dictionary{TKey, TValue}"/> containing all the C.A.S.S.I.E announcements
-        /// to be played when the <see cref="Owner"/> is killed by a player with the corresponding <see cref="object"/>.
-        /// </summary>
-        protected virtual Dictionary<object, string> KilledByCustomRoleAnnouncements { get; set; } = new();
-
-        /// <summary>
-        /// Gets or sets a <see cref="Dictionary{TKey, TValue}"/> containing all the C.A.S.S.I.E announcements
-        /// to be played when the <see cref="Owner"/> is killed by a player belonging to the corresponding <see cref="Team"/>.
-        /// </summary>
-        protected virtual Dictionary<Team, string> KilledByTeamAnnouncements { get; set; } = new();
-
-        /// <summary>
-        /// Gets or sets a <see cref="Dictionary{TKey, TValue}"/> containing all the C.A.S.S.I.E announcements
-        /// to be played when the <see cref="Owner"/> is killed by a player belonging to the corresponding <see cref="object"/>.
-        /// </summary>
-        protected virtual Dictionary<object, string> KilledByCustomTeamAnnouncements { get; set; } = new();
 
         /// <summary>
         /// Gets or sets the <see cref="RoleType"/> of this <see cref="RoleBuilder"/> component.
@@ -308,15 +131,15 @@ namespace RolePlus.ExternModule.API.Features.CustomRoles
         /// <summary>
         /// Gets or sets the third person <see cref="CharacterMeshComponent"/>.
         /// </summary>
-        protected CharacterMeshComponent ThirdPersonCameraMeshComponent { get; set; }
+        protected CharacterMeshComponent ThirdPersonMeshComponent { get; set; }
 
         /// <summary>
-        /// Gets or sets the first person <see cref="CharacterMeshComponent"/>.
+        /// Gets the relative <see cref="CustomRoles.CustomRole"/>.
         /// </summary>
-        protected CharacterMeshComponent FirstPersonCameraMeshComponent { get; set; }
+        protected CustomRole CustomRole { get; private set; }
 
         /// <summary>
-        /// Gets the current speed of the <see cref="Owner"/>.
+        /// Gets the current speed of the  <see cref="PlayerBehaviour.Owner"/>.
         /// </summary>
         protected float CurrentSpeed { get; private set; }
 
@@ -328,30 +151,23 @@ namespace RolePlus.ExternModule.API.Features.CustomRoles
         /// <summary>
         /// Gets a random spawnpoint.
         /// </summary>
-        public Vector3 RandomSpawnpoint => Info.Spawnpoints is null || Info.Spawnpoints.IsEmpty() ?
-            SpawnpointManager.GetRandomPosition(Role).transform.position :
-            Room.Get(Info.Spawnpoints.ElementAt(UnityEngine.Random.Range(0, Info.Spawnpoints.Count()))).Position;
-
-        /// <summary>
-        /// Gets a value indicating whether the specified <see cref="Player"/> is the owner of this <see cref="RoleBuilder"/> component instance.
-        /// </summary>
-        /// <param name="player">The <see cref="Player"/> to check.</param>
-        /// <returns><see langword="true"/> if the specified <see cref="Player"/> is the owner of this <see cref="RoleBuilder"/> component instance; otherwise, <see langword="false"/>.</returns>
-        public bool Check(Player player) => player is not null && Owner == player;
+        public Vector3 RandomSpawnpoint => Settings.Spawnpoints is null || Settings.Spawnpoints.IsEmpty() ?
+            RoleExtensions.GetRandomSpawnLocation(Role).Position :
+            Room.Get(Settings.Spawnpoints.ElementAt(UnityEngine.Random.Range(0, Settings.Spawnpoints.Count()))).Position;
 
         /// <summary>
         /// Gets a value indicating whether the specified <see cref="DamageType"/> is allowed.
         /// </summary>
         /// <param name="damageType">The <see cref="DamageType"/> to check.</param>
         /// <returns><see langword="true"/> if the specified <see cref="DamageType"/> is allowed; otherwise, <see langword="false"/>.</returns>
-        public bool IsAllowed(DamageType damageType) => AllowedDamageTypes.Contains(damageType);
+        public bool IsAllowed(DamageType damageType) => Settings.AllowedDamageTypes.Contains(damageType);
 
         /// <summary>
         /// Gets a value indicating whether the specified <see cref="DamageType"/> is ignored.
         /// </summary>
         /// <param name="damageType">The <see cref="DamageType"/> to check.</param>
         /// <returns><see langword="true"/> if the specified <see cref="DamageType"/> is ignored; otherwise, <see langword="false"/>.</returns>
-        public bool IsIgnored(DamageType damageType) => IgnoredDamageTypes.Contains(damageType);
+        public bool IsIgnored(DamageType damageType) => Settings.IgnoredDamageTypes.Contains(damageType);
 
         /// <summary>
         /// Loads the given config.
@@ -364,143 +180,151 @@ namespace RolePlus.ExternModule.API.Features.CustomRoles
 
             foreach (PropertyInfo propertyInfo in config.GetType().GetProperties())
             {
-                PropertyInfo targetInfo = typeof(CustomRole.Info).GetProperty(propertyInfo.Name) ?? typeof(InventoryManager).GetProperty(propertyInfo.Name);
+                PropertyInfo targetInfo = typeof(RoleSettings).GetProperty(propertyInfo.Name) ?? typeof(InventoryManager).GetProperty(propertyInfo.Name);
                 if (targetInfo is null)
                     continue;
 
-                targetInfo.SetValue(targetInfo.DeclaringType == typeof(CustomRole.Info) ? Info : InventoryInfo, propertyInfo.GetValue(config, null));
+                targetInfo.SetValue(targetInfo.DeclaringType == typeof(RoleSettings) ? Settings : Inventory, propertyInfo.GetValue(config, null));
             }
         }
 
         /// <inheritdoc/>
-        protected virtual void SetupThirdPersonCameraMesh(string meshName, string objectName, FTransform transform = default, float fixedTickRate = 0.01f)
+        protected virtual void SetupThirdPersonMesh(string meshName, string objectName, FTransform transform = default, float fixedTickRate = 0.01f)
         {
-            ThirdPersonCameraMeshComponent = EObject.CreateDefaultSubobject<CharacterMeshComponent>(gameObject, $"{name}-TPC", gameObject, meshName);
-            ThirdPersonCameraMeshComponent.Socket = transform;
-            ThirdPersonCameraMeshComponent.FixedTickRate = fixedTickRate;
+            ThirdPersonMeshComponent = CreateDefaultSubobject<CharacterMeshComponent>(Owner.GameObject, $"{Name}-TPM", Owner.GameObject, meshName);
+            ThirdPersonMeshComponent.Socket = transform;
+            ThirdPersonMeshComponent.FixedTickRate = fixedTickRate;
             Owner.EnableEffect(EffectType.Invisible);
         }
 
         /// <inheritdoc/>
-        protected virtual void DestroyThirdPersonCameraMesh()
+        protected virtual void DestroyThirdPersonMesh()
         {
-            if (ThirdPersonCameraMeshComponent is null)
+            if (ThirdPersonMeshComponent is null)
                 return;
 
-            ThirdPersonCameraMeshComponent.Destroy();
+            ThirdPersonMeshComponent.Destroy();
+        }
+
+        /// <summary>
+        /// Fired on <see cref="PostInitialize"/>.
+        /// <para>Settings should be adjusted here.</para>
+        /// </summary>
+        protected virtual void AdjustSettings()
+        {
         }
 
         /// <inheritdoc/>
-        protected virtual void Awake()
+        protected override void PostInitialize()
         {
+            base.PostInitialize();
+
             LoadConfigs(ConfigRaw);
-            SubscribeEvents();
 
-            if (Owner is null)
+            if (CustomRole.TryGet(this, out CustomRole customRole))
             {
-                Owner = Player.Get(gameObject);
-                if (Owner is null)
+                CustomRole = customRole;
+                Settings = CustomRole.Settings;
+
+                if (CustomRole.EscapeBuilderComponent is not null)
                 {
-                    Destroy();
-                    return;
+                    Owner.AddComponent(CustomRole.EscapeBuilderComponent);
+                    _useCustomEscape = true;
                 }
             }
 
-            _noClipEnabled = Owner.NoClipEnabled;
+            AdjustSettings();
 
-            foreach (CustomRole role in CustomRole.Registered)
-            {
-                if (role.RoleBuilderComponent != GetType())
-                    continue;
+            if (IsNightVisionEnabled)
+                IsNightVisionEnabled = true;
 
-                if (!IsRoleDynamic)
-                    Role = role.Role;
+            _wasNoClipPermitted = Owner.IsNoclipPermitted;
+            _isHuman = !CustomRole.IsScp;
 
-                _canEscape = role.CanEscape;
-                if (_canEscape)
-                {
-                    _useEscapeCustomRole = role.OverrideEscapeCustomRole;
-                    _useEscapeRole = role.OverrideEscapeRole;
-                    _escapeRole = role.EscapeRole;
-                    _escapeCustomRole = role.EscapeCustomRole;
-                }
-
-                _isHuman = !role.IsScp;
-            }
+            if (!Settings.IsRoleDynamic)
+                Role = CustomRole.Role;
 
             if (Owner.Role != Role)
                 Owner.SetRole(Role);
 
-            if (IgnoreScp173)
-                Scp173.TurnedPlayers.Add(Owner);
+            if (!Settings.DoesLookingAffectScp173)
+                Scp173Role.TurnedPlayers.Add(Owner);
 
-            if (!string.IsNullOrEmpty(RankName) || !string.IsNullOrEmpty(RankColor))
-                Features.Badge.Load(Owner, RankName, RankColor);
+            if (!Settings.DoesLookingAffectScp096)
+                Scp096Role.TurnedPlayers.Add(Owner);
 
-            if (CustomInfo != string.Empty)
-                Owner.CustomInfo += CustomInfo;
+            if (!string.IsNullOrEmpty(Settings.RankName) || !string.IsNullOrEmpty(Settings.RankColor))
+                Features.Badge.Load(Owner, Settings.RankName, Settings.RankColor);
 
-            if (HideInfoArea)
+            if (Settings.CustomInfo != string.Empty)
+                Owner.CustomInfo += Settings.CustomInfo;
+
+            if (Settings.HideInfoArea)
             {
                 Owner.InfoArea &= ~PlayerInfoArea.UnitName;
                 Owner.InfoArea &= ~PlayerInfoArea.Role;
             }
+
+            Owner.Scale *= Settings.Scale;
+            Owner.Health = Settings.Health;
+            Owner.MaxHealth = Settings.MaxHealth;
+            Owner.MaxArtificialHealth = Settings.MaxArtificialHealth;
+
+            if (_isHuman)
+            {
+                Owner.AddItem(Inventory.CustomItems);
+                Owner.AddItem(Inventory.Items);
+
+                foreach (KeyValuePair<AmmoType, ushort> kvp in Inventory.AmmoBox)
+                    Owner.AddAmmo(kvp.Key, kvp.Value);
+            }
+
+
+            if (Settings.Broadcast is not null)
+                Owner.Broadcast(Settings.Broadcast, true);
+
         }
 
+
         /// <inheritdoc/>
-        protected virtual void Start()
+        protected override void OnBeginPlay()
         {
+            base.OnBeginPlay();
+
             if (Owner is null)
             {
                 Destroy();
                 return;
             }
 
-            Owner.ReferenceHub.characterClassManager.NetworkNoclipEnabled = false;
+            if (Owner.Role.Cast(out FpcRole fpcRole))
+                fpcRole.IsNoclipEnabled = false;
 
-            Timing.CallDelayed(2f, () => InternalProcesses(true));
-
-            Owner.Health = Info.Health;
-            Owner.MaxHealth = Info.MaxHealth;
-            Owner.MaxArtificialHealth = Info.MaxArtificialHealth;
-
-            if (Info.ArtificialHealth > 0f)
-                Owner.AddAhp(Info.ArtificialHealth, Owner.MaxArtificialHealth, 0, 1, 0);
-
-            Owner.Scale *= Info.Scale;
-
-            if (ShowBroadcast)
-                Owner.Broadcast(Info.Broadcast, true);
+            if (Settings.ArtificialHealth > 0f)
+                Owner.AddAhp(Settings.ArtificialHealth, Owner.MaxArtificialHealth, 0, 1, 0);
 
             if (UseFakeAppearance)
-                Owner.ChangeAppearance(FakeAppearance);
+                Owner.ChangeAppearance(FakeAppearance, false);
 
             if (GivenEffects is not null && !GivenEffects.IsEmpty())
                 Owner.EnableEffects(GivenEffects);
-
-            if (_isHuman)
-            {
-                Timing.CallDelayed(1f, () => Owner.AddItem(InventoryInfo.CustomItems));
-                Owner.AddItem(InventoryInfo.Items);
-
-                foreach (KeyValuePair<AmmoType, ushort> kvp in InventoryInfo.AmmoBox)
-                    Owner.AddAmmo(kvp.Key, kvp.Value);
-            }
         }
 
         /// <inheritdoc/>
-        protected virtual void FixedUpdate()
+        protected override void Tick()
         {
-            if (Owner is null ||
-                (UseDefaultRoleOnly && (Owner.Role != Role)) ||
-                (!AllowedRoles.IsEmpty() && !AllowedRoles.Contains(Owner.Role)) ||
-                !CustomRole.Manager.Contains(Owner))
+            base.Tick();
+
+            // Must be refactored (performance issues)
+            if (Owner is null || (Settings.UseDefaultRoleOnly && (Owner.Role != Role)) ||
+                (!Settings.AllowedRoles.IsEmpty() && !Settings.AllowedRoles.Contains(RoleType.Cast(Owner.Role))) ||
+                !CustomRole.Players.Contains(Owner))
             {
                 Destroy();
                 return;
             }
 
-            if (KeepEffectsActive)
+            if (KeepEffectsAlive)
             {
                 foreach (EffectType effect in GivenEffects)
                 {
@@ -509,74 +333,108 @@ namespace RolePlus.ExternModule.API.Features.CustomRoles
                 }
             }
 
+            if (!_useCustomEscape && !_wasEscaped)
+            {
+                foreach (EscapeSettings settings in EscapeSettings)
+                {
+                    if (!settings.IsAllowed || Vector3.Distance(Owner.Position, settings.Position) > settings.MaxDistanceTolerance)
+                        continue;
+
+                    ProcessEscapeAction(settings);
+                    _wasEscaped = true;
+                    break;
+                }
+            }
+
             CurrentSpeed = (Owner.Position - _lastPosition).magnitude;
             _lastPosition = Owner.Position;
         }
 
-        /// <summary>
-        /// Fired before the <see cref="CustomRole"/> instance gets destroyed.
-        /// </summary>
-        protected virtual void PartiallyDestroy()
+        /// <inheritdoc/>
+        protected override void OnEndPlay()
         {
-            InternalProcesses(false);
-            UnsubscribeEvents();
+            base.OnEndPlay();
 
-            if (Owner is null)
-                return;
+            CustomRole.PlayersValue.Remove(Owner);
 
-            CustomRole._playerValues.Remove(Owner);
+            DestroyThirdPersonMesh();
 
-            if (IgnoreScp173)
-                Scp173.TurnedPlayers.Remove(Owner);
+            if (!Settings.DoesLookingAffectScp173)
+                Scp173Role.TurnedPlayers.Remove(Owner);
 
-            if (!string.IsNullOrEmpty(RankName) || !string.IsNullOrEmpty(RankColor))
+            if (!Settings.DoesLookingAffectScp096)
+                Scp096Role.TurnedPlayers.Remove(Owner);
+
+            if (!string.IsNullOrEmpty(Settings.RankName) || !string.IsNullOrEmpty(Settings.RankColor))
                 Features.Badge.Unload(Owner);
 
-            if (!string.IsNullOrEmpty(CustomInfo))
+            if (!string.IsNullOrEmpty(Settings.CustomInfo))
                 Owner.CustomInfo = null;
 
-            if (HideInfoArea)
+            if (Settings.HideInfoArea)
             {
                 Owner.InfoArea |= PlayerInfoArea.UnitName;
                 Owner.InfoArea |= PlayerInfoArea.Role;
             }
 
             Owner.Scale = Vector3.one;
-            Owner.NoClipEnabled = _noClipEnabled;
+            Owner.IsNoclipPermitted = _wasNoClipPermitted;
             Owner.IsUsingStamina = true;
             Owner.DisableAllEffects();
-            DestroyThirdPersonCameraMesh();
         }
 
-        /// <summary>
-        /// Destroys this <see cref="RoleBuilder"/> instance.
-        /// </summary>
-        public virtual void Destroy()
+        /// <inheritdoc/>
+        protected override void SubscribeEvents()
         {
-            try
-            {
-                Destroy(this);
-            }
-            catch (Exception e)
-            {
-                Log.Error($"Exception: {e}\n Couldn't destroy: {this}\nIs ReferenceHub null? {Owner is null}");
-            }
+            base.SubscribeEvents();
+
+            Exiled.Events.Handlers.Player.ChangingItem += ChangingItemBehvaior;
+            Exiled.Events.Handlers.Player.Destroying += DestroyOnLeft;
+            Exiled.Events.Handlers.Player.ChangingRole += DestroyOnChangingRole;
+            Exiled.Events.Handlers.Player.Escaping += PreventPlayerFromEscaping;
+            Exiled.Events.Handlers.Player.SearchingPickup += PickingUpItemBehavior;
+            Exiled.Events.Handlers.Player.Died += AnnounceOwnerDeath;
+            Exiled.Events.Handlers.Player.Hurting += PreventDealingDamageToScps;
+            Exiled.Events.Handlers.Player.Hurting += PreventTakingDamageFromScps;
+            Exiled.Events.Handlers.Player.Hurting += IgnoreDamage;
+            Exiled.Events.Handlers.Player.InteractingDoor += CheckpointsBehavior;
+            Exiled.Events.Handlers.Player.InteractingDoor += InteractingDoorBehavior;
+            Exiled.Events.Handlers.Player.IntercomSpeaking += IntercomSpeakingBehavior;
+            Exiled.Events.Handlers.Player.VoiceChatting += VoiceChattingBehavior;
+            Exiled.Events.Handlers.Player.ActivatingWarheadPanel += ActivatingWarheadBehavior;
+            Exiled.Events.Handlers.Player.ActivatingWorkstation += ActivatingWorkstationBehavior;
+            Exiled.Events.Handlers.Player.ActivatingGenerator += ActivatingGeneratorBehavior;
+            Exiled.Events.Handlers.Player.InteractingElevator += InteractingElevatorBehavior;
+            Exiled.Events.Handlers.Player.DroppingItem += DroppingItemBehavior;
+            Exiled.Events.Handlers.Player.Handcuffing += HandcuffingBehavior;
+            Exiled.Events.Handlers.Map.PlacingBlood += PlacingBloodBehavior;
         }
 
-        private protected virtual void OnDestroy() => PartiallyDestroy();
-
-        /// <summary>
-        /// Subscribes all the specified events.
-        /// </summary>
-        protected virtual void SubscribeEvents()
+        /// <inheritdoc/>
+        protected override void UnsubscribeEvents()
         {
-        }
+            base.UnsubscribeEvents();
 
-        /// <summary>
-        /// Unsubscribes all the specified events.
-        /// </summary>
-        protected virtual void UnsubscribeEvents()
-        {
+            Exiled.Events.Handlers.Player.ChangingItem -= ChangingItemBehvaior;
+            Exiled.Events.Handlers.Player.Destroying -= DestroyOnLeft;
+            Exiled.Events.Handlers.Player.ChangingRole -= DestroyOnChangingRole;
+            Exiled.Events.Handlers.Player.Escaping -= PreventPlayerFromEscaping;
+            Exiled.Events.Handlers.Player.SearchingPickup -= PickingUpItemBehavior;
+            Exiled.Events.Handlers.Player.Died -= AnnounceOwnerDeath;
+            Exiled.Events.Handlers.Player.Hurting -= PreventDealingDamageToScps;
+            Exiled.Events.Handlers.Player.Hurting -= PreventTakingDamageFromScps;
+            Exiled.Events.Handlers.Player.Hurting -= IgnoreDamage;
+            Exiled.Events.Handlers.Player.InteractingDoor -= CheckpointsBehavior;
+            Exiled.Events.Handlers.Player.InteractingDoor -= InteractingDoorBehavior;
+            Exiled.Events.Handlers.Player.IntercomSpeaking -= IntercomSpeakingBehavior;
+            Exiled.Events.Handlers.Player.VoiceChatting -= VoiceChattingBehavior;
+            Exiled.Events.Handlers.Player.ActivatingWarheadPanel -= ActivatingWarheadBehavior;
+            Exiled.Events.Handlers.Player.ActivatingWorkstation -= ActivatingWorkstationBehavior;
+            Exiled.Events.Handlers.Player.ActivatingGenerator -= ActivatingGeneratorBehavior;
+            Exiled.Events.Handlers.Player.InteractingElevator -= InteractingElevatorBehavior;
+            Exiled.Events.Handlers.Player.DroppingItem -= DroppingItemBehavior;
+            Exiled.Events.Handlers.Player.Handcuffing -= HandcuffingBehavior;
+            Exiled.Events.Handlers.Map.PlacingBlood -= PlacingBloodBehavior;
         }
 
         /// <summary>
@@ -621,8 +479,8 @@ namespace RolePlus.ExternModule.API.Features.CustomRoles
         /// <see cref="Exiled.Events.Handlers.Player.OnHurting(HurtingEventArgs)"/>
         private protected virtual void PreventTakingDamageFromScps(HurtingEventArgs ev)
         {
-            if (!Check(ev.Target) || ev.Attacker is null ||
-                !ev.Attacker.IsScp || CanBeHurtedByScps)
+            if (!Check(ev.Player) || ev.Attacker is null ||
+                !ev.Attacker.IsScp || Settings.CanBeHurtByScps)
                 return;
 
             ev.IsAllowed = false;
@@ -631,7 +489,8 @@ namespace RolePlus.ExternModule.API.Features.CustomRoles
         /// <see cref="Exiled.Events.Handlers.Player.OnHurting(HurtingEventArgs)"/>
         private protected virtual void IgnoreDamage(HurtingEventArgs ev)
         {
-            if (!Check(ev.Target) || !AllowedDamageTypes.IsEmpty() || !IgnoredDamageTypes.Contains(ev.Handler.Type))
+            if (!Check(ev.Player) || !Settings.AllowedDamageTypes.IsEmpty() ||
+                !Settings.IgnoredDamageTypes.Contains(ev.DamageHandler.Type))
                 return;
 
             ev.Amount = 0;
@@ -641,7 +500,7 @@ namespace RolePlus.ExternModule.API.Features.CustomRoles
         /// <see cref="Exiled.Events.Handlers.Player.OnChangingItem(ChangingItemEventArgs)"/>
         private protected virtual void ChangingItemBehvaior(ChangingItemEventArgs ev)
         {
-            if (!Check(ev.Player) || CanChangeItems)
+            if (!Check(ev.Player) || Settings.CanSelectItems)
                 return;
 
             ev.IsAllowed = false;
@@ -650,7 +509,8 @@ namespace RolePlus.ExternModule.API.Features.CustomRoles
         /// <see cref="Exiled.Events.Handlers.Player.OnHurting(HurtingEventArgs)"/>
         private protected virtual void AllowDamage(HurtingEventArgs ev)
         {
-            if (!Check(ev.Target) || !IgnoredDamageTypes.IsEmpty() || !AllowedDamageTypes.Contains(ev.Handler.Type))
+            if (!Check(ev.Player) || !Settings.IgnoredDamageTypes.IsEmpty() ||
+                !Settings.AllowedDamageTypes.Contains(ev.DamageHandler.Type))
                 return;
 
             ev.IsAllowed = false;
@@ -659,7 +519,7 @@ namespace RolePlus.ExternModule.API.Features.CustomRoles
         /// <see cref="Exiled.Events.Handlers.Player.OnHurting(HurtingEventArgs)"/>
         private protected virtual void PreventDealingDamageToScps(HurtingEventArgs ev)
         {
-            if (!Check(ev.Attacker) || CanHurtScps)
+            if (!Check(ev.Attacker) || Settings.CanHurtScps)
                 return;
 
             ev.IsAllowed = false;
@@ -677,7 +537,7 @@ namespace RolePlus.ExternModule.API.Features.CustomRoles
         /// <see cref="Exiled.Events.Handlers.Player.OnHandcuffing(HandcuffingEventArgs)"/>
         private protected virtual void HandcuffingBehavior(HandcuffingEventArgs ev)
         {
-            if (!Check(ev.Target) || CanBeHandcuffed)
+            if (!Check(ev.Target) || Settings.CanBeHandcuffed)
                 return;
 
             ev.IsAllowed = false;
@@ -686,7 +546,7 @@ namespace RolePlus.ExternModule.API.Features.CustomRoles
         /// <see cref="Exiled.Events.Handlers.Player.OnChangingGroup(ChangingGroupEventArgs)"/>
         private protected virtual void DestroyOnChangingRole(ChangingRoleEventArgs ev)
         {
-            if (!Check(ev.Player) || AllowedRoles.Contains(ev.NewRole))
+            if (!Check(ev.Player) || Settings.AllowedRoles.Contains(RoleType.Cast(ev.NewRole)))
                 return;
 
             Destroy();
@@ -695,25 +555,16 @@ namespace RolePlus.ExternModule.API.Features.CustomRoles
         /// <see cref="Exiled.Events.Handlers.Player.OnSearchPickupRequest(SearchingPickupEventArgs)"/>
         private protected virtual void PickingUpItemBehavior(SearchingPickupEventArgs ev)
         {
-            if (!Check(ev.Player) || CanPickupItems)
+            if (!Check(ev.Player) || Settings.CanPickupItems)
                 return;
 
             ev.IsAllowed = false;
         }
 
-        /// <see cref="Exiled.Events.Handlers.Scp096.OnAddingTarget(AddingTargetEventArgs)"/>
-        private protected virtual void PreventPlayerFromTriggeringScp096(AddingTargetEventArgs ev)
+        /// <see cref="Exiled.Events.Handlers.Player.OnEscaping(Exiled.Events.EventArgs.Player.EscapingEventArgs)"/>
+        private protected virtual void PreventPlayerFromEscaping(Exiled.Events.EventArgs.Player.EscapingEventArgs ev)
         {
-            if (!Check(ev.Target) || !IgnoreScp096)
-                return;
-
-            ev.IsAllowed = false;
-        }
-
-        /// <see cref="Exiled.Events.Handlers.Player.OnEscaping(EscapingEventArgs)"/>
-        private protected virtual void PreventPlayerFromEscaping(EscapingEventArgs ev)
-        {
-            if (!Check(ev.Player) || (!_useEscapeRole && !_useEscapeCustomRole))
+            if (!Check(ev.Player) || _useCustomEscape || _wasEscaped || !EscapeSettings.IsEmpty())
                 return;
 
             ev.IsAllowed = false;
@@ -722,49 +573,40 @@ namespace RolePlus.ExternModule.API.Features.CustomRoles
         /// <see cref="Exiled.Events.Handlers.Player.OnDied(DiedEventArgs)"/>
         private protected virtual void AnnounceOwnerDeath(DiedEventArgs ev)
         {
-            if (!Check(ev.Target) || Check(ev.Killer) || Check(Server.Host) || !IsDeathAnnouncementEnabled)
+            if (!Check(ev.Player) || Check(ev.Attacker) || Check(Server.Host) || !Settings.IsDeathAnnouncementEnabled)
                 return;
 
             string announcement = string.Empty;
-            if (ev.Killer is null)
+            if (ev.Attacker is null)
                 goto Announce;
 
-            if (CustomRole.TryGet(ev.Killer, out CustomRole customRole))
+            if (CustomRole.TryGet(ev.Attacker, out CustomRole customRole))
             {
                 if (CustomTeam.TryGet<CustomTeam>(customRole, out CustomTeam customTeam) &&
-                    KilledByCustomTeamAnnouncements.TryGetValue(customTeam.Id, out announcement))
+                    Settings.KilledByCustomTeamAnnouncements.TryGetValue(customTeam.Id, out announcement))
                     goto Announce;
-                else if (KilledByCustomRoleAnnouncements.TryGetValue(customRole.Id, out announcement))
+                else if (Settings.KilledByCustomRoleAnnouncements.TryGetValue(customRole.Id, out announcement))
                     goto Announce;
             }
             else
             {
-                if (KilledByRoleAnnouncements.TryGetValue(ev.Killer.Role, out announcement))
+                if (Settings.KilledByRoleAnnouncements.TryGetValue(RoleType.Cast(ev.Attacker.Role), out announcement))
                     goto Announce;
             }
 
             return;
         Announce:
             if (string.IsNullOrEmpty(announcement))
-                announcement = UnknownTerminationCauseAnnouncement;
+                announcement = Settings.UnknownTerminationCauseAnnouncement;
 
             if (!string.IsNullOrEmpty(announcement))
                 Cassie.Message(announcement);
         }
 
-        /// <see cref="Exiled.Events.Handlers.Scp106.OnContaining(ContainingEventArgs)"/>
-        private protected virtual void ContainingBehavior(ContainingEventArgs ev)
-        {
-            if (!Check(ev.ButtonPresser) || CanContainScp106)
-                return;
-
-            ev.IsAllowed = false;
-        }
-
         /// <see cref="Exiled.Events.Handlers.Player.OnIntercomSpeaking(IntercomSpeakingEventArgs)"/>
         private protected virtual void IntercomSpeakingBehavior(IntercomSpeakingEventArgs ev)
         {
-            if (!Check(ev.Player) || CanUseIntercom)
+            if (!Check(ev.Player) || Settings.CanUseIntercom)
                 return;
 
             ev.IsAllowed = false;
@@ -773,7 +615,7 @@ namespace RolePlus.ExternModule.API.Features.CustomRoles
         /// <see cref="Exiled.Events.Handlers.Player.OnEnteringPocketDimension(EnteringPocketDimensionEventArgs)"/>
         private protected virtual void EnteringPocketDimensionBehavior(EnteringPocketDimensionEventArgs ev)
         {
-            if (!Check(ev.Player) || CanEnterPocketDimension)
+            if (!Check(ev.Player) || Settings.CanEnterPocketDimension)
                 return;
 
             ev.IsAllowed = false;
@@ -782,7 +624,7 @@ namespace RolePlus.ExternModule.API.Features.CustomRoles
         /// <see cref="Exiled.Events.Handlers.Player.OnVoiceChatting(VoiceChattingEventArgs)"/>
         private protected virtual void VoiceChattingBehavior(VoiceChattingEventArgs ev)
         {
-            if (!Check(ev.Player) || CanUseVoiceChat)
+            if (!Check(ev.Player) || Settings.CanUseVoiceChat)
                 return;
 
             ev.IsAllowed = false;
@@ -791,7 +633,7 @@ namespace RolePlus.ExternModule.API.Features.CustomRoles
         /// <see cref="Exiled.Events.Handlers.Map.OnPlacingBlood(PlacingBloodEventArgs)"/>
         private protected virtual void PlacingBloodBehavior(PlacingBloodEventArgs ev)
         {
-            if (!Check(ev.Player) || CanPlaceBlood)
+            if (!Check(ev.Player) || Settings.CanPlaceBlood)
                 return;
 
             ev.IsAllowed = false;
@@ -800,7 +642,7 @@ namespace RolePlus.ExternModule.API.Features.CustomRoles
         /// <see cref="Exiled.Events.Handlers.Player.OnEnteringPocketDimension(EnteringPocketDimensionEventArgs)"/>
         private protected virtual void DroppingItemBehavior(DroppingItemEventArgs ev)
         {
-            if (!Check(ev.Player) || CanDropItems)
+            if (!Check(ev.Player) || Settings.CanDropItems)
                 return;
 
             ev.IsAllowed = false;
@@ -809,7 +651,7 @@ namespace RolePlus.ExternModule.API.Features.CustomRoles
         /// <see cref="Exiled.Events.Handlers.Player.OnActivatingWarheadPanel(ActivatingWarheadPanelEventArgs)"/>
         private protected virtual void ActivatingWarheadBehavior(ActivatingWarheadPanelEventArgs ev)
         {
-            if (!Check(ev.Player) || CanActivateWarhead)
+            if (!Check(ev.Player) || Settings.CanActivateWarhead)
                 return;
 
             ev.IsAllowed = false;
@@ -818,7 +660,7 @@ namespace RolePlus.ExternModule.API.Features.CustomRoles
         /// <see cref="Exiled.Events.Handlers.Player.OnActivatingGenerator(ActivatingGeneratorEventArgs)"/>
         private protected virtual void ActivatingGeneratorBehavior(ActivatingGeneratorEventArgs ev)
         {
-            if (!Check(ev.Player) || CanActivateGenerators)
+            if (!Check(ev.Player) || Settings.CanActivateGenerators)
                 return;
 
             ev.IsAllowed = false;
@@ -827,7 +669,7 @@ namespace RolePlus.ExternModule.API.Features.CustomRoles
         /// <see cref="Exiled.Events.Handlers.Player.OnActivatingWorkstation(ActivatingWorkstationEventArgs)"/>
         private protected virtual void ActivatingWorkstationBehavior(ActivatingWorkstationEventArgs ev)
         {
-            if (!Check(ev.Player) || CanActivateWorkstations)
+            if (!Check(ev.Player) || Settings.CanActivateWorkstations)
                 return;
 
             ev.IsAllowed = false;
@@ -836,7 +678,7 @@ namespace RolePlus.ExternModule.API.Features.CustomRoles
         /// <see cref="Exiled.Events.Handlers.Player.OnInteractingElevator(InteractingElevatorEventArgs)"/>
         private protected virtual void InteractingElevatorBehavior(InteractingElevatorEventArgs ev)
         {
-            if (!Check(ev.Player) || CanUseElevators)
+            if (!Check(ev.Player) || Settings.CanUseElevators)
                 return;
 
             ev.IsAllowed = false;
@@ -845,10 +687,7 @@ namespace RolePlus.ExternModule.API.Features.CustomRoles
         /// <see cref="Exiled.Events.Handlers.Player.OnInteractingDoor(InteractingDoorEventArgs)"/>
         private protected virtual void CheckpointsBehavior(InteractingDoorEventArgs ev)
         {
-            if (!Check(ev.Player) || !CanBypassCheckpoints ||
-                ev.Door.Type is not DoorType.CheckpointEntrance and
-                not DoorType.CheckpointLczA and
-                not DoorType.CheckpointLczB)
+            if (!Check(ev.Player) || !Settings.CanBypassCheckpoints || !ev.Door.IsCheckpoint)
                 return;
 
             ev.IsAllowed = true;
@@ -857,118 +696,25 @@ namespace RolePlus.ExternModule.API.Features.CustomRoles
         /// <see cref="Exiled.Events.Handlers.Player.OnInteractingDoor(InteractingDoorEventArgs)"/>
         private protected virtual void InteractingDoorBehavior(InteractingDoorEventArgs ev)
         {
-            if (!Check(ev.Player) || !BypassableDoors.Contains(ev.Door.Type))
+            if (!Check(ev.Player) || !Settings.BypassableDoors.Contains(ev.Door.Type))
                 return;
 
             ev.IsAllowed = false;
         }
 
-        /// <see cref="Exiled.Events.Handlers.Player.OnEnteringFemurBreaker(EnteringFemurBreakerEventArgs)"/>
-        private protected virtual void EnteringFemurBreakerBehavior(EnteringFemurBreakerEventArgs ev)
+        private void ProcessEscapeAction(EscapeSettings settings)
         {
-            if (!Check(ev.Player) || CanEnterFemurBreaker)
+            Events.EventArgs.EscapingEventArgs escaping = new(Owner, settings.Role, settings.CustomRole, EscapeScenarioTypeBase.None, default);
+            Events.Handlers.Player.OnEscaping(escaping);
+
+            if (!escaping.IsAllowed)
                 return;
 
-            ev.IsAllowed = false;
-        }
+            escaping.Player.SetRole(escaping.NewRole != RoleType.None ? escaping.NewRole : escaping.NewCustomRole);
+            escaping.Hint.Show(escaping.Player);
 
-        private void InternalProcesses(bool status)
-        {
-            if (status)
-            {
-                Exiled.Events.Handlers.Player.ChangingItem += ChangingItemBehvaior;
-                Exiled.Events.Handlers.Player.Destroying += DestroyOnLeft;
-                Exiled.Events.Handlers.Player.ChangingRole += DestroyOnChangingRole;
-                Exiled.Events.Handlers.Player.Escaping += PreventPlayerFromEscaping;
-                Exiled.Events.Handlers.Player.SearchingPickup += PickingUpItemBehavior;
-                Exiled.Events.Handlers.Player.Died += AnnounceOwnerDeath;
-                Exiled.Events.Handlers.Player.Hurting += PreventDealingDamageToScps;
-                Exiled.Events.Handlers.Player.Hurting += PreventTakingDamageFromScps;
-                Exiled.Events.Handlers.Player.Hurting += IgnoreDamage;
-                Exiled.Events.Handlers.Player.InteractingDoor += CheckpointsBehavior;
-                Exiled.Events.Handlers.Player.InteractingDoor += InteractingDoorBehavior;
-                Exiled.Events.Handlers.Player.IntercomSpeaking += IntercomSpeakingBehavior;
-                Exiled.Events.Handlers.Player.VoiceChatting += VoiceChattingBehavior;
-                Exiled.Events.Handlers.Player.ActivatingWarheadPanel += ActivatingWarheadBehavior;
-                Exiled.Events.Handlers.Player.ActivatingWorkstation += ActivatingWorkstationBehavior;
-                Exiled.Events.Handlers.Player.ActivatingGenerator += ActivatingGeneratorBehavior;
-                Exiled.Events.Handlers.Player.InteractingElevator += InteractingElevatorBehavior;
-                Exiled.Events.Handlers.Player.DroppingItem += DroppingItemBehavior;
-                Exiled.Events.Handlers.Player.EnteringFemurBreaker += EnteringFemurBreakerBehavior;
-                Exiled.Events.Handlers.Player.Handcuffing += HandcuffingBehavior;
-                Exiled.Events.Handlers.Scp096.AddingTarget += PreventPlayerFromTriggeringScp096;
-                Exiled.Events.Handlers.Scp106.Containing += ContainingBehavior;
-                Exiled.Events.Handlers.Map.PlacingBlood += PlacingBloodBehavior;
-
-                _escapeHandle = Timing.RunCoroutine(WorldEscapeCheck());
-                if (IsNightVisionEnabled && !Timing.IsRunning(_nightVisionHandle))
-                    _nightVisionHandle = Timing.RunCoroutine(NightVision());
-            }
-            else
-            {
-                Timing.KillCoroutines(_escapeHandle);
-                Timing.KillCoroutines(_nightVisionHandle);
-
-                Exiled.Events.Handlers.Player.ChangingItem -= ChangingItemBehvaior;
-                Exiled.Events.Handlers.Player.Destroying -= DestroyOnLeft;
-                Exiled.Events.Handlers.Player.ChangingRole -= DestroyOnChangingRole;
-                Exiled.Events.Handlers.Player.Escaping -= PreventPlayerFromEscaping;
-                Exiled.Events.Handlers.Player.SearchingPickup -= PickingUpItemBehavior;
-                Exiled.Events.Handlers.Player.Died -= AnnounceOwnerDeath;
-                Exiled.Events.Handlers.Player.Hurting -= PreventDealingDamageToScps;
-                Exiled.Events.Handlers.Player.Hurting -= PreventTakingDamageFromScps;
-                Exiled.Events.Handlers.Player.Hurting -= IgnoreDamage;
-                Exiled.Events.Handlers.Player.InteractingDoor -= CheckpointsBehavior;
-                Exiled.Events.Handlers.Player.InteractingDoor -= InteractingDoorBehavior;
-                Exiled.Events.Handlers.Player.IntercomSpeaking -= IntercomSpeakingBehavior;
-                Exiled.Events.Handlers.Player.VoiceChatting -= VoiceChattingBehavior;
-                Exiled.Events.Handlers.Player.ActivatingWarheadPanel -= ActivatingWarheadBehavior;
-                Exiled.Events.Handlers.Player.ActivatingWorkstation -= ActivatingWorkstationBehavior;
-                Exiled.Events.Handlers.Player.ActivatingGenerator -= ActivatingGeneratorBehavior;
-                Exiled.Events.Handlers.Player.InteractingElevator -= InteractingElevatorBehavior;
-                Exiled.Events.Handlers.Player.DroppingItem -= DroppingItemBehavior;
-                Exiled.Events.Handlers.Player.EnteringFemurBreaker -= EnteringFemurBreakerBehavior;
-                Exiled.Events.Handlers.Player.Handcuffing -= HandcuffingBehavior;
-                Exiled.Events.Handlers.Scp096.AddingTarget -= PreventPlayerFromTriggeringScp096;
-                Exiled.Events.Handlers.Scp106.Containing -= ContainingBehavior;
-                Exiled.Events.Handlers.Map.PlacingBlood -= PlacingBloodBehavior;
-            }
-        }
-
-        private IEnumerator<float> WorldEscapeCheck()
-        {
-            if (!_canEscape || (!_useEscapeRole && !_useEscapeCustomRole))
-                yield break;
-
-            while (Round.IsStarted)
-            {
-                yield return Timing.WaitForOneFrame;
-
-                if (Vector3.Distance(Owner.Position, HLAPI.WorldEscapePosition) > HLAPI.WorldEscapeRadius)
-                    continue;
-
-                if (_useEscapeRole)
-                    Owner.SetRole(_escapeRole, SpawnReason.Escaped, false);
-                else if (_useEscapeCustomRole)
-                    Owner.SetRole(_escapeCustomRole);
-            }
-        }
-
-        private IEnumerator<float> NightVision()
-        {
-            while (IsNightVisionEnabled)
-            {
-                yield return Timing.WaitForOneFrame;
-
-                if (Owner.CurrentRoom is null || Owner.CurrentRoom.LightsOn)
-                    continue;
-
-                Owner.SendFakeSyncVar(
-                    Owner.CurrentRoom.FlickerableLightControllerNetIdentity,
-                    typeof(FlickerableLightController),
-                    nameof(FlickerableLightController.NetworkLightsEnabled),
-                    true);
-            }
+            EscapedEventArgs escaped = new(escaping.Player);
+            Events.Handlers.Player.OnEscaped(escaped);
         }
     }
 }

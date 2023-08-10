@@ -1,4 +1,4 @@
-﻿// -----------------------------------------------------------------------
+// -----------------------------------------------------------------------
 // <copyright file="ASkeletalMeshComponent.cs" company="NaoUnderscore">
 // Copyright (c) NaoUnderscore. All rights reserved.
 // Licensed under the CC BY-SA 3.0 license.
@@ -9,6 +9,7 @@ namespace RolePlus.ExternModule.API.Engine.Components
 {
     using System.Collections.Generic;
     using Exiled.API.Features.Core;
+
     using RolePlus.ExternModule.API.Engine.Core;
     using RolePlus.ExternModule.API.Engine.Framework;
 

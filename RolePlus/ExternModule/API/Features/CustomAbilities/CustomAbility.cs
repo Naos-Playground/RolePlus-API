@@ -15,8 +15,6 @@ namespace RolePlus.ExternModule.API.Features.CustomAbilities
     using Exiled.API.Features;
 
     using MEC;
-
-    using RolePlus.ExternModule.API.Engine.Framework;
     using RolePlus.Internal;
 
     /// <summary>

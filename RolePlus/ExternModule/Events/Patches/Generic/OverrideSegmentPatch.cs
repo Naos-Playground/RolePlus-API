@@ -18,8 +18,6 @@ namespace RolePlus.ExternModule.Events.Patches
 
     using NorthwoodLib.Pools;
 
-    using RolePlus.ExternModule.API.Engine.Framework.Bootstrap;
-
 #pragma warning disable SA1118 // Parameter should not span multiple lines
 
     [HarmonyPatch(typeof(Timing), nameof(Timing.RunCoroutine), new Type[] { typeof(IEnumerator<float>), typeof(Segment) })]
