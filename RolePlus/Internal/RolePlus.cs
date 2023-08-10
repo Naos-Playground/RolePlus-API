@@ -15,6 +15,9 @@ namespace RolePlus.Internal
     using global::RolePlus.ExternModule.API.Features.VirtualAssemblies;
 
     using HarmonyLib;
+
+    using RolePlus.ExternModule.API.Engine.Framework.Bootstrap;
+
     using ConfigAPI = ExternModule.API.Features.Configs.Config;
     using ServerEvents = Exiled.Events.Handlers.Server;
 

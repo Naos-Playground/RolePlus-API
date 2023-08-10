@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
@@ -121,6 +121,7 @@
     <Compile Include="ExternModule\Events\EventArgs\EscapedEventArgs.cs" />
     <Compile Include="ExternModule\Events\EventArgs\EscapingEventArgs.cs" />
     <Compile Include="ExternModule\Events\Handlers\Player.cs" />
+    <Compile Include="ExternModule\API\Enums\RoleType.cs" />
     <Compile Include="GlobalSuppressions.cs" />
     <Compile Include="Internal\Commands\MainCommand.cs" />
     <Compile Include="Internal\Commands\Round\ForceEndCommand.cs" />
@@ -128,6 +129,25 @@
     <Compile Include="Internal\Commands\Round\ChangeLockCommand.cs" />
     <Compile Include="Internal\Commands\Test\ShowTpsCommand.cs" />
     <Compile Include="Internal\Commands\Test\BypassNoclip.cs" />
+    <Compile Include="ExternModule\API\Features\Audio\AudioController.cs" />
+    <Compile Include="ExternModule\API\Features\Audio\CustomMpegMicrophone.cs" />
+    <Compile Include="ExternModule\API\Features\Audio\NLayer\Decoder\BitReservoir.cs" />
+    <Compile Include="ExternModule\API\Features\Audio\NLayer\Decoder\FrameBase.cs" />
+    <Compile Include="ExternModule\API\Features\Audio\NLayer\Decoder\Huffman.cs" />
+    <Compile Include="ExternModule\API\Features\Audio\NLayer\Decoder\ID3Frame.cs" />
+    <Compile Include="ExternModule\API\Features\Audio\NLayer\Decoder\LayerDecoderBase.cs" />
+    <Compile Include="ExternModule\API\Features\Audio\NLayer\Decoder\LayerIDecoder.cs" />
+    <Compile Include="ExternModule\API\Features\Audio\NLayer\Decoder\LayerIIDecoder.cs" />
+    <Compile Include="ExternModule\API\Features\Audio\NLayer\Decoder\LayerIIDecoderBase.cs" />
+    <Compile Include="ExternModule\API\Features\Audio\NLayer\Decoder\LayerIIIDecoder.cs" />
+    <Compile Include="ExternModule\API\Features\Audio\NLayer\Decoder\MpegFrame.cs" />
+    <Compile Include="ExternModule\API\Features\Audio\NLayer\Decoder\MpegStreamReader.cs" />
+    <Compile Include="ExternModule\API\Features\Audio\NLayer\Decoder\RiffHeaderFrame.cs" />
+    <Compile Include="ExternModule\API\Features\Audio\NLayer\Decoder\VBRInfo.cs" />
+    <Compile Include="ExternModule\API\Features\Audio\NLayer\Enums.cs" />
+    <Compile Include="ExternModule\API\Features\Audio\NLayer\IMpegFrame.cs" />
+    <Compile Include="ExternModule\API\Features\Audio\NLayer\MpegFile.cs" />
+    <Compile Include="ExternModule\API\Features\Audio\NLayer\MpegFrameDecoder.cs" />              
     <Compile Include="ExternModule\API\Features\TemporaryStats.cs" />
     <Compile Include="ExternModule\Events\EventArgs\InvokingHandlerEventArgs.cs" />
     <Compile Include="Internal\Configs\RootConfig.cs" />

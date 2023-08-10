@@ -10,7 +10,11 @@ namespace RolePlus.ExternModule.API.Engine.Components
     using System;
     using System.Collections.Generic;
     using System.Linq;
+
+    using Exiled.API.Features;
     using Exiled.API.Features.Core;
+    using Exiled.API.Features.Items;
+
     using Exiled.API.Features.Pickups;
     using InventorySystem.Items.Pickups;
 
