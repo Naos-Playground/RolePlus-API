@@ -113,9 +113,21 @@ namespace RolePlus.ExternModule.API.Features.CustomRoles
                 _nightVisionEnabled = value;
 
                 if (_nightVisionEnabled)
-                    _nightVisionHandle = Timing.RunCoroutine(NightVision());
-                else
-                    Timing.KillCoroutines(_nightVisionHandle);
+                {
+                    foreach (Room room in Room.List)
+                    {
+                        Owner.SendFakeSyncVar(
+                            room.RoomLightControllerNetIdentity,
+                            typeof(RoomLightController),
+                            nameof(RoomLightController.NetworkLightsEnabled),
+                            true);
+                    }
+
+                    return;
+                }
+
+                foreach (Room _ in Room.List)
+                    MirrorExtensions.ResyncSyncVar(Owner.NetworkIdentity, typeof(RoomLightController), nameof(RoomLightController.NetworkLightsEnabled));
             }
         }
 
@@ -240,16 +252,16 @@ namespace RolePlus.ExternModule.API.Features.CustomRoles
                 return;
             }
 
-            _escapeHandle = Timing.RunCoroutine(WorldEscapeCheck());
-            if (IsNightVisionEnabled && !Timing.IsRunning(_nightVisionHandle))
-                _nightVisionHandle = Timing.RunCoroutine(NightVision());
+            _escapeHandle = Timing.RunCoroutine(Escape_Internal());
+
+            if (IsNightVisionEnabled)
+                IsNightVisionEnabled = true;
 
             _wasNoClipPermitted = Owner.IsNoclipPermitted;
+            _isHuman = !CustomRole.IsScp;
 
             if (!Settings.IsRoleDynamic)
                 Role = CustomRole.Role;
-
-            _isHuman = !CustomRole.IsScp;
 
             if (Owner.Role != Role)
                 Owner.SetRole(Role);
@@ -699,7 +711,7 @@ namespace RolePlus.ExternModule.API.Features.CustomRoles
             ev.IsAllowed = false;
         }
 
-        private IEnumerator<float> WorldEscapeCheck()
+        private IEnumerator<float> Escape_Internal()
         {
             if (!EscapeSettings.IsAllowed)
                 yield break;
@@ -722,23 +734,6 @@ namespace RolePlus.ExternModule.API.Features.CustomRoles
                 {
                     Log.Error($"Player {Owner.Nickname} tried to escape as {CustomRole.Get(GetType()).Name}, however the role to be set when escaping is not set.");
                 }
-            }
-        }
-
-        private IEnumerator<float> NightVision()
-        {
-            while (IsNightVisionEnabled)
-            {
-                yield return Timing.WaitForOneFrame;
-
-                if (Owner.CurrentRoom is null || !Owner.CurrentRoom.AreLightsOff)
-                    continue;
-
-                Owner.SendFakeSyncVar(
-                    Owner.CurrentRoom.RoomLightControllerNetIdentity,
-                    typeof(RoomLightController),
-                    nameof(RoomLightController.NetworkLightsEnabled),
-                    true);
             }
         }
     }
