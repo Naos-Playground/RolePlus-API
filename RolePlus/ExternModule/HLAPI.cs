@@ -28,6 +28,8 @@ namespace RolePlus.ExternModule
 
     using Mirror;
     using NorthwoodLib.Pools;
+    using PlayerRoles;
+    using PluginAPI.Roles;
     using RemoteAdmin;
     using RolePlus.ExternModule.API.Enums;
     using RolePlus.ExternModule.API.Features;
@@ -474,7 +476,6 @@ namespace RolePlus.ExternModule
             grenade.SpawnActive(position, owner);
         }
 
-        /// <summary>
         /// Validates the usage of a <see cref="ParentCommand"/> returning all the available commands if the check fails.
         /// </summary>
         /// <param name="parentCommand">The command to check.</param>

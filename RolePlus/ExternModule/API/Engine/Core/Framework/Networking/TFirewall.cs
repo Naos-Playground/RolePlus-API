@@ -1,4 +1,4 @@
-﻿// -----------------------------------------------------------------------
+// -----------------------------------------------------------------------
 // <copyright file="TFirewall.cs" company="NaoUnderscore">
 // Copyright (c) NaoUnderscore. All rights reserved.
 // Licensed under the CC BY-SA 3.0 license.
@@ -13,6 +13,8 @@ namespace RolePlus.ExternModule.API.Engine.Framework.Network
     using System.Reflection;
 
     using Exiled.API.Features;
+
+    using RolePlus.ExternModule.API.Engine.Core;
 
     /// <summary>
     /// The class which allows to handle <see cref="TRule{T}"/> objects.
