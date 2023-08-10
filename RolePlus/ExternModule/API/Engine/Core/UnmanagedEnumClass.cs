@@ -28,7 +28,7 @@ namespace RolePlus.ExternModule.API.Engine.Core
         private string _name;
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="EnumClass{TSource, TObject}"/> class.
+        /// Initializes a new instance of the <see cref="UnmanagedEnumClass{TSource, TObject}"/> class.
         /// </summary>
         /// <param name="value">The value of the unmanaged item.</param>
         protected UnmanagedEnumClass(TSource value)
@@ -45,7 +45,7 @@ namespace RolePlus.ExternModule.API.Engine.Core
         public static IEnumerable<TObject> Values => _values.Values;
 
         /// <summary>
-        /// The value of the enum item
+        /// Gets the value of the enum item.
         /// </summary>
         public TSource Value { get; }
 
@@ -75,6 +75,24 @@ namespace RolePlus.ExternModule.API.Engine.Core
         }
 
         /// <summary>
+        /// Implicitly converts the <see cref="UnmanagedEnumClass{TSource, TObject}"/> to <typeparamref name="TSource"/>.
+        /// </summary>
+        /// <param name="value">The value to convert.</param>
+        public static implicit operator TSource(UnmanagedEnumClass<TSource, TObject> value) => value.Value;
+
+        /// <summary>
+        /// Implicitly converts the <typeparamref name="TSource"/> to <see cref="EnumClass{TSource, TObject}"/>.
+        /// </summary>
+        /// <param name="value">The value to convert.</param>
+        public static implicit operator UnmanagedEnumClass<TSource, TObject>(TSource value) => _values[value];
+
+        /// <summary>
+        /// Implicitly converts the <see cref="EnumClass{TSource, TObject}"/> to <typeparamref name="TObject"/>.
+        /// </summary>
+        /// <param name="value">The value to convert.</param>
+        public static implicit operator TObject(UnmanagedEnumClass<TSource, TObject> value) => value;
+
+        /// <summary>
         /// Casts the specified <paramref name="value"/> to the corresponding type.
         /// </summary>
         /// <param name="value">The enum value to be cast.</param>
@@ -94,7 +112,7 @@ namespace RolePlus.ExternModule.API.Engine.Core
         /// Safely casts the specified <paramref name="value"/> to the corresponding type.
         /// </summary>
         /// <param name="value">The enum value to be cast.</param>
-        /// <param name="result"></param>
+        /// <param name="result">The cast <paramref name="value"/>.</param>
         /// <returns><see langword="true"/> if the <paramref name="value"/> was cast; otherwise, <see langword="false"/>.</returns>
         public static bool SafeCast(TSource value, out TObject result) => _values.TryGetValue(value, out result);
 
@@ -110,26 +128,6 @@ namespace RolePlus.ExternModule.API.Engine.Core
 
             return null;
         }
-
-        //public static implicit operator UnmanagedEnumClass<TSource, TObject>(TSource value) => (TObject)Activator.CreateInstance(typeof(TObject), value);
-
-        /// <summary>
-        /// Implicitly converts the <see cref="UnmanagedEnumClass{TSource, TObject}"/> to <typeparamref name="TSource"/>
-        /// </summary>
-        /// <param name="value">The value to convert.</param>
-        public static implicit operator TSource(UnmanagedEnumClass<TSource, TObject> value) => value.Value;
-
-        /// <summary>
-        /// Implicitly converts the <typeparamref name="TSource"/> to <see cref="EnumClass{TSource, TObject}"/>. 
-        /// </summary>
-        /// <param name="value">The value to convert.</param>
-        public static implicit operator UnmanagedEnumClass<TSource, TObject>(TSource value) => _values[value];
-
-        /// <summary>
-        /// Implicitly converts the <see cref="EnumClass{TSource, TObject}"/> to <typeparamref name="TObject"/>. 
-        /// </summary>
-        /// <param name="value">The value to convert.</param>
-        public static implicit operator TObject(UnmanagedEnumClass<TSource, TObject> value) => value;
 
         /// <summary>
         /// Converts the <see cref="EnumClass{TSource, TObject}"/> instance to a human-readable <see cref="string"/> representation.
@@ -155,7 +153,7 @@ namespace RolePlus.ExternModule.API.Engine.Core
         /// <summary>
         /// Returns a the 32-bit signed hash code of the current object instance.
         /// </summary>
-        /// <returns>The 32-bit signed hash code of the current object instance</returns>
+        /// <returns>The 32-bit signed hash code of the current object instance.</returns>
         public override int GetHashCode() => Value.GetHashCode();
 
         /// <summary>
