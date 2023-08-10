@@ -22,7 +22,6 @@ namespace RolePlus.ExternModule.API.Features.CustomRoles
     using RolePlus.ExternModule.API.Enums;
     using RolePlus.ExternModule.API.Features.Attributes;
     using RolePlus.ExternModule.API.Features.CustomEscapes;
-    using RolePlus.ExternModule.API.Features.CustomTeams;
     using RolePlus.ExternModule.Events.EventArgs;
     using RolePlus.Internal;
 
@@ -33,20 +32,19 @@ namespace RolePlus.ExternModule.API.Features.CustomRoles
     /// </summary>
     public abstract class CustomRole : TypeCastObject<CustomRole>
     {
-        /// <summary>
-        /// Gets the players and their respective <see cref="CustomRole"/>.
-        /// </summary>
-        internal static readonly Dictionary<Player, CustomRole> PlayerValues_Internal = new();
+        private static readonly List<CustomRole> _registered = new();
+
+        internal static readonly Dictionary<Player, CustomRole> PlayersValue = new();
 
         /// <summary>
         /// Gets a <see cref="List{T}"/> which contains all registered <see cref="CustomRole"/>'s.
         /// </summary>
-        public static List<CustomRole> Registered { get; private set; } = new();
+        public static IEnumerable<CustomRole> Registered => _registered;
 
         /// <summary>
         /// Gets all players and their respective <see cref="CustomRole"/>.
         /// </summary>
-        public static IReadOnlyDictionary<Player, CustomRole> Manager => PlayerValues_Internal;
+        public static IReadOnlyDictionary<Player, CustomRole> Manager => PlayersValue;
 
         /// <summary>
         /// Gets all players belonging to a <see cref="CustomRole"/>.
@@ -59,9 +57,29 @@ namespace RolePlus.ExternModule.API.Features.CustomRoles
         public virtual Type RoleBuilderComponent { get; }
 
         /// <summary>
+        /// Gets the <see cref="CustomEscape"/>'s <see cref="Type"/>.
+        /// </summary>
+        public virtual Type EscapeBuilderComponent { get; }
+
+        /// <summary>
+        /// Gets a the <see cref="CustomRole"/>'s name.
+        /// </summary>
+        public virtual string Name { get; }
+
+        /// <summary>
         /// Gets the type.
         /// </summary>
         public virtual uint Id { get; }
+
+        /// <summary>
+        /// Gets or sets the <see cref="CustomEscapes.EscapeSettings"/>.
+        /// </summary>
+        public virtual List<EscapeSettings> EscapeSettings { get; } = new();
+
+        /// <summary>
+        /// Gets or sets the <see cref="RoleSettings"/>.
+        /// </summary>
+        public virtual RoleSettings Settings { get; } = RoleSettings.Default;
 
         /// <summary>
         /// Gets the <see cref="CustomRole"/>'s <see cref="RoleType"/>.
@@ -99,11 +117,6 @@ namespace RolePlus.ExternModule.API.Features.CustomRoles
         public virtual RoleType RespawnRole { get; }
 
         /// <summary>
-        /// Gets a the <see cref="CustomRole"/>'s name.
-        /// </summary>
-        public virtual string Name { get; }
-
-        /// <summary>
         /// Gets a value indicating whether the <see cref="CustomRole"/> is enabled.
         /// </summary>
         public virtual bool IsEnabled { get; }
@@ -111,22 +124,12 @@ namespace RolePlus.ExternModule.API.Features.CustomRoles
         /// <summary>
         /// Gets a value indicating whether the <see cref="CustomRole"/> is used for custom teams.
         /// </summary>
-        public virtual bool IsTeamComponent { get; }
+        public virtual bool IsTeamUnit { get; }
 
         /// <summary>
-        /// Gets a value indicating whether the player should be spawned in theit current position.
+        /// Gets a value indicating whether the player should be spawned in their current position.
         /// </summary>
         public virtual bool ShouldKeepPosition { get; }
-
-        /// <summary>
-        /// Gets or sets the <see cref="CustomEscapes.EscapeSettings"/>.
-        /// </summary>
-        public virtual EscapeSettings EscapeSettings { get; } = EscapeSettings.Default;
-
-        /// <summary>
-        /// Gets or sets the <see cref="RoleSettings"/>.
-        /// </summary>
-        public virtual RoleSettings Settings { get; } = RoleSettings.Default;
 
         /// <summary>
         /// Gets a value indicating whether the <see cref="CustomRole"/> is registered.
@@ -207,6 +210,54 @@ namespace RolePlus.ExternModule.API.Features.CustomRoles
         /// <param name="right">The right <see cref="CustomRole"/> to compare.</param>
         /// <returns><see langword="true"/> if the values are not equal.</returns>
         public static bool operator !=(CustomRole left, CustomRole right) => left.Id != right.Id;
+
+        /// <summary>
+        /// Gets a <see cref="CustomRole"/> given the specified <see cref="Id"/>.
+        /// </summary>
+        /// <param name="customRoleType">The specified <see cref="Id"/>.</param>
+        /// <returns>The <see cref="CustomRole"/> matching the search or <see langword="null"/> if not registered.</returns>
+        public static CustomRole Get(object customRoleType) => Registered.FirstOrDefault(customRole => customRole == customRoleType && customRole.IsEnabled);
+
+        /// <summary>
+        /// Gets a <see cref="CustomRole"/> given the specified name.
+        /// </summary>
+        /// <param name="name">The specified name.</param>
+        /// <returns>The <see cref="CustomRole"/> matching the search or <see langword="null"/> if not registered.</returns>
+        public static CustomRole Get(string name) => Registered.FirstOrDefault(customRole => customRole.Name == name);
+
+        /// <summary>
+        /// Gets a <see cref="CustomRole"/> given the specified <see cref="Type"/>.
+        /// </summary>
+        /// <param name="type">The specified <see cref="Type"/>.</param>
+        /// <returns>The <see cref="CustomRole"/> matching the search or <see langword="null"/> if not found.</returns>
+        public static CustomRole Get(Type type) => type.BaseType != typeof(RoleBuilder) ? null : Registered.FirstOrDefault(customRole => customRole.RoleBuilderComponent == type);
+
+        /// <summary>
+        /// Gets a <see cref="CustomRole"/> given the specified <see cref="RoleBuilder"/>.
+        /// </summary>
+        /// <param name="roleBuilder">The specified <see cref="RoleBuilder"/>.</param>
+        /// <returns>The <see cref="CustomRole"/> matching the search or <see langword="null"/> if not found.</returns>
+        public static CustomRole Get(RoleBuilder roleBuilder) => Get(roleBuilder.GetType());
+
+        /// <summary>
+        /// Gets a <see cref="CustomRole"/> from a <see cref="Player"/>.
+        /// </summary>
+        /// <param name="player">The <see cref="CustomRole"/> owner.</param>
+        /// <returns>The <see cref="CustomRole"/> matching the search or <see langword="null"/> if not registered.</returns>
+        public static CustomRole Get(Player player)
+        {
+            CustomRole customRole = default;
+
+            foreach (KeyValuePair<Player, CustomRole> kvp in Manager)
+            {
+                if (kvp.Key != player)
+                    continue;
+
+                customRole = Get(kvp.Value.Id);
+            }
+
+            return customRole;
+        }
 
         /// <summary>
         /// Tries to get a <see cref="CustomRole"/> given the specified <see cref="CustomRole"/>.
@@ -393,54 +444,6 @@ namespace RolePlus.ExternModule.API.Features.CustomRoles
         }
 
         /// <summary>
-        /// Gets a <see cref="CustomRole"/> given the specified <see cref="Id"/>.
-        /// </summary>
-        /// <param name="customRoleType">The specified <see cref="Id"/>.</param>
-        /// <returns>The <see cref="CustomRole"/> matching the search or <see langword="null"/> if not registered.</returns>
-        public static CustomRole Get(object customRoleType) => Registered.FirstOrDefault(customRole => customRole == customRoleType && customRole.IsEnabled);
-
-        /// <summary>
-        /// Gets a <see cref="CustomRole"/> given the specified name.
-        /// </summary>
-        /// <param name="name">The specified name.</param>
-        /// <returns>The <see cref="CustomRole"/> matching the search or <see langword="null"/> if not registered.</returns>
-        public static CustomRole Get(string name) => Registered.FirstOrDefault(customRole => customRole.Name == name);
-
-        /// <summary>
-        /// Gets a <see cref="CustomRole"/> given the specified <see cref="Type"/>.
-        /// </summary>
-        /// <param name="type">The specified <see cref="Type"/>.</param>
-        /// <returns>The <see cref="CustomRole"/> matching the search or <see langword="null"/> if not found.</returns>
-        public static CustomRole Get(Type type) => type.BaseType != typeof(RoleBuilder) ? null : Registered.FirstOrDefault(customRole => customRole.RoleBuilderComponent == type);
-
-        /// <summary>
-        /// Gets a <see cref="CustomRole"/> given the specified <see cref="RoleBuilder"/>.
-        /// </summary>
-        /// <param name="roleBuilder">The specified <see cref="RoleBuilder"/>.</param>
-        /// <returns>The <see cref="CustomRole"/> matching the search or <see langword="null"/> if not found.</returns>
-        public static CustomRole Get(RoleBuilder roleBuilder) => Get(roleBuilder.GetType());
-
-        /// <summary>
-        /// Gets a <see cref="CustomRole"/> from a <see cref="Player"/>.
-        /// </summary>
-        /// <param name="player">The <see cref="CustomRole"/> owner.</param>
-        /// <returns>The <see cref="CustomRole"/> matching the search or <see langword="null"/> if not registered.</returns>
-        public static CustomRole Get(Player player)
-        {
-            CustomRole customRole = default;
-
-            foreach (KeyValuePair<Player, CustomRole> kvp in Manager)
-            {
-                if (kvp.Key != player)
-                    continue;
-
-                customRole = Get(kvp.Value.Id);
-            }
-
-            return customRole;
-        }
-
-        /// <summary>
         /// Tries to register a <see cref="CustomRole"/>.
         /// </summary>
         /// <returns><see langword="true"/> if the <see cref="CustomRole"/> was registered; otherwise, <see langword="false"/>.</returns>
@@ -452,13 +455,13 @@ namespace RolePlus.ExternModule.API.Features.CustomRoles
                 {
                     Log.Debug(
                         $"[CustomRoles] Couldn't register {Name}. " +
-                        $"Another custom role has been registered with the same CustomRoleType:" +
+                        $"Another custom role has been registered with the same id:" +
                         $" {Registered.FirstOrDefault(x => x.Id == Id)}");
 
                     return false;
                 }
 
-                Registered.Add(this);
+                _registered.Add(this);
 
                 if (SpawnOnEvents.Any())
                     Events.Handlers.Server.InvokingHandler += HandleSpawnOnEvents;
@@ -487,7 +490,7 @@ namespace RolePlus.ExternModule.API.Features.CustomRoles
                 return false;
             }
 
-            Registered.Remove(this);
+            _registered.Remove(this);
 
             if (SpawnOnEvents.Any())
                 Events.Handlers.Server.InvokingHandler -= HandleSpawnOnEvents;
@@ -524,8 +527,8 @@ namespace RolePlus.ExternModule.API.Features.CustomRoles
             RespawnManager.RespawnQueue.Add(player);
 
             player.GameObject.AddComponent(RoleBuilderComponent);
-            PlayerValues_Internal.Remove(player);
-            PlayerValues_Internal.Add(player, this);
+            PlayersValue.Remove(player);
+            PlayersValue.Add(player, this);
 
             return true;
         }
@@ -537,8 +540,8 @@ namespace RolePlus.ExternModule.API.Features.CustomRoles
         /// <param name="shouldKeepPosition">A value indicating whether the <see cref="Player"/> should be spawned in the same position.</param>
         public void ForceSpawn(Player player, bool shouldKeepPosition = false)
         {
-            PlayerValues_Internal.Remove(player);
-            PlayerValues_Internal.Add(player, this);
+            PlayersValue.Remove(player);
+            PlayersValue.Add(player, this);
 
             if (!player.IsAlive)
             {

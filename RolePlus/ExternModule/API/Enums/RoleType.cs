@@ -8,6 +8,7 @@
 namespace RolePlus.ExternModule.API.Enums
 {
     using PlayerRoles;
+
     using RolePlus.ExternModule.API.Engine.Core;
 
     /// <summary>
@@ -15,7 +16,9 @@ namespace RolePlus.ExternModule.API.Enums
     /// </summary>
     public sealed class RoleType : EnumClass<RoleTypeId, RoleType>
     {
-        private RoleType(RoleTypeId value) : base(value) { }
+        private RoleType(RoleTypeId value) : base(value)
+        {
+        }
 
         /// <summary>
         /// Represents an undefined role.
@@ -133,9 +136,8 @@ namespace RolePlus.ExternModule.API.Enums
         public static RoleType Filmmaker { get; } = new(RoleTypeId.Filmmaker);
 
         /// <summary>
-        /// Represents a Custom role.
+        /// Represents a custom role.
         /// </summary>
         public static RoleType CustomRole { get; } = new(RoleTypeId.CustomRole);
-
     }
 }

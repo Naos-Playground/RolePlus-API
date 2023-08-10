@@ -22,37 +22,28 @@ namespace RolePlus.ExternModule.API.Features.CustomRoles
 
     using MEC;
 
-    using PlayerRoles;
-
     using RolePlus.ExternModule.API.Engine.Framework.Structs;
     using RolePlus.ExternModule.API.Enums;
+    using RolePlus.ExternModule.API.Features.Controllers;
     using RolePlus.ExternModule.API.Features.CustomEscapes;
     using RolePlus.ExternModule.API.Features.CustomSkins;
     using RolePlus.ExternModule.API.Features.CustomTeams;
-
+    using RolePlus.ExternModule.Events.EventArgs;
     using UnityEngine;
 
     /// <summary>
     /// A tool to easily handle the custom role's logic.
     /// </summary>
-    public abstract class RoleBuilder : EActor
+    public abstract class RoleBuilder : PlayerBehaviour
     {
-        private CoroutineHandle _escapeHandle;
-        private Vector3 _lastPosition = Vector3.zero;
+        private Vector3 _lastPosition;
         private RoleType _fakeAppearance;
-        private bool _isHuman;
-        private bool _wasNoClipPermitted;
-        private bool _nightVisionEnabled;
+        private bool _isHuman, _wasNoClipPermitted, _nightVisionEnabled, _useCustomEscape, _wasEscaped;
 
         /// <summary>
         /// Gets a <see cref="HashSet{T}"/> of <see cref="Player"/> containing all players to be spawned without affecting their current position (static).
         /// </summary>
         public static List<Player> StaticPlayers { get; } = new();
-
-        /// <summary>
-        /// Gets or sets <see cref="Player"/> who owns this <see cref="RoleBuilder"/> component.
-        /// </summary>
-        public virtual Player Owner { get; protected set; }
 
         /// <summary>
         /// Gets or sets the <see cref="RoleType"/> of the fake appearance applied by this <see cref="RoleBuilder"/> component.
@@ -68,12 +59,12 @@ namespace RolePlus.ExternModule.API.Features.CustomRoles
         }
 
         /// <summary>
-        /// Gets or sets the <see cref="CustomEscapes.EscapeSettings"/>.
+        /// Gets or sets the the escape settings.
         /// </summary>
-        protected virtual EscapeSettings EscapeSettings { get; set; }
+        protected virtual List<EscapeSettings> EscapeSettings { get; set; } = new();
 
         /// <summary>
-        /// Gets or sets the <see cref="CustomRole"/>.<see cref="RoleSettings"/>.
+        /// Gets or sets the <see cref="RoleSettings"/>.
         /// </summary>
         protected virtual RoleSettings Settings { get; set; }
 
@@ -103,7 +94,7 @@ namespace RolePlus.ExternModule.API.Features.CustomRoles
         protected virtual bool KeepEffectsAlive { get; set; }
 
         /// <summary>
-        /// Gets or sets a value indicating whether the <see cref="Owner"/> has the night vision enabled.
+        /// Gets or sets a value indicating whether the <see cref="PlayerBehaviour.Owner"/> has the night vision enabled.
         /// </summary>
         protected virtual bool IsNightVisionEnabled
         {
@@ -143,12 +134,12 @@ namespace RolePlus.ExternModule.API.Features.CustomRoles
         protected CharacterMeshComponent ThirdPersonMeshComponent { get; set; }
 
         /// <summary>
-        /// Gets the corresponding <see cref="CustomRoles.CustomRole"/>.
+        /// Gets the relative <see cref="CustomRoles.CustomRole"/>.
         /// </summary>
         protected CustomRole CustomRole { get; private set; }
 
         /// <summary>
-        /// Gets the current speed of the <see cref="Owner"/>.
+        /// Gets the current speed of the  <see cref="PlayerBehaviour.Owner"/>.
         /// </summary>
         protected float CurrentSpeed { get; private set; }
 
@@ -163,13 +154,6 @@ namespace RolePlus.ExternModule.API.Features.CustomRoles
         public Vector3 RandomSpawnpoint => Settings.Spawnpoints is null || Settings.Spawnpoints.IsEmpty() ?
             RoleExtensions.GetRandomSpawnLocation(Role).Position :
             Room.Get(Settings.Spawnpoints.ElementAt(UnityEngine.Random.Range(0, Settings.Spawnpoints.Count()))).Position;
-
-        /// <summary>
-        /// Gets a value indicating whether the specified <see cref="Player"/> is the owner of this <see cref="RoleBuilder"/> component instance.
-        /// </summary>
-        /// <param name="player">The <see cref="Player"/> to check.</param>
-        /// <returns><see langword="true"/> if the specified <see cref="Player"/> is the owner of this <see cref="RoleBuilder"/> component instance; otherwise, <see langword="false"/>.</returns>
-        public bool Check(Player player) => player is not null && Owner == player;
 
         /// <summary>
         /// Gets a value indicating whether the specified <see cref="DamageType"/> is allowed.
@@ -241,19 +225,15 @@ namespace RolePlus.ExternModule.API.Features.CustomRoles
             {
                 CustomRole = customRole;
                 Settings = CustomRole.Settings;
-                EscapeSettings = CustomRole.EscapeSettings;
+
+                if (CustomRole.EscapeBuilderComponent is not null)
+                {
+                    Owner.AddComponent(CustomRole.EscapeBuilderComponent);
+                    _useCustomEscape = true;
+                }
             }
 
             AdjustSettings();
-
-            Owner = Player.Get(Base);
-            if (Owner is null)
-            {
-                Destroy();
-                return;
-            }
-
-            _escapeHandle = Timing.RunCoroutine(Escape_Internal());
 
             if (IsNightVisionEnabled)
                 IsNightVisionEnabled = true;
@@ -333,9 +313,12 @@ namespace RolePlus.ExternModule.API.Features.CustomRoles
         /// <inheritdoc/>
         protected override void Tick()
         {
+            base.Tick();
+
+            // Must be refactored (performance issues)
             if (Owner is null || (Settings.UseDefaultRoleOnly && (Owner.Role != Role)) ||
                 (!Settings.AllowedRoles.IsEmpty() && !Settings.AllowedRoles.Contains(RoleType.Cast(Owner.Role))) ||
-                !CustomRole.Manager.Contains(Owner))
+                !CustomRole.Players.Contains(Owner))
             {
                 Destroy();
                 return;
@@ -350,6 +333,19 @@ namespace RolePlus.ExternModule.API.Features.CustomRoles
                 }
             }
 
+            if (!_useCustomEscape && !_wasEscaped)
+            {
+                foreach (EscapeSettings settings in EscapeSettings)
+                {
+                    if (!settings.IsAllowed || Vector3.Distance(Owner.Position, settings.Position) > settings.MaxDistanceTolerance)
+                        continue;
+
+                    ProcessEscapeAction(settings);
+                    _wasEscaped = true;
+                    break;
+                }
+            }
+
             CurrentSpeed = (Owner.Position - _lastPosition).magnitude;
             _lastPosition = Owner.Position;
         }
@@ -359,12 +355,7 @@ namespace RolePlus.ExternModule.API.Features.CustomRoles
         {
             base.OnEndPlay();
 
-            Timing.KillCoroutines(_escapeHandle);
-
-            if (Owner is null)
-                return;
-
-            CustomRole.PlayerValues_Internal.Remove(Owner);
+            CustomRole.PlayersValue.Remove(Owner);
 
             DestroyThirdPersonMesh();
 
@@ -570,10 +561,10 @@ namespace RolePlus.ExternModule.API.Features.CustomRoles
             ev.IsAllowed = false;
         }
 
-        /// <see cref="Exiled.Events.Handlers.Player.OnEscaping(EscapingEventArgs)"/>
-        private protected virtual void PreventPlayerFromEscaping(EscapingEventArgs ev)
+        /// <see cref="Exiled.Events.Handlers.Player.OnEscaping(Exiled.Events.EventArgs.Player.EscapingEventArgs)"/>
+        private protected virtual void PreventPlayerFromEscaping(Exiled.Events.EventArgs.Player.EscapingEventArgs ev)
         {
-            if (!Check(ev.Player) || EscapeSettings.IsAllowed)
+            if (!Check(ev.Player) || _useCustomEscape || _wasEscaped || !EscapeSettings.IsEmpty())
                 return;
 
             ev.IsAllowed = false;
@@ -711,30 +702,19 @@ namespace RolePlus.ExternModule.API.Features.CustomRoles
             ev.IsAllowed = false;
         }
 
-        private IEnumerator<float> Escape_Internal()
+        private void ProcessEscapeAction(EscapeSettings settings)
         {
-            if (!EscapeSettings.IsAllowed)
-                yield break;
+            Events.EventArgs.EscapingEventArgs escaping = new(Owner, settings.Role, settings.CustomRole, EscapeScenarioTypeBase.None, default);
+            Events.Handlers.Player.OnEscaping(escaping);
 
-            while (Round.IsStarted)
-            {
-                yield return Timing.WaitForOneFrame;
+            if (!escaping.IsAllowed)
+                return;
 
-                if (Vector3.Distance(Owner.Position, HLAPI.WorldEscapePosition) > HLAPI.WorldEscapeRadius)
-                    continue;
+            escaping.Player.SetRole(escaping.NewRole != RoleType.None ? escaping.NewRole : escaping.NewCustomRole);
+            escaping.Hint.Show(escaping.Player);
 
-                try
-                {
-                    if (EscapeSettings.Role != RoleType.None)
-                        Owner.Role.Set(EscapeSettings.Role, SpawnReason.Escaped);
-                    else
-                        Owner.SetRole(EscapeSettings.CustomRole);
-                }
-                catch
-                {
-                    Log.Error($"Player {Owner.Nickname} tried to escape as {CustomRole.Get(GetType()).Name}, however the role to be set when escaping is not set.");
-                }
-            }
+            EscapedEventArgs escaped = new(escaping.Player);
+            Events.Handlers.Player.OnEscaped(escaped);
         }
     }
 }

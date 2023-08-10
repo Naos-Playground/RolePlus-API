@@ -14,8 +14,6 @@ namespace RolePlus.ExternModule.Events.Handlers
 
     using static RolePlus.ExternModule.API.Engine.Framework.Events.Delegates;
 
-#pragma warning disable SA1649 // File name should match first type name
-
     /// <summary>
     /// Server related events.
     /// </summary>

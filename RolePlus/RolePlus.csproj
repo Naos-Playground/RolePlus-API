@@ -98,18 +98,29 @@
     <ErrorReport>prompt</ErrorReport>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="ExternModule\API\Engine\Core\UnmanagedEnumClass.cs" />
     <Compile Include="ExternModule\API\Engine\Core\Framework\Bootstrap\CommonPatchProcessor.cs" />
     <Compile Include="ExternModule\API\Engine\Core\Framework\Networking\RuleAttribute.cs" />
     <Compile Include="ExternModule\API\Engine\Core\Framework\Networking\TFirewall.cs" />
     <Compile Include="ExternModule\API\Engine\Core\Framework\Networking\TRule.cs" />
     <Compile Include="ExternModule\API\Engine\Core\EnumClass.cs" />
     <Compile Include="ExternModule\API\Engine\Core\Singleton.cs" />
+    <Compile Include="ExternModule\API\Enums\CustomTeamType.cs" />
+    <Compile Include="ExternModule\API\Enums\CustomRoleTypeBase.cs" />
+    <Compile Include="ExternModule\API\Enums\EscapeScenarioType.cs" />
     <Compile Include="ExternModule\API\Enums\RoleType.cs" />
+    <Compile Include="ExternModule\API\Features\Attributes\CustomEscapeAttribute.cs" />
+    <Compile Include="ExternModule\API\Features\CustomEscapes\CustomEscapeGeneric.cs" />
+    <Compile Include="ExternModule\API\Features\CustomEscapes\EscapeBuilder.cs" />
+    <Compile Include="ExternModule\API\Features\CustomEscapes\CustomEscape.cs" />
     <Compile Include="ExternModule\API\Features\CustomEscapes\EscapeSettings.cs" />
     <Compile Include="ExternModule\API\Features\CustomRoles\CustomRoleGeneric.cs" />
     <Compile Include="ExternModule\API\Features\Inventory\InventoryManager.cs" />
     <Compile Include="ExternModule\API\Features\Inventory\IInventorySettings.cs" />
     <Compile Include="ExternModule\API\Features\CustomRoles\RoleSettings.cs" />
+    <Compile Include="ExternModule\Events\EventArgs\EscapedEventArgs.cs" />
+    <Compile Include="ExternModule\Events\EventArgs\EscapingEventArgs.cs" />
+    <Compile Include="ExternModule\Events\Handlers\Player.cs" />
     <Compile Include="GlobalSuppressions.cs" />
     <Compile Include="Internal\Commands\MainCommand.cs" />
     <Compile Include="Internal\Commands\Round\ForceEndCommand.cs" />
@@ -154,8 +165,7 @@
     <Compile Include="ExternModule\API\Features\Configs\Config.cs" />
     <Compile Include="ExternModule\API\Features\Configs\ConfigAttribute.cs" />
     <Compile Include="ExternModule\API\Features\Configs\IConfig.cs" />
-    <Compile Include="ExternModule\API\Features\Controllers\ObjectController.cs" />
-    <Compile Include="ExternModule\API\Features\Controllers\PlayerScriptController.cs" />
+    <Compile Include="ExternModule\API\Features\Controllers\PlayerBehaviour.cs" />
     <Compile Include="ExternModule\API\Features\CustomAbilities\CustomAbility.cs" />
     <Compile Include="ExternModule\API\Features\CustomAbilities\CustomAbilityAttribute.cs" />
     <Compile Include="ExternModule\API\Features\CustomAbilities\Scp079Ability.cs" />
@@ -175,7 +185,7 @@
     <Compile Include="ExternModule\API\Features\RespawnManager.cs" />
     <Compile Include="ExternModule\Events\EventArgs\SendingConsoleCommandEventArgs.cs" />
     <Compile Include="ExternModule\Events\EventArgs\SendingRemoteAdminCommandEventArgs.cs" />
-    <Compile Include="ExternModule\Events\Handlers.cs" />
+    <Compile Include="ExternModule\Events\Handlers\Server.cs" />
     <Compile Include="Internal\Config.cs" />
     <Compile Include="ExternModule\HLAPI.cs" />
     <Compile Include="Internal\Extensions.cs" />

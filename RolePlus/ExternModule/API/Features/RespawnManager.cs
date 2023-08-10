@@ -58,12 +58,12 @@ namespace RolePlus.ExternModule.API.Features
         /// <summary>
         /// Gets a <see cref="IEnumerable{T}"/> of <see cref="CustomRole"/> containing all the custom roles belonging to MTF team.
         /// </summary>
-        public static IEnumerable<CustomRole> MTFCustomRoles => CustomRole.Registered.Where(customRole => customRole.RespawnTeam is SpawnableTeamType.NineTailedFox && !customRole.IsTeamComponent);
+        public static IEnumerable<CustomRole> MTFCustomRoles => CustomRole.Registered.Where(customRole => customRole.RespawnTeam is SpawnableTeamType.NineTailedFox && !customRole.IsTeamUnit);
 
         /// <summary>
         /// Gets a <see cref="IEnumerable{T}"/> of <see cref="CustomRole"/> containing all the custom roles belonging to CHI team.
         /// </summary>
-        public static IEnumerable<CustomRole> CHICustomRoles => CustomRole.Registered.Where(customRole => customRole.RespawnTeam is SpawnableTeamType.ChaosInsurgency && !customRole.IsTeamComponent);
+        public static IEnumerable<CustomRole> CHICustomRoles => CustomRole.Registered.Where(customRole => customRole.RespawnTeam is SpawnableTeamType.ChaosInsurgency && !customRole.IsTeamUnit);
 
         /// <summary>
         /// Gets or sets the current respawn state.

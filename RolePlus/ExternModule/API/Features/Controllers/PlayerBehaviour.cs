@@ -1,5 +1,5 @@
 ﻿// -----------------------------------------------------------------------
-// <copyright file="PlayerScriptController.cs" company="NaoUnderscore">
+// <copyright file="PlayerBehaviour.cs" company="NaoUnderscore">
 // Copyright (c) NaoUnderscore. All rights reserved.
 // Licensed under the CC BY-SA 3.0 license.
 // </copyright>
@@ -8,52 +8,66 @@
 namespace RolePlus.ExternModule.API.Features.Controllers
 {
     using Exiled.API.Features;
+    using Exiled.API.Features.Core;
+
+    using Exiled.Events.EventArgs.Player;
 
     /// <summary>
     /// A controller to be used with any type of playable character component.
     /// </summary>
-    public abstract class PlayerScriptController : ObjectController
+    public abstract class PlayerBehaviour : EActor
     {
         /// <summary>
-        /// Gets or sets the owner of the <see cref="PlayerScriptController"/>.
+        /// Gets or sets the owner of the <see cref="PlayerBehaviour"/>.
         /// </summary>
-        public abstract Player Owner { get; protected set; }
+        protected virtual Player Owner { get; private set; }
 
         /// <inheritdoc/>
-        protected override void Awake()
+        protected override void PostInitialize()
         {
-            SubscribeEvents();
-            Owner = Player.Get(gameObject);
+            base.PostInitialize();
+
+            Owner = Player.Get(Base);
+            if (Owner is null)
+            {
+                Destroy();
+                return;
+            }
         }
 
         /// <inheritdoc/>
-        protected override void Start()
+        protected override void Tick()
         {
-        }
+            base.Tick();
 
-        /// <inheritdoc/>
-        protected override void FixedUpdate()
-        {
             if (Owner is null)
                 Destroy();
         }
 
         /// <inheritdoc/>
-        protected override void PartiallyDestroy()
+        protected override void OnEndPlay()
         {
-            UnsubscribeEvents();
+            base.OnEndPlay();
 
             if (Owner is null)
                 return;
         }
 
-        private void OnDestroy() => PartiallyDestroy();
+        /// <inheritdoc/>
+        protected override void SubscribeEvents()
+        {
+            base.SubscribeEvents();
+
+            Exiled.Events.Handlers.Player.Destroying += OnDestroying;
+        }
 
         /// <inheritdoc/>
-        protected override void SubscribeEvents() => Exiled.Events.Handlers.Player.Destroying += OnDestroying;
+        protected override void UnsubscribeEvents()
+        {
+            base.UnsubscribeEvents();
 
-        /// <inheritdoc/>
-        protected override void UnsubscribeEvents() => Exiled.Events.Handlers.Player.Destroying -= OnDestroying;
+            Exiled.Events.Handlers.Player.Destroying -= OnDestroying;
+        }
 
         /// <inheritdoc cref="Exiled.Events.Handlers.Player.OnDestroying(DestroyingEventArgs)"/>
         protected virtual void OnDestroying(DestroyingEventArgs ev)
@@ -69,6 +83,6 @@ namespace RolePlus.ExternModule.API.Features.Controllers
         /// </summary>
         /// <param name="player">The <see cref="Player"/> to check.</param>
         /// <returns><see langword="true"/> if the <see cref="Player"/> is the <see cref="Owner"/>; otherwise, <see langword="false"/>.</returns>
-        public bool Check(Player player) => player is not null && Owner == player;
+        protected virtual bool Check(Player player) => player is not null && Owner == player;
     }
 }

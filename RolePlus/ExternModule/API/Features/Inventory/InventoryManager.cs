@@ -1,5 +1,5 @@
 ﻿// -----------------------------------------------------------------------
-// <copyright file="CustomRole.cs" company="NaoUnderscore">
+// <copyright file="InventoryManager.cs" company="NaoUnderscore">
 // Copyright (c) NaoUnderscore. All rights reserved.
 // Licensed under the CC BY-SA 3.0 license.
 // </copyright>
@@ -7,23 +7,9 @@
 
 namespace RolePlus.ExternModule.API.Features.CustomRoles
 {
-    using System;
     using System.Collections.Generic;
-    using System.Linq;
-    using System.Reflection;
 
     using Exiled.API.Enums;
-    using Exiled.API.Extensions;
-    using Exiled.API.Features;
-    using Exiled.API.Features.Core;
-    using Exiled.Events.EventArgs.Player;
-    using MEC;
-    using PlayerRoles;
-    using RolePlus.ExternModule.API.Enums;
-    using RolePlus.ExternModule.Events.EventArgs;
-    using RolePlus.Internal;
-
-    using UnityEngine;
 
     /// <summary>
     /// A tool to easily handle human <see cref="CustomRole"/> settings.
