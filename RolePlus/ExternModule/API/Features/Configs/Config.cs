@@ -17,6 +17,7 @@ namespace RolePlus.ExternModule.API.Features.Configs
 
     using Exiled.API.Extensions;
     using Exiled.API.Features;
+    using Exiled.API.Features.Core;
     using Exiled.Loader;
 
     /// <summary>

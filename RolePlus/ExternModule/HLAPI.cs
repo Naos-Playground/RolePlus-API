@@ -78,16 +78,6 @@ namespace RolePlus.ExternModule
         public static IEnumerable<Branch> RegisteredBranches => Branch.Registered;
 
         /// <summary>
-        /// Gets the <see cref="CustomRole.Manager"/>.
-        /// </summary>
-        public static HashSet<Player> RoleManager => CustomRole.Manager;
-
-        /// <summary>
-        /// Gets the <see cref="CustomTeam.Manager"/>.
-        /// </summary>
-        public static HashSet<Player> TeamManager => CustomTeam.Manager;
-
-        /// <summary>
         /// Gets the world's escape position.
         /// </summary>
         public static Vector3 WorldEscapePosition => Escape.WorldPos;
@@ -116,9 +106,6 @@ namespace RolePlus.ExternModule
         /// <inheritdoc cref="RespawnManager.IsWaitingForPlayers"/>
         public static bool IsWaitingForPlayers => RespawnManager.IsWaitingForPlayers;
 
-        /// <inheritdoc cref="RespawnManager.NextKnownTeam"/>
-        public static CustomTeam.RespawnInfo NextKnownTeam => RespawnManager.NextKnownTeam;
-
         /// <inheritdoc cref="RespawnManager.State"/>
         public static RespawnState RespawnState
         {
@@ -145,7 +132,7 @@ namespace RolePlus.ExternModule
         /// </summary>
         /// <param name="player">The specified <see cref="Player"/>.</param>
         /// <returns><see langword="true"/> if the <see cref="Player"/> has a <see cref="CustomRole"/>; otherwise, <see langword="false"/>.</returns>
-        public static bool HasCustomRole(this Player player) => RoleManager.Contains(player);
+        public static bool HasCustomRole(this Player player) => CustomRole.Players.Contains(player);
 
         /// <summary>
         /// Add a <see cref="CustomItem"/> of the specified type to the player's inventory.
@@ -476,6 +463,7 @@ namespace RolePlus.ExternModule
             grenade.SpawnActive(position, owner);
         }
 
+        /// <summary>
         /// Validates the usage of a <see cref="ParentCommand"/> returning all the available commands if the check fails.
         /// </summary>
         /// <param name="parentCommand">The command to check.</param>
@@ -614,7 +602,6 @@ namespace RolePlus.ExternModule
             }
         }
 
-
         /// <summary>
         /// Sets the scale of the specified <see cref="Player"/>.
         /// </summary>
@@ -623,9 +610,8 @@ namespace RolePlus.ExternModule
         public static void SetScale(this Player target, float scale)
         {
             try
-            { 
+            {
                 target.Transform.localScale = Vector3.one * scale;
-
 
                 ObjectDestroyMessage destroyMessage = new()
                 {
@@ -648,7 +634,6 @@ namespace RolePlus.ExternModule
                 Log.Info($"Set Scale error: {e}");
             }
         }
-
 
         /// <summary>
         /// Logs a command.
