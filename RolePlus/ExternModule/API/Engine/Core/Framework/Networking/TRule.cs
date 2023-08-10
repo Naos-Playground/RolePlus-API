@@ -13,8 +13,6 @@ namespace RolePlus.ExternModule.API.Engine.Framework.Network
 
     using MEC;
 
-    using RolePlus.ExternModule.API.Engine.Core;
-
     /// <summary>
     /// Rule is the base class for objects used by for <see cref="TFirewall{T}"/>.
     /// </summary>

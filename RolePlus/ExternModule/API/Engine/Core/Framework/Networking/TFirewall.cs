@@ -14,8 +14,6 @@ namespace RolePlus.ExternModule.API.Engine.Framework.Network
 
     using Exiled.API.Features;
 
-    using RolePlus.ExternModule.API.Engine.Core;
-
     /// <summary>
     /// The class which allows to handle <see cref="TRule{T}"/> objects.
     /// </summary>

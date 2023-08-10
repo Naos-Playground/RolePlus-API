@@ -14,10 +14,11 @@ namespace RolePlus.ExternModule.API.Features.CustomTeams
 
     using Exiled.API.Extensions;
     using Exiled.API.Features;
-
+    using Exiled.API.Features.Items;
+    using PlayerRoles;
     using Respawning;
     using Respawning.NamingRules;
-
+    using RolePlus.ExternModule.API.Enums;
     using RolePlus.ExternModule.API.Features.CustomRoles;
     using RolePlus.ExternModule.Events.EventArgs;
     using RolePlus.Internal;
@@ -82,9 +83,9 @@ namespace RolePlus.ExternModule.API.Features.CustomTeams
         public virtual int Probability { get; }
 
         /// <summary>
-        /// Gets the <see cref="Team"/> which is being spawned from.
+        /// Gets the <see cref="SpawnableTeamType"/> which is being spawned from.
         /// </summary>
-        public virtual Team RespawnTeam { get; }
+        public virtual SpawnableTeamType RespawnTeam { get; }
 
         /// <summary>
         /// Gets the name of the <see cref="CustomTeam"/>.
@@ -472,8 +473,7 @@ namespace RolePlus.ExternModule.API.Features.CustomTeams
                     Log.Debug(
                         $"[CustomTeams] Couldn't register {Name}. " +
                         $"Another custom team has been registered with the same CustomTeamType:" +
-                        $" {Registered.FirstOrDefault(x => x.Id == Id)}",
-                        RolePlus.Singleton.Config.ShowDebugMessages);
+                        $" {Registered.FirstOrDefault(x => x.Id == Id)}");
 
                     return false;
                 }
@@ -483,9 +483,7 @@ namespace RolePlus.ExternModule.API.Features.CustomTeams
                 return true;
             }
 
-            Log.Debug(
-                $"[CustomTeams] Couldn't register {Name}. This custom team has been already registered.",
-                RolePlus.Singleton.Config.ShowDebugMessages);
+            Log.Debug($"[CustomTeams] Couldn't register {Name}. This custom team has been already registered.");
 
             return false;
         }
@@ -498,9 +496,7 @@ namespace RolePlus.ExternModule.API.Features.CustomTeams
         {
             if (!Registered.Contains(this))
             {
-                Log.Debug(
-                    $"[CustomTeams] Couldn't unregister {Name}. This custom team hasn't been registered yet.",
-                    RolePlus.Singleton.Config.ShowDebugMessages);
+                Log.Debug($"[CustomTeams] Couldn't unregister {Name}. This custom team hasn't been registered yet.");
 
                 return false;
             }
@@ -526,29 +522,24 @@ namespace RolePlus.ExternModule.API.Features.CustomTeams
         /// <param name="amount">The amount of units to be spawned.</param>
         public void Spawn(uint amount)
         {
+            if (amount <= 0)
+                return;
+
             if (_tickets > 0)
                 _tickets--;
 
             for (int i = 0; i < amount; i++)
             {
                 Log.Debug(i);
-                Player[] players = Player.Get(Team.RIP).ToArray();
+                Player[] players = Player.Get(Team.Dead).ToArray();
                 if (players.IsEmpty())
                     return;
 
                 Spawn(players[i]);
             }
 
-            if (RespawnTeam is Team.MTF)
-            {
-                SyncUnit mtfUnit = new()
-                {
-                    SpawnableTeam = (byte)SpawnableTeamType.NineTailedFox,
-                    UnitName = UnitName,
-                };
-
-                RespawnManager.Singleton.NamingManager.AllUnitNames.Add(mtfUnit);
-            }
+            if (RespawnTeam is SpawnableTeamType.NineTailedFox && UnitNamingRule.TryGetNamingRule(SpawnableTeamType.NineTailedFox, out UnitNamingRule rule))
+                UnitNameMessageHandler.SendNew(SpawnableTeamType.NineTailedFox, rule);
         }
 
         /// <summary>
@@ -579,16 +570,8 @@ namespace RolePlus.ExternModule.API.Features.CustomTeams
                 count++;
             }
 
-            if (RespawnTeam is Team.MTF)
-            {
-                SyncUnit mtfUnit = new()
-                {
-                    SpawnableTeam = (byte)SpawnableTeamType.NineTailedFox,
-                    UnitName = UnitName,
-                };
-
-                RespawnManager.Singleton.NamingManager.AllUnitNames.Add(mtfUnit);
-            }
+            if (RespawnTeam is SpawnableTeamType.NineTailedFox && UnitNamingRule.TryGetNamingRule(SpawnableTeamType.NineTailedFox, out UnitNamingRule rule))
+                UnitNameMessageHandler.SendNew(SpawnableTeamType.NineTailedFox, rule);
         }
 
         /// <summary>
@@ -621,7 +604,7 @@ namespace RolePlus.ExternModule.API.Features.CustomTeams
                     !kvp.Value.EvaluateProbability())
                     continue;
 
-                IEnumerable<Player> players = Player.Get(Team.RIP);
+                IEnumerable<Player> players = Player.Get(Team.Dead);
                 if (players.IsEmpty())
                     return;
 

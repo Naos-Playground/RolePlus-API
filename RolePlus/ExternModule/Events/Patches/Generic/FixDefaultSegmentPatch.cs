@@ -17,8 +17,6 @@ namespace RolePlus.ExternModule.Events.Patches
 
     using NorthwoodLib.Pools;
 
-    using RolePlus.ExternModule.API.Engine.Framework.Bootstrap;
-
     [HarmonyPatch(typeof(Timing), nameof(Timing.RunCoroutine), new Type[] { typeof(IEnumerator<float>) })]
     [PatchGroup(nameof(RolePlus))]
     internal static class FixDefaultSegmentPatch

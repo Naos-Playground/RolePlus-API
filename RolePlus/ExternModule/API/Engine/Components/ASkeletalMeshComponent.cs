@@ -9,8 +9,6 @@ namespace RolePlus.ExternModule.API.Engine.Components
 {
     using System.Collections.Generic;
     using Exiled.API.Features.Core;
-    using RolePlus.ExternModule.API.Engine.Core;
-    using RolePlus.ExternModule.API.Engine.Framework;
 
     using UnityEngine;
 

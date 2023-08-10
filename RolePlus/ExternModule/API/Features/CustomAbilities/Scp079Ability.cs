@@ -11,7 +11,6 @@ namespace RolePlus.ExternModule.API.Features.CustomAbilities
 
     using Exiled.API.Enums;
     using Exiled.API.Features.Roles;
-    using Exiled.Events.EventArgs;
 
     /// <summary>
     /// The <see cref="Scp079Ability"/> base class.

@@ -105,6 +105,10 @@
     <Compile Include="ExternModule\API\Engine\Core\EnumClass.cs" />
     <Compile Include="ExternModule\API\Engine\Core\Singleton.cs" />
     <Compile Include="ExternModule\API\Enums\RoleType.cs" />
+    <Compile Include="ExternModule\API\Features\CustomRoles\EscapeSettings.cs" />
+    <Compile Include="ExternModule\API\Features\Inventory\InventoryManager.cs" />
+    <Compile Include="ExternModule\API\Features\Inventory\IInventorySettings.cs" />
+    <Compile Include="ExternModule\API\Features\CustomRoles\RoleSettings.cs" />
     <Compile Include="GlobalSuppressions.cs" />
     <Compile Include="Internal\Commands\MainCommand.cs" />
     <Compile Include="Internal\Commands\Round\ForceEndCommand.cs" />
@@ -165,7 +169,6 @@
     <Compile Include="ExternModule\API\Features\CustomTeams\CustomTeam.cs" />
     <Compile Include="ExternModule\API\Features\CustomTeams\CustomTeamAttribute.cs" />
     <Compile Include="ExternModule\API\Features\Gamemodes\CustomGamemode.cs" />
-    <Compile Include="ExternModule\API\Features\InventorySlot.cs" />
     <Compile Include="ExternModule\API\Features\VirtualAssemblies\Branch.cs" />
     <Compile Include="ExternModule\API\Features\VirtualAssemblies\BranchAttribute.cs" />
     <Compile Include="ExternModule\API\Features\RespawnManager.cs" />

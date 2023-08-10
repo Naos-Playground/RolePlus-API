@@ -16,8 +16,6 @@ namespace RolePlus.ExternModule.Events.Patches
 
     using RemoteAdmin;
 
-    using RolePlus.ExternModule.API.Engine.Framework.Bootstrap;
-
     [HarmonyPatch(typeof(CommandProcessor), nameof(CommandProcessor.ProcessQuery), typeof(string), typeof(CommandSender))]
     [PatchGroup(nameof(RolePlus))]
     internal static class SendingRemoteAdminCommand
