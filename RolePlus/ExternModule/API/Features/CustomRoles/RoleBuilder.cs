@@ -78,64 +78,29 @@ namespace RolePlus.ExternModule.API.Features.CustomRoles
         protected virtual RoleSettings Settings { get; set; }
 
         /// <summary>
+        /// Gets the <see cref="InventoryManager"/>.
+        /// </summary>
+        protected virtual InventoryManager Inventory { get; }
+
+        /// <summary>
+        /// Gets a <see cref="IEnumerable{T}"/> of <see cref="EffectType"/> which should be given to the player.
+        /// </summary>
+        protected virtual IEnumerable<EffectType> GivenEffects { get; set; }
+
+        /// <summary>
         /// Gets a value indicating whether <see cref="FakeAppearance"/> should be used.
         /// </summary>
         protected virtual bool UseFakeAppearance => false;
 
         /// <summary>
-        /// Gets a value indicating whether the player can look at Scp173.
-        /// </summary>
-        protected virtual bool DoesLookingAffectScp173 => true;
-
-        /// <summary>
-        /// Gets a value indicating whether the player can trigger Scp096.
-        /// </summary>
-        protected virtual bool DoesLookingAffectScp096 => true;
-
-        /// <summary>
-        /// Gets the player's rank name.
-        /// </summary>
-        protected virtual string RankName { get; }
-
-        /// <summary>
-        /// Gets the player's rank color.
-        /// </summary>
-        protected virtual string RankColor { get; }
-
-        /// <summary>
-        /// Gets the player's custom info.
-        /// </summary>
-        protected virtual string CustomInfo => string.Empty;
-
-        /// <summary>
-        /// Gets a value indicating whether the player's <see cref="PlayerInfoArea"/> should be hidden.
-        /// </summary>
-        protected virtual bool HideInfoArea => false;
-
-        /// <summary>
-        /// Gets a value indicating whether the existing spawnpoint should be used.
+        /// Gets a value indicating whether an existing spawnpoint should be used.
         /// </summary>
         protected virtual bool UseCustomSpawnpoint => true;
 
         /// <summary>
-        /// Gets a value indicating whether the player's role should use the specified <see cref="Role"/> only.
+        /// Gets or sets a value indicating whether the effects should always be active.
         /// </summary>
-        protected virtual bool UseDefaultRoleOnly => true;
-
-        /// <summary>
-        /// Gets a value indicating whether the effects should be kept active.
-        /// </summary>
-        protected virtual bool KeepEffectsActive { get; }
-
-        /// <summary>
-        /// Gets a <see cref="IEnumerable{T}"/> of <see cref="EffectType"/> which should be given to the player.
-        /// </summary>
-        protected virtual IEnumerable<EffectType> GivenEffects { get; }
-
-        /// <summary>
-        /// Gets the <see cref="InventoryManager"/>.
-        /// </summary>
-        protected virtual InventoryManager Inventory { get; }
+        protected virtual bool KeepEffectsAlive { get; set; }
 
         /// <summary>
         /// Gets or sets a value indicating whether the <see cref="Owner"/> has the night vision enabled.
@@ -155,45 +120,6 @@ namespace RolePlus.ExternModule.API.Features.CustomRoles
         }
 
         /// <summary>
-        /// Gets or sets a <see cref="DoorType"/>[] containing all the bypassable doors.
-        /// </summary>
-        protected virtual DoorType[] BypassableDoors { get; set; } = new DoorType[] { };
-
-        /// <summary>
-        /// Gets a value indicating whether the C.A.S.S.I.E death announcement can be played when the <see cref="Owner"/> dies.
-        /// </summary>
-        protected virtual bool IsDeathAnnouncementEnabled => false;
-
-        /// <summary>
-        /// Gets the C.A.S.S.I.E announcement to be played when the <see cref="Owner"/> dies from an unhandled or unknown termination cause.
-        /// </summary>
-        protected virtual string UnknownTerminationCauseAnnouncement => string.Empty;
-
-        /// <summary>
-        /// Gets or sets a <see cref="Dictionary{TKey, TValue}"/> containing all the C.A.S.S.I.E announcements
-        /// to be played when the <see cref="Owner"/> is killed by a player with the corresponding <see cref="RoleType"/>.
-        /// </summary>
-        protected virtual Dictionary<RoleType, string> KilledByRoleAnnouncements { get; set; } = new();
-
-        /// <summary>
-        /// Gets or sets a <see cref="Dictionary{TKey, TValue}"/> containing all the C.A.S.S.I.E announcements
-        /// to be played when the <see cref="Owner"/> is killed by a player with the corresponding <see cref="object"/>.
-        /// </summary>
-        protected virtual Dictionary<object, string> KilledByCustomRoleAnnouncements { get; set; } = new();
-
-        /// <summary>
-        /// Gets or sets a <see cref="Dictionary{TKey, TValue}"/> containing all the C.A.S.S.I.E announcements
-        /// to be played when the <see cref="Owner"/> is killed by a player belonging to the corresponding <see cref="Team"/>.
-        /// </summary>
-        protected virtual Dictionary<Team, string> KilledByTeamAnnouncements { get; set; } = new();
-
-        /// <summary>
-        /// Gets or sets a <see cref="Dictionary{TKey, TValue}"/> containing all the C.A.S.S.I.E announcements
-        /// to be played when the <see cref="Owner"/> is killed by a player belonging to the corresponding <see cref="object"/>.
-        /// </summary>
-        protected virtual Dictionary<object, string> KilledByCustomTeamAnnouncements { get; set; } = new();
-
-        /// <summary>
         /// Gets or sets the <see cref="RoleType"/> of this <see cref="RoleBuilder"/> component.
         /// </summary>
         protected RoleType Role { get; set; }
@@ -204,14 +130,14 @@ namespace RolePlus.ExternModule.API.Features.CustomRoles
         protected CharacterMeshComponent ThirdPersonMeshComponent { get; set; }
 
         /// <summary>
-        /// Gets the current speed of the <see cref="Owner"/>.
-        /// </summary>
-        protected float CurrentSpeed { get; private set; }
-
-        /// <summary>
         /// Gets the corresponding <see cref="CustomRoles.CustomRole"/>.
         /// </summary>
         protected CustomRole CustomRole { get; private set; }
+
+        /// <summary>
+        /// Gets the current speed of the <see cref="Owner"/>.
+        /// </summary>
+        protected float CurrentSpeed { get; private set; }
 
         /// <summary>
         /// Gets the role's configs.
@@ -328,19 +254,19 @@ namespace RolePlus.ExternModule.API.Features.CustomRoles
             if (Owner.Role != Role)
                 Owner.SetRole(Role);
 
-            if (!DoesLookingAffectScp173)
+            if (!Settings.DoesLookingAffectScp173)
                 Scp173Role.TurnedPlayers.Add(Owner);
 
-            if (!DoesLookingAffectScp096)
+            if (!Settings.DoesLookingAffectScp096)
                 Scp096Role.TurnedPlayers.Add(Owner);
 
-            if (!string.IsNullOrEmpty(RankName) || !string.IsNullOrEmpty(RankColor))
-                Features.Badge.Load(Owner, RankName, RankColor);
+            if (!string.IsNullOrEmpty(Settings.RankName) || !string.IsNullOrEmpty(Settings.RankColor))
+                Features.Badge.Load(Owner, Settings.RankName, Settings.RankColor);
 
-            if (CustomInfo != string.Empty)
-                Owner.CustomInfo += CustomInfo;
+            if (Settings.CustomInfo != string.Empty)
+                Owner.CustomInfo += Settings.CustomInfo;
 
-            if (HideInfoArea)
+            if (Settings.HideInfoArea)
             {
                 Owner.InfoArea &= ~PlayerInfoArea.UnitName;
                 Owner.InfoArea &= ~PlayerInfoArea.Role;
@@ -394,7 +320,7 @@ namespace RolePlus.ExternModule.API.Features.CustomRoles
         /// <inheritdoc/>
         protected override void Tick()
         {
-            if (Owner is null || (UseDefaultRoleOnly && (Owner.Role != Role)) ||
+            if (Owner is null || (Settings.UseDefaultRoleOnly && (Owner.Role != Role)) ||
                 (!Settings.AllowedRoles.IsEmpty() && !Settings.AllowedRoles.Contains(RoleType.Cast(Owner.Role))) ||
                 !CustomRole.Manager.Contains(Owner))
             {
@@ -402,7 +328,7 @@ namespace RolePlus.ExternModule.API.Features.CustomRoles
                 return;
             }
 
-            if (KeepEffectsActive)
+            if (KeepEffectsAlive)
             {
                 foreach (EffectType effect in GivenEffects)
                 {
@@ -430,19 +356,19 @@ namespace RolePlus.ExternModule.API.Features.CustomRoles
 
             DestroyThirdPersonMesh();
 
-            if (!DoesLookingAffectScp173)
+            if (!Settings.DoesLookingAffectScp173)
                 Scp173Role.TurnedPlayers.Remove(Owner);
 
-            if (!DoesLookingAffectScp096)
+            if (!Settings.DoesLookingAffectScp096)
                 Scp096Role.TurnedPlayers.Remove(Owner);
 
-            if (!string.IsNullOrEmpty(RankName) || !string.IsNullOrEmpty(RankColor))
+            if (!string.IsNullOrEmpty(Settings.RankName) || !string.IsNullOrEmpty(Settings.RankColor))
                 Features.Badge.Unload(Owner);
 
-            if (!string.IsNullOrEmpty(CustomInfo))
+            if (!string.IsNullOrEmpty(Settings.CustomInfo))
                 Owner.CustomInfo = null;
 
-            if (HideInfoArea)
+            if (Settings.HideInfoArea)
             {
                 Owner.InfoArea |= PlayerInfoArea.UnitName;
                 Owner.InfoArea |= PlayerInfoArea.Role;
@@ -644,7 +570,7 @@ namespace RolePlus.ExternModule.API.Features.CustomRoles
         /// <see cref="Exiled.Events.Handlers.Player.OnDied(DiedEventArgs)"/>
         private protected virtual void AnnounceOwnerDeath(DiedEventArgs ev)
         {
-            if (!Check(ev.Player) || Check(ev.Attacker) || Check(Server.Host) || !IsDeathAnnouncementEnabled)
+            if (!Check(ev.Player) || Check(ev.Attacker) || Check(Server.Host) || !Settings.IsDeathAnnouncementEnabled)
                 return;
 
             string announcement = string.Empty;
@@ -654,21 +580,21 @@ namespace RolePlus.ExternModule.API.Features.CustomRoles
             if (CustomRole.TryGet(ev.Attacker, out CustomRole customRole))
             {
                 if (CustomTeam.TryGet<CustomTeam>(customRole, out CustomTeam customTeam) &&
-                    KilledByCustomTeamAnnouncements.TryGetValue(customTeam.Id, out announcement))
+                    Settings.KilledByCustomTeamAnnouncements.TryGetValue(customTeam.Id, out announcement))
                     goto Announce;
-                else if (KilledByCustomRoleAnnouncements.TryGetValue(customRole.Id, out announcement))
+                else if (Settings.KilledByCustomRoleAnnouncements.TryGetValue(customRole.Id, out announcement))
                     goto Announce;
             }
             else
             {
-                if (KilledByRoleAnnouncements.TryGetValue(RoleType.Cast(ev.Attacker.Role), out announcement))
+                if (Settings.KilledByRoleAnnouncements.TryGetValue(RoleType.Cast(ev.Attacker.Role), out announcement))
                     goto Announce;
             }
 
             return;
         Announce:
             if (string.IsNullOrEmpty(announcement))
-                announcement = UnknownTerminationCauseAnnouncement;
+                announcement = Settings.UnknownTerminationCauseAnnouncement;
 
             if (!string.IsNullOrEmpty(announcement))
                 Cassie.Message(announcement);
@@ -767,7 +693,7 @@ namespace RolePlus.ExternModule.API.Features.CustomRoles
         /// <see cref="Exiled.Events.Handlers.Player.OnInteractingDoor(InteractingDoorEventArgs)"/>
         private protected virtual void InteractingDoorBehavior(InteractingDoorEventArgs ev)
         {
-            if (!Check(ev.Player) || !BypassableDoors.Contains(ev.Door.Type))
+            if (!Check(ev.Player) || !Settings.BypassableDoors.Contains(ev.Door.Type))
                 return;
 
             ev.IsAllowed = false;

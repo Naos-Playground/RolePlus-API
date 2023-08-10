@@ -11,6 +11,8 @@ namespace RolePlus.ExternModule.API.Features.CustomRoles
 
     using Exiled.API.Enums;
     using Exiled.API.Features;
+    using Exiled.API.Features.Roles;
+    using PlayerRoles;
     using RolePlus.ExternModule.API.Enums;
 
     /// <summary>
@@ -40,7 +42,19 @@ namespace RolePlus.ExternModule.API.Features.CustomRoles
             CanSelectItems = false,
             CanDropItems = false,
             CanPickupItems = false,
+            DoesLookingAffectScp096 = false,
+            DoesLookingAffectScp173 = false,
         };
+
+        /// <summary>
+        /// Gets or sets a value indicating whether the player's role is dynamic.
+        /// </summary>
+        public bool IsRoleDynamic { get; set; } = false;
+
+        /// <summary>
+        /// Gets a value indicating whether the player's role should use the specified <see cref="Role"/> only.
+        /// </summary>
+        public bool UseDefaultRoleOnly { get; set; } = true;
 
         /// <summary>
         /// Gets or sets the player's scale. <see langword=""/>
@@ -75,27 +89,27 @@ namespace RolePlus.ExternModule.API.Features.CustomRoles
         /// <summary>
         /// Gets or sets the role's spawn points.
         /// </summary>
-        public List<RoomType> Spawnpoints { get; set; }
+        public RoomType[] Spawnpoints { get; set; } = new RoomType[] { };
 
         /// <summary>
         /// Gets a <see cref="RoleType"/>[] containing all the allowed roles.
         /// </summary>
-        public RoleType[] AllowedRoles { get; } = new RoleType[] { };
+        public RoleType[] AllowedRoles { get; set; } = new RoleType[] { };
 
         /// <summary>
         /// Gets a <see cref="DamageType"/>[] containing all the ignored damage types.
         /// </summary>
-        public DamageType[] IgnoredDamageTypes { get; } = new DamageType[] { };
+        public DamageType[] IgnoredDamageTypes { get; set; } = new DamageType[] { };
 
         /// <summary>
         /// Gets a <see cref="DamageType"/>[] containing all the allowed damage types.
         /// </summary>
-        public DamageType[] AllowedDamageTypes { get; } = new DamageType[] { };
+        public DamageType[] AllowedDamageTypes { get; set; } = new DamageType[] { };
 
         /// <summary>
-        /// Gets or sets a value indicating whether the player's role is dynamic.
+        /// Gets or sets a <see cref="DoorType"/>[] containing all doors that can be bypassed.
         /// </summary>
-        public bool IsRoleDynamic { get; set; } = false;
+        public DoorType[] BypassableDoors { get; set; } = new DoorType[] { };
 
         /// <summary>
         /// Gets or sets a value indicating whether the player can hurt SCPs.
@@ -168,8 +182,72 @@ namespace RolePlus.ExternModule.API.Features.CustomRoles
         public bool CanDropItems { get; set; } = true;
 
         /// <summary>
-        /// Gets or sets a value indicating whether the player can select items from its inventory.
+        /// Gets or sets a value indicating whether the player can select items from their inventory.
         /// </summary>
         public bool CanSelectItems { get; set; } = true;
+
+        /// <summary>
+        /// Gets a value indicating whether the player can look at Scp173.
+        /// </summary>
+        public bool DoesLookingAffectScp173 { get; set; } = true;
+
+        /// <summary>
+        /// Gets a value indicating whether the player can trigger Scp096.
+        /// </summary>
+        public bool DoesLookingAffectScp096 { get; set; } = true;
+
+        /// <summary>
+        /// Gets the player's rank name.
+        /// </summary>
+        public string RankName { get; set; } = string.Empty;
+
+        /// <summary>
+        /// Gets the player's rank color.
+        /// </summary>
+        public string RankColor { get; set; } = string.Empty;
+
+        /// <summary>
+        /// Gets the player's custom info.
+        /// </summary>
+        public string CustomInfo { get; set; } = string.Empty;
+
+        /// <summary>
+        /// Gets a value indicating whether the player's <see cref="PlayerInfoArea"/> should be hidden.
+        /// </summary>
+        public bool HideInfoArea { get; set; } = false;
+
+        /// <summary>
+        /// Gets a value indicating whether the C.A.S.S.I.E death announcement can be played when the player dies.
+        /// </summary>
+        public bool IsDeathAnnouncementEnabled { get; set; } = false;
+
+        /// <summary>
+        /// Gets the C.A.S.S.I.E announcement to be played when the player dies from an unhandled or unknown termination cause.
+        /// </summary>
+        public string UnknownTerminationCauseAnnouncement { get; set; } = string.Empty;
+
+        /// <summary>
+        /// Gets or sets a <see cref="Dictionary{TKey, TValue}"/> containing all the C.A.S.S.I.E announcements
+        /// to be played when the player gets killed by a player with the corresponding <see cref="RoleType"/>.
+        /// </summary>
+        public Dictionary<RoleType, string> KilledByRoleAnnouncements { get; set; } = new();
+
+        /// <summary>
+        /// Gets or sets a <see cref="Dictionary{TKey, TValue}"/> containing all the C.A.S.S.I.E announcements
+        /// to be played when the player gets killed by a player with the corresponding <see cref="object"/>.
+        /// </summary>
+        public Dictionary<object, string> KilledByCustomRoleAnnouncements { get; set; } = new();
+
+        /// <summary>
+        /// Gets or sets a <see cref="Dictionary{TKey, TValue}"/> containing all the C.A.S.S.I.E announcements
+        /// to be played when the player gets killed by a player belonging to the corresponding <see cref="Team"/>.
+        /// </summary>
+        public Dictionary<Team, string> KilledByTeamAnnouncements { get; set; } = new();
+
+        /// <summary>
+        /// Gets or sets a <see cref="Dictionary{TKey, TValue}"/> containing all the C.A.S.S.I.E announcements
+        /// to be played when the player gets killed by a player belonging to the corresponding <see cref="object"/>.
+        /// </summary>
+        public Dictionary<object, string> KilledByCustomTeamAnnouncements { get; set; } = new();
     }
 }
