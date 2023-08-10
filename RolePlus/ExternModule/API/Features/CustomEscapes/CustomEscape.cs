@@ -46,7 +46,6 @@ namespace RolePlus.ExternModule.API.Features.CustomEscapes
         /// </summary>
         public static IReadOnlyDictionary<Player, CustomEscape> Manager => _playerValues;
 
-
         /// <summary>
         /// Gets the <see cref="CustomEscape"/>'s name.
         /// </summary>
