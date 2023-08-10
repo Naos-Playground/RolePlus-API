@@ -112,6 +112,7 @@ namespace RolePlus.ExternModule.API.Features.CustomRoles
             {
                 _nightVisionEnabled = value;
 
+                // Requires testing
                 if (_nightVisionEnabled)
                 {
                     foreach (Room room in Room.List)
