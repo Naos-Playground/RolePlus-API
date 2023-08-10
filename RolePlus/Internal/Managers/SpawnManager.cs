@@ -91,7 +91,7 @@ namespace RolePlus.Internal
                 foreach (Player player in Player.List)
                 {
                     if (!CustomTeam.TryGet(player, out CustomTeam customTeam) ||
-                        !customTeam.LeadingTeam.Contains(team))
+                        !customTeam.LeadingTeams.Contains(team))
                         continue;
 
                     return true;

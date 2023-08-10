@@ -7,9 +7,10 @@
 
 using Exiled.API.Features.Roles;
 using RolePlus.ExternModule.API.Enums;
+using RolePlus.ExternModule.API.Features.CustomRoles;
 using System.Diagnostics.SymbolStore;
 
-namespace RolePlus.ExternModule.API.Features.CustomRoles
+namespace RolePlus.ExternModule.API.Features.CustomEscapes
 {
     /// <summary>
     /// A struct to easily manage escaping behavior.

@@ -26,6 +26,7 @@ namespace RolePlus.ExternModule.API.Features.CustomRoles
 
     using RolePlus.ExternModule.API.Engine.Framework.Structs;
     using RolePlus.ExternModule.API.Enums;
+    using RolePlus.ExternModule.API.Features.CustomEscapes;
     using RolePlus.ExternModule.API.Features.CustomSkins;
     using RolePlus.ExternModule.API.Features.CustomTeams;
 
@@ -37,7 +38,6 @@ namespace RolePlus.ExternModule.API.Features.CustomRoles
     public abstract class RoleBuilder : EActor
     {
         private CoroutineHandle _escapeHandle;
-        private CoroutineHandle _nightVisionHandle;
         private Vector3 _lastPosition = Vector3.zero;
         private RoleType _fakeAppearance;
         private bool _isHuman;
@@ -68,7 +68,7 @@ namespace RolePlus.ExternModule.API.Features.CustomRoles
         }
 
         /// <summary>
-        /// Gets or sets the <see cref="CustomRoles.EscapeSettings"/>.
+        /// Gets or sets the <see cref="CustomEscapes.EscapeSettings"/>.
         /// </summary>
         protected virtual EscapeSettings EscapeSettings { get; set; }
 
@@ -360,7 +360,6 @@ namespace RolePlus.ExternModule.API.Features.CustomRoles
             base.OnEndPlay();
 
             Timing.KillCoroutines(_escapeHandle);
-            Timing.KillCoroutines(_nightVisionHandle);
 
             if (Owner is null)
                 return;

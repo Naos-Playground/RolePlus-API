@@ -20,20 +20,13 @@ namespace RolePlus.ExternModule.API.Features.CustomRoles
     using MEC;
     using PlayerRoles;
     using RolePlus.ExternModule.API.Enums;
+    using RolePlus.ExternModule.API.Features.Attributes;
+    using RolePlus.ExternModule.API.Features.CustomEscapes;
+    using RolePlus.ExternModule.API.Features.CustomTeams;
     using RolePlus.ExternModule.Events.EventArgs;
     using RolePlus.Internal;
 
     using UnityEngine;
-
-#pragma warning disable SA1402 // File may only contain a single type
-
-    /// <inheritdoc/>
-    public abstract class CustomRole<T> : CustomRole
-        where T : RoleBuilder
-    {
-        /// <inheritdoc/>
-        public override Type RoleBuilderComponent => typeof(T);
-    }
 
     /// <summary>
     /// A tool to easily manage custom roles.
@@ -46,19 +39,19 @@ namespace RolePlus.ExternModule.API.Features.CustomRoles
         internal static readonly Dictionary<Player, CustomRole> PlayerValues_Internal = new();
 
         /// <summary>
-        /// Gets the players and their respective <see cref="CustomRole"/>.
-        /// </summary>
-        internal static IReadOnlyDictionary<Player, CustomRole> PlayerValues => PlayerValues_Internal;
-
-        /// <summary>
         /// Gets a <see cref="List{T}"/> which contains all registered <see cref="CustomRole"/>'s.
         /// </summary>
         public static List<CustomRole> Registered { get; private set; } = new();
 
         /// <summary>
-        /// Gets the role manager which contains all the players with a <see cref="CustomRole"/>.
+        /// Gets all players and their respective <see cref="CustomRole"/>.
         /// </summary>
-        public static HashSet<Player> Manager => PlayerValues.Keys.ToHashSet();
+        public static IReadOnlyDictionary<Player, CustomRole> Manager => PlayerValues_Internal;
+
+        /// <summary>
+        /// Gets all players belonging to a <see cref="CustomRole"/>.
+        /// </summary>
+        public static IEnumerable<Player> Players => Manager.Keys.ToHashSet();
 
         /// <summary>
         /// Gets the <see cref="CustomRole"/>'s <see cref="Type"/>.
@@ -126,7 +119,7 @@ namespace RolePlus.ExternModule.API.Features.CustomRoles
         public virtual bool ShouldKeepPosition { get; }
 
         /// <summary>
-        /// Gets or sets the <see cref="CustomRoles.EscapeSettings"/>.
+        /// Gets or sets the <see cref="CustomEscapes.EscapeSettings"/>.
         /// </summary>
         public virtual EscapeSettings EscapeSettings { get; } = EscapeSettings.Default;
 
@@ -143,7 +136,7 @@ namespace RolePlus.ExternModule.API.Features.CustomRoles
         /// <summary>
         /// Gets a <see cref="IEnumerable{T}"/> of <see cref="Player"/> containing all players owning this <see cref="CustomRole"/>.
         /// </summary>
-        public IEnumerable<Player> Players => Player.Get(x => TryGet(x, out CustomRole customRole) && customRole.Id == Id);
+        public IEnumerable<Player> Owners => Player.Get(x => TryGet(x, out CustomRole customRole) && customRole.Id == Id);
 
         /// <summary>
         /// Compares two operands: <see cref="CustomRole"/> and <see cref="object"/>.
@@ -436,7 +429,7 @@ namespace RolePlus.ExternModule.API.Features.CustomRoles
         {
             CustomRole customRole = default;
 
-            foreach (KeyValuePair<Player, CustomRole> kvp in PlayerValues)
+            foreach (KeyValuePair<Player, CustomRole> kvp in Manager)
             {
                 if (kvp.Key != player)
                     continue;
@@ -605,29 +598,29 @@ namespace RolePlus.ExternModule.API.Features.CustomRoles
                 !ev.Player.GameObject.TryGetComponent(out RoleBuilder builder))
                 return;
 
-            InventoryManager inventoryInfo = (InventoryManager)builder.GetType().BaseType
-                .GetProperty("InventoryInfo", BindingFlags.NonPublic | BindingFlags.Instance)
-                .GetValue(builder);
-
             ev.Items.Clear();
             ev.Ammo.Clear();
 
-            if (inventoryInfo.Items is not null)
-                ev.Items.AddRange(inventoryInfo.Items);
+            InventoryManager inventory = (InventoryManager)builder.GetType().BaseType
+                .GetProperty("Inventory", BindingFlags.NonPublic | BindingFlags.Instance)
+                .GetValue(builder);
 
-            if (inventoryInfo.CustomItems is not null)
-                ev.Player.AddItem(inventoryInfo.CustomItems);
+            if (inventory.Items is not null)
+                ev.Items.AddRange(inventory.Items);
 
-            if (inventoryInfo.AmmoBox is not null)
+            if (inventory.CustomItems is not null)
+                ev.Player.AddItem(inventory.CustomItems);
+
+            if (inventory.AmmoBox is not null)
             {
-                foreach (KeyValuePair<AmmoType, ushort> kvp in inventoryInfo.AmmoBox)
+                foreach (KeyValuePair<AmmoType, ushort> kvp in inventory.AmmoBox)
                     ev.Ammo?.Add(kvp.Key.GetItemType(), kvp.Value);
             }
 
-            if (RoleBuilder.LitePlayers.Contains(ev.Player))
+            if (RoleBuilder.StaticPlayers.Contains(ev.Player))
             {
                 ev.SpawnFlags |= RoleSpawnFlags.AssignInventory;
-                RoleBuilder.LitePlayers.Remove(ev.Player);
+                RoleBuilder.StaticPlayers.Remove(ev.Player);
             }
         }
 
@@ -636,9 +629,9 @@ namespace RolePlus.ExternModule.API.Features.CustomRoles
             RespawnManager.RespawnQueue.Add(player);
 
             if (shouldKeepPosition)
-                RoleBuilder.LitePlayers.Add(player);
+                RoleBuilder.StaticPlayers.Add(player);
 
-            player.GameObject.AddComponent(RoleBuilderComponent);
+            player.AddComponent(RoleBuilderComponent, $"ECS-{Name}");
         }
     }
 }
