@@ -54,7 +54,7 @@ namespace RolePlus.ExternModule.API.Features.CustomRoles
         /// <summary>
         /// Gets the <see cref="CustomRole"/>'s <see cref="Type"/>.
         /// </summary>
-        public virtual Type RoleBuilderComponent { get; }
+        public abstract Type RoleBuilderComponent { get; }
 
         /// <summary>
         /// Gets the <see cref="CustomEscape"/>'s <see cref="Type"/>.
@@ -72,12 +72,12 @@ namespace RolePlus.ExternModule.API.Features.CustomRoles
         public virtual uint Id { get; }
 
         /// <summary>
-        /// Gets or sets the <see cref="CustomEscapes.EscapeSettings"/>.
+        /// Gets the <see cref="CustomEscapes.EscapeSettings"/>.
         /// </summary>
         public virtual List<EscapeSettings> EscapeSettings { get; } = new();
 
         /// <summary>
-        /// Gets or sets the <see cref="RoleSettings"/>.
+        /// Gets the <see cref="RoleSettings"/>.
         /// </summary>
         public virtual RoleSettings Settings { get; } = RoleSettings.Default;
 
@@ -99,7 +99,7 @@ namespace RolePlus.ExternModule.API.Features.CustomRoles
         /// <summary>
         /// Gets the relative spawn probability of the <see cref="CustomRole"/>.
         /// </summary>
-        public virtual int Probability { get; }
+        public virtual int SpawnProbability { get; }
 
         /// <summary>
         /// Gets a value representing the maximum instances of the <see cref="CustomRole"/> that can be automatically assigned.
@@ -212,7 +212,7 @@ namespace RolePlus.ExternModule.API.Features.CustomRoles
         public static bool operator !=(CustomRole left, CustomRole right) => left.Id != right.Id;
 
         /// <summary>
-        /// Gets a <see cref="CustomRole"/> given the specified <see cref="Id"/>.
+        /// Gets a <see cref="CustomRole"/> given the specified <paramref name="customRoleType"/>.
         /// </summary>
         /// <param name="customRoleType">The specified <see cref="Id"/>.</param>
         /// <returns>The <see cref="CustomRole"/> matching the search or <see langword="null"/> if not registered.</returns>
@@ -511,7 +511,7 @@ namespace RolePlus.ExternModule.API.Features.CustomRoles
         /// <summary>
         /// Returns a the 32-bit signed hash code of the current object instance.
         /// </summary>
-        /// <returns>The 32-bit signed hash code of the current object instance</returns>
+        /// <returns>The 32-bit signed hash code of the current object instance.</returns>
         public override int GetHashCode() => base.GetHashCode();
 
         /// <summary>
@@ -526,7 +526,7 @@ namespace RolePlus.ExternModule.API.Features.CustomRoles
 
             RespawnManager.RespawnQueue.Add(player);
 
-            player.GameObject.AddComponent(RoleBuilderComponent);
+            player.AddComponent(RoleBuilderComponent);
             PlayersValue.Remove(player);
             PlayersValue.Add(player, this);
 
@@ -557,7 +557,7 @@ namespace RolePlus.ExternModule.API.Features.CustomRoles
         /// Gets a value indicating whether a player can be spawned as a specific <see cref="CustomRole"/> given its probability.
         /// </summary>
         /// <returns><see langword="true"/> if the probability condition was satified; otherwise, <see langword="false"/>.</returns>
-        public bool CanSpawnByProbability() => UnityEngine.Random.Range(0, 101) <= Probability;
+        public bool CanSpawnByProbability() => UnityEngine.Random.Range(0, 101) <= SpawnProbability;
 
         private void HandleSpawnOnEvents(InvokingHandlerEventArgs ev)
         {

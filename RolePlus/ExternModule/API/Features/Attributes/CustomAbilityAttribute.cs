@@ -5,9 +5,11 @@
 // </copyright>
 // -----------------------------------------------------------------------
 
-namespace RolePlus.ExternModule.API.Features.CustomAbilities
+namespace RolePlus.ExternModule.API.Features
 {
     using System;
+
+    using RolePlus.ExternModule.API.Features.CustomAbilities;
 
     /// <summary>
     /// This attribute determines whether the class which is being applied to should be treated as <see cref="CustomAbility"/>.

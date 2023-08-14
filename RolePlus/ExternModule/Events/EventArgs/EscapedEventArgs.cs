@@ -1,5 +1,5 @@
 ﻿// -----------------------------------------------------------------------
-// <copyright file="InvokingHandlerEventArgs.cs" company="NaoUnderscore">
+// <copyright file="EscapedEventArgs.cs" company="NaoUnderscore">
 // Copyright (c) NaoUnderscore. All rights reserved.
 // Licensed under the CC BY-SA 3.0 license.
 // </copyright>

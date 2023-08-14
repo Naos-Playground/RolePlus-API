@@ -1,5 +1,5 @@
 ﻿// -----------------------------------------------------------------------
-// <copyright file="ScreenLocation.cs" company="NaoUnderscore">
+// <copyright file="RoleType.cs" company="NaoUnderscore">
 // Copyright (c) NaoUnderscore. All rights reserved.
 // Licensed under the CC BY-SA 3.0 license.
 // </copyright>

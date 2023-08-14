@@ -1,5 +1,5 @@
 ﻿// -----------------------------------------------------------------------
-// <copyright file="GlobalPatchProcessor.cs" company="NaoUnderscore">
+// <copyright file="CommonPatchProcessor.cs" company="NaoUnderscore">
 // Copyright (c) NaoUnderscore. All rights reserved.
 // Licensed under the CC BY-SA 3.0 license.
 // </copyright>

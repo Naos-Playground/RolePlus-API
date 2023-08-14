@@ -13,19 +13,20 @@ namespace RolePlus.ExternModule.API.Features.CustomAbilities
     using System.Reflection;
 
     using Exiled.API.Features;
+    using Exiled.API.Features.Core;
 
-    using MEC;
-    using RolePlus.Internal;
+    using HarmonyLib;
+
+    using RolePlus.ExternModule.API.Features.CustomRoles;
 
     /// <summary>
     /// CustomAbility is the base class used to create user-defined types treated as abilities applicable to a <see cref="Player"/>.
     /// </summary>
-    public abstract class CustomAbility : EActor
+    public abstract class CustomAbility : TypeCastObject<CustomAbility>
     {
-        private CoroutineHandle _abilityCooldownHandle;
-        private byte _level;
+        private static readonly List<CustomAbility> _registered = new();
 
-        internal static readonly Dictionary<Player, CustomAbility> _playersValue = new();
+        internal static readonly Dictionary<Player, HashSet<CustomAbility>> PlayersValue = new();
 
         /// <summary>
         /// Initializes a new instance of the <see cref="CustomAbility"/> class.
@@ -37,43 +38,27 @@ namespace RolePlus.ExternModule.API.Features.CustomAbilities
         /// <summary>
         /// Gets a <see cref="IReadOnlyList{T}"/> of <see cref="CustomAbility"/> containing all the registered custom abilites.
         /// </summary>
-        public static IReadOnlyList<CustomAbility> Registered
-        {
-            get
-            {
-                HashSet<CustomAbility> customAbilities = new();
-                foreach (CustomAbility ability in FindActiveObjectsOfType<CustomAbility>())
-                    customAbilities.Add(ability);
-
-                return customAbilities.ToList();
-            }
-        }
+        public static IEnumerable<CustomAbility> Registered => _registered;
 
         /// <summary>
-        /// Gets the ability manager which contains all the players with a <see cref="CustomAbility"/>.
+        /// Gets all players and all their respective <see cref="CustomAbility"/>'s.
         /// </summary>
-        public static HashSet<Player> Manager => _playersValue.Keys.ToHashSet();
+        public static IReadOnlyDictionary<Player, HashSet<CustomAbility>> Manager => PlayersValue;
 
         /// <summary>
-        /// Gets the players and their respective <see cref="CustomAbility"/>.
+        /// Gets all players belonging to a <see cref="CustomAbility"/>.
         /// </summary>
-        public static IReadOnlyDictionary<Player, CustomAbility> PlayersValue => _playersValue;
+        public static IEnumerable<Player> Players => PlayersValue.Keys.ToHashSet();
 
         /// <summary>
-        /// Gets the owner of the ability.
+        /// Gets the <see cref="AbilityBuilder"/>.
         /// </summary>
-        public Player Owner { get; private set; }
+        public abstract Type AbilityBuilderComponent { get; }
 
         /// <summary>
-        /// Gets or sets a value indicating whether the ability is ready.
+        /// Gets or sets the ability's id.
         /// </summary>
-        public bool IsReady { get; set; }
-
-        /// <summary>
-        /// Gets a value indicating whether the ability is active.
-        /// <br>Value is changed only if the ability is duration-based.</br>
-        /// </summary>
-        public bool IsActive { get; private set; }
+        public virtual uint Id { get; protected set; }
 
         /// <summary>
         /// Gets or sets the required cooldown before using the ability again.
@@ -98,7 +83,7 @@ namespace RolePlus.ExternModule.API.Features.CustomAbilities
         /// <summary>
         /// Gets or sets the message to display when the ability reaches a new level.
         /// </summary>
-        public virtual string NewLevelReachedMessage { get; protected set; }
+        public virtual string NextLevelMessage { get; protected set; }
 
         /// <summary>
         /// Gets or sets the time to wait before the ability is activated.
@@ -111,43 +96,89 @@ namespace RolePlus.ExternModule.API.Features.CustomAbilities
         public virtual float Duration { get; protected set; }
 
         /// <summary>
-        /// Gets or sets the level of the ability.
-        /// </summary>
-        public virtual byte Level
-        {
-            get => _level;
-            set => OnLevelAdded(value);
-        }
-
-        /// <summary>
-        /// Gets a value indicating whether the ability can enter the cooldown phase.
-        /// </summary>
-        protected virtual bool CanEnterCooldown => !IsReady;
-
-        /// <summary>
-        /// Gets a value indicating whether the ability can be used.
-        /// </summary>
-        protected virtual bool CanBeUsed => true;
-
-        /// <summary>
         /// Gets the ability type name.
         /// </summary>
-        public virtual string Type => GetUObjectTypeFromRegisteredTypes(GetType(), Name).Name;
+        public virtual string Name { get; }
 
         /// <summary>
-        /// Gets a <see cref="CustomAbility"/> given the specified type name.
+        /// Gets a value indicating whether the ability is enabled.
         /// </summary>
-        /// <param name="type">The ability type name.</param>
-        /// <returns>The corresponding <see cref="CustomAbility"/>, or <see langword="null"/> if not found.</returns>
-        public static CustomAbility Get(string type) => Registered.FirstOrDefault(t => t.Type.ToLower() == type.ToLower());
+        public virtual bool IsEnabled => true;
 
         /// <summary>
-        /// Gets a <see cref="CustomAbility"/> from a <see cref="Player"/> given the specified type name.
+        /// Gets a <see cref="CustomRole"/> given the specified <paramref name="customAbilityType"/>.
         /// </summary>
-        /// <param name="player">The player to check.</param>
-        /// <param name="type">The ability type name.</param>
-        /// <returns>The corresponding <see cref="CustomAbility"/>, or <see langword="null"/> if not found.</returns>
-        public static CustomAbility Get(Player player, string type) => _playersValue.FirstOrDefault(kvp => kvp.Value.Owner == player && kvp.Value.Type == type).Value;
+        /// <param name="customAbilityType">The specified ability type.</param>
+        /// <returns>The <see cref="CustomRole"/> matching the search or <see langword="null"/> if not registered.</returns>
+        public static CustomAbility Get(object customAbilityType) => Registered.FirstOrDefault(customAbility => customAbility == customAbilityType && customAbility.IsEnabled);
+
+        /// <summary>
+        /// Gets a <see cref="CustomAbility"/> given the specified name.
+        /// </summary>
+        /// <param name="name">The specified name.</param>
+        /// <returns>The <see cref="CustomAbility"/> matching the search or <see langword="null"/> if not registered.</returns>
+        public static CustomAbility Get(string name) => Registered.FirstOrDefault(customAbility => customAbility.Name == name);
+
+        /// <summary>
+        /// Gets a <see cref="CustomAbility"/> given the specified <see cref="Name"/>.
+        /// </summary>
+        /// <param name="type">The specified <see cref="Name"/>.</param>
+        /// <returns>The <see cref="CustomAbility"/> matching the search or <see langword="null"/> if not found.</returns>
+        public static CustomAbility Get(Type type) => type.BaseType != typeof(AbilityBuilder) ? null : Registered.FirstOrDefault(customAbility => customAbility.AbilityBuilderComponent == type);
+
+        /// <summary>
+        /// Gets a <see cref="CustomAbility"/> given the specified <see cref="AbilityBuilder"/>.
+        /// </summary>
+        /// <param name="abilityBuilder">The specified <see cref="AbilityBuilder"/>.</param>
+        /// <returns>The <see cref="CustomAbility"/> matching the search or <see langword="null"/> if not found.</returns>
+        public static CustomAbility Get(AbilityBuilder abilityBuilder) => Get(abilityBuilder.GetType());
+
+        /// <summary>
+        /// Gets all <see cref="CustomAbility"/>'s from a <see cref="Player"/>.
+        /// </summary>
+        /// <param name="player">The <see cref="CustomAbility"/> owner.</param>
+        /// <returns>The <see cref="CustomAbility"/> matching the search or <see langword="null"/> if not registered.</returns>
+        public static IEnumerable<CustomAbility> Get(Player player) => Manager.FirstOrDefault(kvp => kvp.Key == player).Value;
+
+        /// <summary>
+        /// Tries to get a <see cref="CustomAbility"/> given the specified <paramref name="customAbility"/>.
+        /// </summary>
+        /// <param name="customAbilityType">The <see cref="object"/> to look for.</param>
+        /// <param name="customAbility">The found <paramref name="customAbility"/>, <see langword="null"/> if not registered.</param>
+        /// <returns><see langword="true"/> if a <paramref name="customAbility"/> was found; otherwise, <see langword="false"/>.</returns>
+        public static bool TryGet(object customAbilityType, out CustomAbility customAbility) => (customAbility = Get(customAbilityType)) is not null;
+
+        /// <summary>
+        /// Tries to get a <paramref name="customAbility"/> given a specified name.
+        /// </summary>
+        /// <param name="name">The <see cref="CustomAbility"/> name to look for.</param>
+        /// <param name="customAbility">The found <see cref="CustomAbility"/>, <see langword="null"/> if not registered.</param>
+        /// <returns><see langword="true"/> if a <see cref="CustomAbility"/> was found; otherwise, <see langword="false"/>.</returns>
+        public static bool TryGet(string name, out CustomAbility customAbility) => (customAbility = Registered.FirstOrDefault(cAbility => cAbility.Name == name)) is not null;
+
+        /// <summary>
+        /// Tries to get the player's current <see cref="CustomAbility"/>'s.
+        /// </summary>
+        /// <param name="player">The <see cref="Player"/> to search on.</param>
+        /// <param name="customAbility">The found <see cref="CustomAbility"/>'s, <see langword="null"/> if not registered.</param>
+        /// <returns><see langword="true"/> if a <see cref="CustomAbility"/> was found; otherwise, <see langword="false"/>.</returns>
+        public static bool TryGet(Player player, out IEnumerable<CustomAbility> customAbility) => (customAbility = Get(player)) is not null;
+
+        /// <summary>
+        /// Tries to get the player's current <see cref="CustomAbility"/>.
+        /// </summary>
+        /// <param name="abilityBuilder">The <see cref="AbilityBuilder"/> to search for.</param>
+        /// <param name="customAbility">The found <see cref="CustomAbility"/>, <see langword="null"/> if not registered.</param>
+        /// <returns><see langword="true"/> if a <see cref="CustomAbility"/> was found; otherwise, <see langword="false"/>.</returns>
+        public static bool TryGet(AbilityBuilder abilityBuilder, out CustomAbility customAbility) => (customAbility = Get(abilityBuilder.GetType())) is not null;
+
+        /// <summary>
+        /// Tries to get the player's current <see cref="CustomAbility"/>.
+        /// </summary>
+        /// <param name="type">The <see cref="Name"/> to search for.</param>
+        /// <param name="customAbility">The found <see cref="CustomAbility"/>, <see langword="null"/> if not registered.</param>
+        /// <returns><see langword="true"/> if a <see cref="CustomAbility"/> was found; otherwise, <see langword="false"/>.</returns>
+        public static bool TryGet(Type type, out CustomAbility customAbility) => (customAbility = Get(type.GetType())) is not null;
 
         /// <summary>
         /// Gets a <see cref="CustomAbility"/> from a <see cref="Player"/> given the specified type name.
@@ -156,28 +187,29 @@ namespace RolePlus.ExternModule.API.Features.CustomAbilities
         /// <param name="player">The player to check.</param>
         /// <returns>The corresponding <see cref="CustomAbility"/>, or <see langword="null"/> if not found.</returns>
         public static T Get<T>(Player player)
-            where T : CustomAbility => _playersValue.FirstOrDefault(kvp => kvp.Value.Owner == player && kvp.Value.GetType() == typeof(T)).Value.Cast<T>();
+            where T : CustomAbility
+        {
+            CustomAbility customAbility = Get(typeof(T));
+            return player.GetComponent(customAbility.AbilityBuilderComponent).Cast<T>();
+        }
 
         /// <summary>
         /// Adds a <typeparamref name="T"/> <see cref="CustomAbility"/> to the specified <see cref="Player"/>.
         /// </summary>
         /// <typeparam name="T">The custom ability type.</typeparam>
         /// <param name="player">The player to affect.</param>
-        /// <param name="customAbility">The given ability.</param>
+        /// <param name="param">The given ability.</param>
         /// <returns><see langword="true"/> if the <see cref="CustomAbility"/> was given successfully; otherwise, <see langword="false"/>.</returns>
-        public static bool AddAbility<T>(Player player, out T customAbility)
+        public static bool Add<T>(Player player, out T param)
             where T : CustomAbility
         {
-            customAbility = null;
+            param = null;
 
-            if (_playersValue.ContainsKey(player))
+            if (!TryGet(typeof(T), out CustomAbility ability))
                 return false;
 
-            T outer = Activator.CreateInstance<T>();
-            customAbility = CreateDefaultSubobject<T>(player.GameObject, outer.Type);
-            _playersValue.Add(player, customAbility);
-
-            return customAbility is not null;
+            (param = ability.Cast<T>()).Add(player);
+            return true;
         }
 
         /// <summary>
@@ -186,19 +218,13 @@ namespace RolePlus.ExternModule.API.Features.CustomAbilities
         /// <param name="player">The player to affect.</param>
         /// <param name="type">The custom ability type.</param>
         /// <returns><see langword="true"/> if the <see cref="CustomAbility"/> was given successfully; otherwise, <see langword="false"/>.</returns>
-        public static bool AddAbility(Player player, Type type)
+        public static bool Add(Player player, Type type)
         {
-            if (_playersValue.ContainsKey(player))
+            if (!TryGet(type, out CustomAbility customAbility))
                 return false;
 
-            Type t = GetUObjectTypeFromRegisteredTypes(type);
-            if (t is null)
-                return false;
-
-            CustomAbility customAbility = CreateDefaultSubobject(t, player.GameObject).Cast<CustomAbility>();
-            _playersValue.Add(player, customAbility);
-
-            return customAbility is not null;
+            customAbility.Add(player);
+            return true;
         }
 
         /// <summary>
@@ -207,19 +233,28 @@ namespace RolePlus.ExternModule.API.Features.CustomAbilities
         /// <param name="player">The player to affect.</param>
         /// <param name="type">The custom ability type.</param>
         /// <returns><see langword="true"/> if the <see cref="CustomAbility"/> was given successfully; otherwise, <see langword="false"/>.</returns>
-        public static bool AddAbility(Player player, string type)
+        public static bool Add(Player player, string type)
         {
-            if (_playersValue.ContainsKey(player))
+            if (!TryGet(type, out CustomAbility customAbility))
                 return false;
 
-            CustomAbility customAbility = Get(type);
-            if (customAbility is null)
+            customAbility.Add(player);
+            return true;
+        }
+
+        /// <summary>
+        /// Adds a <see cref="CustomAbility"/> to the specified <see cref="Player"/>.
+        /// </summary>
+        /// <param name="player">The player to affect.</param>
+        /// <param name="id">The custom ability type.</param>
+        /// <returns><see langword="true"/> if the <see cref="CustomAbility"/> was given successfully; otherwise, <see langword="false"/>.</returns>
+        public static bool Add(Player player, uint id)
+        {
+            if (!TryGet(id, out CustomAbility customAbility))
                 return false;
 
-            AddAbility(player, customAbility.GetType());
-            _playersValue.Add(player, customAbility);
-
-            return customAbility is not null;
+            customAbility.Add(player);
+            return true;
         }
 
         /// <summary>
@@ -227,10 +262,10 @@ namespace RolePlus.ExternModule.API.Features.CustomAbilities
         /// </summary>
         /// <param name="player">The player to affect.</param>
         /// <param name="types">The custom abilities.</param>
-        public static void AddAbilities(Player player, IEnumerable<Type> types)
+        public static void Add(Player player, IEnumerable<Type> types)
         {
             foreach (Type type in types)
-                AddAbility(player, type);
+                Add(player, type);
         }
 
         /// <summary>
@@ -238,10 +273,10 @@ namespace RolePlus.ExternModule.API.Features.CustomAbilities
         /// </summary>
         /// <param name="player">The player to affect.</param>
         /// <param name="types">The custom abilities.</param>
-        public static void AddAbilities(Player player, IEnumerable<string> types)
+        public static void Add(Player player, IEnumerable<string> types)
         {
             foreach (string type in types)
-                AddAbility(player, type);
+                Add(player, type);
         }
 
         /// <summary>
@@ -250,12 +285,9 @@ namespace RolePlus.ExternModule.API.Features.CustomAbilities
         /// <typeparam name="T">The custom ability type.</typeparam>
         /// <param name="player">The player to affect.</param>
         /// <returns><see langword="true"/> if the <see cref="CustomAbility"/> was removed successfully; otherwise, <see langword="false"/>.</returns>
-        public static bool RemoveAbility<T>(Player player)
-            where T : CustomAbility
-        {
-            _playersValue.Remove(player);
-            return DestroyActiveObject<T>(player.GameObject);
-        }
+        public static bool Remove<T>(Player player)
+            where T : CustomAbility =>
+            TryGet(typeof(T), out CustomAbility customAbility) && EObject.DestroyActiveObject(customAbility.AbilityBuilderComponent, player.GameObject);
 
         /// <summary>
         /// Removes a <see cref="CustomAbility"/> from the specified <see cref="Player"/>.
@@ -263,11 +295,8 @@ namespace RolePlus.ExternModule.API.Features.CustomAbilities
         /// <param name="player">The player to affect.</param>
         /// <param name="type">The custom ability type.</param>
         /// <returns><see langword="true"/> if the <see cref="CustomAbility"/> was removed successfully; otherwise, <see langword="false"/>.</returns>
-        public static bool RemoveAbility(Player player, Type type)
-        {
-            _playersValue.Remove(player);
-            return DestroyActiveObject(type, player.GameObject);
-        }
+        public static bool Remove(Player player, Type type) =>
+            TryGet(type, out CustomAbility customAbility) && EObject.DestroyActiveObject(customAbility.AbilityBuilderComponent, player.GameObject);
 
         /// <summary>
         /// Removes a <see cref="CustomAbility"/> from the specified <see cref="Player"/>.
@@ -275,62 +304,40 @@ namespace RolePlus.ExternModule.API.Features.CustomAbilities
         /// <param name="player">The player to affect.</param>
         /// <param name="type">The custom ability type.</param>
         /// <returns><see langword="true"/> if the <see cref="CustomAbility"/> was removed successfully; otherwise, <see langword="false"/>.</returns>
-        public static bool RemoveAbility(Player player, string type)
-        {
-            Type t = GetUObjectTypeFromRegisteredTypesByName(type);
-            if (t is null)
-                return false;
+        public static bool Remove(Player player, string type) =>
+            TryGet(type, out CustomAbility customAbility) && EObject.DestroyActiveObject(customAbility.AbilityBuilderComponent, player.GameObject);
 
-            _playersValue.Remove(player);
-            return DestroyActiveObject(t, player.GameObject);
-        }
+        /// <summary>
+        /// Removes a <see cref="CustomAbility"/> from the specified <see cref="Player"/>.
+        /// </summary>
+        /// <param name="player">The player to affect.</param>
+        /// <param name="id">The custom ability id.</param>
+        /// <returns><see langword="true"/> if the <see cref="CustomAbility"/> was removed successfully; otherwise, <see langword="false"/>.</returns>
+        public static bool Remove(Player player, uint id) =>
+            TryGet(id, out CustomAbility customAbility) && EObject.DestroyActiveObject(customAbility.AbilityBuilderComponent, player.GameObject);
 
         /// <summary>
         /// Removes all the custom abilities from the specified <see cref="Player"/>.
         /// </summary>
         /// <param name="player">The player to affect.</param>
-        public static void RemoveAbilities(Player player)
-        {
-            foreach (KeyValuePair<Player, CustomAbility> kvp in _playersValue)
-            {
-                if (kvp.Key != player)
-                    continue;
-
-                RemoveAbility(player, kvp.Value.GetType());
-            }
-        }
+        public static void RemoveAll(Player player) =>
+            PlayersValue.DoIf(kvp => kvp.Key == player, (kvp) => kvp.Value.Do((ability) => ability.Remove(player)));
 
         /// <summary>
         /// Removes a <see cref="IEnumerable{T}"/> of <see cref="CustomAbility"/> from the specified <see cref="Player"/>.
         /// </summary>
         /// <param name="player">The player to affect.</param>
         /// <param name="types">The custom abilities.</param>
-        public static void RemoveAbilities(Player player, IEnumerable<Type> types)
-        {
-            foreach (KeyValuePair<Player, CustomAbility> kvp in _playersValue)
-            {
-                if (kvp.Key != player || types.Contains(kvp.Value.GetType()))
-                    continue;
-
-                RemoveAbility(player, kvp.Value.GetType());
-            }
-        }
+        public static void RemoveRange(Player player, IEnumerable<Type> types) =>
+            PlayersValue.DoIf(kvp => kvp.Key == player, (kvp) => kvp.Value.DoIf(ability => types.Contains(ability.GetType()), (ability) => ability.Remove(player)));
 
         /// <summary>
         /// Removes a <see cref="IEnumerable{T}"/> of <see cref="CustomAbility"/> from the specified <see cref="Player"/>.
         /// </summary>
         /// <param name="player">The player to affect.</param>
         /// <param name="types">The custom abilities.</param>
-        public static void RemoveAbilities(Player player, IEnumerable<string> types)
-        {
-            foreach (KeyValuePair<Player, CustomAbility> kvp in _playersValue)
-            {
-                if (kvp.Key != player || types.Contains(kvp.Value.Type))
-                    continue;
-
-                RemoveAbility(player, kvp.Value.GetType());
-            }
-        }
+        public static void RemoveRange(Player player, IEnumerable<string> types) =>
+            PlayersValue.DoIf(kvp => kvp.Key == player, (kvp) => kvp.Value.DoIf(ability => types.Contains(ability.Name), (ability) => ability.Remove(player)));
 
         /// <summary>
         /// Enables all the custom abilities present in the assembly.
@@ -379,25 +386,24 @@ namespace RolePlus.ExternModule.API.Features.CustomAbilities
         {
             if (!Registered.Contains(this))
             {
-                if (Registered.Any(x => x.Type == Type))
+                if (Registered.Any(x => x.Name == Name))
                 {
                     Log.Debug(
                         $"[CustomAbility] Couldn't register {Name}. Another CustomAbility has been registered with the same Type: " +
-                        $" {Registered.FirstOrDefault(x => x.Type == Type)}",
-                        RolePlus.Singleton.Config.ShowDebugMessages);
+                        $" {Registered.FirstOrDefault(x => x.Name == Name)}");
 
                     return false;
                 }
 
-                RegisterUObjectType(GetType(), Name);
+                EObject.RegisterObjectType(AbilityBuilderComponent, Name);
+                _registered.Add(this);
 
                 return true;
             }
 
             Log.Debug(
                 $"[CustomAbility] Couldn't register {Name}." +
-                $"This CustomAbility has been already registered.",
-                RolePlus.Singleton.Config.ShowDebugMessages);
+                $"This CustomAbility has been already registered.");
 
             return false;
         }
@@ -412,117 +418,54 @@ namespace RolePlus.ExternModule.API.Features.CustomAbilities
             {
                 Log.Debug(
                     $"[CustomAbility] Couldn't unregister {Name}." +
-                    $"This CustomAbility hasn't been registered yet.",
-                    RolePlus.Singleton.Config.ShowDebugMessages);
+                    $"This CustomAbility hasn't been registered yet.");
 
                 return false;
             }
 
-            UnregisterUObjectType(Name);
+            EObject.UnregisterObjectType(Name);
+            _registered.Remove(this);
 
             return true;
         }
 
         /// <summary>
-        /// Gets a value indicating whether the specified <see cref="Player"/> is the owner of this <see cref="CustomAbility"/>.
+        /// Adds a <see cref="CustomAbility"/> to the specified <see cref="Player"/>.
         /// </summary>
-        /// <param name="player">The <see cref="Player"/> to check.</param>
-        /// <returns><see langword="true"/> if the specified <see cref="Player"/> is the owner of this <see cref="CustomAbility"/>; otherwise, <see langword="false"/>.</returns>
-        public bool Check(Player player) => player is not null && player == Owner;
-
-        /// <inheritdoc/>
-        protected override void OnBeginPlay()
+        /// <param name="player">The player to affect.</param>
+        public void Add(Player player)
         {
-            base.OnBeginPlay();
+            player.AddComponent(AbilityBuilderComponent);
 
-            Owner = Player.Get(Base);
-            _abilityCooldownHandle = Timing.RunCoroutine(AbilityCooldown());
-        }
-
-        /// <inheritdoc/>
-        protected override void Tick()
-        {
-            base.Tick();
-
-            if (OnAddingLevel(Level))
-                Level += 1;
-        }
-
-        /// <inheritdoc/>
-        protected override void OnEndPlay()
-        {
-            base.OnEndPlay();
-
-            Timing.KillCoroutines(_abilityCooldownHandle);
-        }
-
-        /// <summary>
-        /// Fired when the ability is used.
-        /// </summary>
-        protected virtual void OnAbilityUsed()
-        {
-            if (!CanBeUsed)
+            try
             {
-                if (!string.IsNullOrEmpty(DeniedActivationMessage))
-                    Owner.ShowHint(DeniedActivationMessage, 4);
-
-                return;
+                PlayersValue[player].Add(this);
             }
-
-            if (Duration != 0f)
+            catch
             {
-                IsActive = true;
-
-                Timing.CallDelayed(Duration, () =>
-                {
-                    IsReady = false;
-                    IsActive = false;
-                    OnAbilityExpired();
-                });
-
-                return;
+                PlayersValue.Add(player, new HashSet<CustomAbility>() { this });
             }
-
-            IsReady = false;
         }
 
         /// <summary>
-        /// Fired when the time's up after using the ability.
-        /// <para>Called using duration-based abilities.</para>
+        /// Removes a <see cref="CustomAbility"/> from the specified <see cref="Player"/>.
         /// </summary>
-        protected virtual void OnAbilityExpired()
+        /// <param name="player">The player to affect.</param>
+        /// <returns><see langword="true"/> if the <see cref="CustomAbility"/> was removed; otherwise, <see langword="false"/>.</returns>
+        public bool Remove(Player player)
         {
-        }
-
-        /// <summary>
-        /// Fired when the level is changed.
-        /// </summary>
-        /// <param name="level">The new level.</param>
-        protected virtual void OnLevelAdded(byte level)
-        {
-            _level = level;
-            Owner.ShowHint(NewLevelReachedMessage.Replace("%level", Level.ToString()), 5);
-        }
-
-        /// <summary>
-        /// Fired before adding a new level.
-        /// </summary>
-        /// <param name="curLevel">The current level.</param>
-        /// <returns><see langword="true"/> if the level can change; otherwise, <see langword="false"/>.</returns>
-        protected virtual bool OnAddingLevel(byte curLevel) => false;
-
-        private IEnumerator<float> AbilityCooldown()
-        {
-            while (true)
+            try
             {
-                yield return Timing.WaitForOneFrame;
+                if (Get(player).Count() == 1)
+                    PlayersValue.Remove(player);
+                else
+                    PlayersValue[player].Remove(this);
 
-                if (!CanEnterCooldown)
-                    continue;
-
-                IsReady = false;
-                yield return Timing.WaitForSeconds(Cooldown);
-                IsReady = true;
+                return true;
+            }
+            catch
+            {
+                return false;
             }
         }
     }

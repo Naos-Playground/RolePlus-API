@@ -125,14 +125,14 @@ namespace RolePlus.ExternModule.API.Features.CustomAbilities
         /// <returns>The corresponding <see cref="InvokeResult"/>.</returns>
         public virtual InvokeResult Invoke(params object[] args)
         {
-            OnAbilityUsed();
+            OnActivated();
             return InvokeResult.Valid;
         }
 
         /// <inheritdoc/>
-        protected override void OnAbilityUsed()
+        protected override void OnActivated()
         {
-            base.OnAbilityUsed();
+            base.OnActivated();
 
             Owner.Role.As<Scp079Role>().Energy -= RequiredEnergy;
             Owner.Role.As<Scp079Role>().Experience += GainedExperience;
