@@ -56,6 +56,11 @@ namespace RolePlus.ExternModule.API.Features.CustomAbilities
         public abstract Type AbilityBuilderComponent { get; }
 
         /// <summary>
+        /// Gets the ability type name.
+        /// </summary>
+        public virtual string Name { get; }
+
+        /// <summary>
         /// Gets or sets the ability's id.
         /// </summary>
         public virtual uint Id { get; protected set; }
@@ -94,11 +99,6 @@ namespace RolePlus.ExternModule.API.Features.CustomAbilities
         /// Gets or sets the duration of the ability.
         /// </summary>
         public virtual float Duration { get; protected set; }
-
-        /// <summary>
-        /// Gets the ability type name.
-        /// </summary>
-        public virtual string Name { get; }
 
         /// <summary>
         /// Gets a value indicating whether the ability is enabled.
