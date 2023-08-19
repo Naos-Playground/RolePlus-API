@@ -92,7 +92,7 @@ namespace RolePlus.ExternModule.API.Features.CustomTeams
         /// <summary>
         /// Gets the name of the <see cref="CustomTeam"/>.
         /// </summary>
-        public virtual string Name { get; }
+        public abstract string Name { get; }
 
         /// <summary>
         /// Gets the name of the <see cref="CustomTeam"/> to be displayed.
@@ -523,7 +523,7 @@ namespace RolePlus.ExternModule.API.Features.CustomTeams
         /// <summary>
         /// Returns a the 32-bit signed hash code of the current object instance.
         /// </summary>
-        /// <returns>The 32-bit signed hash code of the current object instance</returns>
+        /// <returns>The 32-bit signed hash code of the current object instance.</returns>
         public override int GetHashCode() => base.GetHashCode();
 
         /// <summary>

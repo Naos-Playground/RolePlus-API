@@ -13,9 +13,6 @@ namespace RolePlus.ExternModule.API.Features.VirtualAssemblies
     using System.Reflection;
 
     using Exiled.API.Features;
-
-    using RolePlus.ExternModule.API.Engine.Core;
-    using RolePlus.ExternModule.API.Enums;
     using RolePlus.ExternModule.API.Features.Configs;
 
     /// <summary>

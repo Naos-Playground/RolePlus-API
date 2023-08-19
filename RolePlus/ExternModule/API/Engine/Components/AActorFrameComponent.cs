@@ -9,8 +9,6 @@ namespace RolePlus.ExternModule.API.Engine.Components
 {
     using Exiled.API.Features.Core;
 
-    using RolePlus.ExternModule.API.Engine.Framework;
-
     /// <summary>
     /// <see cref="AActorFrameComponent"/> is the base class for <see cref="EActor"/> instances which need to be managed internally.
     /// </summary>

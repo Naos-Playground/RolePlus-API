@@ -10,7 +10,6 @@ namespace RolePlus.ExternModule.API.Features.CustomRoles
     using System.Collections.Generic;
 
     using Exiled.API.Enums;
-    using Exiled.API.Features;
 
     /// <summary>
     /// Defines the contract for config features related to inventory management.

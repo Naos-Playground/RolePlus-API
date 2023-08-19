@@ -28,8 +28,6 @@ namespace RolePlus.ExternModule
 
     using Mirror;
     using NorthwoodLib.Pools;
-    using PlayerRoles;
-    using PluginAPI.Roles;
     using RemoteAdmin;
     using RolePlus.ExternModule.API.Enums;
     using RolePlus.ExternModule.API.Features;

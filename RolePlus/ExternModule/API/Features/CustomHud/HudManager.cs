@@ -13,7 +13,6 @@ namespace RolePlus.ExternModule.API.Features.CustomHud
     using Hints;
 
     using RolePlus.ExternModule.API.Enums;
-    using RolePlus.ExternModule.API.Features.Controllers;
 
     using UnityEngine;
 

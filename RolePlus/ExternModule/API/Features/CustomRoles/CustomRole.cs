@@ -54,17 +54,17 @@ namespace RolePlus.ExternModule.API.Features.CustomRoles
         /// <summary>
         /// Gets the <see cref="CustomRole"/>'s <see cref="Type"/>.
         /// </summary>
-        public abstract Type RoleBuilderComponent { get; }
+        public abstract Type RoleBehaviourComponent { get; }
 
         /// <summary>
         /// Gets the <see cref="CustomEscape"/>'s <see cref="Type"/>.
         /// </summary>
-        public virtual Type EscapeBuilderComponent { get; }
+        public virtual Type EscapeBehaviourComponent { get; }
 
         /// <summary>
         /// Gets a the <see cref="CustomRole"/>'s name.
         /// </summary>
-        public virtual string Name { get; }
+        public abstract string Name { get; }
 
         /// <summary>
         /// Gets the type.
@@ -230,14 +230,14 @@ namespace RolePlus.ExternModule.API.Features.CustomRoles
         /// </summary>
         /// <param name="type">The specified <see cref="Type"/>.</param>
         /// <returns>The <see cref="CustomRole"/> matching the search or <see langword="null"/> if not found.</returns>
-        public static CustomRole Get(Type type) => type.BaseType != typeof(RoleBuilder) ? null : Registered.FirstOrDefault(customRole => customRole.RoleBuilderComponent == type);
+        public static CustomRole Get(Type type) => type.BaseType != typeof(RoleBehaviour) ? null : Registered.FirstOrDefault(customRole => customRole.RoleBehaviourComponent == type);
 
         /// <summary>
-        /// Gets a <see cref="CustomRole"/> given the specified <see cref="RoleBuilder"/>.
+        /// Gets a <see cref="CustomRole"/> given the specified <see cref="RoleBehaviour"/>.
         /// </summary>
-        /// <param name="roleBuilder">The specified <see cref="RoleBuilder"/>.</param>
+        /// <param name="roleBuilder">The specified <see cref="RoleBehaviour"/>.</param>
         /// <returns>The <see cref="CustomRole"/> matching the search or <see langword="null"/> if not found.</returns>
-        public static CustomRole Get(RoleBuilder roleBuilder) => Get(roleBuilder.GetType());
+        public static CustomRole Get(RoleBehaviour roleBuilder) => Get(roleBuilder.GetType());
 
         /// <summary>
         /// Gets a <see cref="CustomRole"/> from a <see cref="Player"/>.
@@ -286,10 +286,10 @@ namespace RolePlus.ExternModule.API.Features.CustomRoles
         /// <summary>
         /// Tries to get the player's current <see cref="CustomRole"/>.
         /// </summary>
-        /// <param name="roleBuilder">The <see cref="RoleBuilder"/> to search for.</param>
+        /// <param name="roleBuilder">The <see cref="RoleBehaviour"/> to search for.</param>
         /// <param name="customRole">The found <see cref="CustomRole"/>, <see langword="null"/> if not registered.</param>
         /// <returns><see langword="true"/> if a <see cref="CustomRole"/> was found; otherwise, <see langword="false"/>.</returns>
-        public static bool TryGet(RoleBuilder roleBuilder, out CustomRole customRole) => (customRole = Get(roleBuilder.GetType())) is not null;
+        public static bool TryGet(RoleBehaviour roleBuilder, out CustomRole customRole) => (customRole = Get(roleBuilder.GetType())) is not null;
 
         /// <summary>
         /// Tries to get the player's current <see cref="CustomRole"/>.
@@ -526,7 +526,7 @@ namespace RolePlus.ExternModule.API.Features.CustomRoles
 
             RespawnManager.RespawnQueue.Add(player);
 
-            player.AddComponent(RoleBuilderComponent);
+            player.AddComponent(RoleBehaviourComponent);
             PlayersValue.Remove(player);
             PlayersValue.Add(player, this);
 
@@ -581,7 +581,7 @@ namespace RolePlus.ExternModule.API.Features.CustomRoles
         {
             if (!TryGet(ev.Player, out CustomRole customRole) ||
                 customRole != this ||
-                !ev.Player.GameObject.TryGetComponent(out RoleBuilder builder))
+                !ev.Player.GameObject.TryGetComponent(out RoleBehaviour builder))
                 return;
 
             bool useCustomSpawnpoint = (bool)builder.GetType().BaseType
@@ -598,7 +598,7 @@ namespace RolePlus.ExternModule.API.Features.CustomRoles
         {
             if (!TryGet(ev.Player, out CustomRole customRole) ||
                 customRole != this ||
-                !ev.Player.GameObject.TryGetComponent(out RoleBuilder builder))
+                !ev.Player.GameObject.TryGetComponent(out RoleBehaviour builder))
                 return;
 
             ev.Items.Clear();
@@ -620,10 +620,10 @@ namespace RolePlus.ExternModule.API.Features.CustomRoles
                     ev.Ammo?.Add(kvp.Key.GetItemType(), kvp.Value);
             }
 
-            if (RoleBuilder.StaticPlayers.Contains(ev.Player))
+            if (RoleBehaviour.StaticPlayers.Contains(ev.Player))
             {
                 ev.SpawnFlags |= RoleSpawnFlags.AssignInventory;
-                RoleBuilder.StaticPlayers.Remove(ev.Player);
+                RoleBehaviour.StaticPlayers.Remove(ev.Player);
             }
         }
 
@@ -632,9 +632,9 @@ namespace RolePlus.ExternModule.API.Features.CustomRoles
             RespawnManager.RespawnQueue.Add(player);
 
             if (shouldKeepPosition)
-                RoleBuilder.StaticPlayers.Add(player);
+                RoleBehaviour.StaticPlayers.Add(player);
 
-            player.AddComponent(RoleBuilderComponent, $"ECS-{Name}");
+            player.AddComponent(RoleBehaviourComponent, $"ECS-{Name}");
         }
     }
 }

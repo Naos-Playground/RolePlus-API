@@ -1,5 +1,5 @@
 ﻿// -----------------------------------------------------------------------
-// <copyright file="CustomRoleTypeBase.cs" company="NaoUnderscore">
+// <copyright file="CustomAbilityTypeBase.cs" company="NaoUnderscore">
 // Copyright (c) NaoUnderscore. All rights reserved.
 // Licensed under the CC BY-SA 3.0 license.
 // </copyright>
@@ -12,18 +12,18 @@ namespace RolePlus.ExternModule.API.Enums
     /// <summary>
     /// All available custom roles.
     /// </summary>
-    public class CustomRoleTypeBase : UnmanagedEnumClass<uint, CustomRoleTypeBase>
+    public class CustomAbilityTypeBase : UnmanagedEnumClass<uint, CustomRoleTypeBase>
     {
         /// <summary>
         /// Represents an invalid custom role.
         /// </summary>
-        public static readonly CustomRoleTypeBase None = new(0);
+        public static readonly CustomAbilityTypeBase None = new(0);
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="CustomRoleTypeBase"/> class.
+        /// Initializes a new instance of the <see cref="CustomAbilityTypeBase"/> class.
         /// </summary>
         /// <param name="value">The <see cref="uint"/> value.</param>
-        protected CustomRoleTypeBase(uint value) : base(value)
+        protected CustomAbilityTypeBase(uint value) : base(value)
         {
         }
     }

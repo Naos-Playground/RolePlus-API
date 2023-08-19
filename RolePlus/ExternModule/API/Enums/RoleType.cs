@@ -8,136 +8,135 @@
 namespace RolePlus.ExternModule.API.Enums
 {
     using PlayerRoles;
-
-    using RolePlus.ExternModule.API.Engine.Core;
+    using RolePlus.ExternModule.API.Engine.Framework;
 
     /// <summary>
     /// All available roles.
     /// </summary>
     public sealed class RoleType : EnumClass<RoleTypeId, RoleType>
     {
-        private RoleType(RoleTypeId value) : base(value)
-        {
-        }
-
         /// <summary>
         /// Represents an undefined role.
         /// </summary>
-        public static RoleType None { get; } = new(RoleTypeId.None);
+        public static readonly RoleType None = new(RoleTypeId.None);
 
         /// <summary>
         /// Represents the SCP-173 role.
         /// </summary>
-        public static RoleType Scp173 { get; } = new(RoleTypeId.Scp173);
+        public static readonly RoleType Scp173 = new(RoleTypeId.Scp173);
 
         /// <summary>
         /// Represents the SCP-106 role.
         /// </summary>
-        public static RoleType Scp106 { get; } = new(RoleTypeId.Scp106);
+        public static readonly RoleType Scp106 = new(RoleTypeId.Scp106);
 
         /// <summary>
         /// Represents the SCP-049 role.
         /// </summary>
-        public static RoleType Scp049 { get; } = new(RoleTypeId.Scp049);
+        public static readonly RoleType Scp049 = new(RoleTypeId.Scp049);
 
         /// <summary>
         /// Represents the SCP-079 role.
         /// </summary>
-        public static RoleType Scp079 { get; } = new(RoleTypeId.Scp079);
+        public static readonly RoleType Scp079 = new(RoleTypeId.Scp079);
 
         /// <summary>
         /// Represents the SCP-096 role.
         /// </summary>
-        public static RoleType Scp096 { get; } = new(RoleTypeId.Scp096);
+        public static readonly RoleType Scp096 = new(RoleTypeId.Scp096);
 
         /// <summary>
         /// Represents the SCP-049-2 role.
         /// </summary>
-        public static RoleType Scp0492 { get; } = new(RoleTypeId.Scp0492);
+        public static readonly RoleType Scp0492 = new(RoleTypeId.Scp0492);
 
         /// <summary>
         /// Represents the Scp939 role.
         /// </summary>
-        public static RoleType Scp939 { get; } = new(RoleTypeId.Scp939);
+        public static readonly RoleType Scp939 = new(RoleTypeId.Scp939);
 
         /// <summary>
         /// Represents the Scientist role.
         /// </summary>
-        public static RoleType Scientist { get; } = new(RoleTypeId.Scientist);
+        public static readonly RoleType Scientist = new(RoleTypeId.Scientist);
 
         /// <summary>
         /// Represents the Facility Guard role.
         /// </summary>
-        public static RoleType FacilityGuard { get; } = new(RoleTypeId.FacilityGuard);
+        public static readonly RoleType FacilityGuard = new(RoleTypeId.FacilityGuard);
 
         /// <summary>
         /// Represents the NTF Private role.
         /// </summary>
-        public static RoleType NtfPrivate { get; } = new(RoleTypeId.NtfPrivate);
+        public static readonly RoleType NtfPrivate = new(RoleTypeId.NtfPrivate);
 
         /// <summary>
         /// Represents the NTF Specialist role.
         /// </summary>
-        public static RoleType NtfSpecialist { get; } = new(RoleTypeId.NtfSpecialist);
+        public static readonly RoleType NtfSpecialist = new(RoleTypeId.NtfSpecialist);
 
         /// <summary>
         /// Represents the NTF Sergeant role.
         /// </summary>
-        public static RoleType NtfSergeant { get; } = new(RoleTypeId.NtfSergeant);
+        public static readonly RoleType NtfSergeant = new(RoleTypeId.NtfSergeant);
 
         /// <summary>
         /// Represents the NTF Captain role.
         /// </summary>
-        public static RoleType NtfCaptain { get; } = new(RoleTypeId.NtfCaptain);
+        public static readonly RoleType NtfCaptain = new(RoleTypeId.NtfCaptain);
 
         /// <summary>
         /// Represents the Class-D role.
         /// </summary>
-        public static RoleType ClassD { get; } = new(RoleTypeId.ClassD);
+        public static readonly RoleType ClassD = new(RoleTypeId.ClassD);
 
         /// <summary>
         /// Represents the Chaos Conscript role.
         /// </summary>
-        public static RoleType ChaosConscript { get; } = new(RoleTypeId.ChaosConscript);
+        public static readonly RoleType ChaosConscript = new(RoleTypeId.ChaosConscript);
 
         /// <summary>
         /// Represents the Chaos Rifleman role.
         /// </summary>
-        public static RoleType ChaosRifleman { get; } = new(RoleTypeId.ChaosRifleman);
+        public static readonly RoleType ChaosRifleman = new(RoleTypeId.ChaosRifleman);
 
         /// <summary>
         /// Represents the Chaos Marauder role.
         /// </summary>
-        public static RoleType ChaosMarauder { get; } = new(RoleTypeId.ChaosMarauder);
+        public static readonly RoleType ChaosMarauder = new(RoleTypeId.ChaosMarauder);
 
         /// <summary>
         /// Represents the Chaos Repressor role.
         /// </summary>
-        public static RoleType ChaosRepressor { get; } = new(RoleTypeId.ChaosRepressor);
+        public static readonly RoleType ChaosRepressor = new(RoleTypeId.ChaosRepressor);
 
         /// <summary>
         /// Represents the Tutorial role.
         /// </summary>
-        public static RoleType Tutorial { get; } = new(RoleTypeId.Tutorial);
+        public static readonly RoleType Tutorial = new(RoleTypeId.Tutorial);
 
         /// <summary>
         /// Represents the Spectator role.
         /// </summary>
-        public static RoleType Spectator { get; } = new(RoleTypeId.Spectator);
+        public static readonly RoleType Spectator = new(RoleTypeId.Spectator);
 
         /// <summary>
         /// Represents the overwatch role.
         /// </summary>
-        public static RoleType Overwatch { get; } = new(RoleTypeId.Overwatch);
+        public static readonly RoleType Overwatch = new(RoleTypeId.Overwatch);
 
         /// <summary>
         /// Represents the film maker role.
         /// </summary>
-        public static RoleType Filmmaker { get; } = new(RoleTypeId.Filmmaker);
+        public static readonly RoleType Filmmaker = new(RoleTypeId.Filmmaker);
 
         /// <summary>
         /// Represents a custom role.
         /// </summary>
-        public static RoleType CustomRole { get; } = new(RoleTypeId.CustomRole);
+        public static readonly RoleType CustomRole = new(RoleTypeId.CustomRole);
+
+        private RoleType(RoleTypeId value) : base(value)
+        {
+        }
     }
 }

@@ -10,7 +10,6 @@ namespace RolePlus.ExternModule.Events.EventArgs
     using System;
     using Exiled.API.Features;
     using RolePlus.ExternModule.API.Enums;
-    using RolePlus.ExternModule.API.Features.CustomHud;
     using RolePlus.ExternModule.API.Features.CustomRoles;
     using Hint = API.Features.CustomHud.Hint;
 

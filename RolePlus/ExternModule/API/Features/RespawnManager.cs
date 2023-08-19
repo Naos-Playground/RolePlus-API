@@ -18,8 +18,6 @@ namespace RolePlus.ExternModule.API.Features
     using RolePlus.ExternModule.API.Enums;
     using RolePlus.ExternModule.API.Features.CustomRoles;
 
-    using static RolePlus.ExternModule.API.Features.CustomTeams.CustomTeam;
-
     /// <summary>
     /// A tool which handles all the respawn properties and its behavior.
     /// <br>Overrides the base-game RespawnManager</br>
