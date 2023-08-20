@@ -8,7 +8,6 @@
 namespace RolePlus.ExternModule.API.Features.Attributes
 {
     using System;
-    using RolePlus.ExternModule.API.Enums;
     using RolePlus.ExternModule.API.Features.CustomTeams;
 
     /// <summary>

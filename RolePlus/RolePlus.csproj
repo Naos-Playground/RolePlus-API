@@ -99,12 +99,18 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="ExternModule\API\Engine\Framework\EBehaviour.cs" />
+    <Compile Include="ExternModule\API\Engine\Framework\Events\Handlers\EObject.cs" />
     <Compile Include="ExternModule\API\Engine\Framework\Interfaces\IAddittiveIdentifier.cs" />
     <Compile Include="ExternModule\API\Engine\Framework\Interfaces\IAddittivePipe.cs" />
     <Compile Include="ExternModule\API\Engine\Framework\Interfaces\IAddittiveBehaviour.cs" />
     <Compile Include="ExternModule\API\Engine\Framework\Interfaces\IAddittiveSettings.cs" />
     <Compile Include="ExternModule\API\Engine\Framework\Interfaces\IAddittiveProperty.cs" />
     <Compile Include="ExternModule\API\Engine\Framework\Interfaces\IAddittiveSettingsCollection.cs" />
+    <Compile Include="ExternModule\API\Engine\Framework\States\IState.cs" />
+    <Compile Include="ExternModule\API\Engine\Framework\States\StateAttribute.cs" />
+    <Compile Include="ExternModule\API\Engine\Framework\States\StateController.cs" />
+    <Compile Include="ExternModule\API\Engine\Framework\States\State.cs" />
+    <Compile Include="ExternModule\API\Engine\Framework\StaticActor.cs" />
     <Compile Include="ExternModule\API\Engine\Framework\UnmanagedEnumClass.cs" />
     <Compile Include="ExternModule\API\Engine\Framework\Bootstrap\CommonPatchProcessor.cs" />
     <Compile Include="ExternModule\API\Engine\Framework\Networking\RuleAttribute.cs" />
@@ -135,17 +141,14 @@
     <Compile Include="ExternModule\API\Features\Inventory\InventoryManager.cs" />
     <Compile Include="ExternModule\API\Features\Inventory\IInventorySettings.cs" />
     <Compile Include="ExternModule\API\Features\CustomRoles\RoleSettings.cs" />
+    <Compile Include="ExternModule\Events\DynamicEvents\DynamicEventDispatcherAttribute.cs" />
+    <Compile Include="ExternModule\Events\DynamicEvents\DynamicEventDispatcher.cs" />
+    <Compile Include="ExternModule\Events\DynamicEvents\IDynamicEventDispatcher.cs" />
+    <Compile Include="ExternModule\Events\DynamicEvents\TDynamicEventDispatcher.cs" />
     <Compile Include="ExternModule\Events\EventArgs\EscapedEventArgs.cs" />
     <Compile Include="ExternModule\Events\EventArgs\EscapingEventArgs.cs" />
     <Compile Include="ExternModule\Events\Handlers\Player.cs" />
-    <Compile Include="ExternModule\API\Features\Attributes\CustomEscapeAttribute.cs" />
-    <Compile Include="ExternModule\API\Features\CustomEscapes\CustomEscape.cs" />
-    <Compile Include="ExternModule\API\Features\CustomEscapes\EscapeSettings.cs" />
-    <Compile Include="ExternModule\API\Features\Inventory\InventoryManager.cs" />
-    <Compile Include="ExternModule\API\Features\Inventory\IInventorySettings.cs" />
-    <Compile Include="ExternModule\Events\EventArgs\EscapedEventArgs.cs" />
-    <Compile Include="ExternModule\Events\EventArgs\EscapingEventArgs.cs" />
-    <Compile Include="ExternModule\Events\Handlers\Player.cs" />
+    <Compile Include="ExternModule\Events\EventManager.cs" />
     <Compile Include="GlobalSuppressions.cs" />
     <Compile Include="Internal\Commands\MainCommand.cs" />
     <Compile Include="Internal\Commands\Round\ForceEndCommand.cs" />
@@ -174,7 +177,6 @@
     <Compile Include="ExternModule\API\Engine\Framework\Events\EventArgs\InteractingObjectEventArgs.cs" />
     <Compile Include="ExternModule\API\Engine\Framework\Events\Extensions.cs" />
     <Compile Include="ExternModule\API\Engine\Framework\Events\Handlers\Player.cs" />
-    <Compile Include="ExternModule\API\Engine\Framework\Events\Handlers\UObject.cs" />
     <Compile Include="ExternModule\API\Engine\Framework\Interfaces\IAnimatorNative.cs" />
     <Compile Include="ExternModule\API\Engine\Framework\Interfaces\INetworkMessage.cs" />
     <Compile Include="ExternModule\API\Engine\Framework\FTransform.cs" />

@@ -15,7 +15,7 @@ namespace RolePlus.ExternModule.API.Features
     using Exiled.API.Features;
 
     using MEC;
-
+    using RolePlus.ExternModule.API.Engine.Framework;
     using RolePlus.Internal;
 
 #pragma warning disable SA1402 // File may only contain a single type
@@ -54,7 +54,7 @@ namespace RolePlus.ExternModule.API.Features
         public static CustomGamemode PreviousGamemode { get; private set; }
 
         /// <summary>
-        /// Gets the <see cref="PlayerScriptController"/>.
+        /// Gets the <see cref="EBehaviour"/>.
         /// </summary>
         public virtual Type PlayerScript { get; private set; }
 

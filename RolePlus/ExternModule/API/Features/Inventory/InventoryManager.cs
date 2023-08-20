@@ -54,5 +54,4 @@ namespace RolePlus.ExternModule.API.Features.CustomRoles
         /// </summary>
         public float Chance { get; set; }
     }
-
 }

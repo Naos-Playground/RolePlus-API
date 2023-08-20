@@ -7,9 +7,10 @@
 
 namespace RolePlus.ExternModule.API.Engine.Framework
 {
-    using Exiled.API.Features.Core;
     using System.Collections.Generic;
     using System.Linq;
+
+    using Exiled.API.Features.Core;
 
     /// <summary>
     /// A class to handle object instances.

@@ -74,8 +74,8 @@ namespace RolePlus.ExternModule.API.Engine.Framework.Bootstrap
         /// <summary>
         /// Delivers the specified <typeparamref name="T"/> event to the invokation handler.
         /// </summary>
-        /// <typeparam name="T"></typeparam>
-        /// <param name="ev"></param>
+        /// <typeparam name="T">The type of the handler.</typeparam>
+        /// <param name="ev">The event handler instance.</param>
         public static void MessageHandler<T>(T ev)
             where T : EventArgs
         {

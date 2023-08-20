@@ -10,13 +10,17 @@ namespace RolePlus.ExternModule.API.Features
     using System;
     using System.Collections.Generic;
     using System.Linq;
+    using Exiled.API.Enums;
     using Exiled.API.Features;
-
+    using Exiled.Events.EventArgs.Server;
     using MEC;
+    using PlayerRoles;
     using Respawning;
 
     using RolePlus.ExternModule.API.Enums;
     using RolePlus.ExternModule.API.Features.CustomRoles;
+    using RolePlus.ExternModule.API.Features.CustomTeams;
+    using RolePlus.Internal;
 
     /// <summary>
     /// A tool which handles all the respawn properties and its behavior.
@@ -26,7 +30,6 @@ namespace RolePlus.ExternModule.API.Features
     public sealed class RespawnManager
     {
         private static readonly List<CoroutineHandle> _respawnHandle = new();
-        private static Dictionary<string, string> _unitNames;
         private static CoroutineHandle _respawnCoreHandle;
 
         private static RoleType[] CHIRoles { get; } = Enum.GetValues(typeof(RoleType)).ToArray<RoleType>().Where(role => role.ToString().Contains("Chaos")).ToArray();
@@ -56,25 +59,25 @@ namespace RolePlus.ExternModule.API.Features
         /// <summary>
         /// Gets a <see cref="IEnumerable{T}"/> of <see cref="CustomRole"/> containing all the custom roles belonging to MTF team.
         /// </summary>
-        public static IEnumerable<CustomRole> MTFCustomRoles => CustomRole.Registered.Where(customRole => customRole.RespawnTeam is SpawnableTeamType.NineTailedFox && !customRole.IsTeamUnit);
+        public static IEnumerable<CustomRole> MTFCustomRoles => CustomRole.Registered.Where(customRole => customRole.RespawnTeam is PlayerRoles.Team.FoundationForces && !customRole.IsTeamUnit);
 
         /// <summary>
         /// Gets a <see cref="IEnumerable{T}"/> of <see cref="CustomRole"/> containing all the custom roles belonging to CHI team.
         /// </summary>
-        public static IEnumerable<CustomRole> CHICustomRoles => CustomRole.Registered.Where(customRole => customRole.RespawnTeam is SpawnableTeamType.ChaosInsurgency && !customRole.IsTeamUnit);
+        public static IEnumerable<CustomRole> CHICustomRoles => CustomRole.Registered.Where(customRole => customRole.RespawnTeam is PlayerRoles.Team.ChaosInsurgency && !customRole.IsTeamUnit);
 
         /// <summary>
         /// Gets or sets the current respawn state.
         /// </summary>
-        public static RespawnState State { get; set; } = RespawnState.Enabled;
+        public static RespawnStateBase State { get; set; } = RespawnStateBase.Enabled;
 
         /// <summary>
         /// Gets or sets a value indicating whether or not the <see cref="State"/> is enabled.
         /// </summary>
         public static bool IsEnabled
         {
-            get => State is RespawnState.Enabled;
-            set => State = value ? RespawnState.Enabled : RespawnState.Disabled;
+            get => State == RespawnStateBase.Enabled;
+            set => State = value ? RespawnStateBase.Enabled : RespawnStateBase.Disabled;
         }
 
         /// <summary>
@@ -88,11 +91,6 @@ namespace RolePlus.ExternModule.API.Features
         public static HashSet<Player> LastSpawnedPlayers { get; set; } = new();
 
         /// <summary>
-        /// Gets a value containing all the information about the next team to be respawned.
-        /// </summary>
-        public static RespawnInfo NextKnownTeam { get; private set; }
-
-        /// <summary>
         /// Gets a value indicating whether or not the respawn system is waiting for players.
         /// </summary>
         public static bool IsWaitingForPlayers { get; private set; }
@@ -102,190 +100,171 @@ namespace RolePlus.ExternModule.API.Features
         /// </summary>
         public static HashSet<object> ManagedRoles { get; private set; } = new();
 
-        ///// <summary>
-        ///// Starts the process.
-        ///// </summary>
-        //public static void Start()
-        //{
-        //    Exiled.Events.Handlers.Server.RoundStarted += OnRoundStarted;
-        //    Exiled.Events.Handlers.Server.RoundEnded += OnRoundEnded;
-        //}
+        /// <summary>
+        /// Starts the process.
+        /// </summary>
+        public static void Start()
+        {
+            Exiled.Events.Handlers.Server.RoundStarted += OnRoundStarted;
+            Exiled.Events.Handlers.Server.RoundEnded += OnRoundEnded;
+        }
 
-        ///// <summary>
-        ///// Stops the process.
-        ///// </summary>
-        //public static void Stop()
-        //{
-        //    Exiled.Events.Handlers.Server.RoundStarted -= OnRoundStarted;
-        //    Exiled.Events.Handlers.Server.RoundEnded -= OnRoundEnded;
-        //}
+        /// <summary>
+        /// Stops the process.
+        /// </summary>
+        public static void Stop()
+        {
+            Exiled.Events.Handlers.Server.RoundStarted -= OnRoundStarted;
+            Exiled.Events.Handlers.Server.RoundEnded -= OnRoundEnded;
+        }
 
-        ///// <summary>
-        ///// Respawns the specified <see cref="Team"/>.
-        ///// </summary>
-        ///// <param name="team">The team to be respawned.</param>
-        ///// <param name="spawnLimit">The maximum amount of units spawned at once.</param>
-        //public static void RespawnTeam(Team team, uint spawnLimit = 12)
-        //{
-        //    if (team is not Team.MTF && team is not Team.CHI)
-        //        return;
+        /// <summary>
+        /// Respawns the specified <see cref="Team"/>.
+        /// </summary>
+        /// <param name="team">The team to be respawned.</param>
+        /// <param name="spawnLimit">The maximum amount of units spawned at once.</param>
+        public static void RespawnTeam(SpawnableTeamType team, uint spawnLimit = 12)
+        {
+            if (team is not SpawnableTeamType.NineTailedFox and not SpawnableTeamType.ChaosInsurgency)
+                return;
 
-        //    HashSet<Player> spawnedPlayers = new();
-        //    List<CustomRole> customRoles = team is Team.MTF ? MTFCustomRoles.ToList() : CHICustomRoles.ToList();
+            HashSet<Player> spawnedPlayers = new();
+            List<CustomRole> customRoles = team is SpawnableTeamType.NineTailedFox ? MTFCustomRoles.ToList() : CHICustomRoles.ToList();
 
-        //    int unitNumber = Random.Range(0, 20);
+            int unitNumber = UnityEngine.Random.Range(0, 20);
 
-        //    List<Player> toSpawn = Player.Get(p => p.Role.Team is Team.SCP && ManagedRoles.Select(role => CustomRole.Get(role).Players.Contains(p)).FirstOrDefault()).ToList();
-        //    toSpawn.ShuffleList();
+            List<Player> toSpawn = Player.Get(p => p.Role.Team is Team.SCPs && ManagedRoles.Select(role => CustomRole.Get(role).Owners.Contains(p)).FirstOrDefault()).ToList();
+            toSpawn.ShuffleList();
 
-        //    for (int i = 0; i < spawnLimit; i++)
-        //    {
-        //        Player ply = toSpawn[i];
-        //        customRoles.ShuffleList();
-        //        int classIndex = 0;
-        //        bool hasRole = false;
-        //        while (classIndex < customRoles.Count)
-        //        {
-        //            CustomRole customRole = customRoles[classIndex];
-        //            if ((team is Team.MTF && i == 0 && customRole.Role is not RoleType.NtfCaptain) || !customRole.CanSpawnByProbability())
-        //                classIndex++;
-        //            else
-        //            {
-        //                hasRole = true;
-        //                CustomRole.UnsafeSpawn(ply, customRole);
-        //                break;
-        //            }
-        //        }
+            for (int i = 0; i < spawnLimit; i++)
+            {
+                Player ply = toSpawn[i];
+                customRoles.ShuffleList();
+                int classIndex = 0;
+                bool hasRole = false;
+                while (classIndex < customRoles.Count)
+                {
+                    CustomRole customRole = customRoles[classIndex];
+                    if ((team is SpawnableTeamType.NineTailedFox && i == 0 && customRole.Role != RoleType.NtfCaptain) || !customRole.CanSpawnByProbability())
+                        classIndex++;
+                    else
+                    {
+                        hasRole = true;
+                        CustomRole.UnsafeSpawn(ply, customRole);
+                        break;
+                    }
+                }
 
-        //        if (!hasRole)
-        //        {
-        //            ply.SetRole(RoleType.Spectator);
+                if (!hasRole)
+                {
+                    ply.SetRole(RoleType.Spectator);
 
-        //            if (team is Team.MTF)
-        //                Timing.CallDelayed(0.5f, () => ply.SetRole(i == 0 ? MTFRoles.FirstOrDefault(role => role.ToString() == RoleType.NtfCaptain.ToString()) : MTFRoles.Random(), SpawnReason.Respawn));
-        //            else
-        //                Timing.CallDelayed(0.5f, () => ply.SetRole(CHIRoles.Random(), SpawnReason.Respawn));
-        //        }
+                    if (team is SpawnableTeamType.NineTailedFox)
+                        Timing.CallDelayed(0.5f, () => ply.Role.Set(i == 0 ? MTFRoles.FirstOrDefault(role => role.ToString() == RoleType.NtfCaptain.ToString()) : MTFRoles.Random(), SpawnReason.Respawn));
+                    else
+                        Timing.CallDelayed(0.5f, () => ply.Role.Set(CHIRoles.Random(), SpawnReason.Respawn));
+                }
 
-        //        spawnedPlayers.Add(ply);
-        //    }
+                spawnedPlayers.Add(ply);
+            }
 
-        //    if (team is Team.MTF)
-        //    {
-        //        KeyValuePair<string, string> displayUnit = UnitNames.Random();
-        //        string cassieReadableUnit = displayUnit.Key;
-        //        SyncUnit syncUnit = new()
-        //        {
-        //            SpawnableTeam = (byte)SpawnableTeamType.NineTailedFox,
-        //            UnitName = $"{displayUnit.Value.ToUpper()}-{(unitNumber.ToString().Length < 2 ? $"0-{unitNumber}" : unitNumber)}",
-        //        };
+            if (team is SpawnableTeamType.NineTailedFox)
+                Respawn.SummonNtfChopper();
+            else
+                Respawn.SummonChaosInsurgencyVan();
+        }
 
-        //        foreach (Player player in LastSpawnedPlayers)
-        //            player.UnitName = syncUnit.UnitName;
+        /// <summary>
+        /// Forces the respawn given a <see cref="Team"/>.
+        /// </summary>
+        /// <param name="team">The team to be forced to respawn.</param>
+        public static void ForceRespawn(SpawnableTeamType team)
+        {
+            if (team is not SpawnableTeamType.NineTailedFox and not SpawnableTeamType.ChaosInsurgency)
+                return;
 
-        //        Respawning.RespawnManager.Singleton.NamingManager.AllUnitNames.Add(syncUnit);
-        //        Respawn.SummonNtfChopper();
-        //    }
-        //    else
-        //        Respawn.SummonChaosInsurgencyVan();
-        //}
+            IEnumerable<CustomTeam> customTeams = CustomTeam.Registered.Where(t =>
+            t.RespawnTeam == (team is not SpawnableTeamType.NineTailedFox ? SpawnableTeamType.NineTailedFox : SpawnableTeamType.ChaosInsurgency));
 
-        ///// <summary>
-        ///// Forces the respawn given a <see cref="Team"/>.
-        ///// </summary>
-        ///// <param name="team">The team to be forced to respawn.</param>
-        //public static void ForceRespawn(Team team)
-        //{
-        //    if (team != Team.MTF && team != Team.CHI)
-        //        return;
+            CustomTeam customTeam = null;
 
-        //    IEnumerable<CustomTeam> customTeams = Registered.Where(t => t.RespawnTeam == (team is Team.MTF ? Team.MTF : Team.CHI));
+            foreach (CustomTeam toSpawn in customTeams)
+            {
+                if ((!toSpawn.CanSpawnWithoutScps && !SpawnManager.IsAlive(Team.SCPs)) ||
+                    (toSpawn.RequiredRoleToSpawn != RoleType.None && !Player.Get(toSpawn.RequiredRoleToSpawn).Any()) ||
+                    (toSpawn.RequiredCustomRoleToSpawn is not null && !CustomRole.TryGet(toSpawn.RequiredCustomRoleToSpawn, out CustomRole customRole) &&
+                    toSpawn.Owners.Any()) || !toSpawn.Probability.EvaluateProbability() || toSpawn.Tickets <= 0)
+                    continue;
 
-        //    CustomTeam customTeam = null;
+                customTeam = toSpawn;
+                break;
+            }
 
-        //    foreach (CustomTeam toSpawn in customTeams)
-        //    {
-        //        if ((!toSpawn.CanSpawnWithoutScps && !SpawnManager.IsAlive(Team.SCP)) ||
-        //            (toSpawn.RequiredRoleToSpawn != RoleType.None && !Player.Get(toSpawn.RequiredRoleToSpawn).Any()) ||
-        //            (toSpawn.RequiredCustomRoleToSpawn is not null && !CustomRole.TryGet(toSpawn.RequiredCustomRoleToSpawn, out CustomRole customRole) &&
-        //            toSpawn.AlivePlayers.Any()) || !toSpawn.Probability.EvaluateProbability() || toSpawn.Tickets <= 0)
-        //            continue;
+            if (CustomTeam.TrySpawn(customTeam))
+                return;
 
-        //        customTeam = toSpawn;
-        //        break;
-        //    }
+            RespawnTeam(team, team is SpawnableTeamType.ChaosInsurgency ? CHIUnitsSpawnedAtOnce : MTFUnitsSpawnedAtOnce);
+        }
 
-        //    NextKnownTeam = new()
-        //    {
-        //        Name = customTeam is null ? team is Team.MTF ? "Mobile Task Force" : "Chaos Insurgency" : customTeam.DisplayName,
-        //        Color = customTeam is null ? team is Team.MTF ? "#0b7ce7" : "#0be718" : customTeam.DisplayColor,
-        //    };
+        private static void OnRoundStarted()
+        {
+            _respawnCoreHandle = Timing.RunCoroutine(RespawnHandler());
+            _respawnHandle.Add(Timing.RunCoroutine(RespawnStateCheck()));
+            _respawnHandle.Add(Timing.RunCoroutine(RespawnTimerHandler()));
+        }
 
-        //    if (TrySpawn(customTeam))
-        //        return;
+        private static void OnRoundEnded(RoundEndedEventArgs _)
+        {
+            Timing.KillCoroutines(_respawnCoreHandle);
+            Timing.KillCoroutines(_respawnHandle.ToArray());
+            _respawnHandle.Clear();
+            State = RespawnStateBase.Enabled;
+        }
 
-        //    RespawnTeam(team, team is Team.CHI ? CHIUnitsSpawnedAtOnce : MTFUnitsSpawnedAtOnce);
-        //}
+        private static IEnumerator<float> RespawnHandler()
+        {
+            while (Round.IsStarted)
+            {
+                yield return Timing.WaitForSeconds(1f);
 
-        //private static void OnRoundStarted()
-        //{
-        //    _respawnCoreHandle = Timing.RunCoroutine(RespawnHandler());
-        //    _respawnHandle.Add(Timing.RunCoroutine(RespawnStateCheck()));
-        //    _respawnHandle.Add(Timing.RunCoroutine(RespawnTimerHandler()));
-        //}
+                TimeUntilNextRespawn--;
+                if (TimeUntilNextRespawn != 10)
+                    continue;
 
-        //private static void OnRoundEnded(RoundEndedEventArgs _)
-        //{
-        //    Timing.KillCoroutines(_respawnCoreHandle);
-        //    Timing.KillCoroutines(_respawnHandle.ToArray());
-        //    _respawnHandle.Clear();
-        //    State = RespawnState.Enabled;
-        //}
+                while (Player.Get(p => p.Role.Team is Team.SCPs && ManagedRoles.Select(role => CustomRole.Get(role).Owners.Contains(p)).FirstOrDefault()).IsEmpty())
+                {
+                    IsWaitingForPlayers = true;
+                    yield return Timing.WaitForSeconds(2f);
+                }
 
-        //private static IEnumerator<float> RespawnHandler()
-        //{
-        //    while (Round.IsStarted)
-        //    {
-        //        yield return Timing.WaitForSeconds(1f);
+                IsWaitingForPlayers = false;
+                ForceRespawn(UnityEngine.Random.Range(0, 101) <= 50 ? SpawnableTeamType.NineTailedFox : SpawnableTeamType.ChaosInsurgency);
+                TimeUntilNextRespawn = DefaultRespawnCooldown;
+            }
+        }
 
-        //        TimeUntilNextRespawn--;
-        //        if (TimeUntilNextRespawn != 10)
-        //            continue;
+        private static IEnumerator<float> RespawnStateCheck()
+        {
+            while (Round.IsStarted)
+            {
+                yield return Timing.WaitForSeconds(1f);
 
-        //        while (Player.Get(p => p.Role.Team is Team.SCP && ManagedRoles.Select(role => CustomRole.Get(role).Players.Contains(p)).FirstOrDefault()).IsEmpty())
-        //        {
-        //            IsWaitingForPlayers = true;
-        //            yield return Timing.WaitForSeconds(2f);
-        //        }
+                if (State == RespawnStateBase.Enabled && !Timing.IsRunning(_respawnCoreHandle))
+                    _respawnCoreHandle = Timing.RunCoroutine(RespawnHandler());
+                else if (State == RespawnStateBase.Disabled && Timing.IsRunning(_respawnCoreHandle))
+                    Timing.KillCoroutines(_respawnCoreHandle);
+            }
+        }
 
-        //        IsWaitingForPlayers = false;
-        //        ForceRespawn(Random.Range(0, 101) <= 50 ? Team.MTF : Team.CHI);
-        //        TimeUntilNextRespawn = DefaultRespawnCooldown;
-        //    }
-        //}
+        private static IEnumerator<float> RespawnTimerHandler()
+        {
+            while (Round.IsStarted)
+            {
+                yield return Timing.WaitForSeconds(1f);
 
-        //private static IEnumerator<float> RespawnStateCheck()
-        //{
-        //    while (Round.IsStarted)
-        //    {
-        //        yield return Timing.WaitForSeconds(1f);
-
-        //        if (State is RespawnState.Enabled && !Timing.IsRunning(_respawnCoreHandle))
-        //            _respawnCoreHandle = Timing.RunCoroutine(RespawnHandler());
-        //        else if (State is RespawnState.Disabled && Timing.IsRunning(_respawnCoreHandle))
-        //            Timing.KillCoroutines(_respawnCoreHandle);
-        //    }
-        //}
-
-        //private static IEnumerator<float> RespawnTimerHandler()
-        //{
-        //    while (Round.IsStarted)
-        //    {
-        //        yield return Timing.WaitForSeconds(1f);
-
-        //        if (TimeUntilNextRespawn < 0)
-        //            TimeUntilNextRespawn = DefaultRespawnCooldown;
-        //    }
-        //}
+                if (TimeUntilNextRespawn < 0)
+                    TimeUntilNextRespawn = DefaultRespawnCooldown;
+            }
+        }
     }
 }

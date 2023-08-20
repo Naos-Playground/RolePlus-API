@@ -105,7 +105,7 @@ namespace RolePlus.ExternModule
         public static bool IsWaitingForPlayers => RespawnManager.IsWaitingForPlayers;
 
         /// <inheritdoc cref="RespawnManager.State"/>
-        public static RespawnState RespawnState
+        public static RespawnStateBase RespawnState
         {
             get => RespawnManager.State;
             set => RespawnManager.State = value;

@@ -11,14 +11,12 @@ namespace RolePlus.ExternModule.Events.Patches
     using System.Collections.Generic;
     using System.Reflection;
     using System.Reflection.Emit;
-
+    using Exiled.API.Features.Attributes;
     using HarmonyLib;
 
     using MEC;
 
     using NorthwoodLib.Pools;
-
-#pragma warning disable SA1118 // Parameter should not span multiple lines
 
     [HarmonyPatch(typeof(Timing), nameof(Timing.RunCoroutine), new Type[] { typeof(IEnumerator<float>), typeof(Segment) })]
     [PatchGroup(nameof(RolePlus))]

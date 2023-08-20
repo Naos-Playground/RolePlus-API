@@ -100,10 +100,7 @@ namespace RolePlus.Internal
             CommonPatchProcessor.BeginEventHandlersDelivery();
 
             ServerEvents.ReloadedConfigs += () => ConfigAPI.LoadAll();
-            ServerEvents.RoundStarted += ServerHandler.OnRoundStart;
             ServerEvents.EndingRound += ServerHandler.OnRoundEnding;
-            ServerEvents.RoundEnded += ServerHandler.OnRoundEnded;
-            ServerEvents.RestartingRound += ServerHandler.OnRestartingRound;
             ServerEvents.WaitingForPlayers += ServerHandler.OnWaitingForPlayers;
         }
 
@@ -114,10 +111,7 @@ namespace RolePlus.Internal
             CommonPatchProcessor.StopEventHandlersDelivery();
 
             ServerEvents.ReloadedConfigs -= () => ConfigAPI.LoadAll();
-            ServerEvents.RoundStarted -= ServerHandler.OnRoundStart;
             ServerEvents.EndingRound -= ServerHandler.OnRoundEnding;
-            ServerEvents.RoundEnded -= ServerHandler.OnRoundEnded;
-            ServerEvents.RestartingRound -= ServerHandler.OnRestartingRound;
             ServerEvents.WaitingForPlayers -= ServerHandler.OnWaitingForPlayers;
 
             ServerHandler = null;

@@ -15,6 +15,8 @@ namespace RolePlus.ExternModule.API.Engine.Framework.Events
         /// <summary>
         /// The <see cref="System.EventHandler"/> delegate.
         /// </summary>
+        /// <typeparam name="TEventArgs">The event type.</typeparam>
+        /// <param name="ev">The event type instance.</param>
         public delegate void TEventHandler<TEventArgs>(TEventArgs ev)
             where TEventArgs : System.EventArgs;
 

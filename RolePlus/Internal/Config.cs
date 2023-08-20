@@ -18,8 +18,12 @@ namespace RolePlus.Internal
         /// <inheritdoc/>
         public bool IsEnabled { get; set; } = true;
 
-        public bool ShowDebugMessages { get; set; } = false;
-
+        /// <summary>
+        /// Gets the data directory.
+        /// </summary>
         public string DataDirectory { get; private set; } = string.Empty;
+
+        /// <inheritdoc/>
+        public bool Debug { get; set; } = true;
     }
 }

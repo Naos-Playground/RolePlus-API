@@ -11,7 +11,7 @@ namespace RolePlus.ExternModule.Events.Patches
 
     using Exiled.API.Extensions;
     using Exiled.API.Features;
-
+    using Exiled.API.Features.Attributes;
     using HarmonyLib;
 
     [HarmonyPatch(typeof(RemoteAdmin.QueryProcessor), nameof(RemoteAdmin.QueryProcessor.ProcessGameConsoleQuery))]

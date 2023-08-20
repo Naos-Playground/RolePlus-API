@@ -10,7 +10,7 @@ namespace RolePlus.ExternModule.Events.Patches
     using System.Linq;
 
     using Exiled.API.Extensions;
-
+    using Exiled.API.Features.Attributes;
     using HarmonyLib;
 
     using RemoteAdmin;

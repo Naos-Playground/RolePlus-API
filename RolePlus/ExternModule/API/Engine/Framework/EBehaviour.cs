@@ -57,6 +57,8 @@ namespace RolePlus.ExternModule.API.Engine.Framework
         {
             base.SubscribeEvents();
 
+            ExternModule.Events.EventManager.CreateFromTypeInstance(this);
+
             Exiled.Events.Handlers.Player.Destroying += OnDestroying;
         }
 
@@ -64,6 +66,8 @@ namespace RolePlus.ExternModule.API.Engine.Framework
         protected override void UnsubscribeEvents()
         {
             base.UnsubscribeEvents();
+
+            ExternModule.Events.EventManager.UnbindAllFromTypeInstance(this);
 
             Exiled.Events.Handlers.Player.Destroying -= OnDestroying;
         }

@@ -9,6 +9,8 @@ namespace RolePlus.ExternModule.Events.EventArgs
 {
     using System;
 
+    using Exiled.Events.EventArgs.Interfaces;
+
     using static Exiled.Events.Events;
 
     /// <summary>
@@ -26,7 +28,7 @@ namespace RolePlus.ExternModule.Events.EventArgs
             if (ev is null)
                 return;
 
-            if (ev is CustomEventHandler<EventArgs> generic)
+            if (ev is CustomEventHandler<IExiledEvent> generic)
                 GenericHandler = generic;
 
             if (ev is CustomEventHandler target)
@@ -44,7 +46,7 @@ namespace RolePlus.ExternModule.Events.EventArgs
         /// <summary>
         /// Gets the generic handler.
         /// </summary>
-        public CustomEventHandler<EventArgs> GenericHandler { get; }
+        public CustomEventHandler<IExiledEvent> GenericHandler { get; }
 
         /// <summary>
         /// Gets the target handler.
