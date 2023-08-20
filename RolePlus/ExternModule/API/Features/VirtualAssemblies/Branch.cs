@@ -13,8 +13,7 @@ namespace RolePlus.ExternModule.API.Features.VirtualAssemblies
     using System.Reflection;
 
     using Exiled.API.Features;
-
-    using RolePlus.ExternModule.API.Engine.Core;
+    using RolePlus.ExternModule.API.Engine.Framework;
     using RolePlus.ExternModule.API.Enums;
     using RolePlus.ExternModule.API.Features.Configs;
 
@@ -56,9 +55,9 @@ namespace RolePlus.ExternModule.API.Features.VirtualAssemblies
         public abstract Version Version { get; }
 
         /// <summary>
-        /// Gets the <see cref="Enums.BranchType"/>.
+        /// Gets the <see cref="BranchTypeBase"/>.
         /// </summary>
-        public abstract BranchType BranchType { get; }
+        public abstract BranchTypeBase BranchType { get; }
 
         /// <summary>
         /// Gets a value indicating whether the branch is running.

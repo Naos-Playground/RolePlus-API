@@ -11,18 +11,17 @@ namespace RolePlus.ExternModule.Events.Patches
 
     using Exiled.API.Extensions;
     using Exiled.API.Features;
-
-    using HarmonyLib;
+    using Exiled.API.Features.Attributes;
 
     using RemoteAdmin;
 
-    [HarmonyPatch(typeof(CommandProcessor), nameof(CommandProcessor.ProcessQuery), typeof(string), typeof(CommandSender))]
+    // [HarmonyPatch(typeof(CommandProcessor), nameof(CommandProcessor.ProcessQuery), typeof(string), typeof(CommandSender))]
     [PatchGroup(nameof(RolePlus))]
     internal static class SendingRemoteAdminCommand
     {
         private static bool Prefix(ref string q, ref CommandSender sender)
         {
-            QueryProcessor queryProcessor = sender is PlayerCommandSender playerCommandSender ? playerCommandSender.Processor : null;
+            QueryProcessor queryProcessor = null; /*sender is PlayerCommandSender playerCommandSender ? playerCommandSender.q : null;*/
             (string name, string[] arguments) = q.ExtractCommand();
             HLAPI.LogCommandUsed(queryProcessor, HLAPI.FormatArguments(arguments, 0));
 

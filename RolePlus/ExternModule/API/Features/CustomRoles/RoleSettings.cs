@@ -13,12 +13,13 @@ namespace RolePlus.ExternModule.API.Features.CustomRoles
     using Exiled.API.Features;
     using Exiled.API.Features.Roles;
     using PlayerRoles;
+    using RolePlus.ExternModule.API.Engine.Framework.Interfaces;
     using RolePlus.ExternModule.API.Enums;
 
     /// <summary>
-    /// A tool to easily setup custom roles .
+    /// A tool to easily setup roles.
     /// </summary>
-    public class RoleSettings
+    public class RoleSettings : IAddittiveProperty
     {
         /// <summary>
         /// Gets the default <see cref="RoleSettings"/> values.
@@ -52,12 +53,12 @@ namespace RolePlus.ExternModule.API.Features.CustomRoles
         public bool IsRoleDynamic { get; set; } = false;
 
         /// <summary>
-        /// Gets a value indicating whether the player's role should use the specified <see cref="Role"/> only.
+        /// Gets or sets a value indicating whether the player's role should use the specified <see cref="Role"/> only.
         /// </summary>
         public bool UseDefaultRoleOnly { get; set; } = true;
 
         /// <summary>
-        /// Gets or sets the player's scale. <see langword=""/>
+        /// Gets or sets the player's scale.
         /// </summary>
         public float Scale { get; set; } = 1f;
 
@@ -92,17 +93,17 @@ namespace RolePlus.ExternModule.API.Features.CustomRoles
         public RoomType[] Spawnpoints { get; set; } = new RoomType[] { };
 
         /// <summary>
-        /// Gets a <see cref="RoleType"/>[] containing all the allowed roles.
+        /// Gets or sets a <see cref="RoleType"/>[] containing all the allowed roles.
         /// </summary>
         public RoleType[] AllowedRoles { get; set; } = new RoleType[] { };
 
         /// <summary>
-        /// Gets a <see cref="DamageType"/>[] containing all the ignored damage types.
+        /// Gets or sets a <see cref="DamageType"/>[] containing all the ignored damage types.
         /// </summary>
         public DamageType[] IgnoredDamageTypes { get; set; } = new DamageType[] { };
 
         /// <summary>
-        /// Gets a <see cref="DamageType"/>[] containing all the allowed damage types.
+        /// Gets or sets a <see cref="DamageType"/>[] containing all the allowed damage types.
         /// </summary>
         public DamageType[] AllowedDamageTypes { get; set; } = new DamageType[] { };
 
@@ -187,42 +188,42 @@ namespace RolePlus.ExternModule.API.Features.CustomRoles
         public bool CanSelectItems { get; set; } = true;
 
         /// <summary>
-        /// Gets a value indicating whether the player can look at Scp173.
+        /// Gets or sets a value indicating whether the player can look at Scp173.
         /// </summary>
         public bool DoesLookingAffectScp173 { get; set; } = true;
 
         /// <summary>
-        /// Gets a value indicating whether the player can trigger Scp096.
+        /// Gets or sets a value indicating whether the player can trigger Scp096.
         /// </summary>
         public bool DoesLookingAffectScp096 { get; set; } = true;
 
         /// <summary>
-        /// Gets the player's rank name.
+        /// Gets or sets the player's rank name.
         /// </summary>
         public string RankName { get; set; } = string.Empty;
 
         /// <summary>
-        /// Gets the player's rank color.
+        /// Gets or sets the player's rank color.
         /// </summary>
         public string RankColor { get; set; } = string.Empty;
 
         /// <summary>
-        /// Gets the player's custom info.
+        /// Gets or sets the player's custom info.
         /// </summary>
         public string CustomInfo { get; set; } = string.Empty;
 
         /// <summary>
-        /// Gets a value indicating whether the player's <see cref="PlayerInfoArea"/> should be hidden.
+        /// Gets or sets a value indicating whether the player's <see cref="PlayerInfoArea"/> should be hidden.
         /// </summary>
         public bool HideInfoArea { get; set; } = false;
 
         /// <summary>
-        /// Gets a value indicating whether the C.A.S.S.I.E death announcement can be played when the player dies.
+        /// Gets or sets a value indicating whether the C.A.S.S.I.E death announcement can be played when the player dies.
         /// </summary>
         public bool IsDeathAnnouncementEnabled { get; set; } = false;
 
         /// <summary>
-        /// Gets the C.A.S.S.I.E announcement to be played when the player dies from an unhandled or unknown termination cause.
+        /// Gets or sets the C.A.S.S.I.E announcement to be played when the player dies from an unhandled or unknown termination cause.
         /// </summary>
         public string UnknownTerminationCauseAnnouncement { get; set; } = string.Empty;
 

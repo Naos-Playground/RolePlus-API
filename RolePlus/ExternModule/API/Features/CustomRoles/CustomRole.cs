@@ -19,6 +19,7 @@ namespace RolePlus.ExternModule.API.Features.CustomRoles
     using Exiled.Events.EventArgs.Player;
     using MEC;
     using PlayerRoles;
+    using RolePlus.ExternModule.API.Engine.Framework.Interfaces;
     using RolePlus.ExternModule.API.Enums;
     using RolePlus.ExternModule.API.Features.Attributes;
     using RolePlus.ExternModule.API.Features.CustomEscapes;
@@ -30,7 +31,7 @@ namespace RolePlus.ExternModule.API.Features.CustomRoles
     /// <summary>
     /// A tool to easily manage custom roles.
     /// </summary>
-    public abstract class CustomRole : TypeCastObject<CustomRole>
+    public abstract class CustomRole : TypeCastObject<CustomRole>, IAddittiveBehaviour
     {
         private static readonly List<CustomRole> _registered = new();
 
@@ -54,30 +55,30 @@ namespace RolePlus.ExternModule.API.Features.CustomRoles
         /// <summary>
         /// Gets the <see cref="CustomRole"/>'s <see cref="Type"/>.
         /// </summary>
-        public virtual Type RoleBuilderComponent { get; }
+        public abstract Type BehaviourComponent { get; }
 
         /// <summary>
         /// Gets the <see cref="CustomEscape"/>'s <see cref="Type"/>.
         /// </summary>
-        public virtual Type EscapeBuilderComponent { get; }
+        public virtual Type EscapeBehaviourComponent { get; }
 
         /// <summary>
         /// Gets a the <see cref="CustomRole"/>'s name.
         /// </summary>
-        public virtual string Name { get; }
+        public abstract string Name { get; }
 
         /// <summary>
-        /// Gets the type.
+        /// Gets or sets the <see cref="CustomRole"/>'s id.
         /// </summary>
-        public virtual uint Id { get; }
+        public virtual uint Id { get; protected set; }
 
         /// <summary>
-        /// Gets or sets the <see cref="CustomEscapes.EscapeSettings"/>.
+        /// Gets the <see cref="CustomEscapes.EscapeSettings"/>.
         /// </summary>
         public virtual List<EscapeSettings> EscapeSettings { get; } = new();
 
         /// <summary>
-        /// Gets or sets the <see cref="RoleSettings"/>.
+        /// Gets the <see cref="RoleSettings"/>.
         /// </summary>
         public virtual RoleSettings Settings { get; } = RoleSettings.Default;
 
@@ -99,7 +100,7 @@ namespace RolePlus.ExternModule.API.Features.CustomRoles
         /// <summary>
         /// Gets the relative spawn probability of the <see cref="CustomRole"/>.
         /// </summary>
-        public virtual int Probability { get; }
+        public virtual int SpawnProbability { get; }
 
         /// <summary>
         /// Gets a value representing the maximum instances of the <see cref="CustomRole"/> that can be automatically assigned.
@@ -212,7 +213,7 @@ namespace RolePlus.ExternModule.API.Features.CustomRoles
         public static bool operator !=(CustomRole left, CustomRole right) => left.Id != right.Id;
 
         /// <summary>
-        /// Gets a <see cref="CustomRole"/> given the specified <see cref="Id"/>.
+        /// Gets a <see cref="CustomRole"/> given the specified <paramref name="customRoleType"/>.
         /// </summary>
         /// <param name="customRoleType">The specified <see cref="Id"/>.</param>
         /// <returns>The <see cref="CustomRole"/> matching the search or <see langword="null"/> if not registered.</returns>
@@ -230,14 +231,14 @@ namespace RolePlus.ExternModule.API.Features.CustomRoles
         /// </summary>
         /// <param name="type">The specified <see cref="Type"/>.</param>
         /// <returns>The <see cref="CustomRole"/> matching the search or <see langword="null"/> if not found.</returns>
-        public static CustomRole Get(Type type) => type.BaseType != typeof(RoleBuilder) ? null : Registered.FirstOrDefault(customRole => customRole.RoleBuilderComponent == type);
+        public static CustomRole Get(Type type) => type.BaseType != typeof(RoleBehaviour) ? null : Registered.FirstOrDefault(customRole => customRole.BehaviourComponent == type);
 
         /// <summary>
-        /// Gets a <see cref="CustomRole"/> given the specified <see cref="RoleBuilder"/>.
+        /// Gets a <see cref="CustomRole"/> given the specified <see cref="RoleBehaviour"/>.
         /// </summary>
-        /// <param name="roleBuilder">The specified <see cref="RoleBuilder"/>.</param>
+        /// <param name="roleBuilder">The specified <see cref="RoleBehaviour"/>.</param>
         /// <returns>The <see cref="CustomRole"/> matching the search or <see langword="null"/> if not found.</returns>
-        public static CustomRole Get(RoleBuilder roleBuilder) => Get(roleBuilder.GetType());
+        public static CustomRole Get(RoleBehaviour roleBuilder) => Get(roleBuilder.GetType());
 
         /// <summary>
         /// Gets a <see cref="CustomRole"/> from a <see cref="Player"/>.
@@ -286,10 +287,10 @@ namespace RolePlus.ExternModule.API.Features.CustomRoles
         /// <summary>
         /// Tries to get the player's current <see cref="CustomRole"/>.
         /// </summary>
-        /// <param name="roleBuilder">The <see cref="RoleBuilder"/> to search for.</param>
+        /// <param name="roleBuilder">The <see cref="RoleBehaviour"/> to search for.</param>
         /// <param name="customRole">The found <see cref="CustomRole"/>, <see langword="null"/> if not registered.</param>
         /// <returns><see langword="true"/> if a <see cref="CustomRole"/> was found; otherwise, <see langword="false"/>.</returns>
-        public static bool TryGet(RoleBuilder roleBuilder, out CustomRole customRole) => (customRole = Get(roleBuilder.GetType())) is not null;
+        public static bool TryGet(RoleBehaviour roleBuilder, out CustomRole customRole) => (customRole = Get(roleBuilder.GetType())) is not null;
 
         /// <summary>
         /// Tries to get the player's current <see cref="CustomRole"/>.
@@ -402,12 +403,13 @@ namespace RolePlus.ExternModule.API.Features.CustomRoles
         /// Enables all the custom roles present in the assembly.
         /// </summary>
         /// <returns>A <see cref="IEnumerable{T}"/> of <see cref="CustomRole"/> which contains all the enabled custom roles.</returns>
-        public static List<CustomRole> RegisterRoles()
+        public static List<CustomRole> EnableAll()
         {
             List<CustomRole> customRoles = new();
             foreach (Type type in Assembly.GetCallingAssembly().GetTypes())
             {
-                if ((type.BaseType != typeof(CustomRole) && !type.IsSubclassOf(typeof(CustomRole))) || type.GetCustomAttribute(typeof(CustomRoleAttribute)) is null)
+                CustomRoleAttribute attribute = type.GetCustomAttribute<CustomRoleAttribute>();
+                if ((type.BaseType != typeof(CustomRole) && !type.IsSubclassOf(typeof(CustomRole))) || attribute is null)
                     continue;
 
                 CustomRole customRole = Activator.CreateInstance(type) as CustomRole;
@@ -415,8 +417,8 @@ namespace RolePlus.ExternModule.API.Features.CustomRoles
                 if (!customRole.IsEnabled)
                     continue;
 
-                customRole.TryRegister();
-                customRoles.Add(customRole);
+                if (customRole.TryRegister(attribute))
+                    customRoles.Add(customRole);
             }
 
             if (customRoles.Count() != Registered.Count())
@@ -429,14 +431,10 @@ namespace RolePlus.ExternModule.API.Features.CustomRoles
         /// Disables all the custom roles present in the assembly.
         /// </summary>
         /// <returns>A <see cref="IEnumerable{T}"/> of <see cref="CustomRole"/> which contains all the disabled custom roles.</returns>
-        public static List<CustomRole> UnregisterRoles()
+        public static List<CustomRole> DisableAll()
         {
             List<CustomRole> customRoles = new();
-            foreach (CustomRole customRole in Registered)
-            {
-                customRole.TryUnregister();
-                customRoles.Add(customRole);
-            }
+            customRoles.AddRange(Registered.Where(customRole => customRole.TryUnregister()));
 
             Log.SendRaw($"[{Assembly.GetCallingAssembly().GetName().Name}] {customRoles.Count()} custom roles have been successfully unregistered!", ConsoleColor.Cyan);
 
@@ -447,10 +445,13 @@ namespace RolePlus.ExternModule.API.Features.CustomRoles
         /// Tries to register a <see cref="CustomRole"/>.
         /// </summary>
         /// <returns><see langword="true"/> if the <see cref="CustomRole"/> was registered; otherwise, <see langword="false"/>.</returns>
-        internal bool TryRegister()
+        internal bool TryRegister(CustomRoleAttribute attribute = null)
         {
             if (!Registered.Contains(this))
             {
+                if (attribute is not null && Id == 0)
+                    Id = attribute.Id;
+
                 if (Registered.Any(x => x.Id == Id))
                 {
                     Log.Debug(
@@ -511,7 +512,7 @@ namespace RolePlus.ExternModule.API.Features.CustomRoles
         /// <summary>
         /// Returns a the 32-bit signed hash code of the current object instance.
         /// </summary>
-        /// <returns>The 32-bit signed hash code of the current object instance</returns>
+        /// <returns>The 32-bit signed hash code of the current object instance.</returns>
         public override int GetHashCode() => base.GetHashCode();
 
         /// <summary>
@@ -526,7 +527,7 @@ namespace RolePlus.ExternModule.API.Features.CustomRoles
 
             RespawnManager.RespawnQueue.Add(player);
 
-            player.GameObject.AddComponent(RoleBuilderComponent);
+            player.AddComponent(BehaviourComponent);
             PlayersValue.Remove(player);
             PlayersValue.Add(player, this);
 
@@ -557,7 +558,7 @@ namespace RolePlus.ExternModule.API.Features.CustomRoles
         /// Gets a value indicating whether a player can be spawned as a specific <see cref="CustomRole"/> given its probability.
         /// </summary>
         /// <returns><see langword="true"/> if the probability condition was satified; otherwise, <see langword="false"/>.</returns>
-        public bool CanSpawnByProbability() => UnityEngine.Random.Range(0, 101) <= Probability;
+        public bool CanSpawnByProbability() => UnityEngine.Random.Range(0, 101) <= SpawnProbability;
 
         private void HandleSpawnOnEvents(InvokingHandlerEventArgs ev)
         {
@@ -581,7 +582,7 @@ namespace RolePlus.ExternModule.API.Features.CustomRoles
         {
             if (!TryGet(ev.Player, out CustomRole customRole) ||
                 customRole != this ||
-                !ev.Player.GameObject.TryGetComponent(out RoleBuilder builder))
+                !ev.Player.GameObject.TryGetComponent(out RoleBehaviour builder))
                 return;
 
             bool useCustomSpawnpoint = (bool)builder.GetType().BaseType
@@ -598,7 +599,7 @@ namespace RolePlus.ExternModule.API.Features.CustomRoles
         {
             if (!TryGet(ev.Player, out CustomRole customRole) ||
                 customRole != this ||
-                !ev.Player.GameObject.TryGetComponent(out RoleBuilder builder))
+                !ev.Player.GameObject.TryGetComponent(out RoleBehaviour builder))
                 return;
 
             ev.Items.Clear();
@@ -620,10 +621,10 @@ namespace RolePlus.ExternModule.API.Features.CustomRoles
                     ev.Ammo?.Add(kvp.Key.GetItemType(), kvp.Value);
             }
 
-            if (RoleBuilder.StaticPlayers.Contains(ev.Player))
+            if (RoleBehaviour.StaticPlayers.Contains(ev.Player))
             {
                 ev.SpawnFlags |= RoleSpawnFlags.AssignInventory;
-                RoleBuilder.StaticPlayers.Remove(ev.Player);
+                RoleBehaviour.StaticPlayers.Remove(ev.Player);
             }
         }
 
@@ -632,9 +633,9 @@ namespace RolePlus.ExternModule.API.Features.CustomRoles
             RespawnManager.RespawnQueue.Add(player);
 
             if (shouldKeepPosition)
-                RoleBuilder.StaticPlayers.Add(player);
+                RoleBehaviour.StaticPlayers.Add(player);
 
-            player.AddComponent(RoleBuilderComponent, $"ECS-{Name}");
+            player.AddComponent(BehaviourComponent, $"ECS-{Name}");
         }
     }
 }

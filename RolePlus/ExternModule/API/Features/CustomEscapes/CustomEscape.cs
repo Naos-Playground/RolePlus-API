@@ -15,17 +15,16 @@ namespace RolePlus.ExternModule.API.Features.CustomEscapes
     using Exiled.API.Features.Core;
 
     using MonoMod.Utils;
-
+    using RolePlus.ExternModule.API.Engine.Framework.Interfaces;
     using RolePlus.ExternModule.API.Enums;
     using RolePlus.ExternModule.API.Features.Attributes;
     using RolePlus.ExternModule.API.Features.CustomRoles;
-
     using Hint = CustomHud.Hint;
 
     /// <summary>
     /// A class to easily manage escaping behavior.
     /// </summary>
-    public abstract class CustomEscape : TypeCastObject<CustomEscape>
+    public abstract class CustomEscape : TypeCastObject<CustomEscape>, IAddittiveBehaviour
     {
         private static readonly List<CustomEscape> _registered = new();
         private static readonly Dictionary<EscapeScenarioTypeBase, Hint> _allScenarios = new();
@@ -52,14 +51,14 @@ namespace RolePlus.ExternModule.API.Features.CustomEscapes
         public abstract string Name { get; }
 
         /// <summary>
-        /// Gets the <see cref="CustomEscape"/>'s id.
+        /// Gets or sets the <see cref="CustomEscape"/>'s id.
         /// </summary>
-        public abstract uint Id { get; }
+        public virtual uint Id { get; protected set; }
 
         /// <summary>
         /// Gets the <see cref="CustomEscape"/>'s <see cref="Type"/>.
         /// </summary>
-        public virtual Type EscapeBuilderComponent { get; }
+        public virtual Type BehaviourComponent { get; }
 
         /// <summary>
         /// Gets a value indicating whether the <see cref="CustomEscape"/> is enabled.
@@ -147,13 +146,6 @@ namespace RolePlus.ExternModule.API.Features.CustomEscapes
         public static bool operator !=(CustomEscape left, CustomEscape right) => left.Id != right.Id;
 
         /// <summary>
-        /// Determines whether the specified object is equal to the current object.
-        /// </summary>
-        /// <param name="obj">The object to compare.</param>
-        /// <returns><see langword="true"/> if the object was equal; otherwise, <see langword="false"/>.</returns>
-        public override bool Equals(object obj) => obj is CustomEscape customEscape && customEscape == this;
-
-        /// <summary>
         /// Enables all the custom roles present in the assembly.
         /// </summary>
         /// <returns>A <see cref="IEnumerable{T}"/> of <see cref="CustomEscape"/> which contains all the enabled custom roles.</returns>
@@ -162,7 +154,8 @@ namespace RolePlus.ExternModule.API.Features.CustomEscapes
             List<CustomEscape> customEscapes = new();
             foreach (Type type in Assembly.GetCallingAssembly().GetTypes())
             {
-                if ((type.BaseType != typeof(CustomEscape) && !type.IsSubclassOf(typeof(CustomEscape))) || type.GetCustomAttribute(typeof(CustomEscapeAttribute)) is null)
+                CustomEscapeAttribute attribute = type.GetCustomAttribute<CustomEscapeAttribute>();
+                if ((type.BaseType != typeof(CustomEscape) && !type.IsSubclassOf(typeof(CustomEscape))) || attribute is null)
                     continue;
 
                 CustomEscape customEscape = Activator.CreateInstance(type) as CustomEscape;
@@ -170,8 +163,8 @@ namespace RolePlus.ExternModule.API.Features.CustomEscapes
                 if (!customEscape.IsEnabled)
                     continue;
 
-                customEscape.TryRegister();
-                customEscapes.Add(customEscape);
+                if (customEscape.TryRegister(attribute))
+                    customEscapes.Add(customEscape);
             }
 
             if (customEscapes.Count() != Registered.Count())
@@ -184,14 +177,10 @@ namespace RolePlus.ExternModule.API.Features.CustomEscapes
         /// Disables all the custom roles present in the assembly.
         /// </summary>
         /// <returns>A <see cref="IEnumerable{T}"/> of <see cref="CustomEscape"/> which contains all the disabled custom roles.</returns>
-        public static List<CustomEscape> UnregisterAll()
+        public static List<CustomEscape> DisableAll()
         {
             List<CustomEscape> customEscapes = new();
-            foreach (CustomEscape customEscape in Registered)
-            {
-                customEscape.TryUnregister();
-                customEscapes.Add(customEscape);
-            }
+            customEscapes.AddRange(Registered.Where(customEscape => customEscape.TryUnregister()));
 
             Log.SendRaw($"[{Assembly.GetCallingAssembly().GetName().Name}] {customEscapes.Count()} custom escapes have been successfully unregistered!", ConsoleColor.Cyan);
 
@@ -217,14 +206,14 @@ namespace RolePlus.ExternModule.API.Features.CustomEscapes
         /// </summary>
         /// <param name="type">The specified <see cref="Type"/>.</param>
         /// <returns>The <see cref="CustomEscape"/> matching the search or <see langword="null"/> if not found.</returns>
-        public static CustomEscape Get(Type type) => type.BaseType != typeof(EscapeBuilder) ? null : Registered.FirstOrDefault(customEscape => customEscape == type);
+        public static CustomEscape Get(Type type) => type.BaseType != typeof(EscapeBehaviour) ? null : Registered.FirstOrDefault(customEscape => customEscape == type);
 
         /// <summary>
-        /// Gets a <see cref="CustomEscape"/> given the specified <see cref="EscapeBuilder"/>.
+        /// Gets a <see cref="CustomEscape"/> given the specified <see cref="EscapeBehaviour"/>.
         /// </summary>
-        /// <param name="escapeBuilder">The specified <see cref="EscapeBuilder"/>.</param>
+        /// <param name="escapeBuilder">The specified <see cref="EscapeBehaviour"/>.</param>
         /// <returns>The <see cref="CustomEscape"/> matching the search or <see langword="null"/> if not found.</returns>
-        public static CustomEscape Get(EscapeBuilder escapeBuilder) => Get(escapeBuilder.GetType());
+        public static CustomEscape Get(EscapeBehaviour escapeBuilder) => Get(escapeBuilder.GetType());
 
         /// <summary>
         /// Gets a <see cref="CustomEscape"/> from a <see cref="Player"/>.
@@ -273,10 +262,10 @@ namespace RolePlus.ExternModule.API.Features.CustomEscapes
         /// <summary>
         /// Tries to get the player's current <see cref="CustomEscape"/>.
         /// </summary>
-        /// <param name="escapeBuilder">The <see cref="EscapeBuilder"/> to search for.</param>
+        /// <param name="escapeBuilder">The <see cref="EscapeBehaviour"/> to search for.</param>
         /// <param name="customEscape">The found <see cref="CustomEscape"/>, <see langword="null"/> if not registered.</param>
         /// <returns><see langword="true"/> if a <see cref="CustomEscape"/> was found; otherwise, <see langword="false"/>.</returns>
-        public static bool TryGet(EscapeBuilder escapeBuilder, out CustomEscape customEscape) => (customEscape = Get(escapeBuilder.GetType())) is not null;
+        public static bool TryGet(EscapeBehaviour escapeBuilder, out CustomEscape customEscape) => (customEscape = Get(escapeBuilder.GetType())) is not null;
 
         /// <summary>
         /// Tries to get the player's current <see cref="CustomEscape"/>.
@@ -290,10 +279,13 @@ namespace RolePlus.ExternModule.API.Features.CustomEscapes
         /// Tries to register a <see cref="CustomEscape"/>.
         /// </summary>
         /// <returns><see langword="true"/> if the <see cref="CustomEscape"/> was registered; otherwise, <see langword="false"/>.</returns>
-        internal bool TryRegister()
+        internal bool TryRegister(CustomEscapeAttribute attribute = null)
         {
             if (!Registered.Contains(this))
             {
+                if (attribute is not null && Id == 0)
+                    Id = attribute.Id;
+
                 if (Registered.Any(x => x.Id == Id))
                 {
                     Log.Debug(
@@ -337,9 +329,16 @@ namespace RolePlus.ExternModule.API.Features.CustomEscapes
         }
 
         /// <summary>
+        /// Determines whether the specified object is equal to the current object.
+        /// </summary>
+        /// <param name="obj">The object to compare.</param>
+        /// <returns><see langword="true"/> if the object was equal; otherwise, <see langword="false"/>.</returns>
+        public override bool Equals(object obj) => obj is CustomEscape customEscape && customEscape == this;
+
+        /// <summary>
         /// Returns a the 32-bit signed hash code of the current object instance.
         /// </summary>
-        /// <returns>The 32-bit signed hash code of the current object instance</returns>
+        /// <returns>The 32-bit signed hash code of the current object instance.</returns>
         public override int GetHashCode() => base.GetHashCode();
 
         /// <summary>
@@ -350,7 +349,7 @@ namespace RolePlus.ExternModule.API.Features.CustomEscapes
         {
             _playerValues.Remove(player);
             _playerValues.Add(player, this);
-            player.AddComponent(EscapeBuilderComponent, $"ECS-{Name}");
+            player.AddComponent(BehaviourComponent, $"ECS-{Name}");
         }
 
         /// <summary>
@@ -360,7 +359,7 @@ namespace RolePlus.ExternModule.API.Features.CustomEscapes
         public void Detach(Player player)
         {
             _playerValues.Remove(player);
-            player.GetComponent(EscapeBuilderComponent).Destroy();
+            player.GetComponent(BehaviourComponent).Destroy();
         }
     }
 }

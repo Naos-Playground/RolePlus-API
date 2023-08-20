@@ -16,8 +16,6 @@ namespace RolePlus.Internal
 
     using HarmonyLib;
 
-    using RolePlus.ExternModule.API.Engine.Framework.Bootstrap;
-
     using ConfigAPI = ExternModule.API.Features.Configs.Config;
     using ServerEvents = Exiled.Events.Handlers.Server;
 
@@ -102,10 +100,7 @@ namespace RolePlus.Internal
             CommonPatchProcessor.BeginEventHandlersDelivery();
 
             ServerEvents.ReloadedConfigs += () => ConfigAPI.LoadAll();
-            ServerEvents.RoundStarted += ServerHandler.OnRoundStart;
             ServerEvents.EndingRound += ServerHandler.OnRoundEnding;
-            ServerEvents.RoundEnded += ServerHandler.OnRoundEnded;
-            ServerEvents.RestartingRound += ServerHandler.OnRestartingRound;
             ServerEvents.WaitingForPlayers += ServerHandler.OnWaitingForPlayers;
         }
 
@@ -116,10 +111,7 @@ namespace RolePlus.Internal
             CommonPatchProcessor.StopEventHandlersDelivery();
 
             ServerEvents.ReloadedConfigs -= () => ConfigAPI.LoadAll();
-            ServerEvents.RoundStarted -= ServerHandler.OnRoundStart;
             ServerEvents.EndingRound -= ServerHandler.OnRoundEnding;
-            ServerEvents.RoundEnded -= ServerHandler.OnRoundEnded;
-            ServerEvents.RestartingRound -= ServerHandler.OnRestartingRound;
             ServerEvents.WaitingForPlayers -= ServerHandler.OnWaitingForPlayers;
 
             ServerHandler = null;

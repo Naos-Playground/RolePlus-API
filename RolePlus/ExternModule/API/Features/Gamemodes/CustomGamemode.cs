@@ -15,8 +15,7 @@ namespace RolePlus.ExternModule.API.Features
     using Exiled.API.Features;
 
     using MEC;
-
-    using RolePlus.ExternModule.API.Features.Controllers;
+    using RolePlus.ExternModule.API.Engine.Framework;
     using RolePlus.Internal;
 
 #pragma warning disable SA1402 // File may only contain a single type
@@ -55,7 +54,7 @@ namespace RolePlus.ExternModule.API.Features
         public static CustomGamemode PreviousGamemode { get; private set; }
 
         /// <summary>
-        /// Gets the <see cref="PlayerScriptController"/>.
+        /// Gets the <see cref="EBehaviour"/>.
         /// </summary>
         public virtual Type PlayerScript { get; private set; }
 
@@ -242,8 +241,7 @@ namespace RolePlus.ExternModule.API.Features
                     Log.Debug(
                         $"[CustomGamemodes] Couldn't register {Name}. " +
                         $"Another CustomGamemode has been registered with the same GamemodeType:" +
-                        $" {Registered.FirstOrDefault(x => x.Type == Type)}",
-                        RolePlus.Singleton.Config.ShowDebugMessages);
+                        $" {Registered.FirstOrDefault(x => x.Type == Type)}");
 
                     return false;
                 }
@@ -254,8 +252,7 @@ namespace RolePlus.ExternModule.API.Features
             }
 
             Log.Debug(
-                $"[CustomGamemodes] Couldn't register {Name}. This custom gamemode has been already registered.",
-                RolePlus.Singleton.Config.ShowDebugMessages);
+                $"[CustomGamemodes] Couldn't register {Name}. This custom gamemode has been already registered.");
 
             return false;
         }
@@ -269,8 +266,7 @@ namespace RolePlus.ExternModule.API.Features
             if (!Registered.Contains(this))
             {
                 Log.Debug(
-                    $"[CustomGamemodes] Couldn't unregister {Name}. This custom gamemode hasn't been registered yet.",
-                    RolePlus.Singleton.Config.ShowDebugMessages);
+                    $"[CustomGamemodes] Couldn't unregister {Name}. This custom gamemode hasn't been registered yet.");
 
                 return false;
             }

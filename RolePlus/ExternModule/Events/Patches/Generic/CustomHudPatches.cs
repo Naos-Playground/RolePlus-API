@@ -16,11 +16,10 @@ namespace RolePlus.ExternModule.Events.Patches
 
     using NorthwoodLib.Pools;
     using RolePlus.ExternModule.API.Enums;
-    using RolePlus.ExternModule.API.Features.CustomHud;
 
     using static HarmonyLib.AccessTools;
 
-    [HarmonyPatch(typeof(Player), nameof(Player.ShowHint))]
+    // [HarmonyPatch(typeof(Player), nameof(Player.ShowHint))]
     [PatchGroup(nameof(RolePlus))]
     internal static class CustomHudPatches
     {
@@ -43,8 +42,8 @@ namespace RolePlus.ExternModule.Events.Patches
                 new(OpCodes.Ldarg_1),
                 new(OpCodes.Ldarg_2),
                 new(OpCodes.Ldc_I4_1),
-                new(OpCodes.Ldc_I4_S, (int)ScreenLocation.MiddleBottom),
-                new(OpCodes.Call, Method(typeof(HudManager), nameof(HudManager.ShowHint))),
+                new(OpCodes.Ldc_I4_S, (int)DisplayLocation.MiddleBottom),
+                new(OpCodes.Call, Method(typeof(API.Features.CustomHud.Hint), nameof(API.Features.CustomHud.Hint.Show), new System.Type[] { typeof(Player) })),
                 new CodeInstruction(OpCodes.Ret).WithLabels(ret),
             });
 

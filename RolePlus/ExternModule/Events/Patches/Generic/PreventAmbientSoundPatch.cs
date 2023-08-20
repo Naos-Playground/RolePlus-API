@@ -9,14 +9,12 @@ namespace RolePlus.ExternModule.Events.Patches
 {
     using System.Collections.Generic;
     using System.Reflection.Emit;
-
+    using Exiled.API.Features.Attributes;
     using HarmonyLib;
 
     using NorthwoodLib.Pools;
 
     using static HarmonyLib.AccessTools;
-
-#pragma warning disable SA1118 // Parameter should not span multiple lines
 
     [HarmonyPatch(typeof(AmbientSoundPlayer), nameof(AmbientSoundPlayer.GenerateRandom))]
     [PatchGroup(nameof(RolePlus))]

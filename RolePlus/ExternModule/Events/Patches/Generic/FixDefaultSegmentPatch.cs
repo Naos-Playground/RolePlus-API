@@ -10,7 +10,7 @@ namespace RolePlus.ExternModule.Events.Patches
     using System;
     using System.Collections.Generic;
     using System.Reflection.Emit;
-
+    using Exiled.API.Features.Attributes;
     using HarmonyLib;
 
     using MEC;

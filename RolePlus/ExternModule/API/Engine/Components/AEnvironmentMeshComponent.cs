@@ -12,9 +12,8 @@ namespace RolePlus.ExternModule.API.Engine.Components
 
     using Exiled.API.Enums;
     using Exiled.API.Features;
-    using Exiled.API.Features.Items;
     using Exiled.API.Features.Pickups;
-  
+
     using InventorySystem.Items.Pickups;
 
     using MapEditorReborn.API.Features.Objects;
@@ -23,9 +22,8 @@ namespace RolePlus.ExternModule.API.Engine.Components
     using MEC;
 
     using Mirror;
-
+    using RolePlus.ExternModule.API.Engine.Framework;
     using RolePlus.ExternModule.API.Engine.Framework.Events.EventArgs;
-    using RolePlus.ExternModule.API.Engine.Framework.Structs;
 
     using UnityEngine;
 
@@ -44,7 +42,7 @@ namespace RolePlus.ExternModule.API.Engine.Components
         {
         }
 
-        /// <inheritdoc/>
+        /// <inheritdoc cref="AEnvironmentMeshComponent"/>
         protected AEnvironmentMeshComponent(GameObject gameObject = null)
             : base(gameObject)
         {
@@ -59,7 +57,7 @@ namespace RolePlus.ExternModule.API.Engine.Components
         {
         }
 
-        /// <inheritdoc/>
+        /// <inheritdoc cref="AEnvironmentMeshComponent"/>
         protected AEnvironmentMeshComponent(
             SchematicObject mesh,
             Vector3 scale,
@@ -69,7 +67,7 @@ namespace RolePlus.ExternModule.API.Engine.Components
         {
         }
 
-        /// <inheritdoc/>
+        /// <inheritdoc cref="AEnvironmentMeshComponent"/>
         protected AEnvironmentMeshComponent(
             FTransform socket,
             SchematicObject mesh,
@@ -80,7 +78,7 @@ namespace RolePlus.ExternModule.API.Engine.Components
         {
         }
 
-        /// <inheritdoc/>
+        /// <inheritdoc cref="AEnvironmentMeshComponent"/>
         protected AEnvironmentMeshComponent(
             Vector3 localPosition,
             SchematicObject mesh,
@@ -91,7 +89,7 @@ namespace RolePlus.ExternModule.API.Engine.Components
         {
         }
 
-        /// <inheritdoc/>
+        /// <inheritdoc cref="AEnvironmentMeshComponent"/>
         protected AEnvironmentMeshComponent(
             Vector3 localPosition,
             Quaternion localRotation,
@@ -103,7 +101,7 @@ namespace RolePlus.ExternModule.API.Engine.Components
         {
         }
 
-        /// <inheritdoc/>
+        /// <inheritdoc cref="AEnvironmentMeshComponent"/>
         protected AEnvironmentMeshComponent(
             Vector3 localPosition,
             Quaternion localRotation,

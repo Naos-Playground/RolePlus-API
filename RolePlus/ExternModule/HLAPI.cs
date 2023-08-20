@@ -28,8 +28,6 @@ namespace RolePlus.ExternModule
 
     using Mirror;
     using NorthwoodLib.Pools;
-    using PlayerRoles;
-    using PluginAPI.Roles;
     using RemoteAdmin;
     using RolePlus.ExternModule.API.Enums;
     using RolePlus.ExternModule.API.Features;
@@ -107,7 +105,7 @@ namespace RolePlus.ExternModule
         public static bool IsWaitingForPlayers => RespawnManager.IsWaitingForPlayers;
 
         /// <inheritdoc cref="RespawnManager.State"/>
-        public static RespawnState RespawnState
+        public static RespawnStateBase RespawnState
         {
             get => RespawnManager.State;
             set => RespawnManager.State = value;

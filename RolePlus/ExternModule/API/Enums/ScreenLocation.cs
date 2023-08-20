@@ -8,9 +8,9 @@
 namespace RolePlus.ExternModule.API.Enums
 {
     /// <summary>
-    /// Represents locations on a user's display.
+    /// All available locations on a player's display.
     /// </summary>
-    public enum ScreenLocation
+    public enum DisplayLocation
     {
         /// <summary>
         /// Represents the top of the screen.
@@ -18,7 +18,7 @@ namespace RolePlus.ExternModule.API.Enums
         Top,
 
         /// <summary>
-        /// Represents between the <see cref="Middle"/> and the <see cref="Top"/>.
+        /// Represents a location between the <see cref="Middle"/> and the <see cref="Top"/>.
         /// </summary>
         MiddleTop,
 
@@ -28,7 +28,7 @@ namespace RolePlus.ExternModule.API.Enums
         Middle,
 
         /// <summary>
-        /// Represents between the <see cref="Middle"/> and the <see cref="Bottom"/>.
+        /// Represents a location between the <see cref="Middle"/> and the <see cref="Bottom"/>.
         /// </summary>
         MiddleBottom,
 
