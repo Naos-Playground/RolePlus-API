@@ -128,6 +128,8 @@
     <Compile Include="ExternModule\API\Features\CustomEscapes\CustomEscape.cs" />
     <Compile Include="ExternModule\API\Features\CustomEscapes\EscapeBehaviour.cs" />
     <Compile Include="ExternModule\API\Features\CustomEscapes\EscapeSettings.cs" />
+    <Compile Include="ExternModule\API\Features\CustomHud\Display.cs" />
+    <Compile Include="ExternModule\API\Features\CustomHud\HudBehaviour.cs" />
     <Compile Include="ExternModule\API\Features\CustomRoles\Generic\CustomRole.cs" />
     <Compile Include="ExternModule\API\Features\CustomRoles\RoleBehaviour.cs" />
     <Compile Include="ExternModule\API\Features\Inventory\InventoryManager.cs" />
@@ -191,12 +193,10 @@
     <Compile Include="ExternModule\API\Features\CustomAbilities\CustomAbility.cs" />
     <Compile Include="ExternModule\API\Features\Attributes\CustomAbilityAttribute.cs" />
     <Compile Include="ExternModule\API\Features\CustomHud\Hint.cs" />
-    <Compile Include="ExternModule\API\Features\CustomHud\HudManager.cs" />
-    <Compile Include="ExternModule\API\Features\CustomHud\HudScreen.cs" />
     <Compile Include="ExternModule\API\Features\CustomRoles\CustomRole.cs" />
     <Compile Include="ExternModule\API\Features\Attributes\CustomRoleAttribute.cs" />
-    <Compile Include="ExternModule\API\Features\CustomSkins\CharacterMeshComponent.cs" />
-    <Compile Include="ExternModule\API\Features\CustomSkins\ItemMeshComponent.cs" />
+    <Compile Include="ExternModule\API\Features\CustomMeshes\CharacterMeshComponent.cs" />
+    <Compile Include="ExternModule\API\Features\CustomMeshes\ItemMeshComponent.cs" />
     <Compile Include="ExternModule\API\Features\CustomTeams\CustomTeam.cs" />
     <Compile Include="ExternModule\API\Features\Attributes\CustomTeamAttribute.cs" />
     <Compile Include="ExternModule\API\Features\Gamemodes\CustomGamemode.cs" />

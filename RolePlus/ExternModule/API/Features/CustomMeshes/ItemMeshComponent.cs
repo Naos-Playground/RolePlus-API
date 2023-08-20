@@ -5,14 +5,16 @@
 // </copyright>
 // -----------------------------------------------------------------------
 
-namespace RolePlus.ExternModule.API.Features.CustomSkins
+namespace RolePlus.ExternModule.API.Features.CustomMeshes
 {
     using System.Linq;
 
     using Exiled.API.Features;
+    using Exiled.API.Features.Core;
     using Exiled.API.Features.Items;
+    using Exiled.API.Features.Pickups;
     using Exiled.CustomItems.API.Features;
-
+    using Exiled.Events.EventArgs.Player;
     using InventorySystem.Items;
     using InventorySystem.Items.Pickups;
 
@@ -118,7 +120,7 @@ namespace RolePlus.ExternModule.API.Features.CustomSkins
                 return;
 
             ev.IsAllowed = false;
-            PickupMesh = ev.Item.Spawn(ev.Player.Position);
+            PickupMesh = ev.Item.CreatePickup(ev.Player.Position);
             ev.Player.RemoveItem(ev.Item, true);
 
             _isPickup = true;

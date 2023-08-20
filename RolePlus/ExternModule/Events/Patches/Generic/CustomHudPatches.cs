@@ -43,8 +43,8 @@ namespace RolePlus.ExternModule.Events.Patches
                 new(OpCodes.Ldarg_1),
                 new(OpCodes.Ldarg_2),
                 new(OpCodes.Ldc_I4_1),
-                new(OpCodes.Ldc_I4_S, (int)ScreenLocation.MiddleBottom),
-                new(OpCodes.Call, Method(typeof(HudManager), nameof(HudManager.ShowHint))),
+                new(OpCodes.Ldc_I4_S, (int)DisplayLocation.MiddleBottom),
+                new(OpCodes.Call, Method(typeof(HudBehaviour), nameof(HudBehaviour.ShowHint))),
                 new CodeInstruction(OpCodes.Ret).WithLabels(ret),
             });
 

@@ -1,5 +1,5 @@
 ﻿// -----------------------------------------------------------------------
-// <copyright file="HudScreen.cs" company="NaoUnderscore">
+// <copyright file="Display.cs" company="NaoUnderscore">
 // Copyright (c) NaoUnderscore. All rights reserved.
 // Licensed under the CC BY-SA 3.0 license.
 // </copyright>
@@ -8,22 +8,22 @@
 namespace RolePlus.ExternModule.API.Features.CustomHud
 {
     using System.Collections.Generic;
-
+    using Hints;
     using MEC;
 
     /// <summary>
-    /// Represents a display part of a <see cref="HudManager"/>.
+    /// Represents the display of the <see cref="HudBehaviour"/>.
     /// </summary>
-    public class HudScreen
+    public class Display
     {
         private readonly Queue<Hint> _queue = new();
-        private readonly CoroutineHandle _coroutineHandle;
+        private readonly CoroutineHandle _dequeueHandle;
         private bool _breakNextFrame;
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="HudScreen"/> class.
+        /// Initializes a new instance of the <see cref="Display"/> class.
         /// </summary>
-        public HudScreen() => _coroutineHandle = Timing.RunCoroutine(HandleDequeue());
+        public Display() => _dequeueHandle = Timing.RunCoroutine(HandleDequeue());
 
         /// <summary>
         /// Gets or sets the content to be displayed.
@@ -35,10 +35,12 @@ namespace RolePlus.ExternModule.API.Features.CustomHud
         /// </summary>
         /// <param name="content">The content of the hint.</param>
         /// <param name="duration">The duration of the hint.</param>
-        /// <param name="overrideQueue">Whether the queue should be cleared before adding the hint.</param>
-        public void Enqueue(string content, float duration, bool overrideQueue)
+        /// <param name="overrideQueue">A value indicating whether the queue should be cleared before adding the hint.</param>
+        /// <param name="effects">The hint effects to be applied to.</param>
+        /// <param name="parameters">The hint parameters.</param>
+        public void Enqueue(string content, float duration, bool overrideQueue, HintEffect[] effects = null, HintParameter[] parameters = null)
         {
-            Hint hint = new(content, duration);
+            Hint hint = new(content, duration, effects, parameters);
             if (overrideQueue)
             {
                 _queue.Clear();
@@ -49,9 +51,9 @@ namespace RolePlus.ExternModule.API.Features.CustomHud
         }
 
         /// <summary>
-        /// Kills the coroutine that handles the display.
+        /// Destroys the display.
         /// </summary>
-        public void Kill() => Timing.KillCoroutines(_coroutineHandle);
+        public void Destroy() => Timing.KillCoroutines(_dequeueHandle);
 
         private IEnumerator<float> HandleDequeue()
         {

@@ -22,7 +22,7 @@ namespace RolePlus.ExternModule.API.Features.CustomRoles
     using RolePlus.ExternModule.API.Engine.Framework.Interfaces;
     using RolePlus.ExternModule.API.Enums;
     using RolePlus.ExternModule.API.Features.CustomEscapes;
-    using RolePlus.ExternModule.API.Features.CustomSkins;
+    using RolePlus.ExternModule.API.Features.CustomMeshes;
     using RolePlus.ExternModule.API.Features.CustomTeams;
     using RolePlus.ExternModule.Events.EventArgs;
     using UnityEngine;

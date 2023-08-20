@@ -5,13 +5,14 @@
 // </copyright>
 // -----------------------------------------------------------------------
 
-namespace RolePlus.ExternModule.API.Features.CustomSkins
+namespace RolePlus.ExternModule.API.Features.CustomMeshes
 {
     using System;
     using System.Collections.Generic;
 
     using Exiled.API.Enums;
     using Exiled.API.Features;
+    using Exiled.Events.EventArgs.Player;
 
     using MapEditorReborn.API.Extensions;
     using MapEditorReborn.API.Features;
@@ -32,7 +33,12 @@ namespace RolePlus.ExternModule.API.Features.CustomSkins
         private bool _isVisibleToOwnerOnly;
         private bool _hideLights;
 
-        private CharacterMeshComponent(GameObject gameObject, string meshName)
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CharacterMeshComponent"/> class.
+        /// </summary>
+        /// <param name="gameObject">The owner of the mesh.</param>
+        /// <param name="meshName">The name of the mesh.</param>
+        protected CharacterMeshComponent(GameObject gameObject, string meshName)
             : base(gameObject, meshName)
         {
         }
@@ -63,12 +69,10 @@ namespace RolePlus.ExternModule.API.Features.CustomSkins
             get => _isVisibleToOwner || !HiddenFromPlayers.Contains(Owner);
             set
             {
-                _isVisibleToOwner = value;
+                if (value == _isVisibleToOwner)
+                    return;
 
-                if (!_isVisibleToOwner)
-                    ChangeVisibility(Owner, false);
-                else
-                    ChangeVisibility(Owner, true);
+                ChangeVisibility(Owner, _isVisibleToOwner = value);
             }
         }
 
@@ -80,9 +84,8 @@ namespace RolePlus.ExternModule.API.Features.CustomSkins
             get => _isVisibleToOwnerOnly;
             set
             {
-                _isVisibleToOwnerOnly = value;
+                ChangeVisibility(Owner, _isVisibleToOwnerOnly = value);
 
-                ChangeVisibility(Owner, _isVisibleToOwnerOnly);
                 IsVisible = !_isVisibleToOwnerOnly;
                 IsVisibleToOwner = _isVisibleToOwnerOnly;
             }
