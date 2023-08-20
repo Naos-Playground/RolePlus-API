@@ -309,27 +309,5 @@ namespace RolePlus.ExternModule.API.Features.Configs
                 this.CopyProperties(Loader.Deserializer.Deserialize(File.ReadAllText(path), GetType()));
             }
         }
-
-        /// <inheritdoc/>
-        public override T? Cast<T>()
-            where T : class => Base as T;
-
-        /// <summary>
-        /// Safely casts the current <see cref="Base"/> instance to the specified <typeparamref name="T"/> type.
-        /// </summary>
-        /// <typeparam name="T">The type to which to cast the <see cref="Base"/> instance.</typeparam>
-        /// <param name="param">The casted object.</param>
-        /// <returns><see langword="true"/> if the <see cref="Base"/> instance was successfully casted; otherwise, <see langword="false"/>.</returns>
-        public override bool Cast<T>(out T param)
-            where T : class
-        {
-            param = default!;
-
-            if (Base is not T cast)
-                return false;
-
-            param = cast;
-            return true;
-        }
     }
 }
