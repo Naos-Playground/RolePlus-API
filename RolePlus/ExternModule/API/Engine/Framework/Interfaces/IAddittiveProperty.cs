@@ -12,6 +12,5 @@ namespace RolePlus.ExternModule.API.Engine.Framework.Interfaces
     /// </summary>
     public interface IAddittiveProperty
     {
-
     }
 }

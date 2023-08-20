@@ -5,7 +5,7 @@
 // </copyright>
 // -----------------------------------------------------------------------
 
-namespace RolePlus.ExternModule.API.Features.CustomRoles.Generics
+namespace RolePlus.ExternModule.API.Features.CustomRoles.Generic
 {
     using System;
 
@@ -14,6 +14,6 @@ namespace RolePlus.ExternModule.API.Features.CustomRoles.Generics
         where T : RoleBehaviour
     {
         /// <inheritdoc/>
-        public override Type RoleBehaviourComponent => typeof(T);
+        public override Type BehaviourComponent => typeof(T);
     }
 }

@@ -23,5 +23,16 @@ namespace RolePlus.ExternModule.API.Features.Attributes
         public CustomEscapeAttribute()
         {
         }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CustomEscapeAttribute"/> class.
+        /// </summary>
+        /// <param name="id"><inheritdoc cref="Id"/></param>
+        public CustomEscapeAttribute(uint id) => Id = id;
+
+        /// <summary>
+        /// Gets the custom escape's id.
+        /// </summary>
+        internal uint Id { get; }
     }
 }

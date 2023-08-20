@@ -99,7 +99,9 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="ExternModule\API\Engine\Framework\EBehaviour.cs" />
+    <Compile Include="ExternModule\API\Engine\Framework\Interfaces\IAddittiveIdentifier.cs" />
     <Compile Include="ExternModule\API\Engine\Framework\Interfaces\IAddittivePipe.cs" />
+    <Compile Include="ExternModule\API\Engine\Framework\Interfaces\IAddittiveBehaviour.cs" />
     <Compile Include="ExternModule\API\Engine\Framework\Interfaces\IAddittiveSettings.cs" />
     <Compile Include="ExternModule\API\Engine\Framework\Interfaces\IAddittiveProperty.cs" />
     <Compile Include="ExternModule\API\Engine\Framework\Interfaces\IAddittiveSettingsCollection.cs" />
@@ -110,19 +112,23 @@
     <Compile Include="ExternModule\API\Engine\Framework\Networking\TRule.cs" />
     <Compile Include="ExternModule\API\Engine\Framework\EnumClass.cs" />
     <Compile Include="ExternModule\API\Engine\Framework\Singleton.cs" />
+    <Compile Include="ExternModule\API\Enums\CustomEscapeTypeBase.cs" />
     <Compile Include="ExternModule\API\Enums\CustomAbilityTypeBase.cs" />
     <Compile Include="ExternModule\API\Enums\CustomTeamTypeBase.cs" />
     <Compile Include="ExternModule\API\Enums\CustomRoleTypeBase.cs" />
     <Compile Include="ExternModule\API\Enums\EscapeScenarioTypeBase.cs" />
     <Compile Include="ExternModule\API\Enums\RoleType.cs" />
     <Compile Include="ExternModule\API\Features\Attributes\CustomEscapeAttribute.cs" />
+    <Compile Include="ExternModule\API\Features\CustomAbilities\Generic\CustomAbility.cs" />
+    <Compile Include="ExternModule\API\Features\CustomAbilities\Scp079AbilityBehaviour.cs" />
+    <Compile Include="ExternModule\API\Features\CustomAbilities\UnlockableAbilityBehaviour.cs" />
     <Compile Include="ExternModule\API\Features\CustomAbilities\AbilitySettings.cs" />
     <Compile Include="ExternModule\API\Features\CustomAbilities\AbilityBehaviour.cs" />
-    <Compile Include="ExternModule\API\Features\CustomEscapes\Generics\CustomEscape.cs" />
+    <Compile Include="ExternModule\API\Features\CustomEscapes\Generic\CustomEscape.cs" />
     <Compile Include="ExternModule\API\Features\CustomEscapes\CustomEscape.cs" />
     <Compile Include="ExternModule\API\Features\CustomEscapes\EscapeBehaviour.cs" />
     <Compile Include="ExternModule\API\Features\CustomEscapes\EscapeSettings.cs" />
-    <Compile Include="ExternModule\API\Features\CustomRoles\Generics\CustomRole.cs" />
+    <Compile Include="ExternModule\API\Features\CustomRoles\Generic\CustomRole.cs" />
     <Compile Include="ExternModule\API\Features\CustomRoles\RoleBehaviour.cs" />
     <Compile Include="ExternModule\API\Features\Inventory\InventoryManager.cs" />
     <Compile Include="ExternModule\API\Features\Inventory\IInventorySettings.cs" />
@@ -184,7 +190,6 @@
     <Compile Include="ExternModule\API\Features\Configs\IConfig.cs" />
     <Compile Include="ExternModule\API\Features\CustomAbilities\CustomAbility.cs" />
     <Compile Include="ExternModule\API\Features\Attributes\CustomAbilityAttribute.cs" />
-    <Compile Include="ExternModule\API\Features\CustomAbilities\Scp079Ability.cs" />
     <Compile Include="ExternModule\API\Features\CustomHud\Hint.cs" />
     <Compile Include="ExternModule\API\Features\CustomHud\HudManager.cs" />
     <Compile Include="ExternModule\API\Features\CustomHud\HudScreen.cs" />

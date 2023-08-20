@@ -10,20 +10,20 @@ namespace RolePlus.ExternModule.API.Enums
     using RolePlus.ExternModule.API.Engine.Framework;
 
     /// <summary>
-    /// All available custom abilities.
+    /// All available custom escapes.
     /// </summary>
-    public class CustomAbilityTypeBase : UnmanagedEnumClass<uint, CustomRoleTypeBase>
+    public class CustomEscapeTypeBase : UnmanagedEnumClass<uint, CustomRoleTypeBase>
     {
         /// <summary>
         /// Represents an invalid custom role.
         /// </summary>
-        public static readonly CustomAbilityTypeBase None = new(0);
+        public static readonly CustomEscapeTypeBase None = new(0);
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="CustomAbilityTypeBase"/> class.
+        /// Initializes a new instance of the <see cref="CustomEscapeTypeBase"/> class.
         /// </summary>
         /// <param name="value">The <see cref="uint"/> value.</param>
-        protected CustomAbilityTypeBase(uint value) : base(value)
+        protected CustomEscapeTypeBase(uint value) : base(value)
         {
         }
     }

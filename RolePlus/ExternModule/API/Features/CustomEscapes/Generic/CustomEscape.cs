@@ -5,7 +5,7 @@
 // </copyright>
 // -----------------------------------------------------------------------
 
-namespace RolePlus.ExternModule.API.Features.CustomEscapes.Generics
+namespace RolePlus.ExternModule.API.Features.CustomEscapes.Generic
 {
     using System;
 
@@ -17,6 +17,6 @@ namespace RolePlus.ExternModule.API.Features.CustomEscapes.Generics
         where T : EscapeBehaviour
     {
         /// <inheritdoc/>
-        public override Type EscapeBehaviourComponent => typeof(T);
+        public override Type BehaviourComponent => typeof(T);
     }
 }

@@ -10,11 +10,12 @@ namespace RolePlus.ExternModule.API.Engine.Framework
     using Exiled.API.Features;
     using Exiled.API.Features.Core;
     using Exiled.Events.EventArgs.Player;
+    using RolePlus.ExternModule.API.Engine.Framework.Interfaces;
 
     /// <summary>
     /// A component to be used with any type of playable character component.
     /// </summary>
-    public abstract class EBehaviour : EActor
+    public abstract class EBehaviour : EActor, IAddittiveProperty
     {
         /// <summary>
         /// Gets the owner of the <see cref="EBehaviour"/>.
@@ -71,7 +72,9 @@ namespace RolePlus.ExternModule.API.Engine.Framework
         /// Fired every tick.
         /// <para>Code affecting the <see cref="EBehaviour"/>'s base implementation should be placed here.</para>
         /// </summary>
-        protected virtual void BehaviourUpdate() => BehaviourUpdate_Implementation();
+        protected virtual void BehaviourUpdate()
+        {
+        }
 
         /// <inheritdoc cref="Exiled.Events.Handlers.Player.OnDestroying(DestroyingEventArgs)"/>
         protected virtual void OnDestroying(DestroyingEventArgs ev)

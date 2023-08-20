@@ -8,7 +8,7 @@
 namespace RolePlus.ExternModule.API.Features.Attributes
 {
     using System;
-
+    using RolePlus.ExternModule.API.Enums;
     using RolePlus.ExternModule.API.Features.CustomTeams;
 
     /// <summary>
@@ -23,5 +23,16 @@ namespace RolePlus.ExternModule.API.Features.Attributes
         public CustomTeamAttribute()
         {
         }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CustomTeamAttribute"/> class.
+        /// </summary>
+        /// <param name="id"><inheritdoc cref="Id"/></param>
+        public CustomTeamAttribute(uint id) => Id = id;
+
+        /// <summary>
+        /// Gets the custom team's id.
+        /// </summary>
+        internal uint Id { get; }
     }
 }

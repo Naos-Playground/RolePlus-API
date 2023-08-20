@@ -10,7 +10,7 @@ namespace RolePlus.ExternModule.API.Enums
     using RolePlus.ExternModule.API.Engine.Framework;
 
     /// <summary>
-    /// All available custom roles.
+    /// All available custom teams.
     /// </summary>
     public class CustomTeamTypeBase : UnmanagedEnumClass<uint, CustomTeamTypeBase>
     {

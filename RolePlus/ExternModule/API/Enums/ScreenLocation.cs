@@ -8,7 +8,7 @@
 namespace RolePlus.ExternModule.API.Enums
 {
     /// <summary>
-    /// Represents locations on a user's display.
+    /// All available locations on a player's display.
     /// </summary>
     public enum ScreenLocation
     {

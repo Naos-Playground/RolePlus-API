@@ -1,5 +1,5 @@
 ﻿// -----------------------------------------------------------------------
-// <copyright file="IAddittivePipe.cs" company="NaoUnderscore">
+// <copyright file="IAddittiveBehaviour.cs" company="NaoUnderscore">
 // Copyright (c) NaoUnderscore. All rights reserved.
 // Licensed under the CC BY-SA 3.0 license.
 // </copyright>
@@ -7,14 +7,16 @@
 
 namespace RolePlus.ExternModule.API.Engine.Framework.Interfaces
 {
+    using System;
+
     /// <summary>
-    /// Defines an addittive user-defined pipe.
+    /// Defines a <see cref="EBehaviour"/> which is being set up through user-defined type component.
     /// </summary>
-    public interface IAddittivePipe : IAddittiveIdentifier
+    public interface IAddittiveBehaviour : IAddittiveIdentifier
     {
         /// <summary>
-        /// Addittive property should be adjusted here.
+        /// Gets the behaviour component.
         /// </summary>
-        public abstract void AdjustAddittiveProperty();
+        public Type BehaviourComponent { get; }
     }
 }

@@ -15,17 +15,17 @@ namespace RolePlus.ExternModule.API.Features.CustomEscapes
     using Exiled.API.Features.Core;
 
     using MonoMod.Utils;
-
+    using RolePlus.ExternModule.API.Engine.Framework.Interfaces;
     using RolePlus.ExternModule.API.Enums;
     using RolePlus.ExternModule.API.Features.Attributes;
     using RolePlus.ExternModule.API.Features.CustomRoles;
-
+    using Utf8Json.Resolvers.Internal;
     using Hint = CustomHud.Hint;
 
     /// <summary>
     /// A class to easily manage escaping behavior.
     /// </summary>
-    public abstract class CustomEscape : TypeCastObject<CustomEscape>
+    public abstract class CustomEscape : TypeCastObject<CustomEscape>, IAddittiveBehaviour
     {
         private static readonly List<CustomEscape> _registered = new();
         private static readonly Dictionary<EscapeScenarioTypeBase, Hint> _allScenarios = new();
@@ -52,14 +52,14 @@ namespace RolePlus.ExternModule.API.Features.CustomEscapes
         public abstract string Name { get; }
 
         /// <summary>
-        /// Gets the <see cref="CustomEscape"/>'s id.
+        /// Gets or sets the <see cref="CustomEscape"/>'s id.
         /// </summary>
-        public virtual uint Id { get; }
+        public virtual uint Id { get; protected set; }
 
         /// <summary>
         /// Gets the <see cref="CustomEscape"/>'s <see cref="Type"/>.
         /// </summary>
-        public virtual Type EscapeBehaviourComponent { get; }
+        public virtual Type BehaviourComponent { get; }
 
         /// <summary>
         /// Gets a value indicating whether the <see cref="CustomEscape"/> is enabled.
@@ -155,7 +155,8 @@ namespace RolePlus.ExternModule.API.Features.CustomEscapes
             List<CustomEscape> customEscapes = new();
             foreach (Type type in Assembly.GetCallingAssembly().GetTypes())
             {
-                if ((type.BaseType != typeof(CustomEscape) && !type.IsSubclassOf(typeof(CustomEscape))) || type.GetCustomAttribute(typeof(CustomEscapeAttribute)) is null)
+                CustomEscapeAttribute attribute = type.GetCustomAttribute<CustomEscapeAttribute>();
+                if ((type.BaseType != typeof(CustomEscape) && !type.IsSubclassOf(typeof(CustomEscape))) || attribute is null)
                     continue;
 
                 CustomEscape customEscape = Activator.CreateInstance(type) as CustomEscape;
@@ -163,8 +164,8 @@ namespace RolePlus.ExternModule.API.Features.CustomEscapes
                 if (!customEscape.IsEnabled)
                     continue;
 
-                customEscape.TryRegister();
-                customEscapes.Add(customEscape);
+                if (customEscape.TryRegister(attribute))
+                    customEscapes.Add(customEscape);
             }
 
             if (customEscapes.Count() != Registered.Count())
@@ -177,14 +178,10 @@ namespace RolePlus.ExternModule.API.Features.CustomEscapes
         /// Disables all the custom roles present in the assembly.
         /// </summary>
         /// <returns>A <see cref="IEnumerable{T}"/> of <see cref="CustomEscape"/> which contains all the disabled custom roles.</returns>
-        public static List<CustomEscape> UnregisterAll()
+        public static List<CustomEscape> DisableAll()
         {
             List<CustomEscape> customEscapes = new();
-            foreach (CustomEscape customEscape in Registered)
-            {
-                customEscape.TryUnregister();
-                customEscapes.Add(customEscape);
-            }
+            customEscapes.AddRange(Registered.Where(customEscape => customEscape.TryUnregister()));
 
             Log.SendRaw($"[{Assembly.GetCallingAssembly().GetName().Name}] {customEscapes.Count()} custom escapes have been successfully unregistered!", ConsoleColor.Cyan);
 
@@ -283,10 +280,13 @@ namespace RolePlus.ExternModule.API.Features.CustomEscapes
         /// Tries to register a <see cref="CustomEscape"/>.
         /// </summary>
         /// <returns><see langword="true"/> if the <see cref="CustomEscape"/> was registered; otherwise, <see langword="false"/>.</returns>
-        internal bool TryRegister()
+        internal bool TryRegister(CustomEscapeAttribute attribute = null)
         {
             if (!Registered.Contains(this))
             {
+                if (attribute is not null && Id == 0)
+                    Id = attribute.Id;
+
                 if (Registered.Any(x => x.Id == Id))
                 {
                     Log.Debug(
@@ -350,7 +350,7 @@ namespace RolePlus.ExternModule.API.Features.CustomEscapes
         {
             _playerValues.Remove(player);
             _playerValues.Add(player, this);
-            player.AddComponent(EscapeBehaviourComponent, $"ECS-{Name}");
+            player.AddComponent(BehaviourComponent, $"ECS-{Name}");
         }
 
         /// <summary>
@@ -360,7 +360,7 @@ namespace RolePlus.ExternModule.API.Features.CustomEscapes
         public void Detach(Player player)
         {
             _playerValues.Remove(player);
-            player.GetComponent(EscapeBehaviourComponent).Destroy();
+            player.GetComponent(BehaviourComponent).Destroy();
         }
     }
 }

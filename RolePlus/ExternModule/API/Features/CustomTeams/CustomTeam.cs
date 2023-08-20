@@ -30,7 +30,7 @@ namespace RolePlus.ExternModule.API.Features.CustomTeams
     /// <summary>
     /// A tool to easily manage custom teams.
     /// </summary>
-    public class CustomTeam : TypeCastObject<CustomTeam>
+    public abstract class CustomTeam : TypeCastObject<CustomTeam>
     {
         private static readonly Dictionary<Player, CustomTeam> _playerValues = new();
         private static readonly List<CustomTeam> _registered = new();
@@ -75,9 +75,9 @@ namespace RolePlus.ExternModule.API.Features.CustomTeams
         public virtual IEnumerable<object> Units => new object[] { };
 
         /// <summary>
-        /// Gets the id.
+        /// Gets or sets the <see cref="CustomTeam"/>'s id.
         /// </summary>
-        public virtual uint Id { get; }
+        public virtual uint Id { get; protected set; }
 
         /// <summary>
         /// Gets the relative spawn probability of the <see cref="CustomTeam"/>.
@@ -93,6 +93,11 @@ namespace RolePlus.ExternModule.API.Features.CustomTeams
         /// Gets the name of the <see cref="CustomTeam"/>.
         /// </summary>
         public abstract string Name { get; }
+
+        /// <summary>
+        /// Gets a value indicating whether the <see cref="CustomTeam"/> is enabled.
+        /// </summary>
+        public virtual bool IsEnabled => true;
 
         /// <summary>
         /// Gets the name of the <see cref="CustomTeam"/> to be displayed.
@@ -392,18 +397,22 @@ namespace RolePlus.ExternModule.API.Features.CustomTeams
         /// Enables all the custom teams present in the assembly.
         /// </summary>
         /// <returns>A <see cref="IEnumerable{T}"/> of <see cref="CustomTeam"/> which contains all the enabled custom teams.</returns>
-        public static IEnumerable<CustomTeam> RegisterTeams()
+        public static IEnumerable<CustomTeam> EnableAll()
         {
             List<CustomTeam> customTeams = new();
             foreach (Type type in Assembly.GetCallingAssembly().GetTypes())
             {
-                if (type.BaseType != typeof(CustomTeam) || type.GetCustomAttribute(typeof(CustomTeamAttribute)) is null)
+                CustomTeamAttribute attribute = type.GetCustomAttribute<CustomTeamAttribute>();
+                if (type.BaseType != typeof(CustomTeam) || attribute is null)
                     continue;
 
                 CustomTeam customTeam = Activator.CreateInstance(type) as CustomTeam;
 
-                customTeam.TryRegister();
-                customTeams.Add(customTeam);
+                if (!customTeam.IsEnabled)
+                    continue;
+
+                if (customTeam.TryRegister(attribute))
+                    customTeams.Add(customTeam);
             }
 
             if (customTeams.Count() != Registered.Count())
@@ -416,14 +425,10 @@ namespace RolePlus.ExternModule.API.Features.CustomTeams
         /// Disables all the custom teams present in the assembly.
         /// </summary>
         /// <returns>A <see cref="IEnumerable{T}"/> of <see cref="CustomTeam"/> which contains all the disabled custom teams.</returns>
-        public static IEnumerable<CustomTeam> UnregisterTeams()
+        public static IEnumerable<CustomTeam> DisableAll()
         {
             List<CustomTeam> customTeams = new();
-            foreach (CustomTeam customTeam in Registered)
-            {
-                customTeam.TryUnregister();
-                customTeams.Remove(customTeam);
-            }
+            customTeams.AddRange(Registered.Where(customTeam => customTeam.TryUnregister()));
 
             Log.SendRaw($"[{Assembly.GetCallingAssembly().GetName().Name}] {customTeams.Count()} custom teams have been successfully unregistered!", ConsoleColor.Cyan);
 
@@ -471,10 +476,13 @@ namespace RolePlus.ExternModule.API.Features.CustomTeams
         /// Tries to register a <see cref="CustomTeam"/>.
         /// </summary>
         /// <returns><see langword="true"/> if the <see cref="CustomTeam"/> was registered; otherwise, <see langword="false"/>.</returns>
-        internal bool TryRegister()
+        internal bool TryRegister(CustomTeamAttribute attribute = null)
         {
             if (!Registered.Contains(this))
             {
+                if (attribute is not null && Id == 0)
+                    Id = attribute.Id;
+
                 if (Registered.Any(x => x.Id == Id))
                 {
                     Log.Debug(

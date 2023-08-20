@@ -20,18 +20,13 @@ namespace RolePlus.ExternModule.API.Features.CustomAbilities
         protected virtual bool IsUnlocked { get; set; }
 
         /// <summary>
-        /// The conditions to be met in order to unlock the ability.
+        /// Defines the conditions to be met in order to unlock the ability.
         /// </summary>
         /// <returns><see langword="true"/> if the ability can be unlocked; otherwise, <see langword="false"/>.</returns>
         protected abstract bool ProcessConditions();
 
         /// <inheritdoc/>
-        public override void Activate(bool isForced = false)
-        {
-            IsUnlocked = isForced || IsUnlocked;
-
-            base.Activate(isForced);
-        }
+        public override bool Activate(bool isForced = false) => (IsUnlocked = isForced || IsUnlocked) && base.Activate(isForced);
 
         /// <inheritdoc/>
         protected override void BehaviourUpdate()

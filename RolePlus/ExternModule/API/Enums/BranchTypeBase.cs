@@ -10,7 +10,7 @@ namespace RolePlus.ExternModule.API.Enums
     using RolePlus.ExternModule.API.Engine.Framework;
 
     /// <summary>
-    /// All available environments.
+    /// All available branch environments.
     /// </summary>
     public class BranchTypeBase : UnmanagedEnumClass<sbyte, BranchTypeBase>
     {

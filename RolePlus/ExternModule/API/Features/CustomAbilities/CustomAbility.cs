@@ -16,13 +16,13 @@ namespace RolePlus.ExternModule.API.Features.CustomAbilities
     using Exiled.API.Features.Core;
 
     using HarmonyLib;
-
+    using RolePlus.ExternModule.API.Engine.Framework.Interfaces;
     using RolePlus.ExternModule.API.Features.CustomRoles;
 
     /// <summary>
     /// CustomAbility is the base class used to create user-defined types treated as abilities applicable to a <see cref="Player"/>.
     /// </summary>
-    public abstract class CustomAbility : TypeCastObject<CustomAbility>
+    public abstract class CustomAbility : TypeCastObject<CustomAbility>, IAddittiveBehaviour
     {
         private static readonly List<CustomAbility> _registered = new();
 
@@ -46,7 +46,7 @@ namespace RolePlus.ExternModule.API.Features.CustomAbilities
         /// <summary>
         /// Gets the <see cref="AbilityBehaviour"/>.
         /// </summary>
-        public abstract Type AbilityBehaviourComponent { get; }
+        public abstract Type BehaviourComponent { get; }
 
         /// <summary>
         /// Gets the ability type name.
@@ -54,7 +54,7 @@ namespace RolePlus.ExternModule.API.Features.CustomAbilities
         public abstract string Name { get; }
 
         /// <summary>
-        /// Gets or sets the ability's id.
+        /// Gets or sets the <see cref="CustomAbility"/>'s id.
         /// </summary>
         public virtual uint Id { get; protected set; }
 
@@ -82,7 +82,7 @@ namespace RolePlus.ExternModule.API.Features.CustomAbilities
         /// </summary>
         /// <param name="type">The specified <see cref="Name"/>.</param>
         /// <returns>The <see cref="CustomAbility"/> matching the search or <see langword="null"/> if not found.</returns>
-        public static CustomAbility Get(Type type) => type.BaseType != typeof(AbilityBehaviour) ? null : Registered.FirstOrDefault(customAbility => customAbility.AbilityBehaviourComponent == type);
+        public static CustomAbility Get(Type type) => type.BaseType != typeof(AbilityBehaviour) ? null : Registered.FirstOrDefault(customAbility => customAbility.BehaviourComponent == type);
 
         /// <summary>
         /// Gets a <see cref="CustomAbility"/> given the specified <see cref="AbilityBehaviour"/>.
@@ -148,7 +148,7 @@ namespace RolePlus.ExternModule.API.Features.CustomAbilities
             where T : CustomAbility
         {
             CustomAbility customAbility = Get(typeof(T));
-            return player.GetComponent(customAbility.AbilityBehaviourComponent).Cast<T>();
+            return player.GetComponent(customAbility.BehaviourComponent).Cast<T>();
         }
 
         /// <summary>
@@ -245,7 +245,7 @@ namespace RolePlus.ExternModule.API.Features.CustomAbilities
         /// <returns><see langword="true"/> if the <see cref="CustomAbility"/> was removed successfully; otherwise, <see langword="false"/>.</returns>
         public static bool Remove<T>(Player player)
             where T : CustomAbility =>
-            TryGet(typeof(T), out CustomAbility customAbility) && EObject.DestroyActiveObject(customAbility.AbilityBehaviourComponent, player.GameObject);
+            TryGet(typeof(T), out CustomAbility customAbility) && EObject.DestroyActiveObject(customAbility.BehaviourComponent, player.GameObject);
 
         /// <summary>
         /// Removes a <see cref="CustomAbility"/> from the specified <see cref="Player"/>.
@@ -254,7 +254,7 @@ namespace RolePlus.ExternModule.API.Features.CustomAbilities
         /// <param name="type">The custom ability type.</param>
         /// <returns><see langword="true"/> if the <see cref="CustomAbility"/> was removed successfully; otherwise, <see langword="false"/>.</returns>
         public static bool Remove(Player player, Type type) =>
-            TryGet(type, out CustomAbility customAbility) && EObject.DestroyActiveObject(customAbility.AbilityBehaviourComponent, player.GameObject);
+            TryGet(type, out CustomAbility customAbility) && EObject.DestroyActiveObject(customAbility.BehaviourComponent, player.GameObject);
 
         /// <summary>
         /// Removes a <see cref="CustomAbility"/> from the specified <see cref="Player"/>.
@@ -263,7 +263,7 @@ namespace RolePlus.ExternModule.API.Features.CustomAbilities
         /// <param name="type">The custom ability type.</param>
         /// <returns><see langword="true"/> if the <see cref="CustomAbility"/> was removed successfully; otherwise, <see langword="false"/>.</returns>
         public static bool Remove(Player player, string type) =>
-            TryGet(type, out CustomAbility customAbility) && EObject.DestroyActiveObject(customAbility.AbilityBehaviourComponent, player.GameObject);
+            TryGet(type, out CustomAbility customAbility) && EObject.DestroyActiveObject(customAbility.BehaviourComponent, player.GameObject);
 
         /// <summary>
         /// Removes a <see cref="CustomAbility"/> from the specified <see cref="Player"/>.
@@ -272,7 +272,7 @@ namespace RolePlus.ExternModule.API.Features.CustomAbilities
         /// <param name="id">The custom ability id.</param>
         /// <returns><see langword="true"/> if the <see cref="CustomAbility"/> was removed successfully; otherwise, <see langword="false"/>.</returns>
         public static bool Remove(Player player, uint id) =>
-            TryGet(id, out CustomAbility customAbility) && EObject.DestroyActiveObject(customAbility.AbilityBehaviourComponent, player.GameObject);
+            TryGet(id, out CustomAbility customAbility) && EObject.DestroyActiveObject(customAbility.BehaviourComponent, player.GameObject);
 
         /// <summary>
         /// Removes all the custom abilities from the specified <see cref="Player"/>.
@@ -301,21 +301,26 @@ namespace RolePlus.ExternModule.API.Features.CustomAbilities
         /// Enables all the custom abilities present in the assembly.
         /// </summary>
         /// <returns>A <see cref="IEnumerable{T}"/> of <see cref="CustomAbility"/> which contains all the enabled custom abilities.</returns>
-        public static IEnumerable<CustomAbility> RegisterAbilities()
+        public static IEnumerable<CustomAbility> EnableAll()
         {
             List<CustomAbility> customAbilities = new();
             foreach (Type type in Assembly.GetExecutingAssembly().GetTypes())
             {
-                if (!type.IsSubclassOf(typeof(CustomAbility)) || type.GetCustomAttribute(typeof(CustomAbilityAttribute)) is null)
+                CustomAbilityAttribute attribute = type.GetCustomAttribute<CustomAbilityAttribute>();
+                if (!type.IsSubclassOf(typeof(CustomAbility)) || attribute is null)
                     continue;
 
                 CustomAbility customAbility = Activator.CreateInstance(type) as CustomAbility;
 
-                if (customAbility.TryRegister())
+                if (!customAbility.IsEnabled)
+                    continue;
+
+                if (customAbility.TryRegister(attribute))
                     customAbilities.Add(customAbility);
             }
 
             Log.SendRaw($"[{Assembly.GetCallingAssembly().GetName().Name}] [CustomAbility] {customAbilities.Count()} custom abilities have been successfully registered!", ConsoleColor.DarkGreen);
+
             return customAbilities;
         }
 
@@ -323,16 +328,13 @@ namespace RolePlus.ExternModule.API.Features.CustomAbilities
         /// Disables all the custom abilities present in the assembly.
         /// </summary>
         /// <returns>A <see cref="IEnumerable{T}"/> of <see cref="CustomAbility"/> which contains all the disabled custom abilities.</returns>
-        public static IEnumerable<CustomAbility> UnregisterAbilities()
+        public static IEnumerable<CustomAbility> DisableAll()
         {
             List<CustomAbility> customAbilities = new();
-            foreach (CustomAbility ability in Registered)
-            {
-                if (ability.TryUnregister())
-                    customAbilities.Add(ability);
-            }
+            customAbilities.AddRange(Registered.Where(ability => ability.TryUnregister()));
 
             Log.SendRaw($"[{Assembly.GetCallingAssembly().GetName().Name}] [CustomAbility] {customAbilities.Count()} custom abilities have been successfully unregistered!", ConsoleColor.DarkGreen);
+
             return customAbilities;
         }
 
@@ -340,10 +342,13 @@ namespace RolePlus.ExternModule.API.Features.CustomAbilities
         /// Tries to register a <see cref="CustomAbility"/>.
         /// </summary>
         /// <returns><see langword="true"/> if the <see cref="CustomAbility"/> was registered; otherwise, <see langword="false"/>.</returns>
-        internal bool TryRegister()
+        internal bool TryRegister(CustomAbilityAttribute attribute = null)
         {
             if (!Registered.Contains(this))
             {
+                if (attribute is not null && Id == 0)
+                    Id = attribute.Id;
+
                 if (Registered.Any(x => x.Name == Name))
                 {
                     Log.Debug(
@@ -353,7 +358,7 @@ namespace RolePlus.ExternModule.API.Features.CustomAbilities
                     return false;
                 }
 
-                EObject.RegisterObjectType(AbilityBehaviourComponent, Name);
+                EObject.RegisterObjectType(BehaviourComponent, Name);
                 _registered.Add(this);
 
                 return true;
@@ -393,7 +398,7 @@ namespace RolePlus.ExternModule.API.Features.CustomAbilities
         /// <param name="player">The player to affect.</param>
         public void Add(Player player)
         {
-            player.AddComponent(AbilityBehaviourComponent);
+            player.AddComponent(BehaviourComponent);
 
             try
             {
@@ -433,6 +438,6 @@ namespace RolePlus.ExternModule.API.Features.CustomAbilities
         /// <param name="player">The player to affect.</param>
         /// <param name="isForced">A value indicating whether the activation should be forced.</param>
         /// <returns><see langword="true"/> if the ability was activated; otherwise, <see langword="false"/>.</returns>
-        public bool Activate(Player player, bool isForced = false) => player.TryGetComponent(AbilityBehaviourComponent, out AbilityBehaviour ability) && ability.Activate(isForced);
+        public bool Activate(Player player, bool isForced = false) => player.TryGetComponent(BehaviourComponent, out AbilityBehaviour ability) && ability.Activate(isForced);
     }
 }
