@@ -11,6 +11,7 @@ namespace RolePlus.ExternModule.API.Engine.Framework
     using System.Collections.Generic;
     using System.Linq;
     using System.Reflection;
+    using LiteNetLib.Utils;
 
     /// <summary>
     /// A class which allows <see cref="Enum"/> implicit conversions.
@@ -100,12 +101,66 @@ namespace RolePlus.ExternModule.API.Engine.Framework
         public static TObject Cast(TSource value) => _values[value];
 
         /// <summary>
+        /// Casts the specified <paramref name="values"/> to the corresponding type.
+        /// </summary>
+        /// <param name="values">The enum values to be cast.</param>
+        /// <returns>The cast object.</returns>
+        public static IEnumerable<TObject> Cast(IEnumerable<TSource> values)
+        {
+            foreach (TSource value in values)
+                yield return _values[value];
+        }
+
+        /// <summary>
+        /// Retrieves an array of the values of the constants in a specified <see cref="EnumClass{TSource, TObject}"/>.
+        /// </summary>
+        /// <param name="type">The <see cref="EnumClass{TSource, TObject}"/> type.</param>
+        /// <returns>An array of the values of the constants in a specified <see cref="EnumClass{TSource, TObject}"/>.</returns>
+        public static TSource[] GetValues(Type type)
+        {
+            if (type is null)
+                throw new NullReferenceException("The specified type parameter is null");
+
+            if (!type.IsSubclassOf(typeof(EnumClass<TSource, TObject>)) && type.BaseType != typeof(EnumClass<TSource, TObject>))
+                throw new InvalidTypeException("The specified type parameter is not a EnumClass<TSource, TObject> type.");
+
+            return typeof(TSource)
+                .GetFields(BindingFlags.Static | BindingFlags.Public | BindingFlags.GetField)
+                .Where(field => field.FieldType == typeof(TSource))
+                .Select(field => (TSource)field.GetValue(null))
+                .ToArray();
+        }
+
+        /// <summary>
         /// Safely casts the specified <paramref name="value"/> to the corresponding type.
         /// </summary>
         /// <param name="value">The enum value to be cast.</param>
         /// <param name="result">The cast <paramref name="value"/>.</param>
         /// <returns><see langword="true"/> if the <paramref name="value"/> was cast; otherwise, <see langword="false"/>.</returns>
         public static bool SafeCast(TSource value, out TObject result) => _values.TryGetValue(value, out result);
+
+        /// <summary>
+        /// Safely casts the specified <paramref name="values"/> to the corresponding type.
+        /// </summary>
+        /// <param name="values">The enum value to be cast.</param>
+        /// <param name="results">The cast <paramref name="values"/>.</param>
+        /// <returns><see langword="true"/> if the <paramref name="values"/> was cast; otherwise, <see langword="false"/>.</returns>
+        public static bool SafeCast(IEnumerable<TSource> values, out IEnumerable<TObject> results)
+        {
+            results = null;
+
+            List<TObject> tmpValues = new();
+            foreach (TSource value in values)
+            {
+                if (!_values.TryGetValue(value, out TObject result))
+                    return false;
+
+                tmpValues.Add(result);
+            }
+
+            results = tmpValues;
+            return true;
+        }
 
         /// <summary>
         /// Parses a <see cref="string"/> object.

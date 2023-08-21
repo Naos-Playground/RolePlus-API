@@ -17,8 +17,13 @@ namespace RolePlus.ExternModule.API.Features.CustomRoles
     using Exiled.API.Features;
     using Exiled.API.Features.Core;
     using Exiled.Events.EventArgs.Player;
+  
     using MEC;
+  
     using PlayerRoles;
+
+    using Respawning;
+
     using RolePlus.ExternModule.API.Engine.Framework.Interfaces;
     using RolePlus.ExternModule.API.Enums;
     using RolePlus.ExternModule.API.Features.Attributes;
@@ -110,7 +115,7 @@ namespace RolePlus.ExternModule.API.Features.CustomRoles
         /// <summary>
         /// Gets the <see cref="CustomRole"/>'s respawn <see cref="Team"/> .
         /// </summary>
-        public virtual Team RespawnTeam => Team.OtherAlive;
+        public virtual SpawnableTeamType RespawnTeam => SpawnableTeamType.None;
 
         /// <summary>
         /// Gets the <see cref="CustomRole"/>'s respawn <see cref="RoleType"/> .
@@ -525,7 +530,7 @@ namespace RolePlus.ExternModule.API.Features.CustomRoles
             if (player.Role.Team is not Team.Dead)
                 return false;
 
-            RespawnManager.RespawnQueue.Add(player);
+            Features.RespawnManager.RespawnQueue.Add(player);
 
             player.AddComponent(BehaviourComponent);
             PlayersValue.Remove(player);
@@ -630,7 +635,7 @@ namespace RolePlus.ExternModule.API.Features.CustomRoles
 
         private void ForceSpawn_Internal(Player player, bool shouldKeepPosition)
         {
-            RespawnManager.RespawnQueue.Add(player);
+            Features.RespawnManager.RespawnQueue.Add(player);
 
             if (shouldKeepPosition)
                 RoleBehaviour.StaticPlayers.Add(player);
