@@ -61,6 +61,16 @@ namespace RolePlus.ExternModule.API.Features
         public static HashSet<Player> RespawnQueue { get; private set; } = new();
 
         /// <summary>
+        /// Gets a <see cref="IEnumerable{T}"/> of <see cref="CustomRole"/> containing all the custom roles belonging to MTF team.
+        /// </summary>
+        public static IEnumerable<CustomRole> MTFCustomRoles => CustomRole.Registered.Where(customRole => customRole.RespawnTeam is PlayerRoles.Team.FoundationForces && !customRole.IsTeamUnit);
+
+        /// <summary>
+        /// Gets a <see cref="IEnumerable{T}"/> of <see cref="CustomRole"/> containing all the custom roles belonging to CHI team.
+        /// </summary>
+        public static IEnumerable<CustomRole> CHICustomRoles => CustomRole.Registered.Where(customRole => customRole.RespawnTeam is PlayerRoles.Team.ChaosInsurgency && !customRole.IsTeamUnit);
+
+        /// <summary>
         /// Gets or sets the current respawn state.
         /// </summary>
         public static RespawnStateBase State { get; set; } = RespawnStateBase.Enabled;
