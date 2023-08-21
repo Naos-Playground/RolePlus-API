@@ -16,7 +16,7 @@ namespace RolePlus.ExternModule.API.Features
     using MEC;
     using PlayerRoles;
     using Respawning;
-
+    using RolePlus.ExternModule.API.Engine.Framework;
     using RolePlus.ExternModule.API.Enums;
     using RolePlus.ExternModule.API.Features.CustomRoles;
     using RolePlus.ExternModule.API.Features.CustomTeams;
@@ -32,9 +32,13 @@ namespace RolePlus.ExternModule.API.Features
         private static readonly List<CoroutineHandle> _respawnHandle = new();
         private static CoroutineHandle _respawnCoreHandle;
 
-        private static RoleType[] CHIRoles { get; } = Enum.GetValues(typeof(RoleType)).ToArray<RoleType>().Where(role => role.ToString().Contains("Chaos")).ToArray();
+        private static RoleType[] DefaultChaosInsurgencyRoles { get; } = EnumClass<RoleTypeId, RoleType>.Values.Where(v => v.Value.ToString().Contains("Chaos")).ToArray();
 
-        private static RoleType[] MTFRoles { get; } = Enum.GetValues(typeof(RoleType)).ToArray<RoleType>().Where(role => role.ToString().Contains("Ntf")).ToArray();
+        private static RoleType[] DefaultNtfRoles { get; } = new RoleType[]
+        {
+            RoleType.NtfSergeant,
+            RoleType.NtfPrivate,
+        };
 
         /// <summary>
         /// Gets or sets the default respawn cooldown.
@@ -55,16 +59,6 @@ namespace RolePlus.ExternModule.API.Features
         /// Gets the respawn queue containing all the players to spawn during the next respawn wave.
         /// </summary>
         public static HashSet<Player> RespawnQueue { get; private set; } = new();
-
-        /// <summary>
-        /// Gets a <see cref="IEnumerable{T}"/> of <see cref="CustomRole"/> containing all the custom roles belonging to MTF team.
-        /// </summary>
-        public static IEnumerable<CustomRole> MTFCustomRoles => CustomRole.Registered.Where(customRole => customRole.RespawnTeam is PlayerRoles.Team.FoundationForces && !customRole.IsTeamUnit);
-
-        /// <summary>
-        /// Gets a <see cref="IEnumerable{T}"/> of <see cref="CustomRole"/> containing all the custom roles belonging to CHI team.
-        /// </summary>
-        public static IEnumerable<CustomRole> CHICustomRoles => CustomRole.Registered.Where(customRole => customRole.RespawnTeam is PlayerRoles.Team.ChaosInsurgency && !customRole.IsTeamUnit);
 
         /// <summary>
         /// Gets or sets the current respawn state.
@@ -119,59 +113,122 @@ namespace RolePlus.ExternModule.API.Features
         }
 
         /// <summary>
-        /// Respawns the specified <see cref="Team"/>.
+        /// Respawns the specified <see cref="SpawnableTeamType"/>.
         /// </summary>
-        /// <param name="team">The team to be respawned.</param>
-        /// <param name="spawnLimit">The maximum amount of units spawned at once.</param>
-        public static void RespawnTeam(SpawnableTeamType team, uint spawnLimit = 12)
+        /// <param name="team">The team to respawn.</param>
+        /// <param name="units">The maximum amount of units spawned at once.</param>
+        /// <returns>A <see cref="IEnumerable{T}"/> of <see cref="Player"/> containing all spawned players.</returns>
+        public static IEnumerable<Player> RespawnTeam(SpawnableTeamType team, uint units = 12) =>
+            team is SpawnableTeamType.ChaosInsurgency ? RespawnChaosInsurgencyWave(units) : team is SpawnableTeamType.ChaosInsurgency ? RespawnNineTaledFoxWave(units) : null;
+
+        /// <summary>
+        /// Respawns a Chaos Insurgency wave.
+        /// </summary>
+        /// <param name="units">The maximum amount of units spawned at once.</param>
+        /// <returns>A <see cref="IEnumerable{T}"/> of <see cref="Player"/> containing all spawned players.</returns>
+        public static IEnumerable<Player> RespawnChaosInsurgencyWave(uint units = 12)
         {
-            if (team is not SpawnableTeamType.NineTailedFox and not SpawnableTeamType.ChaosInsurgency)
-                return;
+            List<Player> toSpawn = Player.Get(p => p.IsDead).ToList();
+            toSpawn.ShuffleListSecure();
+            return RespawnChaosInsurgencyWave(toSpawn, units);
+        }
 
-            HashSet<Player> spawnedPlayers = new();
-            List<CustomRole> customRoles = team is SpawnableTeamType.NineTailedFox ? MTFCustomRoles.ToList() : CHICustomRoles.ToList();
+        /// <summary>
+        /// Respawns a <see cref="SpawnableTeamType.NineTailedFox"/> wave.
+        /// </summary>
+        /// <param name="units">The maximum amount of units spawned at once.</param>
+        /// <returns>A <see cref="IEnumerable{T}"/> of <see cref="Player"/> containing all spawned players.</returns>
+        public static IEnumerable<Player> RespawnNineTaledFoxWave(uint units = 12)
+        {
+            List<Player> toSpawn = Player.Get(p => p.IsDead).ToList();
+            toSpawn.ShuffleListSecure();
+            return RespawnNineTaledFoxWave(toSpawn, units);
+        }
 
-            int unitNumber = UnityEngine.Random.Range(0, 20);
+        /// <summary>
+        /// Respawns a <see cref="SpawnableTeamType.ChaosInsurgency"/> wave.
+        /// </summary>
+        /// <param name="players">The players to be respawned.</param>
+        /// <param name="units">The maximum amount of units spawned at once.</param>
+        /// <returns>A <see cref="IEnumerable{T}"/> of <see cref="Player"/> containing all spawned players.</returns>
+        public static IEnumerable<Player> RespawnChaosInsurgencyWave(IEnumerable<Player> players, uint units = 12)
+        {
+            List<CustomRole> customRoles = CustomRole.Registered
+                .Where(customRole => customRole.RespawnTeam == SpawnableTeamType.ChaosInsurgency && !customRole.IsTeamUnit)
+                .ToList();
 
-            List<Player> toSpawn = Player.Get(p => p.Role.Team is Team.SCPs && ManagedRoles.Select(role => CustomRole.Get(role).Owners.Contains(p)).FirstOrDefault()).ToList();
-            toSpawn.ShuffleList();
-
-            for (int i = 0; i < spawnLimit; i++)
+            int idx = 0;
+            bool hasRole;
+            foreach (Player player in players)
             {
-                Player ply = toSpawn[i];
-                customRoles.ShuffleList();
-                int classIndex = 0;
-                bool hasRole = false;
-                while (classIndex < customRoles.Count)
+                if (idx >= units)
+                    break;
+
+                hasRole = false;
+                foreach (CustomRole customRole in customRoles)
                 {
-                    CustomRole customRole = customRoles[classIndex];
-                    if ((team is SpawnableTeamType.NineTailedFox && i == 0 && customRole.Role != RoleType.NtfCaptain) || !customRole.CanSpawnByProbability())
-                        classIndex++;
-                    else
-                    {
-                        hasRole = true;
-                        CustomRole.UnsafeSpawn(ply, customRole);
-                        break;
-                    }
+                    if (!customRole.CanSpawnByProbability())
+                        continue;
+
+                    player.SetRole(customRole);
+                    hasRole = true;
+                    break;
                 }
 
                 if (!hasRole)
-                {
-                    ply.SetRole(RoleType.Spectator);
+                    player.SetRole(DefaultChaosInsurgencyRoles.Random());
 
-                    if (team is SpawnableTeamType.NineTailedFox)
-                        Timing.CallDelayed(0.5f, () => ply.Role.Set(i == 0 ? MTFRoles.FirstOrDefault(role => role.ToString() == RoleType.NtfCaptain.ToString()) : MTFRoles.Random(), SpawnReason.Respawn));
-                    else
-                        Timing.CallDelayed(0.5f, () => ply.Role.Set(CHIRoles.Random(), SpawnReason.Respawn));
-                }
-
-                spawnedPlayers.Add(ply);
+                yield return player;
+                idx++;
             }
 
-            if (team is SpawnableTeamType.NineTailedFox)
-                Respawn.SummonNtfChopper();
-            else
-                Respawn.SummonChaosInsurgencyVan();
+            Respawn.SummonChaosInsurgencyVan();
+        }
+
+        /// <summary>
+        /// Respawns a <see cref="SpawnableTeamType.ChaosInsurgency"/> wave.
+        /// </summary>
+        /// <param name="players">The players to be respawned.</param>
+        /// <param name="units">The maximum amount of units spawned at once.</param>
+        /// <returns>A <see cref="IEnumerable{T}"/> of <see cref="Player"/> containing all spawned players.</returns>
+        public static IEnumerable<Player> RespawnNineTaledFoxWave(IEnumerable<Player> players, uint units = 12)
+        {
+            List<CustomRole> customRoles = CustomRole.Registered
+                .Where(customRole => customRole.RespawnTeam == SpawnableTeamType.NineTailedFox && !customRole.IsTeamUnit)
+                .ToList();
+
+            List<Player> toSpawn = players.ToList();
+            Player captain = toSpawn.Random();
+            captain.SetRole(RoleType.NtfCaptain);
+            toSpawn.Remove(captain);
+            --units;
+
+            int idx = 0;
+            bool hasRole;
+            foreach (Player player in toSpawn)
+            {
+                if (idx >= units)
+                    break;
+
+                hasRole = false;
+                foreach (CustomRole customRole in customRoles)
+                {
+                    if (!customRole.CanSpawnByProbability())
+                        continue;
+
+                    player.SetRole(customRole);
+                    hasRole = true;
+                    break;
+                }
+
+                if (!hasRole)
+                    player.SetRole(DefaultNtfRoles.Random());
+
+                yield return player;
+                idx++;
+            }
+
+            Respawn.SummonNtfChopper();
         }
 
         /// <summary>

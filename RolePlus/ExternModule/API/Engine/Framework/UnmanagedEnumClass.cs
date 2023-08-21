@@ -11,6 +11,7 @@ namespace RolePlus.ExternModule.API.Engine.Framework
     using System.Collections.Generic;
     using System.Linq;
     using System.Reflection;
+    using LiteNetLib.Utils;
 
     /// <summary>
     /// A class which allows <see langword="unmanaged"/> data implicit conversions.
@@ -87,7 +88,7 @@ namespace RolePlus.ExternModule.API.Engine.Framework
         public static implicit operator UnmanagedEnumClass<TSource, TObject>(TSource value) => _values[value];
 
         /// <summary>
-        /// Implicitly converts the <see cref="EnumClass{TSource, TObject}"/> to <typeparamref name="TObject"/>.
+        /// Implicitly converts the <see cref="UnmanagedEnumClass{TSource, TObject}"/> to <typeparamref name="TObject"/>.
         /// </summary>
         /// <param name="value">The value to convert.</param>
         public static implicit operator TObject(UnmanagedEnumClass<TSource, TObject> value) => value;
@@ -98,6 +99,30 @@ namespace RolePlus.ExternModule.API.Engine.Framework
         /// <param name="value">The enum value to be cast.</param>
         /// <returns>The cast object.</returns>
         public static TObject Cast(TSource value) => _values[value];
+
+        /// <summary>
+        /// Casts the specified <paramref name="values"/> to the corresponding type.
+        /// </summary>
+        /// <param name="values">The enum values to be cast.</param>
+        /// <returns>The cast object.</returns>
+        public static IEnumerable<TObject> Cast(IEnumerable<TSource> values)
+        {
+            foreach (TSource value in values)
+                yield return _values[value];
+        }
+
+        /// <summary>
+        /// Casts the specified <paramref name="values"/> to the corresponding type.
+        /// </summary>
+        /// <typeparam name="T">The type to cast the enum to.</typeparam>
+        /// <param name="values">The enum values to be cast.</param>
+        /// <returns>The cast <typeparamref name="T"/> object.</returns>
+        public static IEnumerable<T> Cast<T>(IEnumerable<TSource> values)
+            where T : TObject
+        {
+            foreach (TSource value in values)
+                yield return Cast<T>(value);
+        }
 
         /// <summary>
         /// Casts the specified <paramref name="value"/> to the corresponding type.
@@ -117,6 +142,49 @@ namespace RolePlus.ExternModule.API.Engine.Framework
         public static bool SafeCast(TSource value, out TObject result) => _values.TryGetValue(value, out result);
 
         /// <summary>
+        /// Safely casts the specified <paramref name="values"/> to the corresponding type.
+        /// </summary>
+        /// <param name="values">The enum value to be cast.</param>
+        /// <param name="results">The cast <paramref name="values"/>.</param>
+        /// <returns><see langword="true"/> if the <paramref name="values"/> was cast; otherwise, <see langword="false"/>.</returns>
+        public static bool SafeCast(IEnumerable<TSource> values, out IEnumerable<TObject> results)
+        {
+            results = null;
+
+            List<TObject> tmpValues = new();
+            foreach (TSource value in values)
+            {
+                if (!_values.TryGetValue(value, out TObject result))
+                    return false;
+
+                tmpValues.Add(result);
+            }
+
+            results = tmpValues;
+            return true;
+        }
+
+        /// <summary>
+        /// Retrieves an array of the values of the constants in a specified <see cref="UnmanagedEnumClass{TSource, TObject}"/>.
+        /// </summary>
+        /// <param name="type">The <see cref="UnmanagedEnumClass{TSource, TObject}"/> type.</param>
+        /// <returns>An array of the values of the constants in a specified <see cref="UnmanagedEnumClass{TSource, TObject}"/>.</returns>
+        public static TSource[] GetValues(Type type)
+        {
+            if (type is null)
+                throw new NullReferenceException("The specified type parameter is null");
+
+            if (!type.IsSubclassOf(typeof(UnmanagedEnumClass<TSource, TObject>)) && type.BaseType != typeof(UnmanagedEnumClass<TSource, TObject>))
+                throw new InvalidTypeException("The specified type parameter is not a UnmanagedEnumClass<TSource, TObject> type.");
+
+            return typeof(TSource)
+                .GetFields(BindingFlags.Static | BindingFlags.Public | BindingFlags.GetField)
+                .Where(field => field.FieldType == typeof(TSource))
+                .Select(field => (TSource)field.GetValue(null))
+                .ToArray();
+        }
+
+        /// <summary>
         /// Parses a <see cref="string"/> object.
         /// </summary>
         /// <param name="obj">The object to be parsed.</param>
@@ -130,9 +198,9 @@ namespace RolePlus.ExternModule.API.Engine.Framework
         }
 
         /// <summary>
-        /// Converts the <see cref="EnumClass{TSource, TObject}"/> instance to a human-readable <see cref="string"/> representation.
+        /// Converts the <see cref="UnmanagedEnumClass{TSource, TObject}"/> instance to a human-readable <see cref="string"/> representation.
         /// </summary>
-        /// <returns>A human-readable <see cref="string"/> representation of the <see cref="EnumClass{TSource, TObject}"/> instance.</returns>
+        /// <returns>A human-readable <see cref="string"/> representation of the <see cref="UnmanagedEnumClass{TSource, TObject}"/> instance.</returns>
         public override string ToString() => _name;
 
         /// <summary>
