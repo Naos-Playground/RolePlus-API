@@ -16,7 +16,6 @@ namespace RolePlus.ExternModule
 
     using CommandSystem;
 
-    using Exiled.API.Enums;
     using Exiled.API.Extensions;
     using Exiled.API.Features;
     using Exiled.API.Features.Items;
@@ -38,8 +37,6 @@ namespace RolePlus.ExternModule
 
     using UnityEngine;
 
-    using Camera = Exiled.API.Features.Camera;
-
     /// <summary>
     /// The fully exposed methods and properties library.
     /// </summary>
@@ -48,7 +45,7 @@ namespace RolePlus.ExternModule
         /// <summary>
         /// Gets a <see cref="List{T}"/> containing all the spawned schematics.
         /// </summary>
-        public static List<SchematicObject> SchematicObjects { get; } = new();
+        //public static List<SchematicObject> SchematicObjects { get; } = new();
 
         /// <summary>
         /// Gets a <see cref="HashSet{T}"/> of <see cref="Player"/> containing all the players that are currently ignored by functions which use NoClip event(s) as base-logic.
@@ -126,100 +123,6 @@ namespace RolePlus.ExternModule
         }
 
         /// <summary>
-        /// Gets a value indicating whether or not the <see cref="Player"/> has a <see cref="CustomRole"/>.
-        /// </summary>
-        /// <param name="player">The specified <see cref="Player"/>.</param>
-        /// <returns><see langword="true"/> if the <see cref="Player"/> has a <see cref="CustomRole"/>; otherwise, <see langword="false"/>.</returns>
-        public static bool HasCustomRole(this Player player) => CustomRole.Players.Contains(player);
-
-        /// <summary>
-        /// Add a <see cref="CustomItem"/> of the specified type to the player's inventory.
-        /// </summary>
-        /// <param name="player">The specified <see cref="Player"/>.</param>
-        /// <param name="customItem">The item to be added.</param>
-        /// <returns><see langword="true"/> if the item has been given to the player; otherwise, <see langword="false"/>.</returns>
-        public static bool AddItem(this Player player, object customItem)
-        {
-            if (player is null || player.IsInventoryFull)
-                return false;
-
-            try
-            {
-                uint value = (uint)customItem;
-                CustomItem.TryGive(player, value);
-                return true;
-            }
-            catch
-            {
-                if (customItem is CustomItem instance)
-                    return CustomItem.TryGive(player, instance.Id);
-
-                return false;
-            }
-        }
-
-        /// <summary>
-        /// Adds a <see cref="IEnumerable{T}"/> of <see cref="object"/> containing all the custom items to the player's inventory.
-        /// </summary>
-        /// <param name="player">The specified <see cref="Player"/>.</param>
-        /// <param name="customItemTypes">The custom items to be added.</param>
-        public static void AddItem(this Player player, IEnumerable<object> customItemTypes)
-        {
-            foreach (object customItemType in customItemTypes)
-            {
-                if (!player.AddItem(customItemType))
-                    continue;
-            }
-        }
-
-        /// <summary>
-        /// Gets a <see cref="IEnumerable{T}"/> of <see cref="EffectType"/> from the specified player.
-        /// </summary>
-        /// <param name="player">The player to check.</param>
-        /// <returns>A <see cref="IEnumerable{T}"/> of <see cref="EffectType"/>.</returns>
-        public static IEnumerable<EffectType> GetEffectTypes(this Player player)
-        {
-            foreach (object effect in Enum.GetValues(typeof(EffectType)))
-            {
-                if (!Enum.TryParse(effect.ToString(), out EffectType effectType) || !player.TryGetEffect(effectType, out _))
-                    continue;
-
-                yield return effectType;
-            }
-        }
-
-        /// <summary>
-        /// Gets a <see cref="IEnumerable{T}"/> of <see cref="object"/> containing all the custom items in <paramref name="player"/>'s inventory.
-        /// </summary>
-        /// <param name="player">The player to check.</param>
-        /// <returns>A <see cref="IEnumerable{T}"/> of <see cref="object"/> which contains all the custom items found.</returns>
-        public static IEnumerable<CustomItem> GetCustomItems(this Player player) => GetCustomItems(player.Items);
-
-        /// <summary>
-        /// Gets a <see cref="IEnumerable{T}"/> of <see cref="object"/> containing all the custom items in <paramref name="items"/>.
-        /// </summary>
-        /// <param name="items">The items to check.</param>
-        /// <returns>A <see cref="IEnumerable{T}"/> of <see cref="object"/> which contains all the custom items found.</returns>
-        public static IEnumerable<CustomItem> GetCustomItems(this IEnumerable<Item> items)
-        {
-            foreach (Item item in items)
-            {
-                if (!CustomItem.TryGet(item, out CustomItem customItem))
-                    continue;
-
-                yield return customItem;
-            }
-        }
-
-        /// <summary>
-        /// Tries to get a <see cref="CustomItem"/> from the given <see cref="Item"/> instance.
-        /// </summary>
-        /// <param name="item">The <see cref="Item"/> to check.</param>
-        /// <param name="customItem">The <see cref="CustomItem"/> result.</param>
-        /// <returns><see langword="true"/> if the given <paramref name="item"/> is a <see cref="CustomItem"/>; otherwise, <see langword="false"/>.</returns>
-        public static bool TryGetCustomItem(this Item item, out CustomItem customItem) => CustomItem.TryGet(item, out customItem);
-
-        /// <summary>
         /// Tries to get a <see cref="CustomItem"/> from the given <see cref="Pickup"/> instance.
         /// </summary>
         /// <param name="pickup">The <see cref="Pickup"/> to check.</param>
@@ -228,70 +131,11 @@ namespace RolePlus.ExternModule
         public static bool TryGetCustomItem(this Pickup pickup, out CustomItem customItem) => CustomItem.TryGet(pickup, out customItem);
 
         /// <summary>
-        /// Gets a <see cref="CustomItem"/> from the specified <see cref="Item"/> instance.
-        /// </summary>
-        /// <param name="item">The <see cref="Item"/> to check.</param>
-        /// <returns>The corresponding <see cref="object"/>; otherwise, <see langword="null"/>.</returns>
-        public static CustomItem GetCustomItem(this Item item) => CustomItem.TryGet(item, out CustomItem customItem) ? customItem : null;
-
-        /// <summary>
         /// Gets a <see cref="CustomItem"/> from the given <see cref="Pickup"/> instance.
         /// </summary>
         /// <param name="pickup">The <see cref="Pickup"/> to check.</param>
         /// <returns>The corresponding <see cref="CustomItem"/> or <see langword="null"/> if not found.</returns>
         public static CustomItem GetCustomItem(this Pickup pickup) => CustomItem.TryGet(pickup, out CustomItem customItem) ? customItem : null;
-
-        /// <summary>
-        /// Sets the player's <see cref="CustomRole"/>.
-        /// </summary>
-        /// <param name="player">The specified <see cref="Player"/>.</param>
-        /// <param name="customRole">The role to be set.</param>
-        public static void SetRole(this Player player, CustomRole customRole) => CustomRole.UnsafeSpawn(player, customRole);
-
-        /// <summary>
-        /// Sets the player's role or <see cref="CustomRole"/>.
-        /// </summary>
-        /// <param name="player">The specified <see cref="Player"/>.</param>
-        /// <param name="role">The role to be set.</param>
-        /// <param name="shouldKeepPosition"><inheritdoc cref="CustomRole.ShouldKeepPosition"/></param>
-        public static void SetRole(this Player player, object role, bool shouldKeepPosition = false)
-        {
-            if (role is RoleType id)
-            {
-                player.Role.Set(id);
-                return;
-            }
-
-            CustomRole.UnsafeSpawn(player, role, shouldKeepPosition);
-        }
-
-        /// <summary>
-        /// Gets the player's <see cref="CustomRole"/>.
-        /// </summary>
-        /// <param name="player">The specified <see cref="Player"/>.</param>
-        /// <param name="customRole">The <see cref="CustomRole"/> result.</param>
-        /// <returns>The found <see cref="CustomRole"/>, or <see langword="null"/> if not found.</returns>
-        public static bool TryGetCustomRole(this Player player, out CustomRole customRole) => CustomRole.TryGet(player, out customRole);
-
-        /// <summary>
-        /// Gets the player's <see cref="CustomRole"/>.
-        /// </summary>
-        /// <param name="player">The specified <see cref="Player"/>.</param>
-        /// <returns>The found <see cref="CustomRole"/>, or <see langword="null"/> if not found.</returns>
-        public static CustomRole GetCustomRole(this Player player)
-        {
-            if (!CustomRole.TryGet(player, out CustomRole customRole))
-                return null;
-
-            return customRole;
-        }
-
-        /// <summary>
-        /// Gets the player's <see cref="CustomRole.Id"/>.
-        /// </summary>
-        /// <param name="player">The specified <see cref="Player"/>.</param>
-        /// <returns>The corresponding <see cref="object"/>.</returns>
-        public static object GetCustomRoleType(this Player player) => !CustomRole.TryGet(player, out CustomRole customRole) ? null : customRole.Id;
 
         /// <summary>
         /// Spawns the specified <see cref="CustomTeam"/>.
@@ -306,34 +150,10 @@ namespace RolePlus.ExternModule
         public static void SpawnTeam(object customTeamType) => CustomTeam.TrySpawn(customTeamType);
 
         /// <summary>
-        /// Gets a value indicating whether or not the <see cref="Player"/> is a Custom SCP.
-        /// </summary>
-        /// <param name="player">The specified <see cref="Player"/>.</param>
-        /// <returns><see langword="true"/> if the <see cref="Player"/> is a custom scp; otherwise, <see langword="false"/>.</returns>
-        public static bool IsCustomScp(this Player player) => CustomRole.TryGet(player, out CustomRole customScp) && customScp.IsScp;
-
-        /// <summary>
-        /// Safely drops an item in order to support custom items.
-        /// </summary>
-        /// <param name="player">The target.</param>
-        /// <param name="item">The item to be dropped.</param>
-        public static void SafeDropItem(this Player player, Item item)
-        {
-            if (CustomItem.TryGet(item, out CustomItem customItem))
-            {
-                player.RemoveItem(item, false);
-                customItem.Spawn(player.Position, player);
-                return;
-            }
-
-            player.DropItem(item);
-        }
-
-        /// <summary>
         /// Gets a value indicating whether the given <paramref name="position"/> is stuck.
         /// </summary>
         /// <param name="position">The position to check.</param>
-        /// <returns><see langword="true"/> if the positio <paramref name="position"/> is stuck; otherwise, <see langword="false"/>.</returns>
+        /// <returns><see langword="true"/> if the <paramref name="position"/> is stuck; otherwise, <see langword="false"/>.</returns>
         public static bool IsStuck(this Vector3 position)
         {
             bool result = false;
@@ -341,11 +161,9 @@ namespace RolePlus.ExternModule
             {
                 bool flag = collider.name.Contains("Hitbox") || collider.name.Contains("mixamorig") ||
                     collider.name.Equals("Player") || collider.name.Equals("PlyCenter") || collider.name.Equals("Antijumper");
+
                 if (!flag)
-                {
-                    Log.Warn($"Detect:{collider.name}");
                     result = true;
-                }
             }
 
             return result;
@@ -385,42 +203,6 @@ namespace RolePlus.ExternModule
                 return identity;
 
             return null;
-        }
-
-        /// <summary>
-        /// Gets a value indicating whether the given <see cref="Camera"/> can look to the specified <see cref="Player"/>.
-        /// </summary>
-        /// <param name="camera">The camera watcher.</param>
-        /// <param name="player">The target.</param>
-        /// <param name="maxDistance">The maximum distance before dropping the check.</param>
-        /// <returns><see langword="true"/> if the <paramref name="camera"/> can look to <paramref name="player"/>; otherwise, <see langword="false"/>.</returns>
-        public static bool CanLookToPlayer(this Camera camera, Player player, float maxDistance)
-        {
-            if (player.IsDead || player.Role == RoleType.Scp079)
-                return false;
-
-            float num = Vector3.Dot(camera.Transform.forward, player.Position - camera.Position);
-            return num >= 0f && num * num / (player.Position - camera.Position).sqrMagnitude > 0.4225f &&
-                Physics.Raycast(camera.Position, player.Position - camera.Position, out RaycastHit raycastHit, maxDistance, -117407543) &&
-                raycastHit.transform.name == player.GameObject.name;
-        }
-
-        /// <summary>
-        /// Gets a value indicating whether the given <see cref="Player"/> can look to the specified <see cref="Player"/>.
-        /// </summary>
-        /// <param name="watcher">The watcher.</param>
-        /// <param name="player">The target.</param>
-        /// <param name="maxDistance">The maximum distance before dropping the check.</param>
-        /// <returns><see langword="true"/> if the <paramref name="watcher"/> can look to <paramref name="player"/>; otherwise, <see langword="false"/>.</returns>
-        public static bool CanLookToPlayer(this Player watcher, Player player, float maxDistance)
-        {
-            if (player.IsDead || watcher.IsDead || watcher.Role == RoleType.Scp079 || player.Role == RoleType.Scp079)
-                return false;
-
-            float num = Vector3.Dot(watcher.CameraTransform.forward, player.Position - watcher.Position);
-            return num >= 0f && num * num / (player.Position - watcher.Position).sqrMagnitude > 0.4225f &&
-                Physics.Raycast(watcher.Position, player.Position - watcher.Position, out RaycastHit raycastHit, maxDistance, -117407543) &&
-                raycastHit.transform.name == player.GameObject.name;
         }
 
         /// <summary>
@@ -472,6 +254,7 @@ namespace RolePlus.ExternModule
             StringBuilder builder = new();
             builder.AppendLine($"[{Assembly.GetCallingAssembly().GetName().Name}] Couldn't execute command '{parentCommand.Command}': usage cannot be validated.");
             builder.AppendLine("Available commands: ");
+
             foreach (ICommand command in parentCommand.AllCommands)
                 builder.Append($"| {command.Command} |");
 
@@ -491,6 +274,7 @@ namespace RolePlus.ExternModule
             StringBuilder builder = new();
             builder.AppendLine($"[{Assembly.GetCallingAssembly().GetName().Name}] Couldn't execute command '{command.Command}': ");
             builder.Append(error);
+
             response = builder.ToString();
             return false;
         }
@@ -538,6 +322,7 @@ namespace RolePlus.ExternModule
             StringBuilder builder = new();
             builder.AppendLine($"[{Assembly.GetCallingAssembly().GetName().Name}] Couldn't execute command '{command.Command}': ");
             builder.Append("You don't have enough permissions to run this command.");
+
             response = builder.ToString();
 
             return false;
@@ -562,6 +347,7 @@ namespace RolePlus.ExternModule
             StringBuilder builder = new();
             builder.AppendLine($"[{Assembly.GetCallingAssembly().GetName().Name}] Couldn't execute command '{command.Command}': ");
             builder.Append("You don't have enough permissions to run this command.");
+
             response = builder.ToString();
 
             return false;
@@ -654,6 +440,7 @@ namespace RolePlus.ExternModule
         public static string FormatArguments(string[] args, int index)
         {
             StringBuilder sb = StringBuilderPool.Shared.Rent();
+
             foreach (string word in args.Segment(index))
             {
                 sb.Append(word);
@@ -662,6 +449,7 @@ namespace RolePlus.ExternModule
 
             string msg = sb.ToString();
             StringBuilderPool.Shared.Return(sb);
+
             return msg;
         }
     }

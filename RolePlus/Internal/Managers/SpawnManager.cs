@@ -13,6 +13,7 @@ namespace RolePlus.Internal
     using Exiled.Events.EventArgs.Player;
     using global::RolePlus.ExternModule;
     using global::RolePlus.ExternModule.API.Enums;
+    using global::RolePlus.ExternModule.API.Features;
     using global::RolePlus.ExternModule.API.Features.CustomRoles;
     using global::RolePlus.ExternModule.API.Features.CustomTeams;
 
@@ -70,14 +71,14 @@ namespace RolePlus.Internal
         /// </summary>
         /// <param name="roleType">The role to check.</param>
         /// <returns><see langword="true"/> if the role is alive; otherwise, <see langword="false"/>.</returns>
-        public static bool IsAlive(RoleType roleType) => Player.List.Any(x => !x.HasCustomRole() && x.Role.Type == roleType);
+        public static bool IsAlive(RoleType roleType) => Player.List.Any(x => x is Pawn p && !p.HasCustomRole && x.Role.Type == roleType);
 
         /// <summary>
         /// Checks whether the specified <see cref="CustomRole.Id"/> is alive.
         /// </summary>
         /// <param name="customRoleType">The role to check.</param>
         /// <returns><see langword="true"/> if the role is alive; otherwise, <see langword="false"/>.</returns>
-        public static bool IsAlive(uint customRoleType) => Player.List.Any(x => x.HasCustomRole() && x.GetCustomRoleType() is uint value && value == customRoleType);
+        public static bool IsAlive(uint customRoleType) => Player.List.Any(x => x is Pawn p && p.HasCustomRole && p.CustomRole.Id is uint value && value == customRoleType);
 
         /// <summary>
         /// Checks whether the specified <see cref="Team"/>[] are alive.

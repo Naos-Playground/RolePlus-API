@@ -126,9 +126,9 @@ namespace RolePlus.ExternModule.API.Features
         /// </summary>
         /// <param name="units">The maximum amount of units spawned at once.</param>
         /// <returns>A <see cref="IEnumerable{T}"/> of <see cref="Player"/> containing all spawned players.</returns>
-        public static IEnumerable<Player> RespawnChaosInsurgencyWave(uint units = 12)
+        public static IEnumerable<Pawn> RespawnChaosInsurgencyWave(uint units = 12)
         {
-            List<Player> toSpawn = Player.Get(p => p.IsDead).ToList();
+            List<Pawn> toSpawn = Player.Get(p => p.IsDead).Cast<Pawn>().ToList();
             toSpawn.ShuffleListSecure();
             return RespawnChaosInsurgencyWave(toSpawn, units);
         }
@@ -138,9 +138,9 @@ namespace RolePlus.ExternModule.API.Features
         /// </summary>
         /// <param name="units">The maximum amount of units spawned at once.</param>
         /// <returns>A <see cref="IEnumerable{T}"/> of <see cref="Player"/> containing all spawned players.</returns>
-        public static IEnumerable<Player> RespawnNineTaledFoxWave(uint units = 12)
+        public static IEnumerable<Pawn> RespawnNineTaledFoxWave(uint units = 12)
         {
-            List<Player> toSpawn = Player.Get(p => p.IsDead).ToList();
+            List<Pawn> toSpawn = Player.Get(p => p.IsDead).Cast<Pawn>().ToList();
             toSpawn.ShuffleListSecure();
             return RespawnNineTaledFoxWave(toSpawn, units);
         }
@@ -151,7 +151,7 @@ namespace RolePlus.ExternModule.API.Features
         /// <param name="players">The players to be respawned.</param>
         /// <param name="units">The maximum amount of units spawned at once.</param>
         /// <returns>A <see cref="IEnumerable{T}"/> of <see cref="Player"/> containing all spawned players.</returns>
-        public static IEnumerable<Player> RespawnChaosInsurgencyWave(IEnumerable<Player> players, uint units = 12)
+        public static IEnumerable<Pawn> RespawnChaosInsurgencyWave(IEnumerable<Pawn> players, uint units = 12)
         {
             List<CustomRole> customRoles = CustomRole.Registered
                 .Where(customRole => customRole.RespawnTeam == SpawnableTeamType.ChaosInsurgency && !customRole.IsTeamUnit)
@@ -159,7 +159,7 @@ namespace RolePlus.ExternModule.API.Features
 
             int idx = 0;
             bool hasRole;
-            foreach (Player player in players)
+            foreach (Pawn player in players)
             {
                 if (idx >= units)
                     break;
@@ -191,21 +191,21 @@ namespace RolePlus.ExternModule.API.Features
         /// <param name="players">The players to be respawned.</param>
         /// <param name="units">The maximum amount of units spawned at once.</param>
         /// <returns>A <see cref="IEnumerable{T}"/> of <see cref="Player"/> containing all spawned players.</returns>
-        public static IEnumerable<Player> RespawnNineTaledFoxWave(IEnumerable<Player> players, uint units = 12)
+        public static IEnumerable<Pawn> RespawnNineTaledFoxWave(IEnumerable<Pawn> players, uint units = 12)
         {
             List<CustomRole> customRoles = CustomRole.Registered
                 .Where(customRole => customRole.RespawnTeam == SpawnableTeamType.NineTailedFox && !customRole.IsTeamUnit)
                 .ToList();
 
-            List<Player> toSpawn = players.ToList();
-            Player captain = toSpawn.Random();
+            List<Pawn> toSpawn = players.ToList();
+            Pawn captain = toSpawn.Random();
             captain.SetRole(RoleType.NtfCaptain);
             toSpawn.Remove(captain);
             --units;
 
             int idx = 0;
             bool hasRole;
-            foreach (Player player in toSpawn)
+            foreach (Pawn player in toSpawn)
             {
                 if (idx >= units)
                     break;

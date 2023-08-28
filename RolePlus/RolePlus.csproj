@@ -125,6 +125,7 @@
     <Compile Include="ExternModule\API\Enums\EscapeScenarioTypeBase.cs" />
     <Compile Include="ExternModule\API\Enums\RoleType.cs" />
     <Compile Include="ExternModule\API\Features\Attributes\CustomEscapeAttribute.cs" />
+    <Compile Include="ExternModule\API\Features\Pawn.cs" />
     <Compile Include="ExternModule\API\Features\CustomAbilities\Generic\CustomAbility.cs" />
     <Compile Include="ExternModule\API\Features\CustomAbilities\Scp079AbilityBehaviour.cs" />
     <Compile Include="ExternModule\API\Features\CustomAbilities\UnlockableAbilityBehaviour.cs" />
@@ -156,7 +157,6 @@
     <Compile Include="Internal\Commands\Round\ChangeLockCommand.cs" />
     <Compile Include="Internal\Commands\Test\ShowTpsCommand.cs" />
     <Compile Include="Internal\Commands\Test\BypassNoclip.cs" />
-    <Compile Include="ExternModule\API\Features\TemporaryStats.cs" />
     <Compile Include="ExternModule\Events\EventArgs\InvokingHandlerEventArgs.cs" />
     <Compile Include="Internal\Configs\RootConfig.cs" />
     <Compile Include="Internal\Configs\RespawningRules.cs" />
