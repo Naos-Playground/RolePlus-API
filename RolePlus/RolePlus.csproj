@@ -151,7 +151,6 @@
     <Compile Include="ExternModule\Events\EventArgs\EscapingEventArgs.cs" />
     <Compile Include="ExternModule\Events\Handlers\Player.cs" />
     <Compile Include="ExternModule\Events\EventManager.cs" />
-    <Compile Include="GlobalSuppressions.cs" />
     <Compile Include="Internal\Commands\MainCommand.cs" />
     <Compile Include="Internal\Commands\Round\ForceEndCommand.cs" />
     <Compile Include="Internal\Commands\Round\RoundCommand.cs" />

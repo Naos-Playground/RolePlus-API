@@ -240,7 +240,11 @@ namespace RolePlus.ExternModule.API.Engine.Components
             OnInteractingObject(ev);
         }
 
-        /// <inheritdoc/>
+        /// <summary>
+        /// Updates all interactabble items.
+        /// </summary>
+        /// <param name="shouldBeSpawned">A value indicating whether the interactable item should be spawned.</param>
+        /// <param name="animStates">All the relative animation states.</param>
         public void UpdateInteractableItems(bool shouldBeSpawned, params string[] animStates)
         {
             if (RootSchematic is null)

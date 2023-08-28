@@ -44,13 +44,20 @@ namespace RolePlus.ExternModule.API.Engine.Components
         {
         }
 
-        /// <inheritdoc/>
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ASchematicMeshComponent"/> class.
+        /// </summary>
+        /// <param name="gameObject"><inheritdoc cref="EObject.Base"/></param>
         protected ASchematicMeshComponent(GameObject gameObject = null)
             : base(gameObject)
         {
         }
 
-        /// <inheritdoc/>
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ASchematicMeshComponent"/> class.
+        /// </summary>
+        /// <param name="gameObject"><inheritdoc cref="EObject.Base"/></param>
+        /// <param name="meshName">The name of the mash.</param>
         protected ASchematicMeshComponent(GameObject gameObject, string meshName)
             : this(gameObject) => MeshName = meshName;
 
@@ -161,7 +168,9 @@ namespace RolePlus.ExternModule.API.Engine.Components
             : this(mesh, scale, position, rotation) =>
             Socket = new(localPosition, localRotation, localScale);
 
-        /// <inheritdoc/>
+        /// <summary>
+        /// Gets the animators.
+        /// </summary>
         public IReadOnlyDictionary<Animator, string[]> AnimatorsTriggers { get; }
 
         /// <summary>
@@ -287,9 +296,12 @@ namespace RolePlus.ExternModule.API.Engine.Components
             FTransform socket)
             where T : ASchematicMeshComponent
         {
-            ASchematicMeshComponent outer = new(socket, MapEditorReborn.API.Features.ObjectSpawner.SpawnSchematic(meshName, position, rotation, scale), scale, position, rotation);
-            outer.Name = name;
-            outer.Base = gameObject;
+            ASchematicMeshComponent outer = new(socket, MapEditorReborn.API.Features.ObjectSpawner.SpawnSchematic(meshName, position, rotation, scale), scale, position, rotation)
+            {
+                Name = name,
+                Base = gameObject
+            };
+
             return outer.Cast<T>();
         }
 
@@ -807,7 +819,12 @@ namespace RolePlus.ExternModule.API.Engine.Components
             }
         }
 
-        /// <inheritdoc/>
+        /// <summary>
+        /// Plays an animation.
+        /// </summary>
+        /// <param name="name">The name of the animation.</param>
+        /// <param name="state">The name of the state.</param>
+        /// <returns><see langword="true"/> if the animation was played; otherwise, <see langword="false"/>.</returns>
         public bool PlayAnimation(string name, bool state)
         {
             Animator animator = RootSchematic.AnimationController.Animators.FirstOrDefault(x =>
