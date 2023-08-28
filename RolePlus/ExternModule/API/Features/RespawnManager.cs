@@ -63,12 +63,12 @@ namespace RolePlus.ExternModule.API.Features
         /// <summary>
         /// Gets a <see cref="IEnumerable{T}"/> of <see cref="CustomRole"/> containing all the custom roles belonging to MTF team.
         /// </summary>
-        public static IEnumerable<CustomRole> MTFCustomRoles => CustomRole.Registered.Where(customRole => customRole.RespawnTeam is PlayerRoles.Team.FoundationForces && !customRole.IsTeamUnit);
+        public static IEnumerable<CustomRole> MTFCustomRoles => CustomRole.Registered.Where(customRole => customRole.RespawnTeam is SpawnableTeamType.NineTailedFox && !customRole.IsTeamUnit);
 
         /// <summary>
         /// Gets a <see cref="IEnumerable{T}"/> of <see cref="CustomRole"/> containing all the custom roles belonging to CHI team.
         /// </summary>
-        public static IEnumerable<CustomRole> CHICustomRoles => CustomRole.Registered.Where(customRole => customRole.RespawnTeam is PlayerRoles.Team.ChaosInsurgency && !customRole.IsTeamUnit);
+        public static IEnumerable<CustomRole> CHICustomRoles => CustomRole.Registered.Where(customRole => customRole.RespawnTeam is SpawnableTeamType.ChaosInsurgency && !customRole.IsTeamUnit);
 
         /// <summary>
         /// Gets or sets the current respawn state.
@@ -136,7 +136,7 @@ namespace RolePlus.ExternModule.API.Features
         /// </summary>
         /// <param name="units">The maximum amount of units spawned at once.</param>
         /// <returns>A <see cref="IEnumerable{T}"/> of <see cref="Player"/> containing all spawned players.</returns>
-        public static IEnumerable<Pawn> RespawnChaosInsurgencyWave(uint units = 12)
+        public static IEnumerable<Player> RespawnChaosInsurgencyWave(uint units = 12)
         {
             List<Pawn> toSpawn = Player.Get(p => p.IsDead).Cast<Pawn>().ToList();
             toSpawn.ShuffleListSecure();
@@ -148,7 +148,7 @@ namespace RolePlus.ExternModule.API.Features
         /// </summary>
         /// <param name="units">The maximum amount of units spawned at once.</param>
         /// <returns>A <see cref="IEnumerable{T}"/> of <see cref="Player"/> containing all spawned players.</returns>
-        public static IEnumerable<Pawn> RespawnNineTaledFoxWave(uint units = 12)
+        public static IEnumerable<Player> RespawnNineTaledFoxWave(uint units = 12)
         {
             List<Pawn> toSpawn = Player.Get(p => p.IsDead).Cast<Pawn>().ToList();
             toSpawn.ShuffleListSecure();
@@ -161,7 +161,7 @@ namespace RolePlus.ExternModule.API.Features
         /// <param name="players">The players to be respawned.</param>
         /// <param name="units">The maximum amount of units spawned at once.</param>
         /// <returns>A <see cref="IEnumerable{T}"/> of <see cref="Player"/> containing all spawned players.</returns>
-        public static IEnumerable<Pawn> RespawnChaosInsurgencyWave(IEnumerable<Pawn> players, uint units = 12)
+        public static IEnumerable<Pawn> RespawnChaosInsurgencyWave(IEnumerable<Player> players, uint units = 12)
         {
             List<CustomRole> customRoles = CustomRole.Registered
                 .Where(customRole => customRole.RespawnTeam == SpawnableTeamType.ChaosInsurgency && !customRole.IsTeamUnit)
@@ -169,7 +169,7 @@ namespace RolePlus.ExternModule.API.Features
 
             int idx = 0;
             bool hasRole;
-            foreach (Pawn player in players)
+            foreach (Pawn player in players.Cast<Pawn>())
             {
                 if (idx >= units)
                     break;

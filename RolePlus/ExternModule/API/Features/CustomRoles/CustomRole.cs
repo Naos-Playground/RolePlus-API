@@ -17,11 +17,9 @@ namespace RolePlus.ExternModule.API.Features.CustomRoles
     using Exiled.API.Features;
     using Exiled.API.Features.Core;
     using Exiled.Events.EventArgs.Player;
-  
     using MEC;
-  
-    using PlayerRoles;
 
+    using PlayerRoles;
     using Respawning;
 
     using RolePlus.ExternModule.API.Engine.Framework.Interfaces;
@@ -40,7 +38,7 @@ namespace RolePlus.ExternModule.API.Features.CustomRoles
     {
         private static readonly List<CustomRole> _registered = new();
 
-        internal static readonly Dictionary<Player, CustomRole> PlayersValue = new();
+        internal static readonly Dictionary<Pawn, CustomRole> PlayersValue = new();
 
         /// <summary>
         /// Gets a <see cref="List{T}"/> which contains all registered <see cref="CustomRole"/>'s.
@@ -50,12 +48,12 @@ namespace RolePlus.ExternModule.API.Features.CustomRoles
         /// <summary>
         /// Gets all players and their respective <see cref="CustomRole"/>.
         /// </summary>
-        public static IReadOnlyDictionary<Player, CustomRole> Manager => PlayersValue;
+        public static IReadOnlyDictionary<Pawn, CustomRole> Manager => PlayersValue;
 
         /// <summary>
         /// Gets all players belonging to a <see cref="CustomRole"/>.
         /// </summary>
-        public static IEnumerable<Player> Players => Manager.Keys.ToHashSet();
+        public static IEnumerable<Pawn> Players => Manager.Keys.ToHashSet();
 
         /// <summary>
         /// Gets the <see cref="CustomRole"/>'s <see cref="Type"/>.
@@ -143,9 +141,9 @@ namespace RolePlus.ExternModule.API.Features.CustomRoles
         public virtual bool IsRegistered => Registered.Contains(this);
 
         /// <summary>
-        /// Gets a <see cref="IEnumerable{T}"/> of <see cref="Player"/> containing all players owning this <see cref="CustomRole"/>.
+        /// Gets a <see cref="IEnumerable{T}"/> of <see cref="Pawn"/> containing all players owning this <see cref="CustomRole"/>.
         /// </summary>
-        public IEnumerable<Player> Owners => Player.Get(x => TryGet(x, out CustomRole customRole) && customRole.Id == Id);
+        public IEnumerable<Pawn> Owners => Player.Get(x => TryGet(x, out CustomRole customRole) && customRole.Id == Id).Cast<Pawn>();
 
         /// <summary>
         /// Compares two operands: <see cref="CustomRole"/> and <see cref="object"/>.
@@ -246,15 +244,15 @@ namespace RolePlus.ExternModule.API.Features.CustomRoles
         public static CustomRole Get(RoleBehaviour roleBuilder) => Get(roleBuilder.GetType());
 
         /// <summary>
-        /// Gets a <see cref="CustomRole"/> from a <see cref="Player"/>.
+        /// Gets a <see cref="CustomRole"/> from a <see cref="Pawn"/>.
         /// </summary>
         /// <param name="player">The <see cref="CustomRole"/> owner.</param>
         /// <returns>The <see cref="CustomRole"/> matching the search or <see langword="null"/> if not registered.</returns>
-        public static CustomRole Get(Player player)
+        public static CustomRole Get(Pawn player)
         {
             CustomRole customRole = default;
 
-            foreach (KeyValuePair<Player, CustomRole> kvp in Manager)
+            foreach (KeyValuePair<Pawn, CustomRole> kvp in Manager)
             {
                 if (kvp.Key != player)
                     continue;
@@ -284,10 +282,10 @@ namespace RolePlus.ExternModule.API.Features.CustomRoles
         /// <summary>
         /// Tries to get the player's current <see cref="CustomRole"/>.
         /// </summary>
-        /// <param name="player">The <see cref="Player"/> to search on.</param>
+        /// <param name="player">The <see cref="Pawn"/> to search on.</param>
         /// <param name="customRole">The found <see cref="CustomRole"/>, <see langword="null"/> if not registered.</param>
         /// <returns><see langword="true"/> if a <see cref="CustomRole"/> was found; otherwise, <see langword="false"/>.</returns>
-        public static bool TryGet(Player player, out CustomRole customRole) => (customRole = Get(player)) is not null;
+        public static bool TryGet(Pawn player, out CustomRole customRole) => (customRole = Get(player)) is not null;
 
         /// <summary>
         /// Tries to get the player's current <see cref="CustomRole"/>.
@@ -308,10 +306,10 @@ namespace RolePlus.ExternModule.API.Features.CustomRoles
         /// <summary>
         /// Tries to spawn the player as a specific <see cref="CustomRole"/>.
         /// </summary>
-        /// <param name="player">The <see cref="Player"/> to be spawned.</param>
+        /// <param name="player">The <see cref="Pawn"/> to be spawned.</param>
         /// <param name="customRole">The <see cref="CustomRole"/> to be set.</param>
         /// <returns><see langword="true"/> if the player was spawned; otherwise, <see langword="false"/>.</returns>
-        public static bool SafeSpawn(Player player, CustomRole customRole)
+        public static bool SafeSpawn(Pawn player, CustomRole customRole)
         {
             if (customRole is null)
                 return false;
@@ -324,10 +322,10 @@ namespace RolePlus.ExternModule.API.Features.CustomRoles
         /// <summary>
         /// Tries to spawn the player as a specific <see cref="CustomRole"/>.
         /// </summary>
-        /// <param name="player">The <see cref="Player"/> to be spawned.</param>
+        /// <param name="player">The <see cref="Pawn"/> to be spawned.</param>
         /// <param name="customRoleType">The <see cref="object"/> to be set.</param>
         /// <returns><see langword="true"/> if the player was spawned; otherwise, <see langword="false"/>.</returns>
-        public static bool SafeSpawn(Player player, object customRoleType)
+        public static bool SafeSpawn(Pawn player, object customRoleType)
         {
             if (!TryGet(customRoleType, out CustomRole customRole))
                 return false;
@@ -340,10 +338,10 @@ namespace RolePlus.ExternModule.API.Features.CustomRoles
         /// <summary>
         /// Tries to spawn the player as a specific <see cref="CustomRole"/> by name.
         /// </summary>
-        /// <param name="player">The <see cref="Player"/> to be spawned.</param>
+        /// <param name="player">The <see cref="Pawn"/> to be spawned.</param>
         /// <param name="name">The <see cref="CustomRole"/> name to be set.</param>
-        /// <returns>Returns a value indicating whether the <see cref="Player"/> was spawned or not.</returns>
-        public static bool SafeSpawn(Player player, string name)
+        /// <returns>Returns a value indicating whether the <see cref="Pawn"/> was spawned or not.</returns>
+        public static bool SafeSpawn(Pawn player, string name)
         {
             if (!TryGet(name, out CustomRole customRole))
                 return false;
@@ -356,11 +354,11 @@ namespace RolePlus.ExternModule.API.Features.CustomRoles
         /// <summary>
         /// Tries to force spawn the player as a specific <see cref="CustomRole"/>.
         /// </summary>
-        /// <param name="player">The <see cref="Player"/> to be spawned.</param>
+        /// <param name="player">The <see cref="Pawn"/> to be spawned.</param>
         /// <param name="customRole">The <see cref="CustomRole"/> to be set.</param>
-        /// <param name="shouldKeepPosition">A value indicating whether the <see cref="Player"/> should be spawned in the same position.</param>
+        /// <param name="shouldKeepPosition">A value indicating whether the <see cref="Pawn"/> should be spawned in the same position.</param>
         /// <returns><see langword="true"/> if the player was spawned; otherwise, <see langword="false"/>.</returns>
-        public static bool UnsafeSpawn(Player player, CustomRole customRole, bool shouldKeepPosition = false)
+        public static bool UnsafeSpawn(Pawn player, CustomRole customRole, bool shouldKeepPosition = false)
         {
             if (customRole is null)
                 return false;
@@ -373,11 +371,11 @@ namespace RolePlus.ExternModule.API.Features.CustomRoles
         /// <summary>
         /// Tries to force spawn the player as a specific <see cref="CustomRole"/>.
         /// </summary>
-        /// <param name="player">The <see cref="Player"/> to be spawned.</param>
+        /// <param name="player">The <see cref="Pawn"/> to be spawned.</param>
         /// <param name="customRoleType">The <see cref="object"/> to be set.</param>
-        /// <param name="shouldKeepPosition">A value indicating whether the <see cref="Player"/> should be spawned in the same position.</param>
+        /// <param name="shouldKeepPosition">A value indicating whether the <see cref="Pawn"/> should be spawned in the same position.</param>
         /// <returns><see langword="true"/> if the player was spawned; otherwise, <see langword="false"/>.</returns>
-        public static bool UnsafeSpawn(Player player, object customRoleType, bool shouldKeepPosition = false)
+        public static bool UnsafeSpawn(Pawn player, object customRoleType, bool shouldKeepPosition = false)
         {
             if (!TryGet(customRoleType, out CustomRole customRole))
                 return false;
@@ -390,11 +388,11 @@ namespace RolePlus.ExternModule.API.Features.CustomRoles
         /// <summary>
         /// Tries to force spawn the player as a specific <see cref="CustomRole"/> by name.
         /// </summary>
-        /// <param name="player">The <see cref="Player"/> to be spawned.</param>
+        /// <param name="player">The <see cref="Pawn"/> to be spawned.</param>
         /// <param name="name">The <see cref="CustomRole"/> name to be set.</param>
-        /// <param name="shouldKeepPosition">A value indicating whether the <see cref="Player"/> should be spawned in the same position.</param>
+        /// <param name="shouldKeepPosition">A value indicating whether the <see cref="Pawn"/> should be spawned in the same position.</param>
         /// <returns><see langword="true"/> if the player was spawned; otherwise, <see langword="false"/>.</returns>
-        public static bool UnsafeSpawn(Player player, string name, bool shouldKeepPosition = false)
+        public static bool UnsafeSpawn(Pawn player, string name, bool shouldKeepPosition = false)
         {
             if (!TryGet(name, out CustomRole customRole))
                 return false;
@@ -523,9 +521,9 @@ namespace RolePlus.ExternModule.API.Features.CustomRoles
         /// <summary>
         /// Spawns the player as a specific <see cref="CustomRole"/>.
         /// </summary>
-        /// <param name="player">The <see cref="Player"/> to be spawned.</param>
+        /// <param name="player">The <see cref="Pawn"/> to be spawned.</param>
         /// <returns><see langword="true"/> if the player was spawned; otherwise, <see langword="false"/>.</returns>
-        public bool Spawn(Player player)
+        public bool Spawn(Pawn player)
         {
             if (player.Role.Team is not Team.Dead)
                 return false;
@@ -542,9 +540,9 @@ namespace RolePlus.ExternModule.API.Features.CustomRoles
         /// <summary>
         /// Force spawns the player as a specific <see cref="CustomRole"/>.
         /// </summary>
-        /// <param name="player">The <see cref="Player"/> to be spawned.</param>
-        /// <param name="shouldKeepPosition">A value indicating whether the <see cref="Player"/> should be spawned in the same position.</param>
-        public void ForceSpawn(Player player, bool shouldKeepPosition = false)
+        /// <param name="player">The <see cref="Pawn"/> to be spawned.</param>
+        /// <param name="shouldKeepPosition">A value indicating whether the <see cref="Pawn"/> should be spawned in the same position.</param>
+        public void ForceSpawn(Pawn player, bool shouldKeepPosition = false)
         {
             PlayersValue.Remove(player);
             PlayersValue.Add(player, this);
@@ -579,7 +577,7 @@ namespace RolePlus.ExternModule.API.Features.CustomRoles
                 if (players.IsEmpty())
                     return;
 
-                SafeSpawn(Player.Get(Team.Dead).Random(), this);
+                SafeSpawn(Player.Get(Team.Dead).Random() as Pawn, this);
             }
         }
 
@@ -604,7 +602,8 @@ namespace RolePlus.ExternModule.API.Features.CustomRoles
         {
             if (!TryGet(ev.Player, out CustomRole customRole) ||
                 customRole != this ||
-                !ev.Player.GameObject.TryGetComponent(out RoleBehaviour builder))
+                !ev.Player.GameObject.TryGetComponent(out RoleBehaviour builder) ||
+                ev.Player is not Pawn pawn)
                 return;
 
             ev.Items.Clear();
@@ -615,10 +614,10 @@ namespace RolePlus.ExternModule.API.Features.CustomRoles
                 .GetValue(builder);
 
             if (inventory.Items is not null)
-                ev.Items.AddRange(inventory.Items);
+                pawn.AddItem(inventory.Items);
 
             if (inventory.CustomItems is not null)
-                ev.Player.AddItem(inventory.CustomItems);
+                pawn.AddItem(inventory.CustomItems);
 
             if (inventory.AmmoBox is not null)
             {
@@ -633,7 +632,7 @@ namespace RolePlus.ExternModule.API.Features.CustomRoles
             }
         }
 
-        private void ForceSpawn_Internal(Player player, bool shouldKeepPosition)
+        private void ForceSpawn_Internal(Pawn player, bool shouldKeepPosition)
         {
             Features.RespawnManager.RespawnQueue.Add(player);
 

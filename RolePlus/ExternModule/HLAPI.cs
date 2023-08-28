@@ -43,11 +43,6 @@ namespace RolePlus.ExternModule
     public static class HLAPI
     {
         /// <summary>
-        /// Gets a <see cref="List{T}"/> containing all the spawned schematics.
-        /// </summary>
-        //public static List<SchematicObject> SchematicObjects { get; } = new();
-
-        /// <summary>
         /// Gets a <see cref="HashSet{T}"/> of <see cref="Player"/> containing all the players that are currently ignored by functions which use NoClip event(s) as base-logic.
         /// </summary>
         public static HashSet<Player> IgnoredNoClipPlayers { get; } = new();
@@ -71,16 +66,6 @@ namespace RolePlus.ExternModule
         /// Gets a <see cref="IReadOnlyList{T}"/>  of available <see cref="Branch"/>es.
         /// </summary>
         public static IEnumerable<Branch> RegisteredBranches => Branch.Registered;
-
-        /// <summary>
-        /// Gets the world's escape position.
-        /// </summary>
-        public static Vector3 WorldEscapePosition => Escape.WorldPos;
-
-        /// <summary>
-        /// Gets the world's escape radius.
-        /// </summary>
-        public static float WorldEscapeRadius => Escape.RadiusSqr;
 
         /// <summary>
         /// Gets or sets a value indicating whether or not the round is locked.
@@ -136,18 +121,6 @@ namespace RolePlus.ExternModule
         /// <param name="pickup">The <see cref="Pickup"/> to check.</param>
         /// <returns>The corresponding <see cref="CustomItem"/> or <see langword="null"/> if not found.</returns>
         public static CustomItem GetCustomItem(this Pickup pickup) => CustomItem.TryGet(pickup, out CustomItem customItem) ? customItem : null;
-
-        /// <summary>
-        /// Spawns the specified <see cref="CustomTeam"/>.
-        /// </summary>
-        /// <param name="customTeam">The team to be spawned.</param>
-        public static void SpawnTeam(CustomTeam customTeam) => CustomTeam.TrySpawn(customTeam);
-
-        /// <summary>
-        /// Spawns the specified <see cref="CustomItem"/>.
-        /// </summary>
-        /// <param name="customTeamType">The team to be spawned.</param>
-        public static void SpawnTeam(object customTeamType) => CustomTeam.TrySpawn(customTeamType);
 
         /// <summary>
         /// Gets a value indicating whether the given <paramref name="position"/> is stuck.

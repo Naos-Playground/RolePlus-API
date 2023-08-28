@@ -18,7 +18,7 @@ namespace RolePlus.Internal
         internal void OnVerified(VerifiedEventArgs ev)
         {
             Player.Dictionary.Remove(ev.Player.GameObject);
-            Player.Dictionary.Add(ev.Player.GameObject, new Pawn(ev.Player.ReferenceHub));
+            Player.Dictionary[ev.Player.GameObject] = new Pawn(ev.Player.ReferenceHub);
         }
 
         internal void OnWaitingForPlayers() => Server.Host.Role.Set(RoleType.Tutorial);
