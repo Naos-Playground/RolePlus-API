@@ -296,8 +296,9 @@ namespace RolePlus.ExternModule.API.Features
             if (!IsRespawnAllowed)
                 HLAPI.TimeUntilNextRespawn = int.MaxValue;
 
-            RoundManager.IsLocked = true;
-            RoundManager.CurrentGamemode = DisplayName;
+            RoundManager roundManager = StaticActor.Get<RoundManager>();
+            roundManager.IsLocked = true;
+            roundManager.CurrentGamemode = DisplayName;
 
             if (StartingBroadcast is not null)
                 Map.Broadcast(StartingBroadcast, true);
@@ -317,7 +318,7 @@ namespace RolePlus.ExternModule.API.Features
             CurrentGamemode = null;
             UnsubscribeEvents();
 
-            Timing.CallDelayed(EndingDelay, () => RoundManager.EndRound());
+            Timing.CallDelayed(EndingDelay, () => StaticActor.Get<RoundManager>().EndRound());
         }
 
         /// <summary>

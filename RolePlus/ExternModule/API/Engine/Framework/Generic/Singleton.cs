@@ -5,7 +5,7 @@
 // </copyright>
 // -----------------------------------------------------------------------
 
-namespace RolePlus.ExternModule.API.Engine.Framework
+namespace RolePlus.ExternModule.API.Engine.Framework.Generic
 {
     using System.Collections.Generic;
     using System.Linq;

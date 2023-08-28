@@ -98,8 +98,6 @@ namespace RolePlus.Internal
         {
             ServerHandler = new();
 
-            RespawnManager.Start();
-            SpawnManager.Start();
             CommonPatchProcessor.BeginEventHandlersDelivery();
 
             ServerEvents.ReloadedConfigs += () => ConfigAPI.LoadAll();
@@ -109,8 +107,6 @@ namespace RolePlus.Internal
 
         private void UnregisterEvents()
         {
-            RespawnManager.Stop();
-            SpawnManager.Stop();
             CommonPatchProcessor.StopEventHandlersDelivery();
 
             ServerEvents.ReloadedConfigs -= () => ConfigAPI.LoadAll();

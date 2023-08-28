@@ -28,6 +28,7 @@ namespace RolePlus.ExternModule
     using Mirror;
     using NorthwoodLib.Pools;
     using RemoteAdmin;
+    using RolePlus.ExternModule.API.Engine.Framework;
     using RolePlus.ExternModule.API.Enums;
     using RolePlus.ExternModule.API.Features;
     using RolePlus.ExternModule.API.Features.CustomRoles;
@@ -42,6 +43,9 @@ namespace RolePlus.ExternModule
     /// </summary>
     public static class HLAPI
     {
+        private static RespawnManager _respawnManager;
+        private static RoundManager _roundManager;
+
         /// <summary>
         /// Gets a <see cref="HashSet{T}"/> of <see cref="Player"/> containing all the players that are currently ignored by functions which use NoClip event(s) as base-logic.
         /// </summary>
@@ -66,6 +70,16 @@ namespace RolePlus.ExternModule
         /// Gets a <see cref="IReadOnlyList{T}"/>  of available <see cref="Branch"/>es.
         /// </summary>
         public static IEnumerable<Branch> RegisteredBranches => Branch.Registered;
+
+        /// <summary>
+        /// Gets the <see cref="API.Features.RespawnManager"/>.
+        /// </summary>
+        public static RespawnManager RespawnManager => _respawnManager ??= StaticActor.Get<RespawnManager>();
+
+        /// <summary>
+        /// Gets the <see cref="API.Features.RoundManager"/>.
+        /// </summary>
+        public static RoundManager RoundManager => _roundManager ??= StaticActor.Get<RoundManager>();
 
         /// <summary>
         /// Gets or sets a value indicating whether or not the round is locked.

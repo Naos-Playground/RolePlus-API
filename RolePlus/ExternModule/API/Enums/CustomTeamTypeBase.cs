@@ -7,7 +7,7 @@
 
 namespace RolePlus.ExternModule.API.Enums
 {
-    using RolePlus.ExternModule.API.Engine.Framework;
+    using RolePlus.ExternModule.API.Engine.Framework.Generic;
 
     /// <summary>
     /// All available custom teams.

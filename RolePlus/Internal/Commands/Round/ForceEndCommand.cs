@@ -12,6 +12,8 @@ namespace RolePlus.Internal.Commands.Round
     using CommandSystem;
 
     using global::RolePlus.ExternModule;
+    using global::RolePlus.ExternModule.API.Engine.Framework;
+    using global::RolePlus.ExternModule.API.Features;
 
     [CommandHandler(typeof(RemoteAdminCommandHandler))]
     [CommandHandler(typeof(GameConsoleCommandHandler))]
@@ -35,7 +37,7 @@ namespace RolePlus.Internal.Commands.Round
                 !HLAPI.ValidateCommandUsage(this, arguments, new[] { 0 }, out response))
                 return false;
 
-            RoundManager.EndRound();
+            StaticActor.Get<RoundManager>().EndRound();
 
             response = "Round ended.";
             return true;

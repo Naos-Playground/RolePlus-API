@@ -111,13 +111,14 @@
     <Compile Include="ExternModule\API\Engine\Framework\States\StateController.cs" />
     <Compile Include="ExternModule\API\Engine\Framework\States\State.cs" />
     <Compile Include="ExternModule\API\Engine\Framework\StaticActor.cs" />
-    <Compile Include="ExternModule\API\Engine\Framework\UnmanagedEnumClass.cs" />
+    <Compile Include="ExternModule\API\Engine\Framework\Generic\StaticActor.cs" />
+    <Compile Include="ExternModule\API\Engine\Framework\Generic\UnmanagedEnumClass.cs" />
     <Compile Include="ExternModule\API\Engine\Framework\Bootstrap\CommonPatchProcessor.cs" />
     <Compile Include="ExternModule\API\Engine\Framework\Networking\RuleAttribute.cs" />
     <Compile Include="ExternModule\API\Engine\Framework\Networking\TFirewall.cs" />
     <Compile Include="ExternModule\API\Engine\Framework\Networking\TRule.cs" />
-    <Compile Include="ExternModule\API\Engine\Framework\EnumClass.cs" />
-    <Compile Include="ExternModule\API\Engine\Framework\Singleton.cs" />
+    <Compile Include="ExternModule\API\Engine\Framework\Generic\EnumClass.cs" />
+    <Compile Include="ExternModule\API\Engine\Framework\Generic\Singleton.cs" />
     <Compile Include="ExternModule\API\Enums\CustomEscapeTypeBase.cs" />
     <Compile Include="ExternModule\API\Enums\CustomAbilityTypeBase.cs" />
     <Compile Include="ExternModule\API\Enums\CustomTeamTypeBase.cs" />
@@ -219,7 +220,7 @@
     <Compile Include="ExternModule\Events\Patches\Events\SendingRemoteAdminCommand.cs" />
     <Compile Include="ExternModule\Events\Patches\Generic\AmmoExceedingLimitsPatch.cs" />
     <Compile Include="ExternModule\Events\Patches\Events\SendingConsoleCommand.cs" />
-    <Compile Include="Internal\Managers\RoundManager.cs" />
+    <Compile Include="ExternModule\API\Features\RoundManager.cs" />
     <Compile Include="Internal\RolePlus.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
@@ -227,7 +228,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="Internal\Managers\SpawnManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="..\.editorconfig">

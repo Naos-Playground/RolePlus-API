@@ -21,7 +21,7 @@ namespace RolePlus.ExternModule.API.Features.CustomRoles
 
     using PlayerRoles;
     using Respawning;
-
+    using RolePlus.ExternModule.API.Engine.Framework;
     using RolePlus.ExternModule.API.Engine.Framework.Interfaces;
     using RolePlus.ExternModule.API.Enums;
     using RolePlus.ExternModule.API.Features.Attributes;
@@ -528,7 +528,7 @@ namespace RolePlus.ExternModule.API.Features.CustomRoles
             if (player.Role.Team is not Team.Dead)
                 return false;
 
-            Features.RespawnManager.RespawnQueue.Add(player);
+            StaticActor.Get<Features.RespawnManager>().RespawnQueue.Add(player);
 
             player.AddComponent(BehaviourComponent);
             PlayersValue.Remove(player);
@@ -634,7 +634,7 @@ namespace RolePlus.ExternModule.API.Features.CustomRoles
 
         private void ForceSpawn_Internal(Pawn player, bool shouldKeepPosition)
         {
-            Features.RespawnManager.RespawnQueue.Add(player);
+            StaticActor.Get<Features.RespawnManager>().RespawnQueue.Add(player);
 
             if (shouldKeepPosition)
                 RoleBehaviour.StaticPlayers.Add(player);
