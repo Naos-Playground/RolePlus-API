@@ -5,7 +5,7 @@
 // </copyright>
 // -----------------------------------------------------------------------
 
-namespace RolePlus.Internal
+namespace RolePlus.ExternModule.API.Features
 {
     using System.Collections.Generic;
     using System.Linq;
@@ -17,25 +17,33 @@ namespace RolePlus.Internal
     using Exiled.CustomItems.API.Features;
     using Exiled.Events.EventArgs.Map;
     using global::RolePlus.ExternModule.API.Engine.Components;
-
+    using global::RolePlus.ExternModule.API.Engine.Framework.Generic;
     using MEC;
     using PlayerRoles;
+    using Respawning;
+    using RolePlus.ExternModule.API.Engine.Framework;
     using UnityEngine;
 
     /// <summary>
     /// A class to easily manage round features.
     /// </summary>
-    public sealed class RoundManager
+    public sealed class RoundManager : StaticActor
     {
         private static CoroutineHandle _checkRoundHandle;
         private static Side _leadingTeam = Side.None;
         private static bool _roundLocked;
         private static bool _explosionDestroysEntities;
+        private static RespawnManager _respawnManager;
+
+        /// <summary>
+        /// Gets the <see cref="Features.RespawnManager"/>.
+        /// </summary>
+        public RespawnManager RespawnManager => _respawnManager ??= Get<RespawnManager>();
 
         /// <summary>
         /// Gets or sets a value indicating whether the round is locked.
         /// </summary>
-        public static bool IsLocked
+        public bool IsLocked
         {
             get => _roundLocked;
             set
@@ -48,7 +56,7 @@ namespace RolePlus.Internal
         /// <summary>
         /// Gets or sets a value indicating whether explosions can destroy entities.
         /// </summary>
-        public static bool CanExplosionDestroyEntities
+        public bool CanExplosionDestroyEntities
         {
             get => _explosionDestroysEntities;
             set
@@ -67,22 +75,22 @@ namespace RolePlus.Internal
         /// <summary>
         /// Gets or sets the gamemode's name.
         /// </summary>
-        public static string CurrentGamemode { get; set; }
+        public string CurrentGamemode { get; set; }
 
         /// <summary>
         /// Gets the leading team.
         /// </summary>
-        public static Side LeadingTeam
+        public Side LeadingTeam
         {
             get
             {
-                if (SpawnManager.IsAlive(Team.FoundationForces, Team.Scientists) && !SpawnManager.IsAlive(Team.ClassD, Team.ChaosInsurgency, Team.SCPs, Team.OtherAlive))
+                if (RespawnManager.IsAlive(Team.FoundationForces, Team.Scientists) && !RespawnManager.IsAlive(Team.ClassD, Team.ChaosInsurgency, Team.SCPs, Team.OtherAlive))
                     _leadingTeam = Side.Mtf;
-                else if (SpawnManager.IsAlive(Team.ChaosInsurgency, Team.ClassD) && !SpawnManager.IsAlive(Team.FoundationForces, Team.Scientists, Team.SCPs, Team.OtherAlive))
+                else if (RespawnManager.IsAlive(Team.ChaosInsurgency, Team.ClassD) && !RespawnManager.IsAlive(Team.FoundationForces, Team.Scientists, Team.SCPs, Team.OtherAlive))
                     _leadingTeam = Side.ChaosInsurgency;
-                else if (SpawnManager.IsAlive(Team.SCPs) && !SpawnManager.IsAlive(Team.FoundationForces, Team.Scientists, Team.ChaosInsurgency, Team.ClassD, Team.OtherAlive))
+                else if (RespawnManager.IsAlive(Team.SCPs) && !RespawnManager.IsAlive(Team.FoundationForces, Team.Scientists, Team.ChaosInsurgency, Team.ClassD, Team.OtherAlive))
                     _leadingTeam = Side.Scp;
-                else if (SpawnManager.IsAlive(Team.OtherAlive) && !SpawnManager.IsAlive(Team.FoundationForces, Team.Scientists, Team.ChaosInsurgency, Team.ClassD, Team.SCPs))
+                else if (RespawnManager.IsAlive(Team.FoundationForces, Team.Scientists, Team.ChaosInsurgency, Team.ClassD, Team.SCPs))
                     _leadingTeam = Side.Tutorial;
                 else
                     _leadingTeam = Side.None;
@@ -94,23 +102,23 @@ namespace RolePlus.Internal
         /// <summary>
         /// Starts the ending conditions check process.
         /// </summary>
-        public static void Start() => _checkRoundHandle = Timing.RunCoroutine(EndingRoundConditionsValidator());
+        public void Start() => _checkRoundHandle = Timing.RunCoroutine(EndingRoundConditionsValidator());
 
         /// <summary>
         /// Stops the ending conditions check process.
         /// </summary>
-        public static void Stop() => Timing.KillCoroutines(_checkRoundHandle);
+        public void Stop() => Timing.KillCoroutines(_checkRoundHandle);
 
         /// <summary>
         /// Ends the round.
         /// </summary>
-        public static void EndRound()
+        public void EndRound()
         {
             IsLocked = false;
             Timing.CallDelayed(0.2f, () => Round.EndRound(true));
         }
 
-        private static void OnExplodingGrenade(ExplodingGrenadeEventArgs ev)
+        private void OnExplodingGrenade(ExplodingGrenadeEventArgs ev)
         {
             if (!CanExplosionDestroyEntities || ev.Projectile.Type is not ItemType.GrenadeHE)
                 return;
@@ -132,7 +140,7 @@ namespace RolePlus.Internal
             }
         }
 
-        private static IEnumerator<float> EndingRoundConditionsValidator()
+        private IEnumerator<float> EndingRoundConditionsValidator()
         {
             for (; ; )
             {

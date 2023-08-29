@@ -53,7 +53,7 @@ namespace RolePlus.ExternModule.API.Features.CustomAbilities
         /// <summary>
         /// Fired after the ability is unlocked.
         /// </summary>
-        protected virtual void OnUnlocked() => Settings.UnlockedHint.Show(Owner);
+        protected virtual void OnUnlocked() => Owner.ShowHint(Settings.UnlockedHint);
 
         /// <summary>
         /// Fired before the ability is activated.
@@ -62,7 +62,7 @@ namespace RolePlus.ExternModule.API.Features.CustomAbilities
         {
             if (!IsUnlocked)
             {
-                Settings.CannotBeUsed.Show(Owner);
+                Owner.ShowHint(Settings.CannotBeUsed);
                 return;
             }
 

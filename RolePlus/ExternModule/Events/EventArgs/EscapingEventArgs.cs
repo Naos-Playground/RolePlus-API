@@ -10,6 +10,7 @@ namespace RolePlus.ExternModule.Events.EventArgs
     using System;
     using Exiled.API.Features;
     using RolePlus.ExternModule.API.Enums;
+    using RolePlus.ExternModule.API.Features;
     using RolePlus.ExternModule.API.Features.CustomRoles;
     using Hint = API.Features.CustomHud.Hint;
 
@@ -28,7 +29,7 @@ namespace RolePlus.ExternModule.Events.EventArgs
         /// <param name="hint"><inheritdoc cref="Hint"/></param>
         /// <param name="isAllowed"><inheritdoc cref="IsAllowed"/></param>
         public EscapingEventArgs(
-            Player player,
+            Pawn player,
             RoleType newRole,
             CustomRole newCustomRole,
             EscapeScenarioTypeBase scenarioType,
@@ -46,7 +47,7 @@ namespace RolePlus.ExternModule.Events.EventArgs
         /// <summary>
         /// Gets the player who's escaping.
         /// </summary>
-        public Player Player { get; }
+        public Pawn Player { get; }
 
         /// <summary>
         /// Gets or sets the new <see cref="RoleType"/>.

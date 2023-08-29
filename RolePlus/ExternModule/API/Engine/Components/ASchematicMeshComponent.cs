@@ -44,13 +44,20 @@ namespace RolePlus.ExternModule.API.Engine.Components
         {
         }
 
-        /// <inheritdoc/>
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ASchematicMeshComponent"/> class.
+        /// </summary>
+        /// <param name="gameObject"><inheritdoc cref="EObject.Base"/></param>
         protected ASchematicMeshComponent(GameObject gameObject = null)
             : base(gameObject)
         {
         }
 
-        /// <inheritdoc/>
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ASchematicMeshComponent"/> class.
+        /// </summary>
+        /// <param name="gameObject"><inheritdoc cref="EObject.Base"/></param>
+        /// <param name="meshName">The name of the mash.</param>
         protected ASchematicMeshComponent(GameObject gameObject, string meshName)
             : this(gameObject) => MeshName = meshName;
 
@@ -161,7 +168,9 @@ namespace RolePlus.ExternModule.API.Engine.Components
             : this(mesh, scale, position, rotation) =>
             Socket = new(localPosition, localRotation, localScale);
 
-        /// <inheritdoc/>
+        /// <summary>
+        /// Gets the animators.
+        /// </summary>
         public IReadOnlyDictionary<Animator, string[]> AnimatorsTriggers { get; }
 
         /// <summary>
@@ -287,9 +296,12 @@ namespace RolePlus.ExternModule.API.Engine.Components
             FTransform socket)
             where T : ASchematicMeshComponent
         {
-            ASchematicMeshComponent outer = new(socket, MapEditorReborn.API.Features.ObjectSpawner.SpawnSchematic(meshName, position, rotation, scale), scale, position, rotation);
-            outer.Name = name;
-            outer.Base = gameObject;
+            ASchematicMeshComponent outer = new(socket, MapEditorReborn.API.Features.ObjectSpawner.SpawnSchematic(meshName, position, rotation, scale), scale, position, rotation)
+            {
+                Name = name,
+                Base = gameObject
+            };
+
             return outer.Cast<T>();
         }
 
@@ -334,7 +346,7 @@ namespace RolePlus.ExternModule.API.Engine.Components
         /// <param name="position">The <see cref="Vector3">position</see> from which looking for.</param>
         /// <returns>The <see cref="ASchematicMeshComponent"/> of type <typeparamref name="T"/>.</returns>
         public static T FindClosestObjectOfType<T>(Vector3 position)
-            where T : ASchematicMeshComponent => FindClosestObjectOfType<T>(position, HLAPI.SchematicObjects);
+            where T : ASchematicMeshComponent => FindClosestObjectOfType<T>(position, SchematicObjects);
 
         /// <summary>
         /// Finds the <see cref="ASchematicMeshComponent"/> instance of type <typeparamref name="T"/> closest to <paramref name="schematicObject"/>.
@@ -343,7 +355,7 @@ namespace RolePlus.ExternModule.API.Engine.Components
         /// <param name="schematicObject">The <see cref="SchematicObject"/> from which looking for.</param>
         /// <returns>The <see cref="ASchematicMeshComponent"/> of type <typeparamref name="T"/>.</returns>
         public static T FindClosestObjectOfType<T>(SchematicObject schematicObject)
-            where T : ASchematicMeshComponent => FindClosestObjectOfType<T>(schematicObject.Position, HLAPI.SchematicObjects);
+            where T : ASchematicMeshComponent => FindClosestObjectOfType<T>(schematicObject.Position, SchematicObjects);
 
         /// <summary>
         /// Finds the <see cref="ASchematicMeshComponent"/> instance of type <typeparamref name="T"/> closest to <paramref name="schematicMeshComponent"/>.
@@ -352,7 +364,7 @@ namespace RolePlus.ExternModule.API.Engine.Components
         /// <param name="schematicMeshComponent">The <see cref="ASchematicMeshComponent"/> of type <typeparamref name="T"/> from which looking for.</param>
         /// <returns>The <see cref="ASchematicMeshComponent"/> of type <typeparamref name="T"/>.</returns>
         public static T FindClosestObjectOfType<T>(T schematicMeshComponent)
-            where T : ASchematicMeshComponent => FindClosestObjectOfType<T>(schematicMeshComponent.Position, HLAPI.SchematicObjects);
+            where T : ASchematicMeshComponent => FindClosestObjectOfType<T>(schematicMeshComponent.Position, SchematicObjects);
 
         /// <summary>
         /// Finds the <see cref="Pickup"/> instance of type <typeparamref name="T"/> closest to <paramref name="position"/>.
@@ -431,7 +443,7 @@ namespace RolePlus.ExternModule.API.Engine.Components
         /// <param name="tag">The tag look for.</param>
         /// <returns>The <see cref="ASchematicMeshComponent"/> of type <typeparamref name="T"/>.</returns>
         public static T FindClosestObjectWithTagOfType<T>(Vector3 position, string tag)
-            where T : ASchematicMeshComponent => FindClosestObjectWithTagOfType<T>(position, tag, HLAPI.SchematicObjects);
+            where T : ASchematicMeshComponent => FindClosestObjectWithTagOfType<T>(position, tag, SchematicObjects);
 
         /// <summary>
         /// Finds the <see cref="ASchematicMeshComponent"/> instance of type <typeparamref name="T"/> closest to <paramref name="schematicObject"/>.
@@ -441,7 +453,7 @@ namespace RolePlus.ExternModule.API.Engine.Components
         /// <param name="tag">The tag look for.</param>
         /// <returns>The <see cref="ASchematicMeshComponent"/> of type <typeparamref name="T"/>.</returns>
         public static T FindClosestObjectWithTagOfType<T>(SchematicObject schematicObject, string tag)
-            where T : ASchematicMeshComponent => FindClosestObjectWithTagOfType<T>(schematicObject.Position, tag, HLAPI.SchematicObjects);
+            where T : ASchematicMeshComponent => FindClosestObjectWithTagOfType<T>(schematicObject.Position, tag, SchematicObjects);
 
         /// <summary>
         /// Finds the <see cref="ASchematicMeshComponent"/> instance of type <typeparamref name="T"/> closest to <paramref name="schematicMeshComponent"/>.
@@ -451,7 +463,7 @@ namespace RolePlus.ExternModule.API.Engine.Components
         /// <param name="tag">The tag look for.</param>
         /// <returns>The <see cref="ASchematicMeshComponent"/> of type <typeparamref name="T"/>.</returns>
         public static T FindClosestObjectWithTagOfType<T>(T schematicMeshComponent, string tag)
-            where T : ASchematicMeshComponent => FindClosestObjectWithTagOfType<T>(schematicMeshComponent.Position, tag, HLAPI.SchematicObjects);
+            where T : ASchematicMeshComponent => FindClosestObjectWithTagOfType<T>(schematicMeshComponent.Position, tag, SchematicObjects);
 
         /// <summary>
         /// Finds the <see cref="Pickup"/> instance of type <typeparamref name="T"/> closest to <paramref name="pickup"/>.
@@ -689,7 +701,7 @@ namespace RolePlus.ExternModule.API.Engine.Components
         /// <param name="tag">The tag look for.</param>
         /// <returns>The <see cref="ASchematicMeshComponent"/> of type <typeparamref name="T"/>.</returns>
         public T FindClosestObjectWithTagOfType<T>(string tag)
-            where T : ASchematicMeshComponent => FindClosestObjectWithTagOfType<T>(Position, tag, HLAPI.SchematicObjects);
+            where T : ASchematicMeshComponent => FindClosestObjectWithTagOfType<T>(Position, tag, SchematicObjects);
 
         /// <summary>
         /// Finds the <see cref="Pickup"/> instance of type <typeparamref name="T"/> closest to this <see cref="Pickup"/> instance.
@@ -743,7 +755,7 @@ namespace RolePlus.ExternModule.API.Engine.Components
         /// <typeparam name="T">The <see cref="ASchematicMeshComponent"/> of type <typeparamref name="T"/> to look for.</typeparam>
         /// <returns>The <see cref="ASchematicMeshComponent"/> of type <typeparamref name="T"/>.</returns>
         public T FindClosestObjectOfType<T>()
-            where T : ASchematicMeshComponent => FindClosestObjectOfType<T>(Position, HLAPI.SchematicObjects.Where(obj => obj.gameObject.name != RootSchematic.gameObject.name));
+            where T : ASchematicMeshComponent => FindClosestObjectOfType<T>(Position, SchematicObjects.Where(obj => obj.gameObject.name != RootSchematic.gameObject.name));
 
         /// <summary>
         /// Finds the <see cref="Pickup"/> instance of type <typeparamref name="T"/> closest to this <see cref="Pickup"/> instance.
@@ -807,7 +819,12 @@ namespace RolePlus.ExternModule.API.Engine.Components
             }
         }
 
-        /// <inheritdoc/>
+        /// <summary>
+        /// Plays an animation.
+        /// </summary>
+        /// <param name="name">The name of the animation.</param>
+        /// <param name="state">The name of the state.</param>
+        /// <returns><see langword="true"/> if the animation was played; otherwise, <see langword="false"/>.</returns>
         public bool PlayAnimation(string name, bool state)
         {
             Animator animator = RootSchematic.AnimationController.Animators.FirstOrDefault(x =>

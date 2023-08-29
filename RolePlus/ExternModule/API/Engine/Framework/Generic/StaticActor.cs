@@ -5,17 +5,16 @@
 // </copyright>
 // -----------------------------------------------------------------------
 
-namespace RolePlus.ExternModule.API.Engine.Framework
+namespace RolePlus.ExternModule.API.Engine.Framework.Generic
 {
-    using System;
-
     using Exiled.API.Features;
     using Exiled.API.Features.Core;
 
     /// <summary>
     /// This is a generic Singleton implementation for components.
-    /// <br>Create a derived class of the script you want to "Singletonize"</br>
+    /// <br>Create a derived class where the type <typeparamref name="T"/> is the script you want to "Singletonize"</br>
     /// </summary>
+    /// <typeparam name="T">The type of the class.</typeparam>
     /// <remarks>
     /// Do not redefine <see cref="PostInitialize()"/> <see cref="OnBeginPlay()"/> or <see cref="OnEndPlay()"/> in derived classes.
     /// <br>Instead, use <see langword="protected virtual"/> methods:</br>
@@ -26,9 +25,10 @@ namespace RolePlus.ExternModule.API.Engine.Framework
     /// To perform the initialization and cleanup: those methods are guaranteed to only be called once in the entire lifetime of the component.
     /// </para>
     /// </remarks>
-    public abstract class StaticActor : EActor
+    public abstract class StaticActor<T> : EActor
+        where T : EActor
     {
-        private static StaticActor _instance;
+        private static T _instance;
 
         /// <summary>
         /// Gets a value indicating whether the <see cref="PostInitialize()"/> method has already been called by Unity.
@@ -48,84 +48,27 @@ namespace RolePlus.ExternModule.API.Engine.Framework
         /// <summary>
         /// Gets the global access point to the unique instance of this class.
         /// </summary>
-        public static StaticActor Instance => _instance ? _instance : IsDestroyed ? null : (_instance = FindExistingInstance() ?? CreateNewInstance());
+        public static T Instance => _instance ? _instance : IsDestroyed ? null : (_instance = FindExistingInstance() ?? CreateNewInstance());
 
         /// <summary>
-        /// Looks or an existing instance of the <see cref="StaticActor"/>.
+        /// Looks or an existing instance of the <see cref="StaticActor{T}"/>.
         /// </summary>
-        /// <returns>The existing <see cref="StaticActor"/> instance, or <see langword="null"/> if not found.</returns>
-        public static StaticActor FindExistingInstance()
+        /// <returns>The existing <typeparamref name="T"/> instance, or <see langword="null"/> if not found.</returns>
+        public static T FindExistingInstance()
         {
-            StaticActor[] existingInstances = FindActiveObjectsOfType<StaticActor>();
+            T[] existingInstances = FindActiveObjectsOfType<T>();
             return existingInstances == null || existingInstances.Length == 0 ? null : existingInstances[0];
         }
 
         /// <summary>
-        /// Creates a new instance of the <see cref="StaticActor"/>.
+        /// Creates a new instance of the <see cref="StaticActor{T}"/>.
         /// </summary>
-        /// <returns>The created <see cref="StaticActor"/> instance, or <see langword="null"/> if not found.</returns>
-        public static StaticActor CreateNewInstance()
+        /// <returns>The created <typeparamref name="T"/> instance, or <see langword="null"/> if not found.</returns>
+        public static T CreateNewInstance()
         {
-            EObject @object = CreateDefaultSubobject<StaticActor>();
-            @object.Name = "__" + typeof(StaticActor).Name + " (StaticActor)";
-            return @object.Cast<StaticActor>();
-        }
-
-        /// <summary>
-        /// Gets a <see cref="StaticActor"/> given the specified type <typeparamref name="T"/>.
-        /// </summary>
-        /// <typeparam name="T">The type of the <see cref="StaticActor"/> to look for.</typeparam>
-        /// <returns>The corresponding <see cref="StaticActor"/>, or <see langword="null"/> if not found.</returns>
-        public static T Get<T>()
-            where T : StaticActor
-        {
-            foreach (StaticActor actor in FindActiveObjectsOfType<StaticActor>())
-            {
-                if (!actor.Cast(out StaticActor staticActor) || staticActor.GetType() != typeof(T))
-                    continue;
-
-                return actor.Cast<T>();
-            }
-
-            return null;
-        }
-
-        /// <summary>
-        /// Gets a <see cref="StaticActor"/> given the specified type.
-        /// </summary>
-        /// <param name="type">The the type of the <see cref="StaticActor"/> to look for.</param>
-        /// <typeparam name="T">The type to cast the <see cref="StaticActor"/> to.</typeparam>
-        /// <returns>The corresponding <see cref="StaticActor"/> of type <typeparamref name="T"/>, or <see langword="null"/> if not found.</returns>
-        public static T Get<T>(Type type)
-            where T : StaticActor
-        {
-            foreach (StaticActor actor in FindActiveObjectsOfType<StaticActor>())
-            {
-                if (!actor.Cast(out StaticActor staticActor) || staticActor.GetType() != type)
-                    continue;
-
-                return actor.Cast<T>();
-            }
-
-            return null;
-        }
-
-        /// <summary>
-        /// Gets a <see cref="StaticActor"/> given the specified type.
-        /// </summary>
-        /// <param name="type">The the type of the <see cref="StaticActor"/> to look for.</param>
-        /// <returns>The corresponding <see cref="StaticActor"/>, or <see langword="null"/> if not found.</returns>
-        public static StaticActor Get(Type type)
-        {
-            foreach (StaticActor actor in FindActiveObjectsOfType<StaticActor>())
-            {
-                if (!actor.Cast(out StaticActor staticActor) || staticActor.GetType() != type)
-                    continue;
-
-                return actor;
-            }
-
-            return null;
+            EObject @object = CreateDefaultSubobject<T>();
+            @object.Name = "__" + typeof(T).Name + " (StaticActor)";
+            return @object.Cast<T>();
         }
 
         /// <inheritdoc/>
@@ -133,7 +76,7 @@ namespace RolePlus.ExternModule.API.Engine.Framework
         {
             base.PostInitialize();
 
-            StaticActor ldarg_0 = GetComponent<StaticActor>();
+            T ldarg_0 = GetComponent<T>();
 
             if (_instance == null)
             {
@@ -185,7 +128,7 @@ namespace RolePlus.ExternModule.API.Engine.Framework
         /// Fired on <see cref="PostInitialize()"/>.
         /// </summary>
         /// <remarks>
-        /// This method will only be called once even if multiple instances of the <see cref="StaticActor"/> component exist in the scene.
+        /// This method will only be called once even if multiple instances of the <see cref="StaticActor{T}"/> component exist in the scene.
         /// <br>You can override this method in derived classes to customize the initialization of the component.</br>
         /// </remarks>
         protected virtual void PostInitialize_Static()
@@ -196,7 +139,7 @@ namespace RolePlus.ExternModule.API.Engine.Framework
         /// Fired on <see cref="OnBeginPlay()"/>.
         /// </summary>
         /// <remarks>
-        /// This method will only be called once even if multiple instances of the <see cref="StaticActor"/> component exist in the scene.
+        /// This method will only be called once even if multiple instances of the <see cref="StaticActor{T}"/> component exist in the scene.
         /// <br>You can override this method in derived classes to customize the initialization of the component.</br>
         /// </remarks>
         protected virtual void BeginPlay_Static()
@@ -207,7 +150,7 @@ namespace RolePlus.ExternModule.API.Engine.Framework
         /// Fired on <see cref="OnEndPlay()"/>.
         /// </summary>
         /// <remarks>
-        /// This method will only be called once even if multiple instances of the <see cref="StaticActor"/> component exist in the scene.
+        /// This method will only be called once even if multiple instances of the <see cref="StaticActor{T}"/> component exist in the scene.
         /// <br>You can override this method in derived classes to customize the initialization of the component.</br>
         /// </remarks>
         protected virtual void EndPlay_Static()
@@ -215,12 +158,12 @@ namespace RolePlus.ExternModule.API.Engine.Framework
         }
 
         /// <summary>
-        /// If a duplicated instance of a <see cref="StaticActor"/> component is loaded into the scene this method will be called instead of <see cref="PostInitialize_Static()"/>.
+        /// If a duplicated instance of a <see cref="StaticActor{T}"/> component is loaded into the scene this method will be called instead of <see cref="PostInitialize_Static()"/>.
         /// <br>That way you can customize what to do with repeated instances.</br>
         /// </summary>
         /// <remarks>
         /// The default approach is delete the duplicated component.
         /// </remarks>
-        protected virtual void NotifyInstanceRepeated() => Destroy(GetComponent<StaticActor>());
+        protected virtual void NotifyInstanceRepeated() => Destroy(GetComponent<T>());
     }
 }

@@ -10,6 +10,7 @@ namespace RolePlus.ExternModule.Events.EventArgs
     using System;
 
     using Exiled.API.Features;
+    using RolePlus.ExternModule.API.Features;
 
     /// <summary>
     /// Contains all informations before invoking an event.
@@ -20,11 +21,11 @@ namespace RolePlus.ExternModule.Events.EventArgs
         /// Initializes a new instance of the <see cref="EscapedEventArgs"/> class.
         /// </summary>
         /// <param name="player"><inheritdoc cref="Player"/></param>
-        public EscapedEventArgs(Player player) => Player = player;
+        public EscapedEventArgs(Pawn player) => Player = player;
 
         /// <summary>
         /// Gets the player who's escaping.
         /// </summary>
-        public Player Player { get; }
+        public Pawn Player { get; }
     }
 }

@@ -110,7 +110,7 @@ namespace RolePlus.ExternModule.API.Features.CustomAbilities
         {
             if (!IsReady)
             {
-                Settings.OnCooldownHint.Show(Owner);
+                Owner.Hud.Show(Settings.OnCooldownHint);
                 return;
             }
 
@@ -161,7 +161,8 @@ namespace RolePlus.ExternModule.API.Features.CustomAbilities
         protected virtual void OnLevelAdded(byte level)
         {
             _level = level;
-            Settings.NextLevelHint.Show(Owner, "%level", Level.ToString());
+
+            Owner.Hud.Show(Settings.NextLevelHint, "%level", Level.ToString(), overrideQueue: true);
         }
 
         /// <summary>

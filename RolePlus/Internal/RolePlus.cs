@@ -8,7 +8,7 @@
 namespace RolePlus.Internal
 {
     using System;
-
+    using Exiled.API.Enums;
     using Exiled.API.Features;
     using global::RolePlus.ExternModule.API.Engine.Framework.Bootstrap;
     using global::RolePlus.ExternModule.API.Features;
@@ -43,10 +43,13 @@ namespace RolePlus.Internal
         public override string Prefix => "RolePlus";
 
         /// <inheritdoc/>
-        public override Version RequiredExiledVersion => new(5, 2, 1);
+        public override PluginPriority Priority => PluginPriority.First;
 
         /// <inheritdoc/>
-        public override Version Version => new(6, 0, 0, 18);
+        public override Version RequiredExiledVersion => new(7, 2, 0);
+
+        /// <inheritdoc/>
+        public override Version Version => new(7, 0, 0);
 
         /// <inheritdoc/>
         public override void OnEnabled()
@@ -95,8 +98,6 @@ namespace RolePlus.Internal
         {
             ServerHandler = new();
 
-            RespawnManager.Start();
-            SpawnManager.Start();
             CommonPatchProcessor.BeginEventHandlersDelivery();
 
             ServerEvents.ReloadedConfigs += () => ConfigAPI.LoadAll();
@@ -106,8 +107,6 @@ namespace RolePlus.Internal
 
         private void UnregisterEvents()
         {
-            RespawnManager.Stop();
-            SpawnManager.Stop();
             CommonPatchProcessor.StopEventHandlersDelivery();
 
             ServerEvents.ReloadedConfigs -= () => ConfigAPI.LoadAll();

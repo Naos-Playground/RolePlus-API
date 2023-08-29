@@ -112,7 +112,7 @@ namespace RolePlus.ExternModule.API.Features.CustomEscapes
                 return;
 
             escaping.Player.SetRole(escaping.NewRole != RoleType.None ? escaping.NewRole : escaping.NewCustomRole);
-            escaping.Hint.Show(escaping.Player);
+            escaping.Player.ShowHint(escaping.Hint);
 
             EscapedEventArgs escaped = new(escaping.Player);
             Events.Handlers.Player.OnEscaped(escaped);

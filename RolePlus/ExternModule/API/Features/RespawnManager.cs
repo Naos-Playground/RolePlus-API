@@ -12,22 +12,25 @@ namespace RolePlus.ExternModule.API.Features
     using System.Linq;
     using Exiled.API.Enums;
     using Exiled.API.Features;
+    using Exiled.Events.EventArgs.Player;
     using Exiled.Events.EventArgs.Server;
     using MEC;
     using PlayerRoles;
     using Respawning;
     using RolePlus.ExternModule.API.Engine.Framework;
+    using RolePlus.ExternModule.API.Engine.Framework.Generic;
     using RolePlus.ExternModule.API.Enums;
     using RolePlus.ExternModule.API.Features.CustomRoles;
     using RolePlus.ExternModule.API.Features.CustomTeams;
     using RolePlus.Internal;
+    using UnityEngine;
 
     /// <summary>
     /// A tool which handles all the respawn properties and its behavior.
     /// <br>Overrides the base-game RespawnManager</br>
     /// <br>Implements new and enhanced functions which also support custom roles and custom teams.</br>
     /// </summary>
-    public sealed class RespawnManager
+    public sealed class RespawnManager : StaticActor
     {
         private static readonly List<CoroutineHandle> _respawnHandle = new();
         private static CoroutineHandle _respawnCoreHandle;
@@ -43,42 +46,42 @@ namespace RolePlus.ExternModule.API.Features
         /// <summary>
         /// Gets or sets the default respawn cooldown.
         /// </summary>
-        public static int DefaultRespawnCooldown { get; set; } = 280;
+        public int DefaultRespawnCooldown { get; set; } = 280;
 
         /// <summary>
         /// Gets or sets the maximum amount of MTF units to be spawned at once.
         /// </summary>
-        public static uint MTFUnitsSpawnedAtOnce { get; set; } = 12;
+        public uint MTFUnitsSpawnedAtOnce { get; set; } = 12;
 
         /// <summary>
         /// Gets or sets the maximum amount of Chaos Insurgency units to be spawned at once.
         /// </summary>
-        public static uint CHIUnitsSpawnedAtOnce { get; set; } = 12;
+        public uint CHIUnitsSpawnedAtOnce { get; set; } = 12;
 
         /// <summary>
         /// Gets the respawn queue containing all the players to spawn during the next respawn wave.
         /// </summary>
-        public static HashSet<Player> RespawnQueue { get; private set; } = new();
+        public HashSet<Player> RespawnQueue { get; private set; } = new();
 
         /// <summary>
         /// Gets a <see cref="IEnumerable{T}"/> of <see cref="CustomRole"/> containing all the custom roles belonging to MTF team.
         /// </summary>
-        public static IEnumerable<CustomRole> MTFCustomRoles => CustomRole.Registered.Where(customRole => customRole.RespawnTeam is PlayerRoles.Team.FoundationForces && !customRole.IsTeamUnit);
+        public IEnumerable<CustomRole> MTFCustomRoles => CustomRole.Registered.Where(customRole => customRole.RespawnTeam is SpawnableTeamType.NineTailedFox && !customRole.IsTeamUnit);
 
         /// <summary>
         /// Gets a <see cref="IEnumerable{T}"/> of <see cref="CustomRole"/> containing all the custom roles belonging to CHI team.
         /// </summary>
-        public static IEnumerable<CustomRole> CHICustomRoles => CustomRole.Registered.Where(customRole => customRole.RespawnTeam is PlayerRoles.Team.ChaosInsurgency && !customRole.IsTeamUnit);
+        public IEnumerable<CustomRole> CHICustomRoles => CustomRole.Registered.Where(customRole => customRole.RespawnTeam is SpawnableTeamType.ChaosInsurgency && !customRole.IsTeamUnit);
 
         /// <summary>
         /// Gets or sets the current respawn state.
         /// </summary>
-        public static RespawnStateBase State { get; set; } = RespawnStateBase.Enabled;
+        public RespawnStateBase State { get; set; } = RespawnStateBase.Enabled;
 
         /// <summary>
         /// Gets or sets a value indicating whether or not the <see cref="State"/> is enabled.
         /// </summary>
-        public static bool IsEnabled
+        public bool IsEnabled
         {
             get => State == RespawnStateBase.Enabled;
             set => State = value ? RespawnStateBase.Enabled : RespawnStateBase.Disabled;
@@ -87,40 +90,62 @@ namespace RolePlus.ExternModule.API.Features
         /// <summary>
         /// Gets or sets the timer until next respawn.
         /// </summary>
-        public static int TimeUntilNextRespawn { get; set; } = DefaultRespawnCooldown;
+        public int TimeUntilNextRespawn { get; set; }
 
         /// <summary>
         /// Gets or sets a <see cref="HashSet{T}"/> containing all the players from the last respawn wave.
         /// </summary>
-        public static HashSet<Player> LastSpawnedPlayers { get; set; } = new();
+        public HashSet<Player> LastSpawnedPlayers { get; set; } = new();
 
         /// <summary>
         /// Gets a value indicating whether or not the respawn system is waiting for players.
         /// </summary>
-        public static bool IsWaitingForPlayers { get; private set; }
+        public bool IsWaitingForPlayers { get; private set; }
 
         /// <summary>
         /// Gets a <see cref="HashSet{T}"/> containing all the managed roles during the respawn.
         /// </summary>
-        public static HashSet<object> ManagedRoles { get; private set; } = new();
+        public HashSet<object> ManagedRoles { get; private set; } = new();
 
         /// <summary>
-        /// Starts the process.
+        /// Gets all the SCPs' death position.
         /// </summary>
-        public static void Start()
-        {
-            Exiled.Events.Handlers.Server.RoundStarted += OnRoundStarted;
-            Exiled.Events.Handlers.Server.RoundEnded += OnRoundEnded;
-        }
+        public Dictionary<RoleType, Vector3> ScpsDeathPositions { get; } = new();
 
         /// <summary>
-        /// Stops the process.
+        /// Gets all the SCPs' spawn position.
         /// </summary>
-        public static void Stop()
-        {
-            Exiled.Events.Handlers.Server.RoundStarted -= OnRoundStarted;
-            Exiled.Events.Handlers.Server.RoundEnded -= OnRoundEnded;
-        }
+        public Dictionary<RoleType, Vector3> ScpsSpawnPositions { get; } = new();
+
+        /// <summary>
+        /// Gets all the custom SCPs' death position.
+        /// </summary>
+        public Dictionary<object, Vector3> CustomScpsDeathPositions { get; } = new();
+
+        /// <summary>
+        /// Gets all the custom SCPs' spawn position.
+        /// </summary>
+        public Dictionary<object, Vector3> CustomScpsSpawnPositions { get; } = new();
+
+        /// <summary>
+        /// Gets all the contained SCPs.
+        /// </summary>
+        public List<RoleType> ContainedScps { get; } = new();
+
+        /// <summary>
+        /// Gets all the contained custom SCPs.
+        /// </summary>
+        public List<object> ContainedCustomScps { get; } = new();
+
+        /// <summary>
+        /// Gets all the spawned SCPs.
+        /// </summary>
+        public List<RoleType> SpawnedScps { get; } = new();
+
+        /// <summary>
+        /// Gets all the spawned custom SCPs.
+        /// </summary>
+        public List<object> SpawnedCustomScps { get; } = new();
 
         /// <summary>
         /// Respawns the specified <see cref="SpawnableTeamType"/>.
@@ -128,7 +153,7 @@ namespace RolePlus.ExternModule.API.Features
         /// <param name="team">The team to respawn.</param>
         /// <param name="units">The maximum amount of units spawned at once.</param>
         /// <returns>A <see cref="IEnumerable{T}"/> of <see cref="Player"/> containing all spawned players.</returns>
-        public static IEnumerable<Player> RespawnTeam(SpawnableTeamType team, uint units = 12) =>
+        public IEnumerable<Player> RespawnTeam(SpawnableTeamType team, uint units = 12) =>
             team is SpawnableTeamType.ChaosInsurgency ? RespawnChaosInsurgencyWave(units) : team is SpawnableTeamType.ChaosInsurgency ? RespawnNineTaledFoxWave(units) : null;
 
         /// <summary>
@@ -136,9 +161,9 @@ namespace RolePlus.ExternModule.API.Features
         /// </summary>
         /// <param name="units">The maximum amount of units spawned at once.</param>
         /// <returns>A <see cref="IEnumerable{T}"/> of <see cref="Player"/> containing all spawned players.</returns>
-        public static IEnumerable<Player> RespawnChaosInsurgencyWave(uint units = 12)
+        public IEnumerable<Player> RespawnChaosInsurgencyWave(uint units = 12)
         {
-            List<Player> toSpawn = Player.Get(p => p.IsDead).ToList();
+            List<Pawn> toSpawn = Player.Get(p => p.IsDead).Cast<Pawn>().ToList();
             toSpawn.ShuffleListSecure();
             return RespawnChaosInsurgencyWave(toSpawn, units);
         }
@@ -148,9 +173,9 @@ namespace RolePlus.ExternModule.API.Features
         /// </summary>
         /// <param name="units">The maximum amount of units spawned at once.</param>
         /// <returns>A <see cref="IEnumerable{T}"/> of <see cref="Player"/> containing all spawned players.</returns>
-        public static IEnumerable<Player> RespawnNineTaledFoxWave(uint units = 12)
+        public IEnumerable<Player> RespawnNineTaledFoxWave(uint units = 12)
         {
-            List<Player> toSpawn = Player.Get(p => p.IsDead).ToList();
+            List<Pawn> toSpawn = Player.Get(p => p.IsDead).Cast<Pawn>().ToList();
             toSpawn.ShuffleListSecure();
             return RespawnNineTaledFoxWave(toSpawn, units);
         }
@@ -161,7 +186,7 @@ namespace RolePlus.ExternModule.API.Features
         /// <param name="players">The players to be respawned.</param>
         /// <param name="units">The maximum amount of units spawned at once.</param>
         /// <returns>A <see cref="IEnumerable{T}"/> of <see cref="Player"/> containing all spawned players.</returns>
-        public static IEnumerable<Player> RespawnChaosInsurgencyWave(IEnumerable<Player> players, uint units = 12)
+        public IEnumerable<Pawn> RespawnChaosInsurgencyWave(IEnumerable<Player> players, uint units = 12)
         {
             List<CustomRole> customRoles = CustomRole.Registered
                 .Where(customRole => customRole.RespawnTeam == SpawnableTeamType.ChaosInsurgency && !customRole.IsTeamUnit)
@@ -169,7 +194,7 @@ namespace RolePlus.ExternModule.API.Features
 
             int idx = 0;
             bool hasRole;
-            foreach (Player player in players)
+            foreach (Pawn player in players.Cast<Pawn>())
             {
                 if (idx >= units)
                     break;
@@ -201,21 +226,21 @@ namespace RolePlus.ExternModule.API.Features
         /// <param name="players">The players to be respawned.</param>
         /// <param name="units">The maximum amount of units spawned at once.</param>
         /// <returns>A <see cref="IEnumerable{T}"/> of <see cref="Player"/> containing all spawned players.</returns>
-        public static IEnumerable<Player> RespawnNineTaledFoxWave(IEnumerable<Player> players, uint units = 12)
+        public IEnumerable<Pawn> RespawnNineTaledFoxWave(IEnumerable<Pawn> players, uint units = 12)
         {
             List<CustomRole> customRoles = CustomRole.Registered
                 .Where(customRole => customRole.RespawnTeam == SpawnableTeamType.NineTailedFox && !customRole.IsTeamUnit)
                 .ToList();
 
-            List<Player> toSpawn = players.ToList();
-            Player captain = toSpawn.Random();
+            List<Pawn> toSpawn = players.ToList();
+            Pawn captain = toSpawn.Random();
             captain.SetRole(RoleType.NtfCaptain);
             toSpawn.Remove(captain);
             --units;
 
             int idx = 0;
             bool hasRole;
-            foreach (Player player in toSpawn)
+            foreach (Pawn player in toSpawn)
             {
                 if (idx >= units)
                     break;
@@ -245,7 +270,7 @@ namespace RolePlus.ExternModule.API.Features
         /// Forces the respawn given a <see cref="Team"/>.
         /// </summary>
         /// <param name="team">The team to be forced to respawn.</param>
-        public static void ForceRespawn(SpawnableTeamType team)
+        public void ForceRespawn(SpawnableTeamType team)
         {
             if (team is not SpawnableTeamType.NineTailedFox and not SpawnableTeamType.ChaosInsurgency)
                 return;
@@ -257,7 +282,7 @@ namespace RolePlus.ExternModule.API.Features
 
             foreach (CustomTeam toSpawn in customTeams)
             {
-                if ((!toSpawn.CanSpawnWithoutScps && !SpawnManager.IsAlive(Team.SCPs)) ||
+                if ((!toSpawn.CanSpawnWithoutScps && !IsAlive(Team.SCPs)) ||
                     (toSpawn.RequiredRoleToSpawn != RoleType.None && !Player.Get(toSpawn.RequiredRoleToSpawn).Any()) ||
                     (toSpawn.RequiredCustomRoleToSpawn is not null && !CustomRole.TryGet(toSpawn.RequiredCustomRoleToSpawn, out CustomRole customRole) &&
                     toSpawn.Owners.Any()) || !toSpawn.Probability.EvaluateProbability() || toSpawn.Tickets <= 0)
@@ -273,14 +298,114 @@ namespace RolePlus.ExternModule.API.Features
             RespawnTeam(team, team is SpawnableTeamType.ChaosInsurgency ? CHIUnitsSpawnedAtOnce : MTFUnitsSpawnedAtOnce);
         }
 
-        private static void OnRoundStarted()
+        /// <summary>
+        /// Checks whether the specified <see cref="RoleType"/> is alive.
+        /// </summary>
+        /// <param name="roleType">The role to check.</param>
+        /// <returns><see langword="true"/> if the role is alive; otherwise, <see langword="false"/>.</returns>
+        public bool IsAlive(RoleType roleType) => Player.List.Any(x => x is Pawn p && !p.HasCustomRole && x.Role.Type == roleType);
+
+        /// <summary>
+        /// Checks whether the specified <see cref="CustomRole.Id"/> is alive.
+        /// </summary>
+        /// <param name="customRoleType">The role to check.</param>
+        /// <returns><see langword="true"/> if the role is alive; otherwise, <see langword="false"/>.</returns>
+        public bool IsAlive(uint customRoleType) => Player.List.Any(x => x is Pawn p && p.HasCustomRole && p.CustomRole.Id is uint value && value == customRoleType);
+
+        /// <summary>
+        /// Checks whether the specified <see cref="Team"/>[] are alive.
+        /// </summary>
+        /// <param name="teams">The teams to check.</param>
+        /// <returns><see langword="true"/> if at least a team is alive; otherwise, <see langword="false"/>.</returns>
+        public bool IsAlive(params Team[] teams)
+        {
+            foreach (Team team in teams)
+            {
+                foreach (Player player in Player.List)
+                {
+                    if (!CustomTeam.TryGet(player, out CustomTeam customTeam) ||
+                        !customTeam.LeadingTeams.Contains(team))
+                        continue;
+
+                    return true;
+                }
+
+                if (Player.Get(team).Any())
+                    return true;
+            }
+
+            return false;
+        }
+
+        /// <inheritdoc/>
+        protected override void SubscribeEvents()
+        {
+            base.SubscribeEvents();
+
+            Exiled.Events.Handlers.Player.Died += OnDied;
+            Exiled.Events.Handlers.Player.Spawning += OnSpawning;
+            Exiled.Events.Handlers.Server.RoundStarted += OnRoundStarted;
+            Exiled.Events.Handlers.Server.RoundEnded += OnRoundEnded;
+        }
+
+        /// <inheritdoc/>
+        protected override void UnsubscribeEvents()
+        {
+            base.UnsubscribeEvents();
+
+            Exiled.Events.Handlers.Player.Died -= OnDied;
+            Exiled.Events.Handlers.Player.Spawning -= OnSpawning;
+            Exiled.Events.Handlers.Server.RoundStarted -= OnRoundStarted;
+            Exiled.Events.Handlers.Server.RoundEnded -= OnRoundEnded;
+        }
+
+        private void OnSpawning(SpawningEventArgs ev)
+        {
+            Timing.CallDelayed(0.25f, () =>
+            {
+                if (CustomRole.TryGet(ev.Player, out CustomRole customRole) && customRole.IsScp)
+                {
+                    if (!SpawnedCustomScps.Contains(customRole.Id))
+                        SpawnedCustomScps.Add(customRole.Id);
+
+                    if (!CustomScpsSpawnPositions.ContainsKey(customRole.Id))
+                        CustomScpsSpawnPositions.Add(customRole.Id, ev.Position);
+                }
+                else if (ev.Player.Role.Team is Team.SCPs)
+                {
+                    if (!SpawnedScps.Contains(RoleType.Cast(ev.Player.Role.Type)))
+                        SpawnedScps.Add(RoleType.Cast(ev.Player.Role.Type));
+
+                    if (!ScpsSpawnPositions.ContainsKey(RoleType.Cast(ev.Player.Role.Type)))
+                        ScpsSpawnPositions.Add(RoleType.Cast(ev.Player.Role.Type), ev.Position);
+                }
+            });
+        }
+
+        private void OnDied(DiedEventArgs ev)
+        {
+            if (CustomRole.TryGet(ev.Player, out CustomRole customRole) && customRole.IsScp)
+            {
+                ContainedCustomScps.Add(customRole.Id);
+                CustomScpsDeathPositions.Remove(customRole.Id);
+                CustomScpsDeathPositions.Add(customRole.Id, ev.Player.Position);
+            }
+            else if (ev.Player.Role.Team is Team.SCPs)
+            {
+                ContainedScps.Add(RoleType.Cast(ev.Player.Role.Type));
+                ScpsDeathPositions.Remove(RoleType.Cast(ev.Player.Role.Type));
+                ScpsDeathPositions.Add(RoleType.Cast(ev.Player.Role.Type), ev.Player.Position);
+            }
+        }
+
+        private void OnRoundStarted()
         {
             _respawnCoreHandle = Timing.RunCoroutine(RespawnHandler());
             _respawnHandle.Add(Timing.RunCoroutine(RespawnStateCheck()));
             _respawnHandle.Add(Timing.RunCoroutine(RespawnTimerHandler()));
         }
 
-        private static void OnRoundEnded(RoundEndedEventArgs _)
+        private void OnRoundEnded(RoundEndedEventArgs _)
         {
             Timing.KillCoroutines(_respawnCoreHandle);
             Timing.KillCoroutines(_respawnHandle.ToArray());
@@ -288,8 +413,10 @@ namespace RolePlus.ExternModule.API.Features
             State = RespawnStateBase.Enabled;
         }
 
-        private static IEnumerator<float> RespawnHandler()
+        private IEnumerator<float> RespawnHandler()
         {
+            TimeUntilNextRespawn = DefaultRespawnCooldown;
+
             while (Round.IsStarted)
             {
                 yield return Timing.WaitForSeconds(1f);
@@ -310,7 +437,7 @@ namespace RolePlus.ExternModule.API.Features
             }
         }
 
-        private static IEnumerator<float> RespawnStateCheck()
+        private IEnumerator<float> RespawnStateCheck()
         {
             while (Round.IsStarted)
             {
@@ -323,7 +450,7 @@ namespace RolePlus.ExternModule.API.Features
             }
         }
 
-        private static IEnumerator<float> RespawnTimerHandler()
+        private IEnumerator<float> RespawnTimerHandler()
         {
             while (Round.IsStarted)
             {

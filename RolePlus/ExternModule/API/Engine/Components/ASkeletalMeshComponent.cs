@@ -9,7 +9,7 @@ namespace RolePlus.ExternModule.API.Engine.Components
 {
     using System.Collections.Generic;
     using Exiled.API.Features.Core;
-
+    using MapEditorReborn.API.Features.Objects;
     using UnityEngine;
 
     /// <summary>
@@ -50,6 +50,11 @@ namespace RolePlus.ExternModule.API.Engine.Components
             Position = position;
             Rotation = rotation;
         }
+
+        /// <summary>
+        /// Gets a <see cref="List{T}"/> containing all active schematics.
+        /// </summary>
+        public static List<SchematicObject> SchematicObjects { get; } = new();
 
         /// <summary>
         /// Gets or sets a value indicating whether the mesh can be seen by other players.

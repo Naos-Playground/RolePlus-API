@@ -543,7 +543,7 @@ namespace RolePlus.ExternModule.API.Features.CustomTeams
             if (player is null)
                 return;
 
-            CustomRole.UnsafeSpawn(player, RandomUnit);
+            CustomRole.UnsafeSpawn(player as Pawn, RandomUnit);
             _playerValues.Add(player, this);
         }
 

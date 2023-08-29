@@ -11,6 +11,7 @@ namespace RolePlus.ExternModule.API.Engine.Framework
     using Exiled.API.Features.Core;
     using Exiled.Events.EventArgs.Player;
     using RolePlus.ExternModule.API.Engine.Framework.Interfaces;
+    using RolePlus.ExternModule.API.Features;
 
     /// <summary>
     /// A component to be used with any type of playable character component.
@@ -20,14 +21,14 @@ namespace RolePlus.ExternModule.API.Engine.Framework
         /// <summary>
         /// Gets the owner of the <see cref="EBehaviour"/>.
         /// </summary>
-        protected virtual Player Owner { get; private set; }
+        protected virtual Pawn Owner { get; private set; }
 
         /// <inheritdoc/>
         protected override void PostInitialize()
         {
             base.PostInitialize();
 
-            Owner = Player.Get(Base);
+            Owner = Player.Get(Base) as Pawn;
             if (Owner is null)
             {
                 Destroy();
