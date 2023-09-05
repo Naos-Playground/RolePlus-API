@@ -10,9 +10,12 @@ namespace RolePlus.ExternModule.API.Enums
     using Exiled.API.Features.Core.Generic;
     using PlayerRoles;
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
     using RolePlus.ExternModule.API.Engine.Framework.Generic;
 >>>>>>> 215601af910e7688328fea59131831fdecbf3e75
+=======
+>>>>>>> d56c47334965da96730d299937b03a57f2fbe373
 
     /// <summary>
     /// All available roles.
