@@ -23,6 +23,17 @@ namespace RolePlus.ExternModule.Events.DynamicEvents
         }
 
         /// <summary>
+        /// Initializes a new instance of the <see cref="DynamicDelegate"/> class.
+        /// </summary>
+        /// <param name="target"><inheritdoc cref="Target"/></param>
+        /// <param name="delegate"><inheritdoc cref="Delegate"/></param>
+        public DynamicDelegate(object target, Action @delegate)
+        {
+            Target = target;
+            Delegate = @delegate;
+        }
+
+        /// <summary>
         /// Gets the <see cref="DynamicDelegate"/>'s target.
         /// </summary>
         public object Target { get; }
