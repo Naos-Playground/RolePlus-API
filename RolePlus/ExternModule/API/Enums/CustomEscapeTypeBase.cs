@@ -7,7 +7,11 @@
 
 namespace RolePlus.ExternModule.API.Enums
 {
+<<<<<<< HEAD
     using Exiled.API.Features.Core.Generic;
+=======
+    using RolePlus.ExternModule.API.Engine.Framework.Generic;
+>>>>>>> 215601af910e7688328fea59131831fdecbf3e75
 
     /// <summary>
     /// All available custom escapes.

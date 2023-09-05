@@ -46,7 +46,11 @@ namespace RolePlus.Internal
         public override PluginPriority Priority => PluginPriority.First;
 
         /// <inheritdoc/>
+<<<<<<< HEAD
         public override Version RequiredExiledVersion => new(8, 0, 0);
+=======
+        public override Version RequiredExiledVersion => new(7, 2, 0);
+>>>>>>> 215601af910e7688328fea59131831fdecbf3e75
 
         /// <inheritdoc/>
         public override Version Version => new(7, 0, 0);
