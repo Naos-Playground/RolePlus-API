@@ -13,9 +13,7 @@ namespace RolePlus.ExternModule.API.Engine.Components
     using Exiled.API.Enums;
     using Exiled.API.Features;
     using Exiled.API.Features.Pickups;
-
     using InventorySystem.Items.Pickups;
-
     using MapEditorReborn.API.Features.Objects;
     using MapEditorReborn.API.Features.Serializable;
 

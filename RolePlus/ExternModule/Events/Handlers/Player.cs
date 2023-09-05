@@ -7,8 +7,6 @@
 
 namespace RolePlus.ExternModule.Events.Handlers
 {
-    using Exiled.Events.Extensions;
-
     using RolePlus.ExternModule.API.Engine.Framework.Events;
     using RolePlus.ExternModule.Events.EventArgs;
 

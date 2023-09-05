@@ -7,7 +7,7 @@
 
 namespace RolePlus.ExternModule.API.Enums
 {
-    using RolePlus.ExternModule.API.Engine.Framework.Generic;
+    using Exiled.API.Features.Core.Generic;
 
     /// <summary>
     /// All available branch environments.

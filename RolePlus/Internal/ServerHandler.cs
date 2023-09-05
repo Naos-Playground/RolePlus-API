@@ -8,6 +8,7 @@
 namespace RolePlus.Internal
 {
     using Exiled.API.Features;
+    using Exiled.API.Features.Core;
     using Exiled.Events.EventArgs.Player;
     using Exiled.Events.EventArgs.Server;
     using global::RolePlus.ExternModule.API.Engine.Framework;

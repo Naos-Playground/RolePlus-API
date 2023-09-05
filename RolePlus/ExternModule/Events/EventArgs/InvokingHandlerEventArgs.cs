@@ -10,8 +10,7 @@ namespace RolePlus.ExternModule.Events.EventArgs
     using System;
 
     using Exiled.Events.EventArgs.Interfaces;
-
-    using static Exiled.Events.Events;
+    using Exiled.Events.Features;
 
     /// <summary>
     /// Contains all informations before invoking an event.

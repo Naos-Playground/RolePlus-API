@@ -17,7 +17,6 @@ namespace RolePlus.ExternModule.API.Features
     using Exiled.CustomItems.API.Features;
     using Exiled.Events.EventArgs.Map;
     using global::RolePlus.ExternModule.API.Engine.Components;
-    using global::RolePlus.ExternModule.API.Engine.Framework.Generic;
     using MEC;
     using PlayerRoles;
     using Respawning;

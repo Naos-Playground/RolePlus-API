@@ -80,7 +80,7 @@ namespace RolePlus.ExternModule.API.Engine.Framework.Bootstrap
             where T : EventArgs
         {
             InvokingHandlerEventArgs toInvoke = new(ev);
-            ExternModule.Events.Handlers.Server.OnInvokingHandler(toInvoke);
+            ExternModule.Events.Handlers.Server.InvokingHandlerDispatcher.InvokeAll(toInvoke);
         }
     }
 }

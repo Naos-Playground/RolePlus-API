@@ -25,7 +25,7 @@ namespace RolePlus.ExternModule.Events.Patches
             HLAPI.LogCommandUsed(__instance, HLAPI.FormatArguments(arguments, 0));
             Exiled.API.Features.Player player = Exiled.API.Features.Player.Get(__instance._sender);
             EventArgs.SendingConsoleCommandEventArgs ev = new(player ?? Exiled.API.Features.Server.Host, name, arguments.ToList());
-            Handlers.Server.OnSendingConsoleCommand(ev);
+            Handlers.Server.SendingConsoleCommandDispatcher.InvokeAll(ev);
             return ev.IsAllowed;
         }
     }

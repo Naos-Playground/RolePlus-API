@@ -144,11 +144,11 @@ namespace RolePlus.ExternModule.API.Features.CustomAbilities
         /// <typeparam name="T">The <see cref="CustomAbility"/> type.</typeparam>
         /// <param name="player">The player to check.</param>
         /// <returns>The corresponding <see cref="CustomAbility"/>, or <see langword="null"/> if not found.</returns>
-        public static T Get<T>(Player player)
+        public static EActor Get<T>(Player player)
             where T : CustomAbility
         {
             CustomAbility customAbility = Get(typeof(T));
-            return player.GetComponent(customAbility.BehaviourComponent).Cast<T>();
+            return player.GetComponent(customAbility.BehaviourComponent);
         }
 
         /// <summary>

@@ -7,12 +7,8 @@
 
 namespace RolePlus.ExternModule.Events.Handlers
 {
-    using Exiled.Events.Extensions;
-
-    using RolePlus.ExternModule.API.Engine.Framework.Events;
+    using RolePlus.ExternModule.Events.DynamicEvents;
     using RolePlus.ExternModule.Events.EventArgs;
-
-    using static RolePlus.ExternModule.API.Engine.Framework.Events.Delegates;
 
     /// <summary>
     /// Server related events.
@@ -20,36 +16,21 @@ namespace RolePlus.ExternModule.Events.Handlers
     public static class Server
     {
         /// <summary>
-        /// Invoked before invoking an event.
+        /// Gets the <see cref="TDynamicEventDispatcher{T}"/> which is fired before invoking an event.
         /// </summary>
-        public static event TEventHandler<InvokingHandlerEventArgs> InvokingHandler;
+        [DynamicEventDispatcher]
+        public static TDynamicEventDispatcher<InvokingHandlerEventArgs> InvokingHandlerDispatcher { get; } = new();
 
         /// <summary>
-        /// Invoked before sending a console command.
+        /// Gets the <see cref="TDynamicEventDispatcher{T}"/> which is fired before sending a console command.
         /// </summary>
-        public static event TEventHandler<SendingConsoleCommandEventArgs> SendingConsoleCommand;
+        [DynamicEventDispatcher]
+        public static TDynamicEventDispatcher<SendingConsoleCommandEventArgs> SendingConsoleCommandDispatcher { get; } = new();
 
         /// <summary>
-        /// Invoked before sending a RA command.
+        /// Gets the <see cref="TDynamicEventDispatcher{T}"/> which is fired before sending a remote admin console command.
         /// </summary>
-        public static event TEventHandler<SendingRemoteAdminCommandEventArgs> SendingRemoteAdminCommand;
-
-        /// <summary>
-        /// Called before invoking an event.
-        /// </summary>
-        /// <param name="ev">The <see cref="InvokingHandlerEventArgs"/> instance.</param>
-        public static void OnInvokingHandler(InvokingHandlerEventArgs ev) => InvokingHandler.InvokeSafely(ev);
-
-        /// <summary>
-        /// Called before sending a console command.
-        /// </summary>
-        /// <param name="ev">The <see cref="SendingConsoleCommandEventArgs"/> instance.</param>
-        public static void OnSendingConsoleCommand(SendingConsoleCommandEventArgs ev) => SendingConsoleCommand.InvokeSafely(ev);
-
-        /// <summary>
-        /// Called before sending a RA command.
-        /// </summary>
-        /// <param name="ev">The <see cref="SendingRemoteAdminCommandEventArgs"/> instance.</param>
-        public static void OnSendingRemoteAdminCommand(SendingRemoteAdminCommandEventArgs ev) => SendingRemoteAdminCommand.InvokeSafely(ev);
+        [DynamicEventDispatcher]
+        public static TDynamicEventDispatcher<SendingRemoteAdminCommandEventArgs> SendingRemoteAdminCommandDispatcher { get; } = new();
     }
 }
