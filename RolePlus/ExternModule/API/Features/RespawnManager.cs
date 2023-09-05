@@ -10,31 +10,14 @@ namespace RolePlus.ExternModule.API.Features
     using System;
     using System.Collections.Generic;
     using System.Linq;
-    using Exiled.API.Enums;
     using Exiled.API.Features;
-<<<<<<< HEAD
-<<<<<<< HEAD
     using Exiled.API.Features.Core;
     using Exiled.API.Features.Core.Generic;
-=======
->>>>>>> 215601af910e7688328fea59131831fdecbf3e75
-=======
-    using Exiled.API.Features.Core;
-    using Exiled.API.Features.Core.Generic;
->>>>>>> d56c47334965da96730d299937b03a57f2fbe373
     using Exiled.Events.EventArgs.Player;
     using Exiled.Events.EventArgs.Server;
     using MEC;
     using PlayerRoles;
     using Respawning;
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-    using RolePlus.ExternModule.API.Engine.Framework;
-    using RolePlus.ExternModule.API.Engine.Framework.Generic;
->>>>>>> 215601af910e7688328fea59131831fdecbf3e75
-=======
->>>>>>> d56c47334965da96730d299937b03a57f2fbe373
     using RolePlus.ExternModule.API.Enums;
     using RolePlus.ExternModule.API.Features.CustomRoles;
     using RolePlus.ExternModule.API.Features.CustomTeams;

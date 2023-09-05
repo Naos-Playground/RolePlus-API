@@ -16,18 +16,9 @@ namespace RolePlus.ExternModule.API.Features
     using Exiled.API.Features.Pickups;
     using Exiled.CustomItems.API.Features;
     using Exiled.Events.EventArgs.Map;
-    using global::RolePlus.ExternModule.API.Engine.Components;
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-    using global::RolePlus.ExternModule.API.Engine.Framework.Generic;
->>>>>>> 215601af910e7688328fea59131831fdecbf3e75
-=======
->>>>>>> d56c47334965da96730d299937b03a57f2fbe373
     using MEC;
     using PlayerRoles;
-    using Respawning;
-    using RolePlus.ExternModule.API.Engine.Framework;
+    using RolePlus.ExternModule.API.Engine.Components;
     using UnityEngine;
 
     /// <summary>
