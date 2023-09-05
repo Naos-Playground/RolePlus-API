@@ -11,10 +11,9 @@ namespace RolePlus.ExternModule.API.Features.VirtualAssemblies
     using System.Collections.Generic;
     using System.Linq;
     using System.Reflection;
-
     using Exiled.API.Features;
+    using Exiled.API.Features.Core.Generic;
     using RolePlus.ExternModule.API.Engine.Framework;
-    using RolePlus.ExternModule.API.Engine.Framework.Generic;
     using RolePlus.ExternModule.API.Enums;
     using RolePlus.ExternModule.API.Features.Configs;
 

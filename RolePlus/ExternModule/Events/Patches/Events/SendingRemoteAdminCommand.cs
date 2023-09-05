@@ -50,7 +50,7 @@ namespace RolePlus.ExternModule.Events.Patches
             if (q == "REQUEST_DATA PLAYER_LIST SILENT")
                 return true;
 
-            Handlers.Server.OnSendingRemoteAdminCommand(ev);
+            _ = Handlers.Server.SendingRemoteAdminCommandDispatcher[ev];
 
             if (!string.IsNullOrEmpty(ev.ReplyMessage))
                 sender.RaReply(ev.ReplyMessage, ev.Success, true, string.Empty);

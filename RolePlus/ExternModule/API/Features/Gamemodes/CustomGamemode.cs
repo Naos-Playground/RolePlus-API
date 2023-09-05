@@ -13,7 +13,7 @@ namespace RolePlus.ExternModule.API.Features
     using System.Reflection;
 
     using Exiled.API.Features;
-
+    using Exiled.API.Features.Core;
     using MEC;
     using RolePlus.ExternModule.API.Engine.Framework;
     using RolePlus.Internal;

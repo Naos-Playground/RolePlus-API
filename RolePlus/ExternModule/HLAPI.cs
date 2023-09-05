@@ -18,6 +18,7 @@ namespace RolePlus.ExternModule
 
     using Exiled.API.Extensions;
     using Exiled.API.Features;
+    using Exiled.API.Features.Core;
     using Exiled.API.Features.Items;
     using Exiled.API.Features.Pickups;
     using Exiled.CustomItems.API.Features;

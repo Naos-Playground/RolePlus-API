@@ -26,6 +26,7 @@ namespace RolePlus.ExternModule.API.Features.CustomRoles
     using RolePlus.ExternModule.API.Enums;
     using RolePlus.ExternModule.API.Features.Attributes;
     using RolePlus.ExternModule.API.Features.CustomEscapes;
+    using RolePlus.ExternModule.Events.DynamicEvents;
     using RolePlus.ExternModule.Events.EventArgs;
     using RolePlus.Internal;
 
@@ -468,7 +469,7 @@ namespace RolePlus.ExternModule.API.Features.CustomRoles
                 _registered.Add(this);
 
                 if (SpawnOnEvents.Any())
-                    Events.Handlers.Server.InvokingHandler += HandleSpawnOnEvents;
+                    Events.Handlers.Server.InvokingHandlerDispatcher.Bind(this, HandleSpawnOnEvents);
 
                 Exiled.Events.Handlers.Player.Spawning += OverrideDefaultSpawnpoint;
                 Exiled.Events.Handlers.Player.ChangingRole += OverrideDefaultInventory;
@@ -497,7 +498,7 @@ namespace RolePlus.ExternModule.API.Features.CustomRoles
             _registered.Remove(this);
 
             if (SpawnOnEvents.Any())
-                Events.Handlers.Server.InvokingHandler -= HandleSpawnOnEvents;
+                Events.Handlers.Server.InvokingHandlerDispatcher.Unbind(this);
 
             Exiled.Events.Handlers.Player.Spawning -= OverrideDefaultSpawnpoint;
             Exiled.Events.Handlers.Player.ChangingRole -= OverrideDefaultInventory;

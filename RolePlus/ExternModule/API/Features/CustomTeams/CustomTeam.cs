@@ -24,6 +24,7 @@ namespace RolePlus.ExternModule.API.Features.CustomTeams
     using RolePlus.ExternModule.API.Enums;
     using RolePlus.ExternModule.API.Features.Attributes;
     using RolePlus.ExternModule.API.Features.CustomRoles;
+    using RolePlus.ExternModule.Events.DynamicEvents;
     using RolePlus.ExternModule.Events.EventArgs;
     using RolePlus.Internal;
 
@@ -42,7 +43,7 @@ namespace RolePlus.ExternModule.API.Features.CustomTeams
         public CustomTeam()
         {
             if (SpawnOnEvents.Any())
-                Events.Handlers.Server.InvokingHandler += HandleSpawnOnEvents;
+                Events.Handlers.Server.InvokingHandlerDispatcher.Bind(this, HandleSpawnOnEvents);
         }
 
         /// <summary>
@@ -51,7 +52,7 @@ namespace RolePlus.ExternModule.API.Features.CustomTeams
         ~CustomTeam()
         {
             if (SpawnOnEvents.Any())
-                Events.Handlers.Server.InvokingHandler -= HandleSpawnOnEvents;
+                Events.Handlers.Server.InvokingHandlerDispatcher.Unbind(this);
         }
 
         /// <summary>

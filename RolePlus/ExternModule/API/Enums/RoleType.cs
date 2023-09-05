@@ -7,8 +7,8 @@
 
 namespace RolePlus.ExternModule.API.Enums
 {
+    using Exiled.API.Features.Core.Generic;
     using PlayerRoles;
-    using RolePlus.ExternModule.API.Engine.Framework.Generic;
 
     /// <summary>
     /// All available roles.
